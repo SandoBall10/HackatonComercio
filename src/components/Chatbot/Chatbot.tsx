@@ -33,10 +33,11 @@ const Chatbot: React.FC = () => {
         t('chatbot.verCandidatos'),
         t('chatbot.verPartidos'),
         t('chatbot.consultarReniec'),
-        t('chatbot.cronograma')
+        t('chatbot.cronograma'),
+        i18n.language === 'es' ? '🌐 Cambiar idioma' : '🌐 Simi t\'ikray'
       ]
     }]);
-  }, [t]);
+  }, [t, i18n.language]);
 
   const notificationMessages = [
     t('chatbot.notificaciones.ayuda'),
