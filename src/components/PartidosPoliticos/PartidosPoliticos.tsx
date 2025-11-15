@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './PartidosPoliticos.css';
+import '../Inicio/Inicio.css';
+
 
 interface Partido {
   id: number;
@@ -10,6 +13,7 @@ interface Partido {
 }
 
 const PartidosPoliticos: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const partidos: Partido[] = [
@@ -63,9 +67,24 @@ const PartidosPoliticos: React.FC = () => {
   };
 
   return (
-    <div className="partidos-container">
-      <h1 className="titulo-principal">Partidos Políticos - Elecciones Perú 2026</h1>
-      <p className="subtitulo">43 partidos políticos inscritos para las elecciones generales</p>
+    <>
+      <header className="header">
+        <nav className="navbar">
+          <div className="nav-links-container">
+            <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>{t('nav.inicio')}</a>
+            <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('nav.partidos')}</a>
+            <a href="/candidatos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/candidatos'); }}>{t('nav.candidatos')}</a>
+            <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
+            <a href="#lo-nuevo" className="nav-link">{t('inicio.loNuevo')}</a>
+            <a href="#voto-digital" className="nav-link">{t('inicio.votoDigital')}</a>
+            <a href="#verifica-mesa" className="nav-link nav-link-highlight">{t('inicio.verificaMiembro')}</a>
+          </div>
+        </nav>
+      </header>
+
+      <div className="partidos-container">
+        <h1 className="titulo-principal">{t('partidos.titulo')} - Elecciones Perú 2026</h1>
+      <p className="subtitulo">43 {t('partidos.descripcion').toLowerCase()}</p>
 
       <div className="partidos-grid">
         {partidos.map((partido) => (
@@ -85,7 +104,8 @@ const PartidosPoliticos: React.FC = () => {
           </div>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Inicio.css';
 
 type EventItem = { date: string; title: string; bullets?: string[]; icon?: string };
@@ -76,6 +77,7 @@ const TIMELINE: Record<string, Record<string, EventItem[]>> = {
 };
 
 export const Inicio: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeYear, setActiveYear] = useState<'2025' | '2026'>('2025');
@@ -142,7 +144,7 @@ export const Inicio: React.FC = () => {
 
         {/* TIMELINE SECTION */}
         <section className="timeline-wrapper">
-          <h1 className="timeline-title">Sigue la línea de tiempo de este proceso electoral:</h1>
+          <h1 className="timeline-title">{t('inicio.timelineTitle')}</h1>
 
           {/* YEAR TABS */}
           <div className="tabs-link">

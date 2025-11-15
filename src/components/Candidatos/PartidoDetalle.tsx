@@ -56,22 +56,50 @@ const PartidoDetalle: React.FC = () => {
         </header>
 
         <div className="card mb-4 shadow-sm">
-          <div className="card-body d-flex align-items-center gap-4">
-            <div
-              className="rounded bg-white shadow-sm"
-              style={{
-                width: 96,
-                height: 96,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundImage: `url('${partido.logo || `/logos/${partido.id}.svg`}')`,
-              }}
-              aria-hidden
-            />
-            <div>
-              <h3 className="h5 mb-1">{partido.nombre}</h3>
-              <div className="text-muted">Símbolo: {partido.siglas || "-"}</div>
+          <div className="card-body">
+            <div className="d-flex align-items-center gap-4 mb-4">
+              <div
+                className="rounded bg-white shadow-sm"
+                style={{
+                  width: 96,
+                  height: 96,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundImage: `url('${partido.logo || `/logos/${partido.id}.svg`}')`,
+                }}
+                aria-hidden
+              />
+              <div className="flex-grow-1">
+                <h3 className="h5 mb-1">{partido.nombre}</h3>
+                <div className="text-muted">Símbolo: {partido.siglas || "-"}</div>
+              </div>
             </div>
+            <button 
+              className="btn btn-danger w-100"
+              onClick={() => navigate(`/candidatos/${partido.siglas?.toLowerCase() || partido.id}`)}
+              style={{
+                background: 'linear-gradient(135deg, #c31432 0%, #a01028 100%)',
+                border: 'none',
+                fontWeight: '600',
+                padding: '0.85rem',
+                borderRadius: '8px',
+                fontSize: '1rem',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 12px rgba(195, 20, 50, 0.25)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 6px 16px rgba(195, 20, 50, 0.35)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(195, 20, 50, 0.25)';
+              }}
+            >
+              Ver Candidato
+            </button>
           </div>
         </div>
 

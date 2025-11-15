@@ -1,6 +1,25 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+const getDniData = async (dni: string) => {
+  // Minimal implementation to avoid the "Cannot find name 'getDniData'" TypeScript error.
+  // Replace the URL and mapping with your real RENIEC API and response shape.
+  const response = await fetch(`https://api.example.com/reniec/dni/${dni}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch DNI data');
+  }
+  const json = await response.json();
+  return {
+    document_number: json.document_number ?? json.dni ?? dni,
+    first_name: json.first_name ?? json.nombres ?? '',
+    first_last_name: json.first_last_name ?? json.apellido_paterno ?? '',
+    second_last_name: json.second_last_name ?? json.apellido_materno ?? '',
+    birth_date: json.birth_date ?? json.fecha_nacimiento ?? ''
+  };
+};
 
 const ReniecConsultas: React.FC = () => {
+  const { t } = useTranslation();
   const [dni, setDni] = useState('');
   const [resultado, setResultado] = useState<any>(null);
   const [loading, setLoading] = useState(false);
@@ -9,31 +28,35 @@ const ReniecConsultas: React.FC = () => {
   const handleConsulta = async (e: React.FormEvent) => {
     e.preventDefault();
     if (dni.length !== 8) {
-      setError('El DNI debe tener 8 dígitos');
+      setError(t('reniec.errorDni'));
       return;
     }
 
     setLoading(true);
     setError('');
-    
-    // Simulación de consulta - Aquí irá la integración real con RENIEC
-    setTimeout(() => {
+    setResultado(null);
+
+    try {
+      const data = await getDniData(dni);
       setResultado({
-        dni: dni,
-        nombres: 'Ejemplo de Consulta',
-        apellidoPaterno: 'Pendiente',
-        apellidoMaterno: 'Integración',
-        fechaNacimiento: '01/01/1990'
+        dni: data.document_number,
+        nombres: data.first_name,
+        apellidoPaterno: data.first_last_name,
+        apellidoMaterno: data.second_last_name,
+        //fechaNacimiento: '-',
       });
+    } catch (err: any) {
+      setError('No se pudo obtener la información. Verifica el DNI o intenta más tarde.');
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
 
   return (
     <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-      <h1>Consulta RENIEC</h1>
+      <h1>{t('reniec.titulo')}</h1>
       <p style={{ marginBottom: '2rem', color: '#666' }}>
-        Verifica la información de ciudadanos registrados en RENIEC
+        {t('reniec.descripcion')}
       </p>
 
       <form onSubmit={handleConsulta} style={{ marginBottom: '2rem' }}>
@@ -42,7 +65,7 @@ const ReniecConsultas: React.FC = () => {
             type="text"
             value={dni}
             onChange={(e) => setDni(e.target.value.replace(/\D/g, '').slice(0, 8))}
-            placeholder="Ingrese DNI (8 dígitos)"
+            placeholder={t('reniec.placeholderDni')}
             style={{
               flex: 1,
               padding: '0.75rem',
@@ -65,7 +88,7 @@ const ReniecConsultas: React.FC = () => {
               opacity: loading || dni.length !== 8 ? 0.6 : 1
             }}
           >
-            {loading ? 'Consultando...' : 'Consultar'}
+            {loading ? t('reniec.consultando') : t('reniec.btnConsultar')}
           </button>
         </div>
         {error && <p style={{ color: 'red', fontSize: '0.9rem' }}>{error}</p>}
@@ -78,22 +101,22 @@ const ReniecConsultas: React.FC = () => {
           borderRadius: '8px',
           border: '1px solid #ddd'
         }}>
-          <h2 style={{ marginBottom: '1rem' }}>Resultado de la Consulta</h2>
+          <h2 style={{ marginBottom: '1rem' }}>{t('reniec.resultadoTitulo')}</h2>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             <div>
-              <strong>DNI:</strong> {resultado.dni}
+              <strong>{t('reniec.dni')}:</strong> {resultado.dni}
             </div>
             <div>
-              <strong>Nombres:</strong> {resultado.nombres}
+              <strong>{t('reniec.nombres')}:</strong> {resultado.nombres}
             </div>
             <div>
-              <strong>Apellido Paterno:</strong> {resultado.apellidoPaterno}
+              <strong>{t('reniec.apellidoPaterno')}:</strong> {resultado.apellidoPaterno}
             </div>
             <div>
-              <strong>Apellido Materno:</strong> {resultado.apellidoMaterno}
+              <strong>{t('reniec.apellidoMaterno')}:</strong> {resultado.apellidoMaterno}
             </div>
             <div>
-              <strong>Fecha de Nacimiento:</strong> {resultado.fechaNacimiento}
+              <strong>{t('reniec.fechaNacimiento')}:</strong> {resultado.fechaNacimiento}
             </div>
           </div>
         </div>
