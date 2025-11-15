@@ -1,6 +1,23 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+const getDniData = async (dni: string) => {
+  // Minimal implementation to avoid the "Cannot find name 'getDniData'" TypeScript error.
+  // Replace the URL and mapping with your real RENIEC API and response shape.
+  const response = await fetch(`https://api.example.com/reniec/dni/${dni}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch DNI data');
+  }
+  const json = await response.json();
+  return {
+    document_number: json.document_number ?? json.dni ?? dni,
+    first_name: json.first_name ?? json.nombres ?? '',
+    first_last_name: json.first_last_name ?? json.apellido_paterno ?? '',
+    second_last_name: json.second_last_name ?? json.apellido_materno ?? '',
+    birth_date: json.birth_date ?? json.fecha_nacimiento ?? ''
+  };
+};
+
 const ReniecConsultas: React.FC = () => {
   const { t } = useTranslation();
   const [dni, setDni] = useState('');
