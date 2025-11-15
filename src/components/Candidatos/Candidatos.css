@@ -1696,7 +1696,120 @@
 
 /* ===== BOOTSTRAP ENHANCED STYLES ===== */
 
-/* Nav Pills */
+/* Modern Month-Style Tab Buttons */
+.modern-tabs-container {
+  background: white;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.modern-tabs-wrapper {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px;
+}
+
+.modern-tabs-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.modern-tab-btn {
+  flex: 1;
+  min-width: 160px;
+  padding: 16px 24px;
+  border: 2px solid #e5e7eb;
+  border-radius: 50px;
+  background: white;
+  color: #6c757d;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-tab-btn i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.modern-tab-btn span {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.modern-tab-btn:hover {
+  border-color: var(--color-primario, #dc3545);
+  color: var(--color-primario, #dc3545);
+  background: rgba(var(--color-primario-rgb, 220, 53, 69), 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.modern-tab-btn:hover i {
+  transform: scale(1.1);
+}
+
+.modern-tab-btn.active {
+  background: linear-gradient(135deg, var(--tab-bg, #dc3545) 0%, var(--color-secundario, #b02a37) 100%);
+  color: white;
+  border-color: var(--tab-bg, #dc3545);
+  box-shadow: 0 6px 20px rgba(var(--color-primario-rgb, 220, 53, 69), 0.35);
+  transform: translateY(-2px);
+}
+
+.modern-tab-btn.active i {
+  transform: scale(1.15);
+}
+
+.modern-tab-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .modern-tab-btn {
+    min-width: 140px;
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .modern-tab-btn i {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modern-tabs-wrapper {
+    gap: 8px;
+  }
+  
+  .modern-tab-btn {
+    min-width: 120px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .modern-tab-btn span {
+    display: none;
+  }
+  
+  .modern-tab-btn i {
+    font-size: 1.2rem;
+  }
+}
+
+/* Nav Pills - Keep for compatibility */
 .nav-pills .nav-link {
   border-radius: 12px;
   font-weight: 600;
