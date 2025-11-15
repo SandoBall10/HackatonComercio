@@ -3,7 +3,7 @@
 export const candidatos = [
   {
     id: "accion-popular",
-    nombre: "",
+    nombre: "Yonhy Lescano Ancieta",
     partido: "ACCIÓN POPULAR",
     foto: "https://ui-avatars.com/api/?name=ACCION+POPULAR&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=ACCION+POPULAR&background=ffffff&color=991b1b&size=128",
@@ -54,7 +54,7 @@ export const candidatos = [
   },
   {
     id: "partido-trabajadores-pte-peru",
-    nombre: "",
+    nombre: "Eduardo Zegarra",
     partido: "Partido de los trabajadores PTE-Perú",
     foto: "https://ui-avatars.com/api/?name=Partido+Trabajadores&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=PTE-Peru&background=ffffff&color=991b1b&size=128",
@@ -79,7 +79,7 @@ export const candidatos = [
   },
   {
     id: "ahora-nacion",
-    nombre: "",
+    nombre: "Rafael López Aliaga",
     partido: "Ahora Nación (AN)",
     foto: "https://ui-avatars.com/api/?name=Ahora+Nacion&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Ahora+Nacion&background=ffffff&color=991b1b&size=128",
@@ -104,7 +104,7 @@ export const candidatos = [
   },
   {
     id: "juntos-por-el-peru",
-    nombre: "",
+    nombre: "Verónika Mendoza",
     partido: "Juntos por el Perú",
     foto: "https://ui-avatars.com/api/?name=Juntos+por+el+Peru&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Juntos+por+el+Peru&background=ffffff&color=991b1b&size=128",
@@ -129,7 +129,7 @@ export const candidatos = [
   },
   {
     id: "partido-del-buen-gobierno",
-    nombre: "",
+    nombre: "Miguel Ángel Torres",
     partido: "Partido del buen gobierno",
     foto: "https://ui-avatars.com/api/?name=Partido+Buen+Gobierno&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Buen+Gobierno&background=ffffff&color=991b1b&size=128",
@@ -180,7 +180,7 @@ export const candidatos = [
   },
   {
     id: "libertad-popular",
-    nombre: "",
+    nombre: "Julio Guzmán",
     partido: "Libertad popular",
     foto: "https://ui-avatars.com/api/?name=Libertad+Popular&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Libertad+Popular&background=ffffff&color=991b1b&size=128",
@@ -204,7 +204,7 @@ export const candidatos = [
   },
   {
     id: "partido-democrata-unido-peru",
-    nombre: "",
+    nombre: "Lourdes Flores Nano",
     partido: "Partido Democrata Unido Perú",
     foto: "https://ui-avatars.com/api/?name=PDUP&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=PDUP&background=ffffff&color=991b1b&size=128",
@@ -228,7 +228,7 @@ export const candidatos = [
   },
   {
     id: "avanza-pais",
-    nombre: "",
+    nombre: "Hernando de Soto",
     partido: "Avanza Pais",
     foto: "https://ui-avatars.com/api/?name=Avanza+Pais&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Avanza+Pais&background=ffffff&color=991b1b&size=128",
@@ -253,7 +253,7 @@ export const candidatos = [
   },
   {
     id: "nuevo-peru-por-el-buen-vivir",
-    nombre: "",
+    nombre: "Marco Arana",
     partido: "Nuevo Perú por el buen vivir",
     foto: "https://ui-avatars.com/api/?name=Nuevo+Peru&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Nuevo+Peru&background=ffffff&color=991b1b&size=128",
@@ -277,7 +277,7 @@ export const candidatos = [
   },
   {
     id: "partido-democrata-verde",
-    nombre: "",
+    nombre: "Alberto Beingolea",
     partido: "Partido Democrata Verde",
     foto: "https://ui-avatars.com/api/?name=Democrata+Verde&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Democrata+Verde&background=ffffff&color=991b1b&size=128",
@@ -301,7 +301,7 @@ export const candidatos = [
   },
   {
     id: "batalla-peru",
-    nombre: "",
+    nombre: "Daniel Urresti",
     partido: "Batalla Perú",
     foto: "https://ui-avatars.com/api/?name=Batalla+Peru&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Batalla+Peru&background=ffffff&color=991b1b&size=128",
@@ -325,7 +325,7 @@ export const candidatos = [
   },
   {
     id: "partido-aprista-peruano",
-    nombre: "",
+    nombre: "Nicanor Alvarado",
     partido: "Partido Aprista peruano",
     foto: "https://ui-avatars.com/api/?name=APRA&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=APRA&background=ffffff&color=991b1b&size=128",
@@ -350,7 +350,7 @@ export const candidatos = [
   },
   {
     id: "partido-democratico-federal",
-    nombre: "",
+    nombre: "Luis Castañeda Lossio",
     partido: "Partido democratico federal",
     foto: "https://ui-avatars.com/api/?name=Democratico+Federal&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Democratico+Federal&background=ffffff&color=991b1b&size=128",
@@ -374,7 +374,7 @@ export const candidatos = [
   },
   {
     id: "fe-en-el-peru",
-    nombre: "",
+    nombre: "Carlos Neuhaus",
     partido: "Fe en el Perú",
     foto: "https://ui-avatars.com/api/?name=Fe+en+el+Peru&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Fe+en+el+Peru&background=ffffff&color=991b1b&size=128",
@@ -398,7 +398,7 @@ export const candidatos = [
   },
   {
     id: "partido-ciudadanos-por-el-peru",
-    nombre: "",
+    nombre: "Ollanta Humala",
     partido: "Partido ciudadanos por el Perú",
     foto: "https://ui-avatars.com/api/?name=Ciudadanos+Por+El+Peru&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Ciudadanos+Peru&background=ffffff&color=991b1b&size=128",
@@ -422,7 +422,7 @@ export const candidatos = [
   },
   {
     id: "partido-democratico-somos-peru",
-    nombre: "",
+    nombre: "Patricia Li",
     partido: "Partido democratico somos Perú",
     foto: "https://ui-avatars.com/api/?name=Somos+Peru&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Somos+Peru&background=ffffff&color=991b1b&size=128",
@@ -447,7 +447,7 @@ export const candidatos = [
   },
   {
     id: "frente-popular-agricola-fia",
-    nombre: "",
+    nombre: "Jonás Ataucusi",
     partido: "Frente popular agricola FIA del Perú",
     foto: "https://ui-avatars.com/api/?name=FIA+Peru&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=FIA&background=ffffff&color=991b1b&size=128",
@@ -471,7 +471,7 @@ export const candidatos = [
   },
   {
     id: "partido-civico-obras",
-    nombre: "",
+    nombre: "Fernando Olivera",
     partido: "Partido Civico obras",
     foto: "https://ui-avatars.com/api/?name=Civico+Obras&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Civico+Obras&background=ffffff&color=991b1b&size=128",
@@ -495,7 +495,7 @@ export const candidatos = [
   },
   {
     id: "frente-de-la-esperanza-2021",
-    nombre: "",
+    nombre: "Fernando Cillóniz",
     partido: "Partido frente de la esperanza 2021",
     foto: "https://ui-avatars.com/api/?name=Frente+Esperanza&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Frente+Esperanza&background=ffffff&color=991b1b&size=128",
@@ -519,7 +519,7 @@ export const candidatos = [
   },
   {
     id: "partido-morado",
-    nombre: "",
+    nombre: "Julio Guzmán",
     partido: "Partido Morado",
     foto: "https://ui-avatars.com/api/?name=Partido+Morado&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Partido+Morado&background=ffffff&color=991b1b&size=128",
@@ -544,7 +544,7 @@ export const candidatos = [
   },
   {
     id: "partido-politico-peru-accion",
-    nombre: "",
+    nombre: "Martín Vizcarra",
     partido: "Partido Politico Perú Accion",
     foto: "https://ui-avatars.com/api/?name=Peru+Accion&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Peru+Accion&background=ffffff&color=991b1b&size=128",
@@ -568,7 +568,7 @@ export const candidatos = [
   },
   {
     id: "peru-moderno",
-    nombre: "",
+    nombre: "Jorge Muñoz",
     partido: "Perú moderno",
     foto: "https://ui-avatars.com/api/?name=Peru+Moderno&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Peru+Moderno&background=ffffff&color=991b1b&size=128",
@@ -592,7 +592,7 @@ export const candidatos = [
   },
   {
     id: "partido-pais-para-todos",
-    nombre: "",
+    nombre: "Renzo Reggiardo",
     partido: "Partido Pais para todos",
     foto: "https://ui-avatars.com/api/?name=Pais+Para+Todos&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Pais+Para+Todos&background=ffffff&color=991b1b&size=128",
@@ -616,7 +616,7 @@ export const candidatos = [
   },
   {
     id: "partido-peru-primero",
-    nombre: "",
+    nombre: "Enrique Ghersi",
     partido: "Partido politico Perú primero",
     foto: "https://ui-avatars.com/api/?name=Peru+Primero&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Peru+Primero&background=ffffff&color=991b1b&size=128",
@@ -640,7 +640,7 @@ export const candidatos = [
   },
   {
     id: "podemos-peru",
-    nombre: "",
+    nombre: "José Luna Gálvez",
     partido: "Podemos Perú",
     foto: "https://ui-avatars.com/api/?name=Podemos+Peru&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Podemos+Peru&background=ffffff&color=991b1b&size=128",
@@ -665,7 +665,7 @@ export const candidatos = [
   },
   {
     id: "partido-patriotico-del-peru",
-    nombre: "",
+    nombre: "Antauro Humala",
     partido: "Partido patriotico del Perú",
     foto: "https://ui-avatars.com/api/?name=Partido+Patriotico&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Partido+Patriotico&background=ffffff&color=991b1b&size=128",
@@ -689,7 +689,7 @@ export const candidatos = [
   },
   {
     id: "peruanos-unidos-somos-libres",
-    nombre: "",
+    nombre: "Ricardo Belmont",
     partido: "Partido politico peruanos unidos ¡Somos libres!",
     foto: "https://ui-avatars.com/api/?name=Peruanos+Unidos&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Peruanos+Unidos&background=ffffff&color=991b1b&size=128",
@@ -713,7 +713,7 @@ export const candidatos = [
   },
   {
     id: "primero-la-gente",
-    nombre: "",
+    nombre: "Susana Villarán",
     partido: "Primero la gente",
     foto: "https://ui-avatars.com/api/?name=Primero+la+Gente&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Primero+la+Gente&background=ffffff&color=991b1b&size=128",
@@ -737,7 +737,7 @@ export const candidatos = [
   },
   {
     id: "cooperacion-popular",
-    nombre: "",
+    nombre: "Álvaro Henzler",
     partido: "Partido politico cooperacion popular",
     foto: "https://ui-avatars.com/api/?name=Cooperacion+Popular&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Cooperacion+Popular&background=ffffff&color=991b1b&size=128",
@@ -761,7 +761,7 @@ export const candidatos = [
   },
   {
     id: "voces-del-pueblo",
-    nombre: "",
+    nombre: "César Combina",
     partido: "Partido politico popular voces del pueblo",
     foto: "https://ui-avatars.com/api/?name=Voces+Del+Pueblo&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Voces+Del+Pueblo&background=ffffff&color=991b1b&size=128",
@@ -785,7 +785,7 @@ export const candidatos = [
   },
   {
     id: "progresemos",
-    nombre: "",
+    nombre: "Miguel Hilario",
     partido: "Progresemos",
     foto: "https://ui-avatars.com/api/?name=Progresemos&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Progresemos&background=ffffff&color=991b1b&size=128",
@@ -810,7 +810,7 @@ export const candidatos = [
   },
   {
     id: "fuerza-moderna",
-    nombre: "",
+    nombre: "Andrés Alcántara",
     partido: "Partido politico fuerza moderna",
     foto: "https://ui-avatars.com/api/?name=Fuerza+Moderna&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Fuerza+Moderna&background=ffffff&color=991b1b&size=128",
@@ -834,7 +834,7 @@ export const candidatos = [
   },
   {
     id: "prin",
-    nombre: "",
+    nombre: "Gonzalo Alegría",
     partido: "Partido politico PRIN",
     foto: "https://ui-avatars.com/api/?name=PRIN&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=PRIN&background=ffffff&color=991b1b&size=128",
@@ -884,7 +884,7 @@ export const candidatos = [
   },
   {
     id: "integridad-democratica",
-    nombre: "",
+    nombre: "George Forsyth",
     partido: "Partido politico integridad Democratica",
     foto: "https://ui-avatars.com/api/?name=Integridad+Democratica&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Integridad+Democratica&background=ffffff&color=991b1b&size=128",
@@ -908,7 +908,7 @@ export const candidatos = [
   },
   {
     id: "partido-popular-cristiano",
-    nombre: "",
+    nombre: "Roberto Chiabra",
     partido: "Partido popular cristiano PPC",
     foto: "https://ui-avatars.com/api/?name=PPC&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=PPC&background=ffffff&color=991b1b&size=128",
@@ -933,7 +933,7 @@ export const candidatos = [
   },
   {
     id: "salvemos-al-peru",
-    nombre: "",
+    nombre: "Daniel Salaverry",
     partido: "Salvemos al Perú",
     foto: "https://ui-avatars.com/api/?name=Salvemos+Al+Peru&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Salvemos+Al+Peru&background=ffffff&color=991b1b&size=128",
@@ -957,7 +957,7 @@ export const candidatos = [
   },
   {
     id: "peru-libre",
-    nombre: "",
+    nombre: "Vladimir Cerrón",
     partido: "Partido politico nacional Perú libre",
     foto: "https://ui-avatars.com/api/?name=Peru+Libre&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Peru+Libre&background=ffffff&color=991b1b&size=128",
@@ -982,7 +982,7 @@ export const candidatos = [
   },
   {
     id: "partido-si-creo",
-    nombre: "",
+    nombre: "Alberto Fujimori",
     partido: "Partido Si creo",
     foto: "https://ui-avatars.com/api/?name=Si+Creo&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Si+Creo&background=ffffff&color=991b1b&size=128",
@@ -1006,7 +1006,7 @@ export const candidatos = [
   },
   {
     id: "un-camino-diferente",
-    nombre: "",
+    nombre: "Pedro Castillo",
     partido: "Un camino diferente",
     foto: "https://ui-avatars.com/api/?name=Un+Camino+Diferente&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Un+Camino+Diferente&background=ffffff&color=991b1b&size=128",
@@ -1030,7 +1030,7 @@ export const candidatos = [
   },
   {
     id: "unidad-y-paz",
-    nombre: "",
+    nombre: "Ántero Flores-Aráoz",
     partido: "Partido Unidad y Paz",
     foto: "https://ui-avatars.com/api/?name=Unidad+y+Paz&background=991b1b&color=fff&size=512",
     logoPartido: "https://ui-avatars.com/api/?name=Unidad+y+Paz&background=ffffff&color=991b1b&size=128",

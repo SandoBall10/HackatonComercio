@@ -1,13 +1,128 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Candidatos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { candidatos } from '../../data/candidatos';
 
-const Candidatos = ({ candidato }) => {
+const Candidatos = ({ candidato: candidatoProp }) => {
   const navigate = useNavigate();
+  const { partidoId } = useParams();
   const [activeTab, setActiveTab] = useState('hoja-vida');
   const [countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
+
+  // Mapeo de IDs de partidos a IDs de candidatos
+  const mapeoPartidos = {
+    '1': 'accion-popular',
+    'ap': 'accion-popular',
+    '2': 'fuerza-popular',
+    'fpu': 'fuerza-popular',
+    '3': 'partido-trabajadores-pte-peru',
+    'pte': 'partido-trabajadores-pte-peru',
+    '4': 'ahora-nacion',
+    'an': 'ahora-nacion',
+    '5': 'juntos-por-el-peru',
+    'jpp': 'juntos-por-el-peru',
+    '6': 'partido-del-buen-gobierno',
+    'pbg': 'partido-del-buen-gobierno',
+    '7': 'alianza-para-el-progreso',
+    'app': 'alianza-para-el-progreso',
+    '8': 'libertad-popular',
+    'lp': 'libertad-popular',
+    '9': 'partido-democrata-unido-peru',
+    'pdu': 'partido-democrata-unido-peru',
+    '10': 'avanza-pais',
+    'apis': 'avanza-pais',
+    '11': 'nuevo-peru-por-el-buen-vivir',
+    'npbv': 'nuevo-peru-por-el-buen-vivir',
+    '12': 'partido-democrata-verde',
+    'pdv': 'partido-democrata-verde',
+    '13': 'batalla-peru',
+    'bp': 'batalla-peru',
+    '14': 'partido-aprista-peruano',
+    'apra': 'partido-aprista-peruano',
+    '15': 'partido-democratico-federal',
+    'pdf': 'partido-democratico-federal',
+    '16': 'fe-en-el-peru',
+    'fep': 'fe-en-el-peru',
+    '17': 'partido-ciudadanos-por-el-peru',
+    'cpp': 'partido-ciudadanos-por-el-peru',
+    '18': 'partido-democratico-somos-peru',
+    'dsp': 'partido-democratico-somos-peru',
+    '19': 'frente-popular-agricola-fia',
+    'frepap': 'frente-popular-agricola-fia',
+    '20': 'partido-civico-obras',
+    'pco': 'partido-civico-obras',
+    '21': 'frente-de-la-esperanza-2021',
+    'f21': 'frente-de-la-esperanza-2021',
+    '22': 'partido-morado',
+    'pm': 'partido-morado',
+    '23': 'partido-politico-peru-accion',
+    'pa': 'partido-politico-peru-accion',
+    '24': 'peru-moderno',
+    'pmo': 'peru-moderno',
+    '25': 'partido-pais-para-todos',
+    'ppt': 'partido-pais-para-todos',
+    '26': 'partido-peru-primero',
+    'pp1': 'partido-peru-primero',
+    '27': 'podemos-peru',
+    'pp': 'podemos-peru',
+    '28': 'partido-patriotico-del-peru',
+    'ppp': 'partido-patriotico-del-peru',
+    '29': 'peruanos-unidos-somos-libres',
+    'pusl': 'peruanos-unidos-somos-libres',
+    '30': 'primero-la-gente',
+    'plc': 'primero-la-gente',
+    '31': 'cooperacion-popular',
+    'cp': 'cooperacion-popular',
+    '32': 'voces-del-pueblo',
+    'vp': 'voces-del-pueblo',
+    '33': 'progresemos',
+    'prg': 'progresemos',
+    '34': 'fuerza-moderna',
+    'fm': 'fuerza-moderna',
+    '35': 'prin',
+    'prin': 'prin',
+    '36': 'renovacion-popular',
+    'rp': 'renovacion-popular',
+    '37': 'integridad-democratica',
+    'id': 'integridad-democratica',
+    '38': 'partido-popular-cristiano',
+    'ppc': 'partido-popular-cristiano',
+    '39': 'salvemos-al-peru',
+    'sp': 'salvemos-al-peru',
+    '40': 'peru-libre',
+    'pl': 'peru-libre',
+    '41': 'partido-si-creo',
+    'sc': 'partido-si-creo',
+    '42': 'un-camino-diferente',
+    'ucd': 'un-camino-diferente',
+    '43': 'unidad-y-paz',
+    'uyp': 'unidad-y-paz',
+    '44': 'peru-libre',
+    'pnpl': 'peru-libre'
+  };
+
+  // Buscar candidato por partido si viene el parámetro
+  const candidato = partidoId 
+    ? candidatos.find(c => {
+        const partidoIdLower = partidoId.toLowerCase();
+        
+        // Primero buscar en el mapeo
+        const idMapeado = mapeoPartidos[partidoIdLower];
+        if (idMapeado && c.id === idMapeado) {
+          return true;
+        }
+        
+        // Si no está en el mapeo, buscar por coincidencias
+        const partidoNormalizado = c.partido.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        const idNormalizado = c.id.toLowerCase();
+        
+        return idNormalizado === partidoIdLower || 
+               partidoNormalizado.includes(partidoIdLower) ||
+               c.partido.toLowerCase().includes(partidoIdLower);
+      }) || candidatoProp
+    : candidatoProp;
 
   // Calcular countdown
   useEffect(() => {
@@ -133,7 +248,9 @@ const Candidatos = ({ candidato }) => {
 
                       {/* Profile Info */}
                       <div className="profile-details flex-grow-1 animate-slide-right">
-                        <h1 className="profile-name-advanced mb-3">{candidato.nombre}</h1>
+                        <h1 className="profile-name-advanced mb-3">
+                          {candidato.nombre || candidato.partido || 'Candidato Sin Nombre'}
+                        </h1>
                         
                         <div className="profile-meta mb-3">
                           <div className="d-flex align-items-center gap-2 mb-2">
