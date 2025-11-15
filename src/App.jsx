@@ -99,6 +99,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/candidatos" element={<Candidatos candidato={candidatoEjemplo} />} />
+        <Route path="/candidatos/:partidoId" element={<Candidatos candidato={candidatoEjemplo} />} />
         <Route path="/partidos" element={<PartidosPoliticos />} />
         <Route path="/partido/:id" element={<PartidoDetalle />} />
         <Route path="/reniec" element={<ReniecConsultas />} />

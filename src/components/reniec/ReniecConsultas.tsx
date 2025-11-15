@@ -17,18 +17,22 @@ const ReniecConsultas: React.FC = () => {
 
     setLoading(true);
     setError('');
-    
-    // Simulación de consulta - Aquí irá la integración real con RENIEC
-    setTimeout(() => {
+    setResultado(null);
+
+    try {
+      const data = await getDniData(dni);
       setResultado({
-        dni: dni,
-        nombres: 'Ejemplo de Consulta',
-        apellidoPaterno: 'Pendiente',
-        apellidoMaterno: 'Integración',
-        fechaNacimiento: '01/01/1990'
+        dni: data.document_number,
+        nombres: data.first_name,
+        apellidoPaterno: data.first_last_name,
+        apellidoMaterno: data.second_last_name,
+        //fechaNacimiento: '-',
       });
+    } catch (err: any) {
+      setError('No se pudo obtener la información. Verifica el DNI o intenta más tarde.');
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
 
   return (
