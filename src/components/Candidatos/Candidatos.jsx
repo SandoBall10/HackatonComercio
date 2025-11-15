@@ -224,16 +224,73 @@ const Candidatos = ({ candidato: candidatoProp }) => {
   console.log('Foto URL:', candidato.foto);
   console.log('Logo URL:', candidato.logoPartido);
   
-  // Detectar si es Renovación Popular
+  // Detectar partido
   const esRenovacionPopular = candidato.partido?.toLowerCase().includes('renovacion popular') || 
                                candidato.partido?.toLowerCase().includes('renovación popular') ||
                                candidato.id === 'renovacion-popular';
   
-  // Colores dinámicos según el partido
-  const colorPrimario = esRenovacionPopular ? '#1e5ba8' : '#dc3545';
-  const colorSecundario = esRenovacionPopular ? '#2874c7' : '#c82333';
-  const colorTerciario = esRenovacionPopular ? '#1448731' : '#8b2131';
-  const colorPrimarioRgb = esRenovacionPopular ? '30, 91, 168' : '220, 53, 69';
+  const esFuerzaPopular = candidato.partido?.toLowerCase().includes('fuerza popular') ||
+                          candidato.id === 'fuerza-popular';
+  
+  // Mapeo de colores por partido basado en sus logos reales
+  const coloresPorPartido = {
+    'accion-popular': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Rojo
+    'fuerza-popular': { primario: '#FF6B00', secundario: '#FF8C00', terciario: '#CC5500', rgb: '255, 107, 0' }, // Naranja
+    'partido-trabajadores-pte-peru': { primario: '#DC143C', secundario: '#B21131', terciario: '#8B0E27', rgb: '220, 20, 60' }, // Rojo
+    'ahora-nacion': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'juntos-por-el-peru': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Rojo
+    'partido-del-buen-gobierno': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'alianza-para-el-progreso': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul y Rojo (azul, blanco, rojo)
+    'libertad-popular': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'partido-democrata-unido-peru': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'avanza-pais': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'nuevo-peru-por-el-buen-vivir': { primario: '#FF6B00', secundario: '#FF8C00', terciario: '#CC5500', rgb: '255, 107, 0' }, // Naranja
+    'partido-democrata-verde': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'batalla-peru': { primario: '#FF6B00', secundario: '#FF8C00', terciario: '#CC5500', rgb: '255, 107, 0' }, // Naranja
+    'partido-aprista-peruano': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Rojo APRA
+    'partido-democratico-federal': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Rojo
+    'fe-en-el-peru': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'partido-ciudadanos-por-el-peru': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'partido-democratico-somos-peru': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul y Rojo
+    'frente-popular-agricola-fia': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde FREPAP
+    'partido-civico-obras': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'frente-de-la-esperanza-2021': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'partido-morado': { primario: '#7B1FA2', secundario: '#6A1B9A', terciario: '#4A148C', rgb: '123, 31, 162' }, // Morado
+    'partido-politico-peru-accion': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Rojo
+    'peru-moderno': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'partido-pais-para-todos': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'partido-peru-primero': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'podemos-peru': { primario: '#1E40AF', secundario: '#FF6B00', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul y Anaranjado
+    'partido-patriotico-del-peru': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Rojo
+    'peruanos-unidos-somos-libres': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'primero-la-gente': { primario: '#7B1FA2', secundario: '#6A1B9A', terciario: '#4A148C', rgb: '123, 31, 162' }, // Morado
+    'cooperacion-popular': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Rojo
+    'voces-del-pueblo': { primario: '#DC143C', secundario: '#B21131', terciario: '#8B0E27', rgb: '220, 20, 60' }, // Rojo intenso
+    'progresemos': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'fuerza-moderna': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'prin': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'renovacion-popular': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'integridad-democratica': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'partido-popular-cristiano': { primario: '#FF6B00', secundario: '#FF8C00', terciario: '#CC5500', rgb: '255, 107, 0' }, // Naranja PPC
+    'salvemos-al-peru': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'peru-libre': { primario: '#DC143C', secundario: '#B21131', terciario: '#8B0E27', rgb: '220, 20, 60' }, // Rojo
+    'partido-si-creo': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul
+    'un-camino-diferente': { primario: '#7B1FA2', secundario: '#6A1B9A', terciario: '#4A148C', rgb: '123, 31, 162' }, // Morado
+    'unidad-y-paz': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' } // Azul
+  };
+
+  // Obtener colores del partido o usar colores por defecto
+  const coloresPartido = coloresPorPartido[candidato.id] || {
+    primario: '#dc3545',
+    secundario: '#c82333',
+    terciario: '#8b2131',
+    rgb: '220, 53, 69'
+  };
+  
+  const colorPrimario = coloresPartido.primario;
+  const colorSecundario = coloresPartido.secundario;
+  const colorTerciario = coloresPartido.terciario;
+  const colorPrimarioRgb = coloresPartido.rgb;
   
   return (
     <div className="candidatos-container animate-fade-in" style={{
@@ -285,14 +342,17 @@ const Candidatos = ({ candidato: candidatoProp }) => {
 
                       {/* Profile Info */}
                       <div className="profile-details flex-grow-1 animate-slide-right">
-                        <h1 className="profile-name-advanced mb-3" style={{ color: esRenovacionPopular ? '#1e5ba8' : undefined }}>
+                        <h1 className="profile-name-advanced mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : undefined }}>
                           {candidato.nombre || candidato.partido || 'Candidato Sin Nombre'}
                         </h1>
                         
                         <div className="profile-meta mb-3">
                           <div className="d-flex align-items-center gap-2 mb-2">
-                            <div className="meta-icon" style={{ color: esRenovacionPopular ? '#1e5ba8' : undefined }}>
-                              <i className="bi bi-briefcase-fill"></i>
+                            <div className="meta-icon" style={{ 
+                              background: colorPrimario,
+                              boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.25)`
+                            }}>
+                              <i className="bi bi-briefcase-fill" style={{ color: 'white' }}></i>
                             </div>
                             <span className="meta-text">{t('candidatos.cargo')} {candidato.partido}</span>
                           </div>
@@ -315,7 +375,8 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                             </div>
                           )}
                           <div className="party-badge-advanced" style={{ 
-                            background: esRenovacionPopular ? 'linear-gradient(135deg, #1e5ba8 0%, #2874c7 100%)' : undefined 
+                            background: colorPrimario,
+                            boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`
                           }}>
                             <i className="bi bi-flag-fill me-2"></i>
                             {candidato.partido}
@@ -386,10 +447,10 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   <div className="cta-section h-100 d-flex flex-column justify-content-center align-items-center p-5 p-lg-5">
                     <div className="cta-content text-center">
                       <div className="cta-icon mb-4" style={{
-                        background: esRenovacionPopular ? 'white' : 'rgba(255, 255, 255, 0.2)'
+                        background: (esRenovacionPopular || esFuerzaPopular) ? 'white' : 'rgba(255, 255, 255, 0.2)'
                       }}>
                         <i className="bi bi-file-earmark-text" style={{
-                          color: esRenovacionPopular ? '#1e5ba8' : 'white'
+                          color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : 'white'
                         }}></i>
                       </div>
                       <h5 className="cta-title mb-3">Plan de Gobierno</h5>
@@ -404,11 +465,11 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                           opacity: pdfPath ? 1 : 0.6,
                           cursor: pdfPath ? 'pointer' : 'not-allowed',
                           background: !pdfPath 
-                            ? (esRenovacionPopular ? 'linear-gradient(135deg, #1e5ba8 0%, #2874c7 100%)' : undefined)
-                            : (esRenovacionPopular ? 'white' : 'white'),
+                            ? colorPrimario
+                            : 'white',
                           color: !pdfPath
                             ? 'white'
-                            : (esRenovacionPopular ? '#1e5ba8' : '#dc3545')
+                            : colorPrimario
                         }}
                       >
                         <span className="btn-icon">
@@ -473,7 +534,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     <div className="col-md-6">
                       <div className="card h-100 border-0 shadow-sm animate-slide-up">
                         <div className="card-body">
-                          <h5 className="card-title mb-3" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
+                          <h5 className="card-title mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                             <i className="bi bi-mortarboard-fill me-2"></i>
                             {t('candidatos.hojaVida.formacionAcademica')}
                           </h5>
@@ -495,7 +556,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     <div className="col-md-6">
                       <div className="card h-100 border-0 shadow-sm animate-slide-up" style={{animationDelay: '0.1s'}}>
                         <div className="card-body">
-                          <h5 className="card-title mb-3" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
+                          <h5 className="card-title mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                             <i className="bi bi-briefcase-fill me-2"></i>
                             {t('candidatos.hojaVida.experienciaLaboral')}
                           </h5>
@@ -543,7 +604,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   {/* Timeline */}
                   <div className="card border-0 shadow-sm animate-slide-up" style={{animationDelay: '0.4s'}}>
                     <div className="card-body p-4">
-                      <h4 className="mb-4" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
+                      <h4 className="mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                         <i className="bi bi-clock-history me-2"></i>
                         {t('candidatos.trayectoria.titulo')}
                       </h4>
@@ -552,7 +613,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                           candidato.trayectoria.map((item, index) => (
                             <div className="timeline-item-bootstrap mb-4" key={index}>
                               <div className="timeline-marker" style={{ 
-                                backgroundColor: esRenovacionPopular ? '#1e5ba8' : '#dc3545' 
+                                backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' 
                               }}></div>
                               <div className="timeline-content">
                                 <h6 className="fw-bold text-dark">{item.fecha}</h6>
@@ -575,7 +636,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
               {/* News Section */}
               <div className="card border-0 shadow-sm mb-4 animate-slide-right">
                 <div className="card-body">
-                  <h5 className="card-title mb-4" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
+                  <h5 className="card-title mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                     <i className="bi bi-newspaper me-2"></i>
                     Últimas Noticias
                   </h5>
@@ -612,7 +673,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
               {/* Activities Section */}
               <div className="card border-0 shadow-sm animate-slide-right" style={{animationDelay: '0.2s'}}>
                 <div className="card-body">
-                  <h5 className="card-title mb-4" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
+                  <h5 className="card-title mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                     <i className="bi bi-calendar-event me-2"></i>
                     Actividades Públicas
                   </h5>
@@ -622,7 +683,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="activity-card-bootstrap p-3 border rounded animate-hover-lift" key={index}>
                           <div className="d-flex gap-3 align-items-start">
                             <div className="activity-date-badge bg-gradient text-white text-center rounded p-2" style={{ 
-                              backgroundColor: esRenovacionPopular ? '#1e5ba8' : '#dc3545' 
+                              backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' 
                             }}>
                               <div className="fw-bold fs-4">{actividad.dia}</div>
                               <div className="small text-uppercase">{actividad.mes}</div>
@@ -668,7 +729,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     <path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fillRule="evenodd"></path>
                   </svg>
                 </div>
-                <span className="fw-bold" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>Elecciones Perú 2026</span>
+                <span className="fw-bold" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>Elecciones Perú 2026</span>
               </div>
               <p className="text-muted small">
                 Portal de información electoral oficial. Conoce a los candidatos y haz tu voto informado.
@@ -715,7 +776,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
           <div className="text-center text-muted small">
             <p className="mb-0">
               © 2025 Portal Electoral. Todos los derechos reservados. | 
-              <span className="ms-2" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
+              <span className="ms-2" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                 <i className="bi bi-heart-fill"></i> Hecho en Perú
               </span>
             </p>
