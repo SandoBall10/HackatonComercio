@@ -147,6 +147,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político histórico del Perú, socialdemócrata.",
     candidatos: []
   },
+  {    id: 15,
+    nombre: "Partido Democrático Federal",
+    siglas: "PDF",
+    logo: "/logos/partido-democratico-federal.png",
+    descripcion: "Partido político federalista.",
+    candidatos: []
+  },
   {
     id: 16,
     nombre: "Fe en el Perú",
