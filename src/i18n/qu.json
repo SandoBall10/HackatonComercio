@@ -1,0 +1,81 @@
+{
+  "translation": {
+    "nav": {
+      "inicio": "Qallariy",
+      "candidatos": "Akllasqakuna",
+      "partidos": "Partidu Pulitikukuna",
+      "reniec": "RENIEC Tapukuy"
+    },
+    "inicio": {
+      "titulo": "Sapan Akllana",
+      "fecha": "12 abril 2026",
+      "faltan": "Qhiparan:",
+      "meses": "Killakuna",
+      "dias": "P'unchawkuna",
+      "horas": "Horakuna",
+      "minutos": "Minutukuna",
+      "partidosPoliticos": "Partidu Pulitikukuna",
+      "laOrganizacion": "Kamachiy",
+      "acercaProceso": "Ruway mana",
+      "loNuevo": "Musuq",
+      "votoDigital": "Digital Akllana",
+      "verificaMiembro": "Qhaway mesa miembruchu kanki",
+      "infoGeneral": "Sapan willakuy",
+      "enlacesRelacionados": "T'inkikuna",
+      "timelineTitle": "Kay akllana ruwaypa tiemponwan qatiy:"
+    },
+    "chatbot": {
+      "titulo": "Virtual Yanapaq",
+      "subtitulo": "Sapa kuti yanapanaykipaq kani",
+      "mensajeBienvenida": "¡Napaykullayki! Ñuqaqa kani virtual yanapaq Perú 2026 akllanapaq. ¿Imaynataq yanapasqayki?",
+      "placeholder": "Qillqay willakuyniykita...",
+      "verCandidatos": "Akllasqakunata qhaway",
+      "verPartidos": "Partidu pulitikukunata qhaway",
+      "consultarReniec": "RENIEC tapukuy",
+      "cronograma": "Akllana pachakamaypi",
+      "notificaciones": {
+        "ayuda": "¿Yanapakuyta munankichu?",
+        "disponible": "Kaypi kani yanapanaykipaq 😊",
+        "pregunta": "¿Akllanakunamanta tapukuyniykichu kan?",
+        "guiar": "Pusasqayki plataformapi",
+        "candidatos": "¿Akllasqakunamanta willakuyta maskhanki?",
+        "cronograma": "Ñuqawan akllana pachakamaypi qhaway"
+      },
+      "respuestas": {
+        "candidatos": "¡Allinmi! Pusasqayki akllasqakuna sekciónman maypichus tukuy willakuyta qhawayta atinki.",
+        "partidos": "Rikuchisqayki partidu pulitikukuna listanta Akllana 2026paq qillqasqakunata.",
+        "reniec": "Pusasqayki RENIEC tapukuy moduloman maypichus runakunapa willakuyninta qhawayta atinki.",
+        "cronogramaRespuesta": "Tukuy akllana pachakamayqa qallariy p'anqapi kachkan. Akllanakuna kanqa 12 abril 2026pi.",
+        "inicio": "Pusasqayki qallariy p'anqaman.",
+        "ayuda": "Kaykunapi yanapasqayki:",
+        "saludo": "¡Napaykullayki! ¿Imaynataq yanapasqayki?",
+        "gracias": "¡Manam imachu! ¿Wak imapipas yanapasqayki?",
+        "default": "Yanapasqayki plataformapi puriyta. ¿Imataq rurayta munankichu?",
+        "noGracias": "Mana, sulpayki",
+        "verCronograma": "Pachakamaypi qhaway"
+      }
+    },
+    "reniec": {
+      "titulo": "RENIEC Tapukuy",
+      "descripcion": "Qhaway runakunapa willakuyninta RENIEC qillqasqapi",
+      "placeholderDni": "Qillqay DNI (8 yupaykuna)",
+      "btnConsultar": "Tapukuy",
+      "consultando": "Tapukuspa...",
+      "errorDni": "DNIqa 8 yupaykunayuq kanan tiyan",
+      "resultadoTitulo": "Tapukuypa Kutichinpa",
+      "dni": "DNI",
+      "nombres": "Sutikuna",
+      "apellidoPaterno": "Yaya Sutin",
+      "apellidoMaterno": "Mama Sutin",
+      "fechaNacimiento": "Yurisqa P'unchaw"
+    },
+    "partidos": {
+      "titulo": "Partidu Pulitikukuna",
+      "descripcion": "Sapan Akllana 2026",
+      "volver": "← Kutiy listaman",
+      "informacion": "Partidupa Willakuynin",
+      "nombreCompleto": "Hunt'asqa Sutin",
+      "siglas": "Pisi Sutin"
+    }
+  }
+}

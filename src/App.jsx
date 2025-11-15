@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { Inicio } from './components/Inicio/Inicio';
 import Candidatos from './components/Candidatos/Candidatos';
@@ -8,9 +9,11 @@ import PartidosPoliticos from './components/PartidosPoliticos/PartidosPoliticos'
 import PartidoDetalle from './components/Candidatos/PartidoDetalle';
 import ReniecConsultas from './components/reniec/ReniecConsultas';
 import Chatbot from './components/Chatbot/Chatbot';
+import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 import { getCandidatoById } from './data/candidatos.js';
 
 const App = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const candidatoEjemplo = getCandidatoById('fuerza-popular');
 
@@ -39,7 +42,8 @@ const App = () => {
           }}>
             Elecciones Perú 2026
           </h1>
-          <div style={{ display: 'flex', gap: '1rem', marginLeft: 'auto' }}>
+          <div style={{ display: 'flex', gap: '1rem', marginLeft: 'auto', alignItems: 'center' }}>
+            <LanguageSelector />
             <Link to="/" style={{
               padding: '0.5rem 1.5rem',
               backgroundColor: location.pathname === '/' ? '#0066cc' : 'transparent',
@@ -50,7 +54,7 @@ const App = () => {
               fontSize: '1rem',
               transition: 'all 0.3s'
             }}>
-              Inicio
+              {t('nav.inicio')}
             </Link>
             <Link to="/candidatos" style={{
               padding: '0.5rem 1.5rem',
@@ -62,7 +66,7 @@ const App = () => {
             fontSize: '1rem',
             transition: 'all 0.3s'
           }}>
-            Candidatos
+            {t('nav.candidatos')}
           </Link>
           <Link to="/partidos" style={{
             padding: '0.5rem 1.5rem',
@@ -74,7 +78,7 @@ const App = () => {
             fontSize: '1rem',
             transition: 'all 0.3s'
           }}>
-            Partidos Políticos
+            {t('nav.partidos')}
           </Link>
           <Link to="/reniec" style={{
             padding: '0.5rem 1.5rem',
@@ -86,7 +90,7 @@ const App = () => {
             fontSize: '1rem',
             transition: 'all 0.3s'
           }}>
-            Consulta RENIEC
+            {t('nav.reniec')}
           </Link>
         </div>
         </nav>

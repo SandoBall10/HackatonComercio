@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Chatbot.css';
 
 interface Message {
@@ -10,36 +11,40 @@ interface Message {
 }
 
 const Chatbot: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: 1,
-      text: '¡Hola! Soy tu asistente virtual para las Elecciones Perú 2026. ¿En qué puedo ayudarte hoy?',
-      isUser: false,
-      options: [
-        'Ver candidatos',
-        'Ver partidos políticos',
-        'Consultar RENIEC',
-        'Cronograma electoral'
-      ]
-    }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  const avatarUrl = '/avatar/avatar-chatbot.png'; // Asegúrate de guardar la imagen en public/
+  const avatarUrl = '/avatar/avatar-chatbot.png';
+
+  // Inicializar mensaje de bienvenida con traducción
+  useEffect(() => {
+    setMessages([{
+      id: 1,
+      text: t('chatbot.mensajeBienvenida'),
+      isUser: false,
+      options: [
+        t('chatbot.verCandidatos'),
+        t('chatbot.verPartidos'),
+        t('chatbot.consultarReniec'),
+        t('chatbot.cronograma')
+      ]
+    }]);
+  }, [t]);
 
   const notificationMessages = [
-    '¿Necesitas ayuda para encontrar algo?',
-    'Estoy aquí para ayudarte 😊',
-    '¿Tienes alguna pregunta sobre las elecciones?',
-    'Puedo guiarte por la plataforma',
-    '¿Buscas información de candidatos?',
-    'Consulta el cronograma electoral conmigo'
+    t('chatbot.notificaciones.ayuda'),
+    t('chatbot.notificaciones.disponible'),
+    t('chatbot.notificaciones.pregunta'),
+    t('chatbot.notificaciones.guiar'),
+    t('chatbot.notificaciones.candidatos'),
+    t('chatbot.notificaciones.cronograma')
   ];
 
   const scrollToBottom = () => {
@@ -90,85 +95,134 @@ const Chatbot: React.FC = () => {
   const getBotResponse = (userMessage: string): { text: string; options?: string[]; action?: () => void } => {
     const msg = userMessage.toLowerCase();
 
-    if (msg.includes('candidato') || msg.includes('ver candidatos')) {
+    // Cambio de idioma
+    if (msg.includes('español') || msg.includes('castellano') || msg === 'es') {
       return {
-        text: '¡Perfecto! Te llevaré a la sección de candidatos donde podrás ver información detallada de cada uno.',
+        text: '¡Perfecto! He cambiado el idioma a Español 🇵🇪',
+        action: () => {
+          i18n.changeLanguage('es');
+        }
+      };
+    }
+
+    if (msg.includes('quechua') || msg.includes('runasimi') || msg === 'qu') {
+      return {
+        text: '¡Allinmi! Simita Quechuaman t\'ikrarqani 🏔️',
+        action: () => {
+          i18n.changeLanguage('qu');
+        }
+      };
+    }
+
+    if (msg.includes('idioma') || msg.includes('lengua') || msg.includes('cambiar') || msg.includes('simi') || msg.includes('t\'ikray')) {
+      return {
+        text: i18n.language === 'es' 
+          ? '¿A qué idioma deseas cambiar?' 
+          : '¿Mayqin simiman t\'ikrayta munankichu?',
+        options: ['Español 🇵🇪', 'Quechua 🏔️']
+      };
+    }
+
+    if (msg === 'español 🇵🇪') {
+      return {
+        text: '¡Perfecto! He cambiado el idioma a Español 🇵🇪',
+        action: () => {
+          i18n.changeLanguage('es');
+        }
+      };
+    }
+
+    if (msg === 'quechua 🏔️') {
+      return {
+        text: '¡Allinmi! Simita Quechuaman t\'ikrarqani 🏔️',
+        action: () => {
+          i18n.changeLanguage('qu');
+        }
+      };
+    }
+
+    if (msg.includes('candidato') || msg.includes('ver candidatos') || msg.includes('akllasqa')) {
+      return {
+        text: t('chatbot.respuestas.candidatos'),
         action: () => setTimeout(() => navigate('/candidatos'), 1000)
       };
     }
 
-    if (msg.includes('partido') || msg.includes('partidos políticos')) {
+    if (msg.includes('partido') || msg.includes('partidos políticos') || msg.includes('partidu') || msg.includes('pulitiku')) {
       return {
-        text: 'Te mostraré la lista de partidos políticos inscritos para las Elecciones 2026.',
+        text: t('chatbot.respuestas.partidos'),
         action: () => setTimeout(() => navigate('/partidos'), 1000)
       };
     }
 
-    if (msg.includes('reniec') || msg.includes('consultar') || msg.includes('dni')) {
+    if (msg.includes('reniec') || msg.includes('consultar') || msg.includes('dni') || msg.includes('tapukuy')) {
       return {
-        text: 'Te llevaré al módulo de consulta RENIEC donde podrás verificar información de ciudadanos.',
+        text: t('chatbot.respuestas.reniec'),
         action: () => setTimeout(() => navigate('/reniec'), 1000)
       };
     }
 
-    if (msg.includes('cronograma') || msg.includes('fecha') || msg.includes('calendario') || msg.includes('cuando')) {
+    if (msg.includes('cronograma') || msg.includes('fecha') || msg.includes('calendario') || msg.includes('cuando') || msg.includes('pachakamay')) {
       return {
-        text: 'El cronograma electoral completo está en la página de inicio. Las elecciones serán el 12 de abril de 2026.',
+        text: t('chatbot.respuestas.cronogramaRespuesta'),
         action: () => setTimeout(() => navigate('/'), 1000)
       };
     }
 
-    if (msg.includes('inicio') || msg.includes('home') || msg.includes('principal')) {
+    if (msg.includes('inicio') || msg.includes('home') || msg.includes('principal') || msg.includes('qallariy')) {
       return {
-        text: 'Te llevaré a la página de inicio.',
+        text: t('chatbot.respuestas.inicio'),
         action: () => setTimeout(() => navigate('/'), 1000)
       };
     }
 
-    if (msg.includes('ayuda') || msg.includes('help')) {
+    if (msg.includes('ayuda') || msg.includes('help') || msg.includes('yanapay')) {
       return {
-        text: 'Puedo ayudarte con lo siguiente:',
+        text: t('chatbot.respuestas.ayuda'),
         options: [
-          'Ver candidatos',
-          'Ver partidos políticos',
-          'Consultar RENIEC',
-          'Cronograma electoral'
+          t('chatbot.verCandidatos'),
+          t('chatbot.verPartidos'),
+          t('chatbot.consultarReniec'),
+          t('chatbot.cronograma'),
+          i18n.language === 'es' ? '🌐 Cambiar idioma' : '🌐 Simi t\'ikray'
         ]
       };
     }
 
-    if (msg.includes('hola') || msg.includes('buenos días') || msg.includes('buenas tardes')) {
+    if (msg.includes('hola') || msg.includes('buenos días') || msg.includes('buenas tardes') || msg.includes('napay')) {
       return {
-        text: '¡Hola! ¿En qué puedo ayudarte hoy?',
+        text: t('chatbot.respuestas.saludo'),
         options: [
-          'Ver candidatos',
-          'Ver partidos políticos',
-          'Consultar RENIEC',
-          'Cronograma electoral'
+          t('chatbot.verCandidatos'),
+          t('chatbot.verPartidos'),
+          t('chatbot.consultarReniec'),
+          t('chatbot.cronograma'),
+          i18n.language === 'es' ? '🌐 Cambiar idioma' : '🌐 Simi t\'ikray'
         ]
       };
     }
 
-    if (msg.includes('gracias')) {
+    if (msg.includes('gracias') || msg.includes('sulpayki')) {
       return {
-        text: '¡De nada! ¿Hay algo más en lo que pueda ayudarte?',
+        text: t('chatbot.respuestas.gracias'),
         options: [
-          'Ver candidatos',
-          'Ver partidos políticos',
-          'Consultar RENIEC',
-          'No, gracias'
+          t('chatbot.verCandidatos'),
+          t('chatbot.verPartidos'),
+          t('chatbot.consultarReniec'),
+          t('chatbot.respuestas.noGracias')
         ]
       };
     }
 
     // Respuesta por defecto
     return {
-      text: 'Puedo ayudarte a navegar por la plataforma. ¿Qué te gustaría hacer?',
+      text: t('chatbot.respuestas.default'),
       options: [
-        'Ver candidatos',
-        'Ver partidos políticos',
-        'Consultar RENIEC',
-        'Ver cronograma'
+        t('chatbot.verCandidatos'),
+        t('chatbot.verPartidos'),
+        t('chatbot.consultarReniec'),
+        t('chatbot.respuestas.verCronograma'),
+        i18n.language === 'es' ? '🌐 Cambiar idioma' : '🌐 Simi t\'ikray'
       ]
     };
   };
@@ -226,7 +280,7 @@ const Chatbot: React.FC = () => {
             <img src={avatarUrl} alt="Avatar" />
           </div>
           <div className="chatbot-notification-content">
-            <p className="chatbot-notification-title">Asistente Virtual</p>
+            <p className="chatbot-notification-title">{t('chatbot.titulo')}</p>
             <p className="chatbot-notification-message">{notificationMessage}</p>
           </div>
           <button
@@ -260,8 +314,8 @@ const Chatbot: React.FC = () => {
               <img src={avatarUrl} alt="Avatar" />
             </div>
             <div className="chatbot-header-info">
-              <h3>Asistente Virtual</h3>
-              <p>Siempre disponible para ayudarte</p>
+              <h3>{t('chatbot.titulo')}</h3>
+              <p>{t('chatbot.subtitulo')}</p>
             </div>
             <button 
               className="chatbot-close"
@@ -327,7 +381,7 @@ const Chatbot: React.FC = () => {
             <input
               type="text"
               className="chatbot-input"
-              placeholder="Escribe tu mensaje..."
+              placeholder={t('chatbot.placeholder')}
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
