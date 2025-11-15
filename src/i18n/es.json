@@ -285,6 +285,52 @@
         "descripcion": "Consulta tu designación y el local donde debes presentarte",
         "boton": "Consultar mi Mesa Electoral"
       }
+    },
+    "tutorial": {
+      "titulo": "Tutorial: Cómo Usar la Plataforma",
+      "descripcion": "Aprende a navegar y usar todas las funciones de nuestra plataforma electoral de forma fácil y rápida",
+      "tituloVideo": "Guía Completa: Elecciones Perú 2026",
+      "descripcionVideo": "Video tutorial paso a paso para usar la plataforma y conocer todo sobre el proceso electoral",
+      "errorVideo": "Video no disponible. Por favor, verifica tu conexión.",
+      "seccion1": {
+        "titulo": "Navegación Principal",
+        "descripcion": "Conoce todas las secciones de la plataforma",
+        "paso1": "Explora el menú superior para acceder a cada sección",
+        "paso2": "Usa el buscador de partidos para encontrar rápidamente",
+        "paso3": "Cambia el idioma entre Español y Quechua cuando lo necesites"
+      },
+      "seccion2": {
+        "titulo": "Consultar Candidatos",
+        "descripcion": "Investiga sobre los candidatos y partidos",
+        "paso1": "Ve a la sección de Partidos Políticos",
+        "paso2": "Haz clic en cualquier partido para ver detalles",
+        "paso3": "Revisa sus planes de gobierno y propuestas"
+      },
+      "seccion3": {
+        "titulo": "Miembros de Mesa",
+        "descripcion": "Si fuiste designado, aquí está tu información",
+        "paso1": "Consulta el cronograma de actividades del día",
+        "paso2": "Lee las instrucciones paso a paso",
+        "paso3": "Descarga el manual y recursos de capacitación"
+      },
+      "seccion4": {
+        "titulo": "Consultas RENIEC",
+        "descripcion": "Verifica tu información electoral",
+        "paso1": "Ingresa tu número de DNI (8 dígitos)",
+        "paso2": "Consulta tu local y mesa de votación",
+        "paso3": "Verifica tus datos están correctos"
+      },
+      "faq": {
+        "titulo": "Preguntas Frecuentes",
+        "pregunta1": "¿Cómo busco un partido específico?",
+        "respuesta1": "Usa el buscador en la sección de Partidos Políticos. Puedes buscar por nombre completo o siglas del partido.",
+        "pregunta2": "¿Puedo cambiar el idioma?",
+        "respuesta2": "Sí, usa el selector de idioma en la parte superior para cambiar entre Español y Quechua.",
+        "pregunta3": "¿Qué hago si fui designado miembro de mesa?",
+        "respuesta3": "Ve a la sección 'Miembros de Mesa' donde encontrarás toda la información, cronograma, y recursos necesarios.",
+        "pregunta4": "¿Cómo consulto mi local de votación?",
+        "respuesta4": "En la sección 'Consulta RENIEC' ingresa tu DNI para ver tu local y mesa asignada."
+      }
     }
   }
 }

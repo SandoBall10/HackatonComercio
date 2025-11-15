@@ -288,6 +288,52 @@
         "descripcion": "Qhaway churasqaykita local akllana maypichus rinaykin",
         "boton": "Qhaway Mesa Electoralniy"
       }
+    },
+    "tutorial": {
+      "titulo": "Yachachiy: Imayna Plataformata Llamk'achinapaq",
+      "descripcion": "Yachay puriyta tukuy ruwanakunata electoral plataformaykipi mana sasa hinaspa usqhay",
+      "tituloVideo": "Hunt'a Yachachiy: Akllana Perú 2026",
+      "descripcionVideo": "Video yachachiy sapa llamk'ay plataformata llamk'achinapaq hinaspa tukuy yachanapaq proceso electoralmanta",
+      "errorVideo": "Video mana kachkanchu. Ama hina kaspa, qhaway tinkiykita.",
+      "seccion1": {
+        "titulo": "Hatun Puriy",
+        "descripcion": "Yachay tukuy secciones plataformamanta",
+        "paso1": "Mask'ay menu patapi sapa secciónman chayanaykipaq",
+        "paso2": "Llamk'achiy maskaq partidukunamanta usqhay tarinapaq",
+        "paso3": "T'ikray simita Español Quechua imayna munasqaykiman hina"
+      },
+      "seccion2": {
+        "titulo": "Tapukuy Akllasqakuna",
+        "descripcion": "Mask'ay akllasqakunamanta partidukunamantapas",
+        "paso1": "Riy Partidu Pulitikukuna secciónman",
+        "paso2": "Ñit'iy ima partidupipas detalles qhawanaykipaq",
+        "paso3": "Qhaway kamachiy yuyayninkunata hinaspa yuyaykunata"
+      },
+      "seccion3": {
+        "titulo": "Mesa Miembrukuna",
+        "descripcion": "Sichus churasqachu karqanki, kaypi kachkan willakuyniyki",
+        "paso1": "Qhaway pachakamay ruwanakunamanta p'unchawpi",
+        "paso2": "Ñawiriy yachachiy sapa llamk'ay",
+        "paso3": "Uraykachay manualta hinaspa yachachikuy yanapakuykunata"
+      },
+      "seccion4": {
+        "titulo": "Tapukuykuna RENIEC",
+        "descripcion": "Qhaway willakuyniyki electoral",
+        "paso1": "Yaykuchiy yupaykita DNI nisqamanta (8 yupay)",
+        "paso2": "Qhaway local mesaykitapas akllanaykimanta",
+        "paso3": "Qhaway datuykikuna allin kasqankuta"
+      },
+      "faq": {
+        "titulo": "Tapukuykuna Sapa Kuti",
+        "pregunta1": "¿Imayna mask'ani huk partiduta específicota?",
+        "respuesta1": "Llamk'achiy maskaq Partidu Pulitikukuna secciónpi. Maskawaq hunt'a sutimpi utaq siglaswan partidumanta.",
+        "pregunta2": "¿Atiyman simita t'ikrayta?",
+        "respuesta2": "Arí, llamk'achiy akllaq simita patapi t'ikranapaq Español Quechua nisqakunapi.",
+        "pregunta3": "¿Imata ruwani sichus mesa miembruchu churasqa karqani?",
+        "respuesta3": "Riy 'Mesa Miembrukuna' secciónman maypichus tarikunki tukuy willakuyta, pachakamay, yanapakuykuna necesitasqaykikunatapas.",
+        "pregunta4": "¿Imayna tapukuni local akllanaypa?",
+        "respuesta4": "'Tapukuy RENIEC' secciónpi yaykuchiy DNIykita qhawanaykipaq local mesaykitapas churasqaykita."
+      }
     }
   }
 }
