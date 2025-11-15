@@ -166,7 +166,7 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/partido-democratico-federal.png",
     descripcion: "Partido político federalista.",
     candidatos: [
-      { id: "pdf1", nombre: "Charlie Carrasco", cargo: "Presidente", foto: "/FotosCandidatos/partido-democratico-federal.jpg" }
+      { id: "pdf1", nombre: "Charlie Carrasco", cargo: "Presidente", foto: "/FotosCandidatos/partido-democratico-federal.jpg"}
     ]
   },
   {
