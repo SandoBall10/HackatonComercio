@@ -85,7 +85,7 @@ export const Inicio: React.FC = () => {
   const [countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
 
   const slides = [
-    { id: 1, image: 'https://picsum.photos/1200/400?random=1', alt: 'Imagen de prueba 1' },
+    { id: 1, image: 'public/Imagenes-Pagina/Fondo-Inicio.jpg', alt: 'Imagen de prueba 1' },
     { id: 2, image: 'https://picsum.photos/1200/400?random=2', alt: 'Imagen de prueba 2' },
     { id: 3, image: 'https://picsum.photos/1200/400?random=3', alt: 'Imagen de prueba 3' },
   ];
@@ -127,8 +127,6 @@ export const Inicio: React.FC = () => {
 
   return (
     <div className="inicio-container">
-
-       
 
       <main>
         {/* CARRUSEL */}
