@@ -80,7 +80,7 @@ const PartidosPoliticos: React.FC = () => {
               onClick={() => handlePartidoClick(partido)}
             >
               <div className="partido-logo">
-                <img src={partido.logo} alt={Logo ${partido.nombre}} />
+                <img src={partido.logo} alt={`Logo ${partido.nombre}`} />
               </div>
               <div className="partido-info">
                 <h3 className="partido-nombre">{partido.nombre}</h3>
@@ -96,7 +96,7 @@ const PartidosPoliticos: React.FC = () => {
           </button>
           <div className="detalle-content">
             <div className="detalle-header">
-              <img src={partidoSeleccionado.logo} alt={Logo ${partidoSeleccionado.nombre}} className="detalle-logo" />
+              <img src={partidoSeleccionado.logo} alt={`Logo ${partidoSeleccionado.nombre}`} className="detalle-logo" />
               <div>
                 <h2>{partidoSeleccionado.nombre}</h2>
                 <p className="detalle-siglas">{partidoSeleccionado.siglas}</p>
