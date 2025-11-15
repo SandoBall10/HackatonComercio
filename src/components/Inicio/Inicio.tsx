@@ -157,7 +157,7 @@ export const Inicio: React.FC = () => {
         </div>
       </div>
 
-      {/* NAVBAR */}
+       {/* NAVBAR */}
       <header className="header">
         <nav className="navbar">
           <div className="nav-links-container">
@@ -167,10 +167,10 @@ export const Inicio: React.FC = () => {
             <a href="#acerca-proceso" className="nav-link">Acerca del proceso</a>
             <a href="#lo-nuevo" className="nav-link">Lo nuevo</a>
             <a href="#voto-digital" className="nav-link">Voto Digital</a>
+            <a href="#verifica-mesa" className="nav-link nav-link-highlight">Verifica si eres miembro de mesa</a>
           </div>
         </nav>
       </header>
-
       {/* SUBTABS */}
       <div className="subtabs">
         <button className="subtab-btn active">Información general</button>
