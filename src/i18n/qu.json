@@ -75,7 +75,91 @@
       "volver": "← Kutiy listaman",
       "informacion": "Partidupa Willakuynin",
       "nombreCompleto": "Hunt'asqa Sutin",
-      "siglas": "Pisi Sutin"
+      "siglas": "Pisi Sutin",
+      "nombres": {
+        "accion-popular": "Ruway Llaqtap",
+        "fuerza-popular": "Kallpa Llaqtap",
+        "pte-peru": "Llank'aqkunapa Partidun PTE–Perú",
+        "ahora-nacion": "Kunan Nación",
+        "juntos-por-el-peru": "Tukuynin Perúpaq",
+        "partido-buen-gobierno": "Allin Kamachiy Partidu",
+        "alianza-para-el-progreso": "Ñawpaqman Puriypaq Tinkuy",
+        "libertad-popular": "Qhispikuy Llaqtap",
+        "partido-democrata-unido": "Huk Demócrata Partidu Perú",
+        "avanza-pais": "Ñawpaqman Suyunchis",
+        "nuevo-peru": "Musuq Perú Allin Kawsaypaq",
+        "partido-democrata-verde": "Q'umir Demócrata Partidu",
+        "batalla-peru": "Maqanakuy Perú",
+        "partido-aprista": "Aprista Partidu Peruano",
+        "partido-democratico-federal": "Federal Demócrata Partidu",
+        "fe-en-el-peru": "Iñiy Perúpi",
+        "partido-ciudadanos": "Runakuna Partidun Perúpaq",
+        "somos-peru": "Kanchis Perú Demócrata Partidu",
+        "frepap": "Chakra Llaqta Ñawpaq FIA Perúmanta",
+        "partido-civico-obras": "Cívicu Ruwanakuna Partidu",
+        "frente-esperanza": "Suyakuy Ñawpaq 2021",
+        "partido-morado": "Kulli Partidu",
+        "peru-accion": "Perú Ruway Pulitiku Partidu",
+        "peru-moderno": "Musuq Perú",
+        "pais-para-todos": "Suyu Tukuypaq Partidu",
+        "peru-primero": "Perú Ñawpaq Partidu",
+        "podemos-peru": "Atisunchis Perú",
+        "partido-patriotico": "Patriótiku Partidu Perúmanta",
+        "peruanos-unidos": "Peruanukuna Tinkisqa Qhispikunchis",
+        "primero-la-gente": "Ñawpaq Runakuna",
+        "cooperacion-popular": "Yanapanakuy Llaqtap",
+        "voces-del-pueblo": "Llaqtapa Kunkankuna",
+        "progresemos": "Ñawpaqman Puriyku",
+        "fuerza-moderna": "Kallpa Musuq",
+        "prin": "PRIN",
+        "renovacion-popular": "Musuqyachiy Llaqtap",
+        "integridad-democratica": "Hunt'a Kay Demócrata",
+        "partido-popular-cristiano": "Cristianu Llaqta Partidu",
+        "salvemos-al-peru": "Qhispichiykuna Perúta",
+        "peru-libre": "Perú Qhispikuy",
+        "partido-si-creo": "Ari Iñini Partidu",
+        "un-camino-diferente": "Huk Ñan Hukniray",
+        "unidad-y-paz": "Hukllachasqa Thak Kaypi"
+      }
+    },
+    "candidatos": {
+      "titulo": "Umalliqman Akllasqa",
+      "cargo": "Umalliqman Akllasqa kaywan",
+      "redesSociales": "Llika T'inkikuna",
+      "noEncontrado": "Mana tarikusqa akllasqapa willakuynin",
+      "tabs": {
+        "hojaVida": "Kawsay P'anqa",
+        "planGobierno": "Kamachiy Yuyay",
+        "trayectoria": "Ñan Purisqa"
+      },
+      "hojaVida": {
+        "titulo": "Kawsay P'anqa",
+        "datosPersonales": "Kikin Willakuykuna",
+        "nombreCompleto": "Hunt'asqa Sutin",
+        "dni": "DNI",
+        "fechaNacimiento": "Yurisqa P'unchaw",
+        "lugarNacimiento": "Yurisqa Cheqa",
+        "estadoCivil": "Qusa Warmi Kay",
+        "profesion": "Llamk'ay",
+        "formacionAcademica": "Yachay Wasi",
+        "experienciaLaboral": "Llamk'ay Rurasqa",
+        "idiomas": "Simikuna",
+        "logros": "Atisqakuna Yupaychasqakuna",
+        "declaracionesJuradas": "Jurasqa Willaykuna",
+        "sentenciasJudiciales": "Juzgadupa Willakuynin",
+        "noDisponible": "Mana kanchu",
+        "noInformacion": "Mana willakuy kanchu"
+      },
+      "planGobierno": {
+        "titulo": "Kamachiy Yuyay",
+        "ejesTematicos": "Hatun Imakuna",
+        "propuestas": "Hatun Yuyaykuna"
+      },
+      "trayectoria": {
+        "titulo": "Pulitika Ñan",
+        "cargosPublicos": "Llaqta Llamk'aykuna Rurasqa",
+        "partidosPrevios": "Ñawpaq Partidukuna"
+      }
     }
   }
 }

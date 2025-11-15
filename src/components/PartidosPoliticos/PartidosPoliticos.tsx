@@ -16,6 +16,56 @@ const PartidosPoliticos: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+  // Función para obtener la clave de traducción del nombre del partido
+  const getPartidoKey = (nombre: string): string => {
+    const keyMap: { [key: string]: string } = {
+      'Renovación Popular': 'renovacion-popular',
+      'Fuerza Popular': 'fuerza-popular',
+      'Alianza para el Progreso': 'alianza-para-el-progreso',
+      'Acción Popular': 'accion-popular',
+      'Partido Aprista Peruano': 'partido-aprista',
+      'Perú Libre': 'peru-libre',
+      'Partido Político Nacional Perú Libre': 'peru-libre',
+      'Podemos Perú': 'podemos-peru',
+      'Partido Democrático Somos Perú': 'somos-peru',
+      'Avanza País – Partido de Integración Social': 'avanza-pais',
+      'Partido Morado': 'partido-morado',
+      'Frente de la Esperanza 2021': 'frente-esperanza',
+      'Nuevo Perú por el Buen Vivir': 'nuevo-peru',
+      'Juntos por el Perú': 'juntos-por-el-peru',
+      'Frente Popular Agrícola FIA del Perú (Frepap)': 'frepap',
+      'Fe en el Perú': 'fe-en-el-peru',
+      'Partido País para Todos': 'pais-para-todos',
+      'Ahora Nación': 'ahora-nacion',
+      'Partido Demócrata Verde': 'partido-democrata-verde',
+      'Partido Demócrata Unido Perú': 'partido-democrata-unido',
+      'Partido del Buen Gobierno': 'partido-buen-gobierno',
+      'Libertad Popular': 'libertad-popular',
+      'Partido Cívico Obras': 'partido-civico-obras',
+      'Batalla Perú': 'batalla-peru',
+      'Partido Ciudadanos por el Perú': 'partido-ciudadanos',
+      'Primero la Gente': 'primero-la-gente',
+      'Peruanos Unidos – Somos Libres': 'peruanos-unidos',
+      'Cooperación Popular': 'cooperacion-popular',
+      'Partido Político Perú Acción': 'peru-accion',
+      'Perú Moderno': 'peru-moderno',
+      'Partido Político Perú Primero': 'peru-primero',
+      'Partido Patriótico del Perú': 'partido-patriotico',
+      'Voces del Pueblo': 'voces-del-pueblo',
+      'Progresemos': 'progresemos',
+      'Fuerza Moderna': 'fuerza-moderna',
+      'PRIN': 'prin',
+      'Integridad Democrática': 'integridad-democratica',
+      'Partido Popular Cristiano': 'partido-popular-cristiano',
+      'Salvemos al Perú': 'salvemos-al-peru',
+      'Partido Sí Creo': 'partido-si-creo',
+      'Un Camino Diferente': 'un-camino-diferente',
+      'Partido Unidad y Paz': 'unidad-y-paz',
+      'Partido de los Trabajadores PTE–Perú': 'pte-peru'
+    };
+    return keyMap[nombre] || nombre.toLowerCase().replace(/\s+/g, '-');
+  };
+
   const partidos: Partido[] = [
     { "id": 36, "nombre": "Renovación Popular", "siglas": "RP", "logo": "/logos/renovacion-popular.png" },
     { "id": 2, "nombre": "Fuerza Popular", "siglas": "FPu", "logo": "/logos/fuerza-popular.png" },
@@ -86,7 +136,7 @@ const PartidosPoliticos: React.FC = () => {
               <img src={partido.logo} alt={`Logo ${partido.nombre}`} />
             </div>
             <div className="partido-info">
-              <h3 className="partido-nombre">{partido.nombre}</h3>
+              <h3 className="partido-nombre">{t(`partidos.nombres.${getPartidoKey(partido.nombre)}`)}</h3>
               <p className="partido-siglas">{partido.siglas}</p>
             </div>
           </div>
