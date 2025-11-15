@@ -1,3 +1,4 @@
+import React from 'react'
 import { Inicio } from './components/Inicio/Inicio'
 import './App.css'
 

@@ -6,60 +6,57 @@ interface Partido {
   nombre: string;
   siglas: string;
   logo: string;
-  descripcion: string;
-  fundacion: string;
-  ideologia: string;
 }
 
 const PartidosPoliticos: React.FC = () => {
   const [partidoSeleccionado, setPartidoSeleccionado] = useState<Partido | null>(null);
 
   // Lista de 43 partidos políticos para las elecciones 2026 de Perú
-  const partidos: Partido[] = [
-    { id: 1, nombre: "Acción Popular", siglas: "AP", logo: "/logos/accion-popular.png", descripcion: "Partido político peruano de centro-derecha", fundacion: "1956", ideologia: "Democracia cristiana" },
-    { id: 2, nombre: "Alianza para el Progreso", siglas: "APP", logo: "/logos/app.png", descripcion: "Partido político regional del norte del Perú", fundacion: "2001", ideologia: "Progresismo" },
-    { id: 3, nombre: "Fuerza Popular", siglas: "FP", logo: "/logos/fuerza-popular.png", descripcion: "Partido político de derecha", fundacion: "2010", ideologia: "Fujimorismo" },
-    { id: 4, nombre: "Perú Libre", siglas: "PL", logo: "/logos/peru-libre.png", descripcion: "Partido político de izquierda", fundacion: "2016", ideologia: "Socialismo" },
-    { id: 5, nombre: "Renovación Popular", siglas: "RP", logo: "/logos/renovacion-popular.png", descripcion: "Partido político de derecha conservadora", fundacion: "2020", ideologia: "Conservadurismo" },
-    { id: 6, nombre: "Avanza País", siglas: "AP", logo: "/logos/avanza-pais.png", descripcion: "Partido político liberal", fundacion: "2020", ideologia: "Liberalismo" },
-    { id: 7, nombre: "Somos Perú", siglas: "SP", logo: "/logos/somos-peru.png", descripcion: "Partido político de centro", fundacion: "1998", ideologia: "Centrismo" },
-    { id: 8, nombre: "Podemos Perú", siglas: "PP", logo: "/logos/podemos-peru.png", descripcion: "Partido político de centro-derecha", fundacion: "2018", ideologia: "Populismo" },
-    { id: 9, nombre: "Partido Morado", siglas: "PM", logo: "/logos/partido-morado.png", descripcion: "Partido político de centro-izquierda", fundacion: "2017", ideologia: "Socialdemocracia" },
-    { id: 10, nombre: "Juntos por el Perú", siglas: "JP", logo: "/logos/juntos-peru.png", descripcion: "Partido político de izquierda", fundacion: "2016", ideologia: "Socialismo democrático" },
-    { id: 11, nombre: "Frente Amplio", siglas: "FA", logo: "/logos/frente-amplio.png", descripcion: "Coalición de izquierda", fundacion: "2013", ideologia: "Izquierda política" },
-    { id: 12, nombre: "Victoria Nacional", siglas: "VN", logo: "/logos/victoria-nacional.png", descripcion: "Partido político nacionalista", fundacion: "2018", ideologia: "Nacionalismo" },
-    { id: 13, nombre: "Democracia Directa", siglas: "DD", logo: "/logos/democracia-directa.png", descripcion: "Partido político progresista", fundacion: "2019", ideologia: "Democracia directa" },
-    { id: 14, nombre: "Perú Patria Segura", siglas: "PPS", logo: "/logos/peru-patria-segura.png", descripcion: "Partido político conservador", fundacion: "2017", ideologia: "Conservadurismo" },
-    { id: 15, nombre: "Partido Nacionalista Peruano", siglas: "PNP", logo: "/logos/pnp.png", descripcion: "Partido político nacionalista", fundacion: "2005", ideologia: "Nacionalismo de izquierda" },
-    { id: 16, nombre: "Todos por el Perú", siglas: "TPP", logo: "/logos/todos-peru.png", descripcion: "Partido político de centro", fundacion: "2019", ideologia: "Centrismo" },
-    { id: 17, nombre: "Partido Popular Cristiano", siglas: "PPC", logo: "/logos/ppc.png", descripcion: "Partido político de centro-derecha", fundacion: "1966", ideologia: "Democracia cristiana" },
-    { id: 18, nombre: "Perú Nación", siglas: "PN", logo: "/logos/peru-nacion.png", descripcion: "Partido político conservador", fundacion: "2015", ideologia: "Conservadurismo" },
-    { id: 19, nombre: "Partido Aprista Peruano", siglas: "PAP", logo: "/logos/pap.png", descripcion: "Partido político histórico", fundacion: "1930", ideologia: "Aprismo" },
-    { id: 20, nombre: "Perú Bicentenario", siglas: "PB", logo: "/logos/peru-bicentenario.png", descripcion: "Partido político emergente", fundacion: "2021", ideologia: "Progresismo" },
-    { id: 21, nombre: "Fuerza Patriota", siglas: "FPat", logo: "/logos/fuerza-patriota.png", descripcion: "Partido político nacionalista", fundacion: "2020", ideologia: "Patriotismo" },
-    { id: 22, nombre: "País Primero", siglas: "PPr", logo: "/logos/pais-primero.png", descripcion: "Partido político de centro-derecha", fundacion: "2021", ideologia: "Conservadurismo liberal" },
-    { id: 23, nombre: "Unión por el Perú", siglas: "UPP", logo: "/logos/union-peru.png", descripcion: "Partido político de izquierda", fundacion: "1994", ideologia: "Nacionalismo de izquierda" },
-    { id: 24, nombre: "Contigo", siglas: "CG", logo: "/logos/contigo.png", descripcion: "Partido político regional", fundacion: "2015", ideologia: "Regionalismo" },
-    { id: 25, nombre: "Perú Seguro", siglas: "PS", logo: "/logos/peru-seguro.png", descripcion: "Partido político enfocado en seguridad", fundacion: "2022", ideologia: "Seguridad ciudadana" },
-    { id: 26, nombre: "Vamos Perú", siglas: "VP", logo: "/logos/vamos-peru.png", descripcion: "Partido político de centro", fundacion: "2014", ideologia: "Centrismo" },
-    { id: 27, nombre: "Solidaridad Nacional", siglas: "SN", logo: "/logos/solidaridad-nacional.png", descripcion: "Partido político evangélico", fundacion: "2002", ideologia: "Democracia cristiana evangélica" },
-    { id: 28, nombre: "Perú Renace", siglas: "PRe", logo: "/logos/peru-renace.png", descripcion: "Partido político reformista", fundacion: "2023", ideologia: "Reformismo" },
-    { id: 29, nombre: "Cambio Democrático", siglas: "CD", logo: "/logos/cambio-democratico.png", descripcion: "Partido político progresista", fundacion: "2020", ideologia: "Progresismo democrático" },
-    { id: 30, nombre: "Fuerza Verde", siglas: "FV", logo: "/logos/fuerza-verde.png", descripcion: "Partido político ecologista", fundacion: "2021", ideologia: "Ecologismo" },
-    { id: 31, nombre: "Perú Trabajador", siglas: "PTr", logo: "/logos/peru-trabajador.png", descripcion: "Partido político laborista", fundacion: "2019", ideologia: "Laborismo" },
-    { id: 32, nombre: "Nueva Alianza", siglas: "NA", logo: "/logos/nueva-alianza.png", descripcion: "Partido político de coalición", fundacion: "2022", ideologia: "Aliancismo" },
-    { id: 33, nombre: "Perú Justo", siglas: "PJ", logo: "/logos/peru-justo.png", descripcion: "Partido político de justicia social", fundacion: "2020", ideologia: "Justicia social" },
-    { id: 34, nombre: "Dignidad y Democracia", siglas: "DyD", logo: "/logos/dignidad-democracia.png", descripcion: "Partido político democrático", fundacion: "2021", ideologia: "Democracia participativa" },
-    { id: 35, nombre: "Perú Unido", siglas: "PU", logo: "/logos/peru-unido.png", descripcion: "Partido político unionista", fundacion: "2022", ideologia: "Unionismo" },
-    { id: 36, nombre: "Esperanza Peruana", siglas: "EP", logo: "/logos/esperanza-peruana.png", descripcion: "Partido político de esperanza", fundacion: "2023", ideologia: "Humanismo" },
-    { id: 37, nombre: "Frente Popular", siglas: "FPop", logo: "/logos/frente-popular.png", descripcion: "Partido político popular", fundacion: "2018", ideologia: "Populismo de izquierda" },
-    { id: 38, nombre: "Perú Adelante", siglas: "PA", logo: "/logos/peru-adelante.png", descripcion: "Partido político progresista", fundacion: "2021", ideologia: "Progresismo" },
-    { id: 39, nombre: "Innovación Nacional", siglas: "IN", logo: "/logos/innovacion-nacional.png", descripcion: "Partido político tecnócrata", fundacion: "2022", ideologia: "Tecnocracia" },
-    { id: 40, nombre: "Perú Soberano", siglas: "PSob", logo: "/logos/peru-soberano.png", descripcion: "Partido político soberanista", fundacion: "2020", ideologia: "Soberanismo" },
-    { id: 41, nombre: "Compromiso Perú", siglas: "CP", logo: "/logos/compromiso-peru.png", descripcion: "Partido político comprometido", fundacion: "2023", ideologia: "Compromiso social" },
-    { id: 42, nombre: "Perú Futuro", siglas: "PF", logo: "/logos/peru-futuro.png", descripcion: "Partido político futurista", fundacion: "2023", ideologia: "Futurismo político" },
-    { id: 43, nombre: "Alianza Nacional", siglas: "AN", logo: "/logos/alianza-nacional.png", descripcion: "Partido político de alianza", fundacion: "2022", ideologia: "Alianza nacional" }
-  ];
+  const partidos: Partido[] =[
+  { "id": 36, "nombre": "Renovación Popular", "siglas": "RP", "logo": "/logos/renovacion-popular.png" },
+  { "id": 2,  "nombre": "Fuerza Popular", "siglas": "FPu", "logo": "/logos/fuerza-popular.png" },
+  { "id": 7,  "nombre": "Alianza para el Progreso", "siglas": "APP", "logo": "/logos/alianza-para-el-progreso.png" },
+  { "id": 1,  "nombre": "Acción Popular", "siglas": "AP", "logo": "/logos/accion-popular.png" },
+  { "id": 14, "nombre": "Partido Aprista Peruano", "siglas": "APRA", "logo": "/logos/partido-aprista-peruano.png" },
+  { "id": 40, "nombre": "Perú Libre", "siglas": "PL", "logo": "/logos/peru-libre.png" },
+  { "id": 44, "nombre": "Partido Político Nacional Perú Libre", "siglas": "PNPL", "logo": "/logos/peru-libre.png" },
+  { "id": 27, "nombre": "Podemos Perú", "siglas": "PP", "logo": "/logos/podemos-peru.png" },
+  { "id": 18, "nombre": "Partido Democrático Somos Perú", "siglas": "DSP", "logo": "/logos/somos-peru.png" },
+  { "id": 10, "nombre": "Avanza País – Partido de Integración Social", "siglas": "APIS", "logo": "/logos/avanza-pais.png" },
+  { "id": 22, "nombre": "Partido Morado", "siglas": "PM", "logo": "/logos/partido-morado.png" },
+  { "id": 21, "nombre": "Frente de la Esperanza 2021", "siglas": "F21", "logo": "/logos/frente-esperanza-2021.png" },
+  { "id": 11, "nombre": "Nuevo Perú por el Buen Vivir", "siglas": "NPBV", "logo": "/logos/nuevo-peru-por-el-buen-vivir.png" },
+  { "id": 5,  "nombre": "Juntos por el Perú", "siglas": "JPP", "logo": "/logos/juntos-por-el-peru.png" },
+  { "id": 19, "nombre": "Frente Popular Agrícola FIA del Perú (Frepap)", "siglas": "Frepap", "logo": "/logos/frepap.png" },
+  { "id": 16, "nombre": "Fe en el Perú", "siglas": "FEP", "logo": "/logos/fe-en-el-peru.png" },
+  { "id": 25, "nombre": "Partido País para Todos", "siglas": "PPT", "logo": "/logos/pais-para-todos.png" },
+  { "id": 4,  "nombre": "Ahora Nación", "siglas": "AN", "logo": "/logos/ahora-nacion.png" },
+  { "id": 12, "nombre": "Partido Demócrata Verde", "siglas": "PDV", "logo": "/logos/partido-democrata-verde.png" },
+  { "id": 9,  "nombre": "Partido Demócrata Unido Perú", "siglas": "PDU", "logo": "/logos/partido-democrata-unido.png" },
+  { "id": 6,  "nombre": "Partido del Buen Gobierno", "siglas": "PBG", "logo": "/logos/partido-buen-gobierno.png" },
+  { "id": 8,  "nombre": "Libertad Popular", "siglas": "LP", "logo": "/logos/libertad-popular.png" },
+  { "id": 20, "nombre": "Partido Cívico Obras", "siglas": "PCO", "logo": "/logos/partido-civico-obras.png" },
+  { "id": 13, "nombre": "Batalla Perú", "siglas": "BP", "logo": "/logos/batalla-peru.png" },
+  { "id": 17, "nombre": "Partido Ciudadanos por el Perú", "siglas": "CPP", "logo": "/logos/ciudadanos-por-el-peru.png" },
+  { "id": 30, "nombre": "Primero la Gente", "siglas": "PLC", "logo": "/logos/primero-la-gente.png" },
+  { "id": 29, "nombre": "Peruanos Unidos – Somos Libres", "siglas": "PUSL", "logo": "/logos/peruanos-unidos.png" },
+  { "id": 31, "nombre": "Cooperación Popular", "siglas": "CP", "logo": "/logos/cooperacion-popular.png" },
+  { "id": 23, "nombre": "Partido Político Perú Acción", "siglas": "PA", "logo": "/logos/peru-accion.png" },
+  { "id": 24, "nombre": "Perú Moderno", "siglas": "PMo", "logo": "/logos/peru-moderno.png" },
+  { "id": 26, "nombre": "Partido Político Perú Primero", "siglas": "PP1", "logo": "/logos/peru-primero.png" },
+  { "id": 28, "nombre": "Partido Patriótico del Perú", "siglas": "PPP", "logo": "/logos/partido-patriotico-del-peru.png" },
+  { "id": 32, "nombre": "Voces del Pueblo", "siglas": "VP", "logo": "/logos/voces-del-pueblo.png" },
+  { "id": 33, "nombre": "Progresemos", "siglas": "PRG", "logo": "/logos/progresemos.png" },
+  { "id": 34, "nombre": "Fuerza Moderna", "siglas": "FM", "logo": "/logos/fuerza-moderna.png" },
+  { "id": 35, "nombre": "PRIN", "siglas": "PRIN", "logo": "/logos/prin.png" },
+  { "id": 37, "nombre": "Integridad Democrática", "siglas": "ID", "logo": "/logos/integridad-democratica.png" },
+  { "id": 38, "nombre": "Partido Popular Cristiano", "siglas": "PPC", "logo": "/logos/partido-popular-cristiano.png" },
+  { "id": 39, "nombre": "Salvemos al Perú", "siglas": "SP", "logo": "/logos/salvemos-al-peru.png" },
+  { "id": 41, "nombre": "Partido Sí Creo", "siglas": "SC", "logo": "/logos/si-creo.png" },
+  { "id": 42, "nombre": "Un Camino Diferente", "siglas": "UCD", "logo": "/logos/un-camino-diferente.png" },
+  { "id": 43, "nombre": "Partido Unidad y Paz", "siglas": "UyP", "logo": "/logos/unidad-y-paz.png" },
+  { "id": 3,  "nombre": "Partido de los Trabajadores PTE–Perú", "siglas": "PTE", "logo": "/logos/pte-peru.png" }
+];
 
   const handlePartidoClick = (partido: Partido) => {
     setPartidoSeleccionado(partido);
@@ -83,7 +80,7 @@ const PartidosPoliticos: React.FC = () => {
               onClick={() => handlePartidoClick(partido)}
             >
               <div className="partido-logo">
-                <img src={partido.logo} alt={`Logo ${partido.nombre}`} />
+                <img src={partido.logo} alt={Logo ${partido.nombre}} />
               </div>
               <div className="partido-info">
                 <h3 className="partido-nombre">{partido.nombre}</h3>
@@ -99,25 +96,13 @@ const PartidosPoliticos: React.FC = () => {
           </button>
           <div className="detalle-content">
             <div className="detalle-header">
-              <img src={partidoSeleccionado.logo} alt={`Logo ${partidoSeleccionado.nombre}`} className="detalle-logo" />
+              <img src={partidoSeleccionado.logo} alt={Logo ${partidoSeleccionado.nombre}} className="detalle-logo" />
               <div>
                 <h2>{partidoSeleccionado.nombre}</h2>
                 <p className="detalle-siglas">{partidoSeleccionado.siglas}</p>
               </div>
             </div>
             <div className="detalle-info">
-              <div className="info-item">
-                <strong>Descripción:</strong>
-                <p>{partidoSeleccionado.descripcion}</p>
-              </div>
-              <div className="info-item">
-                <strong>Año de fundación:</strong>
-                <p>{partidoSeleccionado.fundacion}</p>
-              </div>
-              <div className="info-item">
-                <strong>Ideología:</strong>
-                <p>{partidoSeleccionado.ideologia}</p>
-              </div>
             </div>
           </div>
         </div>
