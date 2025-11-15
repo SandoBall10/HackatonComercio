@@ -1,7 +1,7 @@
-import { sunatClient } from './client';
-import { DniResponse } from './types';
+import sunatClient from './client';
+import { SunatResponse } from './types';
 
-export const getDniData = async (dni: string): Promise<DniResponse> => {
+export const getDniData = async (dni: string): Promise<SunatResponse> => {
     try {
         const response = await sunatClient.get(`/dni/${dni}`);
         return response.data;
