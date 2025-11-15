@@ -4,6 +4,7 @@ import './Candidatos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { candidatos } from '../../data/candidatos';
+import { partidos } from '../PartidosPoliticos/PartidosPoliticos'; // Importar partidos
 
 const Candidatos = ({ candidato: candidatoProp }) => {
   const navigate = useNavigate();
@@ -123,6 +124,55 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                c.partido.toLowerCase().includes(partidoIdLower);
       }) || candidatoProp
     : candidatoProp;
+
+  // Obtener el PDF del partido
+  const getPdfPath = () => {
+    if (!candidato) return null;
+    
+    console.log('=== DEBUG PDF ===');
+    console.log('Candidato partido:', candidato.partido);
+    console.log('Todos los partidos:', partidos);
+    
+    // Buscar el partido correspondiente
+    const partido = partidos.find(p => {
+      const nombrePartido = candidato.partido.toLowerCase().trim();
+      const nombrePartidoData = p.nombre.toLowerCase().trim();
+      const siglasPartido = p.siglas?.toLowerCase().trim() || '';
+      
+      console.log('Comparando:', {
+        candidatoPartido: nombrePartido,
+        partidoNombre: nombrePartidoData,
+        partidoSiglas: siglasPartido,
+        match: nombrePartidoData.includes(nombrePartido) || 
+               nombrePartido.includes(nombrePartidoData) ||
+               siglasPartido === nombrePartido
+      });
+      
+      return nombrePartidoData.includes(nombrePartido) || 
+             nombrePartido.includes(nombrePartidoData) ||
+             siglasPartido === nombrePartido ||
+             siglasPartido === 'rp'; // Agregar búsqueda específica por siglas
+    });
+    
+    console.log('Partido encontrado:', partido);
+    console.log('PDF Path:', partido?.planGobierno);
+    
+    return partido?.planGobierno || null;
+  };
+
+  const pdfPath = getPdfPath();
+  
+  console.log('=== PDF FINAL ===');
+  console.log('pdfPath:', pdfPath);
+  console.log('Botón habilitado:', !!pdfPath);
+
+  const handleDownloadPDF = () => {
+    if (pdfPath) {
+      window.open(pdfPath, '_blank');
+    } else {
+      alert('Plan de Gobierno no disponible para este partido');
+    }
+  };
 
   // Calcular countdown
   useEffect(() => {
@@ -353,11 +403,21 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       <p className="cta-description mb-4">
                         Descarga el plan completo de propuestas y conoce nuestras iniciativas
                       </p>
-                      <button className="btn-download-advanced">
+                      <button 
+                        className="btn-download-advanced"
+                        onClick={handleDownloadPDF}
+                        disabled={!pdfPath}
+                        style={{
+                          opacity: pdfPath ? 1 : 0.6,
+                          cursor: pdfPath ? 'pointer' : 'not-allowed'
+                        }}
+                      >
                         <span className="btn-icon">
                           <i className="bi bi-download"></i>
                         </span>
-                        <span className="btn-text">Descargar PDF</span>
+                        <span className="btn-text">
+                          {pdfPath ? 'Descargar PDF' : 'No Disponible'}
+                        </span>
                         <span className="btn-shine"></span>
                       </button>
                     </div>
