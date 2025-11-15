@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Candidatos.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Candidatos = ({ candidato }) => {
+  const [activeTab, setActiveTab] = useState('hoja-vida');
+
   if (!candidato) {
-    return <div>No se encontró información del candidato</div>;
+    return (
+      <div className="container text-center py-5">
+        <div className="alert alert-warning animate-fade-in" role="alert">
+          <i className="bi bi-exclamation-triangle-fill me-2"></i>
+          No se encontró información del candidato
+        </div>
+      </div>
+    );
   }
 
   console.log('Candidato recibido:', candidato);
@@ -11,242 +22,468 @@ const Candidatos = ({ candidato }) => {
   console.log('Logo URL:', candidato.logoPartido);
   
   return (
-    <div className="candidatos-container">
+    <div className="candidatos-container animate-fade-in">
       {/* Header */}
-      <header className="candidatos-header">
-        <div className="container">
-          <div className="header-content">
-            <div className="header-left">
-              <div className="logo-container">
-                <div className="logo-icon">
-                  <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fillRule="evenodd"></path>
-                  </svg>
-                </div>
-                <h2>Elecciones Perú 2026</h2>
+      <header className="candidatos-header shadow-sm">
+        <nav className="navbar navbar-expand-lg navbar-light bg-white py-3">
+          <div className="container-fluid px-4">
+            <a className="navbar-brand d-flex align-items-center animate-slide-left" href="#">
+              <div className="logo-icon me-3">
+                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fillRule="evenodd"></path>
+                </svg>
               </div>
-            </div>
+              <span className="fw-bold text-danger fs-5">Elecciones Perú 2026</span>
+            </a>
           </div>
-        </div>
+        </nav>
       </header>
 
       {/* Main Content */}
-      <main className="main-content">
-        <div className="content-wrapper">
-          <div className="layout-content">
-            {/* ProfileHeader */}
-            <div className="profile-header">
-              <div className="profile-info">
-                <div className="profile-main">
-                  <div className="profile-avatar-container">
-                    <img 
-                      className="profile-avatar-img" 
-                      src={candidato.foto} 
-                      alt={candidato.nombre}
-                      onError={(e) => {
-                        console.log('Error cargando imagen, usando fallback');
-                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(candidato.nombre || candidato.partido)}&size=300&background=991b1b&color=fff&bold=true`;
-                      }}
-                      onLoad={() => console.log('Imagen del candidato cargada')}
-                    />
-                  </div>
-                  <div className="profile-details">
-                    <p className="profile-name">{candidato.nombre}</p>
-                    <p className="profile-role">{candidato.cargo} por {candidato.partido}</p>
-                    <div className="profile-party">
-                      {candidato.logoPartido && (
-                        <img 
-                          className="party-logo" 
-                          src={candidato.logoPartido} 
-                          alt="Logo del partido"
-                          onError={(e) => {
-                            console.log('Error cargando logo del partido');
-                            e.currentTarget.style.display = 'none';
-                          }}
-                          onLoad={() => console.log('Logo del partido cargado')}
-                        />
-                      )}
-                      <p>{candidato.partido}</p>
+      <main className="main-content bg-light py-5">
+        <div className="container-fluid px-4 px-lg-5">
+          <div className="row justify-content-center">
+            <div className="col-12 col-xxl-11">
+              {/* ProfileHeader */}
+              <div className="profile-hero-card position-relative overflow-hidden mb-5 animate-slide-up">
+            {/* Background Pattern */}
+            <div className="hero-background"></div>
+            
+            <div className="card-body p-0">
+              <div className="row g-0">
+                {/* Left Section - Profile */}
+                <div className="col-lg-8">
+                  <div className="profile-content-wrapper p-4 p-lg-5 py-lg-5">
+                    <div className="d-flex align-items-start gap-4 gap-lg-5 flex-wrap mb-4">
+                      {/* Avatar with advanced styling */}
+                      <div className="position-relative animate-zoom-in">
+                        <div className="profile-avatar-advanced">
+                          <div className="avatar-ring"></div>
+                          <div className="avatar-inner">
+                            <img 
+                              className="profile-avatar-img" 
+                              src={candidato.foto} 
+                              alt={candidato.nombre}
+                              onError={(e) => {
+                                console.log('Error cargando imagen, usando fallback');
+                                e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(candidato.nombre || candidato.partido)}&size=300&background=dc3545&color=fff&bold=true`;
+                              }}
+                              onLoad={() => console.log('Imagen del candidato cargada')}
+                            />
+                          </div>
+                          <div className="avatar-badge-advanced">
+                            <i className="bi bi-patch-check-fill"></i>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Profile Info */}
+                      <div className="profile-details flex-grow-1 animate-slide-right">
+                        <h1 className="profile-name-advanced mb-3">{candidato.nombre}</h1>
+                        
+                        <div className="profile-meta mb-3">
+                          <div className="d-flex align-items-center gap-2 mb-2">
+                            <div className="meta-icon">
+                              <i className="bi bi-briefcase-fill"></i>
+                            </div>
+                            <span className="meta-text">{candidato.cargo} por {candidato.partido}</span>
+                          </div>
+                        </div>
+
+                        {/* Party Badge with Logo */}
+                        <div className="party-badge-container">
+                          {candidato.logoPartido && (
+                            <div className="party-logo-wrapper">
+                              <img 
+                                className="party-logo-advanced" 
+                                src={candidato.logoPartido} 
+                                alt="Logo del partido"
+                                onError={(e) => {
+                                  console.log('Error cargando logo del partido');
+                                  e.currentTarget.style.display = 'none';
+                                }}
+                                onLoad={() => console.log('Logo del partido cargado')}
+                              />
+                            </div>
+                          )}
+                          <div className="party-badge-advanced">
+                            <i className="bi bi-flag-fill me-2"></i>
+                            {candidato.partido}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Social Links - Redesigned */}
+                    <div className="social-section mt-5 pt-4 border-top">
+                      <div className="d-flex align-items-center justify-content-between mb-3">
+                        <h6 className="social-title mb-0">
+                          <i className="bi bi-share-fill me-2"></i>Redes Sociales
+                        </h6>
+                      </div>
+                      <div className="social-links-grid">
+                        {candidato.redesSociales?.facebook && (
+                          <a href={candidato.redesSociales.facebook} 
+                             className="social-link-card facebook" 
+                             target="_blank" 
+                             rel="noopener noreferrer">
+                            <div className="social-icon">
+                              <i className="bi bi-facebook"></i>
+                            </div>
+                            <span className="social-name">Facebook</span>
+                          </a>
+                        )}
+                        {candidato.redesSociales?.twitter && (
+                          <a href={candidato.redesSociales.twitter} 
+                             className="social-link-card twitter" 
+                             target="_blank" 
+                             rel="noopener noreferrer">
+                            <div className="social-icon">
+                              <i className="bi bi-twitter-x"></i>
+                            </div>
+                            <span className="social-name">Twitter</span>
+                          </a>
+                        )}
+                        {candidato.redesSociales?.instagram && (
+                          <a href={candidato.redesSociales.instagram} 
+                             className="social-link-card instagram" 
+                             target="_blank" 
+                             rel="noopener noreferrer">
+                            <div className="social-icon">
+                              <i className="bi bi-instagram"></i>
+                            </div>
+                            <span className="social-name">Instagram</span>
+                          </a>
+                        )}
+                        {candidato.redesSociales?.tiktok && (
+                          <a href={candidato.redesSociales.tiktok} 
+                             className="social-link-card tiktok" 
+                             target="_blank" 
+                             rel="noopener noreferrer">
+                            <div className="social-icon">
+                              <i className="bi bi-tiktok"></i>
+                            </div>
+                            <span className="social-name">TikTok</span>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-                <button className="btn-download">
-                  <span className="material-symbols-outlined">download</span>
-                  <span>Plan de Gobierno</span>
-                </button>
-              </div>
 
-              {/* ActionsBar */}
-              <div className="actions-bar">
-                <div className="social-links">
-                  {candidato.redesSociales?.facebook && (
-                    <a href={candidato.redesSociales.facebook} className="social-link" target="_blank" rel="noopener noreferrer">
-                      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYF6rbDZYIvz3WzHbIdf6XR231pjPUNk9iwImFt8SdHVDaDg7z1mk3Gn7KBHKJgSFSqGizozbAilhJoDzFwy9rqqdS-SBQ0LhOdS_75kF8-UAzKyhL301km9a9jyTJVHoLLDf5NSBp5lSK4FgBOKO6X5G8GTpP_Z2XUhSb3IZVmfe0FYu-HFqLWKMO7dlor475na58bA-H_NTWjmxxIYlR37XlbVJUBbDDdCCsik2WlROpVYFSP-fOsR3g2f5vemq6-NLNKBfVmQ" alt="Facebook" />
-                      <p>Facebook</p>
-                    </a>
-                  )}
-                  {candidato.redesSociales?.twitter && (
-                    <a href={candidato.redesSociales.twitter} className="social-link" target="_blank" rel="noopener noreferrer">
-                      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDezstiy-TpW-Az77ng_Z0XGaWLbdpV903WRGSTwPeMCGJPhXvxBiRVMrxnL4v1ZAMwrsoU792uK_gQ6_gJIndxlfnI55DejjIHX6vGi_O0gnNXoROUhTXHeWm7j_tQG5mtIQUbj8lvH_T0jQ-UDUi91eGmXoY9_8oz7Q3g0nw4BKX066kecy134XksNFmkSbIyZpjf684lviejZRPpzjL2pZA3by-0EKSN2n48UEDAIJEenltrv5JGFeeX6fWnhmHSBep39atltw" alt="X" />
-                      <p>Twitter</p>
-                    </a>
-                  )}
-                  {candidato.redesSociales?.instagram && (
-                    <a href={candidato.redesSociales.instagram} className="social-link" target="_blank" rel="noopener noreferrer">
-                      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVkzDUPyf9JIeBU5_BAhb-PF6yyoufIUHKkIpx810MWCvZKu45HUbqL6ehiN1DgLrIUXgazAfWedq6R8zHqVB1ObWnlqze08NhAEAKJbmyAU-cEZyZWTF3Ur_Y2X7XEmL3R1TiWg_whWXq-qKV9iigFi6GsU9Bb51-bZ1hQpoTtYE1cTCdczjOQQ62mAjbvPqzkJ7GM2OPKv3TBSbGlf9Fa8HTmU-aAHj7eRfLeKf_5PXcLVo66OQgL9bCL6Rfm0nNZiwggTsyOg" alt="Instagram" />
-                      <p>Instagram</p>
-                    </a>
-                  )}
-                  {candidato.redesSociales?.tiktok && (
-                    <a href={candidato.redesSociales.tiktok} className="social-link" target="_blank" rel="noopener noreferrer">
-                      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHKIyg9yHp8BFzpvulkoX7LChEGIYyL2TOWKiqSUZiwUimBy-3C2om6djPsC6XG9grFFFm8CXwE6968vEsjFxqr093PTbc8XDb4ymC8JYHipfjNcJm0ccjZiyBqpFjIY6dQfrlyhbKtpQhgwL82bPHhtUeNPJ0njCUhP6Oqnp7MoqCTwemYg57Azpyr-4elc07IhHrvsNna-KCG14Pi71ip5_AeWSI-zcmlqAL14W6wYu60hPfCb5P6xxlDaI4SOrAuFDXUvf5lw" alt="TikTok" />
-                      <p>TikTok</p>
-                    </a>
-                  )}
+                {/* Right Section - CTA */}
+                <div className="col-lg-4">
+                  <div className="cta-section h-100 d-flex flex-column justify-content-center align-items-center p-5 p-lg-5">
+                    <div className="cta-content text-center">
+                      <div className="cta-icon mb-4">
+                        <i className="bi bi-file-earmark-text"></i>
+                      </div>
+                      <h5 className="cta-title mb-3">Plan de Gobierno</h5>
+                      <p className="cta-description mb-4">
+                        Descarga el plan completo de propuestas y conoce nuestras iniciativas
+                      </p>
+                      <button className="btn-download-advanced">
+                        <span className="btn-icon">
+                          <i className="bi bi-download"></i>
+                        </span>
+                        <span className="btn-text">Descargar PDF</span>
+                        <span className="btn-shine"></span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Tabs Navigation */}
-            <div className="tabs-navigation">
-              <div className="tabs-container">
-                <a href="#" className="tab active">
-                  <p>Hoja de Vida</p>
-                </a>
-                <a href="#" className="tab">
-                  <p>Propuestas</p>
-                </a>
-                <a href="#" className="tab">
-                  <p>Noticias</p>
-                </a>
-                <a href="#" className="tab">
-                  <p>Actividades</p>
-                </a>
-              </div>
+          {/* Tabs Navigation */}
+          <ul className="nav nav-pills nav-fill mb-4 shadow-sm bg-white rounded p-2 animate-slide-down">
+            <li className="nav-item">
+              <button 
+                className={`nav-link ${activeTab === 'hoja-vida' ? 'active' : ''}`}
+                onClick={() => setActiveTab('hoja-vida')}
+              >
+                <i className="bi bi-person-vcard me-2"></i>Hoja de Vida
+              </button>
+            </li>
+            <li className="nav-item">
+              <button 
+                className={`nav-link ${activeTab === 'propuestas' ? 'active' : ''}`}
+                onClick={() => setActiveTab('propuestas')}
+              >
+                <i className="bi bi-lightbulb me-2"></i>Propuestas
+              </button>
+            </li>
+            <li className="nav-item">
+              <button 
+                className={`nav-link ${activeTab === 'noticias' ? 'active' : ''}`}
+                onClick={() => setActiveTab('noticias')}
+              >
+                <i className="bi bi-newspaper me-2"></i>Noticias
+              </button>
+            </li>
+            <li className="nav-item">
+              <button 
+                className={`nav-link ${activeTab === 'actividades' ? 'active' : ''}`}
+                onClick={() => setActiveTab('actividades')}
+              >
+                <i className="bi bi-calendar-event me-2"></i>Actividades
+              </button>
+            </li>
+          </ul>
+
+          {/* Content Area */}
+          <div className="row g-4 g-lg-5">
+            {/* Main Column */}
+            <div className="col-lg-8">
+              {activeTab === 'hoja-vida' && (
+                <div className="animate-fade-in">
+                  {/* Info Cards */}
+                  <div className="row g-4 mb-4">
+                    <div className="col-md-6">
+                      <div className="card h-100 border-0 shadow-sm animate-slide-up">
+                        <div className="card-body">
+                          <h5 className="card-title text-danger mb-3">
+                            <i className="bi bi-mortarboard-fill me-2"></i>
+                            Formación Académica
+                          </h5>
+                          <ul className="list-unstyled">
+                            {candidato.hojaDeVida?.formacionAcademica && candidato.hojaDeVida.formacionAcademica.length > 0 ? (
+                              candidato.hojaDeVida.formacionAcademica.map((item, index) => (
+                                <li key={index} className="mb-2">
+                                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                                  {item}
+                                </li>
+                              ))
+                            ) : (
+                              <li className="text-muted">No disponible</li>
+                            )}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="card h-100 border-0 shadow-sm animate-slide-up" style={{animationDelay: '0.1s'}}>
+                        <div className="card-body">
+                          <h5 className="card-title text-danger mb-3">
+                            <i className="bi bi-briefcase-fill me-2"></i>
+                            Experiencia Laboral
+                          </h5>
+                          <ul className="list-unstyled">
+                            {candidato.hojaDeVida?.experienciaLaboral && candidato.hojaDeVida.experienciaLaboral.length > 0 ? (
+                              candidato.hojaDeVida.experienciaLaboral.map((item, index) => (
+                                <li key={index} className="mb-2">
+                                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                                  {item}
+                                </li>
+                              ))
+                            ) : (
+                              <li className="text-muted">No disponible</li>
+                            )}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="card h-100 border-0 shadow-sm animate-slide-up" style={{animationDelay: '0.2s'}}>
+                        <div className="card-body">
+                          <h5 className="card-title text-primary mb-3">
+                            <i className="bi bi-file-text-fill me-2"></i>
+                            Declaraciones Juradas
+                          </h5>
+                          <p className="mb-0">{candidato.hojaDeVida?.declaracionesJuradas}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="card h-100 border-0 shadow-sm bg-danger bg-opacity-10 animate-slide-up" style={{animationDelay: '0.3s'}}>
+                        <div className="card-body">
+                          <h5 className="card-title text-danger mb-3">
+                            <i className="bi bi-exclamation-triangle-fill me-2"></i>
+                            Sentencias Judiciales
+                          </h5>
+                          <p className="mb-0 text-danger fw-semibold">
+                            {candidato.hojaDeVida?.sentenciasJudiciales}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Timeline */}
+                  <div className="card border-0 shadow-sm animate-slide-up" style={{animationDelay: '0.4s'}}>
+                    <div className="card-body p-4">
+                      <h4 className="text-danger mb-4">
+                        <i className="bi bi-clock-history me-2"></i>
+                        Trayectoria Política y Profesional
+                      </h4>
+                      <div className="timeline-bootstrap">
+                        {candidato.trayectoria && candidato.trayectoria.length > 0 ? (
+                          candidato.trayectoria.map((item, index) => (
+                            <div className="timeline-item-bootstrap mb-4" key={index}>
+                              <div className="timeline-marker bg-danger"></div>
+                              <div className="timeline-content">
+                                <h6 className="fw-bold text-dark">{item.fecha}</h6>
+                                <p className="text-muted mb-0">{item.descripcion}</p>
+                              </div>
+                            </div>
+                          ))
+                        ) : (
+                          <p className="text-muted">No hay información de trayectoria disponible.</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Page Content (Two Columns) */}
-            <div className="page-content">
-              {/* Main Column (Left) */}
-              <div className="main-column">
-                {/* PageHeading */}
-                <div className="page-heading">
-                  <div className="heading-content">
-                    <p className="heading-title">Hoja de Vida</p>
-                    <p className="heading-subtitle"></p>
-                  </div>
-                </div>
-
-                {/* Info Cards Section */}
-                <div className="info-cards">
-                  <div className="info-card">
-                    <h3>Formación Académica</h3>
-                    <ul>
-                      {candidato.hojaDeVida?.formacionAcademica?.map((item, index) => (
-                        <li key={index}>• {item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="info-card">
-                    <h3>Experiencia Laboral</h3>
-                    <ul>
-                      {candidato.hojaDeVida?.experienciaLaboral?.map((item, index) => (
-                        <li key={index}>• {item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="info-card">
-                    <h3>Declaraciones Juradas</h3>
-                    <p>{candidato.hojaDeVida?.declaracionesJuradas}</p>
-                  </div>
-                  <div className="info-card alert">
-                    <h3>Sentencias Judiciales</h3>
-                    <p>{candidato.hojaDeVida?.sentenciasJudiciales}</p>
-                  </div>
-                </div>
-
-                {/* Timeline Section */}
-                <div className="timeline-section">
-                  <h2>Trayectoria Política y Profesional</h2>
-                  <div className="timeline">
-                    {candidato.trayectoria?.map((item, index) => (
-                      <div className="timeline-item" key={index}>
-                        <div className="timeline-dot"></div>
-                        <p className="timeline-date">{item.fecha}</p>
-                        <p className="timeline-description">{item.descripcion}</p>
-                      </div>
-                    ))}
+            {/* Sidebar */}
+            <div className="col-lg-4">
+              {/* News Section */}
+              <div className="card border-0 shadow-sm mb-4 animate-slide-right">
+                <div className="card-body">
+                  <h5 className="card-title text-danger mb-4">
+                    <i className="bi bi-newspaper me-2"></i>
+                    Últimas Noticias
+                  </h5>
+                  <div className="d-flex flex-column gap-3">
+                    {candidato.noticias && candidato.noticias.length > 0 ? (
+                      candidato.noticias.map((noticia, index) => (
+                        <div className="news-card-bootstrap p-3 border rounded animate-hover-lift" key={index}>
+                          <div className="d-flex gap-3">
+                            <img 
+                              src={noticia.imagen} 
+                              alt="Noticia"
+                              className="news-img rounded"
+                            />
+                            <div className="flex-grow-1">
+                              <h6 className="fw-bold mb-2">{noticia.titulo}</h6>
+                              <p className="text-muted small mb-0">
+                                <i className="bi bi-newspaper me-1"></i>
+                                {noticia.fuente} - {noticia.fecha}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <p className="text-muted text-center py-4">
+                        <i className="bi bi-newspaper me-2"></i>
+                        No hay noticias recientes disponibles.
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
 
-              {/* Secondary Column (Right) */}
-              <div className="secondary-column">
-                {/* News Section */}
-                <div className="news-section">
-                  <h2>Últimas Noticias</h2>
-                  <div className="news-list">
-                    {candidato.noticias?.map((noticia, index) => (
-                      <div className="news-card" key={index}>
-                        <img 
-                          src={noticia.imagen} 
-                          alt="Noticia"
-                        />
-                        <div className="news-content">
-                          <p className="news-title">{noticia.titulo}</p>
-                          <p className="news-meta">{noticia.fuente} - {noticia.fecha}</p>
+              {/* Activities Section */}
+              <div className="card border-0 shadow-sm animate-slide-right" style={{animationDelay: '0.2s'}}>
+                <div className="card-body">
+                  <h5 className="card-title text-danger mb-4">
+                    <i className="bi bi-calendar-event me-2"></i>
+                    Actividades Públicas
+                  </h5>
+                  <div className="d-flex flex-column gap-3">
+                    {candidato.actividades && candidato.actividades.length > 0 ? (
+                      candidato.actividades.map((actividad, index) => (
+                        <div className="activity-card-bootstrap p-3 border rounded animate-hover-lift" key={index}>
+                          <div className="d-flex gap-3 align-items-start">
+                            <div className="activity-date-badge bg-danger bg-gradient text-white text-center rounded p-2">
+                              <div className="fw-bold fs-4">{actividad.dia}</div>
+                              <div className="small text-uppercase">{actividad.mes}</div>
+                            </div>
+                            <div className="flex-grow-1">
+                              <h6 className="fw-bold mb-2">{actividad.titulo}</h6>
+                              <p className="text-muted small mb-1">
+                                <i className="bi bi-geo-alt-fill me-1"></i>
+                                {actividad.lugar}
+                              </p>
+                              <p className="text-muted small mb-0">
+                                <i className="bi bi-clock-fill me-1"></i>
+                                {actividad.hora}
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Activities Section */}
-                <div className="activities-section">
-                  <h2>Actividades Públicas</h2>
-                  <div className="activities-list">
-                    {candidato.actividades?.map((actividad, index) => (
-                      <div className="activity-card" key={index}>
-                        <div className="activity-date">
-                          <span className="date-day">{actividad.dia}</span>
-                          <span className="date-month">{actividad.mes}</span>
-                        </div>
-                        <div className="activity-details">
-                          <p className="activity-title">{actividad.titulo}</p>
-                          <p className="activity-info">Lugar: {actividad.lugar}</p>
-                          <p className="activity-info">Hora: {actividad.hora}</p>
-                        </div>
-                      </div>
-                    ))}
+                      ))
+                    ) : (
+                      <p className="text-muted text-center py-4">
+                        <i className="bi bi-calendar-x me-2"></i>
+                        No hay actividades programadas.
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
             </div>
           </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="candidatos-footer">
-        <div className="footer-container">
-          <div className="footer-content">
-            <div className="footer-logo">
-              <div className="logo-icon">
-                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fillRule="evenodd"></path>
-                </svg>
+      <footer className="bg-white border-top py-5 mt-5">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-md-4">
+              <div className="d-flex align-items-center gap-2 mb-3">
+                <div className="logo-icon">
+                  <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fillRule="evenodd"></path>
+                  </svg>
+                </div>
+                <span className="fw-bold text-danger">Elecciones Perú 2026</span>
               </div>
-              <h2>Elecciones Perú 2026</h2>
+              <p className="text-muted small">
+                Portal de información electoral oficial. Conoce a los candidatos y haz tu voto informado.
+              </p>
             </div>
-            <div className="footer-links">
-              <a href="#">Sobre Nosotros</a>
-              <a href="#">Contacto</a>
-              <a href="#">Términos de Servicio</a>
-              <a href="#">Política de Privacidad</a>
+            <div className="col-md-4">
+              <h6 className="fw-bold mb-3">Enlaces Rápidos</h6>
+              <ul className="list-unstyled">
+                <li className="mb-2">
+                  <a href="#" className="text-decoration-none text-muted">
+                    <i className="bi bi-chevron-right me-2"></i>Sobre Nosotros
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="text-decoration-none text-muted">
+                    <i className="bi bi-chevron-right me-2"></i>Contacto
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="text-decoration-none text-muted">
+                    <i className="bi bi-chevron-right me-2"></i>Términos de Servicio
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="text-decoration-none text-muted">
+                    <i className="bi bi-chevron-right me-2"></i>Política de Privacidad
+                  </a>
+                </li>
+              </ul>
             </div>
-            <p className="footer-copyright">
-              © 2024 Portal Electoral. Todos los derechos reservados.<br/>
-              Fuente de datos: JNE, ONPE.
+            <div className="col-md-4">
+              <h6 className="fw-bold mb-3">Fuentes Oficiales</h6>
+              <p className="text-muted small mb-2">
+                <i className="bi bi-shield-check me-2 text-success"></i>
+                Jurado Nacional de Elecciones (JNE)
+              </p>
+              <p className="text-muted small mb-2">
+                <i className="bi bi-shield-check me-2 text-success"></i>
+                Oficina Nacional de Procesos Electorales (ONPE)
+              </p>
+            </div>
+          </div>
+          <hr className="my-4"/>
+          <div className="text-center text-muted small">
+            <p className="mb-0">
+              © 2025 Portal Electoral. Todos los derechos reservados. | 
+              <span className="text-danger ms-2">
+                <i className="bi bi-heart-fill"></i> Hecho en Perú
+              </span>
             </p>
           </div>
         </div>
