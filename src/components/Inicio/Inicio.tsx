@@ -127,60 +127,8 @@ export const Inicio: React.FC = () => {
 
   return (
     <div className="inicio-container">
-      {/* TOP HEADER CON COUNTDOWN */}
-      <div className="top-header">
-        <div className="top-header-content">
-          <div className="logo-section">
-            <img src="src/assets/Loog-Onpe.png" alt="ONPE" className="top-logo" />
-            <div className="election-info">
-              <h2>{t('inicio.titulo')}</h2>
-              <p>{t('inicio.fecha')}</p>
-            </div>
-          </div>
-          <div className="countdown">
-            <span className="countdown-label">{t('inicio.faltan')}</span>
-            <div className="countdown-items">
-              <div className="countdown-item">
-                <div className="countdown-value">{String(countdown.meses).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.meses')}</div>
-              </div>
-              <div className="countdown-item">
-                <div className="countdown-value">{String(countdown.dias).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.dias')}</div>
-              </div>
-              <div className="countdown-item">
-                <div className="countdown-value">{String(countdown.horas).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.horas')}</div>
-              </div>
-              <div className="countdown-item">
-                <div className="countdown-value">{String(countdown.minutos).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.minutos')}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-       {/* NAVBAR */}
-      <header className="header">
-        <nav className="navbar">
-          <div className="nav-links-container">
-            <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>{t('inicio.partidosPoliticos')}</a>
-            <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('inicio.partidosPoliticos')}</a>
-            <a href="/candidatos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/candidatos'); }}>{t('nav.candidatos')}</a>
-            <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
-            <a href="#lo-nuevo" className="nav-link">{t('inicio.loNuevo')}</a>
-            <a href="#voto-digital" className="nav-link">{t('inicio.votoDigital')}</a>
-            <a href="#verifica-mesa" className="nav-link nav-link-highlight">{t('inicio.verificaMiembro')}</a>
-          </div>
-        </nav>
-      </header>
-      {/* SUBTABS */}
-      <div className="subtabs">
-        <button className="subtab-btn active">{t('inicio.infoGeneral')}</button>
-        <button className="subtab-btn">{t('inicio.enlacesRelacionados')}</button>
-        <div className="subtab-underline"></div>
-      </div>
+       
 
       <main>
         {/* CARRUSEL */}

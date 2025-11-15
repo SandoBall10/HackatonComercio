@@ -70,19 +70,7 @@ const PartidosPoliticos: React.FC = () => {
 
   return (
     <>
-      <header className="header">
-        <nav className="navbar">
-          <div className="nav-links-container">
-            <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>{t('nav.inicio')}</a>
-            <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('nav.partidos')}</a>
-            <a href="/candidatos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/candidatos'); }}>{t('nav.candidatos')}</a>
-            <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
-            <a href="#lo-nuevo" className="nav-link">{t('inicio.loNuevo')}</a>
-            <a href="#voto-digital" className="nav-link">{t('inicio.votoDigital')}</a>
-            <a href="#verifica-mesa" className="nav-link nav-link-highlight">{t('inicio.verificaMiembro')}</a>
-          </div>
-        </nav>
-      </header>
+
 
       <div className="partidos-container">
         <h1 className="titulo-principal">{t('partidos.titulo')} - Elecciones Perú 2026</h1>

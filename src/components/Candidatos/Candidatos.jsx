@@ -209,55 +209,9 @@ const Candidatos = ({ candidato: candidatoProp }) => {
   
   return (
     <div className="candidatos-container animate-fade-in">
-      {/* TOP HEADER CON COUNTDOWN */}
-      <div className="top-header">
-        <div className="top-header-content">
-          <div className="logo-section">
-            <img src="/logos/ONPE.png" alt="ONPE" className="top-logo" />
-            <div className="election-info-header">
-              <h2>Elecciones Generales</h2>
-              <p>12 de abril de 2026</p>
-            </div>
-          </div>
-          <div className="countdown">
-            <span className="countdown-label-top">Faltan:</span>
-            <div className="countdown-items">
-              <div className="countdown-item">
-                <div className="countdown-value">{String(countdown.meses).padStart(2, '0')}</div>
-                <div className="countdown-label-small">Meses</div>
-              </div>
-              <div className="countdown-item">
-                <div className="countdown-value">{String(countdown.dias).padStart(2, '0')}</div>
-                <div className="countdown-label-small">Días</div>
-              </div>
-              <div className="countdown-item">
-                <div className="countdown-value">{String(countdown.horas).padStart(2, '0')}</div>
-                <div className="countdown-label-small">Horas</div>
-              </div>
-              <div className="countdown-item">
-                <div className="countdown-value">{String(countdown.minutos).padStart(2, '0')}</div>
-                <div className="countdown-label-small">Minutos</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
-      {/* NAVBAR */}
-      <header className="header-candidatos">
-        <nav className="navbar-candidatos">
-          <div className="nav-links-container">
-            <a href="/" className="nav-link-cand" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Inicio</a>
-            <a href="/partidos" className="nav-link-cand" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>Partidos Políticos</a>
-            <a href="/candidatos" className="nav-link-cand active" onClick={(e) => { e.preventDefault(); navigate('/candidatos'); }}>Candidatos</a>
-            <a href="/reniec" className="nav-link-cand" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>Consulta RENIEC</a>
-            <a href="#lo-nuevo" className="nav-link-cand">Lo nuevo</a>
-            <a href="#voto-digital" className="nav-link-cand">Voto Digital</a>
-            <a href="#verifica-mesa" className="nav-link-cand nav-link-highlight">Verifica si eres miembro de mesa</a>
-          </div>
-        </nav>
-      </header>
-
+    
       {/* Main Content */}
       <main className="main-content bg-light py-5">
         <div className="container-fluid px-4 px-lg-5">
