@@ -11,6 +11,21 @@ const pestañas = [
   "Parlamento Andino",
 ];
 
+// Datos de ejemplo para Diputados y Senadores
+const diputadosEjemplo = [
+  { id: "d1", nombre: "Ana María González", circunscripcion: "Lima", foto: "" },
+  { id: "d2", nombre: "Roberto Silva", circunscripcion: "Arequipa", foto: "" },
+  { id: "d3", nombre: "Carmen Rojas", circunscripcion: "Cusco", foto: "" },
+  { id: "d4", nombre: "Luis Fernández", circunscripcion: "La Libertad", foto: "" },
+];
+
+const senadoresEjemplo = [
+  { id: "s1", nombre: "Diego Martínez", ambito: "Nacional", foto: "" },
+  { id: "s2", nombre: "Isabel Castro", ambito: "Regional - Norte", foto: "" },
+  { id: "s3", nombre: "Pedro Vásquez", ambito: "Regional - Sur", foto: "" },
+  { id: "s4", nombre: "Rosa Quispe", ambito: "Nacional", foto: "" },
+];
+
 const PartidoDetalle: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -38,7 +53,6 @@ const PartidoDetalle: React.FC = () => {
             </div>
             <h2 className="h5 mb-0">Elecciones Perú 2026</h2>
           </div>
-
         </header>
 
         <div className="card mb-4 shadow-sm">
@@ -50,7 +64,7 @@ const PartidoDetalle: React.FC = () => {
                 height: 96,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                backgroundImage: url('${partido.logo || `/logos/${partido.id}.svg}')`,
+                backgroundImage: `url('${partido.logo || `/logos/${partido.id}.svg`}')`,
               }}
               aria-hidden
             />
@@ -65,9 +79,13 @@ const PartidoDetalle: React.FC = () => {
           {pestañas.map((t, i) => (
             <li className="nav-item" key={t}>
               <button
-                className={nav-link ${activeTab === i ? "active" : ""}}
+                className={`nav-link ${activeTab === i ? "active" : ""}`}
                 onClick={() => setActiveTab(i)}
                 type="button"
+                style={{
+                  color: activeTab === i ? "#000" : "#666",
+                  fontWeight: activeTab === i ? "600" : "normal"
+                }}
               >
                 {t}
               </button>
@@ -86,7 +104,7 @@ const PartidoDetalle: React.FC = () => {
                       <div className="col-12 col-sm-6 col-md-4" key={c.id}>
                         <div className="card h-100">
                           <img 
-                            src={c.foto || partido.logo || /logos/${partido.id}.svg}
+                            src={c.foto || partido.logo || `/logos/${partido.id}.svg`}
                             alt={c.nombre}
                             className="card-img-top"
                             style={{ 
@@ -108,6 +126,7 @@ const PartidoDetalle: React.FC = () => {
             </div>
           )}
 
+          {/* Plan de Gobierno */}
           {activeTab === 1 && (
             <div className="tab-pane active">
               <div className="card mb-4">
@@ -115,7 +134,7 @@ const PartidoDetalle: React.FC = () => {
                   <div className="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3">
                     <p className="mb-0 text-muted">{partido.descripcion || "Descripción del plan de gobierno no disponible."}</p>
                     <a
-                      className={btn btn-danger ${partido.planUrl ? "" : "disabled"}}
+                      className={`btn btn-danger ${partido.planUrl ? "" : "disabled"}`}
                       href={partido.planUrl || "#"}
                       target={partido.planUrl ? "_blank" : undefined}
                       rel={partido.planUrl ? "noopener noreferrer" : undefined}
@@ -157,8 +176,123 @@ const PartidoDetalle: React.FC = () => {
             </div>
           )}
 
+          {/* Cámara de Diputados */}
+          {activeTab === 2 && (
+            <div className="tab-pane active">
+              <div className="card mb-4 border-0 shadow-sm">
+                <div className="card-header bg-danger text-white py-3">
+                  <h4 className="mb-0">
+                    <i className="bi bi-file-text me-2"></i>
+                    Cámara de Diputados
+                  </h4>
+                  <p className="mb-0 small mt-1">Candidatos por circunscripción electoral</p>
+                </div>
+                <div className="card-body p-4">
+                  <div className="list-group list-group-flush">
+                    {diputadosEjemplo.map((diputado, index) => (
+                      <div 
+                        key={diputado.id}
+                        className="list-group-item border-0 border-bottom py-4 hover-shadow"
+                        style={{ 
+                          transition: 'all 0.3s',
+                          cursor: 'pointer',
+                          backgroundColor: index % 2 === 0 ? '#f8f9fa' : '#fff'
+                        }}
+                      >
+                        <div className="d-flex align-items-center gap-3">
+                          <div 
+                            className="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center"
+                            style={{ 
+                              width: 60, 
+                              height: 60,
+                              fontSize: '1.5rem',
+                              fontWeight: 'bold'
+                            }}
+                          >
+                            {diputado.nombre.charAt(0)}
+                          </div>
+                          <div className="flex-grow-1">
+                            <h5 className="mb-1 fw-bold">{diputado.nombre}</h5>
+                            <p className="mb-0 text-muted">{partido.nombre}</p>
+                          </div>
+                          <div className="text-end">
+                            <span className="badge bg-primary px-3 py-2" style={{ fontSize: '0.9rem' }}>
+                              {diputado.circunscripcion}
+                            </span>
+                          </div>
+                          <i className="bi bi-chevron-right text-muted" style={{ fontSize: '1.5rem' }}></i>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
-          {activeTab > 1 && (
+          {/* Cámara de Senadores */}
+          {activeTab === 3 && (
+            <div className="tab-pane active">
+              <div className="card mb-4 border-0 shadow-sm">
+                <div className="card-header bg-success text-white py-3">
+                  <h4 className="mb-0">
+                    <i className="bi bi-globe me-2"></i>
+                    Cámara de Senadores
+                  </h4>
+                  <p className="mb-0 small mt-1">Representantes nacionales y regionales</p>
+                </div>
+                <div className="card-body p-4">
+                  <div className="list-group list-group-flush">
+                    {senadoresEjemplo.map((senador, index) => (
+                      <div 
+                        key={senador.id}
+                        className="list-group-item border-0 border-bottom py-4 hover-shadow"
+                        style={{ 
+                          transition: 'all 0.3s',
+                          cursor: 'pointer',
+                          backgroundColor: index % 2 === 0 ? '#f8f9fa' : '#fff'
+                        }}
+                      >
+                        <div className="d-flex align-items-center gap-3">
+                          <div 
+                            className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center"
+                            style={{ 
+                              width: 60, 
+                              height: 60,
+                              fontSize: '1.5rem',
+                              fontWeight: 'bold'
+                            }}
+                          >
+                            {senador.nombre.charAt(0)}
+                          </div>
+                          <div className="flex-grow-1">
+                            <h5 className="mb-1 fw-bold">{senador.nombre}</h5>
+                            <p className="mb-0 text-muted">{partido.nombre}</p>
+                          </div>
+                          <div className="text-end">
+                            <span 
+                              className="badge px-3 py-2" 
+                              style={{ 
+                                fontSize: '0.9rem',
+                                backgroundColor: senador.ambito.includes('Nacional') ? '#ffc107' : '#17a2b8',
+                                color: '#000'
+                              }}
+                            >
+                              {senador.ambito}
+                            </span>
+                          </div>
+                          <i className="bi bi-chevron-right text-muted" style={{ fontSize: '1.5rem' }}></i>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Parlamento Andino */}
+          {activeTab === 4 && (
             <div className="card mb-4">
               <div className="card-body">
                 <p className="mb-0">Sección "{pestañas[activeTab]}". Añade contenido en src/data/partidos.ts si lo deseas.</p>
