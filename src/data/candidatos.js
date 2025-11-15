@@ -350,10 +350,10 @@ export const candidatos = [
   },
   {
     id: "partido-democratico-federal",
-    nombre: "Luis Castañeda Lossio",
+    nombre: "Armando Massé",
     partido: "Partido democratico federal",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Luis_Casta%C3%B1eda_Lossio_2015.jpg/800px-Luis_Casta%C3%B1eda_Lossio_2015.jpg",
-    logoPartido: "/logos/partido-buen-gobierno.png",
+    foto: "/FotosCandidatos/partido-democratico-federal.jpg",
+    logoPartido: "/logos/partido-democratico-federal.png",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 

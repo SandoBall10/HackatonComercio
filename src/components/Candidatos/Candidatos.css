@@ -229,7 +229,7 @@
 
 /* ===== NAVBAR ===== */
 .header-candidatos {
-  background: #c2272d;
+  background: var(--color-primario, #c2272d);
   position: sticky;
   top: 83px;
   z-index: 1000;
@@ -388,7 +388,7 @@
 .logo-icon {
   width: 32px;
   height: 32px;
-  color: #dc3545;
+  color: var(--color-primario, #dc3545);
   transition: transform 0.3s ease;
 }
 
@@ -505,7 +505,7 @@
   border-radius: 0.5rem;
   height: 40px;
   padding: 0 1rem;
-  background-color: #991b1b;
+  background-color: var(--color-primario, #991b1b);
   color: white;
   font-size: 0.875rem;
   font-weight: 700;
@@ -514,7 +514,7 @@
 }
 
 .btn-primary:hover {
-  background-color: #7f1d1d;
+  background-color: var(--color-secundario, #7f1d1d);
 }
 
 /* ===== Main Content ===== */
@@ -608,15 +608,15 @@
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+  background: linear-gradient(135deg, var(--color-primario, #dc3545) 0%, var(--color-secundario, #b02a37) 100%);
   padding: 5px;
-  box-shadow: 0 8px 24px rgba(220, 53, 69, 0.3);
+  box-shadow: 0 8px 24px rgba(var(--color-primario-rgb, 220, 53, 69), 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-avatar-container:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 32px rgba(220, 53, 69, 0.4);
+  box-shadow: 0 12px 32px rgba(var(--color-primario-rgb, 220, 53, 69), 0.4);
 }
 
 @media (min-width: 768px) {
@@ -664,7 +664,7 @@
   font-weight: 800;
   margin: 0;
   line-height: 1.2;
-  background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+  background: linear-gradient(135deg, var(--color-primario, #dc3545) 0%, var(--color-secundario, #b02a37) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -722,7 +722,7 @@
   border-radius: 0.5rem;
   height: 48px;
   padding: 0 1.5rem;
-  background-color: #991b1b;
+  background-color: var(--color-primario, #991b1b);
   color: white;
   font-size: 1rem;
   font-weight: 700;
@@ -739,7 +739,7 @@
 }
 
 .btn-download:hover {
-  background-color: #7f1d1d;
+  background-color: var(--color-secundario, #7f1d1d);
 }
 
 .btn-download .material-symbols-outlined {
@@ -1225,7 +1225,7 @@
   left: 0;
   right: 0;
   height: 300px;
-  background: linear-gradient(135deg, #dc3545 0%, #b02a37 50%, #8b2131 100%);
+  background: linear-gradient(135deg, var(--color-primario, #dc3545) 0%, var(--color-secundario, #b02a37) 50%, var(--color-terciario, #8b2131) 100%);
   opacity: 0.03;
   pointer-events: none;
 }
@@ -1237,7 +1237,7 @@
   right: -20%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(220, 53, 69, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--color-primario-rgb, 220, 53, 69), 0.1) 0%, transparent 70%);
   border-radius: 50%;
 }
 
@@ -1264,7 +1264,7 @@
 .avatar-ring {
   position: absolute;
   inset: -6px;
-  background: linear-gradient(135deg, #dc3545, #fd7e14, #ffc107, #dc3545);
+  background: linear-gradient(135deg, var(--color-primario, #dc3545), var(--color-secundario, #fd7e14), var(--color-primario, #ffc107), var(--color-primario, #dc3545));
   border-radius: 50%;
   animation: rotate 4s linear infinite;
   opacity: 0.8;
@@ -1285,7 +1285,7 @@
   background: white;
   border-radius: 50%;
   padding: 6px;
-  box-shadow: 0 10px 40px rgba(220, 53, 69, 0.2);
+  box-shadow: 0 10px 40px rgba(var(--color-primario-rgb, 220, 53, 69), 0.2);
 }
 
 .profile-avatar-advanced .profile-avatar-img {
@@ -1361,14 +1361,14 @@
 .meta-icon {
   width: 36px;
   height: 36px;
-  background: linear-gradient(135deg, #dc3545, #b02a37);
+  background: linear-gradient(135deg, var(--color-primario, #dc3545), var(--color-secundario, #b02a37));
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 16px;
-  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.25);
+  box-shadow: 0 4px 12px rgba(var(--color-primario-rgb, 220, 53, 69), 0.25);
 }
 
 .meta-text {
@@ -1555,7 +1555,7 @@
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+  background: linear-gradient(135deg, var(--color-primario, #dc3545) 0%, var(--color-secundario, #b02a37) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1640,7 +1640,7 @@
 .btn-download-advanced {
   position: relative;
   background: white;
-  color: #dc3545;
+  color: var(--color-primario, #dc3545);
   border: none;
   padding: 16px 32px;
   border-radius: 16px;
@@ -1686,7 +1686,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(220, 53, 69, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--color-primario-rgb, 220, 53, 69), 0.2), transparent);
   transition: left 0.5s ease;
 }
 
@@ -1708,13 +1708,13 @@
 
 .nav-pills .nav-link:hover {
   background-color: #f8f9fa;
-  color: #dc3545;
+  color: var(--color-primario, #dc3545);
   transform: translateY(-2px);
 }
 
 .nav-pills .nav-link.active {
-  background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
-  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+  background: linear-gradient(135deg, var(--color-primario, #dc3545) 0%, var(--color-secundario, #b02a37) 100%);
+  box-shadow: 0 4px 12px rgba(var(--color-primario-rgb, 220, 53, 69), 0.3);
   transform: translateY(-2px);
 }
 
@@ -1756,7 +1756,7 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, #dc3545, #f8f9fa);
+  background: linear-gradient(to bottom, var(--color-primario, #dc3545), #f8f9fa);
 }
 
 .timeline-item-bootstrap {
@@ -1802,12 +1802,12 @@
   min-width: 70px;
   height: 70px;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+  box-shadow: 0 4px 12px rgba(var(--color-primario-rgb, 220, 53, 69), 0.2);
 }
 
 /* Button Enhancements */
 .btn-danger {
-  background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+  background: linear-gradient(135deg, var(--color-primario, #dc3545) 0%, var(--color-secundario, #b02a37) 100%);
   border: none;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -1815,9 +1815,9 @@
 }
 
 .btn-danger:hover {
-  background: linear-gradient(135deg, #b02a37 0%, #8b2131 100%);
+  background: linear-gradient(135deg, var(--color-secundario, #b02a37) 0%, var(--color-terciario, #8b2131) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+  box-shadow: 0 6px 20px rgba(var(--color-primario-rgb, 220, 53, 69), 0.4);
 }
 
 /* Badge Enhancements */

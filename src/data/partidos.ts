@@ -301,7 +301,7 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/partido-democrata-verde.png",
     descripcion: "Partido político ecologista.",
     candidatos: [
-      { id: "pdv1", nombre: "Álex Gonzales", cargo: "Presidente", foto: "/FotosCandidatos/partido-democrata-verde.jpg" }
+      { id: "pdv1", nombre: "Álex Gonzales", cargo: "Presidente", foto: "https://scontent.flim18-2.fna.fbcdn.net/v/t39.30808-6/467973055_581735831218093_7633748453976638326_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_PxDNFe_h7UQ7kNvgF8OcZy&_nc_zt=23&_nc_ht=scontent.flim18-2.fna&_nc_gid=Ar8dptZDxS67vXaQnpPUXIm&oh=00_AYCjNKh7Rb9tnD_9g0CwWXK4dDULI8EymQIcYF4bnUWXuQ&oe=6737EBCF" }
     ]
   },
   {
@@ -338,7 +338,8 @@ export const PARTIDOS: Partido[] = [
         { id: "apra-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
     ]
   },
-  {    id: 15,
+  {
+    id: 15,
     nombre: "Partido Democrático Federal",
     siglas: "PDF",
     logo: "/logos/partido-democratico-federal.png",
