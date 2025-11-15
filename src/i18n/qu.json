@@ -76,6 +76,10 @@
       "informacion": "Partidupa Willakuynin",
       "nombreCompleto": "Hunt'asqa Sutin",
       "siglas": "Pisi Sutin",
+      "buscador": {
+        "placeholder": "Maskay partiduta sutimpi utaq siglasninwan...",
+        "noResultados": "Mana partidukuna tarikurqankuchu maskasqaykiwan"
+      },
       "nombres": {
         "accion-popular": "Ruway Llaqtap",
         "fuerza-popular": "Kallpa Llaqtap",
@@ -159,6 +163,130 @@
         "titulo": "Pulitika Ñan",
         "cargosPublicos": "Llaqta Llamk'aykuna Rurasqa",
         "partidosPrevios": "Ñawpaq Partidukuna"
+      }
+    },
+    "miembrosMesa": {
+      "titulo": "Mesa Miembrukuna",
+      "subtitulo": "Tukuy willakuy munasqayki llaqta llamk'ayniykita hunt'anaykipaq 12 abril 2026pi",
+      "tabs": {
+        "cronograma": "P'unchaw Pachakamay",
+        "instrucciones": "Yachachiy",
+        "derechos": "Derechukuna Ruwanakuna",
+        "capacitacion": "Yachachikuy"
+      },
+      "cronograma": {
+        "titulo": "Ruwanakuna Pachakamay - Akllana P'unchaw",
+        "descripcion": "12 abril 2026 - Kay yachachiywan qatiy mesa miembru hina allin llamk'anaykipaq",
+        "actividades": {
+          "llegada": "Akllana wasiykiman chayamuy",
+          "instalacion": "Akllana mesapa churay",
+          "verificacion": "Akllana materialespa qhaway",
+          "inicio": "Akllana ruwaypa qallariy",
+          "desarrollo": "Akllana p'unchawpa ruray",
+          "cierre": "Mesapa wichq'ay yupaypas akllanakunata",
+          "actas": "Actakunapa ruray kachaypas"
+        },
+        "importante": "Importante",
+        "mensajeImportante": "Yuyariy 1 hora ñawpaqta chayamuyta mana sasachakuykunapaq. Mesapa churayqa 7:00 AM nisqapi kanan tiyan."
+      },
+      "instrucciones": {
+        "titulo": "Yachachiy Sapa Llamk'ay",
+        "descripcion": "Kay yachachiykunata qatiy sapa etapa akllana ruwaypa",
+        "instalacion": {
+          "titulo": "Mesapa Churay",
+          "paso1": "Qhaway tukuy miembrukuna kachkanku",
+          "paso2": "Qhaway ánfora akllana materialeswan",
+          "paso3": "Qhaway mesaykipa padrón electoralta",
+          "paso4": "Churay cartel mesa yupayniyuqta rikukunanpaq"
+        },
+        "sufragio": {
+          "titulo": "Akllana Pachamanta",
+          "paso1": "Mañakuy DNIta akllaqmanta",
+          "paso2": "Qhaway kikinnininta padrónpi",
+          "paso3": "Quy cédula akllana",
+          "paso4": "Churay inka mana chinkakunanpaq índice rukmanta",
+          "paso5": "Churay firmayta acta akllanapi"
+        },
+        "conteo": {
+          "titulo": "Akllanakunapa Yupay",
+          "paso1": "Kichay ánforata personerokunapa ñawpaqninpi",
+          "paso2": "Yupay akllanakunata hatun kunkaykiwan",
+          "paso3": "Rakiy akllanakunata: allin, yuraq mana yupasqa",
+          "paso4": "Hunt'achiy acta electoralta",
+          "paso5": "Quy resultadokunata coordinador localman"
+        },
+        "consejos": {
+          "titulo": "Allin Yachachiy",
+          "consejo1": "Thak kay sapa pacha chiqamanta llamk'ay",
+          "consejo2": "Sichus mana yachankichu, tapukuy coordinador localwan",
+          "consejo3": "Yupaychay 100 metrokuna karumanta propaganda electoralpaq",
+          "consejo4": "Ama saqiychu celularkunata yaykuyta cámara pakapi"
+        }
+      },
+      "derechos": {
+        "titulo": "Derechoykikuna",
+        "descripcion": "Mesa miembru hina, kay derechoykikuna garantizasqa kanku:",
+        "derecho1": "Yachachikusqa kanaykipaq ONPEwanqa akllana p'unchaw ñawpaqta",
+        "derecho2": "Chaskiy mikhuy almuerzo akllana p'unchawpi",
+        "derecho3": "Mañakuy yanapakuyta policíamanta",
+        "derecho4": "Chaskiy qullqi yanapakuy llamk'ayniykimanta",
+        "derecho5": "Tarikuy constancia llamk'ayniykimanta mesa miembru hina"
+      },
+      "deberes": {
+        "titulo": "Ruwanaykikuna",
+        "descripcion": "Ruwanakuna hunt'anaykipaq kachkanku:",
+        "deber1": "Chayamuy allin pachapi akllana p'unchawpi",
+        "deber2": "Churay akllana mesata 7:00 AM nisqapi",
+        "deber3": "Waqaychay pakasqa akllana",
+        "deber4": "Churay allin kayta mesa electoralpi",
+        "deber5": "Hunt'achiy firmay actakunata electorales"
+      },
+      "compensacion": {
+        "titulo": "Qullqi Yanapakuy",
+        "mensaje": "Mesa miembru hina chaskinkiqa yanapakuyta",
+        "monto": "S/ 120.00 sulikuna",
+        "detalle": "llamk'ayniykimanta. Kayqa chaskinkipuni akllana ruwaypa qhipanpi."
+      },
+      "capacitacion": {
+        "titulo": "Yachachikuy Mesa Miembrukunapaq",
+        "descripcion": "ONPEqa qun mana qullqiyuq yachachikuyta tukuy mesa miembrukunapaq",
+        "presencial": {
+          "titulo": "Yachachikuy Kaqpi",
+          "descripcion": "Riy yachachikuy p'unchawkunaman distritoykipi. Kanqaku marzo 2026pi.",
+          "item1": "Ñawpaq p'unchaw: 29 marzo",
+          "item2": "Iskay kaq p'unchaw: 5 abril",
+          "item3": "Unaynin: 2-3 horakuna"
+        },
+        "virtual": {
+          "titulo": "Yachachikuy Virtual",
+          "descripcion": "Yaykuy cursokunamanqa internetwan wasiykimanta.",
+          "item1": "Plataforma virtual ONPE",
+          "item2": "Rikuy yachachiykunata",
+          "item3": "Material uraykachanapaq",
+          "item4": "Simuladores puriy"
+        },
+        "app": {
+          "titulo": "App Móvil",
+          "descripcion": "Uraykachay ONPE nisqa app mesa miembrukunapaq.",
+          "item1": "Yachachiy sapa llamk'ay",
+          "item2": "Hatun willaykunata",
+          "item3": "Qhaway akllana wasiykita",
+          "item4": "Material yanapakuy mana internetwan"
+        },
+        "recursos": {
+          "titulo": "Materialkuna Kachkan",
+          "manual": "Manual Mesa Miembrup",
+          "manualDesc": "Hunt'a yachachiy PDF nisqapi - Ñit'iy uraykachanapaq",
+          "videos": "Rikuy Yachachiy",
+          "videosDesc": "Video yachachiy mesa miembrukunapaq",
+          "preguntas": "Tapukuykuna Sapa Kuti",
+          "preguntasDesc": "Kutichinakuna tapukuykunaman - Ñit'iy uraykachanapaq"
+        }
+      },
+      "cta": {
+        "titulo": "¿Mesa miembruchu akllasqayki karqa?",
+        "descripcion": "Qhaway churasqaykita local akllana maypichus rinaykin",
+        "boton": "Qhaway Mesa Electoralniy"
       }
     }
   }

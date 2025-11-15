@@ -8,6 +8,7 @@ import Candidatos from './components/Candidatos/Candidatos';
 import PartidosPoliticos from './components/PartidosPoliticos/PartidosPoliticos';
 import PartidoDetalle from './components/Candidatos/PartidoDetalle';
 import ReniecConsultas from './components/reniec/ReniecConsultas';
+import MiembrosMesa from './components/MiembrosMesa/MiembrosMesa';
 import Chatbot from './components/Chatbot/Chatbot';
 import { getCandidatoById } from './data/candidatos.js';
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/partidos" element={<PartidosPoliticos />} />
         <Route path="/partido/:id" element={<PartidoDetalle />} />
         <Route path="/reniec" element={<ReniecConsultas />} />
+        <Route path="/miembros-mesa" element={<MiembrosMesa />} />
       </Routes>
 
       <Chatbot />
