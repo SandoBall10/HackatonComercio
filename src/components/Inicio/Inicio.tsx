@@ -258,6 +258,39 @@ export const Inicio: React.FC = () => {
           </div>
         </section>
       </main>
+
+        {/* FOOTER */}
+          <footer className="site-footer">
+            <div className="footer-container">
+              <div className="footer-col">
+                <h4>Oficina central</h4>
+                <p>Jr. Washington 1894, Cercado de Lima</p>
+                <p>Lunes a viernes de 8:30 a. m. a 5:00 p. m.</p>
+              </div>
+
+              <div className="footer-col">
+                <h4>Contáctanos:</h4>
+                <p><a href="mailto:informes@onpe.gob.pe">informes@onpe.gob.pe</a></p>
+                <p>(01) 4170630</p>
+                <p>WhatsApp: 995 404 991</p>
+              </div>
+
+              <div className="footer-col">
+                <h4>Síguenos:</h4>
+                <div className="socials" role="navigation" aria-label="Redes sociales">
+                  <a href="#" className="social" aria-label="Facebook">F</a>
+                  <a href="#" className="social" aria-label="X">X</a>
+                  <a href="#" className="social" aria-label="TikTok">t</a>
+                  <a href="#" className="social" aria-label="Instagram">ig</a>
+                  <a href="#" className="social" aria-label="YouTube">yt</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="footer-bottom">
+              © 2026 Portal Electoral - Todos los derechos reservados
+            </div>
+          </footer>
     </div>
   );
 };
