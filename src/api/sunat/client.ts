@@ -1,12 +1,13 @@
 import axios from 'axios';
 
-const SUNAT_API_BASE_URL = 'https://api.sunat.gob.pe/v1';
+const DECOLECTA_API_BASE_URL = 'https://api.decolecta.com/v1/reniec';
 
-const sunatClient = axios.create({
-    baseURL: SUNAT_API_BASE_URL,
+const decolectaClient = axios.create({
+    baseURL: DECOLECTA_API_BASE_URL,
     headers: {
         'Content-Type': 'application/json',
+        // 'Authorization': `Bearer ${token}`, // Debes agregar el token aquí
     },
 });
 
-export default sunatClient;
+export default decolectaClient;

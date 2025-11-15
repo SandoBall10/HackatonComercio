@@ -1,15 +1,8 @@
-interface SunatResponse {
-    success: boolean;
-    data?: {
-        nombre: string;
-        apellidoPaterno: string;
-        apellidoMaterno: string;
-        dni: string;
-    };
-    error?: {
-        code: string;
-        message: string;
-    };
+interface ReniecResponse {
+    first_name: string;
+    first_last_name: string;
+    second_last_name: string;
+    document_number: string;
 }
 
-export type { SunatResponse };
+export type { ReniecResponse };

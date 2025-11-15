@@ -1,11 +1,16 @@
-import sunatClient from './client';
-import { SunatResponse } from './types';
+import decolectaClient from './client';
+import { ReniecResponse } from './types';
 
-export const getDniData = async (dni: string): Promise<SunatResponse> => {
+export const getDniData = async (dni: string): Promise<ReniecResponse> => {
     try {
-        const response = await sunatClient.get(`/dni/${dni}`);
+        const response = await decolectaClient.get(`/dni`, {
+            params: { numero: dni },
+            headers: {
+                'Authorization': `Bearer TU_TOKEN_AQUI`,
+            },
+        });
         return response.data;
-    } catch (error) {
-        throw new Error(`Error fetching DNI data: ${error}`);
+    } catch (error: any) {
+        throw new Error(`Error fetching DNI data: ${error.message}`);
     }
 };
