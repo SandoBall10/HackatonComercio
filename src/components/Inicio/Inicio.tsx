@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Inicio.css';
 
 type EventItem = { date: string; title: string; bullets?: string[]; icon?: string };
@@ -76,6 +77,7 @@ const TIMELINE: Record<string, Record<string, EventItem[]>> = {
 };
 
 export const Inicio: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeYear, setActiveYear] = useState<'2025' | '2026'>('2025');
@@ -131,28 +133,28 @@ export const Inicio: React.FC = () => {
           <div className="logo-section">
             <img src="src/assets/Loog-Onpe.png" alt="ONPE" className="top-logo" />
             <div className="election-info">
-              <h2>Elecciones Generales</h2>
-              <p>12 de abril de 2026</p>
+              <h2>{t('inicio.titulo')}</h2>
+              <p>{t('inicio.fecha')}</p>
             </div>
           </div>
           <div className="countdown">
-            <span className="countdown-label">Faltan:</span>
+            <span className="countdown-label">{t('inicio.faltan')}</span>
             <div className="countdown-items">
               <div className="countdown-item">
                 <div className="countdown-value">{String(countdown.meses).padStart(2, '0')}</div>
-                <div className="countdown-label-small">Meses</div>
+                <div className="countdown-label-small">{t('inicio.meses')}</div>
               </div>
               <div className="countdown-item">
                 <div className="countdown-value">{String(countdown.dias).padStart(2, '0')}</div>
-                <div className="countdown-label-small">Días</div>
+                <div className="countdown-label-small">{t('inicio.dias')}</div>
               </div>
               <div className="countdown-item">
                 <div className="countdown-value">{String(countdown.horas).padStart(2, '0')}</div>
-                <div className="countdown-label-small">Horas</div>
+                <div className="countdown-label-small">{t('inicio.horas')}</div>
               </div>
               <div className="countdown-item">
                 <div className="countdown-value">{String(countdown.minutos).padStart(2, '0')}</div>
-                <div className="countdown-label-small">Minutos</div>
+                <div className="countdown-label-small">{t('inicio.minutos')}</div>
               </div>
             </div>
           </div>
@@ -163,20 +165,20 @@ export const Inicio: React.FC = () => {
       <header className="header">
         <nav className="navbar">
           <div className="nav-links-container">
-            <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Inicio</a>
-            <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>Partidos Politicos</a>
-            <a href="/candidatos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/candidatos'); }}>Candidatos</a>
-            <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>Consulta RENIEC</a>
-            <a href="#lo-nuevo" className="nav-link">Lo nuevo</a>
-            <a href="#voto-digital" className="nav-link">Voto Digital</a>
-            <a href="#verifica-mesa" className="nav-link nav-link-highlight">Verifica si eres miembro de mesa</a>
+            <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>{t('inicio.partidosPoliticos')}</a>
+            <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('inicio.partidosPoliticos')}</a>
+            <a href="/candidatos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/candidatos'); }}>{t('nav.candidatos')}</a>
+            <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
+            <a href="#lo-nuevo" className="nav-link">{t('inicio.loNuevo')}</a>
+            <a href="#voto-digital" className="nav-link">{t('inicio.votoDigital')}</a>
+            <a href="#verifica-mesa" className="nav-link nav-link-highlight">{t('inicio.verificaMiembro')}</a>
           </div>
         </nav>
       </header>
       {/* SUBTABS */}
       <div className="subtabs">
-        <button className="subtab-btn active">Información general</button>
-        <button className="subtab-btn">Enlaces relacionados</button>
+        <button className="subtab-btn active">{t('inicio.infoGeneral')}</button>
+        <button className="subtab-btn">{t('inicio.enlacesRelacionados')}</button>
         <div className="subtab-underline"></div>
       </div>
 
@@ -194,7 +196,7 @@ export const Inicio: React.FC = () => {
 
         {/* TIMELINE SECTION */}
         <section className="timeline-wrapper">
-          <h1 className="timeline-title">Sigue la línea de tiempo de este proceso electoral:</h1>
+          <h1 className="timeline-title">{t('inicio.timelineTitle')}</h1>
 
           {/* YEAR TABS */}
           <div className="tabs-link">
