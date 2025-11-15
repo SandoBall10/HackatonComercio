@@ -109,19 +109,26 @@ const Candidatos = ({ candidato: candidatoProp }) => {
     ? candidatos.find(c => {
         const partidoIdLower = partidoId.toLowerCase();
         
-        // Primero buscar en el mapeo
+        // Primero buscar en el mapeo (PRIORITARIO)
         const idMapeado = mapeoPartidos[partidoIdLower];
-        if (idMapeado && c.id === idMapeado) {
+        if (idMapeado) {
+          return c.id === idMapeado;
+        }
+        
+        // Si no está en el mapeo, buscar por coincidencias exactas primero
+        const idNormalizado = c.id.toLowerCase();
+        if (idNormalizado === partidoIdLower) {
           return true;
         }
         
-        // Si no está en el mapeo, buscar por coincidencias
-        const partidoNormalizado = c.partido.toLowerCase().replace(/[^a-z0-9]/g, '-');
-        const idNormalizado = c.id.toLowerCase();
+        // Solo como último recurso, buscar coincidencias parciales (evitar "id" corto)
+        if (partidoIdLower.length > 3) {
+          const partidoNormalizado = c.partido.toLowerCase().replace(/[^a-z0-9]/g, '-');
+          return partidoNormalizado.includes(partidoIdLower) ||
+                 c.partido.toLowerCase().includes(partidoIdLower);
+        }
         
-        return idNormalizado === partidoIdLower || 
-               partidoNormalizado.includes(partidoIdLower) ||
-               c.partido.toLowerCase().includes(partidoIdLower);
+        return false;
       }) || candidatoProp
     : candidatoProp;
 

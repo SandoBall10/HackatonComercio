@@ -55,7 +55,7 @@ export const candidatos = [
   {
     id: "partido-trabajadores-pte-peru",
     nombre: "Napoleón Becerra",
-    partido: "Partido de los trabajadores PTE-Perú",
+    partido: "P. de los trabajadores PTE-Perú",
     foto: "/FotosCandidatos/partido-trabajadores-pte-peru.jpg",
     logoPartido: "/logos/pte-peru.png",
     cargo: "Candidatura",
@@ -422,9 +422,9 @@ export const candidatos = [
   },
   {
     id: "partido-democratico-somos-peru",
-    nombre: "Patricia Li",
+    nombre: "George Forsyth",
     partido: "Partido democratico somos Perú",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Silueta_persona.svg/800px-Silueta_persona.svg.png",
+    foto: "/FotosCandidatos/somos-peru.jpg",
     logoPartido: "/logos/somos-peru.png",
     cargo: "Candidatura",
     redesSociales: {},
@@ -495,9 +495,9 @@ export const candidatos = [
   },
   {
     id: "frente-de-la-esperanza-2021",
-    nombre: "Fernando Cillóniz",
+    nombre: "Fernando Olivera",
     partido: "Partido frente de la esperanza 2021",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Silueta_persona.svg/800px-Silueta_persona.svg.png",
+    foto: "/FotosCandidatos/frente-de-la-esperanza-2021.jpg",
     logoPartido: "/logos/frente-esperanza-2021.png",
     cargo: "Candidatura",
     redesSociales: {},
@@ -519,9 +519,9 @@ export const candidatos = [
   },
   {
     id: "partido-morado",
-    nombre: "Julio Guzmán",
+    nombre: "Mesías Guevara",
     partido: "Partido Morado",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Julio_Guzm%C3%A1n_2021.jpg/800px-Julio_Guzm%C3%A1n_2021.jpg",
+    foto: "/FotosCandidatos/partido-morado.jpg",
     logoPartido: "/logos/partido-morado.png",
     cargo: "Candidatura",
     redesSociales: {},
@@ -544,9 +544,9 @@ export const candidatos = [
   },
   {
     id: "partido-politico-peru-accion",
-    nombre: "Martín Vizcarra",
+    nombre: "Francisco Diez Canseco",
     partido: "Partido Politico Perú Accion",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Mart%C3%ADn_Vizcarra_2019.jpg/800px-Mart%C3%ADn_Vizcarra_2019.jpg",
+    foto: "/FotosCandidatos/peru-accion.png",
     logoPartido: "/logos/peru-accion.png",
     cargo: "Candidatura",
     redesSociales: {},
@@ -592,9 +592,9 @@ export const candidatos = [
   },
   {
     id: "partido-pais-para-todos",
-    nombre: "Renzo Reggiardo",
+    nombre: "Carlos Álvarez",
     partido: "Partido Pais para todos",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Silueta_persona.svg/800px-Silueta_persona.svg.png",
+    foto: "/FotosCandidatos/pais-para-todos.jpg",
     logoPartido: "/logos/pais-para-todos.png",
     cargo: "Candidatura",
     redesSociales: {},
@@ -616,9 +616,9 @@ export const candidatos = [
   },
   {
     id: "partido-peru-primero",
-    nombre: "Enrique Ghersi",
+    nombre: "Mario Vizcarra",
     partido: "Partido politico Perú primero",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Silueta_persona.svg/800px-Silueta_persona.svg.png",
+    foto: "/FotosCandidatos/peru-primero.jpg",
     logoPartido: "/logos/peru-primero.png",
     cargo: "Candidatura",
     redesSociales: {},
@@ -665,9 +665,9 @@ export const candidatos = [
   },
   {
     id: "partido-patriotico-del-peru",
-    nombre: "Antauro Humala",
+    nombre: "Herbert Caller",
     partido: "Partido patriotico del Perú",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Silueta_persona.svg/800px-Silueta_persona.svg.png",
+    foto: "/FotosCandidatos/partido-patriotico-del-peru.png",
     logoPartido: "/logos/partido-patriotico-del-peru.png",
     cargo: "Candidatura",
     redesSociales: {},
@@ -834,9 +834,9 @@ export const candidatos = [
   },
   {
     id: "prin",
-    nombre: "Gonzalo Alegría",
+    nombre: "Walter Chirinos",
     partido: "Partido politico PRIN",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Silueta_persona.svg/800px-Silueta_persona.svg.png",
+    foto: "/FotosCandidatos/prin.jpg",
     logoPartido: "/logos/prin.png",
     cargo: "Candidatura",
     redesSociales: {},
@@ -884,26 +884,28 @@ export const candidatos = [
   },
   {
     id: "integridad-democratica",
-    nombre: "George Forsyth",
-    partido: "Partido politico integridad Democratica",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/George_Forsyth_2021.jpg/800px-George_Forsyth_2021.jpg",
+    nombre: "Wolfgang Grozo",
+    partido: "Integridad Democrática",
+    foto: "/FotosCandidatos/integridad-democratica.jpg",
     logoPartido: "/logos/integridad-democratica.png",
-    cargo: "Candidatura",
-    redesSociales: {},
+    cargo: "Candidato a la Presidencia",
+    redesSociales: { facebook: "#", twitter: "#", instagram: "#", tiktok: "#" },
     hojaDeVida: { 
-      formacionAcademica: ["Licenciatura en Ciencia Política"],
-      experienciaLaboral: ["Analista político", "Asesor parlamentario"],
+      formacionAcademica: ["Administración de Empresas", "Estudios de Gestión Pública"],
+      experienciaLaboral: ["Alcalde de La Victoria 2019-2022", "Ex arquero profesional Alianza Lima y Melgar", "Candidato presidencial 2021"],
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
     trayectoria: [
-      { fecha: "2022", descripcion: "Fundación del partido" }
+      { fecha: "2021", descripcion: "Candidato presidencial" },
+      { fecha: "2019-2022", descripcion: "Alcalde de La Victoria" },
+      { fecha: "2000-2015", descripcion: "Arquero profesional de fútbol" }
     ],
     noticias: [
-      { titulo: "Integridad en la política peruana", fuente: "Andina", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "George Forsyth presenta plan de seguridad ciudadana", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
     ],
     actividades: [
-      { dia: "25", mes: "ENE", titulo: "Foro anti-corrupción", lugar: "Lima", hora: "6:00 PM" }
+      { dia: "25", mes: "ENE", titulo: "Reunión con empresarios", lugar: "Lima", hora: "6:00 PM" }
     ]
   },
   {
@@ -982,9 +984,9 @@ export const candidatos = [
   },
   {
     id: "partido-si-creo",
-    nombre: "Alberto Fujimori",
+    nombre: "Carlos Espá",
     partido: "Partido Si creo",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Silueta_persona.svg/800px-Silueta_persona.svg.png",
+    foto: "/FotosCandidatos/si-creo.jpg",
     logoPartido: "/logos/si-creo.png",
     cargo: "Candidatura",
     redesSociales: {},
