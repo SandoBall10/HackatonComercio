@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { PARTIDOS, Partido, DetalleCandidato } from "../../data/partidos";
+import { candidatos } from "../../data/candidatos";
 
 const pestañas = [
   "Plancha Presidencial",
@@ -32,14 +33,48 @@ const PartidoDetalle: React.FC = () => {
 
   if (!partido) return <div className="container py-5">Partido no encontrado</div>;
 
-  const candidatos: DetalleCandidato[] =
-    partido.candidatos && partido.candidatos.length > 0
-      ? partido.candidatos.slice(0, 3)
-      : [
-          { id: "p1", nombre: "Candidato 1", cargo: "Presidente", foto: "" },
-          { id: "p2", nombre: "Candidato 2", cargo: "Vicepresidente", foto: "" },
-          { id: "p3", nombre: "Candidato 3", cargo: "Candidato", foto: "" },
-        ];
+  // Buscar candidatos del partido desde candidatos.js
+  const candidatosReales = candidatos.filter(c => {
+    const partidoNormalizado = c.partido.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const nombrePartidoNormalizado = partido.nombre.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return partidoNormalizado.includes(nombrePartidoNormalizado.substring(0, 10)) ||
+           nombrePartidoNormalizado.includes(partidoNormalizado.substring(0, 10));
+  });
+
+  // Crear plancha presidencial completa (Presidente + 2 Vicepresidentes)
+  const planchaPresidencial: DetalleCandidato[] = [
+    candidatosReales.length > 0 && candidatosReales[0]
+      ? {
+          id: candidatosReales[0].id,
+          nombre: candidatosReales[0].nombre,
+          cargo: "Presidente",
+          foto: candidatosReales[0].foto
+        }
+      : partido.candidatos && partido.candidatos.length > 0 && partido.candidatos[0]
+      ? partido.candidatos[0]
+      : {
+          id: "presidente",
+          nombre: "Por confirmar",
+          cargo: "Presidente",
+          foto: ""
+        },
+    partido.candidatos && partido.candidatos.length > 1 && partido.candidatos[1]
+      ? partido.candidatos[1]
+      : {
+          id: "vice1",
+          nombre: "Por confirmar",
+          cargo: "1er Vicepresidente",
+          foto: ""
+        },
+    partido.candidatos && partido.candidatos.length > 2 && partido.candidatos[2]
+      ? partido.candidatos[2]
+      : {
+          id: "vice2",
+          nombre: "Por confirmar",
+          cargo: "2do Vicepresidente",
+          foto: ""
+        }
+  ];
 
   return (
     <div className="min-vh-100 bg-light">
@@ -125,23 +160,40 @@ const PartidoDetalle: React.FC = () => {
             <div className="tab-pane active">
               <div className="card mb-4">
                 <div className="card-body">
-                  <div className="row g-3">
-                    {candidatos.map((c) => (
-                      <div className="col-12 col-sm-6 col-md-4" key={c.id}>
-                        <div className="card h-100">
+                  <div className="row g-4">
+                    {planchaPresidencial.map((candidato) => (
+                      <div className="col-12 col-md-6 col-lg-4" key={candidato.id}>
+                        <div className="card h-100 shadow-sm">
                           <img 
-                            src={c.foto || partido.logo || `/logos/${partido.id}.svg`}
-                            alt={c.nombre}
+                            src={candidato.foto || partido.logo || `/logos/${partido.id}.svg`}
+                            alt={candidato.nombre}
                             className="card-img-top"
                             style={{ 
                               width: '100%', 
-                              height: '300px', 
-                              objectFit: 'cover' 
+                              height: '350px', 
+                              objectFit: 'cover',
+                              opacity: candidato.nombre === "Por confirmar" ? 0.3 : 1
+                            }}
+                            onError={(e) => {
+                              if (candidato.nombre === "Por confirmar") {
+                                e.currentTarget.src = partido.logo || `/logos/${partido.id}.svg`;
+                              } else {
+                                e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(candidato.nombre)}&size=350&background=dc3545&color=fff&bold=true`;
+                              }
                             }}
                           />
-                          <div className="card-body">
-                            <h6 className="card-title mb-1">{c.nombre}</h6>
-                            <p className="text-muted mb-0">{c.cargo || "-"}</p>
+                          <div className="card-body text-center py-4">
+                            <h5 className="card-title mb-2 fw-bold" style={{
+                              color: candidato.nombre === "Por confirmar" ? "#999" : "#000"
+                            }}>
+                              {candidato.nombre}
+                            </h5>
+                            <p className="mb-0" style={{
+                              color: candidato.nombre === "Por confirmar" ? "#999" : "#6c757d"
+                            }}>
+                              <i className="bi bi-person-badge me-2"></i>
+                              <strong>{candidato.cargo}</strong>
+                            </p>
                           </div>
                         </div>
                       </div>
