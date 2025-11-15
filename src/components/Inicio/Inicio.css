@@ -20,7 +20,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 .countdown-label-small { color: #666; font-size: 11px; margin-top: 4px; }
 
 /* NAVBAR PRINCIPAL */
-.header { background: #D93536; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.header { background: rgb(179, 2, 39); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 .navbar { width: 100%; }
 .nav-links-container { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; gap: 0; height: 56px; align-items: center; justify-content: center; }
 .nav-link { color: #fff; text-decoration: none; padding: 16px 20px; font-weight: 600; font-size: 15px; border-bottom: 3px solid transparent; transition: all 0.3s; display: flex; align-items: center; }
@@ -181,7 +181,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 
 /* FOOTER */
 .site-footer {
-  background: #033a66;
+  background: rgb(179, 2, 39);
   color: #fff;
   margin-top: 48px;
 }
@@ -195,7 +195,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 .footer-col { flex: 1; min-width: 200px; }
 .footer-col h4 {
-  color: #f6b23e;
+  color: #000;
   margin: 0 0 12px 0;
   font-size: 18px;
   font-weight: 700;

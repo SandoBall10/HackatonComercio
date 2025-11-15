@@ -128,8 +128,6 @@ export const Inicio: React.FC = () => {
   return (
     <div className="inicio-container">
 
-       
-
       <main>
         {/* CARRUSEL */}
         <section className="carousel-section">
