@@ -82,7 +82,6 @@ const PartidosPoliticos: React.FC = () => {
     { "id": 21, "nombre": "Frente de la Esperanza 2021", "siglas": "F21", "logo": "/logos/frente-esperanza-2021.png" },
     { "id": 11, "nombre": "Nuevo Perú por el Buen Vivir", "siglas": "NPBV", "logo": "/logos/nuevo-peru-por-el-buen-vivir.png" },
     { "id": 5, "nombre": "Juntos por el Perú", "siglas": "JPP", "logo": "/logos/juntos-por-el-peru.png" },
-    { "id": 19, "nombre": "Frente Popular Agrícola FIA del Perú (Frepap)", "siglas": "Frepap", "logo": "/logos/frepap.png" },
     { "id": 16, "nombre": "Fe en el Perú", "siglas": "FEP", "logo": "/logos/fe-en-el-peru.png" },
     { "id": 25, "nombre": "Partido País para Todos", "siglas": "PPT", "logo": "/logos/pais-para-todos.png" },
     { "id": 4, "nombre": "Ahora Nación", "siglas": "AN", "logo": "/logos/ahora-nacion.png" },
