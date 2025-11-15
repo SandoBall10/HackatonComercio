@@ -12,42 +12,46 @@ const App = () => {
   const location = useLocation();
   const candidatoEjemplo = getCandidatoById('fuerza-popular');
 
+  // Ocultar navbar azul solo en la página de Inicio
+  const mostrarNavAzul = location.pathname !== '/';
+
   return (
     <div className="App">
-      <nav style={{
-        backgroundColor: '#1a1a2e',
-        padding: '1rem 2rem',
-        display: 'flex',
-        gap: '2rem',
-        alignItems: 'center',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-        position: 'sticky',
-        top: 0,
-        zIndex: 1000
-      }}>
-        <h1 style={{ 
-          color: '#fff', 
-          margin: 0, 
-          fontSize: '1.5rem',
-          fontWeight: 'bold'
+      {mostrarNavAzul && (
+        <nav style={{
+          backgroundColor: '#1a1a2e',
+          padding: '1rem 2rem',
+          display: 'flex',
+          gap: '2rem',
+          alignItems: 'center',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          position: 'sticky',
+          top: 0,
+          zIndex: 1000
         }}>
-          Elecciones Perú 2026
-        </h1>
-        <div style={{ display: 'flex', gap: '1rem', marginLeft: 'auto' }}>
-          <Link to="/" style={{
-            padding: '0.5rem 1.5rem',
-            backgroundColor: location.pathname === '/' ? '#0066cc' : 'transparent',
-            color: '#fff',
-            border: '1px solid #0066cc',
-            borderRadius: '4px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            transition: 'all 0.3s'
+          <h1 style={{ 
+            color: '#fff', 
+            margin: 0, 
+            fontSize: '1.5rem',
+            fontWeight: 'bold'
           }}>
-            Inicio
-          </Link>
-          <Link to="/candidatos" style={{
-            padding: '0.5rem 1.5rem',
+            Elecciones Perú 2026
+          </h1>
+          <div style={{ display: 'flex', gap: '1rem', marginLeft: 'auto' }}>
+            <Link to="/" style={{
+              padding: '0.5rem 1.5rem',
+              backgroundColor: location.pathname === '/' ? '#0066cc' : 'transparent',
+              color: '#fff',
+              border: '1px solid #0066cc',
+              borderRadius: '4px',
+              textDecoration: 'none',
+              fontSize: '1rem',
+              transition: 'all 0.3s'
+            }}>
+              Inicio
+            </Link>
+            <Link to="/candidatos" style={{
+              padding: '0.5rem 1.5rem',
             backgroundColor: location.pathname === '/candidatos' ? '#0066cc' : 'transparent',
             color: '#fff',
             border: '1px solid #0066cc',
@@ -83,7 +87,8 @@ const App = () => {
             Consulta RENIEC
           </Link>
         </div>
-      </nav>
+        </nav>
+      )}
 
       <Routes>
         <Route path="/" element={<Inicio />} />

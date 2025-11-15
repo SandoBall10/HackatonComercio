@@ -160,6 +160,59 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 .carousel-btn.prev { left: 16px; }
 .carousel-btn.next { right: 16px; }
 
+/* FOOTER */
+.site-footer {
+  background: #033a66;
+  color: #fff;
+  margin-top: 48px;
+}
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 36px 32px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.footer-col { flex: 1; min-width: 200px; }
+.footer-col h4 {
+  color: #f6b23e;
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.footer-col p { margin: 6px 0; color: #e6f1fb; font-size: 14px; }
+.footer-col a { color: #e6f1fb; text-decoration: none; }
+
+.socials { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  padding: 12px 16px;
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container { flex-direction: column; padding: 24px 16px; gap: 16px; }
+  .social { width: 40px; height: 40px; }
+}
+
 @media (max-width: 1024px) {
   .top-header-content { flex-direction: column; gap: 16px; }
   .countdown-items { flex-wrap: wrap; }
