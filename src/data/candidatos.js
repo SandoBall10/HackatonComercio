@@ -4,8 +4,8 @@ export const candidatos = [
   {
     id: "accion-popular",
     nombre: "Yonhy Lescano Ancieta",
-    partido: "ACCIÓN POPULAR",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Yonhy_Lescano.jpg/800px-Yonhy_Lescano.jpg",
+    partido: "ahora",
+    foto: "/FotosCandidatos/accion-popular.jpeg",
     logoPartido: "/logos/accion-popular.png",
     cargo: "Candidatura",
     redesSociales: {},
@@ -79,9 +79,9 @@ export const candidatos = [
   },
   {
     id: "ahora-nacion",
-    nombre: "Rafael López Aliaga",
+    nombre: "Alfonso López-Chau",
     partido: "Ahora Nación (AN)",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Rafael_L%C3%B3pez_Aliaga_en_2024.jpg/800px-Rafael_L%C3%B3pez_Aliaga_en_2024.jpg",
+    foto: "/FotosCandidatos/ahora-nacion.jpg",
     logoPartido: "/logos/ahora-nacion.png",
     cargo: "Candidatura",
     redesSociales: {},
