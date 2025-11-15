@@ -22,7 +22,7 @@
       "verificaMiembro": "Verifica si eres miembro de mesa",
       "infoGeneral": "Información general",
       "enlacesRelacionados": "Enlaces relacionados",
-      "timelineTitle": "Sigue la línea de tiempo de este proceso electoral:"
+      "timelineTitle": "Línea de tiempo electoral:"
     },
     "chatbot": {
       "titulo": "Asistente Virtual",
@@ -75,7 +75,91 @@
       "volver": "← Volver a la lista",
       "informacion": "Información del Partido",
       "nombreCompleto": "Nombre Completo",
-      "siglas": "Siglas"
+      "siglas": "Siglas",
+      "nombres": {
+        "accion-popular": "Acción Popular",
+        "fuerza-popular": "Fuerza Popular",
+        "pte-peru": "Partido de los Trabajadores PTE–Perú",
+        "ahora-nacion": "Ahora Nación",
+        "juntos-por-el-peru": "Juntos por el Perú",
+        "partido-buen-gobierno": "Partido del Buen Gobierno",
+        "alianza-para-el-progreso": "Alianza para el Progreso",
+        "libertad-popular": "Libertad Popular",
+        "partido-democrata-unido": "Partido Demócrata Unido Perú",
+        "avanza-pais": "Avanza País",
+        "nuevo-peru": "Nuevo Perú por el Buen Vivir",
+        "partido-democrata-verde": "Partido Demócrata Verde",
+        "batalla-peru": "Batalla Perú",
+        "partido-aprista": "Partido Aprista Peruano",
+        "partido-democratico-federal": "Partido Democrático Federal",
+        "fe-en-el-peru": "Fe en el Perú",
+        "partido-ciudadanos": "Partido Ciudadanos por el Perú",
+        "somos-peru": "Partido Democrático Somos Perú",
+        "frepap": "Frente Popular Agrícola FIA del Perú",
+        "partido-civico-obras": "Partido Cívico Obras",
+        "frente-esperanza": "Frente de la Esperanza 2021",
+        "partido-morado": "Partido Morado",
+        "peru-accion": "Partido Político Perú Acción",
+        "peru-moderno": "Perú Moderno",
+        "pais-para-todos": "Partido País para Todos",
+        "peru-primero": "Partido Perú Primero",
+        "podemos-peru": "Podemos Perú",
+        "partido-patriotico": "Partido Patriótico del Perú",
+        "peruanos-unidos": "Peruanos Unidos Somos Libres",
+        "primero-la-gente": "Primero la Gente",
+        "cooperacion-popular": "Cooperación Popular",
+        "voces-del-pueblo": "Voces del Pueblo",
+        "progresemos": "Progresemos",
+        "fuerza-moderna": "Fuerza Moderna",
+        "prin": "PRIN",
+        "renovacion-popular": "Renovación Popular",
+        "integridad-democratica": "Integridad Democrática",
+        "partido-popular-cristiano": "Partido Popular Cristiano",
+        "salvemos-al-peru": "Salvemos al Perú",
+        "peru-libre": "Perú Libre",
+        "partido-si-creo": "Partido Sí Creo",
+        "un-camino-diferente": "Un Camino Diferente",
+        "unidad-y-paz": "Unidad y Paz"
+      }
+    },
+    "candidatos": {
+      "titulo": "Candidato a la Presidencia",
+      "cargo": "Candidata a la Presidencia por",
+      "redesSociales": "Redes Sociales",
+      "noEncontrado": "No se encontró información del candidato",
+      "tabs": {
+        "hojaVida": "Hoja de Vida",
+        "planGobierno": "Plan de Gobierno",
+        "trayectoria": "Trayectoria"
+      },
+      "hojaVida": {
+        "titulo": "Hoja de Vida",
+        "datosPersonales": "Datos Personales",
+        "nombreCompleto": "Nombre Completo",
+        "dni": "DNI",
+        "fechaNacimiento": "Fecha de Nacimiento",
+        "lugarNacimiento": "Lugar de Nacimiento",
+        "estadoCivil": "Estado Civil",
+        "profesion": "Profesión",
+        "formacionAcademica": "Formación Académica",
+        "experienciaLaboral": "Experiencia Laboral",
+        "idiomas": "Idiomas",
+        "logros": "Logros y Reconocimientos",
+        "declaracionesJuradas": "Declaraciones Juradas",
+        "sentenciasJudiciales": "Sentencias Judiciales",
+        "noDisponible": "No disponible",
+        "noInformacion": "No hay información disponible"
+      },
+      "planGobierno": {
+        "titulo": "Plan de Gobierno",
+        "ejesTematicos": "Ejes Temáticos",
+        "propuestas": "Propuestas Principales"
+      },
+      "trayectoria": {
+        "titulo": "Trayectoria Política",
+        "cargosPublicos": "Cargos Públicos Desempeñados",
+        "partidosPrevios": "Partidos Políticos Anteriores"
+      }
     }
   }
 }

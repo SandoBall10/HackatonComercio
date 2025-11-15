@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Candidatos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { candidatos } from '../../data/candidatos';
+import { partidos } from '../PartidosPoliticos/PartidosPoliticos'; // Importar partidos
 
 const Candidatos = ({ candidato: candidatoProp }) => {
-  const navigate = useNavigate();
+  const { t } = useTranslation();
   const { partidoId } = useParams();
   const [activeTab, setActiveTab] = useState('hoja-vida');
-  const [countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
+  const [_countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
 
   // Mapeo de IDs de partidos a IDs de candidatos
   const mapeoPartidos = {
@@ -124,6 +126,55 @@ const Candidatos = ({ candidato: candidatoProp }) => {
       }) || candidatoProp
     : candidatoProp;
 
+  // Obtener el PDF del partido
+  const getPdfPath = () => {
+    if (!candidato) return null;
+    
+    console.log('=== DEBUG PDF ===');
+    console.log('Candidato partido:', candidato.partido);
+    console.log('Todos los partidos:', partidos);
+    
+    // Buscar el partido correspondiente
+    const partido = partidos.find(p => {
+      const nombrePartido = candidato.partido.toLowerCase().trim();
+      const nombrePartidoData = p.nombre.toLowerCase().trim();
+      const siglasPartido = p.siglas?.toLowerCase().trim() || '';
+      
+      console.log('Comparando:', {
+        candidatoPartido: nombrePartido,
+        partidoNombre: nombrePartidoData,
+        partidoSiglas: siglasPartido,
+        match: nombrePartidoData.includes(nombrePartido) || 
+               nombrePartido.includes(nombrePartidoData) ||
+               siglasPartido === nombrePartido
+      });
+      
+      return nombrePartidoData.includes(nombrePartido) || 
+             nombrePartido.includes(nombrePartidoData) ||
+             siglasPartido === nombrePartido ||
+             siglasPartido === 'rp'; // Agregar búsqueda específica por siglas
+    });
+    
+    console.log('Partido encontrado:', partido);
+    console.log('PDF Path:', partido?.planGobierno);
+    
+    return partido?.planGobierno || null;
+  };
+
+  const pdfPath = getPdfPath();
+  
+  console.log('=== PDF FINAL ===');
+  console.log('pdfPath:', pdfPath);
+  console.log('Botón habilitado:', !!pdfPath);
+
+  const handleDownloadPDF = () => {
+    if (pdfPath) {
+      window.open(pdfPath, '_blank');
+    } else {
+      alert('Plan de Gobierno no disponible para este partido');
+    }
+  };
+
   // Calcular countdown
   useEffect(() => {
     const targetDate = new Date('2026-04-12T00:00:00').getTime();
@@ -147,7 +198,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
       <div className="container text-center py-5">
         <div className="alert alert-warning animate-fade-in" role="alert">
           <i className="bi bi-exclamation-triangle-fill me-2"></i>
-          No se encontró información del candidato
+          {t('candidatos.noEncontrado')}
         </div>
       </div>
     );
@@ -211,7 +262,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                             <div className="meta-icon">
                               <i className="bi bi-briefcase-fill"></i>
                             </div>
-                            <span className="meta-text">{candidato.cargo} por {candidato.partido}</span>
+                            <span className="meta-text">{t('candidatos.cargo')} {candidato.partido}</span>
                           </div>
                         </div>
 
@@ -243,7 +294,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     <div className="social-section mt-5 pt-4 border-top">
                       <div className="d-flex align-items-center justify-content-between mb-3">
                         <h6 className="social-title mb-0">
-                          <i className="bi bi-share-fill me-2"></i>Redes Sociales
+                          <i className="bi bi-share-fill me-2"></i>{t('candidatos.redesSociales')}
                         </h6>
                       </div>
                       <div className="social-links-grid">
@@ -307,11 +358,21 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       <p className="cta-description mb-4">
                         Descarga el plan completo de propuestas y conoce nuestras iniciativas
                       </p>
-                      <button className="btn-download-advanced">
+                      <button 
+                        className="btn-download-advanced"
+                        onClick={handleDownloadPDF}
+                        disabled={!pdfPath}
+                        style={{
+                          opacity: pdfPath ? 1 : 0.6,
+                          cursor: pdfPath ? 'pointer' : 'not-allowed'
+                        }}
+                      >
                         <span className="btn-icon">
                           <i className="bi bi-download"></i>
                         </span>
-                        <span className="btn-text">Descargar PDF</span>
+                        <span className="btn-text">
+                          {pdfPath ? 'Descargar PDF' : 'No Disponible'}
+                        </span>
                         <span className="btn-shine"></span>
                       </button>
                     </div>
@@ -328,7 +389,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 className={`nav-link ${activeTab === 'hoja-vida' ? 'active' : ''}`}
                 onClick={() => setActiveTab('hoja-vida')}
               >
-                <i className="bi bi-person-vcard me-2"></i>Hoja de Vida
+                <i className="bi bi-person-vcard me-2"></i>{t('candidatos.tabs.hojaVida')}
               </button>
             </li>
             <li className="nav-item">
@@ -336,7 +397,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 className={`nav-link ${activeTab === 'propuestas' ? 'active' : ''}`}
                 onClick={() => setActiveTab('propuestas')}
               >
-                <i className="bi bi-lightbulb me-2"></i>Propuestas
+                <i className="bi bi-lightbulb me-2"></i>{t('candidatos.planGobierno.propuestas')}
               </button>
             </li>
             <li className="nav-item">
@@ -370,7 +431,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="card-body">
                           <h5 className="card-title text-danger mb-3">
                             <i className="bi bi-mortarboard-fill me-2"></i>
-                            Formación Académica
+                            {t('candidatos.hojaVida.formacionAcademica')}
                           </h5>
                           <ul className="list-unstyled">
                             {candidato.hojaDeVida?.formacionAcademica && candidato.hojaDeVida.formacionAcademica.length > 0 ? (
@@ -392,7 +453,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="card-body">
                           <h5 className="card-title text-danger mb-3">
                             <i className="bi bi-briefcase-fill me-2"></i>
-                            Experiencia Laboral
+                            {t('candidatos.hojaVida.experienciaLaboral')}
                           </h5>
                           <ul className="list-unstyled">
                             {candidato.hojaDeVida?.experienciaLaboral && candidato.hojaDeVida.experienciaLaboral.length > 0 ? (
@@ -403,7 +464,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                                 </li>
                               ))
                             ) : (
-                              <li className="text-muted">No disponible</li>
+                              <li className="text-muted">{t('candidatos.hojaVida.noDisponible')}</li>
                             )}
                           </ul>
                         </div>
@@ -414,7 +475,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="card-body">
                           <h5 className="card-title text-primary mb-3">
                             <i className="bi bi-file-text-fill me-2"></i>
-                            Declaraciones Juradas
+                            {t('candidatos.hojaVida.declaracionesJuradas')}
                           </h5>
                           <p className="mb-0">{candidato.hojaDeVida?.declaracionesJuradas}</p>
                         </div>
@@ -425,7 +486,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="card-body">
                           <h5 className="card-title text-danger mb-3">
                             <i className="bi bi-exclamation-triangle-fill me-2"></i>
-                            Sentencias Judiciales
+                            {t('candidatos.hojaVida.sentenciasJudiciales')}
                           </h5>
                           <p className="mb-0 text-danger fw-semibold">
                             {candidato.hojaDeVida?.sentenciasJudiciales}
@@ -440,7 +501,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     <div className="card-body p-4">
                       <h4 className="text-danger mb-4">
                         <i className="bi bi-clock-history me-2"></i>
-                        Trayectoria Política y Profesional
+                        {t('candidatos.trayectoria.titulo')}
                       </h4>
                       <div className="timeline-bootstrap">
                         {candidato.trayectoria && candidato.trayectoria.length > 0 ? (
@@ -454,7 +515,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                             </div>
                           ))
                         ) : (
-                          <p className="text-muted">No hay información de trayectoria disponible.</p>
+                          <p className="text-muted">{t('candidatos.hojaVida.noInformacion')}</p>
                         )}
                       </div>
                     </div>
