@@ -47,7 +47,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PTE",
     logo: "/logos/pte-peru.png",
     descripcion: "Partido político de izquierda enfocado en los derechos de los trabajadores.",
-    candidatos: []
+    candidatos: [
+      { id: "pte1", nombre: "Napoleón Becerra", cargo: "Presidente", foto: "/FotosCandidatos/partido-trabajadores-pte-peru.jpg" }
+    ]
   },
   {
     id: 4,
@@ -107,7 +109,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "APIS",
     logo: "/logos/avanza-pais.png",
     descripcion: "Partido político de derecha liberal.",
-    candidatos: []
+    candidatos: [
+      { id: "apis1", nombre: "Phillip Butters", cargo: "Presidente", foto: "/FotosCandidatos/avanza-pais.jpeg" }
+    ]
   },
   {
     id: 11,
@@ -123,7 +127,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PDV",
     logo: "/logos/partido-democrata-verde.png",
     descripcion: "Partido político ecologista.",
-    candidatos: []
+    candidatos: [
+      { id: "pdv1", nombre: "Álex Gonzales", cargo: "Presidente", foto: "/FotosCandidatos/partido-democrata-verde.jpg" }
+    ]
   },
   {
     id: 13,
@@ -179,7 +185,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PCO",
     logo: "/logos/partido-civico-obras.png",
     descripcion: "Partido enfocado en obras públicas.",
-    candidatos: []
+    candidatos: [
+      { id: "pco1", nombre: "Ricardo Belmont", cargo: "Presidente", foto: "/FotosCandidatos/partido-civico-obras.jpg" }
+    ]
   },
   {
     id: 21,
@@ -219,7 +227,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PPT",
     logo: "/logos/pais-para-todos.png",
     descripcion: "Partido inclusivo y social.",
-    candidatos: []
+    candidatos: [
+      { id: "ppt1", nombre: "Carlos Álvarez", cargo: "Presidente", foto: "/FotosCandidatos/pais-para-todos.jpg" }
+    ]
   },
   {
     id: 26,
@@ -227,7 +237,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PP1",
     logo: "/logos/peru-primero.png",
     descripcion: "Partido nacionalista.",
-    candidatos: []
+    candidatos: [
+      { id: "pp1-1", nombre: "Mario Vizcarra", cargo: "Presidente", foto: "/FotosCandidatos/peru-primero.jpg" }
+    ]
   },
   {
     id: 27,
@@ -267,7 +279,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "CP",
     logo: "/logos/cooperacion-popular.png",
     descripcion: "Partido cooperativista.",
-    candidatos: []
+    candidatos: [
+      { id: "cp1", nombre: "Yonhy Lescano", cargo: "Presidente", foto: "/FotosCandidatos/cooperacion-popular.jpg" }
+    ]
   },
   {
     id: 32,
@@ -275,7 +289,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "VP",
     logo: "/logos/voces-del-pueblo.png",
     descripcion: "Partido de representación popular.",
-    candidatos: []
+    candidatos: [
+      { id: "vp1", nombre: "Gillermo Bermejo", cargo: "Presidente", foto: "/FotosCandidatos/voces-del-pueblo.jpg" }
+    ]
   },
   {
     id: 33,
@@ -308,7 +324,9 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/renovacion-popular.png",
     descripcion: "Partido político de derecha conservadora.",
     planGobierno: "/pdf/plangobierno-rp.pdf", // Agregar esta línea
-    candidatos: []
+    candidatos: [
+      { id: "rp1", nombre: "Rafael López Aliaga", cargo: "Presidente", foto: "/FotosCandidatos/renovacion-popular.jpg" }
+    ]
   },
   {
     id: 37,
@@ -348,7 +366,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "SC",
     logo: "/logos/si-creo.png",
     descripcion: "Partido de fe y valores.",
-    candidatos: []
+    candidatos: [
+      { id: "sc1", nombre: "Carlos Espá", cargo: "Presidente", foto: "/FotosCandidatos/si-creo.jpg" }
+    ]
   },
   {
     id: 42,
