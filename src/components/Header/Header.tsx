@@ -70,8 +70,7 @@ export const Header: React.FC = () => {
             <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
             <a href="#lo-nuevo" className="nav-link">{t('inicio.loNuevo')}</a>
             <a href="#voto-digital" className="nav-link">{t('inicio.votoDigital')}</a>
-            <a href="#verifica-mesa" className="nav-link nav-link-highlight">{t('inicio.verificaMiembro')}</a>
-          </div>
+            </div>
         </nav>
       </header>
 
