@@ -1,12 +1,15 @@
 import React from 'react';
 import './Candidatos.css';
-import { Candidato } from '../../data/candidatos';
 
-interface CandidatosProps {
-  candidato: Candidato;
-}
+const Candidatos = ({ candidato }) => {
+  if (!candidato) {
+    return <div>No se encontró información del candidato</div>;
+  }
 
-const Candidatos: React.FC<CandidatosProps> = ({ candidato }) => {
+  console.log('Candidato recibido:', candidato);
+  console.log('Foto URL:', candidato.foto);
+  console.log('Logo URL:', candidato.logoPartido);
+  
   return (
     <div className="candidatos-container">
       {/* Main Content */}
@@ -17,19 +20,34 @@ const Candidatos: React.FC<CandidatosProps> = ({ candidato }) => {
             <div className="profile-header">
               <div className="profile-info">
                 <div className="profile-main">
-                  <div 
-                    className="profile-avatar" 
-                    style={{backgroundImage: `url("${candidato.foto}")`}}
-                  ></div>
+                  <div className="profile-avatar-container">
+                    <img 
+                      className="profile-avatar-img" 
+                      src={candidato.foto} 
+                      alt={candidato.nombre}
+                      onError={(e) => {
+                        console.log('Error cargando imagen, usando fallback');
+                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(candidato.nombre || candidato.partido)}&size=300&background=991b1b&color=fff&bold=true`;
+                      }}
+                      onLoad={() => console.log('Imagen del candidato cargada')}
+                    />
+                  </div>
                   <div className="profile-details">
                     <p className="profile-name">{candidato.nombre}</p>
                     <p className="profile-role">{candidato.cargo} por {candidato.partido}</p>
                     <div className="profile-party">
-                      <img 
-                        className="party-logo" 
-                        src={candidato.logoPartido} 
-                        alt="Logo del partido"
-                      />
+                      {candidato.logoPartido && (
+                        <img 
+                          className="party-logo" 
+                          src={candidato.logoPartido} 
+                          alt="Logo del partido"
+                          onError={(e) => {
+                            console.log('Error cargando logo del partido');
+                            e.currentTarget.style.display = 'none';
+                          }}
+                          onLoad={() => console.log('Logo del partido cargado')}
+                        />
+                      )}
                       <p>{candidato.partido}</p>
                     </div>
                   </div>
@@ -43,25 +61,25 @@ const Candidatos: React.FC<CandidatosProps> = ({ candidato }) => {
               {/* ActionsBar */}
               <div className="actions-bar">
                 <div className="social-links">
-                  {candidato.redesSociales.facebook && (
+                  {candidato.redesSociales?.facebook && (
                     <a href={candidato.redesSociales.facebook} className="social-link" target="_blank" rel="noopener noreferrer">
                       <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYF6rbDZYIvz3WzHbIdf6XR231pjPUNk9iwImFt8SdHVDaDg7z1mk3Gn7KBHKJgSFSqGizozbAilhJoDzFwy9rqqdS-SBQ0LhOdS_75kF8-UAzKyhL301km9a9jyTJVHoLLDf5NSBp5lSK4FgBOKO6X5G8GTpP_Z2XUhSb3IZVmfe0FYu-HFqLWKMO7dlor475na58bA-H_NTWjmxxIYlR37XlbVJUBbDDdCCsik2WlROpVYFSP-fOsR3g2f5vemq6-NLNKBfVmQ" alt="Facebook" />
                       <p>Facebook</p>
                     </a>
                   )}
-                  {candidato.redesSociales.twitter && (
+                  {candidato.redesSociales?.twitter && (
                     <a href={candidato.redesSociales.twitter} className="social-link" target="_blank" rel="noopener noreferrer">
                       <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDezstiy-TpW-Az77ng_Z0XGaWLbdpV903WRGSTwPeMCGJPhXvxBiRVMrxnL4v1ZAMwrsoU792uK_gQ6_gJIndxlfnI55DejjIHX6vGi_O0gnNXoROUhTXHeWm7j_tQG5mtIQUbj8lvH_T0jQ-UDUi91eGmXoY9_8oz7Q3g0nw4BKX066kecy134XksNFmkSbIyZpjf684lviejZRPpzjL2pZA3by-0EKSN2n48UEDAIJEenltrv5JGFeeX6fWnhmHSBep39atltw" alt="X" />
                       <p>Twitter</p>
                     </a>
                   )}
-                  {candidato.redesSociales.instagram && (
+                  {candidato.redesSociales?.instagram && (
                     <a href={candidato.redesSociales.instagram} className="social-link" target="_blank" rel="noopener noreferrer">
                       <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVkzDUPyf9JIeBU5_BAhb-PF6yyoufIUHKkIpx810MWCvZKu45HUbqL6ehiN1DgLrIUXgazAfWedq6R8zHqVB1ObWnlqze08NhAEAKJbmyAU-cEZyZWTF3Ur_Y2X7XEmL3R1TiWg_whWXq-qKV9iigFi6GsU9Bb51-bZ1hQpoTtYE1cTCdczjOQQ62mAjbvPqzkJ7GM2OPKv3TBSbGlf9Fa8HTmU-aAHj7eRfLeKf_5PXcLVo66OQgL9bCL6Rfm0nNZiwggTsyOg" alt="Instagram" />
                       <p>Instagram</p>
                     </a>
                   )}
-                  {candidato.redesSociales.tiktok && (
+                  {candidato.redesSociales?.tiktok && (
                     <a href={candidato.redesSociales.tiktok} className="social-link" target="_blank" rel="noopener noreferrer">
                       <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHKIyg9yHp8BFzpvulkoX7LChEGIYyL2TOWKiqSUZiwUimBy-3C2om6djPsC6XG9grFFFm8CXwE6968vEsjFxqr093PTbc8XDb4ymC8JYHipfjNcJm0ccjZiyBqpFjIY6dQfrlyhbKtpQhgwL82bPHhtUeNPJ0njCUhP6Oqnp7MoqCTwemYg57Azpyr-4elc07IhHrvsNna-KCG14Pi71ip5_AeWSI-zcmlqAL14W6wYu60hPfCb5P6xxlDaI4SOrAuFDXUvf5lw" alt="TikTok" />
                       <p>TikTok</p>
@@ -106,7 +124,7 @@ const Candidatos: React.FC<CandidatosProps> = ({ candidato }) => {
                   <div className="info-card">
                     <h3>Formación Académica</h3>
                     <ul>
-                      {candidato.hojaDeVida.formacionAcademica.map((item, index) => (
+                      {candidato.hojaDeVida?.formacionAcademica?.map((item, index) => (
                         <li key={index}>• {item}</li>
                       ))}
                     </ul>
@@ -114,18 +132,18 @@ const Candidatos: React.FC<CandidatosProps> = ({ candidato }) => {
                   <div className="info-card">
                     <h3>Experiencia Laboral</h3>
                     <ul>
-                      {candidato.hojaDeVida.experienciaLaboral.map((item, index) => (
+                      {candidato.hojaDeVida?.experienciaLaboral?.map((item, index) => (
                         <li key={index}>• {item}</li>
                       ))}
                     </ul>
                   </div>
                   <div className="info-card">
                     <h3>Declaraciones Juradas</h3>
-                    <p>{candidato.hojaDeVida.declaracionesJuradas}</p>
+                    <p>{candidato.hojaDeVida?.declaracionesJuradas}</p>
                   </div>
                   <div className="info-card alert">
                     <h3>Sentencias Judiciales</h3>
-                    <p>{candidato.hojaDeVida.sentenciasJudiciales}</p>
+                    <p>{candidato.hojaDeVida?.sentenciasJudiciales}</p>
                   </div>
                 </div>
 
@@ -133,7 +151,7 @@ const Candidatos: React.FC<CandidatosProps> = ({ candidato }) => {
                 <div className="timeline-section">
                   <h2>Trayectoria Política y Profesional</h2>
                   <div className="timeline">
-                    {candidato.trayectoria.map((item, index) => (
+                    {candidato.trayectoria?.map((item, index) => (
                       <div className="timeline-item" key={index}>
                         <div className="timeline-dot"></div>
                         <p className="timeline-date">{item.fecha}</p>
@@ -150,7 +168,7 @@ const Candidatos: React.FC<CandidatosProps> = ({ candidato }) => {
                 <div className="news-section">
                   <h2>Últimas Noticias</h2>
                   <div className="news-list">
-                    {candidato.noticias.map((noticia, index) => (
+                    {candidato.noticias?.map((noticia, index) => (
                       <div className="news-card" key={index}>
                         <img 
                           src={noticia.imagen} 
@@ -169,7 +187,7 @@ const Candidatos: React.FC<CandidatosProps> = ({ candidato }) => {
                 <div className="activities-section">
                   <h2>Actividades Públicas</h2>
                   <div className="activities-list">
-                    {candidato.actividades.map((actividad, index) => (
+                    {candidato.actividades?.map((actividad, index) => (
                       <div className="activity-card" key={index}>
                         <div className="activity-date">
                           <span className="date-day">{actividad.dia}</span>

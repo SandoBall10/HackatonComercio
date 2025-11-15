@@ -1,5 +1,5 @@
-import Candidatos from './components/Candidatos/Candidatos'
-import { getCandidatoById } from './data/candidatos'
+import Candidatos from './components/Candidatos/Candidatos.jsx'
+import { getCandidatoById } from './data/candidatos.js'
 import './App.css'
 
 function App() {
