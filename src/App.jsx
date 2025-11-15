@@ -18,7 +18,12 @@ const App = () => {
         </Switch>
       </div>
     </Router>
+<<<<<<< Updated upstream
   )
 }
+=======
+  );
+};
+>>>>>>> Stashed changes
 
 export default App
