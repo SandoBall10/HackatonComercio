@@ -5,6 +5,7 @@ import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Inicio } from './components/Inicio/Inicio';
 import Candidatos from './components/Candidatos/Candidatos';
 import PartidosPoliticos from './components/PartidosPoliticos/PartidosPoliticos';
+import PartidoDetalle from './components/Candidatos/PartidoDetalle';
 import ReniecConsultas from './components/reniec/ReniecConsultas';
 import { getCandidatoById } from './data/candidatos.js';
 
@@ -36,9 +37,9 @@ const App = () => {
         <div style={{ display: 'flex', gap: '1rem', marginLeft: 'auto' }}>
           <Link to="/" style={{
             padding: '0.5rem 1.5rem',
-            backgroundColor: location.pathname === '/' ? '#0066cc' : 'transparent',
-            color: '#fff',
-            border: '1px solid #0066cc',
+            backgroundColor: location.pathname === '/' ? '#fff' : 'transparent',
+            color: location.pathname === '/' ? '#000' : '#fff',
+            border: '1px solid #fff',
             borderRadius: '4px',
             textDecoration: 'none',
             fontSize: '1rem',
@@ -48,9 +49,9 @@ const App = () => {
           </Link>
           <Link to="/candidatos" style={{
             padding: '0.5rem 1.5rem',
-            backgroundColor: location.pathname === '/candidatos' ? '#0066cc' : 'transparent',
-            color: '#fff',
-            border: '1px solid #0066cc',
+            backgroundColor: location.pathname === '/candidatos' ? '#fff' : 'transparent',
+            color: location.pathname === '/candidatos' ? '#000' : '#fff',
+            border: '1px solid #fff',
             borderRadius: '4px',
             textDecoration: 'none',
             fontSize: '1rem',
@@ -60,9 +61,9 @@ const App = () => {
           </Link>
           <Link to="/partidos" style={{
             padding: '0.5rem 1.5rem',
-            backgroundColor: location.pathname === '/partidos' ? '#0066cc' : 'transparent',
-            color: '#fff',
-            border: '1px solid #0066cc',
+            backgroundColor: location.pathname === '/partidos' ? '#fff' : 'transparent',
+            color: location.pathname === '/partidos' ? '#000' : '#fff',
+            border: '1px solid #fff',
             borderRadius: '4px',
             textDecoration: 'none',
             fontSize: '1rem',
@@ -72,9 +73,9 @@ const App = () => {
           </Link>
           <Link to="/reniec" style={{
             padding: '0.5rem 1.5rem',
-            backgroundColor: location.pathname === '/reniec' ? '#0066cc' : 'transparent',
-            color: '#fff',
-            border: '1px solid #0066cc',
+            backgroundColor: location.pathname === '/reniec' ? '#fff' : 'transparent',
+            color: location.pathname === '/reniec' ? '#000' : '#fff',
+            border: '1px solid #fff',
             borderRadius: '4px',
             textDecoration: 'none',
             fontSize: '1rem',
@@ -89,6 +90,7 @@ const App = () => {
         <Route path="/" element={<Inicio />} />
         <Route path="/candidatos" element={<Candidatos candidato={candidatoEjemplo} />} />
         <Route path="/partidos" element={<PartidosPoliticos />} />
+        <Route path="/partido/:id" element={<PartidoDetalle />} />
         <Route path="/reniec" element={<ReniecConsultas />} />
       </Routes>
     </div>
