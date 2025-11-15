@@ -6,20 +6,19 @@ export interface DetalleCandidato {
 }
 
 export interface Partido {
-  id: string;
+  id: number;
   nombre: string;
-  siglas?: string;
-  logo?: string;
+  siglas: string;
+  logo: string;
   descripcion?: string;
-  lider?: string;
   planUrl?: string;
-  website?: string;
+  planGobierno?: string; // Nueva propiedad
   candidatos?: DetalleCandidato[];
 }
 
 export const PARTIDOS: Partido[] = [
   {
-    id: "1",
+    id: 1,
     nombre: "Acción Popular",
     siglas: "AP",
     logo: "/logos/accion-popular.png",
@@ -31,7 +30,7 @@ export const PARTIDOS: Partido[] = [
     ]
   },
   {
-    id: "2",
+    id: 2,
     nombre: "Fuerza Popular",
     siglas: "FPu",
     logo: "/logos/fuerza-popular.png",
@@ -43,7 +42,7 @@ export const PARTIDOS: Partido[] = [
     ]
   },
   {
-    id: "3",
+    id: 3,
     nombre: "Partido de los Trabajadores PTE–Perú",
     siglas: "PTE",
     logo: "/logos/pte-peru.png",
@@ -51,7 +50,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "4",
+    id: 4,
     nombre: "Ahora Nación",
     siglas: "AN",
     logo: "/logos/ahora-nacion.png",
@@ -59,7 +58,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "5",
+    id: 5,
     nombre: "Juntos por el Perú",
     siglas: "JPP",
     logo: "/logos/juntos-por-el-peru.png",
@@ -67,7 +66,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "6",
+    id: 6,
     nombre: "Partido del Buen Gobierno",
     siglas: "PBG",
     logo: "/logos/partido-buen-gobierno.png",
@@ -75,7 +74,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "7",
+    id: 7,
     nombre: "Alianza para el Progreso",
     siglas: "APP",
     logo: "/logos/alianza-para-el-progreso.png",
@@ -87,7 +86,7 @@ export const PARTIDOS: Partido[] = [
     ]
   },
   {
-    id: "8",
+    id: 8,
     nombre: "Libertad Popular",
     siglas: "LP",
     logo: "/logos/libertad-popular.png",
@@ -95,7 +94,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "9",
+    id: 9,
     nombre: "Partido Demócrata Unido Perú",
     siglas: "PDU",
     logo: "/logos/partido-democrata-unido.png",
@@ -103,7 +102,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "10",
+    id: 10,
     nombre: "Avanza País – Partido de Integración Social",
     siglas: "APIS",
     logo: "/logos/avanza-pais.png",
@@ -111,7 +110,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "11",
+    id: 11,
     nombre: "Nuevo Perú por el Buen Vivir",
     siglas: "NPBV",
     logo: "/logos/nuevo-peru-por-el-buen-vivir.png",
@@ -119,7 +118,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "12",
+    id: 12,
     nombre: "Partido Demócrata Verde",
     siglas: "PDV",
     logo: "/logos/partido-democrata-verde.png",
@@ -127,7 +126,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "13",
+    id: 13,
     nombre: "Batalla Perú",
     siglas: "BP",
     logo: "/logos/batalla-peru.png",
@@ -135,7 +134,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "14",
+    id: 14,
     nombre: "Partido Aprista Peruano",
     siglas: "APRA",
     logo: "/logos/partido-aprista-peruano.png",
@@ -143,7 +142,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "16",
+    id: 16,
     nombre: "Fe en el Perú",
     siglas: "FEP",
     logo: "/logos/fe-en-el-peru.png",
@@ -151,7 +150,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "17",
+    id: 17,
     nombre: "Partido Ciudadanos por el Perú",
     siglas: "CPP",
     logo: "/logos/ciudadanos-por-el-peru.png",
@@ -159,7 +158,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "18",
+    id: 18,
     nombre: "Partido Democrático Somos Perú",
     siglas: "DSP",
     logo: "/logos/somos-peru.png",
@@ -167,7 +166,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "19",
+    id: 19,
     nombre: "Frente Popular Agrícola FIA del Perú (Frepap)",
     siglas: "Frepap",
     logo: "/logos/frepap.png",
@@ -175,7 +174,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "20",
+    id: 20,
     nombre: "Partido Cívico Obras",
     siglas: "PCO",
     logo: "/logos/partido-civico-obras.png",
@@ -183,7 +182,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "21",
+    id: 21,
     nombre: "Frente de la Esperanza 2021",
     siglas: "F21",
     logo: "/logos/frente-esperanza-2021.png",
@@ -191,7 +190,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "22",
+    id: 22,
     nombre: "Partido Morado",
     siglas: "PM",
     logo: "/logos/partido-morado.png",
@@ -199,7 +198,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "23",
+    id: 23,
     nombre: "Partido Político Perú Acción",
     siglas: "PA",
     logo: "/logos/peru-accion.png",
@@ -207,7 +206,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "24",
+    id: 24,
     nombre: "Perú Moderno",
     siglas: "PMo",
     logo: "/logos/peru-moderno.png",
@@ -215,7 +214,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "25",
+    id: 25,
     nombre: "Partido País para Todos",
     siglas: "PPT",
     logo: "/logos/pais-para-todos.png",
@@ -223,7 +222,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "26",
+    id: 26,
     nombre: "Partido Político Perú Primero",
     siglas: "PP1",
     logo: "/logos/peru-primero.png",
@@ -231,7 +230,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "27",
+    id: 27,
     nombre: "Podemos Perú",
     siglas: "PP",
     logo: "/logos/podemos-peru.png",
@@ -239,7 +238,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "28",
+    id: 28,
     nombre: "Partido Patriótico del Perú",
     siglas: "PPP",
     logo: "/logos/partido-patriotico-del-peru.png",
@@ -247,7 +246,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "29",
+    id: 29,
     nombre: "Peruanos Unidos – Somos Libres",
     siglas: "PUSL",
     logo: "/logos/peruanos-unidos.png",
@@ -255,7 +254,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "30",
+    id: 30,
     nombre: "Primero la Gente",
     siglas: "PLC",
     logo: "/logos/primero-la-gente.png",
@@ -263,7 +262,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "31",
+    id: 31,
     nombre: "Cooperación Popular",
     siglas: "CP",
     logo: "/logos/cooperacion-popular.png",
@@ -271,7 +270,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "32",
+    id: 32,
     nombre: "Voces del Pueblo",
     siglas: "VP",
     logo: "/logos/voces-del-pueblo.png",
@@ -279,7 +278,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "33",
+    id: 33,
     nombre: "Progresemos",
     siglas: "PRG",
     logo: "/logos/progresemos.png",
@@ -287,7 +286,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "34",
+    id: 34,
     nombre: "Fuerza Moderna",
     siglas: "FM",
     logo: "/logos/fuerza-moderna.png",
@@ -295,7 +294,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "35",
+    id: 35,
     nombre: "PRIN",
     siglas: "PRIN",
     logo: "/logos/prin.png",
@@ -303,15 +302,16 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "36",
+    id: 36,
     nombre: "Renovación Popular",
     siglas: "RP",
     logo: "/logos/renovacion-popular.png",
     descripcion: "Partido político de derecha conservadora.",
+    planGobierno: "/pdf/plangobierno-rp.pdf", // Agregar esta línea
     candidatos: []
   },
   {
-    id: "37",
+    id: 37,
     nombre: "Integridad Democrática",
     siglas: "ID",
     logo: "/logos/integridad-democratica.png",
@@ -319,7 +319,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "38",
+    id: 38,
     nombre: "Partido Popular Cristiano",
     siglas: "PPC",
     logo: "/logos/partido-popular-cristiano.png",
@@ -327,7 +327,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "39",
+    id: 39,
     nombre: "Salvemos al Perú",
     siglas: "SP",
     logo: "/logos/salvemos-al-peru.png",
@@ -335,7 +335,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "40",
+    id: 40,
     nombre: "Perú Libre",
     siglas: "PL",
     logo: "/logos/peru-libre.png",
@@ -343,7 +343,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "41",
+    id: 41,
     nombre: "Partido Sí Creo",
     siglas: "SC",
     logo: "/logos/si-creo.png",
@@ -351,7 +351,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "42",
+    id: 42,
     nombre: "Un Camino Diferente",
     siglas: "UCD",
     logo: "/logos/un-camino-diferente.png",
@@ -359,7 +359,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "43",
+    id: 43,
     nombre: "Partido Unidad y Paz",
     siglas: "UyP",
     logo: "/logos/unidad-y-paz.png",
@@ -367,7 +367,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: []
   },
   {
-    id: "44",
+    id: 44,
     nombre: "Partido Político Nacional Perú Libre",
     siglas: "PNPL",
     logo: "/logos/peru-libre.png",

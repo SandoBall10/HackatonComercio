@@ -10,6 +10,7 @@ interface Partido {
   nombre: string;
   siglas: string;
   logo: string;
+  planGobierno?: string;
 }
 
 const PartidosPoliticos: React.FC = () => {

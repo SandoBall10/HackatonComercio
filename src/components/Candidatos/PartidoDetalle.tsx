@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { PARTIDOS, Partido, DetalleCandidato } from "../../data/partidos";
 
-
 const pestañas = [
   "Plancha Presidencial",
-  "Plan de Gobierno",
   "Cámara de Diputados",
   "Cámara de Senadores",
   "Parlamento Andino",
@@ -154,58 +152,8 @@ const PartidoDetalle: React.FC = () => {
             </div>
           )}
 
-          {/* Plan de Gobierno */}
-          {activeTab === 1 && (
-            <div className="tab-pane active">
-              <div className="card mb-4">
-                <div className="card-body">
-                  <div className="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3">
-                    <p className="mb-0 text-muted">{partido.descripcion || "Descripción del plan de gobierno no disponible."}</p>
-                    <a
-                      className={`btn btn-danger ${partido.planUrl ? "" : "disabled"}`}
-                      href={partido.planUrl || "#"}
-                      target={partido.planUrl ? "_blank" : undefined}
-                      rel={partido.planUrl ? "noopener noreferrer" : undefined}
-                    >
-                      Descargar Plan Completo (PDF)
-                    </a>
-                  </div>
-
-                  <div className="accordion mt-4" id="planAccordion">
-                    <div className="accordion-item">
-                      <h2 className="accordion-header">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc1">Reactivación Económica</button>
-                      </h2>
-                      <div id="acc1" className="accordion-collapse collapse" data-bs-parent="#planAccordion">
-                        <div className="accordion-body">Fomentaremos la inversión privada con incentivos fiscales, apoyo a PYMEs y modernización de infraestructura.</div>
-                      </div>
-                    </div>
-
-                    <div className="accordion-item">
-                      <h2 className="accordion-header">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc2">Lucha contra la Corrupción</button>
-                      </h2>
-                      <div id="acc2" className="accordion-collapse collapse" data-bs-parent="#planAccordion">
-                        <div className="accordion-body">Sistema de transparencia, fiscalización ciudadana y fortalecimiento institucional.</div>
-                      </div>
-                    </div>
-
-                    <div className="accordion-item">
-                      <h2 className="accordion-header">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc3">Educación y Salud</button>
-                      </h2>
-                      <div id="acc3" className="accordion-collapse collapse" data-bs-parent="#planAccordion">
-                        <div className="accordion-body">Mayor inversión en educación, capacitación docente y acceso universal a servicios de salud.</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
           {/* Cámara de Diputados */}
-          {activeTab === 2 && (
+          {activeTab === 1 && (
             <div className="tab-pane active">
               <div className="card mb-4 border-0 shadow-sm">
                 <div className="card-header bg-danger text-white py-3">
@@ -259,7 +207,7 @@ const PartidoDetalle: React.FC = () => {
           )}
 
           {/* Cámara de Senadores */}
-          {activeTab === 3 && (
+          {activeTab === 2 && (
             <div className="tab-pane active">
               <div className="card mb-4 border-0 shadow-sm">
                 <div className="card-header bg-success text-white py-3">
@@ -320,7 +268,7 @@ const PartidoDetalle: React.FC = () => {
           )}
 
           {/* Parlamento Andino */}
-          {activeTab === 4 && (
+          {activeTab === 3 && (
             <div className="card mb-4">
               <div className="card-body">
                 <p className="mb-0">Sección "{pestañas[activeTab]}". Añade contenido en src/data/partidos.ts si lo deseas.</p>
