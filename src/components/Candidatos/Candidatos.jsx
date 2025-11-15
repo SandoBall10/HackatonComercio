@@ -224,8 +224,24 @@ const Candidatos = ({ candidato: candidatoProp }) => {
   console.log('Foto URL:', candidato.foto);
   console.log('Logo URL:', candidato.logoPartido);
   
+  // Detectar si es Renovación Popular
+  const esRenovacionPopular = candidato.partido?.toLowerCase().includes('renovacion popular') || 
+                               candidato.partido?.toLowerCase().includes('renovación popular') ||
+                               candidato.id === 'renovacion-popular';
+  
+  // Colores dinámicos según el partido
+  const colorPrimario = esRenovacionPopular ? '#1e5ba8' : '#dc3545';
+  const colorSecundario = esRenovacionPopular ? '#2874c7' : '#c82333';
+  const colorTerciario = esRenovacionPopular ? '#1448731' : '#8b2131';
+  const colorPrimarioRgb = esRenovacionPopular ? '30, 91, 168' : '220, 53, 69';
+  
   return (
-    <div className="candidatos-container animate-fade-in">
+    <div className="candidatos-container animate-fade-in" style={{
+      '--color-primario': colorPrimario,
+      '--color-secundario': colorSecundario,
+      '--color-terciario': colorTerciario,
+      '--color-primario-rgb': colorPrimarioRgb
+    }}>
      
 
     
@@ -269,13 +285,13 @@ const Candidatos = ({ candidato: candidatoProp }) => {
 
                       {/* Profile Info */}
                       <div className="profile-details flex-grow-1 animate-slide-right">
-                        <h1 className="profile-name-advanced mb-3">
+                        <h1 className="profile-name-advanced mb-3" style={{ color: esRenovacionPopular ? '#1e5ba8' : undefined }}>
                           {candidato.nombre || candidato.partido || 'Candidato Sin Nombre'}
                         </h1>
                         
                         <div className="profile-meta mb-3">
                           <div className="d-flex align-items-center gap-2 mb-2">
-                            <div className="meta-icon">
+                            <div className="meta-icon" style={{ color: esRenovacionPopular ? '#1e5ba8' : undefined }}>
                               <i className="bi bi-briefcase-fill"></i>
                             </div>
                             <span className="meta-text">{t('candidatos.cargo')} {candidato.partido}</span>
@@ -298,7 +314,9 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                               />
                             </div>
                           )}
-                          <div className="party-badge-advanced">
+                          <div className="party-badge-advanced" style={{ 
+                            background: esRenovacionPopular ? 'linear-gradient(135deg, #1e5ba8 0%, #2874c7 100%)' : undefined 
+                          }}>
                             <i className="bi bi-flag-fill me-2"></i>
                             {candidato.partido}
                           </div>
@@ -367,8 +385,12 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 <div className="col-lg-4">
                   <div className="cta-section h-100 d-flex flex-column justify-content-center align-items-center p-5 p-lg-5">
                     <div className="cta-content text-center">
-                      <div className="cta-icon mb-4">
-                        <i className="bi bi-file-earmark-text"></i>
+                      <div className="cta-icon mb-4" style={{
+                        background: esRenovacionPopular ? 'white' : 'rgba(255, 255, 255, 0.2)'
+                      }}>
+                        <i className="bi bi-file-earmark-text" style={{
+                          color: esRenovacionPopular ? '#1e5ba8' : 'white'
+                        }}></i>
                       </div>
                       <h5 className="cta-title mb-3">Plan de Gobierno</h5>
                       <p className="cta-description mb-4">
@@ -380,7 +402,13 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         disabled={!pdfPath}
                         style={{
                           opacity: pdfPath ? 1 : 0.6,
-                          cursor: pdfPath ? 'pointer' : 'not-allowed'
+                          cursor: pdfPath ? 'pointer' : 'not-allowed',
+                          background: !pdfPath 
+                            ? (esRenovacionPopular ? 'linear-gradient(135deg, #1e5ba8 0%, #2874c7 100%)' : undefined)
+                            : (esRenovacionPopular ? 'white' : 'white'),
+                          color: !pdfPath
+                            ? 'white'
+                            : (esRenovacionPopular ? '#1e5ba8' : '#dc3545')
                         }}
                       >
                         <span className="btn-icon">
@@ -445,7 +473,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     <div className="col-md-6">
                       <div className="card h-100 border-0 shadow-sm animate-slide-up">
                         <div className="card-body">
-                          <h5 className="card-title text-danger mb-3">
+                          <h5 className="card-title mb-3" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
                             <i className="bi bi-mortarboard-fill me-2"></i>
                             {t('candidatos.hojaVida.formacionAcademica')}
                           </h5>
@@ -467,7 +495,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     <div className="col-md-6">
                       <div className="card h-100 border-0 shadow-sm animate-slide-up" style={{animationDelay: '0.1s'}}>
                         <div className="card-body">
-                          <h5 className="card-title text-danger mb-3">
+                          <h5 className="card-title mb-3" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
                             <i className="bi bi-briefcase-fill me-2"></i>
                             {t('candidatos.hojaVida.experienciaLaboral')}
                           </h5>
@@ -515,7 +543,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   {/* Timeline */}
                   <div className="card border-0 shadow-sm animate-slide-up" style={{animationDelay: '0.4s'}}>
                     <div className="card-body p-4">
-                      <h4 className="text-danger mb-4">
+                      <h4 className="mb-4" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
                         <i className="bi bi-clock-history me-2"></i>
                         {t('candidatos.trayectoria.titulo')}
                       </h4>
@@ -523,7 +551,9 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         {candidato.trayectoria && candidato.trayectoria.length > 0 ? (
                           candidato.trayectoria.map((item, index) => (
                             <div className="timeline-item-bootstrap mb-4" key={index}>
-                              <div className="timeline-marker bg-danger"></div>
+                              <div className="timeline-marker" style={{ 
+                                backgroundColor: esRenovacionPopular ? '#1e5ba8' : '#dc3545' 
+                              }}></div>
                               <div className="timeline-content">
                                 <h6 className="fw-bold text-dark">{item.fecha}</h6>
                                 <p className="text-muted mb-0">{item.descripcion}</p>
@@ -545,7 +575,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
               {/* News Section */}
               <div className="card border-0 shadow-sm mb-4 animate-slide-right">
                 <div className="card-body">
-                  <h5 className="card-title text-danger mb-4">
+                  <h5 className="card-title mb-4" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
                     <i className="bi bi-newspaper me-2"></i>
                     Últimas Noticias
                   </h5>
@@ -582,7 +612,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
               {/* Activities Section */}
               <div className="card border-0 shadow-sm animate-slide-right" style={{animationDelay: '0.2s'}}>
                 <div className="card-body">
-                  <h5 className="card-title text-danger mb-4">
+                  <h5 className="card-title mb-4" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
                     <i className="bi bi-calendar-event me-2"></i>
                     Actividades Públicas
                   </h5>
@@ -591,7 +621,9 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       candidato.actividades.map((actividad, index) => (
                         <div className="activity-card-bootstrap p-3 border rounded animate-hover-lift" key={index}>
                           <div className="d-flex gap-3 align-items-start">
-                            <div className="activity-date-badge bg-danger bg-gradient text-white text-center rounded p-2">
+                            <div className="activity-date-badge bg-gradient text-white text-center rounded p-2" style={{ 
+                              backgroundColor: esRenovacionPopular ? '#1e5ba8' : '#dc3545' 
+                            }}>
                               <div className="fw-bold fs-4">{actividad.dia}</div>
                               <div className="small text-uppercase">{actividad.mes}</div>
                             </div>
@@ -636,7 +668,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     <path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fillRule="evenodd"></path>
                   </svg>
                 </div>
-                <span className="fw-bold text-danger">Elecciones Perú 2026</span>
+                <span className="fw-bold" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>Elecciones Perú 2026</span>
               </div>
               <p className="text-muted small">
                 Portal de información electoral oficial. Conoce a los candidatos y haz tu voto informado.
@@ -683,7 +715,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
           <div className="text-center text-muted small">
             <p className="mb-0">
               © 2025 Portal Electoral. Todos los derechos reservados. | 
-              <span className="text-danger ms-2">
+              <span className="ms-2" style={{ color: esRenovacionPopular ? '#1e5ba8' : '#dc3545' }}>
                 <i className="bi bi-heart-fill"></i> Hecho en Perú
               </span>
             </p>
