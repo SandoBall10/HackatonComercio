@@ -129,7 +129,7 @@ export const Inicio: React.FC = () => {
       <div className="top-header">
         <div className="top-header-content">
           <div className="logo-section">
-            <img src="src/assets/onpe_logo.png" alt="ONPE" className="top-logo" />
+            <img src="src/assets/Loog-Onpe.png" alt="ONPE" className="top-logo" />
             <div className="election-info">
               <h2>Elecciones Generales</h2>
               <p>12 de abril de 2026</p>
