@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Inicio.css';
 
 type EventItem = { date: string; title: string; bullets?: string[]; icon?: string };
@@ -75,6 +76,7 @@ const TIMELINE: Record<string, Record<string, EventItem[]>> = {
 };
 
 export const Inicio: React.FC = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeYear, setActiveYear] = useState<'2025' | '2026'>('2025');
   const [activeMonth, setActiveMonth] = useState<string>('MARZO');
@@ -161,10 +163,10 @@ export const Inicio: React.FC = () => {
       <header className="header">
         <nav className="navbar">
           <div className="nav-links-container">
-            <a href="#inicio" className="nav-link">Inicio</a>
-            <a href="#para-electores" className="nav-link">Para electores</a>
-            <a href="#la-organizacion" className="nav-link">La organización</a>
-            <a href="#acerca-proceso" className="nav-link">Acerca del proceso</a>
+            <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Inicio</a>
+            <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>Partidos Politicos</a>
+            <a href="/candidatos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/candidatos'); }}>Candidatos</a>
+            <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>Consulta RENIEC</a>
             <a href="#lo-nuevo" className="nav-link">Lo nuevo</a>
             <a href="#voto-digital" className="nav-link">Voto Digital</a>
             <a href="#verifica-mesa" className="nav-link nav-link-highlight">Verifica si eres miembro de mesa</a>
