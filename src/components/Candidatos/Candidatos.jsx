@@ -1,10 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Candidatos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Candidatos = ({ candidato }) => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('hoja-vida');
+  const [countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
+
+  // Calcular countdown
+  useEffect(() => {
+    const targetDate = new Date('2026-04-12T00:00:00').getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance > 0) {
+        const meses = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+        const dias = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        setCountdown({ meses, dias, horas, minutos });
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   if (!candidato) {
     return (
@@ -23,18 +44,51 @@ const Candidatos = ({ candidato }) => {
   
   return (
     <div className="candidatos-container animate-fade-in">
-      {/* Header */}
-      <header className="candidatos-header shadow-sm">
-        <nav className="navbar navbar-expand-lg navbar-light bg-white py-3">
-          <div className="container-fluid px-4">
-            <a className="navbar-brand d-flex align-items-center animate-slide-left" href="#">
-              <div className="logo-icon me-3">
-                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fillRule="evenodd"></path>
-                </svg>
+      {/* TOP HEADER CON COUNTDOWN */}
+      <div className="top-header">
+        <div className="top-header-content">
+          <div className="logo-section">
+            <img src="/logos/ONPE.png" alt="ONPE" className="top-logo" />
+            <div className="election-info-header">
+              <h2>Elecciones Generales</h2>
+              <p>12 de abril de 2026</p>
+            </div>
+          </div>
+          <div className="countdown">
+            <span className="countdown-label-top">Faltan:</span>
+            <div className="countdown-items">
+              <div className="countdown-item">
+                <div className="countdown-value">{String(countdown.meses).padStart(2, '0')}</div>
+                <div className="countdown-label-small">Meses</div>
               </div>
-              <span className="fw-bold text-danger fs-5">Elecciones Perú 2026</span>
-            </a>
+              <div className="countdown-item">
+                <div className="countdown-value">{String(countdown.dias).padStart(2, '0')}</div>
+                <div className="countdown-label-small">Días</div>
+              </div>
+              <div className="countdown-item">
+                <div className="countdown-value">{String(countdown.horas).padStart(2, '0')}</div>
+                <div className="countdown-label-small">Horas</div>
+              </div>
+              <div className="countdown-item">
+                <div className="countdown-value">{String(countdown.minutos).padStart(2, '0')}</div>
+                <div className="countdown-label-small">Minutos</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* NAVBAR */}
+      <header className="header-candidatos">
+        <nav className="navbar-candidatos">
+          <div className="nav-links-container">
+            <a href="/" className="nav-link-cand" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Inicio</a>
+            <a href="/partidos" className="nav-link-cand" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>Partidos Políticos</a>
+            <a href="/candidatos" className="nav-link-cand active" onClick={(e) => { e.preventDefault(); navigate('/candidatos'); }}>Candidatos</a>
+            <a href="/reniec" className="nav-link-cand" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>Consulta RENIEC</a>
+            <a href="#lo-nuevo" className="nav-link-cand">Lo nuevo</a>
+            <a href="#voto-digital" className="nav-link-cand">Voto Digital</a>
+            <a href="#verifica-mesa" className="nav-link-cand nav-link-highlight">Verifica si eres miembro de mesa</a>
           </div>
         </nav>
       </header>
