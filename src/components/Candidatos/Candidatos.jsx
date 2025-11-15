@@ -5,7 +5,6 @@ import './Candidatos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { candidatos } from '../../data/candidatos';
-import { partidos } from '../PartidosPoliticos/PartidosPoliticos'; // Importar partidos
 
 const Candidatos = ({ candidato: candidatoProp }) => {
   const { t } = useTranslation();
@@ -127,12 +126,22 @@ const Candidatos = ({ candidato: candidatoProp }) => {
     : candidatoProp;
 
   // Obtener el PDF del partido
-  const getPdfPath = () => {
-    if (!candidato) return null;
-    
-    console.log('=== DEBUG PDF ===');
-    console.log('Candidato partido:', candidato.partido);
-    console.log('Todos los partidos:', partidos);
+    // Construir una lista de partidos a partir de los candidatos para asegurar que 'partidos' esté definido
+    const partidos = candidatos.reduce((acc, c) => {
+      const nombre = (c.partido || '').toString();
+      const siglas = (c.siglas || '').toString();
+      const planGobierno = c.planGobierno || c.planDeGobierno || null;
+      const existe = acc.some(p => p.nombre.toLowerCase().trim() === nombre.toLowerCase().trim());
+      if (!existe) acc.push({ nombre, siglas, planGobierno });
+      return acc;
+    }, []);
+  
+    const getPdfPath = () => {
+      if (!candidato) return null;
+      
+      console.log('=== DEBUG PDF ===');
+      console.log('Candidato partido:', candidato.partido);
+      console.log('Todos los partidos:', partidos);
     
     // Buscar el partido correspondiente
     const partido = partidos.find(p => {
