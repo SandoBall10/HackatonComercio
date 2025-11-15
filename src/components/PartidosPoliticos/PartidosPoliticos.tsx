@@ -62,7 +62,8 @@ const PartidosPoliticos: React.FC = () => {
       'Partido Sí Creo': 'partido-si-creo',
       'Un Camino Diferente': 'un-camino-diferente',
       'Partido Unidad y Paz': 'unidad-y-paz',
-      'Partido de los Trabajadores PTE–Perú': 'pte-peru'
+      'Partido de los Trabajadores PTE–Perú': 'pte-peru',
+      'Partido Democrático Federal': 'partido-democratico-federal'
     };
     return keyMap[nombre] || nombre.toLowerCase().replace(/\s+/g, '-');
   };
@@ -74,7 +75,6 @@ const PartidosPoliticos: React.FC = () => {
     { "id": 1, "nombre": "Acción Popular", "siglas": "AP", "logo": "/logos/accion-popular.png" },
     { "id": 14, "nombre": "Partido Aprista Peruano", "siglas": "APRA", "logo": "/logos/partido-aprista-peruano.png" },
     { "id": 40, "nombre": "Perú Libre", "siglas": "PL", "logo": "/logos/peru-libre.png" },
-    { "id": 44, "nombre": "Partido Político Nacional Perú Libre", "siglas": "PNPL", "logo": "/logos/peru-libre.png" },
     { "id": 27, "nombre": "Podemos Perú", "siglas": "PP", "logo": "/logos/podemos-peru.png" },
     { "id": 18, "nombre": "Partido Democrático Somos Perú", "siglas": "DSP", "logo": "/logos/somos-peru.png" },
     { "id": 10, "nombre": "Avanza País – Partido de Integración Social", "siglas": "APIS", "logo": "/logos/avanza-pais.png" },
@@ -110,7 +110,8 @@ const PartidosPoliticos: React.FC = () => {
     { "id": 41, "nombre": "Partido Sí Creo", "siglas": "SC", "logo": "/logos/si-creo.png" },
     { "id": 42, "nombre": "Un Camino Diferente", "siglas": "UCD", "logo": "/logos/un-camino-diferente.png" },
     { "id": 43, "nombre": "Partido Unidad y Paz", "siglas": "UyP", "logo": "/logos/unidad-y-paz.png" },
-    { "id": 3, "nombre": "Partido de los Trabajadores PTE–Perú", "siglas": "PTE", "logo": "/logos/pte-peru.png" }
+    { "id": 3, "nombre": "Partido de los Trabajadores PTE–Perú", "siglas": "PTE", "logo": "/logos/pte-peru.png" },
+    { "id": 15, "nombre": "Partido Democrático Federal", "siglas": "PDF", "logo": "/logos/partido-democratico-federal.png" }
   ];
 
   const handlePartidoClick = (partidoId: number) => {
