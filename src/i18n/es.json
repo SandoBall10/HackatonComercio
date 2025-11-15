@@ -1,0 +1,81 @@
+{
+  "translation": {
+    "nav": {
+      "inicio": "Inicio",
+      "candidatos": "Candidatos",
+      "partidos": "Partidos Políticos",
+      "reniec": "Consulta RENIEC"
+    },
+    "inicio": {
+      "titulo": "Elecciones Generales",
+      "fecha": "12 de abril de 2026",
+      "faltan": "Faltan:",
+      "meses": "Meses",
+      "dias": "Días",
+      "horas": "Horas",
+      "minutos": "Minutos",
+      "partidosPoliticos": "Partidos Politicos",
+      "laOrganizacion": "La organización",
+      "acercaProceso": "Acerca del proceso",
+      "loNuevo": "Lo nuevo",
+      "votoDigital": "Voto Digital",
+      "verificaMiembro": "Verifica si eres miembro de mesa",
+      "infoGeneral": "Información general",
+      "enlacesRelacionados": "Enlaces relacionados",
+      "timelineTitle": "Sigue la línea de tiempo de este proceso electoral:"
+    },
+    "chatbot": {
+      "titulo": "Asistente Virtual",
+      "subtitulo": "Siempre disponible para ayudarte",
+      "mensajeBienvenida": "¡Hola! Soy tu asistente virtual para las Elecciones Perú 2026. ¿En qué puedo ayudarte hoy?",
+      "placeholder": "Escribe tu mensaje...",
+      "verCandidatos": "Ver candidatos",
+      "verPartidos": "Ver partidos políticos",
+      "consultarReniec": "Consultar RENIEC",
+      "cronograma": "Cronograma electoral",
+      "notificaciones": {
+        "ayuda": "¿Necesitas ayuda para encontrar algo?",
+        "disponible": "Estoy aquí para ayudarte 😊",
+        "pregunta": "¿Tienes alguna pregunta sobre las elecciones?",
+        "guiar": "Puedo guiarte por la plataforma",
+        "candidatos": "¿Buscas información de candidatos?",
+        "cronograma": "Consulta el cronograma electoral conmigo"
+      },
+      "respuestas": {
+        "candidatos": "¡Perfecto! Te llevaré a la sección de candidatos donde podrás ver información detallada de cada uno.",
+        "partidos": "Te mostraré la lista de partidos políticos inscritos para las Elecciones 2026.",
+        "reniec": "Te llevaré al módulo de consulta RENIEC donde podrás verificar información de ciudadanos.",
+        "cronogramaRespuesta": "El cronograma electoral completo está en la página de inicio. Las elecciones serán el 12 de abril de 2026.",
+        "inicio": "Te llevaré a la página de inicio.",
+        "ayuda": "Puedo ayudarte con lo siguiente:",
+        "saludo": "¡Hola! ¿En qué puedo ayudarte hoy?",
+        "gracias": "¡De nada! ¿Hay algo más en lo que pueda ayudarte?",
+        "default": "Puedo ayudarte a navegar por la plataforma. ¿Qué te gustaría hacer?",
+        "noGracias": "No, gracias",
+        "verCronograma": "Ver cronograma"
+      }
+    },
+    "reniec": {
+      "titulo": "Consulta RENIEC",
+      "descripcion": "Verifica la información de ciudadanos registrados en RENIEC",
+      "placeholderDni": "Ingrese DNI (8 dígitos)",
+      "btnConsultar": "Consultar",
+      "consultando": "Consultando...",
+      "errorDni": "El DNI debe tener 8 dígitos",
+      "resultadoTitulo": "Resultado de la Consulta",
+      "dni": "DNI",
+      "nombres": "Nombres",
+      "apellidoPaterno": "Apellido Paterno",
+      "apellidoMaterno": "Apellido Materno",
+      "fechaNacimiento": "Fecha de Nacimiento"
+    },
+    "partidos": {
+      "titulo": "Partidos Políticos",
+      "descripcion": "Elecciones Generales 2026",
+      "volver": "← Volver a la lista",
+      "informacion": "Información del Partido",
+      "nombreCompleto": "Nombre Completo",
+      "siglas": "Siglas"
+    }
+  }
+}
