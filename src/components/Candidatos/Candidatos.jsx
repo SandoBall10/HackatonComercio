@@ -487,41 +487,55 @@ const Candidatos = ({ candidato: candidatoProp }) => {
             </div>
           </div>
 
-          {/* Tabs Navigation */}
-          <ul className="nav nav-pills nav-fill mb-4 shadow-sm bg-white rounded p-2 animate-slide-down">
-            <li className="nav-item">
+          {/* Tabs Navigation - Modern Month Style */}
+          <div className="modern-tabs-container mb-4 animate-slide-down">
+            <div className="modern-tabs-wrapper">
               <button 
-                className={`nav-link ${activeTab === 'hoja-vida' ? 'active' : ''}`}
+                className={`modern-tab-btn ${activeTab === 'hoja-vida' ? 'active' : ''}`}
                 onClick={() => setActiveTab('hoja-vida')}
+                style={{
+                  '--tab-color': activeTab === 'hoja-vida' ? colorPrimario : '#6c757d',
+                  '--tab-bg': activeTab === 'hoja-vida' ? colorPrimario : 'transparent'
+                }}
               >
-                <i className="bi bi-person-vcard me-2"></i>{t('candidatos.tabs.hojaVida')}
+                <i className="bi bi-person-vcard"></i>
+                <span>{t('candidatos.tabs.hojaVida')}</span>
               </button>
-            </li>
-            <li className="nav-item">
               <button 
-                className={`nav-link ${activeTab === 'propuestas' ? 'active' : ''}`}
+                className={`modern-tab-btn ${activeTab === 'propuestas' ? 'active' : ''}`}
                 onClick={() => setActiveTab('propuestas')}
+                style={{
+                  '--tab-color': activeTab === 'propuestas' ? colorPrimario : '#6c757d',
+                  '--tab-bg': activeTab === 'propuestas' ? colorPrimario : 'transparent'
+                }}
               >
-                <i className="bi bi-lightbulb me-2"></i>{t('candidatos.planGobierno.propuestas')}
+                <i className="bi bi-lightbulb"></i>
+                <span>{t('candidatos.planGobierno.propuestas')}</span>
               </button>
-            </li>
-            <li className="nav-item">
               <button 
-                className={`nav-link ${activeTab === 'noticias' ? 'active' : ''}`}
+                className={`modern-tab-btn ${activeTab === 'noticias' ? 'active' : ''}`}
                 onClick={() => setActiveTab('noticias')}
+                style={{
+                  '--tab-color': activeTab === 'noticias' ? colorPrimario : '#6c757d',
+                  '--tab-bg': activeTab === 'noticias' ? colorPrimario : 'transparent'
+                }}
               >
-                <i className="bi bi-newspaper me-2"></i>Noticias
+                <i className="bi bi-newspaper"></i>
+                <span>Noticias</span>
               </button>
-            </li>
-            <li className="nav-item">
               <button 
-                className={`nav-link ${activeTab === 'actividades' ? 'active' : ''}`}
+                className={`modern-tab-btn ${activeTab === 'actividades' ? 'active' : ''}`}
                 onClick={() => setActiveTab('actividades')}
+                style={{
+                  '--tab-color': activeTab === 'actividades' ? colorPrimario : '#6c757d',
+                  '--tab-bg': activeTab === 'actividades' ? colorPrimario : 'transparent'
+                }}
               >
-                <i className="bi bi-calendar-event me-2"></i>Actividades
+                <i className="bi bi-calendar-event"></i>
+                <span>Actividades</span>
               </button>
-            </li>
-          </ul>
+            </div>
+          </div>
 
           {/* Content Area */}
           <div className="row g-4 g-lg-5">

@@ -48,6 +48,69 @@ const PartidoDetalle: React.FC = () => {
 
   if (!partido) return <div className="container py-5">Partido no encontrado</div>;
 
+  // Mapeo de colores por partido
+  const coloresPorPartido: Record<string, { primario: string; secundario: string; terciario: string; rgb: string }> = {
+    'accion-popular': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
+    'fuerza-popular': { primario: '#FF6B00', secundario: '#FF8C00', terciario: '#CC5500', rgb: '255, 107, 0' },
+    'partido-trabajadores-pte-peru': { primario: '#1E40AF', secundario: '#FFC107', terciario: '#1565C0', rgb: '30, 64, 175' },
+    'ahora-nacion': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
+    'juntos-por-el-peru': { primario: '#DC143C', secundario: '#00A859', terciario: '#8B0E27', rgb: '220, 20, 60' },
+    'partido-del-buen-gobierno': { primario: '#E31B23', secundario: '#FFC107', terciario: '#A01419', rgb: '227, 27, 35' },
+    'alianza-para-el-progreso': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' },
+    'libertad-popular': { primario: '#FFC107', secundario: '#1a1a1a', terciario: '#FFD54F', rgb: '255, 193, 7' },
+    'partido-democrata-unido-peru': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
+    'avanza-pais': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' },
+    'nuevo-peru-por-el-buen-vivir': { primario: '#E31B23', secundario: '#FFC107', terciario: '#A01419', rgb: '227, 27, 35' },
+    'partido-democrata-verde': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
+    'batalla-peru': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1a1a1a', rgb: '30, 64, 175' },
+    'partido-aprista-peruano': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
+    'partido-democratico-federal': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
+    'fe-en-el-peru': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
+    'partido-ciudadanos-por-el-peru': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
+    'partido-democratico-somos-peru': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' },
+    'frente-popular-agricola-fia': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
+    'partido-civico-obras': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
+    'frente-de-la-esperanza-2021': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
+    'partido-morado': { primario: '#7B1FA2', secundario: '#6A1B9A', terciario: '#4A148C', rgb: '123, 31, 162' },
+    'partido-politico-peru-accion': { primario: '#E31B23', secundario: '#1E40AF', terciario: '#00A859', rgb: '227, 27, 35' },
+    'peru-moderno': { primario: '#FFC107', secundario: '#E91E63', terciario: '#1a1a1a', rgb: '255, 193, 7' },
+    'partido-pais-para-todos': { primario: '#FFC107', secundario: '#1a1a1a', terciario: '#FFD54F', rgb: '255, 193, 7' },
+    'partido-peru-primero': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
+    'podemos-peru': { primario: '#1E40AF', secundario: '#FF6B00', terciario: '#1565C0', rgb: '30, 64, 175' },
+    'partido-patriotico-del-peru': { primario: '#1a1a1a', secundario: '#2d2d2d', terciario: '#0a0a0a', rgb: '26, 26, 26' },
+    'peruanos-unidos-somos-libres': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' },
+    'primero-la-gente': { primario: '#00A859', secundario: '#1E40AF', terciario: '#006435', rgb: '0, 168, 89' },
+    'cooperacion-popular': { primario: '#E31B23', secundario: '#00A859', terciario: '#FFC107', rgb: '227, 27, 35' },
+    'voces-del-pueblo': { primario: '#DC143C', secundario: '#B21131', terciario: '#8B0E27', rgb: '220, 20, 60' },
+    'progresemos': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
+    'fuerza-moderna': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' },
+    'prin': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
+    'renovacion-popular': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' },
+    'integridad-democratica': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' },
+    'partido-popular-cristiano': { primario: '#E31B23', secundario: '#00A859', terciario: '#A01419', rgb: '227, 27, 35' },
+    'salvemos-al-peru': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
+    'peru-libre': { primario: '#DC143C', secundario: '#B21131', terciario: '#8B0E27', rgb: '220, 20, 60' },
+    'partido-si-creo': { primario: '#E31B23', secundario: '#1a1a1a', terciario: '#A01419', rgb: '227, 27, 35' },
+    'un-camino-diferente': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
+    'unidad-y-paz': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }
+  };
+
+  // Normalizar el ID del partido para búsqueda
+  const partidoIdNormalizado = String(partido.id).toLowerCase().replace(/[^a-z0-9-]/g, '-');
+  
+  // Obtener colores del partido o usar colores por defecto
+  const coloresPartido = coloresPorPartido[partidoIdNormalizado] || {
+    primario: '#dc3545',
+    secundario: '#c82333',
+    terciario: '#8b2131',
+    rgb: '220, 53, 69'
+  };
+
+  const colorPrimario = coloresPartido.primario;
+  const colorSecundario = coloresPartido.secundario;
+  const colorTerciario = coloresPartido.terciario;
+  const colorPrimarioRgb = coloresPartido.rgb;
+
   // Buscar candidatos del partido desde candidatos.js
   const candidatosReales = candidatos.filter(c => {
     const partidoNormalizado = c.partido.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -102,7 +165,7 @@ const PartidoDetalle: React.FC = () => {
         @keyframes fadeIn {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -113,7 +176,18 @@ const PartidoDetalle: React.FC = () => {
         @keyframes slideIn {
           from {
             opacity: 0;
-            transform: translateX(-20px);
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
           }
           to {
             opacity: 1;
@@ -124,11 +198,46 @@ const PartidoDetalle: React.FC = () => {
         @keyframes scaleIn {
           from {
             opacity: 0;
-            transform: scale(0.95);
+            transform: scale(0.9);
           }
           to {
             opacity: 1;
             transform: scale(1);
+          }
+        }
+
+        @keyframes bounceIn {
+          0% {
+            opacity: 0;
+            transform: scale(0.3);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.05);
+          }
+          70% {
+            transform: scale(0.9);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        @keyframes shimmer {
+          0% {
+            background-position: -1000px 0;
+          }
+          100% {
+            background-position: 1000px 0;
           }
         }
 
@@ -148,31 +257,67 @@ const PartidoDetalle: React.FC = () => {
           bottom: 0;
           left: 50%;
           width: 0;
-          height: 3px;
-          background: #dc3545;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          height: 4px;
+          background: linear-gradient(90deg, #dc3545, #c82333);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           transform: translateX(-50%);
+          border-radius: 2px 2px 0 0;
+        }
+
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(220, 53, 69, 0.05);
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
 
         .nav-link:hover::before {
           width: 100%;
         }
 
+        .nav-link:hover::after {
+          opacity: 1;
+        }
+
         .nav-link.active::before {
           width: 100%;
+          box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+        }
+
+        .nav-link.active::after {
+          opacity: 1;
         }
 
         .nav-link:hover {
-          transform: translateY(-2px);
+          transform: translateY(-3px);
         }
 
         .card {
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+          transition: left 0.5s ease;
+        }
+
+        .card:hover::before {
+          left: 100%;
         }
 
         .card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
         }
 
         .badge {
@@ -358,79 +503,155 @@ const PartidoDetalle: React.FC = () => {
 
       <div className="container py-4">
         {/* Header */}
-        <header className="d-flex align-items-center justify-content-between mb-4">
+        <header className="d-flex align-items-center justify-content-between mb-4" style={{ animation: 'slideIn 0.6s ease-out' }}>
           <div className="d-flex align-items-center gap-3">
             <div 
               className="rounded-circle d-flex align-items-center justify-content-center text-white" 
               style={{ 
                 width: 44, 
                 height: 44,
-                background: 'linear-gradient(135deg, #dc3545, #c82333)'
+                background: `linear-gradient(135deg, ${colorPrimario}, ${colorSecundario})`,
+                animation: 'float 3s ease-in-out infinite',
+                boxShadow: `0 4px 15px rgba(${colorPrimarioRgb}, 0.3)`
               }}
             >
               <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor"/>
               </svg>
             </div>
-            <h2 className="h5 mb-0">Elecciones Perú 2026</h2>
+            <h2 className="h5 mb-0 fw-bold" style={{ color: '#2d3748' }}>Elecciones Perú 2026</h2>
           </div>
         </header>
 
         {/* Card del Partido */}
-        <div className="card mb-4 shadow-sm border-0">
+        <div className="card mb-4 border-0" style={{ 
+          animation: 'scaleIn 0.5s ease-out',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
+        }}>
           <div className="card-body p-4">
             <div className="d-flex align-items-center gap-4 mb-4">
               <div
-                className="rounded bg-white shadow-sm"
+                className="rounded bg-white"
                 style={{
                   width: 96,
                   height: 96,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundImage: `url('${partido.logo || `/logos/${partido.id}.svg`}')`,
+                  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                  transition: 'transform 0.3s ease',
+                  cursor: 'pointer'
                 }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1) rotate(5deg)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1) rotate(0deg)'}
               />
               <div className="flex-grow-1">
-                <h3 className="h4 mb-1">{partido.nombre}</h3>
-                <p className="text-muted mb-0">Símbolo: {partido.siglas || "-"}</p>
+                <h3 className="h4 mb-2 fw-bold" style={{ 
+                  color: '#1a202c',
+                  letterSpacing: '-0.5px'
+                }}>{partido.nombre}</h3>
+                <div className="d-flex align-items-center gap-2">
+                  <span className="badge" style={{ 
+                    background: `linear-gradient(135deg, ${colorPrimario}, ${colorSecundario})`,
+                    padding: '6px 12px',
+                    fontSize: '0.85rem'
+                  }}>
+                    {partido.siglas || "N/A"}
+                  </span>
+                </div>
               </div>
             </div>
             <button 
               className="btn w-100 text-white fw-semibold py-3 position-relative"
               onClick={() => navigate(`/candidatos/${partido.siglas?.toLowerCase() || partido.id}`)}
               style={{
-                background: 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)',
+                background: `linear-gradient(135deg, ${colorPrimario} 0%, ${colorSecundario} 100%)`,
                 border: 'none',
-                borderRadius: '8px',
+                borderRadius: '12px',
                 fontSize: '1rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                boxShadow: '0 4px 12px rgba(220, 53, 69, 0.25)'
+                boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.4)`,
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-3px)';
+                e.currentTarget.style.boxShadow = `0 10px 30px rgba(${colorPrimarioRgb}, 0.5)`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = `0 6px 20px rgba(${colorPrimarioRgb}, 0.4)`;
               }}
             >
-              <span style={{ position: 'relative', zIndex: 1 }}>
+              <span style={{ 
+                position: 'relative', 
+                zIndex: 1,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px'
+              }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
                 Ver Candidato Presidencial
               </span>
             </button>
           </div>
         </div>
 
-        {/* Navegación con Tabs estilo ONPE */}
-        <div className="tabs-card-container">
-          <ul className="party-tabs-dynamic">
-            {pestañas.map((tab) => (
-              <li className="nav-item" key={tab.nombre}>
+        {/* Navegación con Tabs estilo moderno */}
+        <div className="mb-4" style={{ animation: 'fadeIn 0.6s ease-out 0.2s backwards' }}>
+          <div className="bg-white rounded-4 p-3 shadow-sm">
+            <div className="d-flex flex-wrap justify-content-center gap-3">
+              {pestañas.map((tab, index) => (
                 <button
-                  className={`tab-btn-dynamic ${activeTab === tab.nombre ? "active" : ""}`}
+                  key={tab.nombre}
+                  className={`btn position-relative ${activeTab === tab.nombre ? '' : ''}`}
                   onClick={() => setActiveTab(tab.nombre)}
                   type="button"
+                  style={{
+                    padding: '12px 24px',
+                    borderRadius: '50px',
+                    border: activeTab === tab.nombre ? `2px solid ${colorPrimario}` : '2px solid #e5e7eb',
+                    background: activeTab === tab.nombre 
+                      ? `linear-gradient(135deg, ${colorPrimario}, ${colorSecundario})` 
+                      : 'white',
+                    color: activeTab === tab.nombre ? 'white' : '#6c757d',
+                    fontWeight: activeTab === tab.nombre ? '600' : '500',
+                    fontSize: '0.95rem',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    boxShadow: activeTab === tab.nombre 
+                      ? `0 6px 20px rgba(${colorPrimarioRgb}, 0.35)` 
+                      : '0 2px 8px rgba(0, 0, 0, 0.05)',
+                    transform: activeTab === tab.nombre ? 'translateY(-2px)' : 'translateY(0)',
+                    animation: `fadeIn 0.4s ease-out ${index * 0.1}s backwards`
+                  }}
+                  onMouseEnter={(e) => {
+                    if (activeTab !== tab.nombre) {
+                      e.currentTarget.style.borderColor = colorPrimario;
+                      e.currentTarget.style.color = colorPrimario;
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (activeTab !== tab.nombre) {
+                      e.currentTarget.style.borderColor = '#e5e7eb';
+                      e.currentTarget.style.color = '#6c757d';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
+                    }
+                  }}
                 >
-                  <span className="tab-icon">{tab.icon}</span>
-                  <span className="tab-label">{tab.label}</span>
+                  <span style={{ fontSize: '1.2rem', marginRight: '8px' }}>{tab.icon}</span>
+                  <span>{tab.label}</span>
                 </button>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Contenido de Tabs */}
@@ -438,10 +659,32 @@ const PartidoDetalle: React.FC = () => {
           {/* Tab: Plancha Presidencial */}
           {activeTab === 'presidencial' && (
             <div>
-              <div className="alert alert-danger border-0 mb-4" style={{ backgroundColor: '#fff5f5' }}>
-                <h3 className="alert-heading h5 text-danger mb-2">Plancha Presidencial</h3>
-                <p className="mb-0 small text-secondary">
-                  Candidatos inscritos - Total: 3
+              <div className="alert border-0 mb-4" style={{ 
+                background: `linear-gradient(135deg, rgba(${colorPrimarioRgb}, 0.1) 0%, rgba(${colorPrimarioRgb}, 0.05) 100%)`,
+                borderLeft: `4px solid ${colorPrimario}`,
+                animation: 'slideInRight 0.5s ease-out',
+                boxShadow: `0 4px 15px rgba(${colorPrimarioRgb}, 0.1)`
+              }}>
+                <div className="d-flex align-items-center gap-3 mb-2">
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: `linear-gradient(135deg, ${colorPrimario}, ${colorSecundario})`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontSize: '1.2rem',
+                    animation: 'bounceIn 0.6s ease-out'
+                  }}>
+                    👤
+                  </div>
+                  <h3 className="alert-heading h5 mb-0 fw-bold" style={{ color: colorPrimario }}>Plancha Presidencial</h3>
+                </div>
+                <p className="mb-0 small text-secondary ms-5 ps-2">
+                  <span className="badge me-2" style={{ background: colorPrimario }}>3</span>
+                  Candidatos inscritos
                 </p>
               </div>
 
@@ -473,8 +716,11 @@ const PartidoDetalle: React.FC = () => {
           {/* Tab: Diputados */}
           {activeTab === 'diputados' && (
             <div>
-              <div className="alert alert-danger border-0 mb-4" style={{ backgroundColor: '#fff5f5' }}>
-                <h3 className="alert-heading h5 text-danger mb-2">Cámara de Diputados</h3>
+              <div className="alert border-0 mb-4" style={{ 
+                background: `linear-gradient(135deg, rgba(${colorPrimarioRgb}, 0.1) 0%, rgba(${colorPrimarioRgb}, 0.05) 100%)`,
+                borderLeft: `4px solid ${colorPrimario}`
+              }}>
+                <h3 className="alert-heading h5 mb-2 fw-bold" style={{ color: colorPrimario }}>Cámara de Diputados</h3>
                 <p className="mb-2 small text-secondary">
                   Candidatos por circunscripción electoral - Total: {diputados.length}
                 </p>
@@ -536,8 +782,11 @@ const PartidoDetalle: React.FC = () => {
           {/* Tab: Senadores */}
           {activeTab === 'senadores' && (
             <div>
-              <div className="alert alert-danger border-0 mb-4" style={{ backgroundColor: '#fff5f5' }}>
-                <h3 className="alert-heading h5 text-danger mb-2">Cámara de Senadores</h3>
+              <div className="alert border-0 mb-4" style={{ 
+                background: `linear-gradient(135deg, rgba(${colorPrimarioRgb}, 0.1) 0%, rgba(${colorPrimarioRgb}, 0.05) 100%)`,
+                borderLeft: `4px solid ${colorPrimario}`
+              }}>
+                <h3 className="alert-heading h5 mb-2 fw-bold" style={{ color: colorPrimario }}>Cámara de Senadores</h3>
                 <p className="mb-2 small text-secondary">
                   Representantes nacionales y regionales - Total: {senadores.length}
                 </p>
