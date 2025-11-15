@@ -24,9 +24,7 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/accion-popular.png",
     descripcion: "Partido político peruano de orientación democratacristiana y humanista.",
     candidatos: [
-      { id: "ap1", nombre: "Candidato Presidencial AP", cargo: "Presidente", foto: "" },
-      { id: "ap2", nombre: "Candidato Vicepresidencial AP", cargo: "Vicepresidente", foto: "" },
-      { id: "ap3", nombre: "Candidato AP", cargo: "Congresista", foto: "" }
+      { id: "ap1", nombre: "Víctor Andrés Belaúnde", cargo: "Presidente", foto: "/FotosCandidatos/accion-popular.jpeg" }
     ]
   },
   {
@@ -57,7 +55,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "AN",
     logo: "/logos/ahora-nacion.png",
     descripcion: "Partido político peruano de centro.",
-    candidatos: []
+    candidatos: [
+      { id: "an1", nombre: "Alfonso López-Chau", cargo: "Presidente", foto: "/FotosCandidatos/ahora-nacion.jpg" }
+    ]
   },
   {
     id: 5,
@@ -65,7 +65,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "JPP",
     logo: "/logos/juntos-por-el-peru.png",
     descripcion: "Partido político peruano de izquierda.",
-    candidatos: []
+    candidatos: [
+      { id: "jpp1", nombre: "Roberto Sánchez", cargo: "Presidente", foto: "/FotosCandidatos/juntos-por-el-peru.png" }
+    ]
   },
   {
     id: 6,
@@ -73,7 +75,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PBG",
     logo: "/logos/partido-buen-gobierno.png",
     descripcion: "Partido enfocado en la transparencia y la gobernabilidad.",
-    candidatos: []
+    candidatos: [
+      { id: "pbg1", nombre: "Jorge Nieto", cargo: "Presidente", foto: "/FotosCandidatos/partido-buen-gobierno.jpg" }
+    ]
   },
   {
     id: 7,
@@ -82,9 +86,7 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/alianza-para-el-progreso.png",
     descripcion: "Partido político peruano de centroderecha.",
     candidatos: [
-      { id: "app1", nombre: "César Acuña Peralta", cargo: "Presidente", foto: "" },
-      { id: "app2", nombre: "Carmen Omonte Durand", cargo: "1ra Vicepresidenta", foto: "" },
-      { id: "app3", nombre: "Luis Iberico Núñez", cargo: "2do Vicepresidente", foto: "" }
+      { id: "app1", nombre: "César Acuña", cargo: "Presidente", foto: "/FotosCandidatos/alianza-para-el-progreso.png" }
     ]
   },
   {
@@ -93,7 +95,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "LP",
     logo: "/logos/libertad-popular.png",
     descripcion: "Partido político de centroderecha.",
-    candidatos: []
+    candidatos: [
+      { id: "lp1", nombre: "Rafael Belaúnde", cargo: "Presidente", foto: "/FotosCandidatos/libertad-popular.jpg" }
+    ]
   },
   {
     id: 9,
@@ -101,7 +105,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PDU",
     logo: "/logos/partido-democrata-unido.png",
     descripcion: "Partido político democrático.",
-    candidatos: []
+    candidatos: [
+      { id: "pdu1", nombre: "Charlie Carrasco", cargo: "Presidente", foto: "/FotosCandidatos/partido-democrata-unido-peru.jpg" }
+    ]
   },
   {
     id: 10,
@@ -119,7 +125,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "NPBV",
     logo: "/logos/nuevo-peru-por-el-buen-vivir.png",
     descripcion: "Partido político de izquierda progresista.",
-    candidatos: []
+    candidatos: [
+      { id: "npbv1", nombre: "Vicente Alanoca", cargo: "Presidente", foto: "/FotosCandidatos/nuevo-peru-por-el-buen-vivir.jpg" }
+    ]
   },
   {
     id: 12,
@@ -128,7 +136,7 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/partido-democrata-verde.png",
     descripcion: "Partido político ecologista.",
     candidatos: [
-      { id: "pdv1", nombre: "Álex Gonzales", cargo: "Presidente", foto: "/FotosCandidatos/partido-democrata-verde.jpg" }
+      { id: "pdv1", nombre: "Álex Gonzales", cargo: "Presidente", foto: "https://scontent.flim18-2.fna.fbcdn.net/v/t39.30808-6/467973055_581735831218093_7633748453976638326_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_PxDNFe_h7UQ7kNvgF8OcZy&_nc_zt=23&_nc_ht=scontent.flim18-2.fna&_nc_gid=Ar8dptZDxS67vXaQnpPUXIm&oh=00_AYCjNKh7Rb9tnD_9g0CwWXK4dDULI8EymQIcYF4bnUWXuQ&oe=6737EBCF" }
     ]
   },
   {
@@ -137,7 +145,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "BP",
     logo: "/logos/batalla-peru.png",
     descripcion: "Partido político peruano.",
-    candidatos: []
+    candidatos: [
+      { id: "bp1", nombre: "Fiorella Molinelli", cargo: "Presidente", foto: "/FotosCandidatos/batalla-peru.jpg" }
+    ]
   },
   {
     id: 14,
@@ -145,14 +155,19 @@ export const PARTIDOS: Partido[] = [
     siglas: "APRA",
     logo: "/logos/partido-aprista-peruano.png",
     descripcion: "Partido político histórico del Perú, socialdemócrata.",
-    candidatos: []
+    candidatos: [
+      { id: "apra1", nombre: "Javier Velásquez Q.", cargo: "Presidente", foto: "/FotosCandidatos/partido-aprista-peruano.jpg" }
+    ]
   },
-  {    id: 15,
+  {
+    id: 15,
     nombre: "Partido Democrático Federal",
     siglas: "PDF",
     logo: "/logos/partido-democratico-federal.png",
     descripcion: "Partido político federalista.",
-    candidatos: []
+    candidatos: [
+      { id: "pdf1", nombre: "Charlie Carrasco", cargo: "Presidente", foto: "/FotosCandidatos/partido-democratico-federal.jpg" }
+    ]
   },
   {
     id: 16,
@@ -160,7 +175,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "FEP",
     logo: "/logos/fe-en-el-peru.png",
     descripcion: "Partido político conservador.",
-    candidatos: []
+    candidatos: [
+      { id: "fep1", nombre: "Álvaro Paz de la Barra", cargo: "Presidente", foto: "/FotosCandidatos/fe-en-el-peru.jpg" }
+    ]
   },
   {
     id: 17,
@@ -168,7 +185,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "CPP",
     logo: "/logos/ciudadanos-por-el-peru.png",
     descripcion: "Partido ciudadano enfocado en la participación.",
-    candidatos: []
+    candidatos: [
+      { id: "cpp1", nombre: "Ricardo Belmont", cargo: "Presidente", foto: "/FotosCandidatos/partido-ciudadanos-por-el-peru.jpg" }
+    ]
   },
   {
     id: 18,
@@ -176,7 +195,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "DSP",
     logo: "/logos/somos-peru.png",
     descripcion: "Partido político de centroizquierda.",
-    candidatos: []
+    candidatos: [
+      { id: "dsp1", nombre: "George Forsyth", cargo: "Presidente", foto: "/FotosCandidatos/somos-peru.jpg" }
+    ]
   },
   {
     id: 19,
@@ -202,7 +223,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "F21",
     logo: "/logos/frente-esperanza-2021.png",
     descripcion: "Frente político progresista.",
-    candidatos: []
+    candidatos: [
+      { id: "f21-1", nombre: "Fernando Olivera", cargo: "Presidente", foto: "/FotosCandidatos/frente-de-la-esperanza-2021.jpg" }
+    ]
   },
   {
     id: 22,
@@ -210,7 +233,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PM",
     logo: "/logos/partido-morado.png",
     descripcion: "Partido político de centro.",
-    candidatos: []
+    candidatos: [
+      { id: "pm1", nombre: "Mesías Guevara", cargo: "Presidente", foto: "/FotosCandidatos/partido-morado.jpg" }
+    ]
   },
   {
     id: 23,
@@ -218,7 +243,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PA",
     logo: "/logos/peru-accion.png",
     descripcion: "Partido político de acción ciudadana.",
-    candidatos: []
+    candidatos: [
+      { id: "pa1", nombre: "Francisco Diez Canseco", cargo: "Presidente", foto: "/FotosCandidatos/peru-accion.png" }
+    ]
   },
   {
     id: 24,
@@ -226,7 +253,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PMo",
     logo: "/logos/peru-moderno.png",
     descripcion: "Partido político modernista.",
-    candidatos: []
+    candidatos: [
+      { id: "pmo1", nombre: "Carlos Jaico Carranza", cargo: "Presidente", foto: "/FotosCandidatos/peru-moderno.jpg" }
+    ]
   },
   {
     id: 25,
@@ -254,7 +283,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PP",
     logo: "/logos/podemos-peru.png",
     descripcion: "Partido político de centro.",
-    candidatos: []
+    candidatos: [
+      { id: "pp1", nombre: "José Luna Gálvez", cargo: "Presidente", foto: "/FotosCandidatos/podemos-peru.jpg" }
+    ]
   },
   {
     id: 28,
@@ -262,7 +293,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PPP",
     logo: "/logos/partido-patriotico-del-peru.png",
     descripcion: "Partido patriótico nacionalista.",
-    candidatos: []
+    candidatos: [
+      { id: "ppp1", nombre: "Herbert Caller", cargo: "Presidente", foto: "/FotosCandidatos/partido-patriotico-del-peru.png" }
+    ]
   },
   {
     id: 29,
@@ -270,7 +303,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PUSL",
     logo: "/logos/peruanos-unidos.png",
     descripcion: "Partido de unidad nacional.",
-    candidatos: []
+    candidatos: [
+      { id: "pusl1", nombre: "Tomás Aladino Gálvez", cargo: "Presidente", foto: "/FotosCandidatos/peruanos-unidos.jpg" }
+    ]
   },
   {
     id: 30,
@@ -278,7 +313,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PLC",
     logo: "/logos/primero-la-gente.png",
     descripcion: "Partido enfocado en las personas.",
-    candidatos: []
+    candidatos: [
+      { id: "plc1", nombre: "Marisol Pérez Tello", cargo: "Presidente", foto: "/FotosCandidatos/primero-la-gente.jpg" }
+    ]
   },
   {
     id: 31,
@@ -306,7 +343,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PRG",
     logo: "/logos/progresemos.png",
     descripcion: "Partido progresista.",
-    candidatos: []
+    candidatos: [
+      { id: "prg1", nombre: "Paul Jaimes", cargo: "Presidente", foto: "/FotosCandidatos/progresemos.jpg" }
+    ]
   },
   {
     id: 34,
@@ -322,7 +361,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PRIN",
     logo: "/logos/prin.png",
     descripcion: "Partido de renovación nacional.",
-    candidatos: []
+    candidatos: [
+      { id: "prin1", nombre: "Walter Chirinos", cargo: "Presidente", foto: "/FotosCandidatos/prin.jpg" }
+    ]
   },
   {
     id: 36,
@@ -341,7 +382,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "ID",
     logo: "/logos/integridad-democratica.png",
     descripcion: "Partido enfocado en la integridad.",
-    candidatos: []
+    candidatos: [
+      { id: "id1", nombre: "Wolfgang Grozo", cargo: "Presidente", foto: "/FotosCandidatos/integridad-democratica.jpg" }
+    ]
   },
   {
     id: 38,
@@ -349,7 +392,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PPC",
     logo: "/logos/partido-popular-cristiano.png",
     descripcion: "Partido democratacristiano histórico.",
-    candidatos: []
+    candidatos: [
+      { id: "ppc1", nombre: "Roberto Chiabra", cargo: "Presidente", foto: "/FotosCandidatos/partido-popular-cristiano.jpg" }
+    ]
   },
   {
     id: 39,
@@ -357,7 +402,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "SP",
     logo: "/logos/salvemos-al-peru.png",
     descripcion: "Partido de salvación nacional.",
-    candidatos: []
+    candidatos: [
+      { id: "sp1", nombre: "Mariano González", cargo: "Presidente", foto: "/FotosCandidatos/salvemos-al-peru.jpg" }
+    ]
   },
   {
     id: 40,
@@ -365,7 +412,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "PL",
     logo: "/logos/peru-libre.png",
     descripcion: "Partido político de izquierda marxista.",
-    candidatos: []
+    candidatos: [
+      { id: "pl1", nombre: "Vladimir Cerrón", cargo: "Presidente", foto: "/FotosCandidatos/peru-libre.jpg" }
+    ]
   },
   {
     id: 41,
@@ -383,7 +432,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "UCD",
     logo: "/logos/un-camino-diferente.png",
     descripcion: "Partido alternativo.",
-    candidatos: []
+    candidatos: [
+      { id: "ucd1", nombre: "Rosario P. Fernández B.", cargo: "Presidente", foto: "/FotosCandidatos/un-camino-diferente.jpg" }
+    ]
   },
   {
     id: 43,
@@ -391,7 +442,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "UyP",
     logo: "/logos/unidad-y-paz.png",
     descripcion: "Partido enfocado en la unidad.",
-    candidatos: []
+    candidatos: [
+      { id: "uyp1", nombre: "Roberto Chiabra", cargo: "Presidente", foto: "/FotosCandidatos/unidad-y-paz.jpg" }
+    ]
   },
   {
     id: 44,
