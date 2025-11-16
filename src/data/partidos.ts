@@ -493,14 +493,6 @@ export const PARTIDOS: Partido[] = [
     ]
   },
   {
-    id: 19,
-    nombre: "Frente Popular Agrícola FIA del Perú (Frepap)",
-    siglas: "Frepap",
-    logo: "/logos/frepap.png",
-    descripcion: "Partido político evangélico agrario.",
-    candidatos: []
-  },
-  {
     id: 20,
     nombre: "Partido Cívico Obras",
     siglas: "PCO",
