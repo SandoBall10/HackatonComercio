@@ -76,6 +76,25 @@
       "informacion": "Partidupa Willakuynin",
       "nombreCompleto": "Hunt'asqa Sutin",
       "siglas": "Pisi Sutin",
+      "filtros": {
+        "ideologia": "Yuyay",
+        "tamano": "Sayaynin",
+        "fundacion": "Paqarisqa",
+        "todas": "Tukuynin",
+        "izquierda": "Lluq'i",
+        "centroIzquierda": "Chawpi-Lluq'i",
+        "centro": "Chawpi",
+        "centroDerecha": "Chawpi-Paña",
+        "derecha": "Paña",
+        "todos": "Tukuynin",
+        "grande": "Hatun",
+        "mediano": "Chawpi",
+        "pequeno": "Uchuy",
+        "historico": "Ñawpa",
+        "moderno": "Kunan",
+        "nuevo": "Musuq",
+        "limpiar": "✕ Pichay filtrukunata"
+      },
       "buscador": {
         "placeholder": "Maskay partiduta sutimpi utaq siglasninwan...",
         "noResultados": "Mana partidukuna tarikurqankuchu maskasqaykiwan"

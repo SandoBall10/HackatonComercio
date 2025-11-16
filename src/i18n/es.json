@@ -22,9 +22,9 @@
       "timelineTitle": "Línea de tiempo electoral:"
     },
     "chatbot": {
-      "titulo": "Asistente Virtual",
+      "titulo": "Yachay",
       "subtitulo": "Siempre disponible para ayudarte",
-      "mensajeBienvenida": "¡Hola! Soy tu asistente virtual para las Elecciones Perú 2026. ¿En qué puedo ayudarte hoy?",
+      "mensajeBienvenida": "¡Hola! Soy Yachay virtual para las Elecciones Perú 2026. ¿En qué puedo ayudarte hoy?",
       "placeholder": "Escribe tu mensaje...",
       "verCandidatos": "Ver candidatos",
       "verPartidos": "Ver partidos políticos",

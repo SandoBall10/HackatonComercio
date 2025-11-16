@@ -22,7 +22,7 @@
 /* Buscador */
 .buscador-container {
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 2rem auto 1.5rem;
 }
 
 .buscador-input-wrapper {
@@ -57,9 +57,9 @@
 }
 
 .buscador-input:focus {
-  border-color: #003d7a;
+  border-color: #B30227;
   background-color: white;
-  box-shadow: 0 0 0 3px rgba(0, 61, 122, 0.1);
+  box-shadow: 0 0 0 3px rgba(179, 2, 39, 0.1);
 }
 
 .buscador-clear {
@@ -81,6 +81,81 @@
 .buscador-clear:hover {
   background-color: #f0f0f0;
   color: #333;
+}
+
+/* Filtros */
+.filtros-container {
+  max-width: 1200px;
+  margin: 1.5rem auto 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.filtro-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+}
+
+.filtro-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.filtro-label svg {
+  color: #B30227;
+}
+
+.filtro-select {
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+.filtro-select:hover {
+  border-color: #B30227;
+}
+
+.filtro-select:focus {
+  border-color: #B30227;
+  box-shadow: 0 0 0 3px rgba(179, 2, 39, 0.1);
+}
+
+.filtro-reset {
+  padding: 0.7rem 1.5rem;
+  background: #B30227;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.filtro-reset:hover {
+  background: #8B0000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.3);
 }
 
 .no-resultados {
@@ -276,6 +351,20 @@
 
   .subtitulo {
     font-size: 0.95rem;
+  }
+
+  .filtros-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtro-group {
+    min-width: 100%;
+  }
+
+  .filtro-reset {
+    width: 100%;
+    justify-content: center;
   }
 
   .partidos-grid {

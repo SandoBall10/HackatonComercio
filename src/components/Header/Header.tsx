@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import ThemeSelector from '../ThemeSelector/ThemeSelector';
 import './Header.css';
 
 export const Header: React.FC = () => {
@@ -64,13 +66,15 @@ export const Header: React.FC = () => {
       {/* NAVBAR */}
       <header className="header">
         <nav className="navbar">
+          <LanguageSelector />
           <div className="nav-links-container">
             <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>{t('nav.inicio')}</a>
             <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('nav.partidos')}</a>
             <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
             <a href="/miembros-mesa" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/miembros-mesa'); }}>Para miembros de mesa</a>
              <a href="/tutorial" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/tutorial'); }}>Tutorial</a>
-            </div>
+          </div>
+          <ThemeSelector />
         </nav>
       </header>
     </>
