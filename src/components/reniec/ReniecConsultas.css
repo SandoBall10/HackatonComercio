@@ -1,7 +1,7 @@
 .reniec-main-container {
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
+  background: linear-gradient(120deg, #f5f6fa 0%, #f8fafc 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,16 +12,21 @@
 .reniec-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07), 0 1.5px 4px 0 rgba(0,0,0,0.03);
-  padding: 2rem 2.5rem;
-  margin: 1.5rem 0;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07), 0 1.5px 4px 0 rgba(253, 59, 59, 0.03);
+  padding: 2.2rem 2.2rem 2rem 2.2rem;
+  margin: 0;
   width: 100%;
-  max-width: 480px;
-  transition: box-shadow 0.2s;
+  max-width: 340px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1.5px solid #e5e7eb;
 }
 
 .reniec-card:hover {
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.12), 0 3px 8px 0 rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px 0 rgb(255, 89, 89)0 3px 8px 0 rgba(0,0,0,0.06);
 }
 
 .reniec-form-card {
@@ -30,7 +35,7 @@
 }
 
 .reniec-desc {
-  color: #555;
+  color: #444;
   margin-bottom: 1.5rem;
 }
 
@@ -48,19 +53,19 @@
   border-radius: 6px;
   outline: none;
   transition: border 0.2s;
-  background: #f3f4f6; /* gris claro */
-  color: #222;
+  background: #f3f4f6;
+  color: #fd4d4d;
 }
 
 .reniec-input:focus {
-  border: 1.5px solid #4f46e5;
+  border: 1.5px solid #222;
   background: #e0e7ef;
 }
 
 .reniec-btn {
   padding: 0.9rem 2.2rem;
   font-size: 1.1rem;
-  background: linear-gradient(90deg, #4f46e5 60%, #2563eb 100%);
+  background: linear-gradient(90deg, #222 60%, #444 100%);
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -81,23 +86,104 @@
 }
 
 .reniec-results-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2.5rem;
   width: 100%;
   max-width: 1100px;
   margin-top: 2.5rem;
+  justify-content: center;
+  align-items: stretch;
 }
 
-.reniec-info-list {
+.reniec-results-grid-custom {
   display: grid;
-  gap: 0.7rem;
-  font-size: 1.08rem;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 2.5rem;
+  align-items: stretch;
 }
 
-.reniec-vote-card {
-  background: #fff !important;
-  border: 1.5px solid #bbf7d0;
+.reniec-dni-card {
+  grid-row: 1 / span 2;
+  grid-column: 1 / 2;
+  min-width: 320px;
+  max-width: 480px;
+  border: 2px solid #e5e7eb;
+}
+
+.reniec-rol-card,
+.reniec-mesa-card {
+  max-width: 370px;
+  min-width: 0;
+  background: #f8fafc;
+  border: 2px solid #e5e7eb;
+}
+
+.reniec-rol-card {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+
+.reniec-mesa-card {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+}
+
+.reniec-localizacion-card {
+  grid-row: 2 / 3;
+  grid-column: 2 / 4;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  background: #f8fafc;
+  border: 2px solid #e5e7eb;
+}
+
+.reniec-mesa-pasos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.reniec-mesa-paso-card {
+  background: #f8fafc;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.reniec-mesa-paso-num {
+  background: #222;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+
+.reniec-mesa-paso-title {
+  font-weight: 700;
+  color: #b91c1c;
+  margin-bottom: 0.3rem;
+}
+
+.reniec-mesa-paso-desc {
+  color: #444;
+  font-size: 0.98rem;
 }
 
 .reniec-map-container {
@@ -119,13 +205,17 @@
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #4f46e5;
-  box-shadow: 0 2px 8px 0 rgba(79,70,229,0.10);
-  background: #e0e7ff;
+  border: 3px solid #222;
+  box-shadow: 0 2px 8px 0 rgba(34,34,34,0.10);
+  background: #f8fafc;
 }
 
 .reniec-barcode {
   margin-top: 0.5rem;
+  background: #fff;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
 }
 
 .reniec-constancia {
@@ -135,13 +225,13 @@
 }
 
 .reniec-theme-red {
-  background: linear-gradient(120deg, #fbe9e7 0%, #fff5f5 100%);
+  background: linear-gradient(120deg, #f5f6fa 0%, #f8fafc 100%);
 }
 .reniec-header-red {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto 2rem auto;
-  background: linear-gradient(90deg, #7f1d1d 60%, #b91c1c 100%);
+  background: linear-gradient(90deg, #d32f2f 60%, #b91c1c 100%);
   color: #fff;
   border-radius: 16px;
   padding: 2rem 2rem 1.2rem 2rem;
@@ -149,33 +239,96 @@
   text-align: center;
 }
 .reniec-btn-red {
-  background: linear-gradient(90deg, #b91c1c 60%, #7f1d1d 100%);
+  background: linear-gradient(90deg, #b91c1c 60%, #fc3c3c 100%);
 }
+
 .reniec-info-box {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  background: #fee2e2;
-  border: 2px solid #b91c1c;
+  background: #f8fafc;
+  border: 2px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.2rem 2rem;
   margin: 1.5rem 0 2rem 0;
   max-width: 1100px;
   width: 100%;
   font-size: 1.08rem;
-  color: #7f1d1d;
+  color: #222;
   font-weight: 500;
 }
+
+.reniec-info-card {
+  background: #f8fafc;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.2rem 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 220px;
+  flex: 1 1 0;
+  box-shadow: 0 2px 8px 0 rgba(185,28,28,0.07);
+}
+
+.reniec-info-title {
+  font-weight: 700;
+  color: #b91c1c;
+  font-size: 1.08rem;
+}
+
+.reniec-info-desc {
+  color: #222;
+  font-size: 0.98rem;
+  margin-top: 0.2rem;
+}
+
+.reniec-horizontal-boxes {
+  display: flex;
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 2rem auto 0 auto;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.reniec-horizontal-card {
+  flex: 1 1 0;
+  min-width: 260px;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #f8fafc;
+  border: 2px solid #e5e7eb;
+}
+
+.reniec-recomendaciones-card ul,
+.reniec-marcolegal-card ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.2rem;
+  color: #222;
+  font-size: 1.04rem;
+}
+
+.reniec-recomendaciones-card ul li,
+.reniec-marcolegal-card ul li {
+  margin-bottom: 0.4rem;
+}
+
 .reniec-title-red {
   color: #b91c1c;
   font-weight: 700;
   margin-bottom: 10px;
 }
+
 .reniec-instrucciones-card, .reniec-recomendaciones-card, .reniec-marcolegal-card {
   max-width: 1100px;
   width: 100%;
   margin: 1.5rem auto;
 }
+
 .reniec-pasos-list {
   list-style: none;
   padding: 0;
@@ -184,17 +337,19 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.2rem;
 }
+
 .reniec-pasos-list li {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  background: #fff1f2;
-  border: 1.5px solid #fca5a5;
+  background: #f8fafc;
+  border: 1.5px solid #e5e7eb;
   border-radius: 10px;
   padding: 1rem 1.2rem;
 }
+
 .reniec-paso-num {
-  background: #b91c1c;
+  background: #222;
   color: #fff;
   font-weight: bold;
   border-radius: 50%;
@@ -206,114 +361,71 @@
   font-size: 1.1rem;
   margin-right: 0.5rem;
 }
+
 .reniec-paso-desc {
-  color: #7f1d1d;
+  color: #444;
   font-size: 0.98rem;
   margin-top: 0.2rem;
 }
-.reniec-recomendaciones-card ul,
-.reniec-marcolegal-card ul {
-  margin: 0.5rem 0 0 0;
-  padding-left: 1.2rem;
-  color: #7f1d1d;
-  font-size: 1.04rem;
-}
-.reniec-recomendaciones-card ul li,
-.reniec-marcolegal-card ul li {
-  margin-bottom: 0.4rem;
-}
-.reniec-info-box-cards {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 1.5rem 0 2rem 0;
-  max-width: 1100px;
-  width: 100%;
-}
-.reniec-info-card {
-  background: #fff1f2;
-  border: 2px solid #b91c1c;
-  border-radius: 12px;
-  padding: 1.2rem 1.3rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  min-width: 220px;
-  flex: 1 1 0;
-  box-shadow: 0 2px 8px 0 rgba(185,28,28,0.07);
-}
-.reniec-info-icon {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.reniec-info-title {
-  font-weight: 700;
-  color: #b91c1c;
-  font-size: 1.08rem;
-}
-.reniec-info-desc {
-  color: #7f1d1d;
-  font-size: 0.98rem;
-  margin-top: 0.2rem;
-}
-.reniec-horizontal-boxes {
-  display: flex;
-  gap: 2rem;
-  max-width: 1100px;
-  width: 100%;
-  margin: 2rem auto 0 auto;
-  justify-content: center;
-}
-.reniec-horizontal-card {
-  flex: 1 1 0;
-  min-width: 260px;
-  max-width: 540px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.reniec-horizontal-header {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  margin-bottom: 0.7rem;
-}
-.reniec-horizontal-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@media (max-width: 900px) {
-  .reniec-results-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .reniec-card, .reniec-form-card {
+
+@media (max-width: 1100px) {
+  .reniec-results-grid,
+  .reniec-horizontal-boxes {
+    gap: 1.2rem;
     max-width: 98vw;
-    padding: 1.2rem 1rem;
   }
-  .reniec-info-box {
-    flex-direction: column;
-    gap: 0.7rem;
-    padding: 1rem;
-    font-size: 1rem;
+  .reniec-card,
+  .reniec-horizontal-card {
+    max-width: 98vw;
   }
-  .reniec-pasos-list {
+  .reniec-results-grid-custom {
     grid-template-columns: 1fr;
-    gap: 0.7rem;
+    grid-template-rows: none;
+    gap: 1.2rem;
+    max-width: 98vw;
   }
-  .reniec-info-box-cards,
+  .reniec-dni-card,
+  .reniec-rol-card,
+  .reniec-mesa-card,
+  .reniec-localizacion-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .reniec-mesa-pasos-grid {
+    grid-template-columns: 1fr;
+  }
   .reniec-horizontal-boxes {
     flex-direction: column;
     gap: 1.2rem;
     align-items: stretch;
   }
-  .reniec-info-card,
   .reniec-horizontal-card {
     min-width: 0;
     width: 100%;
     max-width: 100vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .reniec-results-grid,
+  .reniec-horizontal-boxes {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .reniec-card,
+  .reniec-horizontal-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .reniec-mesa-pasos-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -67,7 +67,7 @@ const ReniecConsultas: React.FC = () => {
       <div className="reniec-card reniec-form-card">
         <h3 className="reniec-desc">Consulta tu Información</h3>
         <form onSubmit={handleConsulta} className="reniec-form" style={{ flexDirection: 'column', gap: 18 }}>
-          <label>Número de DNI</label>
+
           <input
             type="text"
             placeholder="Ingresa tu DNI de 8 dígitos"
@@ -88,36 +88,9 @@ const ReniecConsultas: React.FC = () => {
       </div>
 
       {resultado && simulado && (
-        <div className="reniec-info-box-cards">
-          <div className="reniec-info-card">
-            <div className="reniec-info-icon"><IconClock /></div>
-            <div>
-              <div className="reniec-info-title">Horario de Votación</div>
-              <div className="reniec-info-desc">8:00 am - 4:00 pm</div>
-            </div>
-          </div>
-          <div className="reniec-info-card">
-            <div className="reniec-info-icon"><IconDoc /></div>
-            <div>
-              <div className="reniec-info-title">Documentos Requeridos</div>
-              <div className="reniec-info-desc">DNI original y vigente</div>
-            </div>
-          </div>
-          <div className="reniec-info-card">
-            <div className="reniec-info-icon"><IconMoney /></div>
-            <div>
-              <div className="reniec-info-title">¿Multa por no votar?</div>
-              <div className="reniec-info-desc">Sí, entre S/. 23.00 y S/. 92.00 según tu estado económico civil</div>
-            </div>
-          </div>
-        </div>
-      )}
-
-
-      {resultado && (
-        <div className="reniec-results-grid">
-
-          <div className="reniec-card">
+        <div className="reniec-results-grid reniec-results-grid-custom">
+          {/* Datos de DNI: ocupa dos filas a la izquierda */}
+          <div className="reniec-card reniec-dni-card">
             <h4 className="reniec-title-red">Datos del DNI</h4>
             <div className="reniec-foto-barcode-section">
               <img
@@ -133,36 +106,32 @@ const ReniecConsultas: React.FC = () => {
               <div><strong>Apellido materno:</strong> {resultado.apellidoMaterno}</div>
             </div>
             <div className="reniec-foto-barcode-section" style={{ marginTop: 18 }}>
-
               <div className="reniec-barcode">
-                <svg width="140" height="40" viewBox="0 0 140 40">
-                  <rect x="2" y="5" width="4" height="30" fill="#222" />
-                  <rect x="8" y="5" width="2" height="30" fill="#222" />
-                  <rect x="12" y="5" width="6" height="30" fill="#222" />
-                  <rect x="20" y="5" width="2" height="30" fill="#222" />
-                  <rect x="24" y="5" width="4" height="30" fill="#222" />
-                  <rect x="30" y="5" width="2" height="30" fill="#222" />
-                  <rect x="34" y="5" width="8" height="30" fill="#222" />
-                  <rect x="44" y="5" width="2" height="30" fill="#222" />
-                  <rect x="48" y="5" width="4" height="30" fill="#222" />
-                  <rect x="54" y="5" width="2" height="30" fill="#222" />
-                  <rect x="58" y="5" width="6" height="30" fill="#222" />
-                  <rect x="66" y="5" width="2" height="30" fill="#222" />
-                  <rect x="70" y="5" width="4" height="30" fill="#222" />
-                  <rect x="76" y="5" width="2" height="30" fill="#222" />
-                  <rect x="80" y="5" width="8" height="30" fill="#222" />
-                  <rect x="90" y="5" width="2" height="30" fill="#222" />
-                  <rect x="94" y="5" width="4" height="30" fill="#222" />
-                  <rect x="100" y="5" width="2" height="30" fill="#222" />
-                  <rect x="104" y="5" width="6" height="30" fill="#222" />
-                  <rect x="112" y="5" width="2" height="30" fill="#222" />
-                  <rect x="116" y="5" width="4" height="30" fill="#222" />
-                  <rect x="122" y="5" width="2" height="30" fill="#222" />
-                  <rect x="126" y="5" width="8" height="30" fill="#222" />
+                {/* ...SVG código de barras... */}
+                <svg width="220" height="50" viewBox="0 0 220 50">
+                  <rect x="2" y="5" width="8" height="40" fill="#222" />
+                  <rect x="14" y="5" width="4" height="40" fill="#222" />
+                  <rect x="22" y="5" width="12" height="40" fill="#222" />
+                  <rect x="38" y="5" width="4" height="40" fill="#222" />
+                  <rect x="46" y="5" width="8" height="40" fill="#222" />
+                  <rect x="58" y="5" width="4" height="40" fill="#222" />
+                  <rect x="66" y="5" width="16" height="40" fill="#222" />
+                  <rect x="86" y="5" width="4" height="40" fill="#222" />
+                  <rect x="94" y="5" width="8" height="40" fill="#222" />
+                  <rect x="106" y="5" width="4" height="40" fill="#222" />
+                  <rect x="114" y="5" width="12" height="40" fill="#222" />
+                  <rect x="130" y="5" width="4" height="40" fill="#222" />
+                  <rect x="138" y="5" width="8" height="40" fill="#222" />
+                  <rect x="150" y="5" width="4" height="40" fill="#222" />
+                  <rect x="158" y="5" width="16" height="40" fill="#222" />
+                  <rect x="178" y="5" width="4" height="40" fill="#222" />
+                  <rect x="186" y="5" width="8" height="40" fill="#222" />
+                  <rect x="198" y="5" width="4" height="40" fill="#222" />
+                  <rect x="206" y="5" width="12" height="40" fill="#222" />
                 </svg>
               </div>
-
               <div className="reniec-constancia">
+                {/* ...SVG constancia... */}
                 <svg width="120" height="32">
                   <rect x="0" y="0" width="120" height="32" fill="#f3f4f6" stroke="#bbb" strokeWidth="1"/>
                   <g stroke="#bbb" strokeWidth="1">
@@ -181,39 +150,79 @@ const ReniecConsultas: React.FC = () => {
             </div>
           </div>
 
-          {simulado && (
-            <div className="reniec-card">
-              <h4 className="reniec-title-red">Datos de Votación (Simulados)</h4>
-              <div className="reniec-info-list" style={{ width: '100%', textAlign: 'center', margin: '10px 0 0 0' }}>
-                <div><strong>Rol:</strong> {simulado.rol}</div>
-                <div><strong>Mesa:</strong> {simulado.mesa}</div>
-                <div><strong>Fecha de votación:</strong> {simulado.fecha}</div>
-                <div><strong>Salón:</strong> {simulado.salon}</div>
-                <div><strong>Piso:</strong> {simulado.piso}</div>
-                <div><strong>Colegio:</strong> {simulado.ubicacion.nombre}</div>
-                <div><strong>Ubicación:</strong> {simulado.ubicacion.direccion}</div>
+          {/* Rol y Fecha */}
+          <div className="reniec-card reniec-horizontal-card reniec-rol-card">
+            <div className="reniec-horizontal-header">
+              <span className="reniec-horizontal-icon"><IconDoc /></span>
+              <h4 className="reniec-title-red">Rol y Fecha</h4>
+            </div>
+            <div className="reniec-info-list" style={{ textAlign: 'center' }}>
+              <div>
+                <span style={{
+                  display: 'inline-block',
+                  marginLeft: 8,
+                  padding: '0.2em 0.8em',
+                  borderRadius: '1em',
+                  background: simulado.rol === 'Miembro de mesa' ? '#fee2e2' : '#f3f4f6',
+                  color: '#b91c1c',
+                  fontWeight: 700,
+                  fontSize: '1.1em'
+                }}>
+                  {simulado.rol}
+                </span>
               </div>
-              <div className="reniec-map-container" style={{ width: '100%', marginTop: 18 }}>
+              <div style={{ marginTop: 12 }}>
+                <strong>Fecha de votación:</strong>
+                <div style={{
+                  marginTop: 4,
+                  fontSize: '1.1em',
+                  color: '#7f1d1d',
+                  fontWeight: 600
+                }}>
+                  {simulado.fecha}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mesa de Votación */}
+          <div className="reniec-card reniec-horizontal-card reniec-mesa-card">
+            <div className="reniec-horizontal-header">
+              <span className="reniec-horizontal-icon"><IconMoney /></span>
+              <h4 className="reniec-title-red">Mesa de Votación</h4>
+            </div>
+            <div className="reniec-info-list" style={{ textAlign: 'center' }}>
+              <div><strong>Mesa:</strong> {simulado.mesa}</div>
+              <div><strong>Piso:</strong> {simulado.piso}</div>
+              <div><strong>Salón:</strong> {simulado.salon}</div>
+            </div>
+          </div>
+
+          {/* Localización: ocupa el espacio debajo de Rol y Mesa */}
+          <div className="reniec-card reniec-horizontal-card reniec-localizacion-card">
+            <div className="reniec-horizontal-header">
+              <span className="reniec-horizontal-icon"><IconClock /></span>
+              <h4 className="reniec-title-red">Localización</h4>
+            </div>
+            <div className="reniec-info-list" style={{ textAlign: 'center' }}>
+              <div><strong>Colegio:</strong> {simulado.ubicacion.nombre}</div>
+              <div><strong>Ubicación:</strong> {simulado.ubicacion.direccion}</div>
+              <div className="reniec-map-container" style={{ marginTop: 10 }}>
                 <iframe
                   title="Mapa"
                   width="100%"
-                  height="200"
+                  height="140"
                   style={{ border: 0, borderRadius: '8px' }}
                   loading="lazy"
                   allowFullScreen
                   src={`https://www.openstreetmap.org/export/embed.html?bbox=${simulado.ubicacion.lon - 0.001},${simulado.ubicacion.lat - 0.001},${simulado.ubicacion.lon + 0.001},${simulado.ubicacion.lat + 0.001}&layer=mapnik&marker=${simulado.ubicacion.lat},${simulado.ubicacion.lon}`}
                 ></iframe>
               </div>
-              <div style={{ marginTop: 10 }}>
-                <strong>Guía PDF:</strong>{' '}
-                <a href={simulado.guiaPdf} target="_blank" rel="noopener noreferrer" style={{ color: '#b91c1c', textDecoration: 'underline' }}>
-                  Descargar
-                </a>
-              </div>
             </div>
-          )}
+          </div>
         </div>
       )}
+
 
       {resultado && (
         <div className="reniec-card reniec-instrucciones-card">
@@ -222,17 +231,29 @@ const ReniecConsultas: React.FC = () => {
               ? 'Guía para Miembros de Mesa'
               : 'Instrucciones para votar'}
           </h4>
-          <ol className="reniec-pasos-list">
-            {(simulado?.rol === 'Miembro de mesa' ? pasosMiembroMesa : pasosVotante).map((paso, idx) => (
-              <li key={idx}>
-                <span className="reniec-paso-num">{idx + 1}</span>
-                <div>
-                  <strong>{paso.titulo}</strong>
-                  <div className="reniec-paso-desc">{paso.descripcion}</div>
+          {simulado?.rol === 'Miembro de mesa' ? (
+            <div className="reniec-mesa-pasos-grid">
+              {pasosMiembroMesa.map((paso, idx) => (
+                <div className="reniec-mesa-paso-card" key={idx}>
+                  <span className="reniec-mesa-paso-num">{idx + 1}</span>
+                  <div className="reniec-mesa-paso-title">{paso.titulo}</div>
+                  <div className="reniec-mesa-paso-desc">{paso.descripcion}</div>
                 </div>
-              </li>
-            ))}
-          </ol>
+              ))}
+            </div>
+          ) : (
+            <ol className="reniec-pasos-list">
+              {pasosVotante.map((paso, idx) => (
+                <li key={idx}>
+                  <span className="reniec-paso-num">{idx + 1}</span>
+                  <div>
+                    <strong>{paso.titulo}</strong>
+                    <div className="reniec-paso-desc">{paso.descripcion}</div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          )}
         </div>
       )}
 
