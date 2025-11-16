@@ -77,7 +77,6 @@ const MiembrosMesa: React.FC = () => {
 
   return (
     <div className="miembros-mesa-container">
-      {/* Hero Section */}
       <section className="hero-miembros">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -89,7 +88,6 @@ const MiembrosMesa: React.FC = () => {
         </div>
       </section>
 
-      {/* Tabs Navigation */}
       <div className="tabs-navigation">
         <button 
           className={`tab-btn ${activeTab === 'calendario' ? 'active' : ''}`}
@@ -117,7 +115,6 @@ const MiembrosMesa: React.FC = () => {
         </button>
       </div>
 
-      {/* Contenido según tab activo */}
       <div className="tab-content">
         {activeTab === 'calendario' && (
           <div className="calendario-section">
@@ -289,7 +286,6 @@ const MiembrosMesa: React.FC = () => {
         )}
       </div>
 
-      {/* CTA Section */}
       <section className="cta-section">
         <h2>{t('miembrosMesa.cta.titulo')}</h2>
         <p>{t('miembrosMesa.cta.descripcion')}</p>

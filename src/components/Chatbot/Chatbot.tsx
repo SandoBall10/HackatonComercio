@@ -23,7 +23,6 @@ const Chatbot: React.FC = () => {
 
   const avatarUrl = '/avatar/avatar-chatbot.png';
 
-  // Inicializar mensaje de bienvenida con traducción
   useEffect(() => {
     setMessages([{
       id: 1,
@@ -56,25 +55,21 @@ const Chatbot: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Mostrar notificaciones periódicas
   useEffect(() => {
-    if (isOpen) return; // No mostrar si el chat está abierto
+    if (isOpen) return;
 
     const showRandomNotification = () => {
       const randomMessage = notificationMessages[Math.floor(Math.random() * notificationMessages.length)];
       setNotificationMessage(randomMessage);
       setShowNotification(true);
 
-      // Ocultar después de 5 segundos
       setTimeout(() => {
         setShowNotification(false);
       }, 5000);
     };
 
-    // Primera notificación después de 10 segundos
     const initialTimer = setTimeout(showRandomNotification, 1000);
 
-    // Notificaciones cada 30 segundos
     const interval = setInterval(showRandomNotification, 30000);
 
     return () => {
@@ -96,9 +91,6 @@ const Chatbot: React.FC = () => {
   const getBotResponse = (userMessage: string): { text: string; options?: string[]; action?: () => void } => {
     const msg = userMessage.toLowerCase().trim();
 
-    // ==================== BÚSQUEDA AVANZADA CON MÚLTIPLES PALABRAS CLAVE ====================
-    
-    // Cambio de idioma
     if (msg.includes('español') || msg.includes('castellano') || msg === 'es' || msg.includes('spanish')) {
       return {
         text: '¡Perfecto! He cambiado el idioma a Español 🇵🇪',
@@ -160,7 +152,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== CANDIDATOS ====================
     if (msg.includes('candidato') || msg.includes('ver candidatos') || msg.includes('akllasqa') || msg.includes('ajllita') ||
         msg.includes('presidente') || msg.includes('umalliq') || msg.includes('apukaki') || msg.includes('postulante') ||
         msg.includes('congresist') || msg.includes('senador') || msg.includes('diputado') || msg.includes('quien') ||
@@ -182,7 +173,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== MIEMBROS DE MESA ====================
     if (msg.includes('miembro') || msg.includes('mesa') || msg.includes('miembru') || 
         msg.includes('sorteo') || msg.includes('designado') || msg.includes('seleccionado') ||
         msg.includes('capacitacion') || msg.includes('yachachikuy') || msg.includes('yatiqäwi') || msg.includes('instrucciones') ||
@@ -203,7 +193,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== RENIEC / CONSULTAS ====================
     if (msg.includes('reniec') || msg.includes('consultar') || msg.includes('dni') || 
         msg.includes('tapukuy') || msg.includes('jiskt\'a') || msg.includes('verificar') || msg.includes('documento') ||
         msg.includes('identidad') || msg.includes('buscar') || msg.includes('donde voto') || msg.includes('mi mesa') ||
@@ -218,7 +207,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== TUTORIAL / CAPACITACIÓN ====================
     if (msg.includes('tutorial') || msg.includes('video') || msg.includes('aprend') || 
         msg.includes('capacit') || msg.includes('instruccion') || msg.includes('como funciona') ||
         msg.includes('guia') || msg.includes('yachachikuy') || msg.includes('yatichäwi') || msg.includes('yachay video') ||
@@ -242,7 +230,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== CRONOGRAMA / FECHAS ====================
     if (msg.includes('cronograma') || msg.includes('fecha') || msg.includes('calendario') || 
         msg.includes('cuando') || msg.includes('pachakamay') || msg.includes('pacha') || msg.includes('dia') ||
         msg.includes('elecciones') || msg.includes('akllana') || msg.includes('ajlliri') || msg.includes('abril') ||
@@ -261,7 +248,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== VOTO / VOTACIÓN ====================
     if (msg.includes('vot') || msg.includes('sufrag') || msg.includes('akll') || msg.includes('ajll') ||
         msg.includes('elegir') || msg.includes('como votar') || msg.includes('donde votar') ||
         msg.includes('local') || msg.includes('mesa electoral') || msg.includes('como marco') ||
@@ -280,7 +266,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== PLAN DE GOBIERNO ====================
     if (msg.includes('plan') || msg.includes('propuesta') || msg.includes('gobierno') ||
         msg.includes('yuyay') || msg.includes('kamachiy') || msg.includes('kamachi') || msg.includes('programa') ||
         msg.includes('promesa') || msg.includes('compromiso') || msg.includes('ofrecimiento') ||
@@ -298,7 +283,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== REQUISITOS / DOCUMENTOS ====================
     if (msg.includes('requisito') || msg.includes('documento') || msg.includes('necesito') ||
         msg.includes('llevar') || msg.includes('papeles') || msg.includes('tramite') ||
         msg.includes('que debo llevar') || msg.includes('que necesito') || msg.includes('que debo presentar') ||
@@ -316,7 +300,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== UBICACIÓN / LOCAL ====================
     if (msg.includes('donde') || msg.includes('ubica') || msg.includes('direccion') ||
         msg.includes('lugar') || msg.includes('maypi') || msg.includes('cheqa') || msg.includes('kawki') ||
         msg.includes('local') || msg.includes('colegio') || msg.includes('escuela') ||
@@ -334,7 +317,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== COMPENSACIÓN / PAGO ====================
     if (msg.includes('compensa') || msg.includes('pago') || msg.includes('dinero') ||
         msg.includes('sueldo') || msg.includes('qullqi') || msg.includes('cuanto') ||
         msg.includes('cobrar') || msg.includes('plata') || msg.includes('remuneracion') ||
@@ -352,7 +334,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== HORARIO ====================
     if (msg.includes('horario') || msg.includes('hora') || msg.includes('tiempo') ||
         msg.includes('abre') || msg.includes('cierra') || msg.includes('pacha') || msg.includes('hura') ||
         msg.includes('que hora') || msg.includes('a que hora') || msg.includes('desde que hora') ||
@@ -370,7 +351,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== AYUDA / SOPORTE ====================
     if (msg.includes('ayuda') || msg.includes('help') || msg.includes('yanapay') || msg.includes('yanap') ||
         msg.includes('apoyo') || msg.includes('asistencia') || msg.includes('soporte') ||
         msg.includes('auxilio') || msg.includes('orientacion') || msg.includes('informacion') ||
@@ -394,7 +374,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== SALUDOS ====================
     if (msg.includes('hola') || msg.includes('buenos días') || msg.includes('buenas tardes') || 
         msg.includes('napay') || msg.includes('kusisi') || msg.includes('buenas noches') || msg.includes('hey') ||
         msg.includes('saludos') || msg.includes('buen dia') || msg.includes('buenas') ||
@@ -416,7 +395,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== DESPEDIDAS / AGRADECIMIENTOS ====================
     if (msg.includes('gracias') || msg.includes('sulpayki') || msg.includes('yuspajaraki') || msg.includes('adiós') ||
         msg.includes('chau') || msg.includes('hasta luego') || msg.includes('bye') ||
         msg.includes('muchas gracias') || msg.includes('mil gracias') || msg.includes('te agradezco') ||
@@ -439,7 +417,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // ==================== INICIO / PÁGINA PRINCIPAL ====================
     if (msg.includes('inicio') || msg.includes('home') || msg.includes('principal') || 
         msg.includes('qallariy') || msg.includes('qalltawi') || msg.includes('menu') || msg.includes('portada') ||
         msg.includes('pagina principal') || msg.includes('regresar') || msg.includes('volver') ||
@@ -454,7 +431,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // Respuesta por defecto
     return {
       text: t('chatbot.respuestas.default'),
       options: [
@@ -472,11 +448,9 @@ const Chatbot: React.FC = () => {
   const handleSendMessage = () => {
     if (inputValue.trim() === '') return;
 
-    // Agregar mensaje del usuario
     addMessage(inputValue, true);
     setInputValue('');
 
-    // Simular escritura del bot
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
@@ -491,7 +465,6 @@ const Chatbot: React.FC = () => {
   const handleQuickOption = (option: string) => {
     addMessage(option, true);
     
-    // Manejar "Tutorial de la página" directamente
     if (option === 'Tutorial de la página') {
       setIsTyping(true);
       setTimeout(() => {
@@ -533,7 +506,6 @@ const Chatbot: React.FC = () => {
 
   return (
     <>
-      {/* Notificación flotante */}
       {showNotification && !isOpen && (
         <div className="chatbot-notification" onClick={handleNotificationClick}>
           <div className="chatbot-notification-avatar">
@@ -556,7 +528,6 @@ const Chatbot: React.FC = () => {
         </div>
       )}
 
-      {/* Botón flotante */}
       <button 
         className="chatbot-button"
         onClick={() => setIsOpen(!isOpen)}
@@ -565,10 +536,8 @@ const Chatbot: React.FC = () => {
         <img src={avatarUrl} alt="Yachay" />
       </button>
 
-      {/* Ventana del chatbot */}
       {isOpen && (
         <div className="chatbot-window">
-          {/* Header */}
           <div className="chatbot-header">
             <div className="chatbot-header-avatar">
               <img src={avatarUrl} alt="Avatar" />
@@ -586,7 +555,6 @@ const Chatbot: React.FC = () => {
             </button>
           </div>
 
-          {/* Mensajes */}
           <div className="chatbot-messages">
             {messages.map(message => (
               <div key={message.id} className={`chatbot-message ${message.isUser ? 'user' : ''}`}>
@@ -636,7 +604,6 @@ const Chatbot: React.FC = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
           <div className="chatbot-input-area">
             <input
               type="text"

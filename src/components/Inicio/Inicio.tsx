@@ -146,7 +146,6 @@ export const Inicio: React.FC = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [showOfflineAlert, setShowOfflineAlert] = useState(false);
 
-  // Get timeline from translation
   const TIMELINE = getTimelineFromTranslation(t);
 
   const news: NewsItem[] = [
@@ -255,7 +254,6 @@ export const Inicio: React.FC = () => {
   const months2026 = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL'];
   const months = activeYear === '2025' ? months2025 : months2026;
 
-  // Autoplay del carrusel cada 5 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % news.length);
@@ -263,7 +261,6 @@ export const Inicio: React.FC = () => {
     return () => clearInterval(interval);
   }, [news.length]);
 
-  // Calcular countdown
   useEffect(() => {
     const targetDate = new Date('2026-04-12T00:00:00').getTime();
     const timer = setInterval(() => {
@@ -281,14 +278,12 @@ export const Inicio: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Cambiar mes cuando cambia el año
   React.useEffect(() => {
     if (!months.includes(activeMonth)) {
       setActiveMonth(months[0]);
     }
   }, [activeYear]);
 
-  // Cambiar mes cuando cambia el filtro, si el mes actual no tiene eventos con ese filtro
   React.useEffect(() => {
     const visibleMonthsForFilter = activeFilter === 'todos' 
       ? months 
@@ -305,7 +300,6 @@ export const Inicio: React.FC = () => {
   const yearData = TIMELINE[activeYear] || {};
   const monthEvents = (yearData[activeMonth] || []) as EventItem[];
 
-  // Función para obtener la categoría de un evento
   const getEventCategory = (ev: EventItem): 'electoral' | 'plan' | 'mesa' | 'administrativo' => {
     let category = ev.category;
     if (!category) {
@@ -323,12 +317,10 @@ export const Inicio: React.FC = () => {
     return category;
   };
 
-  // Filtrar eventos según la categoría seleccionada
   const filteredEvents = activeFilter === 'todos' 
     ? monthEvents 
     : monthEvents.filter(ev => getEventCategory(ev) === activeFilter);
 
-  // Obtener solo los meses que tienen eventos en la categoría seleccionada
   const getMonthsWithEvents = () => {
     if (activeFilter === 'todos') {
       return months;
@@ -347,7 +339,6 @@ export const Inicio: React.FC = () => {
     setShowFilterMenu(false);
   };
 
-  // Detectar cambios de conexión
   useEffect(() => {
     const handleOnline = () => {
       setIsOnline(true);
@@ -365,9 +356,6 @@ export const Inicio: React.FC = () => {
     };
   }, []);
 
-  // Si está en modo offline, muestra la versión ligera
-
-  // Mostrar pantalla de "no hay conexión" personalizada
   if (!isOnline && !offlineMode) {
     return (
       <div style={{
@@ -430,7 +418,6 @@ export const Inicio: React.FC = () => {
 
   return (
     <div className="inicio-container">
-      {/* Alerta de conexión perdida */}
       {showOfflineAlert && (
         <div style={{
           background: '#ffe0e0',
@@ -461,7 +448,6 @@ export const Inicio: React.FC = () => {
       )}
 
       <main>
-        {/* CARRUSEL DE NOTICIAS */}
         <section className="carousel-section">
           <div className="carousel-container">
             <div className="carousel-wrapper">
@@ -482,7 +468,6 @@ export const Inicio: React.FC = () => {
               </div>
             </div>
 
-            {/* Indicadores de puntos */}
             <div className="carousel-indicators">
               {news.map((_, idx) => (
                 <button
@@ -496,8 +481,6 @@ export const Inicio: React.FC = () => {
           </div>
         </section>
 
-
-        {/* NOTICIAS EN TARJETAS */}
         <section className="news-cards-section">
           <div className="news-cards-wrapper">
             <h2 className="news-cards-title">Noticias</h2>
@@ -525,12 +508,10 @@ export const Inicio: React.FC = () => {
         </section>
 
 
-        {/* TIMELINE SECTION */}
         <section className="timeline-wrapper">
           <h1 className="timeline-title">{t('inicio.timelineTitle')}</h1>
 
           <div className="timeline-header">
-            {/* YEAR TABS */}
             <div className="tabs-link">
               <button
                 role="tab"
@@ -550,7 +531,6 @@ export const Inicio: React.FC = () => {
               </button>
             </div>
 
-            {/* FILTRO DESPLEGABLE */}
             <div className="timeline-filter-dropdown">
               <button
                 className="filter-toggle-btn"
@@ -603,7 +583,6 @@ export const Inicio: React.FC = () => {
             </div>
           </div>
 
-          {/* MONTH TABS */}
           <div className="tab-buttons" role="tablist" aria-label={`Contenido de pestaña ${activeYear}`}>
             {visibleMonths.map((m) => (
               <button
@@ -618,7 +597,6 @@ export const Inicio: React.FC = () => {
             ))}
           </div>
 
-          {/* TIMELINE AREA */}
           <div className="timeline-area">
             <div className="timeline-line-vertical"></div>
             <div className="entries">
@@ -646,7 +624,6 @@ export const Inicio: React.FC = () => {
         </section>
       </main>
 
-        {/* FOOTER */}
           <footer className="site-footer">
             <div className="footer-container">
               <div className="footer-col">
@@ -699,7 +676,6 @@ export const Inicio: React.FC = () => {
             </div>
           </footer>
 
-          {/* Botón para activar modo offline */}
           <div style={{ textAlign: 'center', margin: '24px 0' }}>
             <button
               style={{

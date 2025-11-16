@@ -12,7 +12,7 @@ i18n
       qu: qu,
       ay: ay
     },
-    lng: 'es', // idioma por defecto
+    lng: 'es',
     fallbackLng: 'es',
     interpolation: {
       escapeValue: false

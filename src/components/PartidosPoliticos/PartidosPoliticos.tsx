@@ -22,7 +22,6 @@ const PartidosPoliticos: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filtroIdeologia, setFiltroIdeologia] = useState<string>('todos');
 
-  // Función para obtener la clave de traducción del nombre del partido
   const getPartidoKey = (nombre: string): string => {
     const keyMap: { [key: string]: string } = {
       'Renovación Popular': 'renovacion-popular',
@@ -122,19 +121,16 @@ const PartidosPoliticos: React.FC = () => {
     navigate(`/partido/${partidoId}`);
   };
 
-  // Filtrar partidos según el término de búsqueda y filtros
   const partidosFiltrados = partidos.filter(partido => {
     const searchLower = searchTerm.toLowerCase();
     const nombreTraducido = t(`partidos.nombres.${getPartidoKey(partido.nombre)}`).toLowerCase();
     
-    // Filtro de búsqueda por texto
     const cumpleBusqueda = searchTerm === '' || (
       nombreTraducido.includes(searchLower) ||
       partido.siglas.toLowerCase().includes(searchLower) ||
       partido.nombre.toLowerCase().includes(searchLower)
     );
 
-    // Filtro de ideología
     const cumpleIdeologia = filtroIdeologia === 'todos' || partido.ideologia === filtroIdeologia;
 
     return cumpleBusqueda && cumpleIdeologia;
@@ -148,7 +144,6 @@ const PartidosPoliticos: React.FC = () => {
         <h1 className="titulo-principal">{t('partidos.titulo')} - {t('partidos.eleccionesPeru2026')}</h1>
       <p className="subtitulo">{partidosFiltrados.length} {t('partidos.descripcion').toLowerCase()}</p>
 
-      {/* Buscador */}
       <div className="buscador-container">
         <div className="buscador-input-wrapper">
           <svg className="buscador-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -174,7 +169,6 @@ const PartidosPoliticos: React.FC = () => {
         </div>
       </div>
 
-      {/* Filtros */}
       <div className="filtros-container">
         <div className="filtro-group">
           <label htmlFor="filtro-ideologia" className="filtro-label">

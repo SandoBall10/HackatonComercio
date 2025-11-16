@@ -29,7 +29,6 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* TOP HEADER CON COUNTDOWN */}
       <div className="top-header">
         <div className="top-header-content">
           <div className="logo-section">
@@ -63,7 +62,6 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* NAVBAR */}
       <header className="header">
         <nav className="navbar">
           <LanguageSelector />

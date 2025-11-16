@@ -61,9 +61,7 @@ const ReniecConsultas: React.FC = () => {
 
   return (
     <div className="reniec-main-container reniec-theme-red">
-      {/* Layout con formulario e información importante */}
       <div className="reniec-top-layout">
-        {/* Formulario de Consulta - Izquierda */}
         <div className="reniec-consulta-box-left">
           <div className="reniec-header-box">
             <div className="reniec-title-with-icons">
@@ -112,7 +110,6 @@ const ReniecConsultas: React.FC = () => {
           </form>
         </div>
 
-        {/* Información Importante - Derecha */}
         <div className="reniec-info-box-right">
           <h3 className="reniec-info-title">{t('reniec.informacionImportante', 'Información Importante')}</h3>
           
@@ -154,12 +151,9 @@ const ReniecConsultas: React.FC = () => {
         </div>
       </div>
 
-        {/* Resultados debajo del buscador */}
         {resultado && simulado && (
           <div className="reniec-results-below-search">
-            {/* Datos en fila horizontal */}
             <div className="reniec-inline-cards">
-              {/* Datos del DNI */}
               <div className="reniec-card-inline reniec-dni-inline">
                 <div className="reniec-dni-header-inline">
                   <IconUser />
@@ -176,7 +170,6 @@ const ReniecConsultas: React.FC = () => {
                 </div>
               </div>
 
-              {/* Rol y Fecha */}
               <div className="reniec-card-inline">
                 <div className="reniec-dni-header-inline">
                   <IconUser />
@@ -197,7 +190,6 @@ const ReniecConsultas: React.FC = () => {
                 </div>
               </div>
 
-              {/* Mesa de Votación */}
               <div className="reniec-card-inline">
                 <div className="reniec-dni-header-inline">
                   <IconVoteBox />
@@ -220,7 +212,6 @@ const ReniecConsultas: React.FC = () => {
               </div>
             </div>
 
-            {/* Mapa debajo */}
             <div className="reniec-map-section">
               <div className="reniec-card-full-width">
                 <div className="reniec-dni-header-inline">
@@ -259,7 +250,6 @@ const ReniecConsultas: React.FC = () => {
           </div>
         )}
 
-      {/* Secciones antiguas omitidas */}
       {false && resultado && simulado && (
         <div className="reniec-results-grid reniec-results-grid-custom" style={{ display: 'none' }}>
           <div className="reniec-card reniec-dni-card">
@@ -294,7 +284,6 @@ const ReniecConsultas: React.FC = () => {
             </div>
             <div className="reniec-foto-barcode-section" style={{ marginTop: 18 }}>
               <div className="reniec-barcode">
-                {/* ...SVG código de barras... */}
                 <svg width="220" height="50" viewBox="0 0 220 50">
                   <rect x="2" y="5" width="8" height="40" fill="#222" />
                   <rect x="14" y="5" width="4" height="40" fill="#222" />
@@ -318,7 +307,6 @@ const ReniecConsultas: React.FC = () => {
                 </svg>
               </div>
               <div className="reniec-constancia">
-                {/* ...SVG constancia... */}
                 <svg width="120" height="32">
                   <rect x="0" y="0" width="120" height="32" fill="#f3f4f6" stroke="#bbb" strokeWidth="1"/>
                   <g stroke="#bbb" strokeWidth="1">
@@ -337,7 +325,6 @@ const ReniecConsultas: React.FC = () => {
             </div>
           </div>
 
-          {/* Rol y Fecha */}
           <div className="reniec-card reniec-horizontal-card reniec-rol-card">
             <div className="reniec-horizontal-header">
               <span className="reniec-horizontal-icon"><IconUser /></span>
@@ -378,7 +365,6 @@ const ReniecConsultas: React.FC = () => {
             </div>
           </div>
 
-          {/* Mesa de Votación */}
           <div className="reniec-card reniec-horizontal-card reniec-mesa-card">
             <div className="reniec-horizontal-header">
               <span className="reniec-horizontal-icon"><IconVoteBox /></span>
@@ -400,7 +386,6 @@ const ReniecConsultas: React.FC = () => {
             </div>
           </div>
 
-          {/* Localización: ocupa el espacio debajo de Rol y Mesa */}
           <div className="reniec-card reniec-horizontal-card reniec-localizacion-card">
             <div className="reniec-horizontal-header">
               <span className="reniec-horizontal-icon"><IconMapPin /></span>
