@@ -234,6 +234,39 @@
       "informacion": "Partidupa Willakuynin",
       "nombreCompleto": "Hunt'asqa Sutin",
       "siglas": "Pisi Sutin",
+      "tabs": {
+        "presidencial": "Umalliq Akllasqakuna",
+        "diputados": "Diputadukuna Wasi",
+        "senadores": "Senadorakuna Wasi",
+        "parlamento": "Parlamento Andino"
+      },
+      "eleccionesPeru2026": "Akllana Perú 2026",
+      "noEncontrado": "Partiduqa manam tarikurqanchu",
+      "planchaPresidencial": "Umalliq Akllasqakuna",
+      "candidatosInscritos": "akllasqakuna qillqasqa",
+      "camaraDiputados": "Diputadukuna Wasi",
+      "candidatosPorCircunscripcion": "Tukuynin: {{total}} akllasqakuna circunscripciónmanta",
+      "diputadosInfo": "Diputadukuna circunscripción electoralmanta akllasqa kanku, suyunkuta rikuchinku",
+      "noDiputados": "Mana diputadukuna kanku kay partidupaq",
+      "camaraSenadores": "Senadorakuna Wasi",
+      "representantesNacionales": "Tukuynin: {{total}} llaqta rikuchiqkuna",
+      "senadoresInfo": "Senadorakuna llaqtamanta akllasqa kanku, tukuy suyuta rikuchinku",
+      "noSenadores": "Mana senadorakuna kanku kay partidupaq",
+      "parlamentoAndino": "Parlamento Andino",
+      "representantesAndinos": "Comunidad Andinapañawpaqninkuna",
+      "queEsParlamentoAndino": "¿Imatachus Parlamento Andinoqa?",
+      "descripcionParlamentoAndino": "Comunidad Andina (CAN) nisqapa rimanakuy wasinmi, Bolivia, Colombia, Ecuador, Perú, Chile (tinkisqa) suyukunamanta rikuchiqkunawan.",
+      "funciones": "Ruwanankuna",
+      "promoverIntegracion": "Andino hukllachayta kallpachanapaq",
+      "ambito": "Maypi",
+      "paisesAndinos": "Andino suyukuna",
+      "noParlamentariosAndinos": "Mana parlamentariyukuna Andino kanku kay partidupaq",
+      "infoImportante": "Yachay Ancha Allin",
+      "eleccionCedula": "Akllanakuyqa kikin cédula sufragiopiqa rurakun",
+      "periodoCincoAnios": "5 watakuna rikuchiq hina",
+      "promuevenIntegracion": "Andino hukllachayta kallpachanku",
+      "temasComercio": "Yachaykuna: ranqhay, puriy, waqaychay, kawsay",
+      "Partidos Filtros Ideologia": "Yuyay",
       "filtros": {
         "ideologia": "Yuyay",
         "tamano": "Sayaynin",
@@ -521,7 +554,8 @@
       "whatsapp": "WhatsApp: 955 668 683",
       "siguenos": "Qatiwayku",
       "portal": "Portal Electoral ONPE",
-      "derechos": "Tukuy derechokuna waqaychasqa"
+      "derechos": "Tukuy derechokuna waqaychasqa",
+      "datosJNE": "Kay willakuykunaqa JNE ONPEmanta quykusqa kanku"
     }
   }
 }

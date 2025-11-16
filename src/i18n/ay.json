@@ -233,6 +233,39 @@
       "informacion": "Partidumpi Yatiyawi",
       "nombreCompleto": "Phuqhat Sutipa",
       "siglas": "Jisk'a Sutipa",
+      "tabs": {
+        "presidencial": "Apukaki Ajllitanaka",
+        "diputados": "Diputadunaka Uta",
+        "senadores": "Senadoranaka Uta",
+        "parlamento": "Parlamento Andino"
+      },
+      "eleccionesPeru2026": "Ajlliri Perú 2026",
+      "noEncontrado": "Partiduxa janiwa jikxatakiti",
+      "planchaPresidencial": "Apukaki Ajllitanaka",
+      "candidatosInscritos": "ajllitanaka qillqatanaka",
+      "camaraDiputados": "Diputadunaka Uta",
+      "candidatosPorCircunscripcion": "Taqpacha: {{total}} ajllitanaka circunscripciónmanta",
+      "diputadosInfo": "Diputadunaka circunscripción electoralmanta ajllitawa, suyuparux ukt'ayapxi",
+      "noDiputados": "Janiwa diputadunaka utjakiti aka partidutaki",
+      "camaraSenadores": "Senadoranaka Uta",
+      "representantesNacionales": "Taqpacha: {{total}} ayllu ukt'ayirinaka",
+      "senadoresInfo": "Senadoranaka ayllumanta ajllitawa, taqpach suyuxa ukt'ayapxi",
+      "noSenadores": "Janiwa senadoranaka utjakiti aka partidutaki",
+      "parlamentoAndino": "Parlamento Andino",
+      "representantesAndinos": "Comunidad Andinampi ukt'ayirinaka",
+      "queEsParlamentoAndino": "¿Kunsa Parlamento Andino ukaxa?",
+      "descripcionParlamentoAndino": "Comunidad Andina (CAN) ukampi aruskipawi utawa, Bolivia, Colombia, Ecuador, Perú, Chile (mayacht'ata) suyunakampi ukt'ayirinakaxa.",
+      "funciones": "Lurawinaka",
+      "promoverIntegracion": "Andino mayacht'awi ch'amanchasiñataki",
+      "ambito": "Kawki",
+      "paisesAndinos": "Andino suyunaka",
+      "noParlamentariosAndinos": "Janiwa parlamentariyu Andino utjakiti aka partidutaki",
+      "infoImportante": "Yatiyi Wali Wakiskiri",
+      "eleccionCedula": "Ajllirixa kikpa cédula sufragiompina lurasi",
+      "periodoCincoAnios": "5 maraniwa ukt'ayiri ukhamaraki",
+      "promuevenIntegracion": "Andino mayacht'awi ch'amanchapxi",
+      "temasComercio": "Yatiyawinaka: aljasiña, saraña, arkaña, jakawi",
+      "Partidos Filtros Ideologia": "Yuyapa",
       "filtros": {
         "ideologia": "Yuyapa",
         "tamano": "Jach'a",
@@ -520,7 +553,8 @@
       "whatsapp": "WhatsApp: 955 668 683",
       "siguenos": "Arkiristu",
       "portal": "Portal Electoral ONPE",
-      "derechos": "Taqi derechunaxa imantatawa"
+      "derechos": "Taqi derechunaxa imantatawa",
+      "datosJNE": "Aka yatiyawinakax JNE ONPEmpi churatawa"
     }
   }
 }
