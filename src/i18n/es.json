@@ -3,7 +3,7 @@
     "nav": {
       "inicio": "Inicio",
       "partidos": "Partidos Políticos",
-      "reniec": "Consulta RENIEC"
+      "reniec": "Consultar tu lugar de votación"
     },
     "inicio": {
       "titulo": "Elecciones Generales",
@@ -53,7 +53,7 @@
       }
     },
     "reniec": {
-      "titulo": "Consulta RENIEC",
+      "titulo": "Consultar tu lugar de votación",
       "descripcion": "Verifica la información de ciudadanos registrados en RENIEC",
       "placeholderDni": "Ingrese DNI (8 dígitos)",
       "btnConsultar": "Consultar",
