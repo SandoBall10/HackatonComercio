@@ -4,7 +4,7 @@
 }
 
 .theme-btn-dropdown {
-  background: rgba(230, 232, 237, 0.7);
+  background: rgba(255, 255, 255, 0.15);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   padding: 8px 16px;
@@ -17,23 +17,26 @@
   gap: 8px;
   transition: all 0.3s ease;
   min-width: 60px;
+  backdrop-filter: blur(10px);
 }
 
 .theme-btn-dropdown:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
 
 .theme-icon {
   font-size: 20px;
-  color: #000;
+  color: #ffffff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 .theme-arrow {
   font-size: 10px;
   transition: transform 0.3s ease;
-  color: #000;
+  color: #ffffff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 .theme-btn-dropdown:hover .theme-arrow {
@@ -128,6 +131,47 @@
     padding: 10px 14px;
     font-size: 13px;
   }
+}
+
+/* Dark Mode Styles for Theme Selector */
+[data-theme="dark"] .theme-btn-dropdown {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .theme-btn-dropdown:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="dark"] .theme-icon,
+[data-theme="dark"] .theme-arrow {
+  color: #e4e6eb;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+[data-theme="dark"] .theme-dropdown {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .theme-option {
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .theme-option:hover {
+  background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .theme-option.active {
+  background: rgba(211, 47, 47, 0.15);
+  color: var(--accent-color);
+}
+
+[data-theme="dark"] .theme-check {
+  color: var(--accent-color);
 }
 
 /* Theme Variables */

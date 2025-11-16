@@ -434,3 +434,171 @@
     padding: 1.5rem;
   }
 }
+
+/* ========================================
+   DARK MODE STYLES - PARTIDOS POLITICOS
+   ======================================== */
+
+[data-theme="dark"] .partidos-container {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .titulo-principal {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .subtitulo {
+  color: var(--text-secondary);
+}
+
+/* Buscador en Dark Mode */
+[data-theme="dark"] .buscador-input {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .buscador-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .buscador-input:focus {
+  border-color: var(--accent-color);
+  background-color: var(--card-bg);
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
+}
+
+[data-theme="dark"] .buscador-icon {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .buscador-clear {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .buscador-clear:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Filtros en Dark Mode */
+[data-theme="dark"] .filtro-label {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .filtro-label svg {
+  color: var(--accent-color);
+}
+
+[data-theme="dark"] .filtro-select {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .filtro-select:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 16px rgba(211, 47, 47, 0.3);
+}
+
+[data-theme="dark"] .filtro-select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.2), 0 4px 16px rgba(211, 47, 47, 0.3);
+}
+
+[data-theme="dark"] .filtro-reset {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #a82a2a 100%);
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+}
+
+[data-theme="dark"] .filtro-reset:hover {
+  background: linear-gradient(135deg, #a82a2a 0%, #8b2222 100%);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+}
+
+/* Resultados vacíos */
+[data-theme="dark"] .no-resultados {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .no-resultados p {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Cards de Partidos en Dark Mode */
+[data-theme="dark"] .partido-card {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .partido-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  border-color: var(--accent-color);
+}
+
+/* LOGO EN DARK MODE - Fondo blanco para visibilidad */
+[data-theme="dark"] .partido-logo {
+  background: #ffffff !important;
+  border: 2px solid var(--border-color);
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .partido-logo img {
+  filter: none;
+  opacity: 1;
+}
+
+[data-theme="dark"] .partido-nombre {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .partido-siglas {
+  color: var(--text-secondary);
+}
+
+/* Detalle del Partido */
+[data-theme="dark"] .btn-volver {
+  background: var(--accent-color);
+}
+
+[data-theme="dark"] .btn-volver:hover {
+  background: #a82a2a;
+}
+
+[data-theme="dark"] .detalle-content {
+  background: var(--card-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .detalle-header {
+  border-bottom-color: var(--border-color);
+}
+
+/* LOGO DEL DETALLE EN DARK MODE */
+[data-theme="dark"] .detalle-logo {
+  background: #ffffff !important;
+  border: 2px solid var(--border-color);
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .detalle-header h2 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .detalle-siglas {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .info-item strong {
+  color: var(--accent-color);
+}
+
+[data-theme="dark"] .info-item p {
+  color: var(--text-secondary);
+}

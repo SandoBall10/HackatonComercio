@@ -195,7 +195,7 @@ const PartidoDetalle: React.FC = () => {
   const parlamentoAndino = partido.parlamentariosAndinos || [];
 
   return (
-    <div className="min-vh-100 bg-light" style={{
+    <div className="min-vh-100 bg-light page-bg" style={{
       '--color-primario': colorPrimario,
       '--color-secundario': colorSecundario,
       '--color-terciario': colorTerciario,
