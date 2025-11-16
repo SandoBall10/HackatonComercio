@@ -1,0 +1,339 @@
+{
+  "translation": {
+    "nav": {
+      "inicio": "Qallariy",
+      "candidatos": "Akllasqakuna",
+      "partidos": "Partidu Pulitikukuna",
+      "reniec": "RENIEC Tapukuy"
+    },
+    "inicio": {
+      "titulo": "Sapan Akllana",
+      "fecha": "12 abril 2026",
+      "faltan": "Qhiparan:",
+      "meses": "Killakuna",
+      "dias": "P'unchawkuna",
+      "horas": "Horakuna",
+      "minutos": "Minutukuna",
+      "partidosPoliticos": "Partidu Pulitikukuna",
+      "laOrganizacion": "Kamachiy",
+      "acercaProceso": "Ruway mana",
+      "loNuevo": "Musuq",
+      "votoDigital": "Digital Akllana",
+      "verificaMiembro": "Qhaway mesa miembruchu kanki",
+      "infoGeneral": "Sapan willakuy",
+      "enlacesRelacionados": "T'inkikuna",
+      "timelineTitle": "Kay akllana ruwaypa tiemponwan qatiy:"
+    },
+    "chatbot": {
+      "titulo": "Virtual Yanapaq",
+      "subtitulo": "Sapa kuti yanapanaykipaq kani",
+      "mensajeBienvenida": "¡Napaykullayki! Ñuqaqa kani virtual yanapaq Perú 2026 akllanapaq. ¿Imaynataq yanapasqayki?",
+      "placeholder": "Qillqay willakuyniykita...",
+      "verCandidatos": "Akllasqakunata qhaway",
+      "verPartidos": "Partidu pulitikukunata qhaway",
+      "consultarReniec": "RENIEC tapukuy",
+      "cronograma": "Akllana pachakamaypi",
+      "notificaciones": {
+        "ayuda": "¿Yanapakuyta munankichu?",
+        "disponible": "Kaypi kani yanapanaykipaq 😊",
+        "pregunta": "¿Akllanakunamanta tapukuyniykichu kan?",
+        "guiar": "Pusasqayki plataformapi",
+        "candidatos": "¿Akllasqakunamanta willakuyta maskhanki?",
+        "cronograma": "Ñuqawan akllana pachakamaypi qhaway"
+      },
+      "respuestas": {
+        "candidatos": "¡Allinmi! Pusasqayki akllasqakuna sekciónman maypichus tukuy willakuyta qhawayta atinki.",
+        "partidos": "Rikuchisqayki partidu pulitikukuna listanta Akllana 2026paq qillqasqakunata.",
+        "reniec": "Pusasqayki RENIEC tapukuy moduloman maypichus runakunapa willakuyninta qhawayta atinki.",
+        "cronogramaRespuesta": "Tukuy akllana pachakamayqa qallariy p'anqapi kachkan. Akllanakuna kanqa 12 abril 2026pi.",
+        "inicio": "Pusasqayki qallariy p'anqaman.",
+        "ayuda": "Kaykunapi yanapasqayki:",
+        "saludo": "¡Napaykullayki! ¿Imaynataq yanapasqayki?",
+        "gracias": "¡Manam imachu! ¿Wak imapipas yanapasqayki?",
+        "default": "Yanapasqayki plataformapi puriyta. ¿Imataq rurayta munankichu?",
+        "noGracias": "Mana, sulpayki",
+        "verCronograma": "Pachakamaypi qhaway"
+      }
+    },
+    "reniec": {
+      "titulo": "RENIEC Tapukuy",
+      "descripcion": "Qhaway runakunapa willakuyninta RENIEC qillqasqapi",
+      "placeholderDni": "Qillqay DNI (8 yupaykuna)",
+      "btnConsultar": "Tapukuy",
+      "consultando": "Tapukuspa...",
+      "errorDni": "DNIqa 8 yupaykunayuq kanan tiyan",
+      "resultadoTitulo": "Tapukuypa Kutichinpa",
+      "dni": "DNI",
+      "nombres": "Sutikuna",
+      "apellidoPaterno": "Yaya Sutin",
+      "apellidoMaterno": "Mama Sutin",
+      "fechaNacimiento": "Yurisqa P'unchaw"
+    },
+    "partidos": {
+      "titulo": "Partidu Pulitikukuna",
+      "descripcion": "Sapan Akllana 2026",
+      "volver": "← Kutiy listaman",
+      "informacion": "Partidupa Willakuynin",
+      "nombreCompleto": "Hunt'asqa Sutin",
+      "siglas": "Pisi Sutin",
+      "buscador": {
+        "placeholder": "Maskay partiduta sutimpi utaq siglasninwan...",
+        "noResultados": "Mana partidukuna tarikurqankuchu maskasqaykiwan"
+      },
+      "nombres": {
+        "accion-popular": "Ruway Llaqtap",
+        "fuerza-popular": "Kallpa Llaqtap",
+        "pte-peru": "Llank'aqkunapa Partidun PTE–Perú",
+        "ahora-nacion": "Kunan Nación",
+        "juntos-por-el-peru": "Tukuynin Perúpaq",
+        "partido-buen-gobierno": "Allin Kamachiy Partidu",
+        "alianza-para-el-progreso": "Ñawpaqman Puriypaq Tinkuy",
+        "libertad-popular": "Qhispikuy Llaqtap",
+        "partido-democrata-unido": "Huk Demócrata Partidu Perú",
+        "avanza-pais": "Ñawpaqman Suyunchis",
+        "nuevo-peru": "Musuq Perú Allin Kawsaypaq",
+        "partido-democrata-verde": "Q'umir Demócrata Partidu",
+        "batalla-peru": "Maqanakuy Perú",
+        "partido-aprista": "Aprista Partidu Peruano",
+        "partido-democratico-federal": "Federal Demócrata Partidu",
+        "fe-en-el-peru": "Iñiy Perúpi",
+        "partido-ciudadanos": "Runakuna Partidun Perúpaq",
+        "somos-peru": "Kanchis Perú Demócrata Partidu",
+        "frepap": "Chakra Llaqta Ñawpaq FIA Perúmanta",
+        "partido-civico-obras": "Cívicu Ruwanakuna Partidu",
+        "frente-esperanza": "Suyakuy Ñawpaq 2021",
+        "partido-morado": "Kulli Partidu",
+        "peru-accion": "Perú Ruway Pulitiku Partidu",
+        "peru-moderno": "Musuq Perú",
+        "pais-para-todos": "Suyu Tukuypaq Partidu",
+        "peru-primero": "Perú Ñawpaq Partidu",
+        "podemos-peru": "Atisunchis Perú",
+        "partido-patriotico": "Patriótiku Partidu Perúmanta",
+        "peruanos-unidos": "Peruanukuna Tinkisqa Qhispikunchis",
+        "primero-la-gente": "Ñawpaq Runakuna",
+        "cooperacion-popular": "Yanapanakuy Llaqtap",
+        "voces-del-pueblo": "Llaqtapa Kunkankuna",
+        "progresemos": "Ñawpaqman Puriyku",
+        "fuerza-moderna": "Kallpa Musuq",
+        "prin": "PRIN",
+        "renovacion-popular": "Musuqyachiy Llaqtap",
+        "integridad-democratica": "Hunt'a Kay Demócrata",
+        "partido-popular-cristiano": "Cristianu Llaqta Partidu",
+        "salvemos-al-peru": "Qhispichiykuna Perúta",
+        "peru-libre": "Perú Qhispikuy",
+        "partido-si-creo": "Ari Iñini Partidu",
+        "un-camino-diferente": "Huk Ñan Hukniray",
+        "unidad-y-paz": "Hukllachasqa Thak Kaypi"
+      }
+    },
+    "candidatos": {
+      "titulo": "Umalliqman Akllasqa",
+      "cargo": "Umalliqman Akllasqa kaywan",
+      "redesSociales": "Llika T'inkikuna",
+      "noEncontrado": "Mana tarikusqa akllasqapa willakuynin",
+      "tabs": {
+        "hojaVida": "Kawsay P'anqa",
+        "planGobierno": "Kamachiy Yuyay",
+        "trayectoria": "Ñan Purisqa"
+      },
+      "hojaVida": {
+        "titulo": "Kawsay P'anqa",
+        "datosPersonales": "Kikin Willakuykuna",
+        "nombreCompleto": "Hunt'asqa Sutin",
+        "dni": "DNI",
+        "fechaNacimiento": "Yurisqa P'unchaw",
+        "lugarNacimiento": "Yurisqa Cheqa",
+        "estadoCivil": "Qusa Warmi Kay",
+        "profesion": "Llamk'ay",
+        "formacionAcademica": "Yachay Wasi",
+        "experienciaLaboral": "Llamk'ay Rurasqa",
+        "idiomas": "Simikuna",
+        "logros": "Atisqakuna Yupaychasqakuna",
+        "declaracionesJuradas": "Jurasqa Willaykuna",
+        "sentenciasJudiciales": "Juzgadupa Willakuynin",
+        "noDisponible": "Mana kanchu",
+        "noInformacion": "Mana willakuy kanchu"
+      },
+      "planGobierno": {
+        "titulo": "Kamachiy Yuyay",
+        "ejesTematicos": "Hatun Imakuna",
+        "propuestas": "Hatun Yuyaykuna"
+      },
+      "trayectoria": {
+        "titulo": "Pulitika Ñan",
+        "cargosPublicos": "Llaqta Llamk'aykuna Rurasqa",
+        "partidosPrevios": "Ñawpaq Partidukuna"
+      }
+    },
+    "miembrosMesa": {
+      "titulo": "Mesa Miembrukuna",
+      "subtitulo": "Tukuy willakuy munasqayki llaqta llamk'ayniykita hunt'anaykipaq 12 abril 2026pi",
+      "tabs": {
+        "cronograma": "P'unchaw Pachakamay",
+        "instrucciones": "Yachachiy",
+        "derechos": "Derechukuna Ruwanakuna",
+        "capacitacion": "Yachachikuy"
+      },
+      "cronograma": {
+        "titulo": "Ruwanakuna Pachakamay - Akllana P'unchaw",
+        "descripcion": "12 abril 2026 - Kay yachachiywan qatiy mesa miembru hina allin llamk'anaykipaq",
+        "actividades": {
+          "llegada": "Akllana wasiykiman chayamuy",
+          "instalacion": "Akllana mesapa churay",
+          "verificacion": "Akllana materialespa qhaway",
+          "inicio": "Akllana ruwaypa qallariy",
+          "desarrollo": "Akllana p'unchawpa ruray",
+          "cierre": "Mesapa wichq'ay yupaypas akllanakunata",
+          "actas": "Actakunapa ruray kachaypas"
+        },
+        "importante": "Importante",
+        "mensajeImportante": "Yuyariy 1 hora ñawpaqta chayamuyta mana sasachakuykunapaq. Mesapa churayqa 7:00 AM nisqapi kanan tiyan."
+      },
+      "instrucciones": {
+        "titulo": "Yachachiy Sapa Llamk'ay",
+        "descripcion": "Kay yachachiykunata qatiy sapa etapa akllana ruwaypa",
+        "instalacion": {
+          "titulo": "Mesapa Churay",
+          "paso1": "Qhaway tukuy miembrukuna kachkanku",
+          "paso2": "Qhaway ánfora akllana materialeswan",
+          "paso3": "Qhaway mesaykipa padrón electoralta",
+          "paso4": "Churay cartel mesa yupayniyuqta rikukunanpaq"
+        },
+        "sufragio": {
+          "titulo": "Akllana Pachamanta",
+          "paso1": "Mañakuy DNIta akllaqmanta",
+          "paso2": "Qhaway kikinnininta padrónpi",
+          "paso3": "Quy cédula akllana",
+          "paso4": "Churay inka mana chinkakunanpaq índice rukmanta",
+          "paso5": "Churay firmayta acta akllanapi"
+        },
+        "conteo": {
+          "titulo": "Akllanakunapa Yupay",
+          "paso1": "Kichay ánforata personerokunapa ñawpaqninpi",
+          "paso2": "Yupay akllanakunata hatun kunkaykiwan",
+          "paso3": "Rakiy akllanakunata: allin, yuraq mana yupasqa",
+          "paso4": "Hunt'achiy acta electoralta",
+          "paso5": "Quy resultadokunata coordinador localman"
+        },
+        "consejos": {
+          "titulo": "Allin Yachachiy",
+          "consejo1": "Thak kay sapa pacha chiqamanta llamk'ay",
+          "consejo2": "Sichus mana yachankichu, tapukuy coordinador localwan",
+          "consejo3": "Yupaychay 100 metrokuna karumanta propaganda electoralpaq",
+          "consejo4": "Ama saqiychu celularkunata yaykuyta cámara pakapi"
+        }
+      },
+      "derechos": {
+        "titulo": "Derechoykikuna",
+        "descripcion": "Mesa miembru hina, kay derechoykikuna garantizasqa kanku:",
+        "derecho1": "Yachachikusqa kanaykipaq ONPEwanqa akllana p'unchaw ñawpaqta",
+        "derecho2": "Chaskiy mikhuy almuerzo akllana p'unchawpi",
+        "derecho3": "Mañakuy yanapakuyta policíamanta",
+        "derecho4": "Chaskiy qullqi yanapakuy llamk'ayniykimanta",
+        "derecho5": "Tarikuy constancia llamk'ayniykimanta mesa miembru hina"
+      },
+      "deberes": {
+        "titulo": "Ruwanaykikuna",
+        "descripcion": "Ruwanakuna hunt'anaykipaq kachkanku:",
+        "deber1": "Chayamuy allin pachapi akllana p'unchawpi",
+        "deber2": "Churay akllana mesata 7:00 AM nisqapi",
+        "deber3": "Waqaychay pakasqa akllana",
+        "deber4": "Churay allin kayta mesa electoralpi",
+        "deber5": "Hunt'achiy firmay actakunata electorales"
+      },
+      "compensacion": {
+        "titulo": "Qullqi Yanapakuy",
+        "mensaje": "Mesa miembru hina chaskinkiqa yanapakuyta",
+        "monto": "S/ 120.00 sulikuna",
+        "detalle": "llamk'ayniykimanta. Kayqa chaskinkipuni akllana ruwaypa qhipanpi."
+      },
+      "capacitacion": {
+        "titulo": "Yachachikuy Mesa Miembrukunapaq",
+        "descripcion": "ONPEqa qun mana qullqiyuq yachachikuyta tukuy mesa miembrukunapaq",
+        "presencial": {
+          "titulo": "Yachachikuy Kaqpi",
+          "descripcion": "Riy yachachikuy p'unchawkunaman distritoykipi. Kanqaku marzo 2026pi.",
+          "item1": "Ñawpaq p'unchaw: 29 marzo",
+          "item2": "Iskay kaq p'unchaw: 5 abril",
+          "item3": "Unaynin: 2-3 horakuna"
+        },
+        "virtual": {
+          "titulo": "Yachachikuy Virtual",
+          "descripcion": "Yaykuy cursokunamanqa internetwan wasiykimanta.",
+          "item1": "Plataforma virtual ONPE",
+          "item2": "Rikuy yachachiykunata",
+          "item3": "Material uraykachanapaq",
+          "item4": "Simuladores puriy"
+        },
+        "app": {
+          "titulo": "App Móvil",
+          "descripcion": "Uraykachay ONPE nisqa app mesa miembrukunapaq.",
+          "item1": "Yachachiy sapa llamk'ay",
+          "item2": "Hatun willaykunata",
+          "item3": "Qhaway akllana wasiykita",
+          "item4": "Material yanapakuy mana internetwan"
+        },
+        "recursos": {
+          "titulo": "Materialkuna Kachkan",
+          "manual": "Manual Mesa Miembrup",
+          "manualDesc": "Hunt'a yachachiy PDF nisqapi - Ñit'iy uraykachanapaq",
+          "videos": "Rikuy Yachachiy",
+          "videosDesc": "Video yachachiy mesa miembrukunapaq",
+          "preguntas": "Tapukuykuna Sapa Kuti",
+          "preguntasDesc": "Kutichinakuna tapukuykunaman - Ñit'iy uraykachanapaq"
+        }
+      },
+      "cta": {
+        "titulo": "¿Mesa miembruchu akllasqayki karqa?",
+        "descripcion": "Qhaway churasqaykita local akllana maypichus rinaykin",
+        "boton": "Qhaway Mesa Electoralniy"
+      }
+    },
+    "tutorial": {
+      "titulo": "Yachachiy: Imayna Plataformata Llamk'achinapaq",
+      "descripcion": "Yachay puriyta tukuy ruwanakunata electoral plataformaykipi mana sasa hinaspa usqhay",
+      "tituloVideo": "Hunt'a Yachachiy: Akllana Perú 2026",
+      "descripcionVideo": "Video yachachiy sapa llamk'ay plataformata llamk'achinapaq hinaspa tukuy yachanapaq proceso electoralmanta",
+      "errorVideo": "Video mana kachkanchu. Ama hina kaspa, qhaway tinkiykita.",
+      "seccion1": {
+        "titulo": "Hatun Puriy",
+        "descripcion": "Yachay tukuy secciones plataformamanta",
+        "paso1": "Mask'ay menu patapi sapa secciónman chayanaykipaq",
+        "paso2": "Llamk'achiy maskaq partidukunamanta usqhay tarinapaq",
+        "paso3": "T'ikray simita Español Quechua imayna munasqaykiman hina"
+      },
+      "seccion2": {
+        "titulo": "Tapukuy Akllasqakuna",
+        "descripcion": "Mask'ay akllasqakunamanta partidukunamantapas",
+        "paso1": "Riy Partidu Pulitikukuna secciónman",
+        "paso2": "Ñit'iy ima partidupipas detalles qhawanaykipaq",
+        "paso3": "Qhaway kamachiy yuyayninkunata hinaspa yuyaykunata"
+      },
+      "seccion3": {
+        "titulo": "Mesa Miembrukuna",
+        "descripcion": "Sichus churasqachu karqanki, kaypi kachkan willakuyniyki",
+        "paso1": "Qhaway pachakamay ruwanakunamanta p'unchawpi",
+        "paso2": "Ñawiriy yachachiy sapa llamk'ay",
+        "paso3": "Uraykachay manualta hinaspa yachachikuy yanapakuykunata"
+      },
+      "seccion4": {
+        "titulo": "Tapukuykuna RENIEC",
+        "descripcion": "Qhaway willakuyniyki electoral",
+        "paso1": "Yaykuchiy yupaykita DNI nisqamanta (8 yupay)",
+        "paso2": "Qhaway local mesaykitapas akllanaykimanta",
+        "paso3": "Qhaway datuykikuna allin kasqankuta"
+      },
+      "faq": {
+        "titulo": "Tapukuykuna Sapa Kuti",
+        "pregunta1": "¿Imayna mask'ani huk partiduta específicota?",
+        "respuesta1": "Llamk'achiy maskaq Partidu Pulitikukuna secciónpi. Maskawaq hunt'a sutimpi utaq siglaswan partidumanta.",
+        "pregunta2": "¿Atiyman simita t'ikrayta?",
+        "respuesta2": "Arí, llamk'achiy akllaq simita patapi t'ikranapaq Español Quechua nisqakunapi.",
+        "pregunta3": "¿Imata ruwani sichus mesa miembruchu churasqa karqani?",
+        "respuesta3": "Riy 'Mesa Miembrukuna' secciónman maypichus tarikunki tukuy willakuyta, pachakamay, yanapakuykuna necesitasqaykikunatapas.",
+        "pregunta4": "¿Imayna tapukuni local akllanaypa?",
+        "respuesta4": "'Tapukuy RENIEC' secciónpi yaykuchiy DNIykita qhawanaykipaq local mesaykitapas churasqaykita."
+      }
+    }
+  }
+}
