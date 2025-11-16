@@ -238,6 +238,7 @@
         "senadores": "Cámara de Senadores",
         "parlamento": "Parlamento Andino"
       },
+      "verCandidatoPresidencial": "Ver Candidato Presidencial",
       "eleccionesPeru2026": "Elecciones Perú 2026",
       "noEncontrado": "Partido no encontrado",
       "planchaPresidencial": "Plancha Presidencial",
@@ -351,6 +352,7 @@
       "planNoDisponibleAlerta": "Plan de Gobierno no disponible para este partido",
       "candidatoSinNombre": "Candidato Sin Nombre",
       "noDisponibleCorto": "No disponible",
+      "cargoPresidente": "Candidato a la Presidencia",
       "tabs": {
         "hojaVida": "Hoja de Vida",
         "planGobierno": "Plan de Gobierno",
@@ -374,7 +376,9 @@
         "declaracionesJuradas": "Declaraciones Juradas",
         "sentenciasJudiciales": "Sentencias Judiciales",
         "noDisponible": "No disponible",
-        "noInformacion": "No hay información disponible"
+        "noInformacion": "No hay información disponible",
+        "disponiblePortalJNE": "Disponible en portal JNE",
+        "sinSentenciasVigentes": "Sin sentencias vigentes"
       },
       "planGobierno": {
         "titulo": "Plan de Gobierno",

@@ -12,6 +12,17 @@ const Candidatos = ({ candidato: candidatoProp }) => {
   const [activeTab, setActiveTab] = useState('hoja-vida');
   const [_countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
 
+  // Función para traducir textos comunes
+  const translateCommonText = (text) => {
+    if (!text) return text;
+    const translations = {
+      'Disponible en portal JNE': t('candidatos.hojaVida.disponiblePortalJNE'),
+      'Sin sentencias vigentes': t('candidatos.hojaVida.sinSentenciasVigentes'),
+      'Información disponible en registros judiciales': t('candidatos.hojaVida.disponiblePortalJNE')
+    };
+    return translations[text] || text;
+  };
+
   // Mapeo de IDs de partidos a IDs de candidatos
   const mapeoPartidos = {
     '1': 'accion-popular',
@@ -545,7 +556,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                           <i className="bi bi-person-badge me-2"></i>
                           {t('candidatos.cargo')}
                         </h6>
-                        <p className="mb-0 opacity-90">{candidato.cargo || 'Candidato a la Presidencia'}</p>
+                        <p className="mb-0 opacity-90">{candidato.cargo || t('candidatos.cargoPresidente')}</p>
                       </div>
 
                       <div className="mb-3">
@@ -686,7 +697,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                             <i className="bi bi-file-text-fill me-2"></i>
                             {t('candidatos.hojaVida.declaracionesJuradas')}
                           </h5>
-                          <p className="mb-0">{candidato.hojaDeVida?.declaracionesJuradas}</p>
+                          <p className="mb-0">{translateCommonText(candidato.hojaDeVida?.declaracionesJuradas)}</p>
                         </div>
                       </div>
                     </div>
@@ -698,7 +709,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                             {t('candidatos.hojaVida.sentenciasJudiciales')}
                           </h5>
                           <p className="mb-0 text-danger fw-semibold">
-                            {candidato.hojaDeVida?.sentenciasJudiciales}
+                            {translateCommonText(candidato.hojaDeVida?.sentenciasJudiciales)}
                           </p>
                         </div>
                       </div>

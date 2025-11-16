@@ -241,6 +241,7 @@
         "senadores": "Senadorakuna Wasi",
         "parlamento": "Parlamento Andino"
       },
+      "verCandidatoPresidencial": "Umalliq Akllasqata Qhaway",
       "eleccionesPeru2026": "Akllana Perú 2026",
       "noEncontrado": "Partiduqa manam tarikurqanchu",
       "planchaPresidencial": "Umalliq Akllasqakuna",
@@ -363,6 +364,7 @@
       "planNoDisponibleAlerta": "Kamachiy Yuyayqa manam kanchu kay partidupaq",
       "candidatoSinNombre": "Akllasqa Mana Sutiyuq",
       "noDisponibleCorto": "Manam kanchu",
+      "cargoPresidente": "Umalliqman Akllasqa",
       "tabs": {
         "hojaVida": "Kawsay P'anqa",
         "planGobierno": "Kamachiy Yuyay",
@@ -386,7 +388,9 @@
         "declaracionesJuradas": "Jurasqa Willaykuna",
         "sentenciasJudiciales": "Juzgadupa Willakuynin",
         "noDisponible": "Mana kanchu",
-        "noInformacion": "Mana willakuy kanchu"
+        "noInformacion": "Mana willakuy kanchu",
+        "disponiblePortalJNE": "JNE portal ukhupi kachkan",
+        "sinSentenciasVigentes": "Mana juzgado willakuykunayuq"
       },
       "planGobierno": {
         "titulo": "Kamachiy Yuyay",

@@ -240,6 +240,7 @@
         "senadores": "Senadoranaka Uta",
         "parlamento": "Parlamento Andino"
       },
+      "verCandidatoPresidencial": "Apukaki Ajllita Uñjasiña",
       "eleccionesPeru2026": "Ajlliri Perú 2026",
       "noEncontrado": "Partiduxa janiwa jikxatakiti",
       "planchaPresidencial": "Apukaki Ajllitanaka",
@@ -362,6 +363,7 @@
       "planNoDisponibleAlerta": "Kamachi Yuyax janiwa utjakiti aka partidutaki",
       "candidatoSinNombre": "Ajllita Jani Sutinisa",
       "noDisponibleCorto": "Janiwa utjakiti",
+      "cargoPresidente": "Apukakiru Ajllita",
       "tabs": {
         "hojaVida": "Jakawi Laphipa",
         "planGobierno": "Kamachi Yuyapa",
@@ -385,7 +387,9 @@
         "declaracionesJuradas": "Jurasita Yatiyawinaka",
         "sentenciasJudiciales": "Juzgadumpi Yatiyawi",
         "noDisponible": "Janiwa utjakiti",
-        "noInformacion": "Janiwa yatiyawi utjakiti"
+        "noInformacion": "Janiwa yatiyawi utjakiti",
+        "disponiblePortalJNE": "JNE portal ukana utji",
+        "sinSentenciasVigentes": "Janiwa juzgado yatiyawinaka utjakiti"
       },
       "planGobierno": {
         "titulo": "Kamachi Yuyapa",
