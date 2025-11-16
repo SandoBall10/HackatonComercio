@@ -2,26 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Inicio.css';
-
+import InicioOffline from './InicioOffline';
 
 type EventItem = { date: string; title: string; bullets?: string[]; icon?: string; category?: 'electoral' | 'plan' | 'mesa' | 'administrativo' };
 type NewsItem = { id: number; image: string; title: string; category: string; url: string; alt: string };
 
-// Helper function to get timeline events from translation files
 const getTimelineFromTranslation = (t: any): Record<string, Record<string, EventItem[]>> => {
   const timeline: Record<string, Record<string, EventItem[]>> = {};
   
-  // Get events from translation
   const eventos = t('inicio.eventos', { returnObjects: true }) as any;
   
   if (!eventos) return {};
   
-  // Process each year
   Object.keys(eventos).forEach(year => {
     timeline[year] = {};
     const yearData = eventos[year];
     
-    // Process each month
     Object.keys(yearData).forEach(month => {
       const monthKey = month.toUpperCase();
       const events = yearData[month];
@@ -39,7 +35,6 @@ const getTimelineFromTranslation = (t: any): Record<string, Record<string, Event
   return timeline;
 };
 
-// Fallback TIMELINE for backwards compatibility (will be replaced by translation)
 const FALLBACK_TIMELINE: Record<string, Record<string, EventItem[]>> = {
   '2025': {
     MARZO: [
@@ -147,6 +142,9 @@ export const Inicio: React.FC = () => {
   const [countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
   const [activeFilter, setActiveFilter] = useState<'todos' | 'electoral' | 'plan' | 'mesa' | 'administrativo'>('todos');
   const [showFilterMenu, setShowFilterMenu] = useState(false);
+  const [offlineMode, setOfflineMode] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [showOfflineAlert, setShowOfflineAlert] = useState(false);
 
   // Get timeline from translation
   const TIMELINE = getTimelineFromTranslation(t);
@@ -349,9 +347,60 @@ export const Inicio: React.FC = () => {
     setShowFilterMenu(false);
   };
 
+  // Detectar cambios de conexión
+  useEffect(() => {
+    const handleOnline = () => {
+      setIsOnline(true);
+      setShowOfflineAlert(false);
+    };
+    const handleOffline = () => {
+      setIsOnline(false);
+      setShowOfflineAlert(true);
+    };
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  // Si está en modo offline, muestra la versión ligera
+  if (offlineMode) {
+    return <InicioOffline onExitOffline={() => setOfflineMode(false)} />;
+  }
+
   return (
     <div className="inicio-container">
-      {/* <Header /> */}
+      {/* Alerta de conexión perdida */}
+      {showOfflineAlert && (
+        <div style={{
+          background: '#ffe0e0',
+          color: '#b30227',
+          padding: '16px',
+          textAlign: 'center',
+          fontWeight: 600,
+          borderBottom: '2px solid #b30227'
+        }}>
+          Sin conexión a internet. 
+          <button
+            style={{
+              marginLeft: 16,
+              background: '#b30227',
+              color: '#fff',
+              border: 'none',
+              borderRadius: 8,
+              padding: '8px 18px',
+              fontWeight: 700,
+              fontSize: 15,
+              cursor: 'pointer'
+            }}
+            onClick={() => setOfflineMode(true)}
+          >
+            Activar modo offline
+          </button>
+        </div>
+      )}
 
       <main>
         {/* CARRUSEL DE NOTICIAS */}
@@ -591,6 +640,26 @@ export const Inicio: React.FC = () => {
               © 2026 {t('footer.portal')} - {t('footer.derechos')}
             </div>
           </footer>
+
+          {/* Botón para activar modo offline */}
+          <div style={{ textAlign: 'center', margin: '24px 0' }}>
+            <button
+              style={{
+                background: '#b30227',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 8,
+                padding: '12px 28px',
+                fontWeight: 700,
+                fontSize: 16,
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+              }}
+              onClick={() => setOfflineMode(true)}
+            >
+              Entrar en modo sin internet
+            </button>
+          </div>
     </div>
   );
 };
