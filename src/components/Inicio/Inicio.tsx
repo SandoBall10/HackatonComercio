@@ -7,7 +7,7 @@ import './Inicio.css';
 type EventItem = { date: string; title: string; bullets?: string[]; icon?: string; category?: 'electoral' | 'plan' | 'mesa' | 'administrativo' };
 type NewsItem = { id: number; image: string; title: string; category: string; url: string; alt: string };
 
-const getTimeline = (t: any): Record<string, Record<string, EventItem[]>> => ({
+const TIMELINE: Record<string, Record<string, EventItem[]>> = {
   '2025': {
     MARZO: [
       { date: '26 Marzo', title: 'Convocatoria a Elecciones Generales 2026', icon: '', category: 'electoral' },
@@ -103,11 +103,10 @@ const getTimeline = (t: any): Record<string, Record<string, EventItem[]>> => ({
       { date: '12 Abril', title: 'Elecciones Generales 2026', icon: '', category: 'electoral' },
     ],
   },
-});
+};
 
 export const Inicio: React.FC = () => {
   const { t } = useTranslation();
-  const TIMELINE = getTimeline(t);
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeYear, setActiveYear] = useState<'2025' | '2026'>('2025');
@@ -120,34 +119,34 @@ export const Inicio: React.FC = () => {
     {
       id: 1,
       image: '/Imagenes-Pagina/Fondo-Inicio.jpg',
-      title: t('inicio.news.1.title'),
-      category: t('inicio.news.1.category'),
+      title: 'Elecciones Generales 2026: Todo lo que necesitas saber',
+      category: 'Política',
       url: 'https://elcomercio.pe/elecciones/elecciones-2026-37-de-las-39-agrupaciones-politicas-presentaron-formulas-presidenciales-a-la-onpe-ultmasi-noticia/',
-      alt: t('inicio.news.1.alt'),
+      alt: 'Elecciones 2026: Todo lo que necesitas saber',
     },
     {
       id: 2,
       image: '/Imagenes-Pagina/Fondo4.jpg',
-      title: t('inicio.news.2.title'),
-      category: t('inicio.news.2.category'),
+      title: 'Candidatos confirman su participación en las elecciones',
+      category: 'Actualidad',
       url: 'https://elcomercio.pe/politica/candidatos-2026',
-      alt: t('inicio.news.2.alt')
+      alt: 'Candidatos de las elecciones'
     },
     {
       id: 3,
       image: '/Imagenes-Pagina/Fondo5.jpg',
-      title: t('inicio.news.3.title'),
-      category: t('inicio.news.3.category'),
+      title: 'Preparativos finales para el proceso electoral 2026',
+      category: 'Política',
       url: 'https://elcomercio.pe/politica/preparativos-electorales',
-      alt: t('inicio.news.3.alt')
+      alt: 'Preparativos electorales'
     },
     {
       id: 4,
       image: '/Imagenes-Pagina/Fondo6.jpg',
-      title: t('inicio.news.4.title'),
-      category: t('inicio.news.4.category'),
+      title: 'Nueva reforma electoral en debate parlamentario',
+      category: 'Política',
       url: 'https://elcomercio.pe/politica/reforma-electoral',
-      alt: t('inicio.news.4.alt')
+      alt: 'Reforma electoral'
     },
   ];
 
@@ -358,7 +357,7 @@ export const Inicio: React.FC = () => {
         {/* NOTICIAS EN TARJETAS */}
         <section className="news-cards-section">
           <div className="news-cards-wrapper">
-            <h2 className="news-cards-title">{t('inicio.newsTitle')}</h2>
+            <h2 className="news-cards-title">Noticias</h2>
             
             <div className="news-cards-grid">
               {newsCards.map((newsItem) => (
@@ -417,13 +416,13 @@ export const Inicio: React.FC = () => {
                 aria-expanded={showFilterMenu}
               >
                 <span className="filter-icon">⚙️</span>
-                <span className="filter-text">{t('inicio.filtrar')}</span>
+                <span className="filter-text">Filtrar</span>
               </button>
               
               {showFilterMenu && (
                 <div className="filter-menu">
                   <div className="filter-menu-header">
-                    <span className="filter-menu-title">{t('inicio.filtrarPor')}</span>
+                    <span className="filter-menu-title">Filtrar por:</span>
                     <button
                       className="filter-close-btn"
                       onClick={() => setShowFilterMenu(false)}
@@ -436,25 +435,25 @@ export const Inicio: React.FC = () => {
                     className={`filter-option ${activeFilter === 'todos' ? 'active' : ''}`}
                     onClick={() => handleFilterChange('todos')}
                   >
-                    {t('inicio.filtro.todos')}
+                    Todos
                   </button>
                   <button
                     className={`filter-option ${activeFilter === 'electoral' ? 'active' : ''}`}
                     onClick={() => handleFilterChange('electoral')}
                   >
-                    {t('inicio.filtro.electoral')}
+                    Fechas Electorales
                   </button>
                   <button
                     className={`filter-option ${activeFilter === 'plan' ? 'active' : ''}`}
                     onClick={() => handleFilterChange('plan')}
                   >
-                    {t('inicio.filtro.plan')}
+                    Fechas relacionadas al Plan Electoral
                   </button>
                   <button
                     className={`filter-option ${activeFilter === 'mesa' ? 'active' : ''}`}
                     onClick={() => handleFilterChange('mesa')}
                   >
-                    {t('inicio.filtro.mesa')}
+                    Fechas referentes a Miembros de Mesa
                   </button>
                 </div>
               )}
@@ -471,7 +470,7 @@ export const Inicio: React.FC = () => {
                 className={`month-btn ${activeMonth === m ? 'active' : ''}`}
                 onClick={() => setActiveMonth(m)}
               >
-                {t(`inicio.meses.${m}`)}
+                {m}
               </button>
             ))}
           </div>
@@ -480,7 +479,7 @@ export const Inicio: React.FC = () => {
           <div className="timeline-area">
             <div className="timeline-line-vertical"></div>
             <div className="entries">
-              {filteredEvents.length === 0 && <div className="no-events">{t('inicio.noEventos')}</div>}
+              {filteredEvents.length === 0 && <div className="no-events">No hay eventos para este mes con el filtro seleccionado.</div>}
 
               {filteredEvents.map((ev, idx) => (
                 <div key={idx} className={`entry-wrapper ${idx % 2 === 0 ? 'left' : 'right'}`}>
@@ -508,20 +507,20 @@ export const Inicio: React.FC = () => {
           <footer className="site-footer">
             <div className="footer-container">
               <div className="footer-col">
-                <h4>{t('footer.oficinaCentral')}</h4>
-                <p>{t('footer.direccion')}</p>
-                <p>{t('footer.horario')}</p>
+                <h4>Oficina central</h4>
+                <p>Jr. Washington 1894, Cercado de Lima</p>
+                <p>Lunes a viernes de 8:30 a. m. a 5:00 p. m.</p>
               </div>
 
               <div className="footer-col">
-                <h4>{t('footer.contacto')}</h4>
+                <h4>Contáctanos:</h4>
                 <p><a href="mailto:informes@onpe.gob.pe">informes@onpe.gob.pe</a></p>
-                <p>{t('footer.telefono')}</p>
-                <p>{t('footer.whatsapp')}</p>
+                <p>(01) 4170630</p>
+                <p>WhatsApp: 995 404 991</p>
               </div>
 
               <div className="footer-col">
-                <h4>{t('footer.siguenos')}</h4>
+                <h4>Síguenos:</h4>
                 <div className="socials" role="navigation" aria-label="Redes sociales">
                   <a href="#" className="social social-facebook" aria-label="Facebook">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
@@ -553,7 +552,7 @@ export const Inicio: React.FC = () => {
             </div>
 
             <div className="footer-bottom">
-              © 2026 {t('footer.portal')} - {t('footer.derechos')}
+              © 2026 Portal Electoral - Todos los derechos reservados
             </div>
           </footer>
     </div>

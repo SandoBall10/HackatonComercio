@@ -68,11 +68,14 @@ export const Header: React.FC = () => {
         <nav className="navbar">
           <LanguageSelector />
           <div className="nav-links-container">
-            <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>{t('nav.inicio')}</a>
-            <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('nav.partidos')}</a>
-            <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
-            <a href="/miembros-mesa" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/miembros-mesa'); }}>Para miembros de mesa</a>
-            <a href="/tutorial" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/tutorial'); }}>Lo nuevo</a>
+
+
+              <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>{t('nav.inicio')}</a>
+              <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('nav.partidos')}</a>
+              <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
+              <a href="/miembros-mesa" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/miembros-mesa'); }}>{t('nav.miembrosMesa')}</a>
+              <a href="/tutorial" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/tutorial'); }}>{t('nav.tutorial')}</a>
+
           </div>
           <ThemeSelector />
         </nav>
