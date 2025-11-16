@@ -830,6 +830,25 @@ export const PARTIDOS: Partido[] = [
     ]
   },
   {
+    id: 37,
+    nombre: "Integridad Democrática",
+    siglas: "ID",
+    logo: "/logos/integridad-democratica.png",
+    descripcion: "Partido político enfocado en integridad y gestión eficiente.",
+    candidatos: [
+      { id: "id1", nombre: "George Forsyth", cargo: "Presidente", foto: "/FotosCandidatos/integridad-democratica.jpg" }
+    ],
+    diputados: [
+      { id: "id-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" }
+    ],
+    senadores: [
+      { id: "id-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" }
+    ],
+    parlamentariosAndinos: [
+      { id: "id-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" }
+    ]
+  },
+  {
     id: 38,
     nombre: "Partido Popular Cristiano",
     siglas: "PPC",

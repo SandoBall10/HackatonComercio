@@ -158,12 +158,42 @@ export const candidatos = [
       { fecha: "2021", descripcion: "Inscripción del partido político" },
       { fecha: "2019", descripcion: "Inicio de movimiento ciudadano" }
     ],
-    noticias: [
-      { titulo: "Plan económico de reactivación", fuente: "Gestión", fecha: "Hace 1 día", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "19", mes: "DIC", titulo: "Foro empresarial", lugar: "Arequipa", hora: "9:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Reactivación Económica",
+          "Innovación y Tecnología",
+          "Descentralización",
+          "Empleo Digno",
+          "Transparencia y Modernización"
+        ],
+        propuestas: [
+          "Impulsar la reactivación económica con incentivos a la inversión nacional",
+          "Fomentar la innovación y el desarrollo tecnológico en todos los sectores",
+          "Descentralizar la gestión pública para fortalecer regiones",
+          "Crear empleos dignos y sostenibles con enfoque en jóvenes y mujeres",
+          "Modernizar el Estado con plataformas digitales y trámites ágiles",
+          "Promover la transparencia y lucha frontal contra la corrupción",
+          "Apoyar a las pymes con acceso a crédito y capacitación",
+          "Desarrollar infraestructura moderna y sostenible"
+        ]
+      },
+      noticias: [
+        { titulo: "Ahora Nación presenta plan de reactivación económica", fuente: "Gestión", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "López-Chau: 'Innovación es clave para el desarrollo'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para descentralización efectiva", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Empleo digno y oportunidades para jóvenes", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Modernización del Estado: trámites digitales", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Transparencia y lucha anticorrupción", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Apoyo a pymes y emprendedores", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "19", mes: "ENE", titulo: "Foro empresarial nacional", lugar: "Arequipa", hora: "9:00 AM" },
+        { dia: "23", mes: "ENE", titulo: "Seminario de innovación tecnológica", lugar: "Lima", hora: "4:00 PM" },
+        { dia: "27", mes: "ENE", titulo: "Encuentro de líderes regionales", lugar: "Cusco", hora: "10:00 AM" },
+        { dia: "1", mes: "FEB", titulo: "Taller de empleo digno", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "6", mes: "FEB", titulo: "Jornada de transparencia pública", lugar: "Piura", hora: "3:00 PM" },
+        { dia: "10", mes: "FEB", titulo: "Expo Pymes y Emprendedores", lugar: "Chiclayo", hora: "5:00 PM" }
+      ]
   },
   {
     id: "juntos-por-el-peru",
@@ -209,12 +239,42 @@ export const candidatos = [
       { fecha: "2019", descripcion: "Fundación del partido" },
       { fecha: "2015", descripcion: "Asesor en gobiernos locales" }
     ],
-    noticias: [
-      { titulo: "Propuestas de modernización del Estado", fuente: "El Peruano", fecha: "Hace 5 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "23", mes: "DIC", titulo: "Presentación de plan de gobierno", lugar: "Trujillo", hora: "11:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Modernización del Estado",
+          "Gestión Transparente",
+          "Desarrollo Local",
+          "Participación Ciudadana",
+          "Servicios Públicos Eficientes"
+        ],
+        propuestas: [
+          "Modernizar la administración pública con tecnología y procesos ágiles",
+          "Promover la transparencia y rendición de cuentas en todos los niveles",
+          "Impulsar el desarrollo local con proyectos participativos",
+          "Fomentar la participación ciudadana en la gestión pública",
+          "Mejorar la calidad y cobertura de los servicios públicos",
+          "Desarrollar programas de capacitación para funcionarios",
+          "Implementar sistemas de control y evaluación de políticas",
+          "Facilitar el acceso a trámites y servicios digitales"
+        ]
+      },
+      noticias: [
+        { titulo: "Buen Gobierno presenta plan de modernización estatal", fuente: "El Peruano", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Jorge Nieto: 'La transparencia es prioridad'", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para servicios públicos eficientes", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Participación ciudadana en la gestión pública", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Capacitación para funcionarios públicos", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Control y evaluación de políticas públicas", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Trámites y servicios digitales para todos", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "15", mes: "ENE", titulo: "Foro de modernización estatal", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "19", mes: "ENE", titulo: "Seminario de transparencia pública", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "23", mes: "ENE", titulo: "Jornada de desarrollo local", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "28", mes: "ENE", titulo: "Taller de servicios públicos", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "2", mes: "FEB", titulo: "Encuentro de participación ciudadana", lugar: "Piura", hora: "3:00 PM" },
+        { dia: "7", mes: "FEB", titulo: "Expo digitalización estatal", lugar: "Chiclayo", hora: "5:00 PM" }
+      ]
   },
   {
     id: "alianza-para-el-progreso",
@@ -290,12 +350,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2022", descripcion: "Inscripción del partido" }
     ],
-    noticias: [
-      { titulo: "Propuestas de libertad económica", fuente: "RPP", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "24", mes: "DIC", titulo: "Conferencia de prensa", lugar: "Lima", hora: "5:00 PM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Libertad Económica",
+          "Democracia Participativa",
+          "Estado Moderno",
+          "Derechos Individuales",
+          "Desarrollo Regional"
+        ],
+        propuestas: [
+          "Promover la libertad económica y la libre empresa",
+          "Fomentar la participación ciudadana en la toma de decisiones",
+          "Modernizar el Estado para hacerlo más eficiente y transparente",
+          "Defender los derechos individuales y las libertades civiles",
+          "Impulsar el desarrollo regional con autonomía local",
+          "Reducir la burocracia y simplificar trámites",
+          "Apoyar a emprendedores y pequeñas empresas",
+          "Garantizar igualdad de oportunidades para todos"
+        ]
+      },
+      noticias: [
+        { titulo: "Libertad Popular presenta plan de libertad económica", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Rafael Belaúnde: 'El Estado debe ser moderno y eficiente'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para democracia participativa", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Defensa de derechos individuales", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Desarrollo regional con autonomía", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Apoyo a emprendedores y pymes", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Igualdad de oportunidades para todos", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "14", mes: "ENE", titulo: "Foro de libertad económica", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "18", mes: "ENE", titulo: "Seminario de democracia participativa", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "22", mes: "ENE", titulo: "Jornada de modernización estatal", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "27", mes: "ENE", titulo: "Taller de derechos individuales", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "2", mes: "FEB", titulo: "Encuentro de desarrollo regional", lugar: "Piura", hora: "3:00 PM" },
+        { dia: "7", mes: "FEB", titulo: "Expo emprendedores y pymes", lugar: "Chiclayo", hora: "5:00 PM" }
+      ]
   },
   {
     id: "partido-democrata-unido-peru",
@@ -314,12 +404,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2021", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Plan de reforma judicial", fuente: "Andina", fecha: "Hace 3 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "26", mes: "DIC", titulo: "Asamblea partidaria", lugar: "Lima", hora: "6:00 PM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Reforma Judicial",
+          "Transparencia y Ética",
+          "Desarrollo Regional",
+          "Educación Ciudadana",
+          "Participación Democrática"
+        ],
+        propuestas: [
+          "Impulsar una reforma integral del sistema judicial",
+          "Promover la transparencia y la ética en la función pública",
+          "Descentralizar recursos para fortalecer regiones",
+          "Fomentar la educación ciudadana y la cultura democrática",
+          "Crear mecanismos de participación ciudadana en la toma de decisiones",
+          "Modernizar la gestión pública con tecnología",
+          "Garantizar acceso igualitario a la justicia",
+          "Desarrollar programas de formación para líderes locales"
+        ]
+      },
+      noticias: [
+        { titulo: "Demócrata Unido Perú presenta plan de reforma judicial", fuente: "Andina", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Charlie Carrasco: 'La ética es la base del cambio'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para descentralización y desarrollo regional", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Educación ciudadana como pilar democrático", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Participación ciudadana en la gestión pública", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Modernización del Estado con tecnología", fuente: "Gestión", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Formación de líderes locales", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "12", mes: "ENE", titulo: "Foro de reforma judicial", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "17", mes: "ENE", titulo: "Seminario de ética pública", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "22", mes: "ENE", titulo: "Encuentro de líderes regionales", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "27", mes: "ENE", titulo: "Jornada de educación ciudadana", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "2", mes: "FEB", titulo: "Taller de participación democrática", lugar: "Piura", hora: "3:00 PM" },
+        { dia: "7", mes: "FEB", titulo: "Expo líderes locales", lugar: "Chiclayo", hora: "5:00 PM" }
+      ]
   },
   {
     id: "avanza-pais",
@@ -450,12 +570,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2020", descripcion: "Inscripción del partido" }
     ],
-    noticias: [
-      { titulo: "Plan de protección ambiental", fuente: "El Comercio", fecha: "Hace 4 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "29", mes: "DIC", titulo: "Campaña de reforestación", lugar: "Madre de Dios", hora: "7:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Protección Ambiental",
+          "Energía Renovable",
+          "Desarrollo Sostenible",
+          "Educación Ecológica",
+          "Justicia Climática"
+        ],
+        propuestas: [
+          "Impulsar políticas de protección de bosques y biodiversidad",
+          "Fomentar el uso de energías renovables en todo el país",
+          "Promover ciudades y comunidades sostenibles",
+          "Implementar educación ambiental en todos los niveles escolares",
+          "Desarrollar programas de reciclaje y reducción de residuos",
+          "Garantizar acceso a agua limpia y gestión responsable",
+          "Luchar contra la minería ilegal y la contaminación",
+          "Crear incentivos para empresas verdes y limpias"
+        ]
+      },
+      noticias: [
+        { titulo: "Demócrata Verde presenta plan de protección ambiental", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Álex Gonzales: 'El futuro es verde'", fuente: "RPP", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para energías renovables", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Educación ecológica en escuelas", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Lucha contra la minería ilegal", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Reciclaje y reducción de residuos", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Empresas verdes y sostenibles", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "15", mes: "ENE", titulo: "Campaña de reforestación nacional", lugar: "Madre de Dios", hora: "7:00 AM" },
+        { dia: "20", mes: "ENE", titulo: "Foro de energías renovables", lugar: "Lima", hora: "4:00 PM" },
+        { dia: "25", mes: "ENE", titulo: "Jornada de limpieza de ríos", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "30", mes: "ENE", titulo: "Taller de educación ecológica", lugar: "Arequipa", hora: "11:00 AM" },
+        { dia: "4", mes: "FEB", titulo: "Seminario de justicia climática", lugar: "Trujillo", hora: "3:00 PM" },
+        { dia: "9", mes: "FEB", titulo: "Expo empresas verdes", lugar: "Piura", hora: "5:00 PM" }
+      ]
   },
   {
     id: "batalla-peru",
@@ -475,12 +625,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2022", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Propuestas anti-corrupción", fuente: "RPP", fecha: "Hace 5 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "30", mes: "DIC", titulo: "Mitin ciudadano", lugar: "Lima", hora: "6:00 PM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Lucha Anticorrupción",
+          "Participación Ciudadana",
+          "Desarrollo Comunitario",
+          "Transparencia Pública",
+          "Empoderamiento Social"
+        ],
+        propuestas: [
+          "Implementar políticas estrictas de lucha contra la corrupción",
+          "Fomentar la participación ciudadana en la gestión pública",
+          "Desarrollar proyectos de desarrollo comunitario sostenible",
+          "Promover la transparencia y acceso a la información pública",
+          "Empoderar a líderes sociales y comunitarios",
+          "Crear observatorios ciudadanos para fiscalización",
+          "Impulsar la educación cívica y ética",
+          "Facilitar denuncias y protección a denunciantes de corrupción"
+        ]
+      },
+      noticias: [
+        { titulo: "Batalla Perú presenta plan anticorrupción", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Fiorella Molinelli: 'La participación ciudadana es clave'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para desarrollo comunitario", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Transparencia pública y acceso a la información", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Empoderamiento de líderes sociales", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Observatorios ciudadanos para fiscalización", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Educación cívica y ética en escuelas", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "10", mes: "ENE", titulo: "Foro anticorrupción nacional", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "15", mes: "ENE", titulo: "Jornada de participación ciudadana", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "20", mes: "ENE", titulo: "Taller de desarrollo comunitario", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "25", mes: "ENE", titulo: "Seminario de transparencia pública", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "30", mes: "ENE", titulo: "Mitin ciudadano", lugar: "Lima", hora: "6:00 PM" },
+        { dia: "4", mes: "FEB", titulo: "Expo líderes sociales", lugar: "Piura", hora: "3:00 PM" }
+      ]
   },
   {
     id: "partido-aprista-peruano",
@@ -579,17 +759,47 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2022", descripcion: "Fundación del partido" }
     ],
+    planGobierno: {
+      ejesTematicos: [
+        "Valores Cristianos",
+        "Familia y Vida",
+        "Lucha Anticorrupción",
+        "Justicia Social",
+        "Educación en Valores"
+      ],
+      propuestas: [
+        "Promover políticas públicas basadas en valores cristianos y éticos",
+        "Fortalecer la familia como núcleo fundamental de la sociedad",
+        "Defender la vida desde la concepción hasta la muerte natural",
+        "Implementar educación en valores en todo el sistema educativo",
+        "Crear comisiones de ética en todos los niveles del gobierno",
+        "Promover la transparencia total en la gestión pública",
+        "Desarrollar programas de apoyo a familias vulnerables",
+        "Establecer alianzas con organizaciones religiosas para desarrollo social"
+      ]
+    },
     noticias: [
-      { titulo: "Valores cristianos en la política", fuente: "ACI Prensa", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Fe en el Perú presenta plan de gobierno basado en valores cristianos", fuente: "ACI Prensa", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Álvaro Paz de la Barra: 'La familia es el pilar de nuestra propuesta'", fuente: "RPP", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Partido Fe en el Perú propone educación en valores", fuente: "El Comercio", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Paz de la Barra rechaza corrupción desde perspectiva ética", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop" },
+      { titulo: "Fe en el Perú busca alianzas con iglesias evangélicas", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=600&h=400&fit=crop" },
+      { titulo: "Proponen defensa de la vida en todas sus etapas", fuente: "Gestión", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=400&fit=crop" },
+      { titulo: "Partido cristiano presenta candidatos al Congreso", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
     ],
     actividades: [
-      { dia: "4", mes: "ENE", titulo: "Reunión con iglesias evangélicas", lugar: "Lima", hora: "4:00 PM" }
+      { dia: "20", mes: "ENE", titulo: "Encuentro Nacional de Líderes Cristianos", lugar: "Lima Centro", hora: "9:00 AM" },
+      { dia: "23", mes: "ENE", titulo: "Foro: Familia y Sociedad", lugar: "Jesús María", hora: "6:00 PM" },
+      { dia: "27", mes: "ENE", titulo: "Reunión con pastores evangélicos", lugar: "San Juan de Lurigancho", hora: "4:00 PM" },
+      { dia: "1", mes: "FEB", titulo: "Presentación de plan educativo", lugar: "Miraflores", hora: "10:00 AM" },
+      { dia: "5", mes: "FEB", titulo: "Campaña Pro Vida", lugar: "Parque Kennedy", hora: "11:00 AM" },
+      { dia: "10", mes: "FEB", titulo: "Conversatorio sobre Ética Pública", lugar: "Universidad Católica", hora: "7:00 PM" }
     ]
   },
   {
     id: "partido-ciudadanos-por-el-peru",
     nombre: "Ricardo Belmont",
-    partido: "Partido ciudadanos por el Perú",
+    partido: "Partido ciudadanos por el P.",
     foto: "/FotosCandidatos/partido-ciudadanos-por-el-peru.jpg",
     logoPartido: "/logos/ciudadanos-por-el-peru.png",
     cargo: "Candidatura",
@@ -603,12 +813,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2019", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Iniciativas ciudadanas para el cambio", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "5", mes: "ENE", titulo: "Asamblea ciudadana", lugar: "Cusco", hora: "10:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Participación Ciudadana",
+          "Desarrollo Local",
+          "Transparencia y Control",
+          "Obras Públicas",
+          "Gestión Comunitaria"
+        ],
+        propuestas: [
+          "Fomentar la participación activa de la ciudadanía en la gestión pública",
+          "Desarrollar proyectos locales con enfoque participativo",
+          "Promover la transparencia y el control social en la administración",
+          "Impulsar obras públicas que respondan a necesidades reales",
+          "Fortalecer la gestión comunitaria y el liderazgo local",
+          "Facilitar el acceso a información pública y rendición de cuentas",
+          "Apoyar iniciativas ciudadanas para el desarrollo sostenible",
+          "Crear espacios de diálogo y concertación vecinal"
+        ]
+      },
+      noticias: [
+        { titulo: "Ciudadanos por el Perú presenta plan de participación ciudadana", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Ricardo Belmont: 'El desarrollo local es clave'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para obras públicas participativas", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Transparencia y control social en la gestión", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Gestión comunitaria y liderazgo local", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Acceso a información pública y rendición de cuentas", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Diálogo y concertación vecinal", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "5", mes: "ENE", titulo: "Asamblea ciudadana", lugar: "Cusco", hora: "10:00 AM" },
+        { dia: "10", mes: "ENE", titulo: "Foro de desarrollo local", lugar: "Lima", hora: "4:00 PM" },
+        { dia: "15", mes: "ENE", titulo: "Jornada de transparencia y control", lugar: "Arequipa", hora: "9:00 AM" },
+        { dia: "20", mes: "ENE", titulo: "Taller de obras públicas", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "25", mes: "ENE", titulo: "Encuentro de gestión comunitaria", lugar: "Piura", hora: "3:00 PM" },
+        { dia: "30", mes: "ENE", titulo: "Expo iniciativas ciudadanas", lugar: "Chiclayo", hora: "5:00 PM" }
+      ]
   },
   {
     id: "partido-democratico-somos-peru",
@@ -683,12 +923,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2020", descripcion: "Inscripción del partido" }
     ],
-    noticias: [
-      { titulo: "Plan de infraestructura vial", fuente: "Construcción y Obras", fecha: "Hace 3 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "8", mes: "ENE", titulo: "Inspección de carreteras", lugar: "Huánuco", hora: "7:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Infraestructura y Obras Públicas",
+          "Desarrollo Urbano",
+          "Transporte Eficiente",
+          "Vivienda Digna",
+          "Gestión Municipal"
+        ],
+        propuestas: [
+          "Impulsar grandes proyectos de infraestructura vial y urbana",
+          "Modernizar el transporte público en las principales ciudades",
+          "Promover el acceso a vivienda digna para todos",
+          "Desarrollar obras de saneamiento y agua potable",
+          "Fomentar la participación ciudadana en la gestión municipal",
+          "Mejorar la conectividad entre regiones",
+          "Apoyar a pequeñas y medianas empresas constructoras",
+          "Implementar sistemas de gestión transparente en obras públicas"
+        ]
+      },
+      noticias: [
+        { titulo: "Cívico Obras presenta plan de infraestructura nacional", fuente: "Construcción y Obras", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Ricardo Belmont: 'Vivienda digna es prioridad'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para transporte eficiente", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Obras de saneamiento y agua potable", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Gestión municipal participativa", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Apoyo a pymes constructoras", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Transparencia en obras públicas", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "8", mes: "ENE", titulo: "Inspección de carreteras", lugar: "Huánuco", hora: "7:00 AM" },
+        { dia: "13", mes: "ENE", titulo: "Foro de desarrollo urbano", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "18", mes: "ENE", titulo: "Jornada de vivienda digna", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "23", mes: "ENE", titulo: "Taller de gestión municipal", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "28", mes: "ENE", titulo: "Expo pymes constructoras", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "2", mes: "FEB", titulo: "Seminario de transparencia en obras", lugar: "Piura", hora: "3:00 PM" }
+      ]
   },
   {
     id: "frente-de-la-esperanza-2021",
@@ -817,12 +1087,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2022", descripcion: "Inscripción del partido" }
     ],
-    noticias: [
-      { titulo: "Acción inmediata para el Perú", fuente: "Gestión", fecha: "Hace 1 día", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "11", mes: "ENE", titulo: "Reunión con PyMEs", lugar: "Lima", hora: "2:00 PM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Acción Inmediata",
+          "Desarrollo Empresarial",
+          "Empleo y Oportunidades",
+          "Gestión Eficiente",
+          "Participación Ciudadana"
+        ],
+        propuestas: [
+          "Implementar acciones inmediatas para la reactivación económica",
+          "Fomentar el desarrollo de PyMEs y emprendimientos",
+          "Generar empleo digno y oportunidades para jóvenes",
+          "Optimizar la gestión pública con procesos eficientes",
+          "Promover la participación ciudadana en la toma de decisiones",
+          "Facilitar el acceso a financiamiento para empresas",
+          "Desarrollar infraestructura productiva en regiones",
+          "Impulsar la innovación y la competitividad"
+        ]
+      },
+      noticias: [
+        { titulo: "Perú Acción presenta plan de acción inmediata", fuente: "Gestión", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Francisco Diez Canseco: 'El desarrollo empresarial es clave'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para empleo y oportunidades", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Gestión eficiente en la administración pública", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Participación ciudadana en la gestión estatal", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Acceso a financiamiento para PyMEs", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Innovación y competitividad regional", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "11", mes: "ENE", titulo: "Reunión con PyMEs", lugar: "Lima", hora: "2:00 PM" },
+        { dia: "15", mes: "ENE", titulo: "Foro de desarrollo empresarial", lugar: "Arequipa", hora: "10:00 AM" },
+        { dia: "19", mes: "ENE", titulo: "Jornada de empleo y oportunidades", lugar: "Cusco", hora: "4:00 PM" },
+        { dia: "23", mes: "ENE", titulo: "Taller de gestión eficiente", lugar: "Trujillo", hora: "9:00 AM" },
+        { dia: "27", mes: "ENE", titulo: "Encuentro de participación ciudadana", lugar: "Piura", hora: "11:00 AM" },
+        { dia: "31", mes: "ENE", titulo: "Expo innovación y competitividad", lugar: "Chiclayo", hora: "3:00 PM" }
+      ]
   },
   {
     id: "peru-moderno",
@@ -841,12 +1141,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2021", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Modernización digital del Estado", fuente: "El Comercio", fecha: "Hace 3 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "12", mes: "ENE", titulo: "Foro de tecnología", lugar: "Lima", hora: "9:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Modernización Digital",
+          "Innovación y Tecnología",
+          "Educación para el Futuro",
+          "Gobierno Abierto",
+          "Desarrollo Sostenible"
+        ],
+        propuestas: [
+          "Modernizar el Estado con plataformas digitales y servicios en línea",
+          "Fomentar la innovación tecnológica en todos los sectores",
+          "Impulsar la educación digital y el acceso a nuevas tecnologías",
+          "Promover la transparencia y el gobierno abierto",
+          "Desarrollar ciudades inteligentes y sostenibles",
+          "Apoyar a startups y emprendedores tecnológicos",
+          "Facilitar el acceso a internet en todo el país",
+          "Capacitar a funcionarios y ciudadanos en competencias digitales"
+        ]
+      },
+      noticias: [
+        { titulo: "Perú Moderno presenta plan de modernización digital", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Carlos Jaico Carranza: 'La innovación es el motor del desarrollo'", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para educación digital y tecnológica", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Gobierno abierto y transparencia digital", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Desarrollo sostenible con tecnología", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Apoyo a startups y emprendedores", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Capacitación digital para todos", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "12", mes: "ENE", titulo: "Foro de tecnología", lugar: "Lima", hora: "9:00 AM" },
+        { dia: "16", mes: "ENE", titulo: "Jornada de innovación digital", lugar: "Arequipa", hora: "10:00 AM" },
+        { dia: "20", mes: "ENE", titulo: "Taller de educación tecnológica", lugar: "Cusco", hora: "4:00 PM" },
+        { dia: "24", mes: "ENE", titulo: "Seminario de gobierno abierto", lugar: "Trujillo", hora: "9:00 AM" },
+        { dia: "28", mes: "ENE", titulo: "Expo ciudades inteligentes", lugar: "Piura", hora: "11:00 AM" },
+        { dia: "1", mes: "FEB", titulo: "Capacitación digital para funcionarios", lugar: "Chiclayo", hora: "3:00 PM" }
+      ]
   },
   {
     id: "partido-pais-para-todos",
@@ -865,17 +1195,47 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2020", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Inclusión social como prioridad", fuente: "La República", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "13", mes: "ENE", titulo: "Visita a comunidades vulnerables", lugar: "Puno", hora: "10:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Inclusión Social",
+          "Desarrollo Regional",
+          "Salud y Nutrición",
+          "Educación para Todos",
+          "Economía Solidaria"
+        ],
+        propuestas: [
+          "Implementar programas de inclusión social en zonas rurales y urbanas",
+          "Descentralizar recursos para el desarrollo regional equitativo",
+          "Garantizar acceso universal a salud y nutrición básica",
+          "Promover educación gratuita y de calidad en todos los niveles",
+          "Fomentar cooperativas y emprendimientos locales",
+          "Desarrollar infraestructura básica en comunidades vulnerables",
+          "Impulsar participación ciudadana en la toma de decisiones",
+          "Crear redes de apoyo para familias en situación de pobreza"
+        ]
+      },
+      noticias: [
+        { titulo: "País para Todos lanza plan de inclusión social", fuente: "La República", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Carlos Álvarez: 'Nadie debe quedar atrás'", fuente: "RPP", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para desarrollo regional equitativo", fuente: "El Comercio", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Salud y nutrición para todos los peruanos", fuente: "Gestión", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Educación gratuita y de calidad: propuesta central", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Economía solidaria y cooperativas locales", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Participación ciudadana en la toma de decisiones", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "13", mes: "ENE", titulo: "Visita a comunidades vulnerables", lugar: "Puno", hora: "10:00 AM" },
+        { dia: "18", mes: "ENE", titulo: "Foro de desarrollo regional", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "22", mes: "ENE", titulo: "Campaña de salud y nutrición", lugar: "Trujillo", hora: "9:00 AM" },
+        { dia: "27", mes: "ENE", titulo: "Jornada educativa para todos", lugar: "Chiclayo", hora: "11:00 AM" },
+        { dia: "2", mes: "FEB", titulo: "Encuentro de cooperativas locales", lugar: "Cusco", hora: "3:00 PM" },
+        { dia: "7", mes: "FEB", titulo: "Taller de participación ciudadana", lugar: "Lima", hora: "5:00 PM" }
+      ]
   },
   {
     id: "partido-peru-primero",
     nombre: "Mario Vizcarra",
-    partido: "Partido politico Perú primero",
+    partido: "Partido politico Perú p.",
     foto: "/FotosCandidatos/peru-primero.jpg",
     logoPartido: "/logos/peru-primero.png",
     cargo: "Candidatura",
@@ -889,12 +1249,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2021", descripcion: "Inscripción del partido" }
     ],
-    noticias: [
-      { titulo: "Perú en primer lugar", fuente: "Andina", fecha: "Hace 4 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "14", mes: "ENE", titulo: "Conferencia internacional", lugar: "Lima", hora: "3:00 PM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Desarrollo Internacional",
+          "Competitividad Nacional",
+          "Educación Global",
+          "Innovación y Tecnología",
+          "Gobernanza Transparente"
+        ],
+        propuestas: [
+          "Impulsar la inserción de Perú en mercados internacionales",
+          "Fomentar la competitividad y productividad nacional",
+          "Promover la educación con enfoque global y multilingüe",
+          "Desarrollar innovación y tecnología en todos los sectores",
+          "Garantizar la transparencia y la buena gobernanza",
+          "Apoyar a emprendedores y empresas exportadoras",
+          "Facilitar acuerdos de cooperación internacional",
+          "Modernizar la infraestructura para el desarrollo sostenible"
+        ]
+      },
+      noticias: [
+        { titulo: "Perú Primero presenta plan de desarrollo internacional", fuente: "Andina", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Mario Vizcarra: 'La competitividad es clave para el país'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para educación global y multilingüe", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Innovación y tecnología en sectores productivos", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Gobernanza transparente y eficiente", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Apoyo a empresas exportadoras", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Cooperación internacional para el desarrollo", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "14", mes: "ENE", titulo: "Conferencia internacional", lugar: "Lima", hora: "3:00 PM" },
+        { dia: "18", mes: "ENE", titulo: "Foro de competitividad nacional", lugar: "Arequipa", hora: "10:00 AM" },
+        { dia: "22", mes: "ENE", titulo: "Jornada de educación global", lugar: "Cusco", hora: "4:00 PM" },
+        { dia: "26", mes: "ENE", titulo: "Taller de innovación tecnológica", lugar: "Trujillo", hora: "9:00 AM" },
+        { dia: "30", mes: "ENE", titulo: "Seminario de gobernanza transparente", lugar: "Piura", hora: "11:00 AM" },
+        { dia: "3", mes: "FEB", titulo: "Expo cooperación internacional", lugar: "Chiclayo", hora: "3:00 PM" }
+      ]
   },
   {
     id: "podemos-peru",
@@ -970,17 +1360,47 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2021", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Seguridad nacional como prioridad", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "16", mes: "ENE", titulo: "Reunión con veteranos", lugar: "Callao", hora: "4:00 PM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Seguridad Nacional",
+          "Defensa y Soberanía",
+          "Patriotismo y Valores",
+          "Desarrollo Regional",
+          "Participación Ciudadana"
+        ],
+        propuestas: [
+          "Fortalecer la seguridad nacional y la defensa del territorio",
+          "Promover el patriotismo y los valores cívicos",
+          "Impulsar el desarrollo regional con enfoque en seguridad",
+          "Fomentar la participación ciudadana en temas de defensa",
+          "Modernizar las Fuerzas Armadas y la Policía Nacional",
+          "Apoyar a los veteranos y sus familias",
+          "Desarrollar programas de educación cívica y patriótica",
+          "Garantizar la soberanía y la integridad nacional"
+        ]
+      },
+      noticias: [
+        { titulo: "Partido Patriótico del Perú presenta plan de seguridad nacional", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Herbert Caller: 'La defensa y soberanía son prioridad'", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para fortalecer el patriotismo y valores cívicos", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Desarrollo regional con enfoque en seguridad", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Participación ciudadana en defensa nacional", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Modernización de las Fuerzas Armadas", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Apoyo a veteranos y educación patriótica", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "16", mes: "ENE", titulo: "Reunión con veteranos", lugar: "Callao", hora: "4:00 PM" },
+        { dia: "20", mes: "ENE", titulo: "Foro de seguridad nacional", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "24", mes: "ENE", titulo: "Jornada de defensa y soberanía", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "28", mes: "ENE", titulo: "Taller de valores patrióticos", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "1", mes: "FEB", titulo: "Seminario de desarrollo regional", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "5", mes: "FEB", titulo: "Expo educación cívica y patriótica", lugar: "Piura", hora: "3:00 PM" }
+      ]
   },
   {
     id: "peruanos-unidos-somos-libres",
     nombre: "Tomás Aladino Gálvez",
-    partido: "Partido politico peruanos unidos",
+    partido: "Partido politico peruanos u.",
     foto: "/FotosCandidatos/peruanos-unidos.jpg",
     logoPartido: "/logos/peruanos-unidos.png",
     cargo: "Candidatura",
@@ -994,12 +1414,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2022", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Unidad nacional y libertad", fuente: "Andina", fecha: "Hace 3 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "17", mes: "ENE", titulo: "Ceremonia cívica", lugar: "Ayacucho", hora: "10:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Unidad Nacional",
+          "Libertad y Democracia",
+          "Identidad Cultural",
+          "Participación Ciudadana",
+          "Desarrollo Sostenible"
+        ],
+        propuestas: [
+          "Promover la unidad nacional y el respeto a la diversidad",
+          "Defender la libertad y la democracia en todos los ámbitos",
+          "Fomentar la identidad cultural y el patrimonio histórico",
+          "Impulsar la participación ciudadana en la vida política",
+          "Desarrollar políticas de desarrollo sostenible e inclusivo",
+          "Garantizar derechos y libertades fundamentales",
+          "Apoyar la educación cívica y cultural",
+          "Fortalecer la memoria histórica y la reconciliación"
+        ]
+      },
+      noticias: [
+        { titulo: "Peruanos Unidos – Somos Libres presenta plan de unidad nacional", fuente: "Andina", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Tomás Aladino Gálvez: 'La libertad es nuestro pilar'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para fortalecer la identidad cultural", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Participación ciudadana en la vida política", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Desarrollo sostenible e inclusivo", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Educación cívica y cultural para todos", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Memoria histórica y reconciliación nacional", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "17", mes: "ENE", titulo: "Ceremonia cívica", lugar: "Ayacucho", hora: "10:00 AM" },
+        { dia: "21", mes: "ENE", titulo: "Foro de libertad y democracia", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "25", mes: "ENE", titulo: "Jornada de identidad cultural", lugar: "Cusco", hora: "4:00 PM" },
+        { dia: "29", mes: "ENE", titulo: "Taller de participación ciudadana", lugar: "Arequipa", hora: "9:00 AM" },
+        { dia: "2", mes: "FEB", titulo: "Seminario de desarrollo sostenible", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "6", mes: "FEB", titulo: "Expo memoria histórica", lugar: "Piura", hora: "3:00 PM" }
+      ]
   },
   {
     id: "primero-la-gente",
@@ -1018,12 +1468,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2020", descripcion: "Inscripción del partido" }
     ],
-    noticias: [
-      { titulo: "Salud pública como derecho fundamental", fuente: "El Peruano", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "18", mes: "ENE", titulo: "Campaña de salud gratuita", lugar: "Loreto", hora: "8:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Salud Pública",
+          "Bienestar Social",
+          "Educación Inclusiva",
+          "Participación Ciudadana",
+          "Desarrollo Humano"
+        ],
+        propuestas: [
+          "Garantizar el acceso universal a la salud pública de calidad",
+          "Desarrollar programas de bienestar social para familias vulnerables",
+          "Promover la educación inclusiva y de calidad en todos los niveles",
+          "Fomentar la participación ciudadana en políticas de salud y bienestar",
+          "Impulsar el desarrollo humano integral en todo el país",
+          "Mejorar la infraestructura hospitalaria y de centros de salud",
+          "Capacitar y dignificar al personal de salud",
+          "Facilitar el acceso a medicamentos esenciales"
+        ]
+      },
+      noticias: [
+        { titulo: "Primero la Gente presenta plan de salud pública", fuente: "El Peruano", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Marisol Pérez Tello: 'El bienestar social es prioridad'", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para educación inclusiva y de calidad", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Participación ciudadana en políticas de salud", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Desarrollo humano integral en regiones", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Mejoras en infraestructura hospitalaria", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Acceso a medicamentos esenciales para todos", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "18", mes: "ENE", titulo: "Campaña de salud gratuita", lugar: "Loreto", hora: "8:00 AM" },
+        { dia: "22", mes: "ENE", titulo: "Foro de bienestar social", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "26", mes: "ENE", titulo: "Jornada de educación inclusiva", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "30", mes: "ENE", titulo: "Taller de participación ciudadana", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "3", mes: "FEB", titulo: "Seminario de desarrollo humano", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "7", mes: "FEB", titulo: "Expo salud y medicamentos", lugar: "Piura", hora: "3:00 PM" }
+      ]
   },
   {
     id: "cooperacion-popular",
@@ -1042,17 +1522,47 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2019", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Cooperativismo como modelo económico", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "19", mes: "ENE", titulo: "Encuentro de cooperativas", lugar: "Tacna", hora: "9:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Cooperativismo",
+          "Economía Social",
+          "Desarrollo Regional",
+          "Participación Ciudadana",
+          "Inclusión Financiera"
+        ],
+        propuestas: [
+          "Impulsar el cooperativismo como motor de desarrollo económico",
+          "Fomentar la economía social y solidaria en todo el país",
+          "Desarrollar programas de inclusión financiera para zonas rurales",
+          "Promover la participación ciudadana en la gestión económica",
+          "Apoyar la creación de nuevas cooperativas y asociaciones",
+          "Capacitar a líderes cooperativistas y emprendedores",
+          "Facilitar el acceso a créditos y servicios financieros",
+          "Fortalecer la integración regional a través de redes cooperativas"
+        ]
+      },
+      noticias: [
+        { titulo: "Cooperación Popular presenta plan de economía social", fuente: "Gestión", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Yonhy Lescano: 'El cooperativismo es el futuro'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para desarrollo regional cooperativo", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Inclusión financiera en zonas rurales", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Participación ciudadana en la economía social", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Capacitación para líderes cooperativistas", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Redes cooperativas para integración regional", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "19", mes: "ENE", titulo: "Encuentro de cooperativas", lugar: "Tacna", hora: "9:00 AM" },
+        { dia: "23", mes: "ENE", titulo: "Foro de economía social", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "27", mes: "ENE", titulo: "Jornada de desarrollo regional", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "31", mes: "ENE", titulo: "Taller de inclusión financiera", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "4", mes: "FEB", titulo: "Seminario de participación ciudadana", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "8", mes: "FEB", titulo: "Expo redes cooperativas", lugar: "Piura", hora: "3:00 PM" }
+      ]
   },
   {
     id: "voces-del-pueblo",
     nombre: "Gillermo Bermejo",
-    partido: "Partido P. Popular V. del pueblo",
+    partido: "Partido P. P. V. del pueblo",
     foto: "/FotosCandidatos/voces-del-pueblo.jpg",
     logoPartido: "/logos/voces-del-pueblo.png",
     cargo: "Candidatura",
@@ -1066,12 +1576,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2021", descripcion: "Inscripción del partido" }
     ],
-    noticias: [
-      { titulo: "Escuchando las voces ciudadanas", fuente: "La República", fecha: "Hace 4 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "20", mes: "ENE", titulo: "Asamblea popular", lugar: "Chiclayo", hora: "5:00 PM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Participación Popular",
+          "Justicia Social",
+          "Descentralización",
+          "Inclusión Ciudadana",
+          "Desarrollo Comunitario"
+        ],
+        propuestas: [
+          "Fomentar la participación popular en la toma de decisiones",
+          "Promover la justicia social y la equidad",
+          "Descentralizar la gestión pública para fortalecer regiones",
+          "Impulsar la inclusión ciudadana en políticas públicas",
+          "Desarrollar proyectos de desarrollo comunitario sostenible",
+          "Apoyar a líderes vecinales y organizaciones sociales",
+          "Facilitar el acceso a servicios básicos en zonas vulnerables",
+          "Crear espacios de diálogo y concertación popular"
+        ]
+      },
+      noticias: [
+        { titulo: "Voces del Pueblo presenta plan de participación popular", fuente: "La República", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Gillermo Bermejo: 'La justicia social es nuestro eje'", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para descentralización y desarrollo comunitario", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Inclusión ciudadana en políticas públicas", fuente: "El Comercio", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Apoyo a líderes vecinales y sociales", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Acceso a servicios básicos en zonas vulnerables", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Diálogo y concertación popular", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "20", mes: "ENE", titulo: "Asamblea popular", lugar: "Chiclayo", hora: "5:00 PM" },
+        { dia: "24", mes: "ENE", titulo: "Foro de justicia social", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "28", mes: "ENE", titulo: "Jornada de descentralización", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "1", mes: "FEB", titulo: "Taller de inclusión ciudadana", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "5", mes: "FEB", titulo: "Seminario de desarrollo comunitario", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "9", mes: "FEB", titulo: "Expo diálogo popular", lugar: "Piura", hora: "3:00 PM" }
+      ]
   },
   {
     id: "progresemos",
@@ -1091,12 +1631,42 @@ export const candidatos = [
       { fecha: "2022", descripcion: "Inscripción del partido" },
       { fecha: "2018", descripcion: "Alcalde distrital" }
     ],
-    noticias: [
-      { titulo: "Progreso para todas las regiones", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "21", mes: "ENE", titulo: "Recorrido por distritos", lugar: "Huánuco", hora: "8:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Progreso Regional",
+          "Gestión Pública Eficiente",
+          "Desarrollo Social",
+          "Participación Ciudadana",
+          "Innovación Local"
+        ],
+        propuestas: [
+          "Impulsar el progreso en todas las regiones del país",
+          "Modernizar la gestión pública con procesos eficientes",
+          "Desarrollar programas de desarrollo social inclusivo",
+          "Fomentar la participación ciudadana en la gestión local",
+          "Apoyar la innovación y el emprendimiento regional",
+          "Facilitar el acceso a servicios públicos de calidad",
+          "Capacitar a funcionarios y líderes locales",
+          "Promover alianzas público-privadas para el desarrollo"
+        ]
+      },
+      noticias: [
+        { titulo: "Progresemos presenta plan de progreso regional", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Paul Jaimes: 'La gestión pública debe ser eficiente'", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para desarrollo social inclusivo", fuente: "El Comercio", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Participación ciudadana en la gestión local", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Innovación y emprendimiento regional", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Capacitación para funcionarios locales", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Alianzas público-privadas para el desarrollo", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "21", mes: "ENE", titulo: "Recorrido por distritos", lugar: "Huánuco", hora: "8:00 AM" },
+        { dia: "25", mes: "ENE", titulo: "Foro de gestión pública eficiente", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "29", mes: "ENE", titulo: "Jornada de desarrollo social", lugar: "Arequipa", hora: "4:00 PM" },
+        { dia: "2", mes: "FEB", titulo: "Taller de participación ciudadana", lugar: "Cusco", hora: "9:00 AM" },
+        { dia: "6", mes: "FEB", titulo: "Seminario de innovación local", lugar: "Trujillo", hora: "11:00 AM" },
+        { dia: "10", mes: "FEB", titulo: "Expo alianzas público-privadas", lugar: "Piura", hora: "3:00 PM" }
+      ]
   },
   {
     id: "fuerza-moderna",
@@ -1139,12 +1709,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2020", descripcion: "Inscripción del partido" }
     ],
-    noticias: [
-      { titulo: "Reforma política integral", fuente: "El Comercio", fecha: "Hace 5 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "23", mes: "ENE", titulo: "Conferencia legal", lugar: "Arequipa", hora: "11:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Reforma Política",
+          "Justicia y Legalidad",
+          "Participación Democrática",
+          "Descentralización",
+          "Transparencia"
+        ],
+        propuestas: [
+          "Impulsar una reforma política integral y moderna",
+          "Fortalecer la justicia y el respeto a la legalidad",
+          "Fomentar la participación democrática en todos los niveles",
+          "Descentralizar la gestión pública para fortalecer regiones",
+          "Promover la transparencia y el acceso a la información",
+          "Capacitar a líderes y funcionarios en ética pública",
+          "Modernizar el sistema electoral y de partidos",
+          "Garantizar derechos y libertades fundamentales"
+        ]
+      },
+      noticias: [
+        { titulo: "PRIN presenta plan de reforma política", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Walter Chirinos: 'La justicia y legalidad son ejes centrales'", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para participación democrática y descentralización", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Transparencia y acceso a la información pública", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Capacitación en ética pública para funcionarios", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Modernización del sistema electoral y de partidos", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Garantía de derechos y libertades fundamentales", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "23", mes: "ENE", titulo: "Conferencia legal", lugar: "Arequipa", hora: "11:00 AM" },
+        { dia: "27", mes: "ENE", titulo: "Foro de reforma política", lugar: "Lima", hora: "10:00 AM" },
+        { dia: "31", mes: "ENE", titulo: "Jornada de justicia y legalidad", lugar: "Cusco", hora: "4:00 PM" },
+        { dia: "4", mes: "FEB", titulo: "Taller de participación democrática", lugar: "Trujillo", hora: "9:00 AM" },
+        { dia: "8", mes: "FEB", titulo: "Seminario de descentralización", lugar: "Piura", hora: "11:00 AM" },
+        { dia: "12", mes: "FEB", titulo: "Expo transparencia y derechos", lugar: "Chiclayo", hora: "3:00 PM" }
+      ]
   },
   {
     id: "renovacion-popular",
@@ -1232,7 +1832,7 @@ export const candidatos = [
   {
     id: "partido-popular-cristiano",
     nombre: "Roberto Chiabra",
-    partido: "Partido popular cristiano PPC",
+    partido: "Partido popular c. PPC",
     foto: "/FotosCandidatos/partido-popular-cristiano.jpg",
     logoPartido: "/logos/partido-popular-cristiano.png",
     cargo: "Candidatura",
@@ -1247,12 +1847,42 @@ export const candidatos = [
       { fecha: "2020", descripcion: "Congresista" },
       { fecha: "1966", descripcion: "Fundación del PPC" }
     ],
-    noticias: [
-      { titulo: "Valores cristianos en democracia", fuente: "El Comercio", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "26", mes: "ENE", titulo: "Asamblea nacional PPC", lugar: "Lima", hora: "4:00 PM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Valores Cristianos",
+          "Democracia y Justicia",
+          "Desarrollo Humano",
+          "Solidaridad Social",
+          "Participación Ciudadana"
+        ],
+        propuestas: [
+          "Promover políticas públicas basadas en valores cristianos",
+          "Fortalecer la democracia y el acceso a la justicia",
+          "Impulsar el desarrollo humano integral",
+          "Fomentar la solidaridad y la inclusión social",
+          "Garantizar la participación ciudadana en la vida política",
+          "Apoyar a las familias y comunidades vulnerables",
+          "Desarrollar programas de educación en valores",
+          "Modernizar la gestión pública con ética y transparencia"
+        ]
+      },
+      noticias: [
+        { titulo: "PPC presenta plan basado en valores cristianos", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Roberto Chiabra: 'La democracia y justicia son ejes centrales'", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para desarrollo humano integral", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Solidaridad social e inclusión en el PPC", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Participación ciudadana en la vida política", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Educación en valores y ética pública", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Gestión pública moderna y transparente", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "26", mes: "ENE", titulo: "Asamblea nacional PPC", lugar: "Lima", hora: "4:00 PM" },
+        { dia: "30", mes: "ENE", titulo: "Foro de democracia y justicia", lugar: "Arequipa", hora: "10:00 AM" },
+        { dia: "3", mes: "FEB", titulo: "Jornada de desarrollo humano", lugar: "Cusco", hora: "4:00 PM" },
+        { dia: "7", mes: "FEB", titulo: "Taller de solidaridad social", lugar: "Trujillo", hora: "9:00 AM" },
+        { dia: "11", mes: "FEB", titulo: "Seminario de participación ciudadana", lugar: "Piura", hora: "11:00 AM" },
+        { dia: "15", mes: "FEB", titulo: "Expo ética y transparencia", lugar: "Chiclayo", hora: "3:00 PM" }
+      ]
   },
   {
     id: "salvemos-al-peru",
@@ -1271,12 +1901,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2021", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Plan de rescate nacional", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "27", mes: "ENE", titulo: "Campaña de movilización", lugar: "Lima", hora: "6:00 PM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Rescate Nacional",
+          "Solidaridad y Unidad",
+          "Desarrollo Económico",
+          "Participación Ciudadana",
+          "Justicia Social"
+        ],
+        propuestas: [
+          "Implementar un plan de rescate nacional para enfrentar crisis",
+          "Fomentar la solidaridad y la unidad entre peruanos",
+          "Impulsar el desarrollo económico con enfoque social",
+          "Promover la participación ciudadana en la reconstrucción nacional",
+          "Garantizar justicia social y equidad en el acceso a servicios",
+          "Apoyar a sectores vulnerables y afectados por emergencias",
+          "Desarrollar infraestructura para la reactivación económica",
+          "Fortalecer la transparencia y la rendición de cuentas"
+        ]
+      },
+      noticias: [
+        { titulo: "Salvemos al Perú presenta plan de rescate nacional", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Mariano González: 'La solidaridad es clave para la reconstrucción'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para desarrollo económico y justicia social", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Participación ciudadana en la reconstrucción nacional", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Apoyo a sectores vulnerables y afectados", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Infraestructura para la reactivación económica", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Transparencia y rendición de cuentas en la gestión", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "27", mes: "ENE", titulo: "Campaña de movilización", lugar: "Lima", hora: "6:00 PM" },
+        { dia: "31", mes: "ENE", titulo: "Foro de solidaridad y unidad", lugar: "Arequipa", hora: "10:00 AM" },
+        { dia: "4", mes: "FEB", titulo: "Jornada de desarrollo económico", lugar: "Cusco", hora: "4:00 PM" },
+        { dia: "8", mes: "FEB", titulo: "Taller de participación ciudadana", lugar: "Trujillo", hora: "9:00 AM" },
+        { dia: "12", mes: "FEB", titulo: "Seminario de justicia social", lugar: "Piura", hora: "11:00 AM" },
+        { dia: "16", mes: "FEB", titulo: "Expo transparencia y reconstrucción", lugar: "Chiclayo", hora: "3:00 PM" }
+      ]
   },
   {
     id: "peru-libre",
@@ -1350,12 +2010,42 @@ export const candidatos = [
     trayectoria: [
       { fecha: "2020", descripcion: "Fundación del partido" }
     ],
-    noticias: [
-      { titulo: "Fe y política en el Perú", fuente: "ACI Prensa", fecha: "Hace 4 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "29", mes: "ENE", titulo: "Convención nacional", lugar: "Lima", hora: "9:00 AM" }
-    ]
+      planGobierno: {
+        ejesTematicos: [
+          "Fe y Valores",
+          "Familia y Sociedad",
+          "Justicia Social",
+          "Educación en Valores",
+          "Participación Ciudadana"
+        ],
+        propuestas: [
+          "Promover políticas públicas basadas en la fe y los valores cristianos",
+          "Fortalecer la familia como base de la sociedad",
+          "Impulsar la justicia social y la solidaridad",
+          "Fomentar la educación en valores en todos los niveles",
+          "Garantizar la participación ciudadana en la vida política",
+          "Apoyar a comunidades vulnerables y en riesgo social",
+          "Desarrollar programas de prevención y apoyo social",
+          "Modernizar la gestión pública con ética y transparencia"
+        ]
+      },
+      noticias: [
+        { titulo: "Sí Creo presenta plan basado en fe y valores", fuente: "ACI Prensa", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Carlos Espá: 'La familia es el pilar de la sociedad'", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Propuestas para justicia social y solidaridad", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop", destacada: true },
+        { titulo: "Educación en valores para todos", fuente: "La República", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=400&fit=crop" },
+        { titulo: "Participación ciudadana y ética pública", fuente: "Perú21", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1465808883808-8a8b1b6b43a5?w=600&h=400&fit=crop" },
+        { titulo: "Apoyo a comunidades vulnerables", fuente: "Andina", fecha: "Hace 6 días", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&h=400&fit=crop" },
+        { titulo: "Transparencia y prevención social", fuente: "Exitosa", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" }
+      ],
+      actividades: [
+        { dia: "29", mes: "ENE", titulo: "Convención nacional", lugar: "Lima", hora: "9:00 AM" },
+        { dia: "2", mes: "FEB", titulo: "Foro de familia y sociedad", lugar: "Arequipa", hora: "10:00 AM" },
+        { dia: "6", mes: "FEB", titulo: "Jornada de justicia social", lugar: "Cusco", hora: "4:00 PM" },
+        { dia: "10", mes: "FEB", titulo: "Taller de educación en valores", lugar: "Trujillo", hora: "9:00 AM" },
+        { dia: "14", mes: "FEB", titulo: "Seminario de participación ciudadana", lugar: "Piura", hora: "11:00 AM" },
+        { dia: "18", mes: "FEB", titulo: "Expo ética y prevención social", lugar: "Chiclayo", hora: "3:00 PM" }
+      ]
   },
   {
     id: "un-camino-diferente",
