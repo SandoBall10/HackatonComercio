@@ -194,9 +194,9 @@ const Candidatos = ({ candidato: candidatoProp }) => {
 
   const handleDownloadPDF = () => {
     if (pdfPath) {
-      window.open(pdfPath, '_blank');
+      window.open(`${window.location.origin}${pdfPath}`, '_blank');
     } else {
-      alert(t('candidatos.planNoDisponibleAlerta'));
+      alert('No disponible');
     }
   };
 
