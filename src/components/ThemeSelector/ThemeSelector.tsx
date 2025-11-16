@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './ThemeSelector.css';
 
-type Theme = 'light' | 'dark' | 'colorblind';
+type Theme = 'light' | 'dark';
 
 const ThemeSelector: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,8 +47,7 @@ const ThemeSelector: React.FC = () => {
   const getThemeInfo = (theme: Theme) => {
     const themes = {
       light: { icon: '☀️', name: 'Claro' },
-      dark: { icon: '🌙', name: 'Oscuro' },
-      colorblind: { icon: '👁️', name: 'Daltónico' }
+      dark: { icon: '🌙', name: 'Oscuro' }
     };
     return themes[theme];
   };
@@ -84,15 +83,6 @@ const ThemeSelector: React.FC = () => {
             <span className="theme-option-icon">🌙</span>
             <span className="theme-option-name">Oscuro</span>
             {currentTheme === 'dark' && <span className="theme-check">✓</span>}
-          </button>
-
-          <button
-            className={`theme-option ${currentTheme === 'colorblind' ? 'active' : ''}`}
-            onClick={() => handleThemeChange('colorblind')}
-          >
-            <span className="theme-option-icon">👁️</span>
-            <span className="theme-option-name">Daltónico</span>
-            {currentTheme === 'colorblind' && <span className="theme-check">✓</span>}
           </button>
         </div>
       )}
