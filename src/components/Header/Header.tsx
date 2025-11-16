@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
         const minutos = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         setCountdown({ meses, dias, horas, minutos });
       }
-    }, 1000);
+    }, 500);
     return () => clearInterval(timer);
   }, []);
 
