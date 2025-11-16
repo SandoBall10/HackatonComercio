@@ -909,13 +909,13 @@ export const candidatos = [
       { fecha: "2019", descripcion: "Fundación de Renovación Popular" }
     ],
     noticias: [
-      { titulo: "Obras en Lima y plan presidencial", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://via.placeholder.com/600x400/1E40AF/FFFFFF?text=Obras+Lima", destacada: true },
-      { titulo: "López Aliaga presenta propuestas para reactivar economía", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://via.placeholder.com/600x400/1E40AF/FFFFFF?text=Economia", destacada: true },
-      { titulo: "Candidato propone reforma del sistema de pensiones", fuente: "RPP", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/600x400/1E40AF/FFFFFF?text=Pensiones", destacada: true },
-      { titulo: "López Aliaga se reúne con gremios de transportistas", fuente: "Perú21", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/300x200/1E40AF/FFFFFF?text=Transporte" },
-      { titulo: "Plan de seguridad ciudadana incluye nuevas comisarías", fuente: "Correo", fecha: "Hace 4 días", imagen: "https://via.placeholder.com/300x200/1E40AF/FFFFFF?text=Seguridad" },
-      { titulo: "Alcalde propone reducción de impuestos municipales", fuente: "La República", fecha: "Hace 5 días", imagen: "https://via.placeholder.com/300x200/1E40AF/FFFFFF?text=Impuestos" },
-      { titulo: "Renovación Popular amplía presencia en provincias", fuente: "El Peruano", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/300x200/1E40AF/FFFFFF?text=Provincias" }
+      { titulo: "Obras en Lima y plan presidencial", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "López Aliaga presenta propuestas para reactivar economía", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Candidato propone reforma del sistema de pensiones", fuente: "RPP", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "López Aliaga se reúne con gremios de transportistas", fuente: "Perú21", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=300&h=200&fit=crop" },
+      { titulo: "Plan de seguridad ciudadana incluye nuevas comisarías", fuente: "Correo", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1586339949216-35c2747cc36d?w=300&h=200&fit=crop" },
+      { titulo: "Alcalde propone reducción de impuestos municipales", fuente: "La República", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=300&h=200&fit=crop" },
+      { titulo: "Renovación Popular amplía presencia en provincias", fuente: "El Peruano", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300&h=200&fit=crop" }
     ],
     actividades: [
       { dia: "24", mes: "ENE", titulo: "Inauguración de obra municipal", lugar: "Lima", hora: "10:00 AM" },
