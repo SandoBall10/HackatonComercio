@@ -884,16 +884,46 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Economía y Desarrollo",
+        "Seguridad Ciudadana",
+        "Educación y Salud",
+        "Infraestructura",
+        "Lucha contra la corrupción"
+      ],
+      propuestas: [
+        "Reactivación económica mediante inversión privada y reducción de trabas burocráticas",
+        "Plan integral de seguridad ciudadana con apoyo de las Fuerzas Armadas",
+        "Modernización del sistema educativo con enfoque en calidad y valores",
+        "Construcción de hospitales y centros de salud en zonas vulnerables",
+        "Mega proyectos de infraestructura vial y transporte masivo",
+        "Sistema anticorrupción con penas drásticas y transparencia total",
+        "Reforma del sistema de pensiones para garantizar jubilación digna",
+        "Promoción de la minería responsable y desarrollo sostenible"
+      ]
+    },
     trayectoria: [
       { fecha: "2023", descripcion: "Alcalde de Lima" },
       { fecha: "2021", descripcion: "Candidato presidencial" },
       { fecha: "2019", descripcion: "Fundación de Renovación Popular" }
     ],
     noticias: [
-      { titulo: "Obras en Lima y plan presidencial", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Obras en Lima y plan presidencial", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://via.placeholder.com/600x400/1E40AF/FFFFFF?text=Obras+Lima", destacada: true },
+      { titulo: "López Aliaga presenta propuestas para reactivar economía", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://via.placeholder.com/600x400/1E40AF/FFFFFF?text=Economia", destacada: true },
+      { titulo: "Candidato propone reforma del sistema de pensiones", fuente: "RPP", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/600x400/1E40AF/FFFFFF?text=Pensiones", destacada: true },
+      { titulo: "López Aliaga se reúne con gremios de transportistas", fuente: "Perú21", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/300x200/1E40AF/FFFFFF?text=Transporte" },
+      { titulo: "Plan de seguridad ciudadana incluye nuevas comisarías", fuente: "Correo", fecha: "Hace 4 días", imagen: "https://via.placeholder.com/300x200/1E40AF/FFFFFF?text=Seguridad" },
+      { titulo: "Alcalde propone reducción de impuestos municipales", fuente: "La República", fecha: "Hace 5 días", imagen: "https://via.placeholder.com/300x200/1E40AF/FFFFFF?text=Impuestos" },
+      { titulo: "Renovación Popular amplía presencia en provincias", fuente: "El Peruano", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/300x200/1E40AF/FFFFFF?text=Provincias" }
     ],
     actividades: [
-      { dia: "24", mes: "ENE", titulo: "Inauguración de obra municipal", lugar: "Lima", hora: "10:00 AM" }
+      { dia: "24", mes: "ENE", titulo: "Inauguración de obra municipal", lugar: "Lima", hora: "10:00 AM" },
+      { dia: "28", mes: "ENE", titulo: "Reunión con gremios empresariales", lugar: "San Isidro", hora: "3:00 PM" },
+      { dia: "02", mes: "FEB", titulo: "Presentación de plan de gobierno nacional", lugar: "Centro de Convenciones", hora: "6:00 PM" },
+      { dia: "05", mes: "FEB", titulo: "Foro sobre seguridad ciudadana", lugar: "Miraflores", hora: "5:00 PM" },
+      { dia: "08", mes: "FEB", titulo: "Encuentro con comerciantes del Mercado Central", lugar: "Cercado de Lima", hora: "9:00 AM" },
+      { dia: "12", mes: "FEB", titulo: "Conferencia de prensa sobre infraestructura vial", lugar: "Municipalidad de Lima", hora: "11:00 AM" }
     ]
   },
   {
