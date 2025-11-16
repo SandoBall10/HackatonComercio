@@ -3,7 +3,9 @@
     "nav": {
       "inicio": "Inicio",
       "partidos": "Partidos Políticos",
-      "reniec": "Consulta RENIEC"
+      "reniec": "Consulta RENIEC",
+      "miembrosMesa": "Para miembros de mesa",
+      "tutorial": "Tutorial"
     },
     "inicio": {
       "titulo": "Elecciones Generales",
