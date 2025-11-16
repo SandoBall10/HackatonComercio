@@ -325,9 +325,9 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 {/* Left Section - Profile */}
                 <div className="col-lg-8">
                   <div className="profile-content-wrapper p-4 p-lg-5 py-lg-5">
-                    <div className="d-flex align-items-start gap-4 gap-lg-5 flex-wrap mb-4">
+                    <div className="d-flex align-items-center gap-4 gap-lg-5 flex-wrap">
                       {/* Avatar with advanced styling */}
-                      <div className="position-relative animate-zoom-in">
+                      <div className="position-relative animate-zoom-in flex-shrink-0">
                         <div className="profile-avatar-advanced">
                           <div className="avatar-ring"></div>
                           <div className="avatar-inner">
@@ -350,45 +350,111 @@ const Candidatos = ({ candidato: candidatoProp }) => {
 
                       {/* Profile Info */}
                       <div className="profile-details flex-grow-1 animate-slide-right">
-                        <h1 className="profile-name-advanced mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : undefined }}>
+                        <h1 className="profile-name-advanced mb-2" style={{ color: '#1a1a1a', fontSize: '2rem', fontWeight: '700' }}>
                           {candidato.nombre || candidato.partido || 'Candidato Sin Nombre'}
                         </h1>
                         
                         <div className="profile-meta mb-3">
-                          <div className="d-flex align-items-center gap-2 mb-2">
+                          <div className="d-flex align-items-center gap-2">
                             <div className="meta-icon" style={{ 
                               background: colorPrimario,
-                              boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.25)`
+                              boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.25)`,
+                              width: '36px',
+                              height: '36px'
                             }}>
-                              <i className="bi bi-briefcase-fill" style={{ color: 'white' }}></i>
+                              <i className="bi bi-briefcase-fill" style={{ color: 'white', fontSize: '0.9rem' }}></i>
                             </div>
-                            <span className="meta-text">{t('candidatos.cargo')} {candidato.partido}</span>
+                            <span className="meta-text" style={{ fontSize: '0.95rem' }}>{t('candidatos.cargo')} {candidato.partido}</span>
                           </div>
                         </div>
 
-                        {/* Party Badge with Logo */}
-                        <div className="party-badge-container">
-                          {candidato.logoPartido && (
-                            <div className="party-logo-wrapper">
-                              <img 
-                                className="party-logo-advanced" 
-                                src={candidato.logoPartido} 
-                                alt="Logo del partido"
-                                onError={(e) => {
-                                  console.log('Error cargando logo del partido');
-                                  e.currentTarget.style.display = 'none';
-                                }}
-                                onLoad={() => console.log('Logo del partido cargado')}
-                              />
-                            </div>
-                          )}
-                          <div className="party-badge-advanced" style={{ 
-                            background: colorPrimario,
-                            boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`
-                          }}>
-                            <i className="bi bi-flag-fill me-2"></i>
-                            {candidato.partido}
+                        {/* Botones de acción */}
+                        <div className="d-flex gap-2 align-items-center flex-wrap">
+                          {/* Party Badge with Logo */}
+                          <div className="d-flex align-items-center gap-2">
+                            {candidato.logoPartido && (
+                              <div className="party-logo-wrapper" style={{ 
+                                width: '48px', 
+                                height: '48px',
+                                border: '2px solid #e5e7eb',
+                                borderRadius: '10px',
+                                padding: '6px',
+                                background: 'white',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexShrink: 0
+                              }}>
+                                <img 
+                                  className="party-logo-advanced" 
+                                  src={candidato.logoPartido} 
+                                  alt="Logo del partido"
+                                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                                  onError={(e) => {
+                                    console.log('Error cargando logo del partido');
+                                    e.currentTarget.style.display = 'none';
+                                  }}
+                                  onLoad={() => console.log('Logo del partido cargado')}
+                                />
+                              </div>
+                            )}
+                            <button 
+                              className="btn text-white fw-semibold d-flex align-items-center gap-2"
+                              style={{ 
+                                background: colorPrimario,
+                                boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`,
+                                border: 'none',
+                                borderRadius: '10px',
+                                padding: '12px 20px',
+                                fontSize: '0.9rem',
+                                transition: 'all 0.3s ease',
+                                whiteSpace: 'nowrap'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = `0 6px 16px rgba(${colorPrimarioRgb}, 0.4)`;
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`;
+                              }}
+                            >
+                              <i className="bi bi-flag-fill" style={{ fontSize: '0.9rem' }}></i>
+                              <span>{candidato.partido}</span>
+                            </button>
                           </div>
+
+                          {/* Botón Descargar PDF */}
+                          <button 
+                            className="btn text-white fw-semibold d-flex align-items-center gap-2"
+                            onClick={handleDownloadPDF}
+                            disabled={!pdfPath}
+                            style={{
+                              backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545',
+                              border: 'none',
+                              borderRadius: '10px',
+                              opacity: pdfPath ? 1 : 0.6,
+                              cursor: pdfPath ? 'pointer' : 'not-allowed',
+                              transition: 'all 0.3s ease',
+                              fontSize: '0.9rem',
+                              padding: '12px 20px',
+                              boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`,
+                              whiteSpace: 'nowrap'
+                            }}
+                            onMouseEnter={(e) => {
+                              if (pdfPath) {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = `0 6px 16px rgba(${colorPrimarioRgb}, 0.4)`;
+                              }
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = 'translateY(0)';
+                              e.currentTarget.style.boxShadow = `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`;
+                            }}
+                          >
+                            <i className="bi bi-download" style={{ fontSize: '0.9rem' }}></i>
+                            <span>{pdfPath ? 'Descargar Plan de Gobierno' : 'Plan No Disponible'}</span>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -450,44 +516,60 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   </div>
                 </div>
 
-                {/* Right Section - CTA */}
+                {/* Right Section - Resumen de Bancada */}
                 <div className="col-lg-4">
-                  <div className="cta-section h-100 d-flex flex-column justify-content-center align-items-center p-5 p-lg-5">
-                    <div className="cta-content text-center">
-                      <div className="cta-icon mb-4" style={{
-                        background: (esRenovacionPopular || esFuerzaPopular) ? 'white' : 'rgba(255, 255, 255, 0.2)'
-                      }}>
-                        <i className="bi bi-file-earmark-text" style={{
-                          color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : 'white'
-                        }}></i>
+                  <div className="card border-0 shadow-sm h-100" style={{
+                    background: `linear-gradient(135deg, ${colorPrimario} 0%, ${colorSecundario} 100%)`
+                  }}>
+                    <div className="card-body p-4 text-white">
+                      <div className="d-flex align-items-center mb-3">
+                        <div 
+                          className="rounded-circle bg-white d-flex align-items-center justify-content-center me-3"
+                          style={{ width: '50px', height: '50px' }}
+                        >
+                          <i className="bi bi-people-fill" style={{ fontSize: '1.5rem', color: colorPrimario }}></i>
+                        </div>
+                        <h5 className="mb-0 fw-bold">Resumen de Bancada</h5>
                       </div>
-                      <h5 className="cta-title mb-3">Plan de Gobierno</h5>
-                      <p className="cta-description mb-4">
-                        Descarga el plan completo de propuestas y conoce nuestras iniciativas
-                      </p>
-                      <button 
-                        className="btn-download-advanced"
-                        onClick={handleDownloadPDF}
-                        disabled={!pdfPath}
-                        style={{
-                          opacity: pdfPath ? 1 : 0.6,
-                          cursor: pdfPath ? 'pointer' : 'not-allowed',
-                          background: !pdfPath 
-                            ? colorPrimario
-                            : 'white',
-                          color: !pdfPath
-                            ? 'white'
-                            : colorPrimario
-                        }}
-                      >
-                        <span className="btn-icon">
-                          <i className="bi bi-download"></i>
-                        </span>
-                        <span className="btn-text">
-                          {pdfPath ? 'Descargar PDF' : 'No Disponible'}
-                        </span>
-                        <span className="btn-shine"></span>
-                      </button>
+                      
+                      <div className="mb-3">
+                        <h6 className="fw-bold mb-2">
+                          <i className="bi bi-building me-2"></i>
+                          Partido Político
+                        </h6>
+                        <p className="mb-0 opacity-90">{candidato.partido}</p>
+                      </div>
+
+                      <div className="mb-3">
+                        <h6 className="fw-bold mb-2">
+                          <i className="bi bi-person-badge me-2"></i>
+                          Cargo
+                        </h6>
+                        <p className="mb-0 opacity-90">{candidato.cargo || 'Candidato a la Presidencia'}</p>
+                      </div>
+
+                      <div className="mb-3">
+                        <h6 className="fw-bold mb-2">
+                          <i className="bi bi-calendar-event me-2"></i>
+                          Elecciones 2026
+                        </h6>
+                        <p className="mb-0 opacity-90">12 de abril de 2026</p>
+                      </div>
+
+                      <div className="border-top border-white border-opacity-25 pt-3 mt-3">
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <span className="small"><i className="bi bi-clipboard-check me-2"></i>Propuestas</span>
+                          <span className="fw-bold">{candidato.planGobierno?.propuestas?.length || 0}</span>
+                        </div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <span className="small"><i className="bi bi-newspaper me-2"></i>Noticias</span>
+                          <span className="fw-bold">{candidato.noticias?.length || 0}</span>
+                        </div>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <span className="small"><i className="bi bi-calendar-event me-2"></i>Actividades</span>
+                          <span className="fw-bold">{candidato.actividades?.length || 0}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
