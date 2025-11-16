@@ -500,7 +500,7 @@ const Chatbot: React.FC = () => {
               <img src={avatarUrl} alt="Avatar" />
             </div>
             <div className="chatbot-header-info">
-              <h3></h3>
+              <h3>Yachay</h3>
               <p>{t('chatbot.subtitulo')}</p>
             </div>
             <button 

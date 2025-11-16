@@ -510,7 +510,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
   width: 98%;
   max-width: 1250px;
   position: relative;
-  height: 400px;
+  height: 500px;
 }
 
 .carousel-wrapper {
@@ -673,6 +673,18 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.news-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.news-card-calendar-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .news-card-title {

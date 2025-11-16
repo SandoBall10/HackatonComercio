@@ -159,9 +159,7 @@
 
 /* FAQ Section */
 .faq-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 3rem;
-  border-radius: 16px;
   margin-top: 2rem;
 }
 
@@ -185,6 +183,10 @@
   border-radius: 12px;
   border-left: 4px solid #2c2c2c;
   transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid #e0e0e0;
+  border-top-left-radius: 20px;
+  overflow: hidden;
 }
 
 .faq-item:hover {
@@ -203,6 +205,61 @@
   color: #555;
   line-height: 1.6;
   margin: 0;
+}
+
+/* Cédula de Sufragio Section */
+.cedula-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 3rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.cedula-titulo {
+  font-size: 2.5rem;
+  color: #003d7a;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.cedula-descripcion {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.8;
+}
+
+.cedula-subtitulo {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.cedula-video-wrapper {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cedula-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+}
+
+.cedula-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Responsive Design */
@@ -231,6 +288,18 @@
     grid-template-columns: 1fr;
   }
 
+  .cedula-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .cedula-titulo {
+    font-size: 1.8rem;
+  }
+
+  .cedula-descripcion {
+    font-size: 1rem;
+  }
+
   .video-info {
     padding: 1.5rem;
   }
@@ -255,5 +324,13 @@
 
   .faq-titulo {
     font-size: 1.6rem;
+  }
+
+  .cedula-titulo {
+    font-size: 1.6rem;
+  }
+
+  .cedula-descripcion {
+    font-size: 0.95rem;
   }
 }
