@@ -634,7 +634,11 @@ const PartidoDetalle: React.FC = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    window.open(candidatosReales[0].pdfUrl, '_blank', 'noopener,noreferrer');
+                    // Crear URL absoluta para evitar que React Router la intercepte
+                    const pdfUrl = candidatosReales[0].pdfUrl.startsWith('http') 
+                      ? candidatosReales[0].pdfUrl 
+                      : `${window.location.origin}${candidatosReales[0].pdfUrl}`;
+                    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
                   }}
                   className="btn text-white fw-semibold py-3 position-relative"
                   style={{
