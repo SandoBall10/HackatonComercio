@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './PartidosPoliticos.css';
@@ -16,6 +16,7 @@ interface Partido {
 const PartidosPoliticos: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
 
   // Función para obtener la clave de traducción del nombre del partido
   const getPartidoKey = (nombre: string): string => {
@@ -117,16 +118,59 @@ const PartidosPoliticos: React.FC = () => {
     navigate(`/partido/${partidoId}`);
   };
 
+  // Filtrar partidos según el término de búsqueda
+  const partidosFiltrados = partidos.filter(partido => {
+    const searchLower = searchTerm.toLowerCase();
+    const nombreTraducido = t(`partidos.nombres.${getPartidoKey(partido.nombre)}`).toLowerCase();
+    return (
+      nombreTraducido.includes(searchLower) ||
+      partido.siglas.toLowerCase().includes(searchLower) ||
+      partido.nombre.toLowerCase().includes(searchLower)
+    );
+  });
+
   return (
     <>
 
 
       <div className="partidos-container">
         <h1 className="titulo-principal">{t('partidos.titulo')} - Elecciones Perú 2026</h1>
-      <p className="subtitulo">43 {t('partidos.descripcion').toLowerCase()}</p>
+      <p className="subtitulo">{partidosFiltrados.length} {t('partidos.descripcion').toLowerCase()}</p>
+
+      {/* Buscador */}
+      <div className="buscador-container">
+        <div className="buscador-input-wrapper">
+          <svg className="buscador-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input
+            type="text"
+            className="buscador-input"
+            placeholder={t('partidos.buscador.placeholder')}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          {searchTerm && (
+            <button
+              className="buscador-clear"
+              onClick={() => setSearchTerm('')}
+              aria-label="Limpiar búsqueda"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+      </div>
+
+      {partidosFiltrados.length === 0 && (
+        <div className="no-resultados">
+          <p>{t('partidos.buscador.noResultados')}</p>
+        </div>
+      )}
 
       <div className="partidos-grid">
-        {partidos.map((partido) => (
+        {partidosFiltrados.map((partido) => (
           <div
             key={partido.id}
             className="partido-card"

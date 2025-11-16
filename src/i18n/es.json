@@ -18,7 +18,6 @@
       "acercaProceso": "Acerca del proceso",
       "loNuevo": "Para miembros de mesa",
       "votoDigital": "Para electores",
-      "infoGeneral": "Información general",
       "enlacesRelacionados": "Enlaces relacionados",
       "timelineTitle": "Línea de tiempo electoral:"
     },
@@ -74,6 +73,10 @@
       "informacion": "Información del Partido",
       "nombreCompleto": "Nombre Completo",
       "siglas": "Siglas",
+      "buscador": {
+        "placeholder": "Buscar partido por nombre o siglas...",
+        "noResultados": "No se encontraron partidos que coincidan con tu búsqueda"
+      },
       "nombres": {
         "accion-popular": "Acción Popular",
         "fuerza-popular": "Fuerza Popular",
@@ -157,6 +160,176 @@
         "titulo": "Trayectoria Política",
         "cargosPublicos": "Cargos Públicos Desempeñados",
         "partidosPrevios": "Partidos Políticos Anteriores"
+      }
+    },
+    "miembrosMesa": {
+      "titulo": "Miembros de Mesa",
+      "subtitulo": "Toda la información que necesitas para cumplir tu labor cívica el 12 de abril de 2026",
+      "tabs": {
+        "cronograma": "Cronograma del Día",
+        "instrucciones": "Instrucciones",
+        "derechos": "Derechos y Deberes",
+        "capacitacion": "Capacitación"
+      },
+      "cronograma": {
+        "titulo": "Cronograma de Actividades - Día de Elecciones",
+        "descripcion": "12 de abril de 2026 - Sigue esta guía para cumplir correctamente tu labor como miembro de mesa",
+        "actividades": {
+          "llegada": "Llegada a tu local de votación",
+          "instalacion": "Instalación de la mesa de sufragio",
+          "verificacion": "Verificación de materiales electorales",
+          "inicio": "Inicio del proceso de votación",
+          "desarrollo": "Desarrollo de la jornada electoral",
+          "cierre": "Cierre de mesa y conteo de votos",
+          "actas": "Elaboración de actas y entrega de resultados"
+        },
+        "importante": "Importante",
+        "mensajeImportante": "Recuerda llegar 1 hora antes para evitar contratiempos. La instalación de la mesa debe realizarse puntualmente a las 7:00 AM."
+      },
+      "instrucciones": {
+        "titulo": "Guía Paso a Paso",
+        "descripcion": "Sigue estas instrucciones detalladas para cada etapa del proceso electoral",
+        "instalacion": {
+          "titulo": "Instalación de Mesa",
+          "paso1": "Verificar que todos los miembros estén presentes",
+          "paso2": "Revisar el ánfora y los materiales electorales",
+          "paso3": "Verificar el padrón electoral de tu mesa",
+          "paso4": "Colocar el cartel con el número de mesa en un lugar visible"
+        },
+        "sufragio": {
+          "titulo": "Durante el Sufragio",
+          "paso1": "Solicitar el DNI al elector",
+          "paso2": "Verificar identidad en el padrón",
+          "paso3": "Entregar la cédula de sufragio",
+          "paso4": "Marcar el dedo índice con tinta indeleble",
+          "paso5": "Hacer firmar el acta de sufragio"
+        },
+        "conteo": {
+          "titulo": "Conteo de Votos",
+          "paso1": "Abrir el ánfora frente a personeros",
+          "paso2": "Contar los votos en voz alta",
+          "paso3": "Clasificar votos: válidos, blancos y nulos",
+          "paso4": "Completar el acta electoral",
+          "paso5": "Entregar resultados al coordinador de local"
+        },
+        "consejos": {
+          "titulo": "Consejos Útiles",
+          "consejo1": "Mantén la calma y actúa con transparencia en todo momento",
+          "consejo2": "Si tienes dudas, consulta con el coordinador de local",
+          "consejo3": "Respeta la distancia de 100 metros para propaganda electoral",
+          "consejo4": "No permitas el ingreso de celulares a la cámara secreta"
+        }
+      },
+      "derechos": {
+        "titulo": "Tus Derechos",
+        "descripcion": "Como miembro de mesa, tienes estos derechos garantizados:",
+        "derecho1": "Ser capacitado por la ONPE antes del día de las elecciones",
+        "derecho2": "Recibir refrigerio y almuerzo el día de las elecciones",
+        "derecho3": "Solicitar apoyo de las fuerzas del orden público",
+        "derecho4": "Recibir compensación económica por tu servicio",
+        "derecho5": "Obtener constancia de participación como miembro de mesa"
+      },
+      "deberes": {
+        "titulo": "Tus Deberes",
+        "descripcion": "Responsabilidades que debes cumplir obligatoriamente:",
+        "deber1": "Asistir puntualmente el día de las elecciones",
+        "deber2": "Instalar la mesa de sufragio a las 7:00 AM",
+        "deber3": "Garantizar el secreto del voto",
+        "deber4": "Mantener el orden en la mesa electoral",
+        "deber5": "Completar y firmar las actas electorales"
+      },
+      "compensacion": {
+        "titulo": "Compensación Económica",
+        "mensaje": "Como miembro de mesa recibirás una compensación de",
+        "monto": "S/ 120.00 soles",
+        "detalle": "por tu participación. Esta se hará efectiva después del proceso electoral."
+      },
+      "capacitacion": {
+        "titulo": "Capacitación para Miembros de Mesa",
+        "descripcion": "La ONPE ofrece capacitación gratuita para todos los miembros de mesa",
+        "presencial": {
+          "titulo": "Capacitación Presencial",
+          "descripcion": "Asiste a las jornadas de capacitación en tu distrito. Se realizarán en marzo de 2026.",
+          "item1": "Primera jornada: 29 de marzo",
+          "item2": "Segunda jornada: 5 de abril",
+          "item3": "Duración: 2-3 horas"
+        },
+        "virtual": {
+          "titulo": "Capacitación Virtual",
+          "descripcion": "Accede a cursos online desde la comodidad de tu hogar.",
+          "item1": "Plataforma virtual ONPE",
+          "item2": "Videos tutoriales",
+          "item3": "Material descargable",
+          "item4": "Simuladores interactivos"
+        },
+        "app": {
+          "titulo": "App Móvil",
+          "descripcion": "Descarga la app oficial de la ONPE para miembros de mesa.",
+          "item1": "Guía paso a paso",
+          "item2": "Notificaciones importantes",
+          "item3": "Consulta tu local de votación",
+          "item4": "Material de apoyo offline"
+        },
+        "recursos": {
+          "titulo": "Recursos Disponibles",
+          "manual": "Manual del Miembro de Mesa",
+          "manualDesc": "Guía completa en PDF - Haz clic para descargar",
+          "videos": "Videos Tutoriales",
+          "videosDesc": "Video explicativo para miembros de mesa",
+          "preguntas": "Preguntas Frecuentes",
+          "preguntasDesc": "Respuestas a dudas comunes - Haz clic para descargar"
+        }
+      },
+      "cta": {
+        "titulo": "¿Fuiste seleccionado como miembro de mesa?",
+        "descripcion": "Consulta tu designación y el local donde debes presentarte",
+        "boton": "Consultar mi Mesa Electoral"
+      }
+    },
+    "tutorial": {
+      "titulo": "Tutorial: Cómo Usar la Plataforma",
+      "descripcion": "Aprende a navegar y usar todas las funciones de nuestra plataforma electoral de forma fácil y rápida",
+      "tituloVideo": "Guía Completa: Elecciones Perú 2026",
+      "descripcionVideo": "Video tutorial paso a paso para usar la plataforma y conocer todo sobre el proceso electoral",
+      "errorVideo": "Video no disponible. Por favor, verifica tu conexión.",
+      "seccion1": {
+        "titulo": "Navegación Principal",
+        "descripcion": "Conoce todas las secciones de la plataforma",
+        "paso1": "Explora el menú superior para acceder a cada sección",
+        "paso2": "Usa el buscador de partidos para encontrar rápidamente",
+        "paso3": "Cambia el idioma entre Español y Quechua cuando lo necesites"
+      },
+      "seccion2": {
+        "titulo": "Consultar Candidatos",
+        "descripcion": "Investiga sobre los candidatos y partidos",
+        "paso1": "Ve a la sección de Partidos Políticos",
+        "paso2": "Haz clic en cualquier partido para ver detalles",
+        "paso3": "Revisa sus planes de gobierno y propuestas"
+      },
+      "seccion3": {
+        "titulo": "Miembros de Mesa",
+        "descripcion": "Si fuiste designado, aquí está tu información",
+        "paso1": "Consulta el cronograma de actividades del día",
+        "paso2": "Lee las instrucciones paso a paso",
+        "paso3": "Descarga el manual y recursos de capacitación"
+      },
+      "seccion4": {
+        "titulo": "Consultas RENIEC",
+        "descripcion": "Verifica tu información electoral",
+        "paso1": "Ingresa tu número de DNI (8 dígitos)",
+        "paso2": "Consulta tu local y mesa de votación",
+        "paso3": "Verifica tus datos están correctos"
+      },
+      "faq": {
+        "titulo": "Preguntas Frecuentes",
+        "pregunta1": "¿Cómo busco un partido específico?",
+        "respuesta1": "Usa el buscador en la sección de Partidos Políticos. Puedes buscar por nombre completo o siglas del partido.",
+        "pregunta2": "¿Puedo cambiar el idioma?",
+        "respuesta2": "Sí, usa el selector de idioma en la parte superior para cambiar entre Español y Quechua.",
+        "pregunta3": "¿Qué hago si fui designado miembro de mesa?",
+        "respuesta3": "Ve a la sección 'Miembros de Mesa' donde encontrarás toda la información, cronograma, y recursos necesarios.",
+        "pregunta4": "¿Cómo consulto mi local de votación?",
+        "respuesta4": "En la sección 'Consulta RENIEC' ingresa tu DNI para ver tu local y mesa asignada."
       }
     }
   }
