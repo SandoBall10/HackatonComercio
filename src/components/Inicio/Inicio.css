@@ -1173,7 +1173,27 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .entry::before {
-  background: linear-gradient(135deg, #0a66b3, #003d7a);
+  background: rgba(179, 2, 39, 0.7);
+}
+
+[data-theme="dark"] .month-btn {
+  background: #242526;
+  border-color: #3a3b3c;
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .month-btn:hover {
+  border-color: rgba(179, 2, 39, 0.7);
+  color: #fff;
+  background: rgba(179, 2, 39, 0.7);
+  box-shadow: 0 6px 20px rgba(179, 2, 39, 0.4);
+}
+
+[data-theme="dark"] .month-btn.active {
+  background: rgba(179, 2, 39, 0.7);
+  color: #fff;
+  border-color: rgba(179, 2, 39, 0.7);
+  box-shadow: 0 8px 25px rgba(179, 2, 39, 0.5);
 }
 
 [data-theme="dark"] .title {
