@@ -254,12 +254,15 @@ export const Inicio: React.FC = () => {
   const months2026 = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL'];
   const months = activeYear === '2025' ? months2025 : months2026;
 
+
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % news.length);
     }, 5000);
     return () => clearInterval(interval);
   }, [news.length]);
+
 
   useEffect(() => {
     const targetDate = new Date('2026-04-12T00:00:00').getTime();
@@ -277,6 +280,8 @@ export const Inicio: React.FC = () => {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
+
+
 
   React.useEffect(() => {
     if (!months.includes(activeMonth)) {
