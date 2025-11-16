@@ -1114,11 +1114,127 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 /* ============================
-   DARK MODE STYLES
+   DARK MODE STYLES - FACEBOOK STYLE
    ============================ */
 
 [data-theme="dark"] .inicio-container {
   background: #18191a;
+}
+
+/* TIMELINE DARK MODE */
+[data-theme="dark"] .timeline-wrapper {
+  background: #18191a;
+}
+
+[data-theme="dark"] .timeline-title {
+  background: linear-gradient(135deg, #5ba3d8 0%, #0a66b3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .timeline-title::after {
+  background: linear-gradient(90deg, #D93536, #5ba3d8);
+}
+
+/* TABS YEAR - DARK MODE */
+[data-theme="dark"] .tab-link {
+  background: #242526;
+  color: #b0b3b8;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .tab-link:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .tab-link.active {
+  background: linear-gradient(135deg, #5ba3d8 0%, #0a66b3 100%);
+  color: white;
+  box-shadow: 0 8px 30px rgba(10, 102, 179, 0.5);
+}
+
+/* FILTER DROPDOWN - DARK MODE */
+[data-theme="dark"] .filter-toggle-btn {
+  background: linear-gradient(135deg, #D93536 0%, #991b1b 100%);
+  box-shadow: 0 4px 12px rgba(217, 53, 54, 0.4);
+}
+
+[data-theme="dark"] .filter-toggle-btn:hover {
+  box-shadow: 0 6px 16px rgba(217, 53, 54, 0.5);
+}
+
+[data-theme="dark"] .filter-menu {
+  background: #242526;
+  border: 2px solid #3a3b3c;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .filter-menu-header {
+  background: #3a3b3c;
+  border-bottom: 2px solid #4e4f50;
+}
+
+[data-theme="dark"] .filter-menu-title {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .filter-close-btn {
+  color: #8a8d91;
+}
+
+[data-theme="dark"] .filter-close-btn:hover {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .filter-option {
+  background: #242526;
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .filter-option:hover {
+  background: #3a3b3c;
+  color: #5ba3d8;
+  border-left-color: #5ba3d8;
+}
+
+[data-theme="dark"] .filter-option.active {
+  background: linear-gradient(90deg, rgba(217, 53, 54, 0.2) 0%, transparent 100%);
+  color: #D93536;
+  border-left-color: #D93536;
+}
+
+/* MONTH BUTTONS - DARK MODE */
+[data-theme="dark"] .month-btn {
+  background: #242526;
+  border: 3px solid #3a3b3c;
+  color: #b0b3b8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .month-btn:hover {
+  border-color: rgba(179, 2, 39, 0.8);
+  background: rgba(179, 2, 39, 0.8);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(179, 2, 39, 0.5);
+}
+
+[data-theme="dark"] .month-btn.active {
+  background: rgba(179, 2, 39, 0.8);
+  border-color: rgba(179, 2, 39, 0.8);
+  box-shadow: 0 8px 25px rgba(179, 2, 39, 0.6);
+}
+
+/* TIMELINE AREA - DARK MODE */
+[data-theme="dark"] .timeline-area {
+  background: #242526;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .no-events {
+  background: #242526;
+  color: #8a8d91;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="dark"] .top-header {

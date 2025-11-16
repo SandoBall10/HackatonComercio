@@ -334,3 +334,114 @@
     font-size: 0.95rem;
   }
 }
+
+/* ==================== MODO OSCURO - ESTILO FACEBOOK ==================== */
+
+[data-theme="dark"] .tutorial-container {
+  background: #18191a;
+}
+
+/* Header - Dark Mode */
+[data-theme="dark"] .tutorial-titulo {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .tutorial-descripcion {
+  color: #b0b3b8;
+}
+
+/* Video Section - Dark Mode */
+[data-theme="dark"] .video-wrapper {
+  background: #242526;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .video-info {
+  background: linear-gradient(135deg, #242526 0%, #18191a 100%);
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .video-info h2 {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .video-info p {
+  color: #b0b3b8;
+}
+
+/* Ayuda Cards - Dark Mode */
+[data-theme="dark"] .ayuda-card {
+  background: #242526;
+  border-color: #3a3b3c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .ayuda-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  border-color: #5ba3d8;
+}
+
+[data-theme="dark"] .ayuda-card h3 {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .ayuda-card p {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .ayuda-lista li {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .ayuda-lista li::before {
+  color: #5ba3d8;
+}
+
+/* FAQ Section - Dark Mode */
+[data-theme="dark"] .faq-section {
+  background: #18191a;
+}
+
+[data-theme="dark"] .faq-titulo {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .faq-item {
+  background: #242526;
+  border-color: #3a3b3c;
+  border-left-color: #5ba3d8;
+}
+
+[data-theme="dark"] .faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .faq-item h4 {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .faq-item p {
+  color: #b0b3b8;
+}
+
+/* Cédula Section - Dark Mode */
+[data-theme="dark"] .cedula-section {
+  background: linear-gradient(135deg, #242526 0%, #18191a 100%);
+}
+
+[data-theme="dark"] .cedula-titulo {
+  color: #5ba3d8;
+}
+
+[data-theme="dark"] .cedula-descripcion {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .cedula-subtitulo {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .cedula-video-wrapper {
+  background: #242526;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
