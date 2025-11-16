@@ -149,15 +149,15 @@
 }
 
 :root[data-theme="dark"] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2c2c2c;
-  --bg-tertiary: #3a3a3a;
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
-  --text-tertiary: #888888;
-  --border-color: #404040;
-  --card-bg: #2c2c2c;
-  --header-bg: #1a1a1a;
+  --bg-primary: #18191a;
+  --bg-secondary: #242526;
+  --bg-tertiary: #2f3031;
+  --text-primary: #e4e6eb;
+  --text-secondary: #b0b3b8;
+  --text-tertiary: #8a8d91;
+  --border-color: #3a3b3c;
+  --card-bg: #242526;
+  --header-bg: #242526;
   --navbar-bg: #8a0220;
   --accent-color: #d32f2f;
   --accent-secondary: #0a66b3;
@@ -184,13 +184,19 @@
 
 /* Apply theme to body and main containers */
 [data-theme="dark"] body,
+[data-theme="dark"] #root,
 [data-theme="dark"] .inicio-container,
 [data-theme="dark"] .partidos-container,
 [data-theme="dark"] .reniec-container,
 [data-theme="dark"] .miembros-container,
-[data-theme="dark"] .tutorial-container {
-  background: var(--bg-primary);
-  color: var(--text-primary);
+[data-theme="dark"] .tutorial-container,
+[data-theme="dark"] .candidatos-container {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] * {
+  scrollbar-color: var(--border-color) var(--bg-secondary);
 }
 
 [data-theme="colorblind"] body,
@@ -706,4 +712,499 @@
 
 [data-theme="colorblind"] .instruccion-icono {
   background: var(--accent-secondary);
+}
+
+/* ========================================
+   CANDIDATOS PAGE - DARK MODE
+   ======================================== */
+
+[data-theme="dark"] .candidatos-container {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .candidatos-hero {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--card-bg) 100%);
+  border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .candidatos-hero h1 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .candidatos-hero p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .candidato-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .candidato-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .candidato-nombre {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .candidato-partido {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .candidato-info p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .candidato-info strong {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ver-detalle-btn {
+  background: var(--accent-color);
+  color: white;
+}
+
+[data-theme="dark"] .ver-detalle-btn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+[data-theme="dark"] .back-btn {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .back-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .detalle-container {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .detalle-header {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .detalle-basica h1 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .detalle-basica p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .detalle-tabs {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .detalle-tab {
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+}
+
+[data-theme="dark"] .detalle-tab:hover {
+  color: var(--text-primary);
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .detalle-tab.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .detalle-content {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .detalle-content h3 {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .detalle-content p,
+[data-theme="dark"] .detalle-content li {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .detalle-content strong {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .info-item {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-color);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+/* ========================================
+   PARTIDOS POLITICOS PAGE - DARK MODE
+   ======================================== */
+
+[data-theme="dark"] .partidos-container {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .partidos-hero {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--card-bg) 100%);
+  border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .partidos-hero h1 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .partidos-hero p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .partidos-tabs {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .partido-tab {
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+}
+
+[data-theme="dark"] .partido-tab:hover {
+  color: var(--text-primary);
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .partido-tab.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .partido-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .partido-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .partido-nombre {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .partido-descripcion {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .partido-info span {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ver-mas-btn {
+  background: var(--accent-color);
+  color: white;
+}
+
+[data-theme="dark"] .ver-mas-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* ========================================
+   PARTIDO DETALLE MODAL - DARK MODE
+   ======================================== */
+
+[data-theme="dark"] .modal-overlay {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+[data-theme="dark"] .modal-content {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .modal-header {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .modal-header h2 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .close-modal-btn {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .close-modal-btn:hover {
+  color: var(--accent-color);
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .modal-body h3 {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .modal-body p,
+[data-theme="dark"] .modal-body li {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .modal-body strong {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .propuesta-item {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-color);
+}
+
+/* ========================================
+   TUTORIAL PAGE - DARK MODE
+   ======================================== */
+
+[data-theme="dark"] .tutorial-container {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .tutorial-hero {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--card-bg) 100%);
+  border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .tutorial-hero h1 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .tutorial-hero p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .tutorial-step {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .tutorial-step h2 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .tutorial-step p,
+[data-theme="dark"] .tutorial-step li {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .cedula-preview {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .cedula-section {
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .cedula-section h4 {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+/* ========================================
+   CHATBOT - DARK MODE
+   ======================================== */
+
+[data-theme="dark"] .chatbot-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .chatbot-header {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .chatbot-messages {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .message {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .message.user {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-hover);
+}
+
+[data-theme="dark"] .message.bot {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .chatbot-input-container {
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .chatbot-input {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .chatbot-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+[data-theme="dark"] .chatbot-send-btn {
+  background: var(--accent-color);
+}
+
+[data-theme="dark"] .chatbot-send-btn:hover {
+  background: var(--accent-hover);
+}
+
+[data-theme="dark"] .chatbot-toggle-btn {
+  background: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .chatbot-toggle-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* ========================================
+   HEADER - DARK MODE
+   ======================================== */
+
+[data-theme="dark"] .navbar {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .nav-link {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: var(--accent-color);
+}
+
+[data-theme="dark"] .nav-link.active {
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* ========================================
+   FOOTER - DARK MODE
+   ======================================== */
+
+[data-theme="dark"] .footer {
+  background: var(--bg-secondary);
+  border-top: 2px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .footer h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .footer a {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .footer a:hover {
+  color: var(--accent-color);
+}
+
+/* ========================================
+   GENERAL ELEMENTS - DARK MODE
+   ======================================== */
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] a {
+  color: var(--accent-color);
+}
+
+[data-theme="dark"] a:hover {
+  color: var(--accent-hover);
+}
+
+[data-theme="dark"] hr {
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] code,
+[data-theme="dark"] pre {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] table {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] th {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] td {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] tr:hover {
+  background: var(--bg-secondary);
+}
+
+/* Scrollbar styling for dark mode */
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 6px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
 }
