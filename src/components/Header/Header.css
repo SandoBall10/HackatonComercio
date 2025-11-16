@@ -1,8 +1,23 @@
 /* TOP HEADER CON COUNTDOWN */
 .top-header { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 16px 0; }
 .top-header-content { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; }
-.logo-section { display: flex; align-items: center; gap: 16px; }
-.top-logo { height: 68px; width: auto; object-fit: contain; }
+
+/* ========== LOGO (MODIFICADO) ========== */
+.logo-section {  
+  height: auto;              /* ❗Antes era 80px → LIMITABA el logo */
+  display: flex; 
+  align-items: center; 
+  gap: 16px;
+}
+
+.top-logo { 
+  height: 70px;
+  width: auto; 
+  object-fit: contain; 
+  border-radius: 15px; 
+}
+
+/* INFO */
 .election-info h2 { color: #003d7a; font-size: 20px; font-weight: 800; margin: 0; }
 .election-info p { color: #666; font-size: 13px; margin: 2px 0 0; }
 
@@ -40,19 +55,38 @@
 .subtab-btn.active { color: #003d7a; }
 .subtab-underline { position: absolute; bottom: -1px; left: 32px; width: 140px; height: 3px; background: #0a66b3; border-radius: 2px 2px 0 0; }
 
+/* ========== RESPONSIVE ========== */
+
+/* Tablet → logo 60px */
 @media (max-width: 1024px) {
   .top-header-content { flex-direction: column; gap: 16px; }
+
+  .top-logo {
+    height: 60px;   /* ✔ bajamos */
+  }
+
   .countdown-items { flex-wrap: wrap; }
 }
 
+/* Mobile → logo 50px */
 @media (max-width: 768px) {
+
+  .top-logo {
+    height: 50px;   /* ✔ aún más pequeño */
+  }
+
   .nav-links-container { flex-wrap: wrap; gap: 0; height: auto; }
   .nav-link { padding: 12px 16px; font-size: 13px; }
 }
 
+/* Very small mobile → logo 45px */
 @media (max-width: 480px) {
   .top-header-content { padding: 0 16px; }
-  .top-logo { height: 60px; }
+
+  .top-logo {
+    height: 45px;   /* ✔ para pantallas muy chicas */
+  }
+
   .countdown-items { gap: 6px; }
   .countdown-item { padding: 6px 10px; min-width: 50px; }
 }
