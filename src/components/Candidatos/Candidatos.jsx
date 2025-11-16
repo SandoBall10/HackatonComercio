@@ -262,7 +262,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
     'partido-democratico-somos-peru': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul y Rojo
     'frente-popular-agricola-fia': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde FREPAP
     'partido-civico-obras': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
-    'frente-de-la-esperanza-2021': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'frente-de-la-esperanza-2021': { primario: '#00A859', secundario: '#00C76F', terciario: '#00964F', rgb: '0, 168, 89' }, // Verde
     'partido-morado': { primario: '#7B1FA2', secundario: '#6A1B9A', terciario: '#4A148C', rgb: '123, 31, 162' }, // Morado
     'partido-politico-peru-accion': { primario: '#E31B23', secundario: '#1E40AF', terciario: '#00A859', rgb: '227, 27, 35' }, // Rojo, Azul y Verde
     'peru-moderno': { primario: '#FFC107', secundario: '#E91E63', terciario: '#1a1a1a', rgb: '255, 193, 7' }, // Amarillo, Rosado y Negro

@@ -16,15 +16,45 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Descentralización",
+        "Obras Públicas",
+        "Justicia Social",
+        "Desarrollo Rural",
+        "Transparencia"
+      ],
+      propuestas: [
+        "Descentralización efectiva con transferencia de recursos a regiones",
+        "Plan nacional de construcción de colegios y hospitales",
+        "Reforma agraria integral con apoyo a pequeños agricultores",
+        "Sistema de agua potable para zonas rurales",
+        "Gobierno digital con transparencia total",
+        "Carreteras vecinales para conectar comunidades",
+        "Energía eléctrica para todos los pueblos del Perú",
+        "Fortalecimiento de gobiernos regionales y locales"
+      ]
+    },
     trayectoria: [
       { fecha: "2021", descripcion: "Candidato presidencial" },
       { fecha: "2016", descripcion: "Electo Congresista de la República" }
     ],
     noticias: [
-      { titulo: "Propuesta de descentralización presentada", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Propuesta de descentralización presentada", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Acción Popular plantea obras públicas masivas", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Candidato propone reforma agraria integral", fuente: "RPP", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Belaúnde visita comunidades rurales", fuente: "Perú21", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=300&h=200&fit=crop" },
+      { titulo: "Plan de agua potable para zonas alejadas", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1416339442236-8ceb164046f8?w=300&h=200&fit=crop" },
+      { titulo: "Acción Popular promete gobierno transparente", fuente: "La República", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=300&h=200&fit=crop" },
+      { titulo: "Partido refuerza estructura regional", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1560421683-6856ea585c78?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "18", mes: "DIC", titulo: "Debate electoral", lugar: "Lima", hora: "7:00 PM" }
+      { dia: "18", mes: "ENE", titulo: "Debate electoral", lugar: "Lima", hora: "7:00 PM" },
+      { dia: "22", mes: "ENE", titulo: "Encuentro con alcaldes provinciales", lugar: "Huancayo", hora: "10:00 AM" },
+      { dia: "26", mes: "ENE", titulo: "Presentación de plan de descentralización", lugar: "Arequipa", hora: "4:00 PM" },
+      { dia: "29", mes: "ENE", titulo: "Visita a comunidades campesinas", lugar: "Cusco", hora: "9:00 AM" },
+      { dia: "02", mes: "FEB", titulo: "Foro sobre obras públicas", lugar: "Trujillo", hora: "11:00 AM" },
+      { dia: "05", mes: "FEB", titulo: "Conferencia de prensa", lugar: "Sede AP", hora: "3:00 PM" }
     ]
   },
   {
@@ -201,16 +231,46 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Información disponible en registros judiciales"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Educación de Calidad",
+        "Desarrollo Económico",
+        "Infraestructura Vial",
+        "Salud Universal",
+        "Regionalización"
+      ],
+      propuestas: [
+        "Revolución educativa con aumento del presupuesto al 6% del PBI",
+        "Construcción de 50 nuevos colegios de alto rendimiento",
+        "Becas universitarias para estudiantes de bajos recursos",
+        "Reactivación económica con apoyo a pequeñas empresas",
+        "Red de carreteras y autopistas para conectar todo el país",
+        "Sistema de salud gratuito y de calidad para todos",
+        "Descentralización real con autonomía económica regional",
+        "Tecnología en todas las escuelas públicas del Perú"
+      ]
+    },
     trayectoria: [
       { fecha: "2021", descripcion: "Candidato presidencial" },
       { fecha: "2016", descripcion: "Candidato presidencial" },
       { fecha: "2007-2014", descripcion: "Gobernador Regional La Libertad" }
     ],
     noticias: [
-      { titulo: "Plan de infraestructura educativa", fuente: "El Comercio", fecha: "Hace 4 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Plan de infraestructura educativa", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "César Acuña propone becas masivas para estudiantes", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Candidato anuncia plan de carreteras nacional", fuente: "RPP", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Acuña visita colegios en zonas rurales", fuente: "Perú21", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300&h=200&fit=crop" },
+      { titulo: "Alianza para el Progreso plantea reforma de salud", fuente: "Correo", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=300&h=200&fit=crop" },
+      { titulo: "Propuesta de industrialización para provincias", fuente: "La República", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop" },
+      { titulo: "APP expande militancia en todo el país", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "25", mes: "DIC", titulo: "Visita a escuelas rurales", lugar: "La Libertad", hora: "8:00 AM" }
+      { dia: "25", mes: "ENE", titulo: "Visita a escuelas rurales", lugar: "La Libertad", hora: "8:00 AM" },
+      { dia: "28", mes: "ENE", titulo: "Presentación de plan educativo nacional", lugar: "Trujillo", hora: "10:00 AM" },
+      { dia: "01", mes: "FEB", titulo: "Encuentro con rectores universitarios", lugar: "Lima", hora: "4:00 PM" },
+      { dia: "04", mes: "FEB", titulo: "Foro de desarrollo regional", lugar: "Piura", hora: "11:00 AM" },
+      { dia: "08", mes: "FEB", titulo: "Inauguración de obra vial", lugar: "Cajamarca", hora: "9:00 AM" },
+      { dia: "11", mes: "FEB", titulo: "Conferencia sobre salud universal", lugar: "Chiclayo", hora: "3:00 PM" }
     ]
   },
   {
@@ -276,21 +336,51 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Economía Libre",
+        "Emprendimiento",
+        "Integración Social",
+        "Modernización del Estado",
+        "Competitividad"
+      ],
+      propuestas: [
+        "Economía de libre mercado con reducción de trabas burocráticas",
+        "Apoyo masivo a emprendedores con financiamiento accesible",
+        "Integración social mediante educación y oportunidades",
+        "Modernización del Estado con tecnología y eficiencia",
+        "Promoción de la inversión privada nacional y extranjera",
+        "Simplificación tributaria para MYPES y emprendimientos",
+        "Desarrollo de infraestructura para la competitividad",
+        "Capacitación laboral orientada al mercado"
+      ]
+    },
     trayectoria: [
       { fecha: "2020", descripcion: "Elección al Congreso" },
       { fecha: "2019", descripcion: "Fundación del partido" }
     ],
     noticias: [
-      { titulo: "Propuesta de desarrollo empresarial", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Avanza País propone economía libre y competitiva", fuente: "Gestión", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Butters: Apoyo masivo a emprendedores peruanos", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Partido plantea modernización total del Estado", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Avanza País promete simplificación tributaria", fuente: "Perú21", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=300&h=200&fit=crop" },
+      { titulo: "Candidato se reúne con sector empresarial", fuente: "La República", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=300&h=200&fit=crop" },
+      { titulo: "Plan de integración social presentado", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=300&h=200&fit=crop" },
+      { titulo: "Avanza País expande estructura a regiones", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1560421683-6856ea585c78?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "27", mes: "DIC", titulo: "Reunión con emprendedores", lugar: "Piura", hora: "10:00 AM" }
+      { dia: "15", mes: "ENE", titulo: "Reunión con emprendedores", lugar: "Piura", hora: "10:00 AM" },
+      { dia: "19", mes: "ENE", titulo: "Foro económico empresarial", lugar: "Lima", hora: "3:00 PM" },
+      { dia: "23", mes: "ENE", titulo: "Presentación plan de competitividad", lugar: "Arequipa", hora: "11:00 AM" },
+      { dia: "27", mes: "ENE", titulo: "Encuentro con MYPES", lugar: "Trujillo", hora: "4:00 PM" },
+      { dia: "30", mes: "ENE", titulo: "Conferencia sobre libre mercado", lugar: "Chiclayo", hora: "5:00 PM" },
+      { dia: "02", mes: "FEB", titulo: "Diálogo con inversionistas", lugar: "San Isidro", hora: "9:00 AM" }
     ]
   },
   {
     id: "nuevo-peru-por-el-buen-vivir",
     nombre: "Vicente Alanoca",
-    partido: "Nuevo Perú por el buen vivir",
+    partido: "Nuevo Perú por el buen V.",
     foto: "/FotosCandidatos/nuevo-peru-por-el-buen-vivir.jpg",
     logoPartido: "/logos/nuevo-peru-por-el-buen-vivir.png",
     pdfUrl: "/pdf/nuevo-peru-plan-gobierno.pdf",
@@ -302,14 +392,44 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Buen Vivir",
+        "Medio Ambiente",
+        "Derechos Sociales",
+        "Pueblos Indígenas",
+        "Economía Solidaria"
+      ],
+      propuestas: [
+        "Modelo de desarrollo basado en el Buen Vivir y armonía con la naturaleza",
+        "Protección ambiental y lucha contra el cambio climático",
+        "Derechos sociales universales para todos los peruanos",
+        "Reconocimiento y respeto a pueblos indígenas y originarios",
+        "Economía solidaria y comercio justo",
+        "Defensa de territorios y recursos naturales",
+        "Participación ciudadana en decisiones ambientales",
+        "Educación intercultural y respeto a la diversidad"
+      ]
+    },
     trayectoria: [
       { fecha: "2016", descripcion: "Fundación del movimiento" }
     ],
     noticias: [
-      { titulo: "Agenda ambiental y social", fuente: "La República", fecha: "Hace 1 día", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Nuevo Perú propone modelo de Buen Vivir", fuente: "La República", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Alanoca: Protección ambiental como prioridad nacional", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Partido presenta agenda de derechos sociales", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Propuesta de economía solidaria gana respaldo", fuente: "Perú21", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=300&h=200&fit=crop" },
+      { titulo: "Nuevo Perú defiende territorios indígenas", fuente: "Gestión", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=300&h=200&fit=crop" },
+      { titulo: "Candidato se reúne con comunidades amazónicas", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=300&h=200&fit=crop" },
+      { titulo: "Plan de educación intercultural presentado", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "28", mes: "DIC", titulo: "Foro ecológico", lugar: "Iquitos", hora: "2:00 PM" }
+      { dia: "18", mes: "ENE", titulo: "Foro ecológico amazónico", lugar: "Iquitos", hora: "2:00 PM" },
+      { dia: "22", mes: "ENE", titulo: "Encuentro con pueblos indígenas", lugar: "Ucayali", hora: "10:00 AM" },
+      { dia: "26", mes: "ENE", titulo: "Presentación agenda ambiental", lugar: "Lima", hora: "5:00 PM" },
+      { dia: "30", mes: "ENE", titulo: "Diálogo con organizaciones sociales", lugar: "Cusco", hora: "3:00 PM" },
+      { dia: "02", mes: "FEB", titulo: "Conferencia sobre Buen Vivir", lugar: "Puno", hora: "11:00 AM" },
+      { dia: "05", mes: "FEB", titulo: "Asamblea de movimientos ambientales", lugar: "Madre de Dios", hora: "9:00 AM" }
     ]
   },
   {
@@ -377,15 +497,45 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Justicia Social",
+        "Desarrollo Económico",
+        "Educación y Cultura",
+        "Integración Latinoamericana",
+        "Democracia Participativa"
+      ],
+      propuestas: [
+        "Estado de bienestar con servicios públicos de calidad",
+        "Industrialización nacional con apoyo a sectores productivos",
+        "Educación gratuita y de excelencia para todos los peruanos",
+        "Integración regional siguiendo los principios del APRA histórico",
+        "Participación ciudadana en la gestión pública",
+        "Sistema de salud universal y solidario",
+        "Reforma agraria con apoyo técnico y financiero",
+        "Política exterior soberana e independiente"
+      ]
+    },
     trayectoria: [
       { fecha: "2021", descripcion: "Candidato presidencial" },
       { fecha: "2016", descripcion: "Congresista" }
     ],
     noticias: [
-      { titulo: "Renovación del partido aprista", fuente: "El Comercio", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "PAP propone estado de bienestar moderno", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Partido Aprista presenta plan de industrialización", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Velásquez: Educación gratuita y de calidad para todos", fuente: "RPP", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "PAP retoma principios de integración latinoamericana", fuente: "La República", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=300&h=200&fit=crop" },
+      { titulo: "Asamblea nacional aprista renueva liderazgos", fuente: "Perú21", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=300&h=200&fit=crop" },
+      { titulo: "Candidato aprista propone salud universal", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&h=200&fit=crop" },
+      { titulo: "PAP: Política exterior soberana e independiente", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1569098644584-210bcd375b59?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "2", mes: "ENE", titulo: "Asamblea nacional aprista", lugar: "Lima", hora: "9:00 AM" }
+      { dia: "16", mes: "ENE", titulo: "Asamblea nacional aprista", lugar: "Lima", hora: "9:00 AM" },
+      { dia: "20", mes: "ENE", titulo: "Presentación plan de industrialización", lugar: "Trujillo", hora: "5:00 PM" },
+      { dia: "24", mes: "ENE", titulo: "Foro sobre justicia social", lugar: "Arequipa", hora: "3:00 PM" },
+      { dia: "28", mes: "ENE", titulo: "Encuentro con sectores productivos", lugar: "Chiclayo", hora: "11:00 AM" },
+      { dia: "01", mes: "FEB", titulo: "Conferencia sobre educación", lugar: "Piura", hora: "4:00 PM" },
+      { dia: "04", mes: "FEB", titulo: "Diálogo con militancia histórica", lugar: "Casa del Pueblo", hora: "6:00 PM" }
     ]
   },
   {
@@ -463,7 +613,7 @@ export const candidatos = [
   {
     id: "partido-democratico-somos-peru",
     nombre: "George Forsyth",
-    partido: "Partido democratico somos Perú",
+    partido: "Partido D. somos Perú",
     foto: "/FotosCandidatos/somos-peru.jpg",
     logoPartido: "/logos/somos-peru.png",
     pdfUrl: "/pdf/somos-peru-plan-gobierno.pdf",
@@ -475,15 +625,45 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Infraestructura Moderna",
+        "Seguridad Ciudadana",
+        "Gestión Municipal",
+        "Obras Públicas",
+        "Desarrollo Urbano"
+      ],
+      propuestas: [
+        "Plan maestro de infraestructura vial y transporte público",
+        "Sistema integrado de seguridad ciudadana con tecnología",
+        "Modernización de gestión municipal con eficiencia",
+        "Construcción de hospitales y centros de salud modernos",
+        "Espacios públicos seguros y recuperación de áreas verdes",
+        "Obras de agua y saneamiento para todos los distritos",
+        "Programa de vivienda social con créditos accesibles",
+        "Desarrollo urbano planificado y sostenible"
+      ]
+    },
     trayectoria: [
       { fecha: "2016", descripcion: "Candidato presidencial" },
       { fecha: "1999", descripcion: "Alcalde de Lima" }
     ],
     noticias: [
-      { titulo: "Plan de obras públicas", fuente: "Gestión", fecha: "Hace 4 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Forsyth presenta plan maestro de infraestructura", fuente: "Gestión", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Somos Perú propone seguridad con tecnología", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Candidato plantea modernización municipal total", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Plan de obras públicas beneficiará a millones", fuente: "Perú21", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=300&h=200&fit=crop" },
+      { titulo: "Forsyth promete recuperar espacios públicos", fuente: "La República", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1519817650390-64a93db51149?w=300&h=200&fit=crop" },
+      { titulo: "Somos Perú fortalece estructura partidaria", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=200&fit=crop" },
+      { titulo: "Visita a obras municipales en provincias", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "6", mes: "ENE", titulo: "Visita a obras municipales", lugar: "Callao", hora: "8:00 AM" }
+      { dia: "14", mes: "ENE", titulo: "Visita a obras municipales", lugar: "Callao", hora: "8:00 AM" },
+      { dia: "18", mes: "ENE", titulo: "Presentación plan de infraestructura", lugar: "San Martín de Porres", hora: "10:00 AM" },
+      { dia: "22", mes: "ENE", titulo: "Foro sobre seguridad ciudadana", lugar: "Villa El Salvador", hora: "4:00 PM" },
+      { dia: "26", mes: "ENE", titulo: "Encuentro con alcaldes distritales", lugar: "Lima Centro", hora: "11:00 AM" },
+      { dia: "29", mes: "ENE", titulo: "Inspección de proyectos viales", lugar: "Ate", hora: "9:00 AM" },
+      { dia: "01", mes: "FEB", titulo: "Conferencia sobre desarrollo urbano", lugar: "Miraflores", hora: "5:00 PM" }
     ]
   },
   {
@@ -537,7 +717,7 @@ export const candidatos = [
   {
     id: "frente-de-la-esperanza-2021",
     nombre: "Fernando Olivera",
-    partido: "Partido frente de la esperanza 2021",
+    partido: "Partido frente de la E.",
     foto: "/FotosCandidatos/frente-de-la-esperanza-2021.jpg",
     logoPartido: "/logos/frente-esperanza-2021.png",
     cargo: "Candidatura",
@@ -548,14 +728,44 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Educación Popular",
+        "Justicia Social",
+        "Juventud y Futuro",
+        "Inclusión Social",
+        "Cambio Generacional"
+      ],
+      propuestas: [
+        "Educación pública de calidad con acceso universal",
+        "Justicia social para los sectores más vulnerables",
+        "Oportunidades de desarrollo para la juventud peruana",
+        "Inclusión social real con programas efectivos",
+        "Cambio generacional en la política nacional",
+        "Derechos laborales dignos para trabajadores",
+        "Salud pública accesible para todos los peruanos",
+        "Participación ciudadana y democracia directa"
+      ]
+    },
     trayectoria: [
       { fecha: "2021", descripcion: "Fundación del movimiento" }
     ],
     noticias: [
-      { titulo: "Esperanza para la juventud peruana", fuente: "El Comercio", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Frente de la Esperanza propone educación universal", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Olivera: Justicia social para los más vulnerables", fuente: "La República", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Partido plantea cambio generacional en política", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Oportunidades para juventud peruana presentadas", fuente: "Perú21", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=300&h=200&fit=crop" },
+      { titulo: "Programa de inclusión social detallado", fuente: "Gestión", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=300&h=200&fit=crop" },
+      { titulo: "Candidato se reúne con organizaciones sociales", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=300&h=200&fit=crop" },
+      { titulo: "Frente de la Esperanza gana apoyo juvenil", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "9", mes: "ENE", titulo: "Encuentro con jóvenes", lugar: "Lima", hora: "5:00 PM" }
+      { dia: "17", mes: "ENE", titulo: "Encuentro con jóvenes", lugar: "Lima", hora: "5:00 PM" },
+      { dia: "21", mes: "ENE", titulo: "Foro sobre educación popular", lugar: "San Juan de Lurigancho", hora: "3:00 PM" },
+      { dia: "25", mes: "ENE", titulo: "Diálogo con organizaciones sociales", lugar: "Villa El Salvador", hora: "11:00 AM" },
+      { dia: "29", mes: "ENE", titulo: "Presentación de propuestas juveniles", lugar: "Los Olivos", hora: "4:00 PM" },
+      { dia: "01", mes: "FEB", titulo: "Asamblea ciudadana participativa", lugar: "Comas", hora: "6:00 PM" },
+      { dia: "04", mes: "FEB", titulo: "Encuentro con sector educativo", lugar: "San Martín de Porres", hora: "10:00 AM" }
     ]
   },
   {
@@ -573,15 +783,45 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Integridad Institucional",
+        "Reforma Política",
+        "Educación de Calidad",
+        "Meritocracia",
+        "Lucha Anticorrupción"
+      ],
+      propuestas: [
+        "Reforma política integral con nuevas reglas electorales",
+        "Sistema de meritocracia en el Estado y sector público",
+        "Educación de calidad con énfasis en pensamiento crítico",
+        "Lucha frontal contra la corrupción con independencia judicial",
+        "Transparencia absoluta en la gestión pública",
+        "Fortalecimiento de instituciones democráticas",
+        "Participación ciudadana en decisiones de gobierno",
+        "Modernización del sistema de justicia"
+      ]
+    },
     trayectoria: [
       { fecha: "2018", descripcion: "Fundación del partido" },
       { fecha: "2016", descripcion: "Candidato presidencial" }
     ],
     noticias: [
-      { titulo: "Propuestas de integridad institucional", fuente: "RPP", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Partido Morado presenta reforma política integral", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Guevara: Meritocracia en el Estado es fundamental", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Propuesta de educación con pensamiento crítico", fuente: "La República", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Partido Morado: Lucha frontal contra corrupción", fuente: "Perú21", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300&h=200&fit=crop" },
+      { titulo: "Fortalecimiento institucional democrático propuesto", fuente: "Gestión", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=300&h=200&fit=crop" },
+      { titulo: "Guevara debate reformas en círculos académicos", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=300&h=200&fit=crop" },
+      { titulo: "Partido expande base con jóvenes profesionales", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "10", mes: "ENE", titulo: "Debate académico", lugar: "Lima", hora: "7:00 PM" }
+      { dia: "16", mes: "ENE", titulo: "Debate académico sobre reforma", lugar: "Lima", hora: "7:00 PM" },
+      { dia: "20", mes: "ENE", titulo: "Foro anticorrupción", lugar: "PUCP", hora: "4:00 PM" },
+      { dia: "24", mes: "ENE", titulo: "Presentación plan de integridad", lugar: "San Isidro", hora: "6:00 PM" },
+      { dia: "28", mes: "ENE", titulo: "Encuentro con jóvenes profesionales", lugar: "Miraflores", hora: "5:00 PM" },
+      { dia: "31", mes: "ENE", titulo: "Conferencia sobre meritocracia", lugar: "San Borja", hora: "3:00 PM" },
+      { dia: "03", mes: "FEB", titulo: "Diálogo ciudadano participativo", lugar: "Jesús María", hora: "6:30 PM" }
     ]
   },
   {
@@ -695,15 +935,45 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Educación de Calidad",
+        "Empleo Juvenil",
+        "Transparencia",
+        "Innovación Tecnológica",
+        "Desarrollo Regional"
+      ],
+      propuestas: [
+        "Revolución educativa con acceso universal a tecnología",
+        "Programa de primer empleo para jóvenes profesionales",
+        "Transparencia total en la gestión pública con datos abiertos",
+        "Digitalización del Estado y trámites en línea",
+        "Apoyo a emprendimientos con créditos accesibles",
+        "Infraestructura educativa de última generación",
+        "Desarrollo de polos tecnológicos en regiones",
+        "Inversión en ciencia e innovación tecnológica"
+      ]
+    },
     trayectoria: [
       { fecha: "2020", descripcion: "Congresista electo" },
       { fecha: "2019", descripcion: "Fundación del partido" }
     ],
     noticias: [
-      { titulo: "Propuestas de comunicación transparente", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Podemos Perú propone revolución educativa digital", fuente: "RPP", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1501290801888-6f8a0d43b1fd?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Luna Gálvez: Primer empleo para todos los jóvenes", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Partido plantea Estado digital y transparente", fuente: "Gestión", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Podemos Perú promete apoyo a emprendedores", fuente: "Perú21", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=300&h=200&fit=crop" },
+      { titulo: "Propuesta de polos tecnológicos regionales", fuente: "La República", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop" },
+      { titulo: "Candidato se reúne con sector empresarial juvenil", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop" },
+      { titulo: "Podemos Perú fortalece presencia en provincias", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "15", mes: "ENE", titulo: "Entrevista en medios", lugar: "Lima", hora: "11:00 AM" }
+      { dia: "15", mes: "ENE", titulo: "Entrevista en medios nacionales", lugar: "Lima", hora: "11:00 AM" },
+      { dia: "19", mes: "ENE", titulo: "Foro juvenil sobre empleo", lugar: "San Juan de Lurigancho", hora: "5:00 PM" },
+      { dia: "23", mes: "ENE", titulo: "Presentación de agenda digital", lugar: "Miraflores", hora: "3:00 PM" },
+      { dia: "27", mes: "ENE", titulo: "Encuentro con emprendedores", lugar: "Arequipa", hora: "10:00 AM" },
+      { dia: "30", mes: "ENE", titulo: "Conferencia sobre innovación", lugar: "Trujillo", hora: "4:00 PM" },
+      { dia: "02", mes: "FEB", titulo: "Diálogo con sector educativo", lugar: "Chiclayo", hora: "9:00 AM" }
     ]
   },
   {
@@ -1045,15 +1315,45 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Sin sentencias vigentes"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Cambio Social",
+        "Economía Popular",
+        "Educación Pública",
+        "Soberanía Nacional",
+        "Justicia Popular"
+      ],
+      propuestas: [
+        "Transformación del modelo económico hacia una economía social de mercado",
+        "Nacionalización de recursos naturales estratégicos",
+        "Educación pública gratuita desde inicial hasta universidad",
+        "Sistema de salud universal y gratuito para todos",
+        "Reforma agraria con redistribución de tierras",
+        "Industrialización nacional con prioridad a la producción local",
+        "Asamblea constituyente para nueva constitución",
+        "Política exterior soberana e integración latinoamericana"
+      ]
+    },
     trayectoria: [
       { fecha: "2021", descripcion: "Presidente del Perú" },
       { fecha: "2016", descripcion: "Fundación del partido" }
     ],
     noticias: [
-      { titulo: "Propuestas de cambio social", fuente: "La República", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Perú Libre plantea transformación económica profunda", fuente: "La República", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Cerrón propone nacionalización de recursos naturales", fuente: "El Comercio", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Partido de izquierda presenta agenda de cambio social", fuente: "RPP", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Perú Libre: Educación gratuita hasta universidad", fuente: "Perú21", fecha: "Hace 4 días", imagen: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=300&h=200&fit=crop" },
+      { titulo: "Propuesta de asamblea constituyente genera debate", fuente: "Gestión", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=300&h=200&fit=crop" },
+      { titulo: "Cerrón se reúne con movimientos sociales", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=300&h=200&fit=crop" },
+      { titulo: "Partido refuerza estructura en regiones del sur", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1560421683-6856ea585c78?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "28", mes: "ENE", titulo: "Reunión con bases", lugar: "Cusco", hora: "10:00 AM" }
+      { dia: "17", mes: "ENE", titulo: "Reunión con bases partidarias", lugar: "Cusco", hora: "10:00 AM" },
+      { dia: "21", mes: "ENE", titulo: "Encuentro con movimientos sociales", lugar: "Puno", hora: "3:00 PM" },
+      { dia: "25", mes: "ENE", titulo: "Presentación de propuestas económicas", lugar: "Ayacucho", hora: "11:00 AM" },
+      { dia: "28", mes: "ENE", titulo: "Asamblea regional del sur", lugar: "Arequipa", hora: "5:00 PM" },
+      { dia: "31", mes: "ENE", titulo: "Foro sobre nueva constitución", lugar: "Lima", hora: "4:00 PM" },
+      { dia: "03", mes: "FEB", titulo: "Diálogo con organizaciones campesinas", lugar: "Huancayo", hora: "9:00 AM" }
     ]
   },
   {
