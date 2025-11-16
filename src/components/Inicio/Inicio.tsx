@@ -362,63 +362,7 @@ export const Inicio: React.FC = () => {
   }, []);
 
   if (!isOnline && !offlineMode) {
-    return (
-      <div style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: '#f5f5f5',
-      }}>
-        <div style={{
-          background: '#fff',
-          borderRadius: 20,
-          boxShadow: '0 8px 32px rgba(179,2,39,0.10)',
-          padding: '48px 32px 32px 32px',
-          maxWidth: 380,
-          width: '100%',
-          textAlign: 'center',
-          border: '2px solid rgb(179,2,39)'
-        }}>
-          <div style={{
-            fontSize: 44,
-            marginBottom: 18,
-            color: 'rgb(179,2,39)',
-            fontWeight: 900,
-            letterSpacing: 1
-          }}>⛔</div>
-          <h2 style={{
-            color: 'rgb(179,2,39)',
-            fontWeight: 800,
-            fontSize: 22,
-            marginBottom: 10
-          }}>No hay conexión a internet</h2>
-          <p style={{
-            color: '#333',
-            fontSize: 16,
-            marginBottom: 32
-          }}>
-            Verifique su conexión para continuar usando la plataforma.
-          </p>
-          <button
-            style={{
-              background: 'rgb(179,2,39)',
-              color: '#fff',
-              border: 'none',
-              borderRadius: 8,
-              padding: '12px 28px',
-              fontWeight: 700,
-              fontSize: 16,
-              cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
-            }}
-            onClick={() => navigate('/offline')}
-          >
-            Entrar en modo sin internet
-          </button>
-        </div>
-      </div>
-    );
+    return null;
   }
 
   return (
@@ -680,25 +624,6 @@ export const Inicio: React.FC = () => {
               © 2026 {t('footer.portal')} - {t('footer.derechos')}
             </div>
           </footer>
-
-          <div style={{ textAlign: 'center', margin: '24px 0' }}>
-            <button
-              style={{
-                background: '#b30227',
-                color: '#fff',
-                border: 'none',
-                borderRadius: 8,
-                padding: '12px 28px',
-                fontWeight: 700,
-                fontSize: 16,
-                cursor: 'pointer',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
-              }}
-              onClick={() => setOfflineMode(true)}
-            >
-              Entrar en modo sin internet
-            </button>
-          </div>
     </div>
   );
 };
