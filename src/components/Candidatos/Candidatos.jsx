@@ -147,35 +147,43 @@ const Candidatos = ({ candidato: candidatoProp }) => {
       if (!candidato) return null;
       
       console.log('=== DEBUG PDF ===');
+      console.log('Candidato:', candidato);
+      console.log('pdfUrl directo:', candidato.pdfUrl);
+      
+      // Primero intentar usar el pdfUrl directo del candidato
+      if (candidato.pdfUrl) {
+        console.log('Usando pdfUrl directo del candidato');
+        return candidato.pdfUrl;
+      }
+      
+      // Si no existe, buscar en el array de partidos (como fallback)
       console.log('Candidato partido:', candidato.partido);
       console.log('Todos los partidos:', partidos);
-    
-    // Buscar el partido correspondiente
-    const partido = partidos.find(p => {
-      const nombrePartido = candidato.partido.toLowerCase().trim();
-      const nombrePartidoData = p.nombre.toLowerCase().trim();
-      const siglasPartido = p.siglas?.toLowerCase().trim() || '';
-      
-      console.log('Comparando:', {
-        candidatoPartido: nombrePartido,
-        partidoNombre: nombrePartidoData,
-        partidoSiglas: siglasPartido,
-        match: nombrePartidoData.includes(nombrePartido) || 
+
+      const partido = partidos.find(p => {
+        const nombrePartido = candidato.partido.toLowerCase().trim();
+        const nombrePartidoData = p.nombre.toLowerCase().trim();
+        const siglasPartido = p.siglas?.toLowerCase().trim() || '';
+        
+        console.log('Comparando:', {
+          candidatoPartido: nombrePartido,
+          partidoNombre: nombrePartidoData,
+          partidoSiglas: siglasPartido,
+          match: nombrePartidoData.includes(nombrePartido) || 
+                 nombrePartido.includes(nombrePartidoData) ||
+                 siglasPartido === nombrePartido
+        });
+        
+        return nombrePartidoData.includes(nombrePartido) || 
                nombrePartido.includes(nombrePartidoData) ||
-               siglasPartido === nombrePartido
+               siglasPartido === nombrePartido;
       });
       
-      return nombrePartidoData.includes(nombrePartido) || 
-             nombrePartido.includes(nombrePartidoData) ||
-             siglasPartido === nombrePartido ||
-             siglasPartido === 'rp'; // Agregar búsqueda específica por siglas
-    });
-    
-    console.log('Partido encontrado:', partido);
-    console.log('PDF Path:', partido?.planGobierno);
-    
-    return partido?.planGobierno || null;
-  };
+      console.log('Partido encontrado:', partido);
+      console.log('PDF Path:', partido?.planGobierno);
+      
+      return partido?.planGobierno || null;
+    };
 
   const pdfPath = getPdfPath();
   

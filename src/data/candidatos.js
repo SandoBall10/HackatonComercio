@@ -7,6 +7,7 @@ export const candidatos = [
     partido: "ACCIÓN POPULAR",
     foto: "/FotosCandidatos/accion-popular.jpeg",
     logoPartido: "/logos/accion-popular.png",
+    pdfUrl: "/pdf/accion-popular-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -32,6 +33,7 @@ export const candidatos = [
     partido: "Fuerza Popular",
     foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Keiko_Fujimori_2.jpg/800px-Keiko_Fujimori_2.jpg",
     logoPartido: "/logos/fuerza-popular.png",
+    pdfUrl: "/pdf/fuerza-popular-plan-gobierno.pdf",
     cargo: "Candidata a la Presidencia",
     redesSociales: { facebook: "#", twitter: "#", instagram: "#", tiktok: "#" },
     hojaDeVida: { 
@@ -83,6 +85,7 @@ export const candidatos = [
     partido: "Ahora Nación (AN)",
     foto: "/FotosCandidatos/ahora-nacion.jpg",
     logoPartido: "/logos/ahora-nacion.png",
+    pdfUrl: "/pdf/ahora-nacion-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -108,6 +111,7 @@ export const candidatos = [
     partido: "Juntos por el Perú",
     foto: "/FotosCandidatos/juntos-por-el-peru.png",
     logoPartido: "/logos/juntos-por-el-peru.png",
+    pdfUrl: "/pdf/juntos-por-el-peru-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -158,6 +162,7 @@ export const candidatos = [
     partido: "Alianza para el progreso",
     foto: "/FotosCandidatos/alianza-para-el-progreso.png",
     logoPartido: "/logos/alianza-para-el-progreso.png",
+    pdfUrl: "/pdf/alianza-para-el-progreso-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: { facebook: "#", twitter: "#", instagram: "#" },
     hojaDeVida: { 
@@ -232,6 +237,7 @@ export const candidatos = [
     partido: "Avanza Pais",
     foto: "/FotosCandidatos/avanza-pais.jpeg",
     logoPartido: "/logos/avanza-pais.png",
+    pdfUrl: "/pdf/avanza-pais-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -257,6 +263,7 @@ export const candidatos = [
     partido: "Nuevo Perú por el buen vivir",
     foto: "/FotosCandidatos/nuevo-peru-por-el-buen-vivir.jpg",
     logoPartido: "/logos/nuevo-peru-por-el-buen-vivir.png",
+    pdfUrl: "/pdf/nuevo-peru-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -281,6 +288,7 @@ export const candidatos = [
     partido: "Partido Democrata Verde",
     foto: "/FotosCandidatos/partido-democrata-verde.jpg",
     logoPartido: "/logos/partido-democrata-verde.png",
+    pdfUrl: "/pdf/Partido_democrata_verde Plan de gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -305,6 +313,7 @@ export const candidatos = [
     partido: "Batalla Perú",
     foto: "/FotosCandidatos/batalla-peru.jpg",
     logoPartido: "/logos/batalla-peru.png",
+    pdfUrl: "/pdf/Batalla_Perú plan de gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -329,6 +338,7 @@ export const candidatos = [
     partido: "Partido Aprista peruano",
     foto: "/FotosCandidatos/partido-aprista-peruano.jpg",
     logoPartido: "/logos/partido-aprista-peruano.png",
+    pdfUrl: "/pdf/partido-aprista-peruano-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -426,6 +436,7 @@ export const candidatos = [
     partido: "Partido democratico somos Perú",
     foto: "/FotosCandidatos/somos-peru.jpg",
     logoPartido: "/logos/somos-peru.png",
+    pdfUrl: "/pdf/somos-peru-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -523,6 +534,7 @@ export const candidatos = [
     partido: "Partido Morado",
     foto: "/FotosCandidatos/partido-morado.jpg",
     logoPartido: "/logos/partido-morado.png",
+    pdfUrl: "/pdf/partido-morado-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -644,6 +656,7 @@ export const candidatos = [
     partido: "Podemos Perú",
     foto: "/FotosCandidatos/podemos-peru.jpg",
     logoPartido: "/logos/podemos-peru.png",
+    pdfUrl: "/pdf/podemos-peru-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -862,6 +875,7 @@ export const candidatos = [
     partido: "Renovacion popular",
     foto: "/FotosCandidatos/renovacion-popular.jpg",
     logoPartido: "/logos/renovacion-popular.png",
+    pdfUrl: "/pdf/Renovacion_popular plan de gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: { facebook: "#", twitter: "#", instagram: "#" },
     hojaDeVida: { 
