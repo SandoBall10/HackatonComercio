@@ -25,6 +25,7 @@
       "newsTitle": "Noticias",
       "filtrar": "INICIO.FILTRAR",
       "filtrarPor": "Filtrar por:",
+      "noEventos": "No hay eventos para este mes con el filtro seleccionado.",
       "meses": {
         "MARZO": "MARZO",
         "ABRIL": "ABRIL",
@@ -46,78 +47,78 @@
       "eventos": {
         "2025": {
           "marzo": [
-            { "date": "26 Marzo", "title": "Convocatoria a Elecciones Generales 2026" },
-            { "date": "28 Marzo", "title": "Publicación de cronograma electoral en el Diario Oficial" }
+            { "date": "26 Marzo", "title": "Convocatoria a Elecciones Generales 2026", "category": "electoral" },
+            { "date": "28 Marzo", "title": "Publicación de cronograma electoral en el Diario Oficial", "category": "plan" }
           ],
           "abril": [
-            { "date": "5 Abril", "title": "Inicio de campañas informativas sobre el proceso electoral" },
-            { "date": "12 Abril", "title": "Fecha límite para la inscripción de partidos políticos en el ROP" },
-            { "date": "20 Abril", "title": "Capacitación inicial de personal electoral" }
+            { "date": "5 Abril", "title": "Inicio de campañas informativas sobre el proceso electoral", "category": "electoral" },
+            { "date": "12 Abril", "title": "Fecha límite para la inscripción de partidos políticos en el ROP", "category": "plan" },
+            { "date": "20 Abril", "title": "Capacitación inicial de personal electoral", "category": "mesa" }
           ],
           "junio": [
-            { "date": "11 Junio", "title": "Registro de normativa actualizada de las organizaciones políticas" },
-            { "date": "15 Junio", "title": "Presentación de candidatos a delegados electorales" },
-            { "date": "30 Junio", "title": "Fecha límite para que la Dirección Nacional de Registro de Organizaciones Políticas (DNROP) remita al Reniec los padrones de electores afiliados para las elecciones primarias (EG 2026)" }
+            { "date": "11 Junio", "title": "Registro de normativa actualizada de las organizaciones políticas", "category": "plan" },
+            { "date": "15 Junio", "title": "Presentación de candidatos a delegados electorales", "category": "electoral" },
+            { "date": "30 Junio", "title": "Fecha límite para que la Dirección Nacional de Registro de Organizaciones Políticas (DNROP) remita al Reniec los padrones de electores afiliados para las elecciones primarias (EG 2026)", "category": "plan" }
           ],
           "agosto": [
-            { "date": "2 Agosto", "title": "Inscripción de alianzas partidarias para las Elecciones Generales 2026" },
-            { "date": "10 Agosto", "title": "Talleres de entrenamiento para miembros de mesa designados" },
-            { "date": "30 Agosto", "title": "Reniec remite al JNE los padrones de electores afiliados para las elecciones primarias" }
+            { "date": "2 Agosto", "title": "Inscripción de alianzas partidarias para las Elecciones Generales 2026", "category": "plan" },
+            { "date": "10 Agosto", "title": "Talleres de entrenamiento para miembros de mesa designados", "category": "mesa" },
+            { "date": "30 Agosto", "title": "Reniec remite al JNE los padrones de electores afiliados para las elecciones primarias", "category": "plan" }
           ],
           "septiembre": [
-            { "date": "1 Septiembre", "title": "La Organización política informa la modalidad y tipo de candidaturas para las elecciones primarias (EG 2026)" },
-            { "date": "5 Septiembre", "title": "Selección preliminar de miembros de mesa por provincia" },
-            { "date": "8 Septiembre", "title": "Fecha límite para que la DNROP remita al Reniec los padrones de electores no afiliados" },
-            { "date": "15 Septiembre", "title": "OP presentan candidatos a delegados para las elecciones primarias" },
-            { "date": "16 Septiembre", "title": "Reniec remite al JNE los padrones de electores no afiliados" },
-            { "date": "20 Septiembre", "title": "Publicación de listados preliminares de miembros de mesa" }
+            { "date": "1 Septiembre", "title": "La Organización política informa la modalidad y tipo de candidaturas para las elecciones primarias (EG 2026)", "category": "plan" },
+            { "date": "5 Septiembre", "title": "Selección preliminar de miembros de mesa por provincia", "category": "mesa" },
+            { "date": "8 Septiembre", "title": "Fecha límite para que la DNROP remita al Reniec los padrones de electores no afiliados", "category": "plan" },
+            { "date": "15 Septiembre", "title": "OP presentan candidatos a delegados para las elecciones primarias", "category": "electoral" },
+            { "date": "16 Septiembre", "title": "Reniec remite al JNE los padrones de electores no afiliados", "category": "plan" },
+            { "date": "20 Septiembre", "title": "Publicación de listados preliminares de miembros de mesa", "category": "mesa" }
           ],
           "octubre": [
-            { "date": "5 Octubre", "title": "Asambleas de elecciones primarias en todas las regiones" },
-            { "date": "14 Octubre", "title": "Cierre del padrón electoral para las Elecciones Generales 2026" },
-            { "date": "19 Octubre", "title": "Fecha límite para aprobación de padrones, en el marco de las elecciones primarias" },
-            { "date": "25 Octubre", "title": "Confirmación final de miembros de mesa y suplentes" },
-            { "date": "Del 28 al 31 Octubre", "title": "OP realizan la inscripción de precandidaturas" }
+            { "date": "5 Octubre", "title": "Asambleas de elecciones primarias en todas las regiones", "category": "electoral" },
+            { "date": "14 Octubre", "title": "Cierre del padrón electoral para las Elecciones Generales 2026", "category": "plan" },
+            { "date": "19 Octubre", "title": "Fecha límite para aprobación de padrones, en el marco de las elecciones primarias", "category": "plan" },
+            { "date": "25 Octubre", "title": "Confirmación final de miembros de mesa y suplentes", "category": "mesa" },
+            { "date": "Del 28 al 31 Octubre", "title": "OP realizan la inscripción de precandidaturas", "category": "electoral" }
           ],
           "noviembre": [
-            { "date": "3 Noviembre", "title": "Resolución de impugnaciones de miembros de mesa propuestos" },
-            { "date": "7 Noviembre", "title": "Fecha límite de entrega de candidatos finales a la ONPE por parte de la OP" },
-            { "date": "10 Noviembre", "title": "OP realizan el registro de personeros para las elecciones primarias (EG 2026)" },
-            { "date": "13 Noviembre", "title": "Envío del padrón preliminar al JNE y a la ONPE para las Elecciones Generales 2026" },
-            { "date": "20 Noviembre", "title": "Distribución de materiales electorales a locales de votación" },
-            { "date": "30 Noviembre", "title": "Elecciones primarias (Afiliados)" }
+            { "date": "3 Noviembre", "title": "Resolución de impugnaciones de miembros de mesa propuestos", "category": "mesa" },
+            { "date": "7 Noviembre", "title": "Fecha límite de entrega de candidatos finales a la ONPE por parte de la OP", "category": "electoral" },
+            { "date": "10 Noviembre", "title": "OP realizan el registro de personeros para las elecciones primarias (EG 2026)", "category": "mesa" },
+            { "date": "13 Noviembre", "title": "Envío del padrón preliminar al JNE y a la ONPE para las Elecciones Generales 2026", "category": "plan" },
+            { "date": "20 Noviembre", "title": "Distribución de materiales electorales a locales de votación", "category": "mesa" },
+            { "date": "30 Noviembre", "title": "Elecciones primarias (Afiliados)", "category": "electoral" }
           ],
           "diciembre": [
-            { "date": "5 Diciembre", "title": "Conteo de resultados de elecciones primarias" },
-            { "date": "13 Diciembre", "title": "Fecha límite de aprobación del padrón electoral definitivo para las Elecciones Generales 2026" },
-            { "date": "18 Diciembre", "title": "Publicación de resultados finales de elecciones primarias" },
-            { "date": "23 Diciembre", "title": "Fecha límite para inscripción de fórmulas y listas de candidatos" },
-            { "date": "24 Diciembre", "title": "Fecha límite para la publicación de instrucciones para la ubicación en la cédula de sufragio" },
-            { "date": "26 Diciembre al 15 Enero", "title": "Impugnaciones y resolución de tachas a la cédula de sufragio" }
+            { "date": "5 Diciembre", "title": "Conteo de resultados de elecciones primarias", "category": "electoral" },
+            { "date": "13 Diciembre", "title": "Fecha límite de aprobación del padrón electoral definitivo para las Elecciones Generales 2026", "category": "plan" },
+            { "date": "18 Diciembre", "title": "Publicación de resultados finales de elecciones primarias", "category": "electoral" },
+            { "date": "23 Diciembre", "title": "Fecha límite para inscripción de fórmulas y listas de candidatos", "category": "electoral" },
+            { "date": "24 Diciembre", "title": "Fecha límite para la publicación de instrucciones para la ubicación en la cédula de sufragio", "category": "plan" },
+            { "date": "26 Diciembre al 15 Enero", "title": "Impugnaciones y resolución de tachas a la cédula de sufragio", "category": "electoral" }
           ]
         },
         "2026": {
           "enero": [
-            { "date": "5 Enero", "title": "Continuación de resolución de impugnaciones a cédula de sufragio" },
-            { "date": "15 Enero", "title": "Finalización del período de impugnaciones a miembros de mesa" },
-            { "date": "22 Enero", "title": "Publicación definitiva del diseño de cédula para las Elecciones Generales 2026" },
-            { "date": "29 Enero", "title": "Sorteo de miembros de mesa" },
-            { "date": "30 Enero al 11 Febrero", "title": "Proceso de impugnación, apelaciones y resolución de tachas a miembros de mesa" }
+            { "date": "5 Enero", "title": "Continuación de resolución de impugnaciones a cédula de sufragio", "category": "electoral" },
+            { "date": "15 Enero", "title": "Finalización del período de impugnaciones a miembros de mesa", "category": "mesa" },
+            { "date": "22 Enero", "title": "Publicación definitiva del diseño de cédula para las Elecciones Generales 2026", "category": "plan" },
+            { "date": "29 Enero", "title": "Sorteo de miembros de mesa", "category": "mesa" },
+            { "date": "30 Enero al 11 Febrero", "title": "Proceso de impugnación, apelaciones y resolución de tachas a miembros de mesa", "category": "mesa" }
           ],
           "febrero": [
-            { "date": "5 Febrero", "title": "Publicación de lista definitiva de candidatos por organización política" },
-            { "date": "12 Febrero", "title": "Sorteo de ubicación de candidaturas o símbolos en la cédula de sufragio" },
-            { "date": "25 Febrero", "title": "Inicio de distribución de materiales electorales a locales de votación" }
+            { "date": "5 Febrero", "title": "Publicación de lista definitiva de candidatos por organización política", "category": "electoral" },
+            { "date": "12 Febrero", "title": "Sorteo de ubicación de candidaturas o símbolos en la cédula de sufragio", "category": "mesa" },
+            { "date": "25 Febrero", "title": "Inicio de distribución de materiales electorales a locales de votación", "category": "mesa" }
           ],
           "marzo": [
-            { "date": "15 Marzo", "title": "Finalización de entrega de materiales electorales en todos los distritos" },
-            { "date": "29 Marzo", "title": "1ra jornada de capacitación a miembros de mesa para las Elecciones Generales 2026" }
+            { "date": "15 Marzo", "title": "Finalización de entrega de materiales electorales en todos los distritos", "category": "mesa" },
+            { "date": "29 Marzo", "title": "1ra jornada de capacitación a miembros de mesa para las Elecciones Generales 2026", "category": "mesa" }
           ],
           "abril": [
-            { "date": "2 Abril", "title": "Segunda jornada de capacitación a miembros de mesa" },
-            { "date": "5 Abril", "title": "Simulacro del Sistema de Cómputo Electoral y 2da jornada de capacitación a miembros de mesa" },
-            { "date": "10 Abril", "title": "Últimas verificaciones de locales de votación" },
-            { "date": "12 Abril", "title": "Elecciones Generales 2026" }
+            { "date": "2 Abril", "title": "Segunda jornada de capacitación a miembros de mesa", "category": "mesa" },
+            { "date": "5 Abril", "title": "Simulacro del Sistema de Cómputo Electoral y 2da jornada de capacitación a miembros de mesa", "category": "mesa" },
+            { "date": "10 Abril", "title": "Últimas verificaciones de locales de votación", "category": "mesa" },
+            { "date": "12 Abril", "title": "Elecciones Generales 2026", "category": "electoral" }
           ]
         }
       }
@@ -346,6 +347,10 @@
       "actividadesPublicas": "Actividades Públicas",
       "noNoticiasRecientes": "No hay noticias recientes",
       "noActividadesProgramadas": "No hay actividades programadas",
+      "agregarCalendario": "Agregar al Calendario",
+      "planNoDisponibleAlerta": "Plan de Gobierno no disponible para este partido",
+      "candidatoSinNombre": "Candidato Sin Nombre",
+      "noDisponibleCorto": "No disponible",
       "tabs": {
         "hojaVida": "Hoja de Vida",
         "planGobierno": "Plan de Gobierno",
@@ -576,7 +581,8 @@
       "fuentesOficiales": "Fuentes Oficiales",
       "jne": "Jurado Nacional de Elecciones",
       "onpe": "Oficina Nacional de Procesos Electorales",
-      "hechoEnPeru": "Hecho en Perú"
+      "hechoEnPeru": "Hecho en Perú",
+      "descripcion": "Portal de información electoral oficial. Conoce a los candidatos y haz tu voto informado."
     }
   }
 }

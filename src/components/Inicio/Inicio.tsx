@@ -7,7 +7,40 @@ import './Inicio.css';
 type EventItem = { date: string; title: string; bullets?: string[]; icon?: string; category?: 'electoral' | 'plan' | 'mesa' | 'administrativo' };
 type NewsItem = { id: number; image: string; title: string; category: string; url: string; alt: string };
 
-const TIMELINE: Record<string, Record<string, EventItem[]>> = {
+// Helper function to get timeline events from translation files
+const getTimelineFromTranslation = (t: any): Record<string, Record<string, EventItem[]>> => {
+  const timeline: Record<string, Record<string, EventItem[]>> = {};
+  
+  // Get events from translation
+  const eventos = t('inicio.eventos', { returnObjects: true }) as any;
+  
+  if (!eventos) return {};
+  
+  // Process each year
+  Object.keys(eventos).forEach(year => {
+    timeline[year] = {};
+    const yearData = eventos[year];
+    
+    // Process each month
+    Object.keys(yearData).forEach(month => {
+      const monthKey = month.toUpperCase();
+      const events = yearData[month];
+      
+      timeline[year][monthKey] = events.map((ev: any) => ({
+        date: ev.date,
+        title: ev.title,
+        bullets: ev.bullets,
+        icon: ev.icon || '',
+        category: (ev.category || 'electoral') as 'electoral' | 'plan' | 'mesa' | 'administrativo'
+      }));
+    });
+  });
+  
+  return timeline;
+};
+
+// Fallback TIMELINE for backwards compatibility (will be replaced by translation)
+const FALLBACK_TIMELINE: Record<string, Record<string, EventItem[]>> = {
   '2025': {
     MARZO: [
       { date: '26 Marzo', title: 'Convocatoria a Elecciones Generales 2026', icon: '', category: 'electoral' },
@@ -114,6 +147,9 @@ export const Inicio: React.FC = () => {
   const [countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
   const [activeFilter, setActiveFilter] = useState<'todos' | 'electoral' | 'plan' | 'mesa' | 'administrativo'>('todos');
   const [showFilterMenu, setShowFilterMenu] = useState(false);
+
+  // Get timeline from translation
+  const TIMELINE = getTimelineFromTranslation(t);
 
   const news: NewsItem[] = [
     {
@@ -422,7 +458,7 @@ export const Inicio: React.FC = () => {
               {showFilterMenu && (
                 <div className="filter-menu">
                   <div className="filter-menu-header">
-                    <span className="filter-menu-title">Filtrar por:</span>
+                    <span className="filter-menu-title">{t('inicio.filtrarPor')}</span>
                     <button
                       className="filter-close-btn"
                       onClick={() => setShowFilterMenu(false)}
@@ -435,25 +471,25 @@ export const Inicio: React.FC = () => {
                     className={`filter-option ${activeFilter === 'todos' ? 'active' : ''}`}
                     onClick={() => handleFilterChange('todos')}
                   >
-                    Todos
+                    {t('inicio.filtro.todos')}
                   </button>
                   <button
                     className={`filter-option ${activeFilter === 'electoral' ? 'active' : ''}`}
                     onClick={() => handleFilterChange('electoral')}
                   >
-                    Fechas Electorales
+                    {t('inicio.filtro.electoral')}
                   </button>
                   <button
                     className={`filter-option ${activeFilter === 'plan' ? 'active' : ''}`}
                     onClick={() => handleFilterChange('plan')}
                   >
-                    Fechas relacionadas al Plan Electoral
+                    {t('inicio.filtro.plan')}
                   </button>
                   <button
                     className={`filter-option ${activeFilter === 'mesa' ? 'active' : ''}`}
                     onClick={() => handleFilterChange('mesa')}
                   >
-                    Fechas referentes a Miembros de Mesa
+                    {t('inicio.filtro.mesa')}
                   </button>
                 </div>
               )}
@@ -470,7 +506,7 @@ export const Inicio: React.FC = () => {
                 className={`month-btn ${activeMonth === m ? 'active' : ''}`}
                 onClick={() => setActiveMonth(m)}
               >
-                {m}
+                {t(`inicio.meses.${m}`)}
               </button>
             ))}
           </div>
@@ -479,7 +515,7 @@ export const Inicio: React.FC = () => {
           <div className="timeline-area">
             <div className="timeline-line-vertical"></div>
             <div className="entries">
-              {filteredEvents.length === 0 && <div className="no-events">No hay eventos para este mes con el filtro seleccionado.</div>}
+              {filteredEvents.length === 0 && <div className="no-events">{t('inicio.noEventos')}</div>}
 
               {filteredEvents.map((ev, idx) => (
                 <div key={idx} className={`entry-wrapper ${idx % 2 === 0 ? 'left' : 'right'}`}>

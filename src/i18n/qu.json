@@ -28,6 +28,7 @@
       "newsTitle": "Willakuykuna",
       "filtrar": "QALLARIY.LLUQ'ICHIY",
       "filtrarPor": "Lluq'ichiy kaywan:",
+      "noEventos": "Kay killapaq manam ruwanakuna kanchu filtrowan akllanasqawan.",
       "meses": {
         "MARZO": "PAWQAR WARAY",
         "ABRIL": "AYRIWAY",
@@ -49,78 +50,78 @@
       "eventos": {
         "2025": {
           "marzo": [
-            { "date": "26 Pawqar Waray", "title": "Sapan Akllana 2026man Qayay" },
-            { "date": "28 Pawqar Waray", "title": "Akllana pachakamaypa qillqaynin Diario Oficialpi" }
+            { "date": "26 Pawqar Waray", "title": "Sapan Akllana 2026man Qayay", "category": "electoral" },
+            { "date": "28 Pawqar Waray", "title": "Akllana pachakamaypa qillqaynin Diario Oficialpi", "category": "plan" }
           ],
           "abril": [
-            { "date": "5 Ayriway", "title": "Akllana ruwaypa willakuy kampañakuna qallariy" },
-            { "date": "12 Ayriway", "title": "Partidu pulitikukuna qillqanapaq pisi p'unchaw ROPpi" },
-            { "date": "20 Ayriway", "title": "Akllana llamk'aqkunapa ñawpaq yachachikuy" }
+            { "date": "5 Ayriway", "title": "Akllana ruwaypa willakuy kampañakuna qallariy", "category": "electoral" },
+            { "date": "12 Ayriway", "title": "Partidu pulitikukuna qillqanapaq pisi p'unchaw ROPpi", "category": "plan" },
+            { "date": "20 Ayriway", "title": "Akllana llamk'aqkunapa ñawpaq yachachikuy", "category": "mesa" }
           ],
           "junio": [
-            { "date": "11 Inti Raymi", "title": "Pulitiku tantanakunapa musuq kamachikuykunapa qillqay" },
-            { "date": "15 Inti Raymi", "title": "Akllasqakuna qhawaqmanpaq rikuchiy" },
-            { "date": "30 Inti Raymi", "title": "DNROP Reniecman akllaqkuna padronta apachananpaq pisi p'unchaw" }
+            { "date": "11 Inti Raymi", "title": "Pulitiku tantanakunapa musuq kamachikuykunapa qillqay", "category": "plan" },
+            { "date": "15 Inti Raymi", "title": "Akllasqakuna qhawaqmanpaq rikuchiy", "category": "electoral" },
+            { "date": "30 Inti Raymi", "title": "DNROP Reniecman akllaqkuna padronta apachananpaq pisi p'unchaw", "category": "plan" }
           ],
           "agosto": [
-            { "date": "2 Chakra Yapuy", "title": "Partidu tinkuykunapa qillqaynin Sapan Akllana 2026paq" },
-            { "date": "10 Chakra Yapuy", "title": "Mesa miembrukuna yachachikuna tallerkuna" },
-            { "date": "30 Chakra Yapuy", "title": "Reniec JNEman akllaqkuna padronta apachin" }
+            { "date": "2 Chakra Yapuy", "title": "Partidu tinkuykunapa qillqaynin Sapan Akllana 2026paq", "category": "plan" },
+            { "date": "10 Chakra Yapuy", "title": "Mesa miembrukuna yachachikuna tallerkuna", "category": "mesa" },
+            { "date": "30 Chakra Yapuy", "title": "Reniec JNEman akllaqkuna padronta apachin", "category": "plan" }
           ],
           "septiembre": [
-            { "date": "1 Quya Raymi", "title": "Pulitiku tantanakuy akllasqakunapa rikchayninkunata willan" },
-            { "date": "5 Quya Raymi", "title": "Provinciapi mesa miembrukunapa ñawpaq akllakuy" },
-            { "date": "8 Quya Raymi", "title": "DNROP Reniecman mana tinkisqa akllaqkuna padronta apachananpaq" },
-            { "date": "15 Quya Raymi", "title": "Tantanakuna qhawaqmanpaq akllasqakunata rikuchinku" },
-            { "date": "16 Quya Raymi", "title": "Reniec JNEman mana tinkisqa akllaqkuna padronta apachin" },
-            { "date": "20 Quya Raymi", "title": "Mesa miembrukunapa ñawpaq listakunapa qillqay" }
+            { "date": "1 Quya Raymi", "title": "Pulitiku tantanakuy akllasqakunapa rikchayninkunata willan", "category": "plan" },
+            { "date": "5 Quya Raymi", "title": "Provinciapi mesa miembrukunapa ñawpaq akllakuy", "category": "mesa" },
+            { "date": "8 Quya Raymi", "title": "DNROP Reniecman mana tinkisqa akllaqkuna padronta apachananpaq", "category": "plan" },
+            { "date": "15 Quya Raymi", "title": "Tantanakuna qhawaqmanpaq akllasqakunata rikuchinku", "category": "electoral" },
+            { "date": "16 Quya Raymi", "title": "Reniec JNEman mana tinkisqa akllaqkuna padronta apachin", "category": "plan" },
+            { "date": "20 Quya Raymi", "title": "Mesa miembrukunapa ñawpaq listakunapa qillqay", "category": "mesa" }
           ],
           "octubre": [
-            { "date": "5 Uma Raymi", "title": "Tukuy suyukunapi ñawpaq akllanakunapa tantanakuy" },
-            { "date": "14 Uma Raymi", "title": "Sapan Akllana 2026paq akllana padronta wichq'ay" },
-            { "date": "19 Uma Raymi", "title": "Ñawpaq akllanakunapi padronkunapa allinchayninpaq pisi p'unchaw" },
-            { "date": "25 Uma Raymi", "title": "Mesa miembrukuna qhipaq kaq akllaypa takyachiy" },
-            { "date": "28manta 31 Uma Raymikamal", "title": "Tantanakuna ñawpaq akllasqakunapa qillqaynin" }
+            { "date": "5 Uma Raymi", "title": "Tukuy suyukunapi ñawpaq akllanakunapa tantanakuy", "category": "electoral" },
+            { "date": "14 Uma Raymi", "title": "Sapan Akllana 2026paq akllana padronta wichq'ay", "category": "plan" },
+            { "date": "19 Uma Raymi", "title": "Ñawpaq akllanakunapi padronkunapa allinchayninpaq pisi p'unchaw", "category": "plan" },
+            { "date": "25 Uma Raymi", "title": "Mesa miembrukuna qhipaq kaq akllaypa takyachiy", "category": "mesa" },
+            { "date": "28manta 31 Uma Raymikamal", "title": "Tantanakuna ñawpaq akllasqakunapa qillqaynin", "category": "electoral" }
           ],
           "noviembre": [
-            { "date": "3 Aya Marq'a", "title": "Mesa miembrukunapa mana allin kayninpa allinchaynin" },
-            { "date": "7 Aya Marq'a", "title": "ONPEman qhipaq akllasqakuna apachananpaq pisi p'unchaw" },
-            { "date": "10 Aya Marq'a", "title": "Tantanakuna qhawaqkunapa qillqaynin ñawpaq akllanapaq" },
-            { "date": "13 Aya Marq'a", "title": "JNE ONPEman ñawpaq padronta apachiy Sapan Akllana 2026paq" },
-            { "date": "20 Aya Marq'a", "title": "Akllana imaymanakunapa akllana wasikunaman apachiy" },
-            { "date": "30 Aya Marq'a", "title": "Ñawpaq Akllana (Tinkisqakuna)" }
+            { "date": "3 Aya Marq'a", "title": "Mesa miembrukunapa mana allin kayninpa allinchaynin", "category": "mesa" },
+            { "date": "7 Aya Marq'a", "title": "ONPEman qhipaq akllasqakuna apachananpaq pisi p'unchaw", "category": "electoral" },
+            { "date": "10 Aya Marq'a", "title": "Tantanakuna qhawaqkunapa qillqaynin ñawpaq akllanapaq", "category": "mesa" },
+            { "date": "13 Aya Marq'a", "title": "JNE ONPEman ñawpaq padronta apachiy Sapan Akllana 2026paq", "category": "plan" },
+            { "date": "20 Aya Marq'a", "title": "Akllana imaymanakunapa akllana wasikunaman apachiy", "category": "mesa" },
+            { "date": "30 Aya Marq'a", "title": "Ñawpaq Akllana (Tinkisqakuna)", "category": "electoral" }
           ],
           "diciembre": [
-            { "date": "5 Qhapaq Raymi", "title": "Ñawpaq akllanakunapa yupayninkunapa yupaynin" },
-            { "date": "13 Qhapaq Raymi", "title": "Sapan Akllana 2026paq qhipaq padronta allinchayninpaq pisi p'unchaw" },
-            { "date": "18 Qhapaq Raymi", "title": "Ñawpaq akllanakunapa qhipaq yupayninkunapa qillqay" },
-            { "date": "23 Qhapaq Raymi", "title": "Akllasqakuna listakunapa qillqayninpaq pisi p'unchaw" },
-            { "date": "24 Qhapaq Raymi", "title": "Akllana rapimanta yachachikuykunapa qillqayninpaq pisi p'unchaw" },
-            { "date": "26 Qhapaq Raymimanta 15 Qulla Raymikamal", "title": "Akllana rapipi mana allin kayninpa allinchaynin" }
+            { "date": "5 Qhapaq Raymi", "title": "Ñawpaq akllanakunapa yupayninkunapa yupaynin", "category": "electoral" },
+            { "date": "13 Qhapaq Raymi", "title": "Sapan Akllana 2026paq qhipaq padronta allinchayninpaq pisi p'unchaw", "category": "plan" },
+            { "date": "18 Qhapaq Raymi", "title": "Ñawpaq akllanakunapa qhipaq yupayninkunapa qillqay", "category": "electoral" },
+            { "date": "23 Qhapaq Raymi", "title": "Akllasqakuna listakunapa qillqayninpaq pisi p'unchaw", "category": "electoral" },
+            { "date": "24 Qhapaq Raymi", "title": "Akllana rapimanta yachachikuykunapa qillqayninpaq pisi p'unchaw", "category": "plan" },
+            { "date": "26 Qhapaq Raymimanta 15 Qulla Raymikamal", "title": "Akllana rapipi mana allin kayninpa allinchaynin", "category": "electoral" }
           ]
         },
         "2026": {
           "enero": [
-            { "date": "5 Qulla Raymi", "title": "Akllana rapipi mana allin kayninpa allinchayninpa qatiy" },
-            { "date": "15 Qulla Raymi", "title": "Mesa miembrukunapa mana allin kayninpa tukuchiy" },
-            { "date": "22 Qulla Raymi", "title": "Sapan Akllana 2026paq akllana rapipi rikchaypa qhipaq qillqay" },
-            { "date": "29 Qulla Raymi", "title": "Mesa miembrukunapa sorteonin" },
-            { "date": "30 Qulla Raymimanta 11 Pawqarkamal", "title": "Mesa miembrukunapi mana allin kayninpa ruwayninpa allinchaynin" }
+            { "date": "5 Qulla Raymi", "title": "Akllana rapipi mana allin kayninpa allinchayninpa qatiy", "category": "electoral" },
+            { "date": "15 Qulla Raymi", "title": "Mesa miembrukunapa mana allin kayninpa tukuchiy", "category": "mesa" },
+            { "date": "22 Qulla Raymi", "title": "Sapan Akllana 2026paq akllana rapipi rikchaypa qhipaq qillqay", "category": "plan" },
+            { "date": "29 Qulla Raymi", "title": "Mesa miembrukunapa sorteonin", "category": "mesa" },
+            { "date": "30 Qulla Raymimanta 11 Pawqarkamal", "title": "Mesa miembrukunapi mana allin kayninpa ruwayninpa allinchaynin", "category": "mesa" }
           ],
           "febrero": [
-            { "date": "5 Pawqar", "title": "Pulitiku tantanakuypa akllasqakunapa qhipaq listapa qillqay" },
-            { "date": "12 Pawqar", "title": "Akllana rapipi akllasqakunapa maypi kashankuta sorteoy" },
-            { "date": "25 Pawqar", "title": "Akllana imaymanakunapa akllana wasikunaman apachiy qallariy" }
+            { "date": "5 Pawqar", "title": "Pulitiku tantanakuypa akllasqakunapa qhipaq listapa qillqay", "category": "electoral" },
+            { "date": "12 Pawqar", "title": "Akllana rapipi akllasqakunapa maypi kashankuta sorteoy", "category": "mesa" },
+            { "date": "25 Pawqar", "title": "Akllana imaymanakunapa akllana wasikunaman apachiy qallariy", "category": "mesa" }
           ],
           "marzo": [
-            { "date": "15 Pawqar Waray", "title": "Tukuy distritukunapi akllana imaymanakunapa apachiypa tukuchiy" },
-            { "date": "29 Pawqar Waray", "title": "Ñawpaq yachachikuy mesa miembrukunapaq Sapan Akllana 2026paq" }
+            { "date": "15 Pawqar Waray", "title": "Tukuy distritukunapi akllana imaymanakunapa apachiypa tukuchiy", "category": "mesa" },
+            { "date": "29 Pawqar Waray", "title": "Ñawpaq yachachikuy mesa miembrukunapaq Sapan Akllana 2026paq", "category": "mesa" }
           ],
           "abril": [
-            { "date": "2 Ayriway", "title": "Iskay kaq yachachikuy mesa miembrukunapaq" },
-            { "date": "5 Ayriway", "title": "Akllana Yupay Llika puriypi iskay kaq yachachikuy mesa miembrukunapaq" },
-            { "date": "10 Ayriway", "title": "Akllana wasikunapa qhipaq qhawariynin" },
-            { "date": "12 Ayriway", "title": "Sapan Akllana 2026" }
+            { "date": "2 Ayriway", "title": "Iskay kaq yachachikuy mesa miembrukunapaq", "category": "mesa" },
+            { "date": "5 Ayriway", "title": "Akllana Yupay Llika puriypi iskay kaq yachachikuy mesa miembrukunapaq", "category": "mesa" },
+            { "date": "10 Ayriway", "title": "Akllana wasikunapa qhipaq qhawariynin", "category": "mesa" },
+            { "date": "12 Ayriway", "title": "Sapan Akllana 2026", "category": "electoral" }
           ]
         }
       }
@@ -358,6 +359,10 @@
       "actividadesPublicas": "Llaqtapa Ruwanakuna",
       "noNoticiasRecientes": "Mana kunan willakuykuna kanku",
       "noActividadesProgramadas": "Mana ruwanakuna programasqa kanku",
+      "agregarCalendario": "Calendarioman Yapay",
+      "planNoDisponibleAlerta": "Kamachiy Yuyayqa manam kanchu kay partidupaq",
+      "candidatoSinNombre": "Akllasqa Mana Sutiyuq",
+      "noDisponibleCorto": "Manam kanchu",
       "tabs": {
         "hojaVida": "Kawsay P'anqa",
         "planGobierno": "Kamachiy Yuyay",
@@ -588,7 +593,8 @@
       "fuentesOficiales": "Oficial Pukyukuna",
       "jne": "Akllana Llaqta Juzgadonin",
       "onpe": "Akllana Ruwaykunapa Llaqta Wasin",
-      "hechoEnPeru": "Perúpi Rurasqa"
+      "hechoEnPeru": "Perúpi Rurasqa",
+      "descripcion": "Oficial akllana willakuy portal. Akllasqakunata riqsiy allin akllanaykipaq."
     }
   }
 }

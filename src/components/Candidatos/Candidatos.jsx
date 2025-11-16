@@ -195,7 +195,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
     if (pdfPath) {
       window.open(pdfPath, '_blank');
     } else {
-      alert('Plan de Gobierno no disponible para este partido');
+      alert(t('candidatos.planNoDisponibleAlerta'));
     }
   };
 
@@ -351,7 +351,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       {/* Profile Info */}
                       <div className="profile-details flex-grow-1 animate-slide-right">
                         <h1 className="profile-name-advanced mb-2" style={{ color: '#1a1a1a', fontSize: '2rem', fontWeight: '700' }}>
-                          {candidato.nombre || candidato.partido || 'Candidato Sin Nombre'}
+                          {candidato.nombre || candidato.partido || t('candidatos.candidatoSinNombre')}
                         </h1>
                         
                         <div className="profile-meta mb-3">
@@ -651,7 +651,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                                 </li>
                               ))
                             ) : (
-                              <li className="text-muted">No disponible</li>
+                              <li className="text-muted">{t('candidatos.noDisponibleCorto')}</li>
                             )}
                           </ul>
                         </div>
@@ -995,7 +995,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                                   }}
                                 >
                                   <i className="bi bi-calendar-plus me-2"></i>
-                                  Agregar al Calendario
+                                  {t('candidatos.agregarCalendario')}
                                 </button>
                               </div>
                             </div>
@@ -1118,7 +1118,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 <span className="fw-bold" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>Elecciones Perú 2026</span>
               </div>
               <p className="text-muted small">
-                Portal de información electoral oficial. Conoce a los candidatos y haz tu voto informado.
+                {t('footer.descripcion')}
               </p>
             </div>
             <div className="col-md-4">

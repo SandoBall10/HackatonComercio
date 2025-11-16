@@ -27,6 +27,7 @@
       "newsTitle": "Yatiyawinaka",
       "filtrar": "QALLTAWI.CHHIJLLAWI",
       "filtrarPor": "Chhijllawi akampi:",
+      "noEventos": "Aka phaxsitaki janiwa lurawinaka utjakiti ajllita chhijllawinmpi.",
       "meses": {
         "MARZO": "ACHUQA PACHA",
         "ABRIL": "LLAMP'U PACHA",
@@ -48,78 +49,78 @@
       "eventos": {
         "2025": {
           "marzo": [
-            { "date": "26 Achuqa Pacha", "title": "Taqpach Ajllirinaka 2026ru Jaw" },
-            { "date": "28 Achuqa Pacha", "title": "Ajlliri pacha qillqatampi Diario Officialxa" }
+            { "date": "26 Achuqa Pacha", "title": "Taqpach Ajllirinaka 2026ru Jaw", "category": "electoral" },
+            { "date": "28 Achuqa Pacha", "title": "Ajlliri pacha qillqatampi Diario Officialxa", "category": "plan" }
           ],
           "abril": [
-            { "date": "5 Llamp'u Pacha", "title": "Ajlliri lurawimpi yatiyawi campañanaka qalltawi" },
-            { "date": "12 Llamp'u Pacha", "title": "Partidu pulitikuxa qillqañataki jisk'a uru ROPna" },
-            { "date": "20 Llamp'u Pacha", "title": "Ajlliri irnaqirinakampi nayriri yatiqawi" }
+            { "date": "5 Llamp'u Pacha", "title": "Ajlliri lurawimpi yatiyawi campañanaka qalltawi", "category": "electoral" },
+            { "date": "12 Llamp'u Pacha", "title": "Partidu pulitikuxa qillqañataki jisk'a uru ROPna", "category": "plan" },
+            { "date": "20 Llamp'u Pacha", "title": "Ajlliri irnaqirinakampi nayriri yatiqawi", "category": "mesa" }
           ],
           "junio": [
-            { "date": "11 Marat'aqa", "title": "Pulitiku tantachawinakampi machaq kamachinakampi qillqawi" },
-            { "date": "15 Marat'aqa", "title": "Ajllitanaka uñjirinakataki uñachayawi" },
-            { "date": "30 Marat'aqa", "title": "DNROP Reniecaru ajllirinaka padronta apayañataki jisk'a uru" }
+            { "date": "11 Marat'aqa", "title": "Pulitiku tantachawinakampi machaq kamachinakampi qillqawi", "category": "plan" },
+            { "date": "15 Marat'aqa", "title": "Ajllitanaka uñjirinakataki uñachayawi", "category": "electoral" },
+            { "date": "30 Marat'aqa", "title": "DNROP Reniecaru ajllirinaka padronta apayañataki jisk'a uru", "category": "plan" }
           ],
           "agosto": [
-            { "date": "2 Yapuchiri", "title": "Partidu mayachawinakampi qillqawi Taqpach Ajlliri 2026taki" },
-            { "date": "10 Yapuchiri", "title": "Mesa miembrunaka yatiqawi talleranaka" },
-            { "date": "30 Yapuchiri", "title": "Reniec JNEru ajllirinaka padronta apaya" }
+            { "date": "2 Yapuchiri", "title": "Partidu mayachawinakampi qillqawi Taqpach Ajlliri 2026taki", "category": "plan" },
+            { "date": "10 Yapuchiri", "title": "Mesa miembrunaka yatiqawi talleranaka", "category": "mesa" },
+            { "date": "30 Yapuchiri", "title": "Reniec JNEru ajllirinaka padronta apaya", "category": "plan" }
           ],
           "septiembre": [
-            { "date": "1 Sata Qallta", "title": "Pulitiku tantachawi ajllitanakampi uñnaqapanakapa yatiyawi" },
-            { "date": "5 Sata Qallta", "title": "Provinciampi mesa miembrunakampi nayriri ajllañataki" },
-            { "date": "8 Sata Qallta", "title": "DNROP Reniecaru jan mayacht'ata ajllirinaka padronta apayañataki" },
-            { "date": "15 Sata Qallta", "title": "Tantachawi uñjirinakataki ajllitanaka uñachayapxi" },
-            { "date": "16 Sata Qallta", "title": "Reniec JNEru jan mayacht'ata ajllirinaka padronta apaya" },
-            { "date": "20 Sata Qallta", "title": "Mesa miembrunakampi nayriri listanakampi qillqawi" }
+            { "date": "1 Sata Qallta", "title": "Pulitiku tantachawi ajllitanakampi uñnaqapanakapa yatiyawi", "category": "plan" },
+            { "date": "5 Sata Qallta", "title": "Provinciampi mesa miembrunakampi nayriri ajllañataki", "category": "mesa" },
+            { "date": "8 Sata Qallta", "title": "DNROP Reniecaru jan mayacht'ata ajllirinaka padronta apayañataki", "category": "plan" },
+            { "date": "15 Sata Qallta", "title": "Tantachawi uñjirinakataki ajllitanaka uñachayapxi", "category": "electoral" },
+            { "date": "16 Sata Qallta", "title": "Reniec JNEru jan mayacht'ata ajllirinaka padronta apaya", "category": "plan" },
+            { "date": "20 Sata Qallta", "title": "Mesa miembrunakampi nayriri listanakampi qillqawi", "category": "mesa" }
           ],
           "octubre": [
-            { "date": "5 Taypi Sata", "title": "Taqi suyunampi nayriri ajlliñanakampi tantachawi" },
-            { "date": "14 Taypi Sata", "title": "Taqpach Ajlliri 2026taki ajlliri padronta jist'arawi" },
-            { "date": "19 Taypi Sata", "title": "Nayriri ajlliñanakampi padronaka suma lurayañataki jisk'a uru" },
-            { "date": "25 Taypi Sata", "title": "Mesa miembrunaka qhipa ajllañampi takyachawi" },
-            { "date": "28manta 31 Taypi Satakama", "title": "Tantachawi nayriri ajllitanakampi qillqawi" }
+            { "date": "5 Taypi Sata", "title": "Taqi suyunampi nayriri ajlliñanakampi tantachawi", "category": "electoral" },
+            { "date": "14 Taypi Sata", "title": "Taqpach Ajlliri 2026taki ajlliri padronta jist'arawi", "category": "plan" },
+            { "date": "19 Taypi Sata", "title": "Nayriri ajlliñanakampi padronaka suma lurayañataki jisk'a uru", "category": "plan" },
+            { "date": "25 Taypi Sata", "title": "Mesa miembrunaka qhipa ajllañampi takyachawi", "category": "mesa" },
+            { "date": "28manta 31 Taypi Satakama", "title": "Tantachawi nayriri ajllitanakampi qillqawi", "category": "electoral" }
           ],
           "noviembre": [
-            { "date": "3 Lapaka", "title": "Mesa miembrunakampi jan wali kawinakampi askichawi" },
-            { "date": "7 Lapaka", "title": "ONPEru qhipa ajllitanaka apayañataki jisk'a uru" },
-            { "date": "10 Lapaka", "title": "Tantachawi uñjirinakaraki qillqawi nayriri ajllañataki" },
-            { "date": "13 Lapaka", "title": "JNE ONPEru nayriri padronta apayawi Taqpach Ajlliri 2026taki" },
-            { "date": "20 Lapaka", "title": "Ajlliri yänakampi ajlliri utanakaruki apayawi" },
-            { "date": "30 Lapaka", "title": "Nayriri Ajlliri (Mayacht'atanaka)" }
+            { "date": "3 Lapaka", "title": "Mesa miembrunakampi jan wali kawinakampi askichawi", "category": "mesa" },
+            { "date": "7 Lapaka", "title": "ONPEru qhipa ajllitanaka apayañataki jisk'a uru", "category": "electoral" },
+            { "date": "10 Lapaka", "title": "Tantachawi uñjirinakaraki qillqawi nayriri ajllañataki", "category": "mesa" },
+            { "date": "13 Lapaka", "title": "JNE ONPEru nayriri padronta apayawi Taqpach Ajlliri 2026taki", "category": "plan" },
+            { "date": "20 Lapaka", "title": "Ajlliri yänakampi ajlliri utanakaruki apayawi", "category": "mesa" },
+            { "date": "30 Lapaka", "title": "Nayriri Ajlliri (Mayacht'atanaka)", "category": "electoral" }
           ],
           "diciembre": [
-            { "date": "5 Jallu Qallta", "title": "Nayriri ajlliñanakampi jakhuñanakampi jakhuwi" },
-            { "date": "13 Jallu Qallta", "title": "Taqpach Ajlliri 2026taki qhipa padronta askichañataki jisk'a uru" },
-            { "date": "18 Jallu Qallta", "title": "Nayriri ajlliñanakampi qhipa jakhuñanakampi qillqawi" },
-            { "date": "23 Jallu Qallta", "title": "Ajllitanaka listanakampi qillqañataki jisk'a uru" },
-            { "date": "24 Jallu Qallta", "title": "Ajlliri qillqatamanta yatichäwinakaraki qillqañataki jisk'a uru" },
-            { "date": "26 Jallu Qalltamanta 15 Chichu Lapakakama", "title": "Ajlliri qillqatampi jan wali kawinakampi askichawi" }
+            { "date": "5 Jallu Qallta", "title": "Nayriri ajlliñanakampi jakhuñanakampi jakhuwi", "category": "electoral" },
+            { "date": "13 Jallu Qallta", "title": "Taqpach Ajlliri 2026taki qhipa padronta askichañataki jisk'a uru", "category": "plan" },
+            { "date": "18 Jallu Qallta", "title": "Nayriri ajlliñanakampi qhipa jakhuñanakampi qillqawi", "category": "electoral" },
+            { "date": "23 Jallu Qallta", "title": "Ajllitanaka listanakampi qillqañataki jisk'a uru", "category": "electoral" },
+            { "date": "24 Jallu Qallta", "title": "Ajlliri qillqatamanta yatichäwinakaraki qillqañataki jisk'a uru", "category": "plan" },
+            { "date": "26 Jallu Qalltamanta 15 Chichu Lapakakama", "title": "Ajlliri qillqatampi jan wali kawinakampi askichawi", "category": "electoral" }
           ]
         },
         "2026": {
           "enero": [
-            { "date": "5 Chichu Lapaka", "title": "Ajlliri qillqatampi jan wali kawinakampi askichawimpi sarantañataki" },
-            { "date": "15 Chichu Lapaka", "title": "Mesa miembrunakampi jan wali kawinakampi tukuyawi" },
-            { "date": "22 Chichu Lapaka", "title": "Taqpach Ajlliri 2026taki ajlliri qillqatampi uñnaqapampi qhipa qillqawi" },
-            { "date": "29 Chichu Lapaka", "title": "Mesa miembrunakampi sorteyo" },
-            { "date": "30 Chichu Lapakamanta 11 Anata Pachakama", "title": "Mesa miembrunakampi jan wali kawinakampi lurañampi askichawi" }
+            { "date": "5 Chichu Lapaka", "title": "Ajlliri qillqatampi jan wali kawinakampi askichawimpi sarantañataki", "category": "electoral" },
+            { "date": "15 Chichu Lapaka", "title": "Mesa miembrunakampi jan wali kawinakampi tukuyawi", "category": "mesa" },
+            { "date": "22 Chichu Lapaka", "title": "Taqpach Ajlliri 2026taki ajlliri qillqatampi uñnaqapampi qhipa qillqawi", "category": "plan" },
+            { "date": "29 Chichu Lapaka", "title": "Mesa miembrunakampi sorteyo", "category": "mesa" },
+            { "date": "30 Chichu Lapakamanta 11 Anata Pachakama", "title": "Mesa miembrunakampi jan wali kawinakampi lurañampi askichawi", "category": "mesa" }
           ],
           "febrero": [
-            { "date": "5 Anata Pacha", "title": "Pulitiku tantachawimpi ajllitanakampi qhipa listampi qillqawi" },
-            { "date": "12 Anata Pacha", "title": "Ajlliri qillqatampi ajllitanakampi kawkïnsa utjaskanxa sorteoya" },
-            { "date": "25 Anata Pacha", "title": "Ajlliri yänakampi ajlliri utanakaruki apayawi qalltawi" }
+            { "date": "5 Anata Pacha", "title": "Pulitiku tantachawimpi ajllitanakampi qhipa listampi qillqawi", "category": "electoral" },
+            { "date": "12 Anata Pacha", "title": "Ajlliri qillqatampi ajllitanakampi kawkïnsa utjaskanxa sorteoya", "category": "mesa" },
+            { "date": "25 Anata Pacha", "title": "Ajlliri yänakampi ajlliri utanakaruki apayawi qalltawi", "category": "mesa" }
           ],
           "marzo": [
-            { "date": "15 Achuqa Pacha", "title": "Taqi distritunampi ajlliri yänakampi apayawimpi tukuyawi" },
-            { "date": "29 Achuqa Pacha", "title": "Nayriri yatiqawi mesa miembrunakampataki Taqpach Ajlliri 2026taki" }
+            { "date": "15 Achuqa Pacha", "title": "Taqi distritunampi ajlliri yänakampi apayawimpi tukuyawi", "category": "mesa" },
+            { "date": "29 Achuqa Pacha", "title": "Nayriri yatiqawi mesa miembrunakampataki Taqpach Ajlliri 2026taki", "category": "mesa" }
           ],
           "abril": [
-            { "date": "2 Llamp'u Pacha", "title": "Payïri yatiqawi mesa miembrunakampataki" },
-            { "date": "5 Llamp'u Pacha", "title": "Ajlliri Jakhuwi Sistema sarantayañatampi payïri yatiqawi mesa miembrunakampataki" },
-            { "date": "10 Llamp'u Pacha", "title": "Ajlliri utanakampi qhipa uñjasiñapa" },
-            { "date": "12 Llamp'u Pacha", "title": "Taqpach Ajlliri 2026" }
+            { "date": "2 Llamp'u Pacha", "title": "Payïri yatiqawi mesa miembrunakampataki", "category": "mesa" },
+            { "date": "5 Llamp'u Pacha", "title": "Ajlliri Jakhuwi Sistema sarantayañatampi payïri yatiqawi mesa miembrunakampataki", "category": "mesa" },
+            { "date": "10 Llamp'u Pacha", "title": "Ajlliri utanakampi qhipa uñjasiñapa", "category": "mesa" },
+            { "date": "12 Llamp'u Pacha", "title": "Taqpach Ajlliri 2026", "category": "electoral" }
           ]
         }
       }
@@ -357,6 +358,10 @@
       "actividadesPublicas": "Ayllumpi Lurawinaka",
       "noNoticiasRecientes": "Janiwa jichha yatiyawinaka utjakiti",
       "noActividadesProgramadas": "Janiwa lurawinaka programata utjakiti",
+      "agregarCalendario": "Calendarioru Yapxataña",
+      "planNoDisponibleAlerta": "Kamachi Yuyax janiwa utjakiti aka partidutaki",
+      "candidatoSinNombre": "Ajllita Jani Sutinisa",
+      "noDisponibleCorto": "Janiwa utjakiti",
       "tabs": {
         "hojaVida": "Jakawi Laphipa",
         "planGobierno": "Kamachi Yuyapa",
@@ -587,7 +592,8 @@
       "fuentesOficiales": "Oficial Pukyunaka",
       "jne": "Ajlliri Ayllu Juzgadonxa",
       "onpe": "Ajlliri Lurawinakampi Ayllu Utapa",
-      "hechoEnPeru": "Perúna Lurata"
+      "hechoEnPeru": "Perúna Lurata",
+      "descripcion": "Oficial ajlliri yatiyawi portal. Ajllitanakaru yatiqa suma ajlliriñataki."
     }
   }
 }
