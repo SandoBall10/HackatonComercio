@@ -4,7 +4,7 @@
 }
 
 .theme-btn-dropdown {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(230, 232, 237, 0.7);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   padding: 8px 16px;
@@ -27,11 +27,13 @@
 
 .theme-icon {
   font-size: 20px;
+  color: #000;
 }
 
 .theme-arrow {
   font-size: 10px;
   transition: transform 0.3s ease;
+  color: #000;
 }
 
 .theme-btn-dropdown:hover .theme-arrow {
