@@ -340,10 +340,29 @@
       "cargo": "Apukakiru Ajllita akanxa",
       "redesSociales": "Lika Mayacht'asinaka",
       "noEncontrado": "Janiwa jikxatakiti ajllitampi yatiyawi",
+      "resumenBancada": "Bancadampi Jisk'achata",
+      "partidoPolitico": "Partidu Pulitiku",
+      "elecciones2026": "Ajlliri 2026",
+      "propuestas": "Yuyarinaka",
+      "noticias": "Yatiyawinaka",
+      "actividades": "Lurawinaka",
+      "descargarPlan": "Kamachi Yuya apaqama",
+      "planNoDisponible": "Yuyax janiwa utjakiti",
+      "noticiasDestacadas": "Wali Suma Yatiyawinaka",
+      "masNoticias": "Juk'a Yatiyawinaka",
+      "noNoticias": "Janiwa yatiyawinaka utjakiti",
+      "agendaActividades": "Lurawinakampi Agenda",
+      "noActividades": "Janiwa lurawinaka programata utjakiti",
+      "ultimasNoticias": "Qhipa Yatiyawinaka",
+      "actividadesPublicas": "Ayllumpi Lurawinaka",
+      "noNoticiasRecientes": "Janiwa jichha yatiyawinaka utjakiti",
+      "noActividadesProgramadas": "Janiwa lurawinaka programata utjakiti",
       "tabs": {
         "hojaVida": "Jakawi Laphipa",
         "planGobierno": "Kamachi Yuyapa",
-        "trayectoria": "Thakhi Sarta"
+        "trayectoria": "Thakhi Sarta",
+        "noticias": "Yatiyawinaka",
+        "actividades": "Lurawinaka"
       },
       "hojaVida": {
         "titulo": "Jakawi Laphipa",
@@ -554,7 +573,16 @@
       "siguenos": "Arkiristu",
       "portal": "Portal Electoral ONPE",
       "derechos": "Taqi derechunaxa imantatawa",
-      "datosJNE": "Aka yatiyawinakax JNE ONPEmpi churatawa"
+      "datosJNE": "Aka yatiyawinakax JNE ONPEmpi churatawa",
+      "enlacesRapidos": "Jank'aki Mayacht'awinaka",
+      "sobreNosotros": "Nanampa",
+      "contactoLink": "Aruskipawi",
+      "terminos": "Apnaqawi Kamachinaka",
+      "privacidad": "Imata Kamachi",
+      "fuentesOficiales": "Oficial Pukyunaka",
+      "jne": "Ajlliri Ayllu Juzgadonxa",
+      "onpe": "Ajlliri Lurawinakampi Ayllu Utapa",
+      "hechoEnPeru": "Perúna Lurata"
     }
   }
 }

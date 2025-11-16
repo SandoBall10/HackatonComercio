@@ -329,10 +329,29 @@
       "cargo": "Candidata a la Presidencia por",
       "redesSociales": "Redes Sociales",
       "noEncontrado": "No se encontró información del candidato",
+      "resumenBancada": "Resumen de Bancada",
+      "partidoPolitico": "Partido Político",
+      "elecciones2026": "Elecciones 2026",
+      "propuestas": "Propuestas",
+      "noticias": "Noticias",
+      "actividades": "Actividades",
+      "descargarPlan": "Descargar Plan de Gobierno",
+      "planNoDisponible": "Plan no disponible",
+      "noticiasDestacadas": "Noticias Destacadas",
+      "masNoticias": "Más Noticias",
+      "noNoticias": "No hay noticias disponibles",
+      "agendaActividades": "Agenda de Actividades",
+      "noActividades": "No hay actividades programadas",
+      "ultimasNoticias": "Últimas Noticias",
+      "actividadesPublicas": "Actividades Públicas",
+      "noNoticiasRecientes": "No hay noticias recientes",
+      "noActividadesProgramadas": "No hay actividades programadas",
       "tabs": {
         "hojaVida": "Hoja de Vida",
         "planGobierno": "Plan de Gobierno",
-        "trayectoria": "Trayectoria"
+        "trayectoria": "Trayectoria",
+        "noticias": "Noticias",
+        "actividades": "Actividades"
       },
       "hojaVida": {
         "titulo": "Hoja de Vida",
@@ -543,7 +562,16 @@
       "siguenos": "Síguenos",
       "portal": "Portal Electoral ONPE",
       "derechos": "Todos los derechos reservados",
-      "datosJNE": "Los datos presentados son provistos por el JNE y ONPE"
+      "datosJNE": "Los datos presentados son provistos por el JNE y ONPE",
+      "enlacesRapidos": "Enlaces Rápidos",
+      "sobreNosotros": "Sobre Nosotros",
+      "contactoLink": "Contacto",
+      "terminos": "Términos de Uso",
+      "privacidad": "Política de Privacidad",
+      "fuentesOficiales": "Fuentes Oficiales",
+      "jne": "Jurado Nacional de Elecciones",
+      "onpe": "Oficina Nacional de Procesos Electorales",
+      "hechoEnPeru": "Hecho en Perú"
     }
   }
 }

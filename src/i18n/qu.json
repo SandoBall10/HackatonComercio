@@ -341,10 +341,29 @@
       "cargo": "Umalliqman Akllasqa kaywan",
       "redesSociales": "Llika T'inkikuna",
       "noEncontrado": "Mana tarikusqa akllasqapa willakuynin",
+      "resumenBancada": "Bancadapa Pisiyachisqa",
+      "partidoPolitico": "Partidu Pulitiku",
+      "elecciones2026": "Akllana 2026",
+      "propuestas": "Yuyaykuna",
+      "noticias": "Willakuykuna",
+      "actividades": "Ruwanakuna",
+      "descargarPlan": "Kamachiy Yuya uraykachay",
+      "planNoDisponible": "Yuyayqa manam kanchu",
+      "noticiasDestacadas": "Ancha Allin Willakuykuna",
+      "masNoticias": "Aswan Willakuykuna",
+      "noNoticias": "Mana willakuykuna kanku",
+      "agendaActividades": "Ruwanakunapa Agenda",
+      "noActividades": "Mana ruwanakuna programasqa kanku",
+      "ultimasNoticias": "Qhipaq Willakuykuna",
+      "actividadesPublicas": "Llaqtapa Ruwanakuna",
+      "noNoticiasRecientes": "Mana kunan willakuykuna kanku",
+      "noActividadesProgramadas": "Mana ruwanakuna programasqa kanku",
       "tabs": {
         "hojaVida": "Kawsay P'anqa",
         "planGobierno": "Kamachiy Yuyay",
-        "trayectoria": "Ñan Purisqa"
+        "trayectoria": "Nan Purisqa",
+        "noticias": "Willakuykuna",
+        "actividades": "Ruwanakuna"
       },
       "hojaVida": {
         "titulo": "Kawsay P'anqa",
@@ -555,7 +574,16 @@
       "siguenos": "Qatiwayku",
       "portal": "Portal Electoral ONPE",
       "derechos": "Tukuy derechokuna waqaychasqa",
-      "datosJNE": "Kay willakuykunaqa JNE ONPEmanta quykusqa kanku"
+      "datosJNE": "Kay willakuykunaqa JNE ONPEmanta quykusqa kanku",
+      "enlacesRapidos": "Usqhay T'inkikuna",
+      "sobreNosotros": "Noqanchismanta",
+      "contactoLink": "Rimanakuy",
+      "terminos": "Llamk'anapaq Kamachikuykuna",
+      "privacidad": "Pakasqa Kamachikuy",
+      "fuentesOficiales": "Oficial Pukyukuna",
+      "jne": "Akllana Llaqta Juzgadonin",
+      "onpe": "Akllana Ruwaykunapa Llaqta Wasin",
+      "hechoEnPeru": "Perúpi Rurasqa"
     }
   }
 }
