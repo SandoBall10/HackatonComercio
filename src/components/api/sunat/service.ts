@@ -1,8 +1,8 @@
 import { ReniecResponse } from './types';
-
+const API_URL = "https://backendnodejs-hackaton-production.up.railway.app";
 export const getDniData = async (dni: string): Promise<ReniecResponse> => {
     try {
-        const response = await fetch(`http://localhost:3001/api/reniec/${dni}`);
+        const response = await fetch(`${API_URL}/api/reniec/${dni}`);
         if (!response.ok) {
             throw new Error('Error consultando el backend');
         }
