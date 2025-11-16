@@ -19,14 +19,14 @@
   ],
   "routes": [
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/pdf/(.*)",
       "dest": "/pdf/$1",
       "headers": {
         "Content-Type": "application/pdf"
       }
-    },
-    {
-      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
