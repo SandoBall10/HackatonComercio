@@ -1732,7 +1732,7 @@ export const candidatos = [
     id: "fuerza-moderna",
     nombre: "Andrés Alcántara",
     partido: "Partido politico fuerza moderna",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Silueta_persona.svg/800px-Silueta_persona.svg.png",
+    foto: "/logos/fuerza-moderna.png",
     logoPartido: "/logos/fuerza-moderna.png",
     cargo: "Candidatura",
     redesSociales: {},

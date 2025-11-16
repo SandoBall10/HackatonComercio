@@ -179,7 +179,9 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/pte-peru.png",
     descripcion: "Partido político de izquierda enfocado en los derechos de los trabajadores.",
     candidatos: [
-      { id: "pte1", nombre: "Napoleón Becerra", cargo: "Presidente", foto: "/FotosCandidatos/partido-trabajadores-pte-peru.jpg" }
+      { id: "pte1", nombre: "Napoleón Becerra", cargo: "Presidente", foto: "/FotosCandidatos/partido-trabajadores-pte-peru.jpg" },
+      { id: "pte2", nombre: "Indira Huilca", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/indira-huilca.png" },
+      { id: "pte3", nombre: "Por Confirmar", cargo: "Segundo Vicepresidente", foto: "" }
     ],
     diputados: [
       { id: "pte-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
@@ -204,7 +206,11 @@ export const PARTIDOS: Partido[] = [
     siglas: "AN",
     logo: "/logos/ahora-nacion.png",
     descripcion: "Partido político peruano de centro.",
-    candidatos: [],
+    candidatos: [
+      { id: "an1", nombre: "Candidato Presidencial AN", cargo: "Presidente", foto: "" },
+      { id: "an2", nombre: "Luis Villanueva Carbajal", cargo: "Primer Vicepresidente", foto: "/FotosCandidatos/luis-villanueva.jpg" },
+      { id: "an3", nombre: "Asháninka Ruth Buendía", cargo: "Segunda Vicepresidenta", foto: "/FotosCandidatos/ruth-buendia.jpg" }
+    ],
     diputados: [
       { id: "an-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
       { id: "an-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
@@ -228,7 +234,11 @@ export const PARTIDOS: Partido[] = [
     siglas: "JPP",
     logo: "/logos/juntos-por-el-peru.png",
     descripcion: "Partido político peruano de izquierda.",
-    candidatos: [],
+    candidatos: [
+      { id: "jpp1", nombre: "VERÓNICA MAGALY MENDOZA FRANCO", cargo: "Presidenta", foto: "/FotosCandidatos/juntos-por-el-peru.jpg" },
+      { id: "jpp2", nombre: "Anali Marquez Huanca", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/anali-marquez.png" },
+      { id: "jpp3", nombre: "Brigida Curo", cargo: "Segunda Vicepresidenta", foto: "" }
+    ],
     diputados: [
       { id: "jpp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
       { id: "jpp-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
@@ -523,7 +533,11 @@ export const PARTIDOS: Partido[] = [
     siglas: "F21",
     logo: "/logos/frente-esperanza-2021.png",
     descripcion: "Frente político progresista.",
-    candidatos: [],
+    candidatos: [
+      { id: "f21-1", nombre: "", cargo: "Presidente", foto: "" },
+      { id: "f21-2", nombre: "Elizabeth Leon Chinchay", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/elizabeth-leon.png" },
+      { id: "f21-3", nombre: "Carlos Cuaresma Sanchez", cargo: "Segundo Vicepresidente", foto: "/FotosCandidatos/carlos-cuaresma.png" }
+    ],
     diputados: [
       { id: "f21-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
@@ -761,7 +775,9 @@ export const PARTIDOS: Partido[] = [
     siglas: "FM",
     logo: "/logos/fuerza-moderna.png",
     descripcion: "Partido moderno y reformista.",
-    candidatos: [],
+    candidatos: [
+
+    ],
     diputados: [
       { id: "fm-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
@@ -799,7 +815,7 @@ export const PARTIDOS: Partido[] = [
     candidatos: [
       { id: "rp1", nombre: "RAFAEL BERNANDO LOPEZ ALIAGA", cargo: "Presidente", foto: "/FotosCandidatos/renovacion-popular.jpg" },
       { id: "rp2", nombre: "NORMA MARTINA YARROW LUMBRERAS", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/norma-yarrow.jpg" },
-      { id: "rp3", nombre: "JHON IVAN RAMOS MALPICA", cargo: "Segundo Vicepresidente", foto: "/FotosCandidatos/jhon-ramos.jpg" }
+      { id: "rp3", nombre: "JHON IVAN RAMOS MALPICA", cargo: "Segundo Vicepresidente", foto: "/logos/renovacion-popular.png" }
     ],
     diputados: [
       { id: "rp-d1", nombre: "ROXANA MARÍA ROCHA GALLEGOS", circunscripcion: "Lima", foto: "", dni: "10275564", sexo: "F" },
@@ -892,7 +908,7 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político de izquierda marxista.",
     candidatos: [
       { id: "pl1", nombre: "VLADIMIR CERRÓN", cargo: "Presidente", foto: "/FotosCandidatos/peru-libre.jpg" },
-      { id: "pl2", nombre: "POR CONFIRMAR", cargo: "Primer Vicepresidente", foto: "/logos/peru-libre.png" },
+      { id: "pl2", nombre: "Bertha Rojas López", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/bertha-rojas.jpg" },
       { id: "pl3", nombre: "Flavio Cruz Mamani", cargo: "Segundo Vicepresidente", foto: "/FotosCandidatos/flavio-cruz.jpg" }
     ],
     diputados: [
