@@ -71,11 +71,6 @@ export const Header: React.FC = () => {
 
       <header className="header">
         <nav className="navbar">
-          {/* Desktop Language Selector - Left side */}
-          <div className="desktop-language-selector">
-            <LanguageSelector />
-          </div>
-
           {/* Hamburger button - only visible on mobile */}
           <button className="hamburger-btn" onClick={() => setMenuOpen(!menuOpen)}>
             <span></span>
