@@ -248,7 +248,11 @@ export const PARTIDOS: Partido[] = [
     siglas: "PBG",
     logo: "/logos/partido-buen-gobierno.png",
     descripcion: "Partido enfocado en la transparencia y la gobernabilidad.",
-    candidatos: [],
+    candidatos: [
+      { id: "pbg1", nombre: "JORGE NIETO MONTESINOS", cargo: "Presidente", foto: "/FotosCandidatos/partido-buen-gobierno.jpg" },
+      { id: "pbg2", nombre: "CANDIDATO VICEPRESIDENCIAL PBG", cargo: "Primer Vicepresidente", foto: "" },
+      { id: "pbg3", nombre: "CANDIDATO PBG", cargo: "Segundo Vicepresidente", foto: "" }
+    ],
     diputados: [
       { id: "pbg-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
       { id: "pbg-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
@@ -337,7 +341,9 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/avanza-pais.png",
     descripcion: "Partido político de derecha liberal.",
     candidatos: [
-      { id: "apis1", nombre: "Phillip Butters", cargo: "Presidente", foto: "/FotosCandidatos/avanza-pais.jpeg" }
+      { id: "apis1", nombre: "Phillip Butters Rivadeneira", cargo: "Presidente", foto: "/FotosCandidatos/avanza-pais.jpeg" },
+      { id: "apis2", nombre: "Fernán Altuve-Febres", cargo: "Primer Vicepresidente", foto: "/FotosCandidatos/fernan-altuve.jpg" },
+      { id: "apis3", nombre: "Karol Paredes Fonseca", cargo: "Segunda Vicepresidenta", foto: "/FotosCandidatos/karol-paredes.jpg" }
     ],
     diputados: [
       { id: "apis-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
@@ -534,7 +540,11 @@ export const PARTIDOS: Partido[] = [
     siglas: "PM",
     logo: "/logos/partido-morado.png",
     descripcion: "Partido político de centro.",
-    candidatos: [],
+    candidatos: [
+      { id: "pm1", nombre: "", cargo: "Presidente", foto: "" },
+      { id: "pm2", nombre: "Heber Cueva", cargo: "Primer Vicepresidente", foto: "/FotosCandidatos/heber-cueva.jpg" },
+      { id: "pm3", nombre: "Marisol Linan Solis", cargo: "Segunda Vicepresidenta", foto: "/FotosCandidatos/marisol-linan.jpg" }
+    ],
     diputados: [
       { id: "pm-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
@@ -880,7 +890,11 @@ export const PARTIDOS: Partido[] = [
     siglas: "PL",
     logo: "/logos/peru-libre.png",
     descripcion: "Partido político de izquierda marxista.",
-    candidatos: [],
+    candidatos: [
+      { id: "pl1", nombre: "VLADIMIR CERRÓN", cargo: "Presidente", foto: "/FotosCandidatos/peru-libre.jpg" },
+      { id: "pl2", nombre: "POR CONFIRMAR", cargo: "Primer Vicepresidente", foto: "/logos/peru-libre.png" },
+      { id: "pl3", nombre: "Flavio Cruz Mamani", cargo: "Segundo Vicepresidente", foto: "/FotosCandidatos/flavio-cruz.jpg" }
+    ],
     diputados: [
       { id: "pl-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],

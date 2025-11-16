@@ -253,7 +253,7 @@ export const candidatos = [
   },
   {
     id: "partido-del-buen-gobierno",
-    nombre: "Jorge Nieto",
+    nombre: "Jorge Nieto Montesinos",
     partido: "Partido del buen gobierno",
     foto: "/FotosCandidatos/partido-buen-gobierno.jpg",
     logoPartido: "/logos/partido-buen-gobierno.png",
@@ -473,7 +473,7 @@ export const candidatos = [
   },
   {
     id: "avanza-pais",
-    nombre: "Phillip Butters",
+    nombre: "Phillip Butters Rivadeneira",
     partido: "Avanza Pais",
     foto: "/FotosCandidatos/avanza-pais.jpeg",
     logoPartido: "/logos/avanza-pais.png",
