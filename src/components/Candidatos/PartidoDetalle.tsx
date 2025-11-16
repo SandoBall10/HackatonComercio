@@ -48,55 +48,56 @@ const PartidoDetalle: React.FC = () => {
 
   if (!partido) return <div className="container py-5">Partido no encontrado</div>;
 
-  // Mapeo de colores por partido
+  // Mapeo de colores por partido (por ID numérico)
   const coloresPorPartido: Record<string, { primario: string; secundario: string; terciario: string; rgb: string }> = {
-    'accion-popular': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
-    'fuerza-popular': { primario: '#FF6B00', secundario: '#FF8C00', terciario: '#CC5500', rgb: '255, 107, 0' },
-    'partido-trabajadores-pte-peru': { primario: '#1E40AF', secundario: '#FFC107', terciario: '#1565C0', rgb: '30, 64, 175' },
-    'ahora-nacion': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
-    'juntos-por-el-peru': { primario: '#DC143C', secundario: '#00A859', terciario: '#8B0E27', rgb: '220, 20, 60' },
-    'partido-del-buen-gobierno': { primario: '#E31B23', secundario: '#FFC107', terciario: '#A01419', rgb: '227, 27, 35' },
-    'alianza-para-el-progreso': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' },
-    'libertad-popular': { primario: '#FFC107', secundario: '#1a1a1a', terciario: '#FFD54F', rgb: '255, 193, 7' },
-    'partido-democrata-unido-peru': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
-    'avanza-pais': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' },
-    'nuevo-peru-por-el-buen-vivir': { primario: '#E31B23', secundario: '#FFC107', terciario: '#A01419', rgb: '227, 27, 35' },
-    'partido-democrata-verde': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
-    'batalla-peru': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1a1a1a', rgb: '30, 64, 175' },
-    'partido-aprista-peruano': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
-    'partido-democratico-federal': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
-    'fe-en-el-peru': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
-    'partido-ciudadanos-por-el-peru': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
-    'partido-democratico-somos-peru': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' },
-    'frente-popular-agricola-fia': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
-    'partido-civico-obras': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
-    'frente-de-la-esperanza-2021': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
-    'partido-morado': { primario: '#7B1FA2', secundario: '#6A1B9A', terciario: '#4A148C', rgb: '123, 31, 162' },
-    'partido-politico-peru-accion': { primario: '#E31B23', secundario: '#1E40AF', terciario: '#00A859', rgb: '227, 27, 35' },
-    'peru-moderno': { primario: '#FFC107', secundario: '#E91E63', terciario: '#1a1a1a', rgb: '255, 193, 7' },
-    'partido-pais-para-todos': { primario: '#FFC107', secundario: '#1a1a1a', terciario: '#FFD54F', rgb: '255, 193, 7' },
-    'partido-peru-primero': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
-    'podemos-peru': { primario: '#1E40AF', secundario: '#FF6B00', terciario: '#1565C0', rgb: '30, 64, 175' },
-    'partido-patriotico-del-peru': { primario: '#1a1a1a', secundario: '#2d2d2d', terciario: '#0a0a0a', rgb: '26, 26, 26' },
-    'peruanos-unidos-somos-libres': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' },
-    'primero-la-gente': { primario: '#00A859', secundario: '#1E40AF', terciario: '#006435', rgb: '0, 168, 89' },
-    'cooperacion-popular': { primario: '#E31B23', secundario: '#00A859', terciario: '#FFC107', rgb: '227, 27, 35' },
-    'voces-del-pueblo': { primario: '#DC143C', secundario: '#B21131', terciario: '#8B0E27', rgb: '220, 20, 60' },
-    'progresemos': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' },
-    'fuerza-moderna': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' },
-    'prin': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
-    'renovacion-popular': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' },
-    'integridad-democratica': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' },
-    'partido-popular-cristiano': { primario: '#E31B23', secundario: '#00A859', terciario: '#A01419', rgb: '227, 27, 35' },
-    'salvemos-al-peru': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
-    'peru-libre': { primario: '#DC143C', secundario: '#B21131', terciario: '#8B0E27', rgb: '220, 20, 60' },
-    'partido-si-creo': { primario: '#E31B23', secundario: '#1a1a1a', terciario: '#A01419', rgb: '227, 27, 35' },
-    'un-camino-diferente': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' },
-    'unidad-y-paz': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }
+    '1': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Acción Popular
+    '2': { primario: '#FF6B00', secundario: '#FF8C00', terciario: '#CC5500', rgb: '255, 107, 0' }, // Fuerza Popular
+    '3': { primario: '#1E40AF', secundario: '#FFC107', terciario: '#1565C0', rgb: '30, 64, 175' }, // Partido de los Trabajadores
+    '4': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Ahora Nación
+    '5': { primario: '#DC143C', secundario: '#00A859', terciario: '#8B0E27', rgb: '220, 20, 60' }, // Juntos por el Perú
+    '6': { primario: '#E31B23', secundario: '#FFC107', terciario: '#A01419', rgb: '227, 27, 35' }, // Partido del Buen Gobierno
+    '7': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' }, // Alianza para el Progreso
+    '8': { primario: '#FFC107', secundario: '#1a1a1a', terciario: '#FFD54F', rgb: '255, 193, 7' }, // Libertad Popular
+    '9': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Partido Democráta Unido del Perú
+    '10': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' }, // Avanza País
+    '11': { primario: '#E31B23', secundario: '#FFC107', terciario: '#A01419', rgb: '227, 27, 35' }, // Nuevo Perú por el Buen Vivir
+    '12': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Partido Demócrata Verde
+    '13': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1a1a1a', rgb: '30, 64, 175' }, // Batalla Perú
+    '14': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Partido Aprista Peruano
+    '15': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Partido Democrático Federal
+    '16': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Fe en el Perú
+    '17': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Partido Ciudadanos por el Perú
+    '18': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' }, // Partido Democrático Somos Perú
+    '19': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Frente Popular Agrícola FIA
+    '20': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Partido Cívico Obras
+    '21': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Frente de la Esperanza 2021
+    '22': { primario: '#7B1FA2', secundario: '#6A1B9A', terciario: '#4A148C', rgb: '123, 31, 162' }, // Partido Morado
+    '23': { primario: '#E31B23', secundario: '#1E40AF', terciario: '#00A859', rgb: '227, 27, 35' }, // Partido Político Perú Acción
+    '24': { primario: '#FFC107', secundario: '#E91E63', terciario: '#1a1a1a', rgb: '255, 193, 7' }, // Perú Moderno
+    '25': { primario: '#FFC107', secundario: '#1a1a1a', terciario: '#FFD54F', rgb: '255, 193, 7' }, // Partido País para Todos
+    '26': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Partido Perú Primero
+    '27': { primario: '#1E40AF', secundario: '#FF6B00', terciario: '#1565C0', rgb: '30, 64, 175' }, // Podemos Perú
+    '28': { primario: '#1a1a1a', secundario: '#2d2d2d', terciario: '#0a0a0a', rgb: '26, 26, 26' }, // Partido Patriótico del Perú
+    '29': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Peruanos Unidos Somos Libres
+    '30': { primario: '#00A859', secundario: '#1E40AF', terciario: '#006435', rgb: '0, 168, 89' }, // Primero la Gente
+    '31': { primario: '#E31B23', secundario: '#00A859', terciario: '#FFC107', rgb: '227, 27, 35' }, // Cooperación Popular
+    '32': { primario: '#DC143C', secundario: '#B21131', terciario: '#8B0E27', rgb: '220, 20, 60' }, // Voces del Pueblo
+    '33': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Progresemos
+    '34': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Fuerza Moderna
+    '35': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // PRIN
+    '36': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Renovación Popular
+    '37': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' }, // Integridad Democrática
+    '38': { primario: '#E31B23', secundario: '#00A859', terciario: '#A01419', rgb: '227, 27, 35' }, // Partido Popular Cristiano
+    '39': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Salvemos al Perú
+    '40': { primario: '#DC143C', secundario: '#B21131', terciario: '#8B0E27', rgb: '220, 20, 60' }, // Perú Libre
+    '41': { primario: '#E31B23', secundario: '#1a1a1a', terciario: '#A01419', rgb: '227, 27, 35' }, // Partido Sí Creo
+    '42': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Un Camino Diferente
+    '43': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Unidad y Paz
+    '44': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' } // Partido adicional
   };
 
-  // Normalizar el ID del partido para búsqueda
-  const partidoIdNormalizado = String(partido.id).toLowerCase().replace(/[^a-z0-9-]/g, '-');
+  // Usar directamente el ID del partido como string
+  const partidoIdNormalizado = String(partido.id);
   
   // Obtener colores del partido o usar colores por defecto
   const coloresPartido = coloresPorPartido[partidoIdNormalizado] || {
@@ -160,7 +161,12 @@ const PartidoDetalle: React.FC = () => {
   const parlamentoAndino = partido.parlamentariosAndinos || [];
 
   return (
-    <div className="min-vh-100 bg-light">
+    <div className="min-vh-100 bg-light" style={{
+      '--color-primario': colorPrimario,
+      '--color-secundario': colorSecundario,
+      '--color-terciario': colorTerciario,
+      '--color-primario-rgb': colorPrimarioRgb
+    } as React.CSSProperties}>
       <style>{`
         @keyframes fadeIn {
           from {
@@ -258,7 +264,7 @@ const PartidoDetalle: React.FC = () => {
           left: 50%;
           width: 0;
           height: 4px;
-          background: linear-gradient(90deg, #dc3545, #c82333);
+          background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           transform: translateX(-50%);
           border-radius: 2px 2px 0 0;
@@ -268,7 +274,7 @@ const PartidoDetalle: React.FC = () => {
           content: '';
           position: absolute;
           inset: 0;
-          background: rgba(220, 53, 69, 0.05);
+          background: rgba(var(--color-primario-rgb), 0.05);
           opacity: 0;
           transition: opacity 0.3s ease;
         }
@@ -283,7 +289,7 @@ const PartidoDetalle: React.FC = () => {
 
         .nav-link.active::before {
           width: 100%;
-          box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+          box-shadow: 0 0 10px rgba(var(--color-primario-rgb), 0.5);
         }
 
         .nav-link.active::after {
@@ -405,7 +411,7 @@ const PartidoDetalle: React.FC = () => {
           display: flex;
           flex-wrap: wrap;
           gap: 1rem;
-          border-bottom: 2px solid #dc3545;
+          border-bottom: 2px solid var(--color-primario);
           padding-bottom: 0.5rem;
         }
 
@@ -424,7 +430,7 @@ const PartidoDetalle: React.FC = () => {
         }
 
         .tab-btn-dynamic.active {
-          color: #dc3545;
+          color: var(--color-primario);
           font-weight: 600;
         }
 
@@ -458,7 +464,7 @@ const PartidoDetalle: React.FC = () => {
           display: flex;
           flex-wrap: wrap;
           gap: 1rem;
-          border-bottom: 2px solid #dc3545;
+          border-bottom: 2px solid var(--color-primario);
           padding-bottom: 0.5rem;
         }
 
@@ -477,7 +483,7 @@ const PartidoDetalle: React.FC = () => {
         }
 
         .tab-btn-dynamic.active {
-          color: #dc3545;
+          color: var(--color-primario);
           font-weight: 600;
         }
 
@@ -702,7 +708,12 @@ const PartidoDetalle: React.FC = () => {
                       </div>
                       <div className="card-body text-center py-4">
                         <h4 className="card-title fw-bold mb-2">{candidato.nombre}</h4>
-                        <span className="badge bg-danger-subtle text-danger px-3 py-2">
+                        <span className="badge px-3 py-2" style={{
+                          background: `rgba(${colorPrimarioRgb}, 0.15)`,
+                          color: colorPrimario,
+                          fontWeight: '600',
+                          border: `1px solid ${colorPrimario}`
+                        }}>
                           {candidato.cargo}
                         </span>
                       </div>
@@ -744,8 +755,14 @@ const PartidoDetalle: React.FC = () => {
                                 style={{ width: 64, height: 64, objectFit: 'cover' }}
                               />
                               <div 
-                                className="position-absolute bottom-0 end-0 bg-danger text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
-                                style={{ width: 24, height: 24, fontSize: '0.75rem', transform: 'translate(25%, 25%)' }}
+                                className="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
+                                style={{ 
+                                  width: 24, 
+                                  height: 24, 
+                                  fontSize: '0.75rem', 
+                                  transform: 'translate(25%, 25%)',
+                                  background: `linear-gradient(135deg, ${colorPrimario}, ${colorSecundario})`
+                                }}
                               >
                                 {index + 1}
                               </div>
@@ -810,8 +827,14 @@ const PartidoDetalle: React.FC = () => {
                                 style={{ width: 64, height: 64, objectFit: 'cover' }}
                               />
                               <div 
-                                className="position-absolute bottom-0 end-0 bg-danger text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
-                                style={{ width: 24, height: 24, fontSize: '0.75rem', transform: 'translate(25%, 25%)' }}
+                                className="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
+                                style={{ 
+                                  width: 24, 
+                                  height: 24, 
+                                  fontSize: '0.75rem', 
+                                  transform: 'translate(25%, 25%)',
+                                  background: `linear-gradient(135deg, ${colorPrimario}, ${colorSecundario})`
+                                }}
                               >
                                 {index + 1}
                               </div>
@@ -850,12 +873,12 @@ const PartidoDetalle: React.FC = () => {
             <div>
               <div className="alert border-0 mb-4" style={{ background: 'linear-gradient(to right, #e7f3ff, #fff5f5)' }}>
                 <div className="d-flex align-items-center gap-2 mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-danger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: colorPrimario }}>
                     <circle cx="12" cy="12" r="10"/>
                     <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
                     <path d="M2 12h20"/>
                   </svg>
-                  <h3 className="alert-heading h5 text-danger mb-0">Parlamento Andino</h3>
+                  <h3 className="alert-heading h5 mb-0 fw-bold" style={{ color: colorPrimario }}>Parlamento Andino</h3>
                 </div>
                 <p className="mb-2 small text-secondary">
                   Representantes peruanos ante el organismo supranacional andino
@@ -914,7 +937,7 @@ const PartidoDetalle: React.FC = () => {
                                   height: 24, 
                                   fontSize: '0.75rem', 
                                   transform: 'translate(25%, 25%)',
-                                  background: 'linear-gradient(135deg, #0d6efd, #dc3545)'
+                                  background: `linear-gradient(135deg, ${colorPrimario}, ${colorSecundario})`
                                 }}
                               >
                                 {index + 1}
