@@ -71,7 +71,7 @@ const ReniecConsultas: React.FC = () => {
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
-              <h2 className="reniec-consulta-title-main">Consulta de Datos Personales y Local de Votación</h2>
+              <h2 className="reniec-consulta-title-main">{t('reniec.titulo')}</h2>
               <svg className="title-icon-right" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -82,15 +82,15 @@ const ReniecConsultas: React.FC = () => {
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
-              Consulta tu información del RENIEC y tus datos de votación
+              {t('reniec.descripcion')}
             </p>
           </div>
           <form onSubmit={handleConsulta} className="reniec-form-modern">
             <div className="reniec-form-group">
-              <label className="reniec-label">Número de DNI</label>
+              <label className="reniec-label">{t('reniec.dni')}</label>
               <input
                 type="text"
-                placeholder="Ingresa tu DNI de 8 dígitos"
+                placeholder={t('reniec.placeholderDni')}
                 value={dni}
                 onChange={(e) => setDni(e.target.value.replace(/\D/g, '').slice(0, 8))}
                 maxLength={8}
@@ -106,50 +106,50 @@ const ReniecConsultas: React.FC = () => {
                 <circle cx="11" cy="11" r="8"/>
                 <path d="m21 21-4.35-4.35"/>
               </svg>
-              {loading ? 'Consultando...' : 'Buscar Local de Votación'}
+              {loading ? t('reniec.consultando') : t('reniec.btnConsultar')}
             </button>
-            {error && <p className="reniec-error-modern">{error}</p>}
+            {error && <p className="reniec-error-modern">{t(error)}</p>}
           </form>
         </div>
 
         {/* Información Importante - Derecha */}
         <div className="reniec-info-box-right">
-          <h3 className="reniec-info-title">Información Importante</h3>
+          <h3 className="reniec-info-title">{t('reniec.informacionImportante', 'Información Importante')}</h3>
           
           <div className="reniec-info-item-box reniec-horario">
             <div className="reniec-info-header">
               <IconClock />
-              <span>Horario de Votación</span>
+              <span>{t('reniec.horarioVotacion', 'Horario de Votación')}</span>
             </div>
             <div className="reniec-info-content">
               <strong>8:00 AM - 4:00 PM</strong>
-              <p>Se recomienda llegar temprano</p>
+              <p>{t('reniec.recomiendaTemprano', 'Se recomienda llegar temprano')}</p>
             </div>
           </div>
 
           <div className="reniec-info-item-box">
-            <h4 className="reniec-info-subtitle">Documentos Requeridos</h4>
+            <h4 className="reniec-info-subtitle">{t('reniec.documentosRequeridos', 'Documentos Requeridos')}</h4>
             <div className="reniec-doc-list">
               <div className="reniec-doc-item reniec-doc-success">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M9 12l2 2 4-4"/>
                 </svg>
-                <span>DNI original y vigente</span>
+                <span>{t('reniec.dniOriginalVigente', 'DNI original y vigente')}</span>
               </div>
               <div className="reniec-doc-item reniec-doc-error">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M15 9l-6 6M9 9l6 6"/>
                 </svg>
-                <span>No se aceptan fotocopias</span>
+                <span>{t('reniec.noFotocopias', 'No se aceptan fotocopias')}</span>
               </div>
             </div>
           </div>
 
           <div className="reniec-info-item-box reniec-multa">
-            <h4 className="reniec-info-subtitle">¿Multa por no votar?</h4>
-            <p className="reniec-multa-text">Entre S/. 23.00 y S/. 92.00 según tu nivel de pobreza</p>
+            <h4 className="reniec-info-subtitle">{t('reniec.multaTitulo', '¿Multa por no votar?')}</h4>
+            <p className="reniec-multa-text">{t('reniec.multaTexto', 'Entre S/. 23.00 y S/. 92.00 según tu nivel de pobreza')}</p>
           </div>
         </div>
       </div>
@@ -163,16 +163,16 @@ const ReniecConsultas: React.FC = () => {
               <div className="reniec-card-inline reniec-dni-inline">
                 <div className="reniec-dni-header-inline">
                   <IconUser />
-                  <h4>Datos del DNI</h4>
+                  <h4>{t('reniec.resultadoTitulo')}</h4>
                 </div>
                 <div className="reniec-foto-section-inline">
                   <img src={FOTO_URL} alt="Foto" className="reniec-foto-circular-small" />
                 </div>
                 <div className="reniec-dni-data">
-                  <p><strong>DNI:</strong> {resultado.dni}</p>
-                  <p><strong>Nombres:</strong> {resultado.nombres}</p>
-                  <p><strong>Apellido Paterno:</strong> {resultado.apellidoPaterno}</p>
-                  <p><strong>Apellido Materno:</strong> {resultado.apellidoMaterno}</p>
+                  <p><strong>{t('reniec.dni')}:</strong> {resultado.dni}</p>
+                  <p><strong>{t('reniec.nombres')}:</strong> {resultado.nombres}</p>
+                  <p><strong>{t('reniec.apellidoPaterno')}:</strong> {resultado.apellidoPaterno}</p>
+                  <p><strong>{t('reniec.apellidoMaterno')}:</strong> {resultado.apellidoMaterno}</p>
                 </div>
               </div>
 
@@ -180,17 +180,17 @@ const ReniecConsultas: React.FC = () => {
               <div className="reniec-card-inline">
                 <div className="reniec-dni-header-inline">
                   <IconUser />
-                  <h4>Rol y Fecha</h4>
+                  <h4>{t('reniec.rolYFecha')}</h4>
                 </div>
                 <div className="reniec-inline-content">
                   <div className="reniec-badge-inline">
                     <IconDoc />
-                    <span className="reniec-rol-badge-small">{simulado.rol}</span>
+                    <span className="reniec-rol-badge-small">{t(`reniec.${simulado.rol === 'Miembro de mesa' ? 'miembroMesa' : 'votante'}`)}</span>
                   </div>
                   <div className="reniec-fecha-inline">
                     <IconCalendar />
                     <div>
-                      <strong>Fecha de votación:</strong>
+                      <strong>{t('reniec.fechaVotacion')}:</strong>
                       <div className="reniec-fecha-value">{simulado.fecha}</div>
                     </div>
                   </div>
@@ -201,19 +201,19 @@ const ReniecConsultas: React.FC = () => {
               <div className="reniec-card-inline">
                 <div className="reniec-dni-header-inline">
                   <IconVoteBox />
-                  <h4>Mesa de Votación</h4>
+                  <h4>{t('reniec.mesaVotacion')}</h4>
                 </div>
                 <div className="reniec-mesa-data-inline">
                   <div className="reniec-mesa-item-inline">
-                    <span>Mesa:</span>
+                    <span>{t('reniec.mesa')}:</span>
                     <strong>{simulado.mesa}</strong>
                   </div>
                   <div className="reniec-mesa-item-inline">
-                    <span>Piso:</span>
+                    <span>{t('reniec.piso')}:</span>
                     <strong>{simulado.piso}</strong>
                   </div>
                   <div className="reniec-mesa-item-inline">
-                    <span>Salón:</span>
+                    <span>{t('reniec.salon')}:</span>
                     <strong>{simulado.salon}</strong>
                   </div>
                 </div>
@@ -225,20 +225,20 @@ const ReniecConsultas: React.FC = () => {
               <div className="reniec-card-full-width">
                 <div className="reniec-dni-header-inline">
                   <IconMapPin />
-                  <h4>Localización del Local de Votación</h4>
+                  <h4>{t('reniec.localizacion')}</h4>
                 </div>
                 <div className="reniec-location-data">
                   <div className="reniec-location-text">
                     <div className="reniec-location-item">
                       <IconVoteBox />
                       <div>
-                        <strong>Colegio:</strong> {simulado.ubicacion.nombre}
+                        <strong>{t('reniec.colegio')}:</strong> {simulado.ubicacion.nombre}
                       </div>
                     </div>
                     <div className="reniec-location-item">
                       <IconMapPin />
                       <div>
-                        <strong>Dirección:</strong> {simulado.ubicacion.direccion}
+                        <strong>{t('reniec.direccion')}:</strong> {simulado.ubicacion.direccion}
                       </div>
                     </div>
                   </div>
@@ -341,7 +341,7 @@ const ReniecConsultas: React.FC = () => {
           <div className="reniec-card reniec-horizontal-card reniec-rol-card">
             <div className="reniec-horizontal-header">
               <span className="reniec-horizontal-icon"><IconUser /></span>
-              <h4 className="reniec-title-red">Rol y Fecha</h4>
+              <h4 className="reniec-title-red">{t('reniec.rolYFecha', 'Rol y Fecha')}</h4>
             </div>
             <div className="reniec-info-list" style={{ textAlign: 'center' }}>
               <div className="reniec-badge-container">
@@ -364,7 +364,7 @@ const ReniecConsultas: React.FC = () => {
               <div style={{ marginTop: 16 }} className="reniec-fecha-container">
                 <IconCalendar />
                 <div style={{ marginLeft: 8 }}>
-                  <strong>Fecha de votación:</strong>
+                  <strong>{t('reniec.fechaVotacion', 'Fecha de votación')}:</strong>
                   <div style={{
                     marginTop: 4,
                     fontSize: '1.2em',
@@ -382,19 +382,19 @@ const ReniecConsultas: React.FC = () => {
           <div className="reniec-card reniec-horizontal-card reniec-mesa-card">
             <div className="reniec-horizontal-header">
               <span className="reniec-horizontal-icon"><IconVoteBox /></span>
-              <h4 className="reniec-title-red">Mesa de Votación</h4>
+              <h4 className="reniec-title-red">{t('reniec.mesaVotacion', 'Mesa de Votación')}</h4>
             </div>
             <div className="reniec-info-list" style={{ textAlign: 'center' }}>
               <div className="reniec-mesa-info-item">
-                <span className="reniec-mesa-label">Mesa:</span>
+                <span className="reniec-mesa-label">{t('reniec.mesa', 'Mesa')}:</span>
                 <span className="reniec-mesa-value">{simulado.mesa}</span>
               </div>
               <div className="reniec-mesa-info-item">
-                <span className="reniec-mesa-label">Piso:</span>
+                <span className="reniec-mesa-label">{t('reniec.piso', 'Piso')}:</span>
                 <span className="reniec-mesa-value">{simulado.piso}</span>
               </div>
               <div className="reniec-mesa-info-item">
-                <span className="reniec-mesa-label">Salón:</span>
+                <span className="reniec-mesa-label">{t('reniec.salon', 'Salón')}:</span>
                 <span className="reniec-mesa-value">{simulado.salon}</span>
               </div>
             </div>
@@ -404,20 +404,20 @@ const ReniecConsultas: React.FC = () => {
           <div className="reniec-card reniec-horizontal-card reniec-localizacion-card">
             <div className="reniec-horizontal-header">
               <span className="reniec-horizontal-icon"><IconMapPin /></span>
-              <h4 className="reniec-title-red">Localización del Local de Votación</h4>
+              <h4 className="reniec-title-red">{t('reniec.localizacion', 'Localización del Local de Votación')}</h4>
             </div>
             <div className="reniec-info-list" style={{ textAlign: 'left', width: '100%' }}>
               <div className="reniec-location-info">
                 <div className="reniec-location-item">
                   <IconVoteBox />
                   <div>
-                    <strong>Colegio:</strong> {simulado.ubicacion.nombre}
+                    <strong>{t('reniec.colegio', 'Colegio')}:</strong> {simulado.ubicacion.nombre}
                   </div>
                 </div>
                 <div className="reniec-location-item">
                   <IconMapPin />
                   <div>
-                    <strong>Dirección:</strong> {simulado.ubicacion.direccion}
+                    <strong>{t('reniec.direccion', 'Dirección')}:</strong> {simulado.ubicacion.direccion}
                   </div>
                 </div>
               </div>
@@ -440,7 +440,7 @@ const ReniecConsultas: React.FC = () => {
 
       {resultado && (
         <div className="reniec-pasos-section">
-          <h2 className="reniec-pasos-title">¿Cómo Votar? - Paso a Paso</h2>
+          <h2 className="reniec-pasos-title">{t('reniec.comoVotar', '¿Cómo Votar? - Paso a Paso')}</h2>
           <div className="reniec-pasos-grid">
             {(simulado?.rol === 'Miembro de mesa' ? pasosMiembroMesa : pasosVotante).map((paso, idx) => (
               <div className="reniec-paso-card" key={idx}>
@@ -453,8 +453,8 @@ const ReniecConsultas: React.FC = () => {
                   {idx === 5 && <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>}
                 </div>
                 <div className="reniec-paso-number">{idx + 1}</div>
-                <h4 className="reniec-paso-title">{paso.titulo}</h4>
-                <p className="reniec-paso-desc">{paso.descripcion}</p>
+                <h4 className="reniec-paso-title">{t(`reniec.pasos.${simulado?.rol === 'Miembro de mesa' ? 'mesa' : 'votante'}.${idx}.titulo`, paso.titulo)}</h4>
+                <p className="reniec-paso-desc">{t(`reniec.pasos.${simulado?.rol === 'Miembro de mesa' ? 'mesa' : 'votante'}.${idx}.descripcion`, paso.descripcion)}</p>
               </div>
             ))}
           </div>
@@ -466,13 +466,13 @@ const ReniecConsultas: React.FC = () => {
           <div className="reniec-bottom-card reniec-security">
             <div className="reniec-bottom-card-header">
               <IconShield />
-              <h3>Recomendaciones de Seguridad</h3>
+              <h3>{t('reniec.recomendacionesTitulo', 'Recomendaciones de Seguridad')}</h3>
             </div>
             <ul className="reniec-bottom-list">
               {recomendaciones.map((rec, idx) => (
                 <li key={idx} className="reniec-bottom-list-item">
                   <span className="reniec-bullet">•</span>
-                  {rec}
+                  {t(`reniec.recomendaciones.${idx}`, rec)}
                 </li>
               ))}
             </ul>
@@ -480,16 +480,16 @@ const ReniecConsultas: React.FC = () => {
           <div className="reniec-bottom-card reniec-legal">
             <div className="reniec-bottom-card-header">
               <IconLaw />
-              <h3>Marco Legal Electoral</h3>
+              <h3>{t('reniec.marcoLegalTitulo', 'Marco Legal Electoral')}</h3>
             </div>
             <div className="reniec-legal-content">
-              <h4>Voto Obligatorio</h4>
-              <p>Para ciudadanos de 18 a 70 años. Después es facultativo.</p>
-              <h4>Multas por No Votar</h4>
-              <p>Varía según nivel de pobreza: entre S/. 23.00 y S/. 92.00</p>
-              <h4>Derechos del Elector</h4>
-              <p>Voto personal, igual, libre y secreto garantizado por ley</p>
-              <a href="#" className="reniec-legal-link">Leer Ley Orgánica de Elecciones Completa</a>
+              <h4>{t('reniec.votoObligatorioTitulo', 'Voto Obligatorio')}</h4>
+              <p>{t('reniec.votoObligatorioTexto', 'Para ciudadanos de 18 a 70 años. Después es facultativo.')}</p>
+              <h4>{t('reniec.multasNoVotarTitulo', 'Multas por No Votar')}</h4>
+              <p>{t('reniec.multasNoVotarTexto', 'Varía según nivel de pobreza: entre S/. 23.00 y S/. 92.00')}</p>
+              <h4>{t('reniec.derechosElectorTitulo', 'Derechos del Elector')}</h4>
+              <p>{t('reniec.derechosElectorTexto', 'Voto personal, igual, libre y secreto garantizado por ley')}</p>
+              <a href="#" className="reniec-legal-link">{t('reniec.leerLey', 'Leer Ley Orgánica de Elecciones Completa')}</a>
             </div>
           </div>
         </div>

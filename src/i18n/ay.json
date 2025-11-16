@@ -3,16 +3,18 @@
     "nav": {
       "inicio": "Qalltawi",
       "partidos": "Partidu Pulitikuxa",
-      "reniec": "Ajayu Chiqapa Jiskt'añataki"
+      "reniec": "Ajayu Chiqapa Jiskt'añataki",
+      "miembrosMesa": "Mesa Miembrunaka",
+      "tutorial": "Yatichäwi"
     },
     "inicio": {
       "titulo": "Taqpach Ajllirinaka",
       "fecha": "12 abril 2026",
       "faltan": "Qhipxtasiwa:",
-      "meses": "Phaxsinaka",
-      "dias": "Urunaxa",
-      "horas": "Huraxa",
-      "minutos": "Minutunaxa",
+      "mesesLabel": "Phaxsinaka",
+      "diasLabel": "Urunaxa",
+      "horasLabel": "Huraxa",
+      "minutosLabel": "Minutunaxa",
       "partidosPoliticos": "Partidu Pulitikuxa",
       "laOrganizacion": "Kamachi",
       "acercaProceso": "Lurawinxa",
@@ -21,7 +23,105 @@
       "verificaMiembro": "Uñjma mesa miembru ukhamaskta",
       "infoGeneral": "Taqpach yatiyawi",
       "enlacesRelacionados": "Mayacht'asinaka",
-      "timelineTitle": "Aka ajlliri lurawimpi pacha qhiparu:"
+      "timelineTitle": "Aka ajlliri lurawimpi pacha qhiparu:",
+      "filtrar": "QALLTAWI.CHHIJLLAWI",
+      "filtrarPor": "Chhijllawi akampi:",
+      "meses": {
+        "MARZO": "ACHUQA PACHA",
+        "ABRIL": "LLAMP'U PACHA",
+        "JUNIO": "MARAT'AQA",
+        "AGOSTO": "YAPUCHIRI",
+        "SEPTIEMBRE": "SATA QALLTA",
+        "OCTUBRE": "TAYPI SATA",
+        "NOVIEMBRE": "LAPAKA",
+        "DICIEMBRE": "JALLU QALLTA",
+        "ENERO": "CHICHU LAPAKA",
+        "FEBRERO": "ANATA PACHA"
+      },
+      "filtro": {
+        "todos": "Taqi lurawinaka",
+        "electoral": "Ajlliri lurawinaka",
+        "plan": "Amtawi",
+        "mesa": "Mesa miembrunaka"
+      },
+      "eventos": {
+        "2025": {
+          "marzo": [
+            { "date": "26 Achuqa Pacha", "title": "Taqpach Ajllirinaka 2026ru Jaw" },
+            { "date": "28 Achuqa Pacha", "title": "Ajlliri pacha qillqatampi Diario Officialxa" }
+          ],
+          "abril": [
+            { "date": "5 Llamp'u Pacha", "title": "Ajlliri lurawimpi yatiyawi campañanaka qalltawi" },
+            { "date": "12 Llamp'u Pacha", "title": "Partidu pulitikuxa qillqañataki jisk'a uru ROPna" },
+            { "date": "20 Llamp'u Pacha", "title": "Ajlliri irnaqirinakampi nayriri yatiqawi" }
+          ],
+          "junio": [
+            { "date": "11 Marat'aqa", "title": "Pulitiku tantachawinakampi machaq kamachinakampi qillqawi" },
+            { "date": "15 Marat'aqa", "title": "Ajllitanaka uñjirinakataki uñachayawi" },
+            { "date": "30 Marat'aqa", "title": "DNROP Reniecaru ajllirinaka padronta apayañataki jisk'a uru" }
+          ],
+          "agosto": [
+            { "date": "2 Yapuchiri", "title": "Partidu mayachawinakampi qillqawi Taqpach Ajlliri 2026taki" },
+            { "date": "10 Yapuchiri", "title": "Mesa miembrunaka yatiqawi talleranaka" },
+            { "date": "30 Yapuchiri", "title": "Reniec JNEru ajllirinaka padronta apaya" }
+          ],
+          "septiembre": [
+            { "date": "1 Sata Qallta", "title": "Pulitiku tantachawi ajllitanakampi uñnaqapanakapa yatiyawi" },
+            { "date": "5 Sata Qallta", "title": "Provinciampi mesa miembrunakampi nayriri ajllañataki" },
+            { "date": "8 Sata Qallta", "title": "DNROP Reniecaru jan mayacht'ata ajllirinaka padronta apayañataki" },
+            { "date": "15 Sata Qallta", "title": "Tantachawi uñjirinakataki ajllitanaka uñachayapxi" },
+            { "date": "16 Sata Qallta", "title": "Reniec JNEru jan mayacht'ata ajllirinaka padronta apaya" },
+            { "date": "20 Sata Qallta", "title": "Mesa miembrunakampi nayriri listanakampi qillqawi" }
+          ],
+          "octubre": [
+            { "date": "5 Taypi Sata", "title": "Taqi suyunampi nayriri ajlliñanakampi tantachawi" },
+            { "date": "14 Taypi Sata", "title": "Taqpach Ajlliri 2026taki ajlliri padronta jist'arawi" },
+            { "date": "19 Taypi Sata", "title": "Nayriri ajlliñanakampi padronaka suma lurayañataki jisk'a uru" },
+            { "date": "25 Taypi Sata", "title": "Mesa miembrunaka qhipa ajllañampi takyachawi" },
+            { "date": "28manta 31 Taypi Satakama", "title": "Tantachawi nayriri ajllitanakampi qillqawi" }
+          ],
+          "noviembre": [
+            { "date": "3 Lapaka", "title": "Mesa miembrunakampi jan wali kawinakampi askichawi" },
+            { "date": "7 Lapaka", "title": "ONPEru qhipa ajllitanaka apayañataki jisk'a uru" },
+            { "date": "10 Lapaka", "title": "Tantachawi uñjirinakaraki qillqawi nayriri ajllañataki" },
+            { "date": "13 Lapaka", "title": "JNE ONPEru nayriri padronta apayawi Taqpach Ajlliri 2026taki" },
+            { "date": "20 Lapaka", "title": "Ajlliri yänakampi ajlliri utanakaruki apayawi" },
+            { "date": "30 Lapaka", "title": "Nayriri Ajlliri (Mayacht'atanaka)" }
+          ],
+          "diciembre": [
+            { "date": "5 Jallu Qallta", "title": "Nayriri ajlliñanakampi jakhuñanakampi jakhuwi" },
+            { "date": "13 Jallu Qallta", "title": "Taqpach Ajlliri 2026taki qhipa padronta askichañataki jisk'a uru" },
+            { "date": "18 Jallu Qallta", "title": "Nayriri ajlliñanakampi qhipa jakhuñanakampi qillqawi" },
+            { "date": "23 Jallu Qallta", "title": "Ajllitanaka listanakampi qillqañataki jisk'a uru" },
+            { "date": "24 Jallu Qallta", "title": "Ajlliri qillqatamanta yatichäwinakaraki qillqañataki jisk'a uru" },
+            { "date": "26 Jallu Qalltamanta 15 Chichu Lapakakama", "title": "Ajlliri qillqatampi jan wali kawinakampi askichawi" }
+          ]
+        },
+        "2026": {
+          "enero": [
+            { "date": "5 Chichu Lapaka", "title": "Ajlliri qillqatampi jan wali kawinakampi askichawimpi sarantañataki" },
+            { "date": "15 Chichu Lapaka", "title": "Mesa miembrunakampi jan wali kawinakampi tukuyawi" },
+            { "date": "22 Chichu Lapaka", "title": "Taqpach Ajlliri 2026taki ajlliri qillqatampi uñnaqapampi qhipa qillqawi" },
+            { "date": "29 Chichu Lapaka", "title": "Mesa miembrunakampi sorteyo" },
+            { "date": "30 Chichu Lapakamanta 11 Anata Pachakama", "title": "Mesa miembrunakampi jan wali kawinakampi lurañampi askichawi" }
+          ],
+          "febrero": [
+            { "date": "5 Anata Pacha", "title": "Pulitiku tantachawimpi ajllitanakampi qhipa listampi qillqawi" },
+            { "date": "12 Anata Pacha", "title": "Ajlliri qillqatampi ajllitanakampi kawkïnsa utjaskanxa sorteoya" },
+            { "date": "25 Anata Pacha", "title": "Ajlliri yänakampi ajlliri utanakaruki apayawi qalltawi" }
+          ],
+          "marzo": [
+            { "date": "15 Achuqa Pacha", "title": "Taqi distritunampi ajlliri yänakampi apayawimpi tukuyawi" },
+            { "date": "29 Achuqa Pacha", "title": "Nayriri yatiqawi mesa miembrunakampataki Taqpach Ajlliri 2026taki" }
+          ],
+          "abril": [
+            { "date": "2 Llamp'u Pacha", "title": "Payïri yatiqawi mesa miembrunakampataki" },
+            { "date": "5 Llamp'u Pacha", "title": "Ajlliri Jakhuwi Sistema sarantayañatampi payïri yatiqawi mesa miembrunakampataki" },
+            { "date": "10 Llamp'u Pacha", "title": "Ajlliri utanakampi qhipa uñjasiñapa" },
+            { "date": "12 Llamp'u Pacha", "title": "Taqpach Ajlliri 2026" }
+          ]
+        }
+      }
     },
     "chatbot": {
       "titulo": "Virtual Yanapa",
@@ -55,6 +155,18 @@
       }
     },
     "reniec": {
+          "votante": "Ajlliri",
+          "miembroMesa": "Mesa Miembru",
+          "fechaVotacion": "Ajlliri uruwa",
+          "pisoNumero": "° piso",
+        "informacionImportante": "Yatiyawi Wakiskiri",
+        "horarioVotacion": "Ajlliri Pacha",
+        "recomiendaTemprano": "Nayraqata puriña wakiskiri",
+        "documentosRequeridos": "Qillqatanaka Munasi",
+        "dniOriginalVigente": "DNI original utji",
+        "noFotocopias": "Fotocopia janiwa katuqiti",
+        "multaTitulo": "¿Jan ajllirisa multa?",
+        "multaTexto": "S/. 23.00 - S/. 92.00, pobreza nivelapata",
       "titulo": "Kawki ajllirinipxa jiskt'aña",
       "descripcion": "Uñjma jaqinakampi yatiyawi RENIEC qillqatanxa",
       "placeholderDni": "Qillqantma DNI (8 jakhunaka)",
@@ -66,7 +178,52 @@
       "nombres": "Sutinakapa",
       "apellidoPaterno": "Awkimpi Sutipa",
       "apellidoMaterno": "Taykampi Sutipa",
-      "fechaNacimiento": "Yuriña Uru"
+      "fechaNacimiento": "Yuriña Uru",
+      "rolYFecha": "Roly Uru",
+      "mesaVotacion": "Mesa Ajlliri",
+      "localizacion": "Uta Uñjaña",
+      "colegio": "Yatiqawi Uta",
+      "direccion": "Thakhi",
+      "mesa": "Mesa",
+      "piso": "Piso",
+      "salon": "Salón",
+      "comoVotar": "¿Kunjamsa Ajlliri? - Paso a Paso",
+      "pasos": {
+        "votante": [
+          {"titulo": "Mesa jikxataña", "descripcion": "Aka plataforma ukana DNI apnaqasa localampi, mesampi thaqhaña."},
+          {"titulo": "Ajlliri utaru puriña", "descripcion": "DNI original apnaqasa, wakiskiri puriña."},
+          {"titulo": "Mesa uñjaña", "descripcion": "Mesa miembrunakaru DNI uñachayaña."},
+          {"titulo": "Cédula katuña", "descripcion": "Mesa miembruxa cédula katuqani."},
+          {"titulo": "Cámara ukana ajlliri markaña", "descripcion": "Munasiñama qhana, imaña ukana ajlliri markaña."},
+          {"titulo": "Ajlliri churayaña", "descripcion": "Cédula p'iqtayaña, ánforaru churayaña."}
+        ],
+        "mesa": [
+          {"titulo": "7:00 am nayraqata puriña", "descripcion": "Mesa churayañataki wakiskiri puriña."},
+          {"titulo": "Mesa churayaña", "descripcion": "Material electoral uñjaña, actanakampi firmayaña."},
+          {"titulo": "Ajllirinaka uñjaña", "descripcion": "DNI mayiña, electores listampi uñjaña."},
+          {"titulo": "Cédula katuña", "descripcion": "Cédula katuña, ajlliriru yanapaña."},
+          {"titulo": "Actanakampi firmayaña", "descripcion": "Ajlliri tukuykuchani actanakampi firmayaña."},
+          {"titulo": "Material electoral katuña", "descripcion": "Ánfora, actanakampi ONPEru apaña."}
+        ]
+      },
+      "recomendacionesTitulo": "Seguridad Yatichäwi",
+      "recomendaciones": [
+        "DNI original apnaqaña (fotocopia janiwa katuqiti).",
+        "Wakiskiri puriña filas, ch'amampi jan puriña.",
+        "Cámara ukana electrónico dispositivo jani apnaqañamti.",
+        "Personal electoral yatichäwinaka arkaña.",
+        "Localana suma, yatiqaña, suma sarnaqaña.",
+        "Localana propaganda, campaña janiwa katuqiti.",
+        "Aglomeración janiwa, pertenencias arkaña."
+      ],
+      "marcoLegalTitulo": "Ley Yatichäwi",
+      "votoObligatorioTitulo": "Ajlliri Wakiskiri",
+      "votoObligatorioTexto": "18-70 marani jaqinaka ajllirinaka. Qhipa facultativo.",
+      "multasNoVotarTitulo": "Ajlliri Jan Lurasa Multa",
+      "multasNoVotarTexto": "Pobreza nivelapata: S/. 23.00 - S/. 92.00",
+      "derechosElectorTitulo": "Elector Derechunaka",
+      "derechosElectorTexto": "Ajlliri personal, igual, jani chhaqta, leyampi arkaña.",
+      "leerLey": "Ley Orgánica de Elecciones Uñjaña"
     },
     "partidos": {
       "titulo": "Partidu Pulitikuxa",
@@ -352,6 +509,17 @@
         "pregunta4": "¿Kunjamsa jiskt'ana local ajllirinija?",
         "respuesta4": "'Jiskt'aña RENIEC' secciónna mantayma DNIma uñjañamataki local mesamasa churasma."
       }
+    },
+    "footer": {
+      "oficinaCentral": "Jach'a Utapa",
+      "direccion": "Jr. Washington 1894, Lima - Perú",
+      "horario": "Pacha: Lunes - Viernes 8:30am - 5:30pm",
+      "contacto": "Aruskipawi",
+      "telefono": "Central: (01) 417-0630",
+      "whatsapp": "WhatsApp: 955 668 683",
+      "siguenos": "Arkiristu",
+      "portal": "Portal Electoral ONPE",
+      "derechos": "Taqi derechunaxa imantatawa"
     }
   }
 }

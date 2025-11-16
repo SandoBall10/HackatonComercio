@@ -453,7 +453,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                             }}
                           >
                             <i className="bi bi-download" style={{ fontSize: '0.9rem' }}></i>
-                            <span>{pdfPath ? 'Descargar Plan de Gobierno' : 'Plan No Disponible'}</span>
+                            <span>{pdfPath ? t('candidatos.descargarPlan') : t('candidatos.planNoDisponible')}</span>
                           </button>
                         </div>
                       </div>
@@ -529,13 +529,13 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         >
                           <i className="bi bi-people-fill" style={{ fontSize: '1.5rem', color: colorPrimario }}></i>
                         </div>
-                        <h5 className="mb-0 fw-bold">Resumen de Bancada</h5>
+                        <h5 className="mb-0 fw-bold">{t('candidatos.resumenBancada')}</h5>
                       </div>
                       
                       <div className="mb-3">
                         <h6 className="fw-bold mb-2">
                           <i className="bi bi-building me-2"></i>
-                          Partido Político
+                          {t('candidatos.partidoPolitico')}
                         </h6>
                         <p className="mb-0 opacity-90">{candidato.partido}</p>
                       </div>
@@ -543,7 +543,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       <div className="mb-3">
                         <h6 className="fw-bold mb-2">
                           <i className="bi bi-person-badge me-2"></i>
-                          Cargo
+                          {t('candidatos.cargo')}
                         </h6>
                         <p className="mb-0 opacity-90">{candidato.cargo || 'Candidato a la Presidencia'}</p>
                       </div>
@@ -551,22 +551,22 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       <div className="mb-3">
                         <h6 className="fw-bold mb-2">
                           <i className="bi bi-calendar-event me-2"></i>
-                          Elecciones 2026
+                          {t('candidatos.elecciones2026')}
                         </h6>
                         <p className="mb-0 opacity-90">12 de abril de 2026</p>
                       </div>
 
                       <div className="border-top border-white border-opacity-25 pt-3 mt-3">
                         <div className="d-flex justify-content-between align-items-center mb-2">
-                          <span className="small"><i className="bi bi-clipboard-check me-2"></i>Propuestas</span>
+                          <span className="small"><i className="bi bi-clipboard-check me-2"></i>{t('candidatos.propuestas')}</span>
                           <span className="fw-bold">{candidato.planGobierno?.propuestas?.length || 0}</span>
                         </div>
                         <div className="d-flex justify-content-between align-items-center mb-2">
-                          <span className="small"><i className="bi bi-newspaper me-2"></i>Noticias</span>
+                          <span className="small"><i className="bi bi-newspaper me-2"></i>{t('candidatos.noticias')}</span>
                           <span className="fw-bold">{candidato.noticias?.length || 0}</span>
                         </div>
                         <div className="d-flex justify-content-between align-items-center">
-                          <span className="small"><i className="bi bi-calendar-event me-2"></i>Actividades</span>
+                          <span className="small"><i className="bi bi-calendar-event me-2"></i>{t('candidatos.actividades')}</span>
                           <span className="fw-bold">{candidato.actividades?.length || 0}</span>
                         </div>
                       </div>
@@ -611,7 +611,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 }}
               >
                 <i className="bi bi-newspaper"></i>
-                <span>Noticias</span>
+                <span>{t('candidatos.tabs.noticias')}</span>
               </button>
               <button 
                 className={`modern-tab-btn ${activeTab === 'actividades' ? 'active' : ''}`}
@@ -622,7 +622,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 }}
               >
                 <i className="bi bi-calendar-event"></i>
-                <span>Actividades</span>
+                <span>{t('candidatos.tabs.actividades')}</span>
               </button>
             </div>
           </div>
@@ -824,7 +824,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="col-12">
                           <h4 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                             <i className="bi bi-newspaper me-2"></i>
-                            Noticias Destacadas
+                            {t('candidatos.noticiasDestacadas')}
                           </h4>
                         </div>
                         {candidato.noticias.filter(n => n.destacada).slice(0, 3).map((noticia, index) => (
@@ -874,7 +874,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="col-12 mt-4">
                           <h5 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                             <i className="bi bi-list-ul me-2"></i>
-                            Más Noticias
+                            {t('candidatos.masNoticias')}
                           </h5>
                         </div>
                         {candidato.noticias.filter(n => !n.destacada).slice(0, 4).map((noticia, index) => (
@@ -922,7 +922,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="card border-0 shadow-sm">
                           <div className="card-body text-center py-5">
                             <i className="bi bi-newspaper text-muted" style={{ fontSize: '3rem' }}></i>
-                            <p className="text-muted mt-3 mb-0">No hay noticias disponibles en este momento.</p>
+                            <p className="text-muted mt-3 mb-0">{t('candidatos.noNoticias')}</p>
                           </div>
                         </div>
                       </div>
@@ -937,7 +937,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     <div className="col-12">
                       <h4 className="mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                         <i className="bi bi-calendar-event me-2"></i>
-                        Agenda de Actividades Públicas
+                        {t('candidatos.agendaActividades')}
                       </h4>
                     </div>
 
@@ -1007,7 +1007,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="card border-0 shadow-sm">
                           <div className="card-body text-center py-5">
                             <i className="bi bi-calendar-x text-muted" style={{ fontSize: '3rem' }}></i>
-                            <p className="text-muted mt-3 mb-0">No hay actividades programadas en este momento.</p>
+                            <p className="text-muted mt-3 mb-0">{t('candidatos.noActividades')}</p>
                           </div>
                         </div>
                       </div>
@@ -1024,7 +1024,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 <div className="card-body">
                   <h5 className="card-title mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                     <i className="bi bi-newspaper me-2"></i>
-                    Últimas Noticias
+                    {t('candidatos.ultimasNoticias')}
                   </h5>
                   <div className="d-flex flex-column gap-3">
                     {candidato.noticias && candidato.noticias.length > 0 ? (
@@ -1049,7 +1049,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     ) : (
                       <p className="text-muted text-center py-4">
                         <i className="bi bi-newspaper me-2"></i>
-                        No hay noticias recientes disponibles.
+                        {t('candidatos.noNoticiasRecientes')}
                       </p>
                     )}
                   </div>
@@ -1061,7 +1061,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 <div className="card-body">
                   <h5 className="card-title mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
                     <i className="bi bi-calendar-event me-2"></i>
-                    Actividades Públicas
+                    {t('candidatos.actividadesPublicas')}
                   </h5>
                   <div className="d-flex flex-column gap-3">
                     {candidato.actividades && candidato.actividades.length > 0 ? (
@@ -1091,7 +1091,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     ) : (
                       <p className="text-muted text-center py-4">
                         <i className="bi bi-calendar-x me-2"></i>
-                        No hay actividades programadas.
+                        {t('candidatos.noActividadesProgramadas')}
                       </p>
                     )}
                   </div>
@@ -1122,48 +1122,48 @@ const Candidatos = ({ candidato: candidatoProp }) => {
               </p>
             </div>
             <div className="col-md-4">
-              <h6 className="fw-bold mb-3">Enlaces Rápidos</h6>
+              <h6 className="fw-bold mb-3">{t('footer.enlacesRapidos')}</h6>
               <ul className="list-unstyled">
                 <li className="mb-2">
                   <a href="#" className="text-decoration-none text-muted">
-                    <i className="bi bi-chevron-right me-2"></i>Sobre Nosotros
+                    <i className="bi bi-chevron-right me-2"></i>{t('footer.sobreNosotros')}
                   </a>
                 </li>
                 <li className="mb-2">
                   <a href="#" className="text-decoration-none text-muted">
-                    <i className="bi bi-chevron-right me-2"></i>Contacto
+                    <i className="bi bi-chevron-right me-2"></i>{t('footer.contactoLink')}
                   </a>
                 </li>
                 <li className="mb-2">
                   <a href="#" className="text-decoration-none text-muted">
-                    <i className="bi bi-chevron-right me-2"></i>Términos de Servicio
+                    <i className="bi bi-chevron-right me-2"></i>{t('footer.terminos')}
                   </a>
                 </li>
                 <li className="mb-2">
                   <a href="#" className="text-decoration-none text-muted">
-                    <i className="bi bi-chevron-right me-2"></i>Política de Privacidad
+                    <i className="bi bi-chevron-right me-2"></i>{t('footer.privacidad')}
                   </a>
                 </li>
               </ul>
             </div>
             <div className="col-md-4">
-              <h6 className="fw-bold mb-3">Fuentes Oficiales</h6>
+              <h6 className="fw-bold mb-3">{t('footer.fuentesOficiales')}</h6>
               <p className="text-muted small mb-2">
                 <i className="bi bi-shield-check me-2 text-success"></i>
-                Jurado Nacional de Elecciones (JNE)
+                {t('footer.jne')}
               </p>
               <p className="text-muted small mb-2">
                 <i className="bi bi-shield-check me-2 text-success"></i>
-                Oficina Nacional de Procesos Electorales (ONPE)
+                {t('footer.onpe')}
               </p>
             </div>
           </div>
           <hr className="my-4"/>
           <div className="text-center text-muted small">
             <p className="mb-0">
-              © 2025 Portal Electoral. Todos los derechos reservados. | 
+              © 2025 {t('footer.portal')}. {t('footer.derechos')} | 
               <span className="ms-2" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
-                <i className="bi bi-heart-fill"></i> Hecho en Perú
+                <i className="bi bi-heart-fill"></i> {t('footer.hechoEnPeru')}
               </span>
             </p>
           </div>
