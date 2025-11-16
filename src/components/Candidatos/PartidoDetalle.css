@@ -334,46 +334,22 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* CRÍTICO: Logo con backgroundImage en dark mode - SIN SOBRESCRIBIR backgroundImage */
+/* CRÍTICO: Logo con backgroundImage en dark mode */
 [data-theme="dark"] .card-body .rounded.bg-white,
-[data-theme="dark"] .rounded.bg-white,
-[data-theme="dark"] div.rounded[style*="background"],
-[data-theme="dark"] .card .rounded.bg-white {
+[data-theme="dark"] .rounded.bg-white {
+  background-color: #ffffff !important;
   border: 2px solid var(--border-color, #3a3b3c) !important;
   padding: 12px !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-  position: relative !important;
 }
 
-/* Añadir capa blanca detrás del logo sin afectar backgroundImage */
-[data-theme="dark"] .card-body .rounded.bg-white::before,
-[data-theme="dark"] .rounded.bg-white::before {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  background: #ffffff !important;
-  border-radius: inherit !important;
-  z-index: -1 !important;
-}
-
-/* Forzar fondo blanco en logos con inline styles */
-[data-theme="dark"] .card-body > div.rounded[style*="backgroundImage"] {
+/* NO sobrescribir el background-image, solo el background-color */
+[data-theme="dark"] .card-body > div.rounded[style*="backgroundImage"],
+[data-theme="dark"] div.rounded[style*="backgroundImage"] {
+  background-color: #ffffff !important;
   border: 2px solid var(--border-color, #3a3b3c) !important;
   padding: 12px !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-  position: relative !important;
-}
-
-[data-theme="dark"] .card-body > div.rounded[style*="backgroundImage"]::before {
-  content: '' !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background: #ffffff !important;
-  border-radius: 8px !important;
-  z-index: -1 !important;
 }
 
 /* Fotos de candidatos mantienen el fondo oscuro */
