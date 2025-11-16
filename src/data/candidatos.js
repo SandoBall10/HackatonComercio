@@ -59,7 +59,7 @@ export const candidatos = [
   },
   {
     id: "fuerza-popular",
-    nombre: "Keiko Fujimori",
+    nombre: "KEIKO SOFIA FUJIMORI HIGUCHI",
     partido: "Fuerza Popular",
     foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Keiko_Fujimori_2.jpg/800px-Keiko_Fujimori_2.jpg",
     logoPartido: "/logos/fuerza-popular.png",
@@ -218,7 +218,7 @@ export const candidatos = [
   },
   {
     id: "alianza-para-el-progreso",
-    nombre: "César Acuña",
+    nombre: "CÉSAR ACUÑA PERALTA",
     partido: "Alianza para el progreso",
     foto: "/FotosCandidatos/alianza-para-el-progreso.png",
     logoPartido: "/logos/alianza-para-el-progreso.png",
@@ -484,11 +484,11 @@ export const candidatos = [
   },
   {
     id: "partido-aprista-peruano",
-    nombre: "Javier Velásquez Q.",
+    nombre: "JORGE DEL CASTILLO",
     partido: "Partido Aprista peruano",
-    foto: "/FotosCandidatos/partido-aprista-peruano.jpg",
+    foto: "/FotosCandidatos/jorge-del-castillo.jpg",
     logoPartido: "/logos/partido-aprista-peruano.png",
-    pdfUrl: "/pdf/partido-aprista-peruano-plan-gobierno.pdf",
+    pdfUrl: "/pdf/partido-aprista-peruanoplan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -664,30 +664,6 @@ export const candidatos = [
       { dia: "26", mes: "ENE", titulo: "Encuentro con alcaldes distritales", lugar: "Lima Centro", hora: "11:00 AM" },
       { dia: "29", mes: "ENE", titulo: "Inspección de proyectos viales", lugar: "Ate", hora: "9:00 AM" },
       { dia: "01", mes: "FEB", titulo: "Conferencia sobre desarrollo urbano", lugar: "Miraflores", hora: "5:00 PM" }
-    ]
-  },
-  {
-    id: "frente-popular-agricola-fia",
-    nombre: "Jonás Ataucusi",
-    partido: "Frente popular agricola FIA del Perú",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Silueta_persona.svg/800px-Silueta_persona.svg.png",
-    logoPartido: "/logos/frepap.png",
-    cargo: "Candidatura",
-    redesSociales: {},
-    hojaDeVida: { 
-      formacionAcademica: ["Ingeniero Agrónomo"],
-      experienciaLaboral: ["Dirigente agrario", "Consultor en desarrollo rural"],
-      declaracionesJuradas: "Disponible en portal JNE",
-      sentenciasJudiciales: "Sin sentencias vigentes"
-    },
-    trayectoria: [
-      { fecha: "2018", descripcion: "Fundación del movimiento" }
-    ],
-    noticias: [
-      { titulo: "Propuestas para el agro peruano", fuente: "Agraria.pe", fecha: "Hace 2 días", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
-    ],
-    actividades: [
-      { dia: "7", mes: "ENE", titulo: "Asamblea de agricultores", lugar: "Cajamarca", hora: "9:00 AM" }
     ]
   },
   {
@@ -983,6 +959,7 @@ export const candidatos = [
     foto: "/FotosCandidatos/partido-patriotico-del-peru.png",
     logoPartido: "/logos/partido-patriotico-del-peru.png",
     cargo: "Candidatura",
+
     redesSociales: {},
     hojaDeVida: { 
       formacionAcademica: ["Oficial militar retirado"],

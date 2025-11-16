@@ -9,15 +9,47 @@ const ImageWithFallback: React.FC<{
   alt: string;
   className?: string;
   style?: React.CSSProperties;
-}> = ({ src, alt, className = "", style }) => {
+  sexo?: string;
+}> = ({ src, alt, className = "", style, sexo }) => {
   const [error, setError] = useState(false);
   
   if (error || !src) {
     return (
-      <div className={`${className} bg-secondary d-flex align-items-center justify-content-center`} style={style}>
-        <span className="text-white fs-2 fw-bold">
-          {alt?.charAt(0) || ""}
-        </span>
+      <div 
+        className={`${className} d-flex align-items-center justify-content-center`} 
+        style={{ 
+          ...style, 
+          background: sexo === 'F' 
+            ? 'linear-gradient(135deg, #ec4899 0%, #f472b6 100%)' 
+            : 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)'
+        }}
+      >
+        <svg 
+          width="32" 
+          height="32" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="white" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        >
+          {sexo === 'F' ? (
+            // Icono femenino (Venus ♀)
+            <>
+              <circle cx="12" cy="8" r="5"/>
+              <path d="M12 13v8"/>
+              <path d="M9 18h6"/>
+            </>
+          ) : (
+            // Icono masculino (Marte ♂)
+            <>
+              <circle cx="10" cy="14" r="5"/>
+              <path d="M14.5 4.5l5 5"/>
+              <path d="M19.5 4.5v5h-5"/>
+            </>
+          )}
+        </svg>
       </div>
     );
   }
@@ -753,6 +785,7 @@ const PartidoDetalle: React.FC = () => {
                                 alt={diputado.nombre}
                                 className="rounded-3"
                                 style={{ width: 64, height: 64, objectFit: 'cover' }}
+                                sexo={(diputado as any).sexo}
                               />
                               <div 
                                 className="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
@@ -825,6 +858,7 @@ const PartidoDetalle: React.FC = () => {
                                 alt={senador.nombre}
                                 className="rounded-3"
                                 style={{ width: 64, height: 64, objectFit: 'cover' }}
+                                sexo={senador.sexo}
                               />
                               <div 
                                 className="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
@@ -929,6 +963,7 @@ const PartidoDetalle: React.FC = () => {
                                 alt={parlamentario.nombre}
                                 className="rounded-3"
                                 style={{ width: 64, height: 64, objectFit: 'cover' }}
+                                sexo={parlamentario.sexo}
                               />
                               <div 
                                 className="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
@@ -946,14 +981,14 @@ const PartidoDetalle: React.FC = () => {
                             <div className="flex-grow-1">
                               <h5 className="mb-1 fw-bold">{parlamentario.nombre}</h5>
                               <p className="mb-2 small text-muted">{partido.nombre}</p>
-                              <div className="d-flex align-items-center gap-2">
+                              <div className="d-flex align-items-center gap-2 flex-wrap">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                                   <circle cx="12" cy="12" r="10"/>
                                   <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
                                   <path d="M2 12h20"/>
                                 </svg>
                                 <span className="badge small" style={{ background: 'linear-gradient(to right, #e7f3ff, #fff5f5)', color: '#0d6efd' }}>
-                                  Parlamento Andino
+                                  {parlamentario.tipo || 'Parlamento Andino'}
                                 </span>
                               </div>
                             </div>

@@ -10,6 +10,8 @@ export interface Diputado {
   nombre: string;
   circunscripcion: string;
   foto?: string;
+  dni?: string;
+  sexo?: string;
 }
 
 export interface Senador {
@@ -17,12 +19,17 @@ export interface Senador {
   nombre: string;
   ambito: string;
   foto?: string;
+  dni?: string;
+  sexo?: string;
 }
 
 export interface ParlamentarioAndino {
   id: string;
   nombre: string;
   foto?: string;
+  dni?: string;
+  sexo?: string;
+  tipo?: string;
 }
 
 export interface Partido {
@@ -75,26 +82,95 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/fuerza-popular.png",
     descripcion: "Partido político peruano de derecha y fujimorista.",
     candidatos: [
-      { id: "fp1", nombre: "Candidato Presidencial FP", cargo: "Presidente", foto: "" },
-      { id: "fp2", nombre: "Candidato Vicepresidencial FP", cargo: "Vicepresidente", foto: "" },
-      { id: "fp3", nombre: "Candidato FP", cargo: "Congresista", foto: "" }
-    ],
-    diputados: [
-      { id: "fp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-      { id: "fp-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
-      { id: "fp-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "" },
-      { id: "fp-d4", nombre: "Rosa María Fernández Castro", circunscripcion: "La Libertad", foto: "" },
-      { id: "fp-d5", nombre: "José Luis Mendoza Vargas", circunscripcion: "Piura", foto: "" },
-      { id: "fp-d6", nombre: "Carmen Patricia Rojas Díaz", circunscripcion: "Lambayeque", foto: "" }
-    ],
-    senadores: [
-      { id: "fp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "fp-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
-    ],
-    parlamentariosAndinos: [
-       { id: "fp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
-       { id: "fp-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "" }
-    ]
+    { id: "fp1", nombre: "KEIKO SOFIA FUJIMORI HIGUCHI", cargo: "Presidenta", foto: "" },
+    { id: "fp2", nombre: "LUIS FERNANDO GALARRETA VELARDE", cargo: "Primer Vicepresidente", foto: "/FotosCandidatos/luis-galarreta.png" },
+    { id: "fp3", nombre: "MIGUEL ANGEL TORRES MORALES", cargo: "Segundo Vicepresidente", foto: "/FotosCandidatos/miguel-torres.jpg" }
+  ],
+  diputados: [
+    // AMAZONAS
+    { id: "fp-d1", nombre: "ROYSER GRANDEZ CASTRO", circunscripcion: "Amazonas", foto: "", sexo: "M", dni: "10587515" },
+    { id: "fp-d2", nombre: "MESALINA INFANTES CASTAÑEDA", circunscripcion: "Amazonas", foto: "", sexo: "F", dni: "16448130" },
+    { id: "fp-d3", nombre: "JESUS DE LA CRUZ RIOS", circunscripcion: "Amazonas", foto: "", sexo: "M", dni: "33566638" },
+    { id: "fp-d4", nombre: "TERESITA SILVA DE TORRES", circunscripcion: "Amazonas", foto: "", sexo: "F", dni: "33595686" },
+    // ANCASH
+    { id: "fp-d5", nombre: "FERNANDO ZAMBRANO CAVERO", circunscripcion: "Ancash", foto: "", sexo: "M", dni: "07551944" },
+    { id: "fp-d6", nombre: "OCTAVIO CAMPOS", circunscripcion: "Ancash", foto: "", sexo: "M", dni: "33408683" },
+    { id: "fp-d7", nombre: "NITIZA MERLY CHACON TRUJILLO", circunscripcion: "Ancash", foto: "", sexo: "F", dni: "32971154" },
+    { id: "fp-d8", nombre: "LENIN TAHIR LUCERO", circunscripcion: "Ancash", foto: "", sexo: "M", dni: "33254002" },
+    { id: "fp-d9", nombre: "DORINA CACERES YBIAS", circunscripcion: "Apurimac", foto: "", sexo: "F", dni: "31175024" },
+    // AREQUIPA
+    { id: "fp-d10", nombre: "MAURICIO FERNANDO ARMILLAS GONZALEZ", circunscripcion: "Arequipa", foto: "", sexo: "M", dni: "29640205" },
+    { id: "fp-d11", nombre: "VICTORIA TACO VERA", circunscripcion: "Arequipa", foto: "", sexo: "F", dni: "29249151" },
+    // AYACUCHO
+    { id: "fp-d12", nombre: "ALBERTO VELARDE FLORES", circunscripcion: "Ayacucho", foto: "", sexo: "M", dni: "08813649" },
+    { id: "fp-d13", nombre: "LEOCADIO TAPIA BERNAL SEGUNDO", circunscripcion: "Cajamarca", foto: "", sexo: "M", dni: "16657841" },
+    // CALLAO
+    { id: "fp-d14", nombre: "MERCEDES DIAZ SANCHEZ DE VILLEGAS ELVA", circunscripcion: "Callao", foto: "", sexo: "F", dni: "09242136" },
+    { id: "fp-d15", nombre: "JACQUES SALOMON RODRICH ACKERMAN", circunscripcion: "Callao", foto: "", sexo: "M", dni: "08234063" },
+    { id: "fp-d16", nombre: "ANWAR ROJAS ROMAN", circunscripcion: "Cusco", foto: "", sexo: "M", dni: "25646909" },
+    { id: "fp-d17", nombre: "WALTER MISAEL MANCILLA HUAMAN", circunscripcion: "Cusco", foto: "", sexo: "M", dni: "23973175" },
+    // HUANUCO
+    { id: "fp-d18", nombre: "LUZ MARINA GUTIERREZ VALDIVIA", circunscripcion: "Huanuco", foto: "", sexo: "F", dni: "22419799" },
+    { id: "fp-d19", nombre: "CARLOS JOSE QUISPE CALDERON", circunscripcion: "Huanuco", foto: "", sexo: "M", dni: "22516214" },
+    // ICA
+    { id: "fp-d20", nombre: "RAFAEL GUSTAVO YAMASHIRO ORE", circunscripcion: "Ica", foto: "", sexo: "M", dni: "21414172" },
+    { id: "fp-d21", nombre: "NORMA LUISA FLORES HERRERA", circunscripcion: "Junin", foto: "", sexo: "F", dni: "22080545" },
+    { id: "fp-d22", nombre: "DAVID JULIO JIMENEZ HEREDIA", circunscripcion: "Junin", foto: "", sexo: "M", dni: "19994639" },
+    // LA LIBERTAD
+    { id: "fp-d23", nombre: "VICTOR SEBERINO FLORES RUIZ", circunscripcion: "La Libertad", foto: "", sexo: "M", dni: "17898798" },
+    { id: "fp-d24", nombre: "BELINDA BRICEÑO LLOCLLA ESTRELLA", circunscripcion: "La Libertad", foto: "", sexo: "F", dni: "18068027" },
+    { id: "fp-d25", nombre: "ALEJANDRO AURELIO AGUINAGA RECUENCO", circunscripcion: "Lambayeque", foto: "", sexo: "M", dni: "08236635" },
+    { id: "fp-d26", nombre: "AMELIA FAXSO NUÑEZ VIOLETA", circunscripcion: "Lambayeque", foto: "", sexo: "F", dni: "17537267" },
+    // LIMA
+    { id: "fp-d27", nombre: "MARCO ENRIQUE MIYASHIRO ARASHIRO", circunscripcion: "Lima", foto: "", sexo: "M", dni: "22974228" },
+    { id: "fp-d28", nombre: "MILAGROS EMPERATRIZ SALAZAR DE LA TORRE", circunscripcion: "Lima", foto: "", sexo: "F", dni: "06770253" },
+    { id: "fp-d29", nombre: "CARLOS ERNESTO BUSTAMANTE DONAYRE", circunscripcion: "Lima", foto: "", sexo: "M", dni: "08232920" },
+    { id: "fp-d30", nombre: "ROSA ELVIRA SALVATIERRA VALDIVIA", circunscripcion: "Lima", foto: "", sexo: "F", dni: "07809802" },
+    // LORETO
+    { id: "fp-d35", nombre: "JUAN CARLOS DEL AGUILA CARDENAS", circunscripcion: "Loreto", foto: "", sexo: "M", dni: "05227631" },
+    { id: "fp-d36", nombre: "LEIDY SONIA ZUMAUR CERDEIRA", circunscripcion: "Loreto", foto: "", sexo: "F", dni: "05338089" },
+    { id: "fp-d37", nombre: "MINAYA MIMOSA FIGUEROA", circunscripcion: "Madre de Dios", foto: "", sexo: "F", dni: "08625089" },
+    // MOQUEGUA
+    { id: "fp-d38", nombre: "MARIO FIDEL MAMTILLA MEDINA", circunscripcion: "Moquegua", foto: "", sexo: "M", dni: "29304400" },
+    { id: "fp-d39", nombre: "CECILIA FILOMENA LÉVANO HUAMBOS", circunscripcion: "Moquegua", foto: "", sexo: "F", dni: "29198025" },
+    // PASCO
+    { id: "fp-d40", nombre: "ROY EFRAIN VENTURA ANGEL", circunscripcion: "Pasco", foto: "", sexo: "M", dni: "41439770" },
+    { id: "fp-d41", nombre: "PAOLA CASTILLO CAJALEON", circunscripcion: "Pasco", foto: "", sexo: "F", dni: "08437546" },
+    // PIURA
+    { id: "fp-d42", nombre: "KARLA MELISSA SCHAEFER CUCULIZA", circunscripcion: "Piura", foto: "", sexo: "F", dni: "10636205" },
+    { id: "fp-d43", nombre: "VICTOR HUGO FLORES CARRETERO", circunscripcion: "Piura", foto: "", sexo: "M", dni: "09208672" },
+    // SAN MARTIN
+    { id: "fp-d44", nombre: "VICTOR MANUEL NORIEGA REATEGUI", circunscripcion: "San Martin", foto: "", sexo: "M", dni: "17808760" },
+    // TACNA
+    { id: "fp-d45", nombre: "WADIO MARTIN VALENCIA BERLANEA", circunscripcion: "Tacna", foto: "", sexo: "M", dni: "30412991" },
+    { id: "fp-d46", nombre: "ELISA MARTHISA CONDORI GALLEGOS", circunscripcion: "Tacna", foto: "", sexo: "F", dni: "00611575" },
+    // TUMBES
+    { id: "fp-d47", nombre: "HECTOR JOSE VENTURA ANGEL", circunscripcion: "Tumbes", foto: "", sexo: "M", dni: "40242430" },
+    { id: "fp-d48", nombre: "MATILDE CABRERA DE LAMA", circunscripcion: "Tumbes", foto: "", sexo: "F", dni: "00328686" },
+    // UCAYALI
+    { id: "fp-d49", nombre: "JORGE VELASQUEZ PORTOCARRERO", circunscripcion: "Ucayali", foto: "", sexo: "M", dni: "21143880" },
+    { id: "fp-d50", nombre: "JANNET PRIETO SAAVEDRAALEJANDRA", circunscripcion: "Ucayali", foto: "", sexo: "F", dni: "00125193" }
+  ],
+  senadores: [
+    { id: "fp-s1", nombre: "MIGUEL ANGEL TORRES MORALES", ambito: "Nacional", foto: "", sexo: "M", dni: "40433187" },
+    { id: "fp-s2", nombre: "MARTHA GLADYS CHAVEZ COSSIO", ambito: "Nacional", foto: "", sexo: "F", dni: "07960843" },
+    { id: "fp-s3", nombre: "FERNANDO ROGGIOGIOSI CAPURRO", ambito: "Nacional", foto: "", sexo: "M", dni: "07704730" },
+    { id: "fp-s4", nombre: "CARMEN PATRICIA JUAREZ GALLEGOS", ambito: "Nacional", foto: "", sexo: "F", dni: "07831436" },
+    { id: "fp-s6", nombre: "MARTHA LUPE MOYANO DELGADO", ambito: "Nacional", foto: "", sexo: "F", dni: "08911520" },
+    { id: "fp-s7", nombre: "CARLOS MARIO TUBINO ARIAS SCHREIBER", ambito: "Nacional", foto: "", sexo: "M", dni: "43341622" },
+    { id: "fp-s10", nombre: "SILZA LITA ROMERO PERALTA", ambito: "Nacional", foto: "", sexo: "F", dni: "29731107" },
+    { id: "fp-s11", nombre: "SANDRO ESPINOZA SHAPPAMA", ambito: "Nacional", foto: "", sexo: "M", dni: "08195809" },
+  ],
+  parlamentariosAndinos: [
+    { id: "fp-pa1", nombre: "LEOPOLDO PARIONA MINAYA", tipo: "Titular", foto: "", sexo: "M", dni: "08612423" },
+    { id: "fp-pa2", nombre: "MARIA LUISA FERNANDEZ ARROYO", tipo: "Titular", foto: "", sexo: "F", dni: "23276802" },
+    { id: "fp-pa3", nombre: "RAUL QUISPE GONZALES", tipo: "Titular", foto: "", sexo: "M", dni: "24001301" },
+    { id: "fp-pa4", nombre: "MARIA ELENA RIOS SIERRA", tipo: "Titular", foto: "", sexo: "F", dni: "09535871" },
+    { id: "fp-pa5", nombre: "JUAN CARLOS AREVALO VELA", tipo: "Titular", foto: "", sexo: "M", dni: "06306625" },
+    { id: "fp-pa6", nombre: "GRACIELA BECERRA CELIS ROSA", tipo: "Suplente", foto: "", sexo: "F", dni: "03071215" },
+    { id: "fp-pa7", nombre: "SAMUEL LOYA VELASQUEZ", tipo: "Suplente", foto: "", sexo: "M", dni: "04016684" },
+    { id: "fp-pa8", nombre: "CECILIA CHAVEZ LEDESMA DE PANTA", tipo: "Suplente", foto: "", sexo: "F", dni: "08106793" }
+  ]
   },
   {
     id: 3,
@@ -106,20 +182,20 @@ export const PARTIDOS: Partido[] = [
       { id: "pte1", nombre: "Napoleón Becerra", cargo: "Presidente", foto: "/FotosCandidatos/partido-trabajadores-pte-peru.jpg" }
     ],
     diputados: [
-      { id: "pte-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-      { id: "pte-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
-      { id: "pte-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "" },
-      { id: "pte-d4", nombre: "Rosa María Fernández Castro", circunscripcion: "La Libertad", foto: "" },
-      { id: "pte-d5", nombre: "José Luis Mendoza Vargas", circunscripcion: "Piura", foto: "" },
-      { id: "pte-d6", nombre: "Carmen Patricia Rojas Díaz", circunscripcion: "Lambayeque", foto: "" }
+      { id: "pte-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+      { id: "pte-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
+      { id: "pte-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "", sexo: "M", dni: "11223344" },
+      { id: "pte-d4", nombre: "Rosa María Fernández Castro", circunscripcion: "La Libertad", foto: "", sexo: "F", dni: "44332211" },
+      { id: "pte-d5", nombre: "José Luis Mendoza Vargas", circunscripcion: "Piura", foto: "", sexo: "M", dni: "55667788" },
+      { id: "pte-d6", nombre: "Carmen Patricia Rojas Díaz", circunscripcion: "Lambayeque", foto: "", sexo: "F", dni: "99887766" }
     ],
     senadores: [
-      { id: "pte-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "pte-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "pte-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "pte-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
     parlamentariosAndinos: [
-       { id: "pte-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
-       { id: "pte-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "" }
+       { id: "pte-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
+       { id: "pte-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "", sexo: "M", dni: "77889900" }
     ]
   },
   {
@@ -130,20 +206,20 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político peruano de centro.",
     candidatos: [],
     diputados: [
-      { id: "an-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-      { id: "an-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
-      { id: "an-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "" },
-      { id: "an-d4", nombre: "Rosa María Fernández Castro", circunscripcion: "La Libertad", foto: "" },
-      { id: "an-d5", nombre: "José Luis Mendoza Vargas", circunscripcion: "Piura", foto: "" },
-      { id: "an-d6", nombre: "Carmen Patricia Rojas Díaz", circunscripcion: "Lambayeque", foto: "" }
+      { id: "an-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+      { id: "an-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
+      { id: "an-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "", sexo: "M", dni: "11223344" },
+      { id: "an-d4", nombre: "Rosa María Fernández Castro", circunscripcion: "La Libertad", foto: "", sexo: "F", dni: "44332211" },
+      { id: "an-d5", nombre: "José Luis Mendoza Vargas", circunscripcion: "Piura", foto: "", sexo: "M", dni: "55667788" },
+      { id: "an-d6", nombre: "Carmen Patricia Rojas Díaz", circunscripcion: "Lambayeque", foto: "", sexo: "F", dni: "99887766" }
     ],
     senadores: [
-      { id: "an-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "an-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "an-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "an-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
     parlamentariosAndinos: [
-       { id: "an-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
-       { id: "an-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "" }
+       { id: "an-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
+       { id: "an-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "", sexo: "M", dni: "77889900" }
     ]
   },
   {
@@ -154,16 +230,16 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político peruano de izquierda.",
     candidatos: [],
     diputados: [
-      { id: "jpp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-      { id: "jpp-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
+      { id: "jpp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+      { id: "jpp-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
     ],
     senadores: [
-      { id: "jpp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "jpp-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "jpp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "jpp-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
     parlamentariosAndinos: [
-       { id: "jpp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
-       { id: "jpp-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "" }
+       { id: "jpp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
+       { id: "jpp-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "", sexo: "M", dni: "77889900" }
     ]
   },
   {
@@ -174,17 +250,17 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido enfocado en la transparencia y la gobernabilidad.",
     candidatos: [],
     diputados: [
-      { id: "pbg-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-      { id: "pbg-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
-      { id: "pbg-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "" },
+      { id: "pbg-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+      { id: "pbg-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
+      { id: "pbg-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "", sexo: "M", dni: "11223344" },
     ],
     senadores: [
-      { id: "pbg-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "pbg-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "pbg-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "pbg-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
     parlamentariosAndinos: [
-       { id: "pbg-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
-       { id: "pbg-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "" }
+       { id: "pbg-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
+       { id: "pbg-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "", sexo: "M", dni: "77889900" }
     ]
   },
   {
@@ -194,23 +270,23 @@ export const PARTIDOS: Partido[] = [
     logo: "/logos/alianza-para-el-progreso.png",
     descripcion: "Partido político peruano de centroderecha.",
     candidatos: [
-      { id: "app1", nombre: "César Acuña Peralta", cargo: "Presidente", foto: "" },
-      { id: "app2", nombre: "Carmen Omonte Durand", cargo: "1ra Vicepresidenta", foto: "" },
-      { id: "app3", nombre: "Luis Iberico Núñez", cargo: "2do Vicepresidente", foto: "" }
+      { id: "app1", nombre: "CÉSAR ACUÑA PERALTA", cargo: "Presidente", foto: "" },
+      { id: "app2", nombre: "JESSICA MILAGROS TUMI RIVAS", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/jessica-tumi.jpg" },
+      { id: "app3", nombre: "ALEJANDRO SOTO REYES", cargo: "Segundo Vicepresidente", foto: "/FotosCandidatos/alejandro-soto.jpg" },
     ],
     diputados: [
-      { id: "app-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-      { id: "app-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
-      { id: "app-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "" },
-      { id: "app-d4", nombre: "Rosa María Fernández Castro", circunscripcion: "La Libertad", foto: "" }
+      { id: "app-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+      { id: "app-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
+      { id: "app-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "", sexo: "M", dni: "11223344" },
+      { id: "app-d4", nombre: "Rosa María Fernández Castro", circunscripcion: "La Libertad", foto: "", sexo: "F", dni: "99887766" }
     ],
     senadores: [
-      { id: "app-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "app-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "app-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "app-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
     parlamentariosAndinos: [
-       { id: "app-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
-       { id: "app-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "" }
+       { id: "app-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
+       { id: "app-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "", sexo: "M", dni: "77889900" }
     ]
   },
   {
@@ -221,17 +297,17 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político de centroderecha.",
     candidatos: [],
     diputados: [
-      { id: "lp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-      { id: "lp-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
-      { id: "lp-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "" },
+      { id: "lp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+      { id: "lp-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
+      { id: "lp-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "", sexo: "M", dni: "11223344" },
     ],
     senadores: [
-      { id: "lp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "lp-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "lp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "lp-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
     parlamentariosAndinos: [
-       { id: "lp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
-       { id: "lp-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "" }
+       { id: "lp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
+       { id: "lp-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "", sexo: "M", dni: "77889900" }
     ]
   },
   {
@@ -242,16 +318,16 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político democrático.",
     candidatos: [],
     diputados: [
-        { id: "pdu-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-        { id: "pdu-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
+        { id: "pdu-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+        { id: "pdu-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
     ],
     senadores: [
-      { id: "pdu-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "pdu-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "pdu-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "pdu-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
     parlamentariosAndinos: [
-       { id: "pdu-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
-       { id: "pdu-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "" }
+       { id: "pdu-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
+       { id: "pdu-pa2", nombre: "Miguel Ángel Sánchez Paredes", foto: "", sexo: "M", dni: "77889900" }
     ]
   },
   {
@@ -264,15 +340,15 @@ export const PARTIDOS: Partido[] = [
       { id: "apis1", nombre: "Phillip Butters", cargo: "Presidente", foto: "/FotosCandidatos/avanza-pais.jpeg" }
     ],
     diputados: [
-      { id: "apis-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-      { id: "apis-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
+      { id: "apis-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+      { id: "apis-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
     ],
     senadores: [
-      { id: "apis-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "apis-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "apis-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "apis-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
     parlamentariosAndinos: [
-        { id: "apis-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+        { id: "apis-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -283,15 +359,15 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político de izquierda progresista.",
     candidatos: [],
     diputados: [
-      { id: "npbv-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "" },
-      { id: "npbv-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
+      { id: "npbv-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+      { id: "npbv-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
     ],
     senadores: [
-      { id: "npbv-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "npbv-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "npbv-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "npbv-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
     parlamentariosAndinos: [
-        { id: "npbv-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+        { id: "npbv-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -312,14 +388,16 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político peruano.",
     candidatos: [],
     diputados: [
-      { id: "bp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
-      { id: "bp-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
+      { id: "bp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678" },
+      { id: "bp-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
     ],
     senadores: [
-      { id: "bp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "bp-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "bp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
+      { id: "bp-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "", sexo: "F", dni: "55664433" }
     ],
-    parlamentariosAndinos: []
+    parlamentariosAndinos: [
+        { id: "bp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
+    ]
   },
   {
     id: 14,
@@ -327,15 +405,19 @@ export const PARTIDOS: Partido[] = [
     siglas: "APRA",
     logo: "/logos/partido-aprista-peruano.png",
     descripcion: "Partido político histórico del Perú, socialdemócrata.",
-    candidatos: [],
+    candidatos: [
+      { id: "apra1", nombre: "JORGE DEL CASTILLO", cargo: "Presidente", foto: "/FotosCandidatos/jorge-del-castillo.jpg" },
+      { id: "apra2", nombre: "CLAUDE MAURICIO MULDER BEDOYA", cargo: "Primer Vicepresidente", foto: "/FotosCandidatos/mauricio-mulder.jpg" },
+      { id: "apra3", nombre: "BELEN YSABEL GARCIA MENDOZA", cargo: "Segunda Vicepresidenta", foto: "/FotosCandidatos/belen-garcia.jpg" }
+    ],
     diputados: [
-      { id: "apra-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "apra-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "apra-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "apra-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-        { id: "apra-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+        { id: "apra-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -346,13 +428,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político federalista.",
     candidatos: [],
     diputados: [
-      { id: "pdf-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pdf-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pdf-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pdf-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pdf-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pdf-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -363,13 +445,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político conservador.",
     candidatos: [],
     diputados: [
-      { id: "fep-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "fep-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "fep-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "fep-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "fep-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "fep-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -380,13 +462,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido ciudadano enfocado en la participación.",
     candidatos: [],
     diputados: [
-      { id: "cpp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "cpp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "cpp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "cpp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "cpp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "cpp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -395,15 +477,19 @@ export const PARTIDOS: Partido[] = [
     siglas: "DSP",
     logo: "/logos/somos-peru.png",
     descripcion: "Partido político de centroizquierda.",
-    candidatos: [],
+    candidatos: [
+      { id: "dsp1", nombre: "George Forsyth", cargo: "Presidente", foto: "/FotosCandidatos/somos-peru.jpg" },
+      { id: "dsp2", nombre: "Gabriela Lozada Baldwin", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/gabriela-lozada.jpg" },
+      { id: "dsp3", nombre: "Herbe Olave Ugarte", cargo: "Segundo Vicepresidente", foto: "/FotosCandidatos/herbe-olave.jpg" }
+    ],
     diputados: [
-      { id: "dsp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "dsp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "dsp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "dsp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "dsp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "dsp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -424,13 +510,13 @@ export const PARTIDOS: Partido[] = [
       { id: "pco1", nombre: "Ricardo Belmont", cargo: "Presidente", foto: "/FotosCandidatos/partido-civico-obras.jpg" }
     ],
     diputados: [
-      { id: "pco-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pco-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pco-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pco-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pco-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pco-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -441,13 +527,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Frente político progresista.",
     candidatos: [],
     diputados: [
-      { id: "f21-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "f21-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "f21-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "f21-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "f21-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "f21-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -458,13 +544,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político de centro.",
     candidatos: [],
     diputados: [
-      { id: "pm-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pm-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pm-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pm-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pm-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pm-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -475,13 +561,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político de acción ciudadana.",
     candidatos: [],
     diputados: [
-      { id: "pa-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pa-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pa-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pa-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pa-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pa-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -492,13 +578,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político modernista.",
     candidatos: [],
     diputados: [
-      { id: "pmo-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pmo-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pmo-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pmo-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pmo-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pmo-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -511,13 +597,13 @@ export const PARTIDOS: Partido[] = [
       { id: "ppt1", nombre: "Carlos Álvarez", cargo: "Presidente", foto: "/FotosCandidatos/pais-para-todos.jpg" }
     ],
     diputados: [
-      { id: "ppt-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "ppt-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "ppt-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "ppt-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "ppt-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "ppt-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -530,13 +616,13 @@ export const PARTIDOS: Partido[] = [
       { id: "pp1-1", nombre: "Mario Vizcarra", cargo: "Presidente", foto: "/FotosCandidatos/peru-primero.jpg" }
     ],
     diputados: [
-      { id: "pp1-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pp1-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pp1-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pp1-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pp1-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pp1-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -545,15 +631,19 @@ export const PARTIDOS: Partido[] = [
     siglas: "PP",
     logo: "/logos/podemos-peru.png",
     descripcion: "Partido político de centro.",
-    candidatos: [],
+    candidatos: [
+      { id: "pp1", nombre: "José Luna Gálvez", cargo: "Presidente", foto: "" },
+      { id: "pp2", nombre: "Celia García Rodríguez", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/cecilia-garcia.jpg" },
+      { id: "pp3", nombre: "Raúl Noblecilla Olaechea", cargo: "Segundo Vicepresidente", foto: "/FotosCandidatos/raul-noblecilla.jpg" }
+    ],
     diputados: [
-      { id: "pp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -564,13 +654,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido patriótico nacionalista.",
     candidatos: [],
     diputados: [
-      { id: "ppp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "ppp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "ppp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "ppp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "ppp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "ppp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -581,13 +671,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido de unidad nacional.",
     candidatos: [],
     diputados: [
-      { id: "pusl-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pusl-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pusl-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pusl-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pusl-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pusl-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -598,13 +688,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido enfocado en las personas.",
     candidatos: [],
     diputados: [
-      { id: "plc-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "plc-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "plc-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "plc-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "plc-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "plc-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -617,13 +707,13 @@ export const PARTIDOS: Partido[] = [
       { id: "cp1", nombre: "Yonhy Lescano", cargo: "Presidente", foto: "/FotosCandidatos/cooperacion-popular.jpg" }
     ],
     diputados: [
-      { id: "cp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "cp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "cp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "cp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "cp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "cp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -636,13 +726,13 @@ export const PARTIDOS: Partido[] = [
       { id: "vp1", nombre: "Gillermo Bermejo", cargo: "Presidente", foto: "/FotosCandidatos/voces-del-pueblo.jpg" }
     ],
     diputados: [
-      { id: "vp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "vp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "vp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "vp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "vp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "vp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -653,14 +743,14 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido progresista.",
     candidatos: [],
     diputados: [
-      { id: "prg-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
-      { id: "prg-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
+      { id: "prg-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
+      { id: "prg-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "", sexo: "F", dni: "87654321" },
     ],
     senadores: [
-      { id: "prg-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "prg-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "prg-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "prg-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -671,13 +761,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido moderno y reformista.",
     candidatos: [],
     diputados: [
-      { id: "fm-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "fm-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "fm-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "fm-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "fm-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "fm-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -688,13 +778,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido de renovación nacional.",
     candidatos: [],
     diputados: [
-      { id: "prin-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "prin-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "prin-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "prin-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "prin-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "prin-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -705,36 +795,38 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político de derecha conservadora.",
     planGobierno: "/pdf/plangobierno-rp.pdf", // Agregar esta línea
     candidatos: [
-      { id: "rp1", nombre: "Rafael López Aliaga", cargo: "Presidente", foto: "/FotosCandidatos/renovacion-popular.jpg" }
+      { id: "rp1", nombre: "RAFAEL BERNANDO LOPEZ ALIAGA", cargo: "Presidente", foto: "/FotosCandidatos/renovacion-popular.jpg" },
+      { id: "rp2", nombre: "NORMA MARTINA YARROW LUMBRERAS", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/norma-yarrow.jpg" },
+      { id: "rp3", nombre: "JHON IVAN RAMOS MALPICA", cargo: "Segundo Vicepresidente", foto: "/FotosCandidatos/jhon-ramos.jpg" }
     ],
     diputados: [
-      { id: "rp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
-      { id: "rp-d2", nombre: "María Elena López Torres", circunscripcion: "Cusco", foto: "" },
-      { id: "rp-d3", nombre: "Pedro Antonio Ramírez Silva", circunscripcion: "Arequipa", foto: "" }
+      { id: "rp-d1", nombre: "ROXANA MARÍA ROCHA GALLEGOS", circunscripcion: "Lima", foto: "", dni: "10275564", sexo: "F" },
+      { id: "rp-d2", nombre: "GUSTAVO ALEXANDER SEGURA FIGUEROA", circunscripcion: "Lima", foto: "", dni: "41010370", sexo: "M" },
+      { id: "rp-d3", nombre: "LIZZI DEL ROCIO SUELDO MATOS", circunscripcion: "Lima", foto: "", dni: "10313904", sexo: "F" },
+      { id: "rp-d4", nombre: "JOSÉ ANTONIO CACHO SOUSA DE CARDENAS", circunscripcion: "Lima", foto: "", dni: "06407901", sexo: "M" },
+      { id: "rp-d5", nombre: "DEBORAH CARMEN INGA ZAPATA", circunscripcion: "Lima", foto: "", dni: "41339983", sexo: "F" },
+      { id: "rp-d6", nombre: "JAVIER JOSÉ MARÍA CIPRIANI THORNE", circunscripcion: "Lima", foto: "", dni: "07744156", sexo: "M" },
+      { id: "rp-d7", nombre: "GIULIANA CALAMBROGIO CORREA", circunscripcion: "Lima", foto: "", dni: "41375446", sexo: "F" },
     ],
     senadores: [
-      { id: "rp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-      { id: "rp-s2", nombre: "Ana Lucía Morales Vega", ambito: "Regional - Sur", foto: "" }
+      { id: "rp-s2", nombre: "MARIA LOURDES PIA LUISA ALCORTA SUERO", ambito: "Nacional", foto: "", dni: "08235876", sexo: "F" },
+      { id: "rp-s3", nombre: "ALEJANDRO MUÑANTE BARRIOS", ambito: "Nacional", foto: "", dni: "45209282", sexo: "M" },
+      { id: "rp-s4", nombre: "KATHERINE MILAGROS AMPUERO MEZA", ambito: "Nacional", foto: "", dni: "25799622", sexo: "F" },
+      { id: "rp-s8", nombre: "LOURDES NILDA SEBASTIANA ESPINOZA RIVERA", ambito: "Nacional", foto: "", dni: "07237776", sexo: "F" },
+      { id: "rp-s10", nombre: "SUSANA AYQUIPA SOTO", ambito: "Nacional", foto: "", dni: "06281336", sexo: "F" },
+      { id: "rp-s11", nombre: "EDWARD RODOLFO YABAR GUTIERREZ", ambito: "Nacional", foto: "", dni: "40697243", sexo: "M" },
+      { id: "rp-s12", nombre: "AURA HIRES ROCHA SALAZAR DE TRUJILLO", ambito: "Nacional", foto: "", dni: "10404860", sexo: "F" },
+      { id: "rp-s13", nombre: "CESAR ALFREDO VIGNOLO GONZALES DEL VALLE", ambito: "Nacional", foto: "", dni: "09153292", sexo: "M" },
     ],
     parlamentariosAndinos: [
-      { id: "rp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
-    ]
-  },
-  {
-    id: 37,
-    nombre: "Integridad Democrática",
-    siglas: "ID",
-    logo: "/logos/integridad-democratica.png",
-    descripcion: "Partido enfocado en la integridad.",
-    candidatos: [],
-    diputados: [
-      { id: "id-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
-    ],
-    senadores: [
-      { id: "id-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
-    ],
-    parlamentariosAndinos: [
-      { id: "id-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "rp-pa1", nombre: "MAAUI OLGA BETTY DEL POMAR SAETTONE", foto: "", dni: "10548467", sexo: "F", tipo: "Titular" },
+      { id: "rp-pa2", nombre: "GUILLERMO HUMBERTO VALDIVIESO MENDEZ", foto: "", dni: "08778400", sexo: "M", tipo: "Titular" },
+      { id: "rp-pa3", nombre: "EVERLENY ELCI BELLO SOLORZANO", foto: "", dni: "10683474", sexo: "F", tipo: "Titular" },
+      { id: "rp-pa4", nombre: "LEONCIO CARLOS MERINO DURAND", foto: "", dni: "41005446", sexo: "M", tipo: "Titular" },
+      { id: "rp-pa5", nombre: "AUGUSTA GAMARRA SALDIVAR", foto: "", dni: "40768988", sexo: "F", tipo: "Titular" },
+      { id: "rp-pa6", nombre: "JOSEPH ANGELO PACHERRES SEDANO", foto: "", dni: "46791122", sexo: "M", tipo: "Suplente 1" },
+      { id: "rp-pa7", nombre: "JESSICA MIRELLA URQUIZA ALVAREZ", foto: "", dni: "07261863", sexo: "F", tipo: "Suplente 1" },
+      { id: "rp-pa8", nombre: "JORGE LUIS GUILLEN SIVIRICHI", foto: "", dni: "40163811", sexo: "M", tipo: "Suplente 1" },
     ]
   },
   {
@@ -745,13 +837,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido democratacristiano histórico.",
     candidatos: [],
     diputados: [
-      { id: "ppc-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "ppc-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "ppc-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "ppc-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "ppc-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "ppc-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -762,13 +854,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido de salvación nacional.",
     candidatos: [],
     diputados: [
-      { id: "sp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "sp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "sp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "sp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "sp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "sp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -779,13 +871,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político de izquierda marxista.",
     candidatos: [],
     diputados: [
-      { id: "pl-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pl-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pl-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pl-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pl-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pl-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -798,13 +890,13 @@ export const PARTIDOS: Partido[] = [
       { id: "sc1", nombre: "Carlos Espá", cargo: "Presidente", foto: "/FotosCandidatos/si-creo.jpg" }
     ],
     diputados: [
-      { id: "sc-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "sc-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ], 
     senadores: [
-      { id: "sc-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "sc-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "sc-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "sc-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -815,13 +907,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido alternativo.",
     candidatos: [],
     diputados: [
-      { id: "ucd-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "ucd-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "ucd-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "ucd-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "ucd-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "ucd-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -832,13 +924,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido enfocado en la unidad.",
     candidatos: [],
     diputados: [
-      { id: "uyp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "uyp-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "uyp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "uyp-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "uyp-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "uyp-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   },
   {
@@ -849,13 +941,13 @@ export const PARTIDOS: Partido[] = [
     descripcion: "Partido político de izquierda.",
     candidatos: [],
     diputados: [
-      { id: "pnpl-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: ""  },
+      { id: "pnpl-d1", nombre: "Juan Carlos Pérez Gómez", circunscripcion: "Lima", foto: "", sexo: "M", dni: "12345678"  },
     ],
     senadores: [
-      { id: "pnpl-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "" },
+      { id: "pnpl-s1", nombre: "Carlos Alberto Ruiz Martínez", ambito: "Nacional", foto: "", sexo: "M", dni: "66778899" },
     ],
     parlamentariosAndinos: [
-      { id: "pnpl-pa1", nombre: "Rosa Isabel García Flores", foto: "" },
+      { id: "pnpl-pa1", nombre: "Rosa Isabel García Flores", foto: "", sexo: "F", dni: "33445566" },
     ]
   }
 ];
