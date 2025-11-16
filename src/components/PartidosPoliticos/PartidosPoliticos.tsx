@@ -183,7 +183,7 @@ const PartidosPoliticos: React.FC = () => {
               <line x1="12" y1="8" x2="12" y2="12"></line>
               <line x1="12" y1="16" x2="12.01" y2="16"></line>
             </svg>
-            {t('partidos.filtros.ideologia')}
+            {t('Partidos Filtros Ideologia')}
           </label>
           <select
             id="filtro-ideologia"
@@ -191,12 +191,12 @@ const PartidosPoliticos: React.FC = () => {
             value={filtroIdeologia}
             onChange={(e) => setFiltroIdeologia(e.target.value)}
           >
-            <option value="todos">{t('partidos.filtros.todas')}</option>
-            <option value="izquierda">{t('partidos.filtros.izquierda')}</option>
-            <option value="centro-izquierda">{t('partidos.filtros.centroIzquierda')}</option>
-            <option value="centro">{t('partidos.filtros.centro')}</option>
-            <option value="centro-derecha">{t('partidos.filtros.centroDerecha')}</option>
-            <option value="derecha">{t('partidos.filtros.derecha')}</option>
+            <option value="todos">{t('Partidos Filtros Todas').replace(/\./g, '') + ' '}</option>
+            <option value="izquierda">{t('Partidos Filtros Izquierda').replace(/\./g, '') + ' '}</option>
+            <option value="centro-izquierda">{t('Partidos Filtros CentroIzquierda').replace(/\./g, '') + ' '}</option>
+            <option value="centro">{t('Partidos Filtros Centro').replace(/\./g, '') + ' '}</option>
+            <option value="centro-derecha">{t('Partidos Filtros CentroDerecha').replace(/\./g, '') + ' '}</option>
+            <option value="derecha">{t('Partidos Filtros Derecha').replace(/\./g, '') + ' '}</option>
           </select>
         </div>
 
@@ -212,7 +212,7 @@ const PartidosPoliticos: React.FC = () => {
 
       {partidosFiltrados.length === 0 && (
         <div className="no-resultados">
-          <p>{t('partidos.buscador.noResultados')}</p>
+          <p>{t('Partidos Buscador NoResultados')}</p>
         </div>
       )}
 
