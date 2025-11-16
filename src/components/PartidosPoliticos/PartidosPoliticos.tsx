@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './PartidosPoliticos.css';
@@ -16,6 +16,7 @@ interface Partido {
 const PartidosPoliticos: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
 
   // Función para obtener la clave de traducción del nombre del partido
   const getPartidoKey = (nombre: string): string => {
@@ -62,7 +63,8 @@ const PartidosPoliticos: React.FC = () => {
       'Partido Sí Creo': 'partido-si-creo',
       'Un Camino Diferente': 'un-camino-diferente',
       'Partido Unidad y Paz': 'unidad-y-paz',
-      'Partido de los Trabajadores PTE–Perú': 'pte-peru'
+      'Partido de los Trabajadores PTE–Perú': 'pte-peru',
+      'Partido Democrático Federal': 'partido-democratico-federal'
     };
     return keyMap[nombre] || nombre.toLowerCase().replace(/\s+/g, '-');
   };
@@ -74,7 +76,6 @@ const PartidosPoliticos: React.FC = () => {
     { "id": 1, "nombre": "Acción Popular", "siglas": "AP", "logo": "/logos/accion-popular.png" },
     { "id": 14, "nombre": "Partido Aprista Peruano", "siglas": "APRA", "logo": "/logos/partido-aprista-peruano.png" },
     { "id": 40, "nombre": "Perú Libre", "siglas": "PL", "logo": "/logos/peru-libre.png" },
-    { "id": 44, "nombre": "Partido Político Nacional Perú Libre", "siglas": "PNPL", "logo": "/logos/peru-libre.png" },
     { "id": 27, "nombre": "Podemos Perú", "siglas": "PP", "logo": "/logos/podemos-peru.png" },
     { "id": 18, "nombre": "Partido Democrático Somos Perú", "siglas": "DSP", "logo": "/logos/somos-peru.png" },
     { "id": 10, "nombre": "Avanza País – Partido de Integración Social", "siglas": "APIS", "logo": "/logos/avanza-pais.png" },
@@ -82,7 +83,6 @@ const PartidosPoliticos: React.FC = () => {
     { "id": 21, "nombre": "Frente de la Esperanza 2021", "siglas": "F21", "logo": "/logos/frente-esperanza-2021.png" },
     { "id": 11, "nombre": "Nuevo Perú por el Buen Vivir", "siglas": "NPBV", "logo": "/logos/nuevo-peru-por-el-buen-vivir.png" },
     { "id": 5, "nombre": "Juntos por el Perú", "siglas": "JPP", "logo": "/logos/juntos-por-el-peru.png" },
-    { "id": 19, "nombre": "Frente Popular Agrícola FIA del Perú (Frepap)", "siglas": "Frepap", "logo": "/logos/frepap.png" },
     { "id": 16, "nombre": "Fe en el Perú", "siglas": "FEP", "logo": "/logos/fe-en-el-peru.png" },
     { "id": 25, "nombre": "Partido País para Todos", "siglas": "PPT", "logo": "/logos/pais-para-todos.png" },
     { "id": 4, "nombre": "Ahora Nación", "siglas": "AN", "logo": "/logos/ahora-nacion.png" },
@@ -110,12 +110,24 @@ const PartidosPoliticos: React.FC = () => {
     { "id": 41, "nombre": "Partido Sí Creo", "siglas": "SC", "logo": "/logos/si-creo.png" },
     { "id": 42, "nombre": "Un Camino Diferente", "siglas": "UCD", "logo": "/logos/un-camino-diferente.png" },
     { "id": 43, "nombre": "Partido Unidad y Paz", "siglas": "UyP", "logo": "/logos/unidad-y-paz.png" },
-    { "id": 3, "nombre": "Partido de los Trabajadores PTE–Perú", "siglas": "PTE", "logo": "/logos/pte-peru.png" }
+    { "id": 3, "nombre": "Partido de los Trabajadores PTE–Perú", "siglas": "PTE", "logo": "/logos/pte-peru.png" },
+    { "id": 15, "nombre": "Partido Democrático Federal", "siglas": "PDF", "logo": "/logos/partido-democratico-federal.png" }
   ];
 
   const handlePartidoClick = (partidoId: number) => {
     navigate(`/partido/${partidoId}`);
   };
+
+  // Filtrar partidos según el término de búsqueda
+  const partidosFiltrados = partidos.filter(partido => {
+    const searchLower = searchTerm.toLowerCase();
+    const nombreTraducido = t(`partidos.nombres.${getPartidoKey(partido.nombre)}`).toLowerCase();
+    return (
+      nombreTraducido.includes(searchLower) ||
+      partido.siglas.toLowerCase().includes(searchLower) ||
+      partido.nombre.toLowerCase().includes(searchLower)
+    );
+  });
 
   return (
     <>
@@ -123,10 +135,42 @@ const PartidosPoliticos: React.FC = () => {
 
       <div className="partidos-container">
         <h1 className="titulo-principal">{t('partidos.titulo')} - Elecciones Perú 2026</h1>
-      <p className="subtitulo">43 {t('partidos.descripcion').toLowerCase()}</p>
+      <p className="subtitulo">{partidosFiltrados.length} {t('partidos.descripcion').toLowerCase()}</p>
+
+      {/* Buscador */}
+      <div className="buscador-container">
+        <div className="buscador-input-wrapper">
+          <svg className="buscador-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input
+            type="text"
+            className="buscador-input"
+            placeholder={t('partidos.buscador.placeholder')}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          {searchTerm && (
+            <button
+              className="buscador-clear"
+              onClick={() => setSearchTerm('')}
+              aria-label="Limpiar búsqueda"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+      </div>
+
+      {partidosFiltrados.length === 0 && (
+        <div className="no-resultados">
+          <p>{t('partidos.buscador.noResultados')}</p>
+        </div>
+      )}
 
       <div className="partidos-grid">
-        {partidos.map((partido) => (
+        {partidosFiltrados.map((partido) => (
           <div
             key={partido.id}
             className="partido-card"

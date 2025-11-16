@@ -96,22 +96,18 @@ const Chatbot: React.FC = () => {
   const getBotResponse = (userMessage: string): { text: string; options?: string[]; action?: () => void } => {
     const msg = userMessage.toLowerCase();
 
-    // Cambio de idioma
+    // ==================== CAMBIO DE IDIOMA ====================
     if (msg.includes('español') || msg.includes('castellano') || msg === 'es') {
       return {
         text: '¡Perfecto! He cambiado el idioma a Español 🇵🇪',
-        action: () => {
-          i18n.changeLanguage('es');
-        }
+        action: () => i18n.changeLanguage('es')
       };
     }
 
     if (msg.includes('quechua') || msg.includes('runasimi') || msg === 'qu') {
       return {
         text: '¡Allinmi! Simita Quechuaman t\'ikrarqani 🏔️',
-        action: () => {
-          i18n.changeLanguage('qu');
-        }
+        action: () => i18n.changeLanguage('qu')
       };
     }
 
@@ -127,103 +123,200 @@ const Chatbot: React.FC = () => {
     if (msg === 'español 🇵🇪') {
       return {
         text: '¡Perfecto! He cambiado el idioma a Español 🇵🇪',
-        action: () => {
-          i18n.changeLanguage('es');
-        }
+        action: () => i18n.changeLanguage('es')
       };
     }
 
     if (msg === 'quechua 🏔️') {
       return {
         text: '¡Allinmi! Simita Quechuaman t\'ikrarqani 🏔️',
-        action: () => {
-          i18n.changeLanguage('qu');
-        }
+        action: () => i18n.changeLanguage('qu')
       };
     }
 
-    if (msg.includes('candidato') || msg.includes('ver candidatos') || msg.includes('akllasqa')) {
+    // ==================== CANDIDATOS ====================
+    if (msg.includes('candidato') || msg.includes('ver candidatos') || msg.includes('akllasqa') || 
+        msg.includes('presidente') || msg.includes('umalliq') || msg.includes('postulante')) {
       return {
         text: t('chatbot.respuestas.candidatos'),
         action: () => setTimeout(() => navigate('/candidatos'), 1000)
       };
     }
 
-    if (msg.includes('partido') || msg.includes('partidos políticos') || msg.includes('partidu') || msg.includes('pulitiku')) {
+    // ==================== PARTIDOS POLÍTICOS ====================
+    if (msg.includes('partido') || msg.includes('partidos políticos') || msg.includes('partidu') || 
+        msg.includes('pulitiku') || msg.includes('organizacion') || msg.includes('lista')) {
       return {
         text: t('chatbot.respuestas.partidos'),
         action: () => setTimeout(() => navigate('/partidos'), 1000)
       };
     }
 
-    if (msg.includes('reniec') || msg.includes('consultar') || msg.includes('dni') || msg.includes('tapukuy')) {
+    // ==================== MIEMBROS DE MESA ====================
+    if (msg.includes('miembro') || msg.includes('mesa') || msg.includes('miembru') || 
+        msg.includes('sorteo') || msg.includes('designado') || msg.includes('seleccionado') ||
+        msg.includes('capacitacion') || msg.includes('yachachikuy') || msg.includes('instrucciones')) {
+      return {
+        text: i18n.language === 'es'
+          ? '¡Te llevaré a la sección de Miembros de Mesa! Ahí encontrarás:\n\n✓ Cronograma del día\n✓ Instrucciones paso a paso\n✓ Tus derechos y deberes\n✓ Capacitación disponible\n✓ Compensación económica'
+          : '¡Mesa Miembrukunapa sekciónman pusasqayki! Chaypi tarikunki:\n\n✓ P\'unchaw pachakamay\n✓ Yachachiy sapa llamk\'ay\n✓ Derechoykikuna ruwanaykikunapas\n✓ Yachachikuy kachkan\n✓ Qullqi yanapakuy',
+        action: () => setTimeout(() => navigate('/miembros-mesa'), 1000)
+      };
+    }
+
+    // ==================== RENIEC / CONSULTAS ====================
+    if (msg.includes('reniec') || msg.includes('consultar') || msg.includes('dni') || 
+        msg.includes('tapukuy') || msg.includes('verificar') || msg.includes('documento') ||
+        msg.includes('identidad') || msg.includes('buscar')) {
       return {
         text: t('chatbot.respuestas.reniec'),
         action: () => setTimeout(() => navigate('/reniec'), 1000)
       };
     }
 
-    if (msg.includes('cronograma') || msg.includes('fecha') || msg.includes('calendario') || msg.includes('cuando') || msg.includes('pachakamay')) {
+    // ==================== CRONOGRAMA / FECHAS ====================
+    if (msg.includes('cronograma') || msg.includes('fecha') || msg.includes('calendario') || 
+        msg.includes('cuando') || msg.includes('pachakamay') || msg.includes('dia') ||
+        msg.includes('elecciones') || msg.includes('akllana') || msg.includes('abril') ||
+        msg.includes('timeline') || msg.includes('tiempo')) {
       return {
         text: t('chatbot.respuestas.cronogramaRespuesta'),
+        options: [t('chatbot.respuestas.verCronograma'), 'Ver Miembros de Mesa', t('chatbot.verPartidos')],
         action: () => setTimeout(() => navigate('/'), 1000)
       };
     }
 
-    if (msg.includes('inicio') || msg.includes('home') || msg.includes('principal') || msg.includes('qallariy')) {
+    // ==================== VOTO / VOTACIÓN ====================
+    if (msg.includes('vot') || msg.includes('sufrag') || msg.includes('akll') ||
+        msg.includes('elegir') || msg.includes('como votar') || msg.includes('donde votar') ||
+        msg.includes('local') || msg.includes('mesa electoral')) {
+      return {
+        text: i18n.language === 'es'
+          ? '📍 Para votar necesitas:\n\n1. Tener tu DNI vigente\n2. Conocer tu local de votación (consulta en RENIEC)\n3. Ir el 12 de abril de 2026\n4. Horario: 8:00 AM - 4:00 PM\n\n¿Quieres consultar tu local de votación?'
+          : '📍 Akllanapaqqa necesitankichu:\n\n1. DNI allin kachkan\n2. Yachay akllana wasiykita (RENIEC tapukuy)\n3. Riy 12 abril 2026pi\n4. Pacha: 8:00 AM - 4:00 PM\n\n¿Akllana wasiykita tapukuyta munankichu?',
+        options: [t('chatbot.consultarReniec'), 'Ver Miembros de Mesa', t('chatbot.verCandidatos')]
+      };
+    }
+
+    // ==================== PLAN DE GOBIERNO ====================
+    if (msg.includes('plan') || msg.includes('propuesta') || msg.includes('gobierno') ||
+        msg.includes('yuyay') || msg.includes('kamachiy') || msg.includes('programa')) {
+      return {
+        text: i18n.language === 'es'
+          ? '📋 Para ver los planes de gobierno:\n\n1. Ve a la sección de Candidatos\n2. Selecciona un partido\n3. Revisa la pestaña "Plan de Gobierno"\n\n¿Te llevo a ver los candidatos?'
+          : '📋 Kamachiy yuyaykunata qhawanapaq:\n\n1. Riy Akllasqakuna sekciónman\n2. Akllakuy huk partiduta\n3. Qhaway "Kamachiy Yuyay" pestañata\n\n¿Akllasqakunata qhawaman pusasqayki?',
+        options: [t('chatbot.verCandidatos'), t('chatbot.verPartidos')]
+      };
+    }
+
+    // ==================== REQUISITOS / DOCUMENTOS ====================
+    if (msg.includes('requisito') || msg.includes('documento') || msg.includes('necesito') ||
+        msg.includes('llevar') || msg.includes('papeles') || msg.includes('tramite')) {
+      return {
+        text: i18n.language === 'es'
+          ? '📄 Requisitos para votar:\n\n✓ DNI original vigente\n✓ Ser mayor de 18 años\n✓ No tener impedimentos legales\n\n📋 Si eres miembro de mesa, además:\n✓ Presentarte a las 6:00 AM\n✓ Llevar tu designación (opcional)\n\n¿Necesitas más información?'
+          : '📄 Akllanapaq requisitukuna:\n\n✓ DNI original allin kachkan\n✓ 18 watasniyuq kay\n✓ Mana impedimentu legalkuna\n\n📋 Sichus mesa miembruchu kanki:\n✓ Chayamuy 6:00 AM nisqapi\n✓ Apay designaciónniykita (opcional)\n\n¿Aswan willakuyta necesitankichu?',
+        options: ['Ver Miembros de Mesa', t('chatbot.consultarReniec'), t('chatbot.verCandidatos')]
+      };
+    }
+
+    // ==================== UBICACIÓN / LOCAL ====================
+    if (msg.includes('donde') || msg.includes('ubica') || msg.includes('direccion') ||
+        msg.includes('lugar') || msg.includes('maypi') || msg.includes('cheqa') ||
+        msg.includes('local')) {
+      return {
+        text: i18n.language === 'es'
+          ? '📍 Para saber dónde votas:\n\n1. Consulta en RENIEC con tu DNI\n2. Te mostrará tu local y mesa\n\n¿Te llevo a la consulta RENIEC?'
+          : '📍 Yachanaykipaq maypichus akllanki:\n\n1. RENIEC tapukuy DNIykiwan\n2. Rikuchisunki wasiykita mesaykitapas\n\n¿RENIEC tapukuyman pusasqayki?',
+        options: [t('chatbot.consultarReniec'), 'Ver Miembros de Mesa']
+      };
+    }
+
+    // ==================== COMPENSACIÓN / PAGO ====================
+    if (msg.includes('compensa') || msg.includes('pago') || msg.includes('dinero') ||
+        msg.includes('sueldo') || msg.includes('qullqi') || msg.includes('cuanto') ||
+        msg.includes('cobrar') || msg.includes('plata')) {
+      return {
+        text: i18n.language === 'es'
+          ? '💰 Compensación para miembros de mesa:\n\n✓ Monto: S/ 120.00 soles\n✓ Se paga después de las elecciones\n✓ Incluye refrigerio y almuerzo\n\n¿Quieres ver más información sobre miembros de mesa?'
+          : '💰 Mesa miembrukunapaq yanapakuy:\n\n✓ Qullqi: S/ 120.00 sulikuna\n✓ Qunakun akllanakunapa qhipanpi\n✓ Mikhuy almuerzo ima kachkan\n\n¿Mesa miembrukunamanta aswan willakuyta qhawayta munankichu?',
+        options: ['Ver Miembros de Mesa', 'Ver derechos y deberes', t('chatbot.respuestas.noGracias')]
+      };
+    }
+
+    // ==================== HORARIO ====================
+    if (msg.includes('horario') || msg.includes('hora') || msg.includes('tiempo') ||
+        msg.includes('abre') || msg.includes('cierra') || msg.includes('pacha')) {
+      return {
+        text: i18n.language === 'es'
+          ? '⏰ Horarios importantes:\n\n🗳️ Votación: 8:00 AM - 4:00 PM\n📋 Miembros de mesa: 6:00 AM - 7:00 PM\n\n✓ Instalación de mesa: 7:00 AM\n✓ Cierre y conteo: 4:00 PM - 7:00 PM\n\n¿Necesitas el cronograma completo?'
+          : '⏰ Hatun horakuna:\n\n🗳️ Akllana: 8:00 AM - 4:00 PM\n📋 Mesa miembrukuna: 6:00 AM - 7:00 PM\n\n✓ Mesapa churay: 7:00 AM\n✓ Wichq\'ay yupay: 4:00 PM - 7:00 PM\n\n¿Hunt\'a pachakamaypi necesitankichu?',
+        options: ['Ver Miembros de Mesa', t('chatbot.respuestas.verCronograma')]
+      };
+    }
+
+    // ==================== AYUDA / SOPORTE ====================
+    if (msg.includes('ayuda') || msg.includes('help') || msg.includes('yanapay') ||
+        msg.includes('apoyo') || msg.includes('asistencia') || msg.includes('soporte')) {
+      return {
+        text: t('chatbot.respuestas.ayuda'),
+        options: [
+          t('chatbot.verCandidatos'),
+          t('chatbot.verPartidos'),
+          'Ver Miembros de Mesa',
+          t('chatbot.consultarReniec'),
+          t('chatbot.cronograma')
+        ]
+      };
+    }
+
+    // ==================== SALUDOS ====================
+    if (msg.includes('hola') || msg.includes('buenos días') || msg.includes('buenas tardes') || 
+        msg.includes('napay') || msg.includes('buenas noches') || msg.includes('hey') ||
+        msg.includes('saludos')) {
+      return {
+        text: t('chatbot.respuestas.saludo'),
+        options: [
+          t('chatbot.verCandidatos'),
+          t('chatbot.verPartidos'),
+          'Ver Miembros de Mesa',
+          t('chatbot.consultarReniec')
+        ]
+      };
+    }
+
+    // ==================== DESPEDIDAS / AGRADECIMIENTOS ====================
+    if (msg.includes('gracias') || msg.includes('sulpayki') || msg.includes('adiós') ||
+        msg.includes('chau') || msg.includes('hasta luego') || msg.includes('bye')) {
+      return {
+        text: t('chatbot.respuestas.gracias'),
+        options: [
+          t('chatbot.verCandidatos'),
+          t('chatbot.verPartidos'),
+          'Ver Miembros de Mesa',
+          t('chatbot.respuestas.noGracias')
+        ]
+      };
+    }
+
+    // ==================== INICIO / PÁGINA PRINCIPAL ====================
+    if (msg.includes('inicio') || msg.includes('home') || msg.includes('principal') || 
+        msg.includes('qallariy') || msg.includes('menu') || msg.includes('portada')) {
       return {
         text: t('chatbot.respuestas.inicio'),
         action: () => setTimeout(() => navigate('/'), 1000)
       };
     }
 
-    if (msg.includes('ayuda') || msg.includes('help') || msg.includes('yanapay')) {
-      return {
-        text: t('chatbot.respuestas.ayuda'),
-        options: [
-          t('chatbot.verCandidatos'),
-          t('chatbot.verPartidos'),
-          t('chatbot.consultarReniec'),
-          t('chatbot.cronograma'),
-          i18n.language === 'es' ? '🌐 Cambiar idioma' : '🌐 Simi t\'ikray'
-        ]
-      };
-    }
-
-    if (msg.includes('hola') || msg.includes('buenos días') || msg.includes('buenas tardes') || msg.includes('napay')) {
-      return {
-        text: t('chatbot.respuestas.saludo'),
-        options: [
-          t('chatbot.verCandidatos'),
-          t('chatbot.verPartidos'),
-          t('chatbot.consultarReniec'),
-          t('chatbot.cronograma'),
-          i18n.language === 'es' ? '🌐 Cambiar idioma' : '🌐 Simi t\'ikray'
-        ]
-      };
-    }
-
-    if (msg.includes('gracias') || msg.includes('sulpayki')) {
-      return {
-        text: t('chatbot.respuestas.gracias'),
-        options: [
-          t('chatbot.verCandidatos'),
-          t('chatbot.verPartidos'),
-          t('chatbot.consultarReniec'),
-          t('chatbot.respuestas.noGracias')
-        ]
-      };
-    }
-
-    // Respuesta por defecto
+    // ==================== RESPUESTA POR DEFECTO ====================
     return {
       text: t('chatbot.respuestas.default'),
       options: [
         t('chatbot.verCandidatos'),
         t('chatbot.verPartidos'),
+        'Ver Miembros de Mesa',
         t('chatbot.consultarReniec'),
-        t('chatbot.respuestas.verCronograma'),
-        i18n.language === 'es' ? '🌐 Cambiar idioma' : '🌐 Simi t\'ikray'
+        t('chatbot.respuestas.verCronograma')
       ]
     };
   };
