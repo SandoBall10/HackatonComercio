@@ -543,20 +543,20 @@ export const Inicio: React.FC = () => {
           <footer className="site-footer">
             <div className="footer-container">
               <div className="footer-col">
-                <h4>Oficina central</h4>
-                <p>Jr. Washington 1894, Cercado de Lima</p>
-                <p>Lunes a viernes de 8:30 a. m. a 5:00 p. m.</p>
+                <h4>{t('footer.oficinaCentral')}</h4>
+                <p>{t('footer.direccion')}</p>
+                <p>{t('footer.horario')}</p>
               </div>
 
               <div className="footer-col">
-                <h4>Contáctanos:</h4>
+                <h4>{t('footer.contacto')}</h4>
                 <p><a href="mailto:informes@onpe.gob.pe">informes@onpe.gob.pe</a></p>
-                <p>(01) 4170630</p>
-                <p>WhatsApp: 995 404 991</p>
+                <p>{t('footer.telefono')}</p>
+                <p>{t('footer.whatsapp')}</p>
               </div>
 
               <div className="footer-col">
-                <h4>Síguenos:</h4>
+                <h4>{t('footer.siguenos')}</h4>
                 <div className="socials" role="navigation" aria-label="Redes sociales">
                   <a href="#" className="social social-facebook" aria-label="Facebook">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
@@ -588,7 +588,7 @@ export const Inicio: React.FC = () => {
             </div>
 
             <div className="footer-bottom">
-              © 2026 Portal Electoral - Todos los derechos reservados
+              © 2026 {t('footer.portal')} - {t('footer.derechos')}
             </div>
           </footer>
     </div>
