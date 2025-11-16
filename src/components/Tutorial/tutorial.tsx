@@ -100,11 +100,11 @@ const Tutorial: React.FC = () => {
 
         {/* Sección Cédula de Sufragio */}
         <div className="cedula-section">
-          <h2 className="cedula-titulo">Cédula de sufragio</h2>
+          <h2 className="cedula-titulo">{t('tutorial.cedula.titulo')}</h2>
           <p className="cedula-descripcion">
-            En las Elecciones Generales 2026, contaremos con una cédula de sufragio con cinco columnas, cada una representa una elección distinta: fórmula presidencial, senadores a nivel nacional, senadores a nivel regional, diputados y representantes ante el Parlamento Andino.
+            {t('tutorial.cedula.descripcion')}
           </p>
-          <p className="cedula-subtitulo">Mira el video que hemos preparado para ti sobre la cédula</p>
+          <p className="cedula-subtitulo">{t('tutorial.cedula.subtitulo')}</p>
           
           <div className="cedula-video-wrapper">
             <div className="cedula-video-container">

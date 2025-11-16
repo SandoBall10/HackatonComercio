@@ -540,6 +540,11 @@
         "paso2": "Consulta tu local y mesa de votación",
         "paso3": "Verifica tus datos están correctos"
       },
+      "cedula": {
+        "titulo": "Cédula de sufragio",
+        "descripcion": "En las Elecciones Generales 2026, contaremos con una cédula de sufragio con cinco columnas, cada una representa una elección distinta: fórmula presidencial, senadores a nivel nacional, senadores a nivel regional, diputados y representantes ante el Parlamento Andino.",
+        "subtitulo": "Mira el video que hemos preparado para ti sobre la cédula"
+      },
       "faq": {
         "titulo": "Preguntas Frecuentes",
         "pregunta1": "¿Cómo busco un partido específico?",
