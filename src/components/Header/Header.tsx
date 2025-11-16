@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import './Header.css';
 
 export const Header: React.FC = () => {
-  const { t } = useTranslation();
   const navigate = useNavigate();
   const [countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
 
@@ -31,30 +29,33 @@ export const Header: React.FC = () => {
       <div className="top-header">
         <div className="top-header-content">
           <div className="logo-section">
-            <img src="public/Imagenes-Pagina/Logo-Oficial.png" alt="ONPE" className="top-logo" />
+            <img src="src/assets/Loog-Onpe.png" alt="ONPE" className="top-logo" />
             <div className="election-info">
-              <h2>{t('inicio.titulo')}</h2>
-              <p>{t('inicio.fecha')}</p>
+              <h2>Elecciones Generales</h2>
+              <p>12 de abril de 2026</p>
             </div>
           </div>
           <div className="countdown">
-            <span className="countdown-label">{t('inicio.faltan')}</span>
+            <span className="countdown-label">Faltan:</span>
             <div className="countdown-items">
               <div className="countdown-item">
-                <div className="countdown-value" key={`meses-${countdown.meses}`}>{String(countdown.meses).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.meses')}</div>
+
+=======
+                <div className="countdown-value">{String(countdown.meses).padStart(2, '0')}</div>
+                <div className="countdown-label-small">Meses</div>
               </div>
               <div className="countdown-item">
-                <div className="countdown-value" key={`dias-${countdown.dias}`}>{String(countdown.dias).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.dias')}</div>
+                <div className="countdown-value">{String(countdown.dias).padStart(2, '0')}</div>
+                <div className="countdown-label-small">Días</div>
               </div>
               <div className="countdown-item">
-                <div className="countdown-value" key={`horas-${countdown.horas}`}>{String(countdown.horas).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.horas')}</div>
+                <div className="countdown-value">{String(countdown.horas).padStart(2, '0')}</div>
+                <div className="countdown-label-small">Horas</div>
               </div>
               <div className="countdown-item">
-                <div className="countdown-value" key={`minutos-${countdown.minutos}`}>{String(countdown.minutos).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.minutos')}</div>
+                <div className="countdown-value">{String(countdown.minutos).padStart(2, '0')}</div>
+                <div className="countdown-label-small">Minutos</div>
+
               </div>
             </div>
           </div>
@@ -65,14 +66,18 @@ export const Header: React.FC = () => {
       <header className="header">
         <nav className="navbar">
           <div className="nav-links-container">
-            <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>{t('nav.inicio')}</a>
-            <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('nav.partidos')}</a>
-            <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
-            <a href="/miembros-mesa" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/miembros-mesa'); }}>Para miembros de mesa</a>
-             <a href="/tutorial" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/tutorial'); }}>Tutorial</a>
-            </div>
+            <a href="/" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Inicio</a>
+            <a href="/partidos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>Partidos Politicos</a>
+            <a href="/candidatos" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/candidatos'); }}>Candidatos</a>
+            <a href="/reniec" className="nav-link" onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>Consulta RENIEC</a>
+            <a href="#lo-nuevo" className="nav-link">Lo nuevo</a>
+            <a href="#voto-digital" className="nav-link">Voto Digital</a>
+            <a href="#verifica-mesa" className="nav-link nav-link-highlight">Verifica si eres miembro de mesa</a>
+          </div>
         </nav>
       </header>
+
+      {/* SUBTABS */}
     </>
   );
 };

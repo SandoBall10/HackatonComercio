@@ -2,15 +2,15 @@
 .top-header { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 16px 0; }
 .top-header-content { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; }
 .logo-section { display: flex; align-items: center; gap: 16px; }
-.top-logo { height: 68px; width: auto; object-fit: contain; }
-.election-info h2 { color: #003d7a; font-size: 20px; font-weight: 800; margin: 0; }
-.election-info p { color: #666; font-size: 13px; margin: 2px 0 0; }
+.top-logo { height: 90px; width: auto; object-fit: contain; border-radius: 10px; }
+.election-info h2 { color: #003d7a; font-size: 28px; font-weight: 800; margin: 0; }
+.election-info p { color: #666; font-size: 15px; margin: 4px 0 0; }
 
 /* COUNTDOWN */
 .countdown { display: flex; align-items: center; gap: 12px; }
 .countdown-label { color: #666; font-weight: 600; font-size: 13px; }
 .countdown-items { display: flex; gap: 8px; }
-.countdown-item { background: #f8f9fa; border: 2px solid #0a66b3; border-radius: 8px; padding: 8px 14px; text-align: center; min-width: 60px; }
+.countdown-item { background: #f8f9fa; border: 2px solid #000; border-radius: 8px; padding: 8px 14px; text-align: center; min-width: 60px; }
 .countdown-value { color: #0a66b3; font-size: 18px; font-weight: 800; line-height: 1; transition: all 0.4s ease-in-out; }
 .countdown-label-small { color: #666; font-size: 11px; margin-top: 4px; }
 
@@ -22,7 +22,7 @@
 .nav-link:hover { background: rgba(255,255,255,0.1); border-bottom-color: #fff; }
 
 .nav-link-highlight { 
-  background: #0a66b3; 
+  background: #0a67b37f; 
   color: #fff !important; 
   padding: 12px 18px !important; 
   border-radius: 6px; 
@@ -52,7 +52,9 @@
 
 @media (max-width: 480px) {
   .top-header-content { padding: 0 16px; }
-  .top-logo { height: 60px; }
+  .top-logo { height: 70px; }
+  .election-info h2 { font-size: 20px; }
+  .election-info p { font-size: 12px; }
   .countdown-items { gap: 6px; }
   .countdown-item { padding: 6px 10px; min-width: 50px; }
 }
