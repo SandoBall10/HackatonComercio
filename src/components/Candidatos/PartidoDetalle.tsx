@@ -634,13 +634,7 @@ const PartidoDetalle: React.FC = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    const link = document.createElement('a');
-                    link.href = candidatosReales[0].pdfUrl;
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
+                    window.open(candidatosReales[0].pdfUrl, '_blank', 'noopener,noreferrer');
                   }}
                   className="btn text-white fw-semibold py-3 position-relative"
                   style={{
