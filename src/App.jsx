@@ -21,9 +21,28 @@ import { getCandidatoById } from './data/candidatos.js';
 const App = () => {
   const candidatoEjemplo = getCandidatoById('fuerza-popular');
 
+
+  // Detectar si estamos en cualquier ruta offline
+  // Detectar si estamos en cualquier ruta offline o en pantalla de alerta de conexión
+  const offlineRoutes = [
+    '/offline',
+    '/candidatos-offline',
+    '/partidos-offline',
+    '/tutorial-offline'
+  ];
+  // Detectar si la alerta de conexión está activa
+  const isNoConnectionAlert = (() => {
+    // Buscar si existe el div de alerta de conexión en el DOM
+    const main = document.querySelector('.inicio-container');
+    if (!main) return false;
+    // Buscar el texto de alerta
+    return !!main.querySelector('h2') && main.textContent?.includes('No hay conexión a internet');
+  })();
+  const isOfflineRoute = offlineRoutes.includes(window.location.pathname) || isNoConnectionAlert;
+
   return (
     <div className="App">
-      <Header />
+      {!isOfflineRoute && <Header />}
 
       <Routes>
         <Route path="/" element={<Inicio />} />
@@ -40,7 +59,7 @@ const App = () => {
         <Route path="/offline" element={<InicioOffline />} />
       </Routes>
 
-      <Chatbot />
+      {!isOfflineRoute && <Chatbot />}
     </div>
   );
 };
