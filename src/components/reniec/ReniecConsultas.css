@@ -73,7 +73,6 @@
   overflow-x: hidden;
 }
 
-/* Layout Principal */
 .reniec-main-layout {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -83,7 +82,6 @@
   margin-bottom: 3rem;
 }
 
-/* Layout superior con formulario e info */
 .reniec-top-layout {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -93,7 +91,6 @@
   margin: 0 auto 2rem auto;
 }
 
-/* Formulario de consulta - Izquierda */
 .reniec-consulta-box-left {
   background: white;
   border-radius: 16px;
@@ -206,14 +203,12 @@
   stroke: rgb(179, 2, 39);
 }
 
-/* Info importante - Derecha */
 .reniec-info-box-right {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Consulta Box - Centrado */
 .reniec-consulta-box-centered {
   background: white;
   border-radius: 16px;
@@ -225,7 +220,6 @@
   width: 100%;
 }
 
-/* Consulta Box - Izquierda */
 .reniec-consulta-box {
   background: white;
   border-radius: 16px;
@@ -307,7 +301,6 @@
   margin: 0;
 }
 
-/* Información Importante Interna */
 .reniec-info-importante-interno {
   margin-top: 2rem;
   padding-top: 2rem;
@@ -321,7 +314,6 @@
   font-weight: 600;
 }
 
-/* Info Box - Derecha */
 .reniec-info-box {
   display: flex;
   flex-direction: column;
@@ -424,7 +416,6 @@
   font-weight: 500;
 }
 
-/* Resultados debajo del buscador */
 .reniec-results-below-search {
   width: 100%;
   max-width: 1200px;
@@ -562,7 +553,6 @@
   font-weight: 700;
 }
 
-/* Mapa */
 .reniec-map-section {
   margin-top: 1.5rem;
 }
@@ -593,7 +583,6 @@
   overflow: hidden;
 }
 
-/* Responsive */
 @media (max-width: 1000px) {
   .reniec-top-layout {
     grid-template-columns: 1fr;
@@ -997,7 +986,6 @@
   box-shadow: 0 12px 40px rgba(179, 2, 39, 0.12);
 }
 
-/* Animaciones para iconos */
 .icon-animated {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1021,7 +1009,6 @@
   margin-bottom: 16px;
 }
 
-/* Estilos para información de DNI */
 .reniec-dni-header {
   display: flex;
   align-items: center;
@@ -1064,7 +1051,6 @@
   margin-top: 2px;
 }
 
-/* Estilos para badge de rol */
 .reniec-badge-container {
   display: flex;
   align-items: center;
@@ -1077,7 +1063,6 @@
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* Estilos para fecha */
 .reniec-fecha-container {
   display: flex;
   align-items: center;
@@ -1085,7 +1070,6 @@
   animation: fadeInUp 0.6s ease-out 0.4s backwards;
 }
 
-/* Estilos para mesa de votación */
 .reniec-mesa-info-item {
   display: flex;
   flex-direction: column;
@@ -1119,7 +1103,6 @@
   font-weight: 700;
 }
 
-/* Estilos para localización */
 .reniec-location-info {
   display: flex;
   flex-direction: column;
@@ -1161,7 +1144,6 @@
   line-height: 1.4;
 }
 
-/* Mapa con animación */
 .reniec-map-container iframe {
   animation: scaleIn 0.8s ease-out 0.5s backwards;
   transition: all 0.3s ease;
@@ -1173,8 +1155,6 @@
   box-shadow: 0 12px 40px rgba(179, 2, 39, 0.2) !important;
 }
 
-/* Grid de tarjetas de información */
-/* Tarjetas Inferiores */
 .reniec-cards-bottom-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1272,7 +1252,6 @@
   border-bottom-color: rgb(179, 2, 39);
 }
 
-/* Tarjetas de información */
 .reniec-info-card {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
@@ -1293,7 +1272,6 @@
   background: rgba(255, 255, 255, 0.95);
 }
 
-/* Header de la tarjeta */
 .reniec-info-card-header {
   display: flex;
   align-items: center;
@@ -1334,7 +1312,6 @@
   flex: 1;
 }
 
-/* Contenido de la tarjeta */
 .reniec-info-card-content {
   display: flex;
   flex-direction: column;
@@ -1395,8 +1372,6 @@
   margin-bottom: 10px;
 }
 
-/* Sección de instrucciones */
-/* Sección de Pasos */
 .reniec-pasos-section {
   width: 100%;
   max-width: 1400px;
@@ -1499,7 +1474,6 @@
   text-shadow: 0 2px 10px rgba(179, 2, 39, 0.1);
 }
 
-/* Contenedor de escalera */
 .reniec-stairs-container {
   display: flex;
   flex-direction: column;
@@ -1508,7 +1482,6 @@
   padding: 2rem 0;
 }
 
-/* Cada escalón */
 .reniec-stair-step {
   display: flex;
   align-items: flex-start;
@@ -1559,7 +1532,6 @@
   }
 }
 
-/* Número del escalón */
 .reniec-stair-number {
   flex-shrink: 0;
   width: 60px;
@@ -1581,7 +1553,6 @@
   box-shadow: 0 12px 32px rgba(179, 2, 39, 0.5);
 }
 
-/* Contenido del escalón */
 .reniec-stair-content {
   flex: 1;
 }
@@ -1604,8 +1575,6 @@
   line-height: 1.6;
   margin: 0;
 }
-
-
 
 @media (max-width: 1200px) {
   .reniec-results-grid-custom {
@@ -1686,7 +1655,6 @@
   }
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
   .reniec-main-layout {
     grid-template-columns: 1fr;
@@ -1737,13 +1705,10 @@
   }
 }
 
-/* ==================== MODO OSCURO - ESTILO FACEBOOK ==================== */
-
 [data-theme="dark"] .reniec-main-container {
   background: #18191a;
 }
 
-/* Header Box - Dark Mode */
 [data-theme="dark"] .reniec-header-box {
   background: linear-gradient(135deg, #242526 0%, #18191a 100%);
   border-color: #3a3b3c;
@@ -1765,7 +1730,6 @@
   stroke: #ef4444;
 }
 
-/* Consulta Box - Dark Mode */
 [data-theme="dark"] .reniec-consulta-box-left,
 [data-theme="dark"] .reniec-consulta-box-centered,
 [data-theme="dark"] .reniec-consulta-box {
@@ -1806,7 +1770,6 @@
   color: #f87171;
 }
 
-/* Info Boxes - Dark Mode */
 [data-theme="dark"] .reniec-info-item-box {
   background: #242526;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -1862,7 +1825,6 @@
   color: #ef4444;
 }
 
-/* Cards Inline - Dark Mode */
 [data-theme="dark"] .reniec-card-inline {
   background: #242526;
   border-color: #3a3b3c;
@@ -1916,14 +1878,12 @@
   color: #ef4444;
 }
 
-/* Card Full Width - Dark Mode */
 [data-theme="dark"] .reniec-card-full-width {
   background: #242526;
   border-color: #3a3b3c;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Main Cards - Dark Mode */
 [data-theme="dark"] .reniec-card,
 [data-theme="dark"] .reniec-horizontal-card {
   background: rgba(36, 37, 38, 0.9);
@@ -1954,7 +1914,6 @@
   background: rgba(36, 37, 38, 0.95);
 }
 
-/* Form Card - Dark Mode */
 [data-theme="dark"] .reniec-form-card {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
 }
@@ -1975,7 +1934,6 @@
   background: #242526;
 }
 
-/* DNI Info - Dark Mode */
 [data-theme="dark"] .reniec-dni-info-item {
   background: transparent;
 }
@@ -1998,7 +1956,6 @@
   background: #3a3b3c;
 }
 
-/* Mesa Info - Dark Mode */
 [data-theme="dark"] .reniec-mesa-info-item {
   background: rgba(239, 68, 68, 0.08);
 }
@@ -2016,7 +1973,6 @@
   color: #ef4444;
 }
 
-/* Location Info - Dark Mode */
 [data-theme="dark"] .reniec-location-item {
   background: rgba(239, 68, 68, 0.06);
 }
@@ -2034,7 +1990,6 @@
   color: #e4e6eb;
 }
 
-/* Bottom Cards - Dark Mode */
 [data-theme="dark"] .reniec-bottom-card {
   background: #242526;
   border-color: #3a3b3c;
@@ -2073,7 +2028,6 @@
   border-bottom-color: #ef4444;
 }
 
-/* Pasos Section - Dark Mode */
 [data-theme="dark"] .reniec-pasos-section {
   background: #242526;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -2101,7 +2055,6 @@
   color: #8a8d91;
 }
 
-/* Info Card - Dark Mode */
 [data-theme="dark"] .reniec-info-card {
   background: rgba(36, 37, 38, 0.8);
   border-color: rgba(58, 59, 60, 0.5);
@@ -2134,7 +2087,6 @@
   color: #e4e6eb;
 }
 
-/* Stairs - Dark Mode */
 [data-theme="dark"] .reniec-stair-step {
   background: rgba(36, 37, 38, 0.8);
   border-color: rgba(58, 59, 60, 0.5);

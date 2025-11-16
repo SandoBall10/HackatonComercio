@@ -27,10 +27,8 @@ const colegios = [
 
 export function getSimulatedVotingData(dni) {
   const lastDigit = parseInt(dni[dni.length - 1], 10);
-  // Simula el colegio usando los últimos dígitos del DNI
   const colegio = colegios[parseInt(dni.slice(-2), 10) % colegios.length];
 
-  // Simulación de miembro de mesa: 1 de cada 6 personas es miembro
   const isMiembro = parseInt(dni.slice(-3), 10) % 6 === 0;
   const mesa = 1000 + (parseInt(dni.slice(-3), 10) % 500);
   const fecha = `2025-11-${isMiembro ? 15 : 16}`;

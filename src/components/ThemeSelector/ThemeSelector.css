@@ -1,4 +1,3 @@
-/* Theme Selector Styles */
 .theme-selector {
   position: relative;
 }
@@ -112,7 +111,6 @@
   font-size: 16px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .theme-btn-dropdown {
     padding: 6px 12px;
@@ -133,7 +131,6 @@
   }
 }
 
-/* Dark Mode Styles for Theme Selector */
 [data-theme="dark"] .theme-btn-dropdown {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.2);
@@ -174,14 +171,12 @@
   color: var(--accent-color);
 }
 
-/* IMPORTANTE: Logo de partidos en todos los componentes con dark mode */
 [data-theme="dark"] .rounded.bg-white,
 [data-theme="dark"] .bg-white.rounded {
   background: #ffffff !important;
   background-color: #ffffff !important;
 }
 
-/* Theme Variables */
 :root[data-theme="light"] {
   --bg-primary: #ffffff;
   --bg-secondary: #f5f5f5;
@@ -233,7 +228,6 @@
   --countdown-value: #0173b2;
 }
 
-/* Apply theme to body and main containers */
 [data-theme="dark"] body,
 [data-theme="dark"] #root,
 [data-theme="dark"] .inicio-container,
@@ -260,7 +254,6 @@
   color: var(--text-primary);
 }
 
-/* Headers and Navigation */
 [data-theme="dark"] .header {
   background: rgb(179, 2, 39) !important;
   border-color: var(--border-color);
@@ -287,7 +280,6 @@
   color: var(--text-secondary);
 }
 
-/* Cards and Inputs */
 [data-theme="dark"] .partido-card,
 [data-theme="dark"] .buscador-input,
 [data-theme="dark"] .filtro-select,
@@ -313,7 +305,6 @@
   border-color: var(--accent-color);
 }
 
-/* Titles and Text */
 [data-theme="dark"] .titulo-principal,
 [data-theme="dark"] .subtitulo,
 [data-theme="dark"] .partido-nombre,
@@ -331,7 +322,6 @@
   color: var(--text-secondary);
 }
 
-/* Countdown */
 [data-theme="dark"] .countdown-item,
 [data-theme="colorblind"] .countdown-item {
   background: var(--bg-tertiary);
@@ -343,7 +333,6 @@
   color: var(--countdown-value);
 }
 
-/* Buttons and Filters */
 [data-theme="dark"] .filtro-reset,
 [data-theme="dark"] .btn-primary,
 [data-theme="dark"] .action-button {
@@ -359,7 +348,6 @@
   border-color: var(--accent-secondary);
 }
 
-/* Hover States */
 [data-theme="dark"] .partido-card:hover,
 [data-theme="dark"] .card:hover {
   background: var(--bg-tertiary);
@@ -371,13 +359,11 @@
   color: var(--text-primary);
 }
 
-/* Icons and SVG */
 [data-theme="dark"] .buscador-icon,
 [data-theme="dark"] .filtro-label svg {
   color: var(--text-secondary);
 }
 
-/* Timeline specific */
 [data-theme="dark"] .timeline-line {
   background: var(--border-color);
 }
@@ -392,7 +378,6 @@
   background: var(--accent-secondary);
 }
 
-/* Chatbot */
 [data-theme="dark"] .chatbot-container {
   background: var(--card-bg);
   border-color: var(--border-color);
@@ -402,12 +387,10 @@
   background: var(--bg-tertiary);
 }
 
-/* No results */
 [data-theme="dark"] .no-resultados {
   color: var(--text-secondary);
 }
 
-/* RENIEC Consultas - Dark Theme */
 [data-theme="dark"] .reniec-main-container {
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -463,7 +446,6 @@
   stroke: var(--accent-color);
 }
 
-/* RENIEC Consultas - Colorblind Theme */
 [data-theme="colorblind"] .reniec-consulta-title-main {
   color: var(--accent-color);
 }
@@ -498,7 +480,6 @@
   stroke: var(--accent-color);
 }
 
-/* Inicio Page - Dark Theme */
 [data-theme="dark"] .inicio-container {
   background: var(--bg-primary);
 }
@@ -606,7 +587,6 @@
   color: var(--text-secondary);
 }
 
-/* Inicio Page - Colorblind Theme */
 [data-theme="colorblind"] .timeline-title::after {
   background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
 }
@@ -623,7 +603,6 @@
   background: linear-gradient(135deg, var(--accent-secondary) 0%, #b87804 50%, #8a5a03 100%);
 }
 
-/* Miembros de Mesa - Dark Theme */
 [data-theme="dark"] .miembros-mesa-container {
   background: var(--bg-primary);
 }
@@ -734,7 +713,6 @@
   color: var(--text-secondary);
 }
 
-/* Miembros de Mesa - Colorblind Theme */
 [data-theme="colorblind"] .hero-miembros {
   border-top-color: var(--accent-color);
 }
@@ -768,10 +746,6 @@
 [data-theme="colorblind"] .instruccion-icono {
   background: var(--accent-secondary);
 }
-
-/* ========================================
-   CANDIDATOS PAGE - DARK MODE
-   ======================================== */
 
 [data-theme="dark"] .candidatos-container {
   background: var(--bg-primary);
@@ -902,10 +876,6 @@
   margin-bottom: 10px;
 }
 
-/* ========================================
-   PARTIDOS POLITICOS PAGE - DARK MODE
-   ======================================== */
-
 [data-theme="dark"] .partidos-container {
   background: var(--bg-primary);
 }
@@ -976,10 +946,6 @@
   background: var(--accent-hover);
 }
 
-/* ========================================
-   PARTIDO DETALLE MODAL - DARK MODE
-   ======================================== */
-
 [data-theme="dark"] .modal-overlay {
   background: rgba(0, 0, 0, 0.85);
 }
@@ -1026,9 +992,6 @@
   border-left: 3px solid var(--accent-color);
 }
 
-/* ========================================
-   TUTORIAL PAGE - DARK MODE
-   ======================================== */
 
 [data-theme="dark"] .tutorial-container {
   background: var(--bg-primary);
@@ -1074,10 +1037,6 @@
   color: var(--text-primary);
   background: var(--bg-secondary);
 }
-
-/* ========================================
-   CHATBOT - DARK MODE
-   ======================================== */
 
 [data-theme="dark"] .chatbot-container {
   background: var(--card-bg);
@@ -1144,10 +1103,6 @@
   background: var(--accent-hover);
 }
 
-/* ========================================
-   HEADER - DARK MODE
-   ======================================== */
-
 [data-theme="dark"] .navbar {
   background: rgb(179, 2, 39) !important;
   border-bottom: 1px solid var(--border-color);
@@ -1172,10 +1127,6 @@
   border-bottom: 2px solid rgba(255,255,255,0.12) !important;
 }
 
-/* ========================================
-   FOOTER - DARK MODE
-   ======================================== */
-
 [data-theme="dark"] .footer {
   background: var(--bg-secondary);
   border-top: 2px solid var(--border-color);
@@ -1193,10 +1144,6 @@
 [data-theme="dark"] .footer a:hover {
   color: var(--accent-color);
 }
-
-/* ========================================
-   GENERAL ELEMENTS - DARK MODE
-   ======================================== */
 
 [data-theme="dark"] h1,
 [data-theme="dark"] h2,
@@ -1250,7 +1197,6 @@
   background: var(--bg-secondary);
 }
 
-/* Scrollbar styling for dark mode */
 [data-theme="dark"] ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
