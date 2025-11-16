@@ -11,7 +11,7 @@
 .countdown-label { color: #666; font-weight: 600; font-size: 13px; }
 .countdown-items { display: flex; gap: 8px; }
 .countdown-item { background: #f8f9fa; border: 2px solid #0a66b3; border-radius: 8px; padding: 8px 14px; text-align: center; min-width: 60px; }
-.countdown-value { color: #0a66b3; font-size: 18px; font-weight: 800; line-height: 1; }
+.countdown-value { color: #0a66b3; font-size: 18px; font-weight: 800; line-height: 1; transition: all 0.4s ease-in-out; }
 .countdown-label-small { color: #666; font-size: 11px; margin-top: 4px; }
 
 /* NAVBAR */
@@ -52,7 +52,7 @@
 
 @media (max-width: 480px) {
   .top-header-content { padding: 0 16px; }
-  .top-logo { height: 48px; }
+  .top-logo { height: 60px; }
   .countdown-items { gap: 6px; }
   .countdown-item { padding: 6px 10px; min-width: 50px; }
 }
