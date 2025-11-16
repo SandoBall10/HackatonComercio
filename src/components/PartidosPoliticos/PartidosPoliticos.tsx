@@ -145,7 +145,7 @@ const PartidosPoliticos: React.FC = () => {
 
 
       <div className="partidos-container">
-        <h1 className="titulo-principal">{t('partidos.titulo')} - Elecciones Perú 2026</h1>
+        <h1 className="titulo-principal">{t('partidos.titulo')} - {t('partidos.eleccionesPeru2026')}</h1>
       <p className="subtitulo">{partidosFiltrados.length} {t('partidos.descripcion').toLowerCase()}</p>
 
       {/* Buscador */}
@@ -191,12 +191,12 @@ const PartidosPoliticos: React.FC = () => {
             value={filtroIdeologia}
             onChange={(e) => setFiltroIdeologia(e.target.value)}
           >
-            <option value="todos">{t('Partidos Filtros Todas').replace(/\./g, '') + ' '}</option>
-            <option value="izquierda">{t('Partidos Filtros Izquierda').replace(/\./g, '') + ' '}</option>
-            <option value="centro-izquierda">{t('Partidos Filtros CentroIzquierda').replace(/\./g, '') + ' '}</option>
-            <option value="centro">{t('Partidos Filtros Centro').replace(/\./g, '') + ' '}</option>
-            <option value="centro-derecha">{t('Partidos Filtros CentroDerecha').replace(/\./g, '') + ' '}</option>
-            <option value="derecha">{t('Partidos Filtros Derecha').replace(/\./g, '') + ' '}</option>
+            <option value="todos">{t('partidos.filtros.todas')}</option>
+            <option value="izquierda">{t('partidos.filtros.izquierda')}</option>
+            <option value="centro-izquierda">{t('partidos.filtros.centroIzquierda')}</option>
+            <option value="centro">{t('partidos.filtros.centro')}</option>
+            <option value="centro-derecha">{t('partidos.filtros.centroDerecha')}</option>
+            <option value="derecha">{t('partidos.filtros.derecha')}</option>
           </select>
         </div>
 
@@ -212,7 +212,7 @@ const PartidosPoliticos: React.FC = () => {
 
       {partidosFiltrados.length === 0 && (
         <div className="no-resultados">
-          <p>{t('Partidos Buscador NoResultados')}</p>
+          <p>{t('partidos.buscador.noResultados')}</p>
         </div>
       )}
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { useParams, useNavigate } from "react-router-dom";
 import { PARTIDOS, Partido, DetalleCandidato } from "../../data/partidos";
 import { candidatos } from "../../data/candidatos";
@@ -74,11 +75,12 @@ const pestañas = [
 
 const PartidoDetalle: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const partido: Partido | undefined = PARTIDOS.find((p) => String(p.id) === String(id));
   const [activeTab, setActiveTab] = useState<string>("presidencial");
 
-  if (!partido) return <div className="container py-5">Partido no encontrado</div>;
+  if (!partido) return <div className="container py-5">{t('partidos.noEncontrado')}</div>;
 
   // Mapeo de colores por partido (por ID numérico)
   const coloresPorPartido: Record<string, { primario: string; secundario: string; terciario: string; rgb: string }> = {
@@ -557,7 +559,7 @@ const PartidoDetalle: React.FC = () => {
                 <path d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor"/>
               </svg>
             </div>
-            <h2 className="h5 mb-0 fw-bold" style={{ color: '#2d3748' }}>Elecciones Perú 2026</h2>
+            <h2 className="h5 mb-0 fw-bold" style={{ color: '#2d3748' }}>{t('partidos.eleccionesPeru2026')}</h2>
           </div>
         </header>
 
@@ -685,7 +687,7 @@ const PartidoDetalle: React.FC = () => {
                   }}
                 >
                   <span style={{ fontSize: '1.2rem', marginRight: '8px' }}>{tab.icon}</span>
-                  <span>{tab.label}</span>
+                  <span>{t(`partidos.tabs.${tab.nombre}`)}</span>
                 </button>
               ))}
             </div>
@@ -718,11 +720,11 @@ const PartidoDetalle: React.FC = () => {
                   }}>
                     👤
                   </div>
-                  <h3 className="alert-heading h5 mb-0 fw-bold" style={{ color: colorPrimario }}>Plancha Presidencial</h3>
+                  <h3 className="alert-heading h5 mb-0 fw-bold" style={{ color: colorPrimario }}>{t('partidos.planchaPresidencial')}</h3>
                 </div>
                 <p className="mb-0 small text-secondary ms-5 ps-2">
                   <span className="badge me-2" style={{ background: colorPrimario }}>3</span>
-                  Candidatos inscritos
+                  {t('partidos.candidatosInscritos')}
                 </p>
               </div>
 
@@ -763,12 +765,12 @@ const PartidoDetalle: React.FC = () => {
                 background: `linear-gradient(135deg, rgba(${colorPrimarioRgb}, 0.1) 0%, rgba(${colorPrimarioRgb}, 0.05) 100%)`,
                 borderLeft: `4px solid ${colorPrimario}`
               }}>
-                <h3 className="alert-heading h5 mb-2 fw-bold" style={{ color: colorPrimario }}>Cámara de Diputados</h3>
+                <h3 className="alert-heading h5 mb-2 fw-bold" style={{ color: colorPrimario }}>{t('partidos.camaraDiputados')}</h3>
                 <p className="mb-2 small text-secondary">
-                  Candidatos por circunscripción electoral - Total: {diputados.length}
+                  {t('partidos.candidatosPorCircunscripcion', { total: diputados.length })}
                 </p>
                 <p className="mb-0 small text-muted">
-                  💡 Los diputados representan las circunscripciones electorales
+                  💡 {t('partidos.diputadosInfo')}
                 </p>
               </div>
 
@@ -822,7 +824,7 @@ const PartidoDetalle: React.FC = () => {
               ) : (
                 <div className="card border-0 shadow-sm">
                   <div className="card-body text-center py-5">
-                    <p className="text-muted mb-0">No hay diputados registrados para este partido.</p>
+                    <p className="text-muted mb-0">{t('partidos.noDiputados')}</p>
                   </div>
                 </div>
               )}
@@ -836,12 +838,12 @@ const PartidoDetalle: React.FC = () => {
                 background: `linear-gradient(135deg, rgba(${colorPrimarioRgb}, 0.1) 0%, rgba(${colorPrimarioRgb}, 0.05) 100%)`,
                 borderLeft: `4px solid ${colorPrimario}`
               }}>
-                <h3 className="alert-heading h5 mb-2 fw-bold" style={{ color: colorPrimario }}>Cámara de Senadores</h3>
+                <h3 className="alert-heading h5 mb-2 fw-bold" style={{ color: colorPrimario }}>{t('partidos.camaraSenadores')}</h3>
                 <p className="mb-2 small text-secondary">
-                  Representantes nacionales y regionales - Total: {senadores.length}
+                  {t('partidos.representantesNacionales', { total: senadores.length })}
                 </p>
                 <p className="mb-0 small text-muted">
-                  💡 Los senadores representan a nivel nacional y regional
+                  💡 {t('partidos.senadoresInfo')}
                 </p>
               </div>
 
@@ -895,7 +897,7 @@ const PartidoDetalle: React.FC = () => {
               ) : (
                 <div className="card border-0 shadow-sm">
                   <div className="card-body text-center py-5">
-                    <p className="text-muted mb-0">No hay senadores registrados para este partido.</p>
+                    <p className="text-muted mb-0">{t('partidos.noSenadores')}</p>
                   </div>
                 </div>
               )}
@@ -912,10 +914,10 @@ const PartidoDetalle: React.FC = () => {
                     <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
                     <path d="M2 12h20"/>
                   </svg>
-                  <h3 className="alert-heading h5 mb-0 fw-bold" style={{ color: colorPrimario }}>Parlamento Andino</h3>
+                  <h3 className="alert-heading h5 mb-0 fw-bold" style={{ color: colorPrimario }}>{t('partidos.parlamentoAndino')}</h3>
                 </div>
                 <p className="mb-2 small text-secondary">
-                  Representantes peruanos ante el organismo supranacional andino
+                  {t('partidos.representantesAndinos')}
                 </p>
                 <p className="mb-1 small text-muted">
                   🌎 El Parlamento Andino es el órgano deliberante de la Comunidad Andina (CAN)
@@ -926,24 +928,24 @@ const PartidoDetalle: React.FC = () => {
               </div>
 
               <div className="alert alert-info border-0 mb-4" style={{ backgroundColor: '#e7f3ff' }}>
-                <h4 className="alert-heading h6 text-primary">¿Qué es el Parlamento Andino?</h4>
+                <h4 className="alert-heading h6 text-primary">{t('partidos.queEsParlamentoAndino')}</h4>
                 <p className="mb-3 small">
-                  Es una institución parlamentaria de carácter supranacional que representa a los pueblos de la Comunidad Andina. Sus representantes son elegidos por voto popular directo y universal.
+                  {t('partidos.descripcionParlamentoAndino')}
                 </p>
                 <div className="row g-2">
                   <div className="col-6">
                     <div className="card bg-white border-0">
                       <div className="card-body p-3">
-                        <p className="small text-primary fw-semibold mb-1">Funciones</p>
-                        <p className="small text-muted mb-0">Promover la integración andina</p>
+                        <p className="small text-primary fw-semibold mb-1">{t('partidos.funciones')}</p>
+                        <p className="small text-muted mb-0">{t('partidos.promoverIntegracion')}</p>
                       </div>
                     </div>
                   </div>
                   <div className="col-6">
                     <div className="card bg-white border-0">
                       <div className="card-body p-3">
-                        <p className="small text-primary fw-semibold mb-1">Ámbito</p>
-                        <p className="small text-muted mb-0">5 países andinos</p>
+                        <p className="small text-primary fw-semibold mb-1">{t('partidos.ambito')}</p>
+                        <p className="small text-muted mb-0">{t('partidos.paisesAndinos')}</p>
                       </div>
                     </div>
                   </div>
@@ -1001,18 +1003,18 @@ const PartidoDetalle: React.FC = () => {
               ) : (
                 <div className="card border-0 shadow-sm mb-4">
                   <div className="card-body text-center py-5">
-                    <p className="text-muted mb-0">No hay parlamentarios andinos registrados para este partido.</p>
+                    <p className="text-muted mb-0">{t('partidos.noParlamentariosAndinos')}</p>
                   </div>
                 </div>
               )}
 
               <div className="alert alert-warning border-0">
-                <h4 className="alert-heading h6 text-warning-emphasis">📌 Información importante</h4>
+                <h4 className="alert-heading h6 text-warning-emphasis">{t('partidos.infoImportante')}</h4>
                 <ul className="mb-0 small">
-                  <li>Los parlamentarios andinos son elegidos en la misma cédula electoral</li>
-                  <li>Tienen un periodo de 5 años</li>
-                  <li>Promueven la integración y armonización legislativa</li>
-                  <li>Participan en temas de comercio, migración y desarrollo</li>
+                  <li>{t('partidos.eleccionCedula')}</li>
+                  <li>{t('partidos.periodoCincoAnios')}</li>
+                  <li>{t('partidos.promuevenIntegracion')}</li>
+                  <li>{t('partidos.temasComercio')}</li>
                 </ul>
               </div>
             </div>
@@ -1021,7 +1023,7 @@ const PartidoDetalle: React.FC = () => {
 
         {/* Footer */}
         <footer className="text-center text-muted py-4 mt-5">
-          <small>Datos obtenidos del Jurado Nacional de Elecciones - JNE. © 2024 Elecciones Perú 2026.</small>
+          <small>{t('footer.datosJNE')}</small>
         </footer>
       </div>
     </div>

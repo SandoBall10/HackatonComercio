@@ -3,23 +3,123 @@
     "nav": {
       "inicio": "Inicio",
       "partidos": "Partidos Políticos",
-      "reniec": "Consultar tu lugar de votación"
+      "reniec": "Consultar tu lugar de votación",
+      "miembrosMesa": "Miembros de Mesa",
+      "tutorial": "Tutorial"
     },
     "inicio": {
       "titulo": "Elecciones Generales",
       "fecha": "12 de abril de 2026",
       "faltan": "Faltan:",
-      "meses": "Meses",
-      "dias": "Días",
-      "horas": "Horas",
-      "minutos": "Minutos",
+      "mesesLabel": "Meses",
+      "diasLabel": "Días",
+      "horasLabel": "Horas",
+      "minutosLabel": "Minutos",
       "partidosPoliticos": "Partidos Politicos",
       "laOrganizacion": "La organización",
       "acercaProceso": "Acerca del proceso",
       "loNuevo": "Para miembros de mesa",
       "votoDigital": "Para electores",
       "enlacesRelacionados": "Enlaces relacionados",
-      "timelineTitle": "Línea de tiempo electoral:"
+      "timelineTitle": "Línea de tiempo electoral:",
+      "filtrar": "INICIO.FILTRAR",
+      "filtrarPor": "Filtrar por:",
+      "meses": {
+        "MARZO": "MARZO",
+        "ABRIL": "ABRIL",
+        "JUNIO": "JUNIO",
+        "AGOSTO": "AGOSTO",
+        "SEPTIEMBRE": "SEPTIEMBRE",
+        "OCTUBRE": "OCTUBRE",
+        "NOVIEMBRE": "NOVIEMBRE",
+        "DICIEMBRE": "DICIEMBRE",
+        "ENERO": "ENERO",
+        "FEBRERO": "FEBRERO"
+      },
+      "filtro": {
+        "todos": "Todos los eventos",
+        "electoral": "Eventos electorales",
+        "plan": "Planificación",
+        "mesa": "Miembros de mesa"
+      },
+      "eventos": {
+        "2025": {
+          "marzo": [
+            { "date": "26 Marzo", "title": "Convocatoria a Elecciones Generales 2026" },
+            { "date": "28 Marzo", "title": "Publicación de cronograma electoral en el Diario Oficial" }
+          ],
+          "abril": [
+            { "date": "5 Abril", "title": "Inicio de campañas informativas sobre el proceso electoral" },
+            { "date": "12 Abril", "title": "Fecha límite para la inscripción de partidos políticos en el ROP" },
+            { "date": "20 Abril", "title": "Capacitación inicial de personal electoral" }
+          ],
+          "junio": [
+            { "date": "11 Junio", "title": "Registro de normativa actualizada de las organizaciones políticas" },
+            { "date": "15 Junio", "title": "Presentación de candidatos a delegados electorales" },
+            { "date": "30 Junio", "title": "Fecha límite para que la Dirección Nacional de Registro de Organizaciones Políticas (DNROP) remita al Reniec los padrones de electores afiliados para las elecciones primarias (EG 2026)" }
+          ],
+          "agosto": [
+            { "date": "2 Agosto", "title": "Inscripción de alianzas partidarias para las Elecciones Generales 2026" },
+            { "date": "10 Agosto", "title": "Talleres de entrenamiento para miembros de mesa designados" },
+            { "date": "30 Agosto", "title": "Reniec remite al JNE los padrones de electores afiliados para las elecciones primarias" }
+          ],
+          "septiembre": [
+            { "date": "1 Septiembre", "title": "La Organización política informa la modalidad y tipo de candidaturas para las elecciones primarias (EG 2026)" },
+            { "date": "5 Septiembre", "title": "Selección preliminar de miembros de mesa por provincia" },
+            { "date": "8 Septiembre", "title": "Fecha límite para que la DNROP remita al Reniec los padrones de electores no afiliados" },
+            { "date": "15 Septiembre", "title": "OP presentan candidatos a delegados para las elecciones primarias" },
+            { "date": "16 Septiembre", "title": "Reniec remite al JNE los padrones de electores no afiliados" },
+            { "date": "20 Septiembre", "title": "Publicación de listados preliminares de miembros de mesa" }
+          ],
+          "octubre": [
+            { "date": "5 Octubre", "title": "Asambleas de elecciones primarias en todas las regiones" },
+            { "date": "14 Octubre", "title": "Cierre del padrón electoral para las Elecciones Generales 2026" },
+            { "date": "19 Octubre", "title": "Fecha límite para aprobación de padrones, en el marco de las elecciones primarias" },
+            { "date": "25 Octubre", "title": "Confirmación final de miembros de mesa y suplentes" },
+            { "date": "Del 28 al 31 Octubre", "title": "OP realizan la inscripción de precandidaturas" }
+          ],
+          "noviembre": [
+            { "date": "3 Noviembre", "title": "Resolución de impugnaciones de miembros de mesa propuestos" },
+            { "date": "7 Noviembre", "title": "Fecha límite de entrega de candidatos finales a la ONPE por parte de la OP" },
+            { "date": "10 Noviembre", "title": "OP realizan el registro de personeros para las elecciones primarias (EG 2026)" },
+            { "date": "13 Noviembre", "title": "Envío del padrón preliminar al JNE y a la ONPE para las Elecciones Generales 2026" },
+            { "date": "20 Noviembre", "title": "Distribución de materiales electorales a locales de votación" },
+            { "date": "30 Noviembre", "title": "Elecciones primarias (Afiliados)" }
+          ],
+          "diciembre": [
+            { "date": "5 Diciembre", "title": "Conteo de resultados de elecciones primarias" },
+            { "date": "13 Diciembre", "title": "Fecha límite de aprobación del padrón electoral definitivo para las Elecciones Generales 2026" },
+            { "date": "18 Diciembre", "title": "Publicación de resultados finales de elecciones primarias" },
+            { "date": "23 Diciembre", "title": "Fecha límite para inscripción de fórmulas y listas de candidatos" },
+            { "date": "24 Diciembre", "title": "Fecha límite para la publicación de instrucciones para la ubicación en la cédula de sufragio" },
+            { "date": "26 Diciembre al 15 Enero", "title": "Impugnaciones y resolución de tachas a la cédula de sufragio" }
+          ]
+        },
+        "2026": {
+          "enero": [
+            { "date": "5 Enero", "title": "Continuación de resolución de impugnaciones a cédula de sufragio" },
+            { "date": "15 Enero", "title": "Finalización del período de impugnaciones a miembros de mesa" },
+            { "date": "22 Enero", "title": "Publicación definitiva del diseño de cédula para las Elecciones Generales 2026" },
+            { "date": "29 Enero", "title": "Sorteo de miembros de mesa" },
+            { "date": "30 Enero al 11 Febrero", "title": "Proceso de impugnación, apelaciones y resolución de tachas a miembros de mesa" }
+          ],
+          "febrero": [
+            { "date": "5 Febrero", "title": "Publicación de lista definitiva de candidatos por organización política" },
+            { "date": "12 Febrero", "title": "Sorteo de ubicación de candidaturas o símbolos en la cédula de sufragio" },
+            { "date": "25 Febrero", "title": "Inicio de distribución de materiales electorales a locales de votación" }
+          ],
+          "marzo": [
+            { "date": "15 Marzo", "title": "Finalización de entrega de materiales electorales en todos los distritos" },
+            { "date": "29 Marzo", "title": "1ra jornada de capacitación a miembros de mesa para las Elecciones Generales 2026" }
+          ],
+          "abril": [
+            { "date": "2 Abril", "title": "Segunda jornada de capacitación a miembros de mesa" },
+            { "date": "5 Abril", "title": "Simulacro del Sistema de Cómputo Electoral y 2da jornada de capacitación a miembros de mesa" },
+            { "date": "10 Abril", "title": "Últimas verificaciones de locales de votación" },
+            { "date": "12 Abril", "title": "Elecciones Generales 2026" }
+          ]
+        }
+      }
     },
     "chatbot": {
       "titulo": "Yachay",
@@ -53,6 +153,18 @@
       }
     },
     "reniec": {
+          "votante": "Votante",
+          "miembroMesa": "Miembro de mesa",
+          "fechaVotacion": "Fecha de votación",
+          "pisoNumero": "° piso",
+        "informacionImportante": "Información Importante",
+        "horarioVotacion": "Horario de Votación",
+        "recomiendaTemprano": "Se recomienda llegar temprano",
+        "documentosRequeridos": "Documentos Requeridos",
+        "dniOriginalVigente": "DNI original y vigente",
+        "noFotocopias": "No se aceptan fotocopias",
+        "multaTitulo": "¿Multa por no votar?",
+        "multaTexto": "Entre S/. 23.00 y S/. 92.00 según tu nivel de pobreza",
       "titulo": "Consultar tu lugar de votación",
       "descripcion": "Verifica la información de ciudadanos registrados en RENIEC",
       "placeholderDni": "Ingrese DNI (8 dígitos)",
@@ -64,7 +176,52 @@
       "nombres": "Nombres",
       "apellidoPaterno": "Apellido Paterno",
       "apellidoMaterno": "Apellido Materno",
-      "fechaNacimiento": "Fecha de Nacimiento"
+      "fechaNacimiento": "Fecha de Nacimiento",
+      "rolYFecha": "Rol y Fecha",
+      "mesaVotacion": "Mesa de Votación",
+      "localizacion": "Localización del Local de Votación",
+      "colegio": "Colegio",
+      "direccion": "Dirección",
+      "mesa": "Mesa",
+      "piso": "Piso",
+      "salon": "Salón",
+      "comoVotar": "¿Cómo Votar? - Paso a Paso",
+      "pasos": {
+        "votante": [
+          {"titulo": "Verificar tu mesa de sufragio", "descripcion": "Busca tu local y mesa con tu DNI en esta plataforma."},
+          {"titulo": "Llegar al local de votación", "descripcion": "Llega temprano con tu DNI original y vigente."},
+          {"titulo": "Identificar tu mesa", "descripcion": "Preséntate ante los miembros de mesa con tu DNI."},
+          {"titulo": "Recibir la cédula de sufragio", "descripcion": "El miembro de mesa te entregará tu cédula."},
+          {"titulo": "Marcar tu voto en la cámara secreta", "descripcion": "Marca tu preferencia de forma clara y secreta."},
+          {"titulo": "Depositar tu voto", "descripcion": "Dobla tu cédula y deposítala en el ánfora."}
+        ],
+        "mesa": [
+          {"titulo": "Llegar antes de las 7:00 am", "descripcion": "Preséntate temprano para la instalación de la mesa."},
+          {"titulo": "Instalar la mesa de sufragio", "descripcion": "Verifica el material electoral y firma las actas."},
+          {"titulo": "Identificar a los votantes", "descripcion": "Solicita el DNI y verifica en la lista de electores."},
+          {"titulo": "Entregar la cédula de sufragio", "descripcion": "Entrega la cédula y orienta al votante."},
+          {"titulo": "Registrar y firmar actas", "descripcion": "Llena y firma las actas al cierre de la votación."},
+          {"titulo": "Entregar el material electoral", "descripcion": "Entrega el ánfora y actas a la ONPE."}
+        ]
+      },
+      "recomendacionesTitulo": "Recomendaciones de Seguridad",
+      "recomendaciones": [
+        "Lleva tu DNI original y vigente (no se acepta fotocopia).",
+        "Llega con anticipación para evitar filas y retrasos.",
+        "No uses dispositivos electrónicos en la cámara secreta.",
+        "Sigue las indicaciones del personal electoral.",
+        "Mantén el orden y respeto en el local de votación.",
+        "No está permitido hacer campaña dentro del local.",
+        "Evita aglomeraciones y mantén tus pertenencias seguras."
+      ],
+      "marcoLegalTitulo": "Marco Legal Electoral",
+      "votoObligatorioTitulo": "Voto Obligatorio",
+      "votoObligatorioTexto": "Para ciudadanos de 18 a 70 años. Después es facultativo.",
+      "multasNoVotarTitulo": "Multas por No Votar",
+      "multasNoVotarTexto": "Varía según nivel de pobreza: entre S/. 23.00 y S/. 92.00",
+      "derechosElectorTitulo": "Derechos del Elector",
+      "derechosElectorTexto": "Voto personal, igual, libre y secreto garantizado por ley",
+      "leerLey": "Leer Ley Orgánica de Elecciones Completa"
     },
     "partidos": {
       "titulo": "Partidos Políticos",
@@ -331,6 +488,17 @@
         "pregunta4": "¿Cómo consulto mi local de votación?",
         "respuesta4": "En la sección 'Consulta RENIEC' ingresa tu DNI para ver tu local y mesa asignada."
       }
+    },
+    "footer": {
+      "oficinaCentral": "Oficina Central",
+      "direccion": "Jr. Washington 1894, Lima - Perú",
+      "horario": "Horario: Lunes a Viernes 8:30am - 5:30pm",
+      "contacto": "Contacto",
+      "telefono": "Central: (01) 417-0630",
+      "whatsapp": "WhatsApp: 955 668 683",
+      "siguenos": "Síguenos",
+      "portal": "Portal Electoral ONPE",
+      "derechos": "Todos los derechos reservados"
     }
   }
 }

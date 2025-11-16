@@ -4,16 +4,18 @@
       "inicio": "Qallariy",
       "candidatos": "Akllasqakuna",
       "partidos": "Partidu Pulitikukuna",
-      "reniec": "RENIEC Tapukuy"
+      "reniec": "RENIEC Tapukuy",
+      "miembrosMesa": "Mesa Miembrukuna",
+      "tutorial": "Yachachiy"
     },
     "inicio": {
       "titulo": "Sapan Akllana",
       "fecha": "12 abril 2026",
       "faltan": "Qhiparan:",
-      "meses": "Killakuna",
-      "dias": "P'unchawkuna",
-      "horas": "Horakuna",
-      "minutos": "Minutukuna",
+      "mesesLabel": "Killakuna",
+      "diasLabel": "P'unchawkuna",
+      "horasLabel": "Horakuna",
+      "minutosLabel": "Minutukuna",
       "partidosPoliticos": "Partidu Pulitikukuna",
       "laOrganizacion": "Kamachiy",
       "acercaProceso": "Ruway mana",
@@ -22,7 +24,105 @@
       "verificaMiembro": "Qhaway mesa miembruchu kanki",
       "infoGeneral": "Sapan willakuy",
       "enlacesRelacionados": "T'inkikuna",
-      "timelineTitle": "Kay akllana ruwaypa tiemponwan qatiy:"
+      "timelineTitle": "Kay akllana ruwaypa tiemponwan qatiy:",
+      "filtrar": "QALLARIY.LLUQ'ICHIY",
+      "filtrarPor": "Lluq'ichiy kaywan:",
+      "meses": {
+        "MARZO": "PAWQAR WARAY",
+        "ABRIL": "AYRIWAY",
+        "JUNIO": "INTI RAYMI",
+        "AGOSTO": "CHAKRA YAPUY",
+        "SEPTIEMBRE": "QUYA RAYMI",
+        "OCTUBRE": "UMA RAYMI",
+        "NOVIEMBRE": "AYA MARQ'A",
+        "DICIEMBRE": "QHAPAQ RAYMI",
+        "ENERO": "QULLA RAYMI",
+        "FEBRERO": "PAWQAR"
+      },
+      "filtro": {
+        "todos": "Tukuy ruwanakuna",
+        "electoral": "Akllana ruwanakuna",
+        "plan": "Yuyaychay",
+        "mesa": "Mesa miembrukuna"
+      },
+      "eventos": {
+        "2025": {
+          "marzo": [
+            { "date": "26 Pawqar Waray", "title": "Sapan Akllana 2026man Qayay" },
+            { "date": "28 Pawqar Waray", "title": "Akllana pachakamaypa qillqaynin Diario Oficialpi" }
+          ],
+          "abril": [
+            { "date": "5 Ayriway", "title": "Akllana ruwaypa willakuy kampañakuna qallariy" },
+            { "date": "12 Ayriway", "title": "Partidu pulitikukuna qillqanapaq pisi p'unchaw ROPpi" },
+            { "date": "20 Ayriway", "title": "Akllana llamk'aqkunapa ñawpaq yachachikuy" }
+          ],
+          "junio": [
+            { "date": "11 Inti Raymi", "title": "Pulitiku tantanakunapa musuq kamachikuykunapa qillqay" },
+            { "date": "15 Inti Raymi", "title": "Akllasqakuna qhawaqmanpaq rikuchiy" },
+            { "date": "30 Inti Raymi", "title": "DNROP Reniecman akllaqkuna padronta apachananpaq pisi p'unchaw" }
+          ],
+          "agosto": [
+            { "date": "2 Chakra Yapuy", "title": "Partidu tinkuykunapa qillqaynin Sapan Akllana 2026paq" },
+            { "date": "10 Chakra Yapuy", "title": "Mesa miembrukuna yachachikuna tallerkuna" },
+            { "date": "30 Chakra Yapuy", "title": "Reniec JNEman akllaqkuna padronta apachin" }
+          ],
+          "septiembre": [
+            { "date": "1 Quya Raymi", "title": "Pulitiku tantanakuy akllasqakunapa rikchayninkunata willan" },
+            { "date": "5 Quya Raymi", "title": "Provinciapi mesa miembrukunapa ñawpaq akllakuy" },
+            { "date": "8 Quya Raymi", "title": "DNROP Reniecman mana tinkisqa akllaqkuna padronta apachananpaq" },
+            { "date": "15 Quya Raymi", "title": "Tantanakuna qhawaqmanpaq akllasqakunata rikuchinku" },
+            { "date": "16 Quya Raymi", "title": "Reniec JNEman mana tinkisqa akllaqkuna padronta apachin" },
+            { "date": "20 Quya Raymi", "title": "Mesa miembrukunapa ñawpaq listakunapa qillqay" }
+          ],
+          "octubre": [
+            { "date": "5 Uma Raymi", "title": "Tukuy suyukunapi ñawpaq akllanakunapa tantanakuy" },
+            { "date": "14 Uma Raymi", "title": "Sapan Akllana 2026paq akllana padronta wichq'ay" },
+            { "date": "19 Uma Raymi", "title": "Ñawpaq akllanakunapi padronkunapa allinchayninpaq pisi p'unchaw" },
+            { "date": "25 Uma Raymi", "title": "Mesa miembrukuna qhipaq kaq akllaypa takyachiy" },
+            { "date": "28manta 31 Uma Raymikamal", "title": "Tantanakuna ñawpaq akllasqakunapa qillqaynin" }
+          ],
+          "noviembre": [
+            { "date": "3 Aya Marq'a", "title": "Mesa miembrukunapa mana allin kayninpa allinchaynin" },
+            { "date": "7 Aya Marq'a", "title": "ONPEman qhipaq akllasqakuna apachananpaq pisi p'unchaw" },
+            { "date": "10 Aya Marq'a", "title": "Tantanakuna qhawaqkunapa qillqaynin ñawpaq akllanapaq" },
+            { "date": "13 Aya Marq'a", "title": "JNE ONPEman ñawpaq padronta apachiy Sapan Akllana 2026paq" },
+            { "date": "20 Aya Marq'a", "title": "Akllana imaymanakunapa akllana wasikunaman apachiy" },
+            { "date": "30 Aya Marq'a", "title": "Ñawpaq Akllana (Tinkisqakuna)" }
+          ],
+          "diciembre": [
+            { "date": "5 Qhapaq Raymi", "title": "Ñawpaq akllanakunapa yupayninkunapa yupaynin" },
+            { "date": "13 Qhapaq Raymi", "title": "Sapan Akllana 2026paq qhipaq padronta allinchayninpaq pisi p'unchaw" },
+            { "date": "18 Qhapaq Raymi", "title": "Ñawpaq akllanakunapa qhipaq yupayninkunapa qillqay" },
+            { "date": "23 Qhapaq Raymi", "title": "Akllasqakuna listakunapa qillqayninpaq pisi p'unchaw" },
+            { "date": "24 Qhapaq Raymi", "title": "Akllana rapimanta yachachikuykunapa qillqayninpaq pisi p'unchaw" },
+            { "date": "26 Qhapaq Raymimanta 15 Qulla Raymikamal", "title": "Akllana rapipi mana allin kayninpa allinchaynin" }
+          ]
+        },
+        "2026": {
+          "enero": [
+            { "date": "5 Qulla Raymi", "title": "Akllana rapipi mana allin kayninpa allinchayninpa qatiy" },
+            { "date": "15 Qulla Raymi", "title": "Mesa miembrukunapa mana allin kayninpa tukuchiy" },
+            { "date": "22 Qulla Raymi", "title": "Sapan Akllana 2026paq akllana rapipi rikchaypa qhipaq qillqay" },
+            { "date": "29 Qulla Raymi", "title": "Mesa miembrukunapa sorteonin" },
+            { "date": "30 Qulla Raymimanta 11 Pawqarkamal", "title": "Mesa miembrukunapi mana allin kayninpa ruwayninpa allinchaynin" }
+          ],
+          "febrero": [
+            { "date": "5 Pawqar", "title": "Pulitiku tantanakuypa akllasqakunapa qhipaq listapa qillqay" },
+            { "date": "12 Pawqar", "title": "Akllana rapipi akllasqakunapa maypi kashankuta sorteoy" },
+            { "date": "25 Pawqar", "title": "Akllana imaymanakunapa akllana wasikunaman apachiy qallariy" }
+          ],
+          "marzo": [
+            { "date": "15 Pawqar Waray", "title": "Tukuy distritukunapi akllana imaymanakunapa apachiypa tukuchiy" },
+            { "date": "29 Pawqar Waray", "title": "Ñawpaq yachachikuy mesa miembrukunapaq Sapan Akllana 2026paq" }
+          ],
+          "abril": [
+            { "date": "2 Ayriway", "title": "Iskay kaq yachachikuy mesa miembrukunapaq" },
+            { "date": "5 Ayriway", "title": "Akllana Yupay Llika puriypi iskay kaq yachachikuy mesa miembrukunapaq" },
+            { "date": "10 Ayriway", "title": "Akllana wasikunapa qhipaq qhawariynin" },
+            { "date": "12 Ayriway", "title": "Sapan Akllana 2026" }
+          ]
+        }
+      }
     },
     "chatbot": {
       "titulo": "Virtual Yanapaq",
@@ -56,6 +156,18 @@
       }
     },
     "reniec": {
+          "votante": "Votaykam",
+          "miembroMesa": "Mesa Miembru",
+          "fechaVotacion": "Votay p'unchaw",
+          "pisoNumero": "° piso",
+        "informacionImportante": "Willakuy Hatun",
+        "horarioVotacion": "Votay Pacha",
+        "recomiendaTemprano": "Ñawpaq chayamuyta yachachin",
+        "documentosRequeridos": "Qillqaykuna Munasqa",
+        "dniOriginalVigente": "DNI original kachkan",
+        "noFotocopias": "Fotocopia manam atinichu",
+        "multaTitulo": "¿Manam votaytaq multa?",
+        "multaTexto": "S/. 23.00 - S/. 92.00, pobreza nivelmanta",
       "titulo": "RENIEC Tapukuy",
       "descripcion": "Qhaway runakunapa willakuyninta RENIEC qillqasqapi",
       "placeholderDni": "Qillqay DNI (8 yupaykuna)",
@@ -67,7 +179,52 @@
       "nombres": "Sutikuna",
       "apellidoPaterno": "Yaya Sutin",
       "apellidoMaterno": "Mama Sutin",
-      "fechaNacimiento": "Yurisqa P'unchaw"
+      "fechaNacimiento": "Yurisqa P'unchaw",
+      "rolYFecha": "Roly Fecha",
+      "mesaVotacion": "Mesa Votaykipa",
+      "localizacion": "Localpa Tinkuykuna",
+      "colegio": "Yachay Wasi",
+      "direccion": "Kawsay Ñan",
+      "mesa": "Mesa",
+      "piso": "Piso",
+      "salon": "Salón",
+      "comoVotar": "¿Imayna Votayta? - Paso a Paso",
+      "pasos": {
+        "votante": [
+          {"titulo": "Mesa suyuykita qhaway", "descripcion": "Kay plataformapi DNIwan localniyta, mesaykita maskhay."},
+          {"titulo": "Votay localman chayamuy", "descripcion": "DNI originalniyta apamuy, temprano chayamuy."},
+          {"titulo": "Mesaykita rikuy", "descripcion": "Mesapa miembrukunaman DNIniyta qhaway."},
+          {"titulo": "Cédulaniyta chaskiy", "descripcion": "Mesa miembruqa cédulaniyta quwanki."},
+          {"titulo": "Cámara pakapi votoykita churay", "descripcion": "Munayniyta ch'uyanchay, pakaypi votoykita churay."},
+          {"titulo": "Votoykita churay", "descripcion": "Cédulaniyta doblay, ánforaman churay."}
+        ],
+        "mesa": [
+          {"titulo": "7:00 am ñawpaq chayamuy", "descripcion": "Mesa churaypaq temprano chayamuy."},
+          {"titulo": "Mesa churay", "descripcion": "Material electoral qhaway, actakunata firmay."},
+          {"titulo": "Votantekuna rikuy", "descripcion": "DNI mañay, electores listapi qhaway."},
+          {"titulo": "Cédula quway", "descripcion": "Cédulata quway, votanteta yanapay."},
+          {"titulo": "Actakunata firmay", "descripcion": "Votación tukuykuchkan actakunata firmay."},
+          {"titulo": "Material electoral quway", "descripcion": "Ánfora, actakunata ONPEman quway."}
+        ]
+      },
+      "recomendacionesTitulo": "Seguridadpaq Yachachikuna",
+      "recomendaciones": [
+        "DNI originalniyta apamuy (fotocopia manam aceptanchu).",
+        "Anticipaciónwan chayamuy filas, sasachakuykunata saqiytaq."
+        ,"Cámara pakapi electrónico dispositivokuna manam apaychu.",
+        "Personal electoralpa willakuykuna qatiy.",
+        "Localpi orden, yuyay, sumaq kawsay waqaychay.",
+        "Localpi propaganda, campaña manam atinichu.",
+        "Aglomeración saqiy, pertenencias waqaychay."
+      ],
+      "marcoLegalTitulo": "Leypa Yachachikuna",
+      "votoObligatorioTitulo": "Voto Mana Qallariy",
+      "votoObligatorioTexto": "18-70 watayuq runakuna votoyku. Qhipa facultativom." ,
+      "multasNoVotarTitulo": "Votayta Mana Ruwaspa Multa",
+      "multasNoVotarTexto": "Pobrezayki nivelmanta: S/. 23.00 - S/. 92.00",
+      "derechosElectorTitulo": "Electorpa Derechokuna",
+      "derechosElectorTexto": "Voto personal, igual, lliw, pakaypi, leywan qelqaykuchkan.",
+      "leerLey": "Ley Orgánica de Elecciones Ñawinchay"
     },
     "partidos": {
       "titulo": "Partidu Pulitikukuna",
@@ -353,6 +510,17 @@
         "pregunta4": "¿Imayna tapukuni local akllanaypa?",
         "respuesta4": "'Tapukuy RENIEC' secciónpi yaykuchiy DNIykita qhawanaykipaq local mesaykitapas churasqaykita."
       }
+    },
+    "footer": {
+      "oficinaCentral": "Hatun Wasipa",
+      "direccion": "Jr. Washington 1894, Lima - Perú",
+      "horario": "Pacha: Lunes - Viernes 8:30am - 5:30pm",
+      "contacto": "Rimanakuy",
+      "telefono": "Central: (01) 417-0630",
+      "whatsapp": "WhatsApp: 955 668 683",
+      "siguenos": "Qatiwayku",
+      "portal": "Portal Electoral ONPE",
+      "derechos": "Tukuy derechokuna waqaychasqa"
     }
   }
 }

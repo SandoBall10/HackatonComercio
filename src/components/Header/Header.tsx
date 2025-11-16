@@ -44,19 +44,19 @@ export const Header: React.FC = () => {
             <div className="countdown-items">
               <div className="countdown-item">
                 <div className="countdown-value" key={`meses-${countdown.meses}`}>{String(countdown.meses).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.meses')}</div>
+                <div className="countdown-label-small">{t('inicio.mesesLabel')}</div>
               </div>
               <div className="countdown-item">
                 <div className="countdown-value" key={`dias-${countdown.dias}`}>{String(countdown.dias).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.dias')}</div>
+                <div className="countdown-label-small">{t('inicio.diasLabel')}</div>
               </div>
               <div className="countdown-item">
                 <div className="countdown-value" key={`horas-${countdown.horas}`}>{String(countdown.horas).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.horas')}</div>
+                <div className="countdown-label-small">{t('inicio.horasLabel')}</div>
               </div>
               <div className="countdown-item">
                 <div className="countdown-value" key={`minutos-${countdown.minutos}`}>{String(countdown.minutos).padStart(2, '0')}</div>
-                <div className="countdown-label-small">{t('inicio.minutos')}</div>
+                <div className="countdown-label-small">{t('inicio.minutosLabel')}</div>
               </div>
             </div>
           </div>
