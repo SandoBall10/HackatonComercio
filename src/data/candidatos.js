@@ -42,16 +42,46 @@ export const candidatos = [
       declaracionesJuradas: "Disponible en portal JNE",
       sentenciasJudiciales: "Información disponible en registros judiciales"
     },
+    planGobierno: {
+      ejesTematicos: [
+        "Economía y Empleo",
+        "Salud y Educación",
+        "Seguridad Nacional",
+        "Lucha Anticorrupción",
+        "Desarrollo Regional"
+      ],
+      propuestas: [
+        "Creación de 2 millones de empleos formales mediante inversión privada",
+        "Reforma integral del sistema de salud y construcción de hospitales",
+        "Modernización educativa con enfoque en tecnología y bilingüismo",
+        "Plan de seguridad ciudadana con apoyo de Fuerzas Armadas",
+        "Sistema de transparencia y lucha frontal contra la corrupción",
+        "Reactivación económica post pandemia con incentivos fiscales",
+        "Apoyo a MYPES y emprendedores con créditos accesibles",
+        "Descentralización efectiva con presupuesto para regiones"
+      ]
+    },
     trayectoria: [
       { fecha: "2021", descripcion: "Segunda vuelta electoral presidencial" },
       { fecha: "2016", descripcion: "Candidata presidencial - Segunda vuelta" },
       { fecha: "2011", descripcion: "Primera candidatura presidencial" }
     ],
     noticias: [
-      { titulo: "Keiko Fujimori presenta propuestas económicas", fuente: "El Comercio", fecha: "Hace 1 semana", imagen: "https://via.placeholder.com/150/991b1b/FFFFFF?text=Noticia" }
+      { titulo: "Keiko Fujimori presenta propuestas económicas", fuente: "El Comercio", fecha: "Hace 1 día", imagen: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Fuerza Popular propone plan de salud universal", fuente: "Gestión", fecha: "Hace 2 días", imagen: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Candidata compromete lucha contra la corrupción", fuente: "RPP", fecha: "Hace 5 días", imagen: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop", destacada: true },
+      { titulo: "Keiko se reúne con gremios de pequeños empresarios", fuente: "Perú21", fecha: "Hace 3 días", imagen: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=300&h=200&fit=crop" },
+      { titulo: "Plan de infraestructura para conectar el país", fuente: "Correo", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=300&h=200&fit=crop" },
+      { titulo: "Propuesta educativa incluye tablets para estudiantes", fuente: "La República", fecha: "Hace 1 semana", imagen: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&h=200&fit=crop" },
+      { titulo: "Fuerza Popular expande estructura partidaria", fuente: "El Peruano", fecha: "Hace 2 semanas", imagen: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=300&h=200&fit=crop" }
     ],
     actividades: [
-      { dia: "20", mes: "DIC", titulo: "Reunión con empresarios", lugar: "Lima", hora: "10:00 AM" }
+      { dia: "20", mes: "ENE", titulo: "Reunión con empresarios", lugar: "Lima", hora: "10:00 AM" },
+      { dia: "23", mes: "ENE", titulo: "Presentación de propuestas educativas", lugar: "San Juan de Lurigancho", hora: "4:00 PM" },
+      { dia: "27", mes: "ENE", titulo: "Foro sobre seguridad ciudadana", lugar: "Callao", hora: "6:00 PM" },
+      { dia: "30", mes: "ENE", titulo: "Encuentro con líderes regionales", lugar: "Arequipa", hora: "11:00 AM" },
+      { dia: "03", mes: "FEB", titulo: "Conferencia de prensa nacional", lugar: "Sede Fuerza Popular", hora: "9:00 AM" },
+      { dia: "07", mes: "FEB", titulo: "Visita a emprendedores y MYPES", lugar: "Villa El Salvador", hora: "3:00 PM" }
     ]
   },
   {
