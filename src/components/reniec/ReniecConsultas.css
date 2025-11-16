@@ -99,7 +99,7 @@
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(185, 28, 28, 0.15);
+  border: 1px solid rgba(179, 2, 39, 0.15);
 }
 
 @keyframes gradientShift {
@@ -133,10 +133,10 @@
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(185, 28, 28, 0.2), 0 0 40px rgba(185, 28, 28, 0.1);
+    box-shadow: 0 0 20px rgba(179, 2, 39, 0.2), 0 0 40px rgba(179, 2, 39, 0.1);
   }
   50% {
-    box-shadow: 0 0 30px rgba(185, 28, 28, 0.4), 0 0 60px rgba(185, 28, 28, 0.2);
+    box-shadow: 0 0 30px rgba(179, 2, 39, 0.4), 0 0 60px rgba(179, 2, 39, 0.2);
   }
 }
 
@@ -148,7 +148,7 @@
   border-radius: 16px;
   position: relative;
   border: 2px solid #fee2e2;
-  box-shadow: 0 4px 15px rgba(185, 28, 28, 0.1);
+  box-shadow: 0 4px 15px rgba(179, 2, 39, 0.1);
 }
 
 @keyframes rotate {
@@ -171,12 +171,12 @@
 .title-icon-left,
 .title-icon-right {
   flex-shrink: 0;
-  stroke: #b91c1c;
+  stroke: rgb(179, 2, 39);
 }
 
 .reniec-consulta-title-main {
   font-size: 1.6rem;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   margin: 0;
   font-weight: 800;
   line-height: 1.3;
@@ -184,7 +184,7 @@
   letter-spacing: 1px;
   position: relative;
   z-index: 1;
-  text-shadow: 0 2px 4px rgba(185, 28, 28, 0.2);
+  text-shadow: 0 2px 4px rgba(179, 2, 39, 0.2);
 }
 
 .reniec-consulta-subtitle {
@@ -203,7 +203,7 @@
 
 .subtitle-icon {
   flex-shrink: 0;
-  stroke: #b91c1c;
+  stroke: rgb(179, 2, 39);
 }
 
 /* Info importante - Derecha */
@@ -219,7 +219,7 @@
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(185, 28, 28, 0.15);
+  border: 1px solid rgba(179, 2, 39, 0.15);
   max-width: 600px;
   margin: 0 auto 2rem auto;
   width: 100%;
@@ -231,7 +231,7 @@
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(185, 28, 28, 0.15);
+  border: 1px solid rgba(179, 2, 39, 0.15);
   max-height: fit-content;
 }
 
@@ -272,8 +272,8 @@
 }
 
 .reniec-input-modern:focus {
-  border-color: #b91c1c;
-  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+  border-color: rgb(179, 2, 39);
+  box-shadow: 0 0 0 3px rgba(179, 2, 39, 0.1);
 }
 
 .reniec-btn-modern {
@@ -344,7 +344,7 @@
 
 .reniec-horario {
   background: #fef2f2;
-  border: 1px solid rgba(185, 28, 28, 0.2);
+  border: 1px solid rgba(179, 2, 39, 0.2);
 }
 
 .reniec-info-header {
@@ -352,7 +352,7 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-weight: 600;
 }
 
@@ -404,21 +404,21 @@
 }
 
 .reniec-doc-error {
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
 }
 
 .reniec-doc-error svg {
-  stroke: #b91c1c;
+  stroke: rgb(179, 2, 39);
   flex-shrink: 0;
 }
 
 .reniec-multa {
   background: #fef2f2;
-  border: 1px solid rgba(185, 28, 28, 0.2);
+  border: 1px solid rgba(179, 2, 39, 0.2);
 }
 
 .reniec-multa-text {
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-size: 0.875rem;
   margin: 0.5rem 0 0 0;
   font-weight: 500;
@@ -443,7 +443,7 @@
   border-radius: 12px;
   padding: 1.25rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(185, 28, 28, 0.15);
+  border: 1px solid rgba(179, 2, 39, 0.15);
 }
 
 .reniec-dni-inline {
@@ -455,7 +455,7 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   justify-content: center;
 }
 
@@ -475,8 +475,8 @@
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #b91c1c;
-  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.2);
+  border: 3px solid rgb(179, 2, 39);
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.2);
 }
 
 .reniec-dni-data p {
@@ -508,11 +508,11 @@
   display: inline-block;
   padding: 0.4rem 1rem;
   background: linear-gradient(135deg, #fee2e2, #fecaca);
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-weight: 700;
   border-radius: 1rem;
   font-size: 0.875rem;
-  border: 2px solid #b91c1c;
+  border: 2px solid rgb(179, 2, 39);
 }
 
 .reniec-fecha-inline {
@@ -532,7 +532,7 @@
 .reniec-fecha-value {
   margin-top: 0.25rem;
   font-size: 1.1rem;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-weight: 700;
 }
 
@@ -558,7 +558,7 @@
 
 .reniec-mesa-item-inline strong {
   font-size: 1.1rem;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-weight: 700;
 }
 
@@ -572,7 +572,7 @@
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(185, 28, 28, 0.15);
+  border: 1px solid rgba(179, 2, 39, 0.15);
 }
 
 .reniec-location-data {
@@ -626,7 +626,7 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  border: 1px solid rgba(185, 28, 28, 0.08);
+  border: 1px solid rgba(179, 2, 39, 0.08);
   animation: fadeInUp 0.6s ease-out;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -649,15 +649,15 @@
 }
 
 .reniec-card:hover {
-  box-shadow: 0 16px 48px rgba(185, 28, 28, 0.12);
+  box-shadow: 0 16px 48px rgba(179, 2, 39, 0.12);
   transform: translateY(-4px);
-  border-color: rgba(185, 28, 28, 0.2);
+  border-color: rgba(179, 2, 39, 0.2);
 }
 
 .reniec-form-card {
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 10px 40px rgba(185, 28, 28, 0.08);
+  box-shadow: 0 10px 40px rgba(179, 2, 39, 0.08);
   border: none;
 }
 
@@ -686,20 +686,20 @@
 }
 
 .reniec-input:focus {
-  border: 2px solid #b91c1c;
+  border: 2px solid rgb(179, 2, 39);
   background: #ffffff;
-  box-shadow: 0 8px 24px rgba(185, 28, 28, 0.12), inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px rgba(179, 2, 39, 0.12), inset 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .reniec-input:hover {
   background: #ffffff;
-  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.08), inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.08), inset 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .reniec-btn {
   padding: 1.1rem 2.5rem;
   font-size: 1.1rem;
-  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+  background: linear-gradient(135deg, rgb(179, 2, 39) 0%, #dc2626 100%);
   color: #fff;
   border: none;
   border-radius: 16px;
@@ -709,7 +709,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(185, 28, 28, 0.3);
+  box-shadow: 0 8px 24px rgba(179, 2, 39, 0.3);
 }
 
 .reniec-btn::before {
@@ -732,7 +732,7 @@
 
 .reniec-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(185, 28, 28, 0.4);
+  box-shadow: 0 8px 24px rgba(179, 2, 39, 0.4);
 }
 
 .reniec-btn:active {
@@ -794,7 +794,7 @@
   min-width: 0;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(185, 28, 28, 0.08);
+  border: 1px solid rgba(179, 2, 39, 0.08);
   transition: all 0.3s ease;
 }
 
@@ -802,7 +802,7 @@
 .reniec-mesa-card:hover,
 .reniec-localizacion-card:hover {
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 12px 40px rgba(185, 28, 28, 0.1);
+  box-shadow: 0 12px 40px rgba(179, 2, 39, 0.1);
   transform: translateY(-2px);
 }
 
@@ -826,7 +826,7 @@
   max-width: 100%;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(185, 28, 28, 0.08);
+  border: 1px solid rgba(179, 2, 39, 0.08);
   animation: fadeInUp 0.6s ease-out 0.4s backwards;
 }
 
@@ -852,7 +852,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #ffffff;
-  box-shadow: 0 8px 32px rgba(185, 28, 28, 0.2), 0 0 0 1px rgba(185, 28, 28, 0.1);
+  box-shadow: 0 8px 32px rgba(179, 2, 39, 0.2), 0 0 0 1px rgba(179, 2, 39, 0.1);
   background: #f8fafc;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   animation: scaleIn 0.8s ease-out;
@@ -860,7 +860,7 @@
 
 .reniec-foto-circular:hover {
   transform: scale(1.08);
-  box-shadow: 0 12px 48px rgba(185, 28, 28, 0.25), 0 0 0 1px rgba(185, 28, 28, 0.15);
+  box-shadow: 0 12px 48px rgba(179, 2, 39, 0.25), 0 0 0 1px rgba(179, 2, 39, 0.15);
 }
 
 .reniec-barcode {
@@ -884,11 +884,11 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto 4rem auto;
-  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+  background: linear-gradient(135deg, rgb(179, 2, 39) 0%, #dc2626 50%, #ef4444 100%);
   color: #fff;
   border-radius: 24px;
   padding: 3.5rem 3rem;
-  box-shadow: 0 20px 60px rgba(185, 28, 28, 0.2);
+  box-shadow: 0 20px 60px rgba(179, 2, 39, 0.2);
   text-align: center;
   animation: slideInLeft 0.8s ease-out;
   position: relative;
@@ -919,7 +919,7 @@
   opacity: 0.3;
 }
 .reniec-btn-red {
-  background: linear-gradient(90deg, #b91c1c 60%, #fc3c3c 100%);
+  background: linear-gradient(90deg, rgb(179, 2, 39) 60%, #fc3c3c 100%);
 }
 
 .reniec-info-box {
@@ -953,7 +953,7 @@
 
 .reniec-info-title {
   font-weight: 700;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-size: 1.08rem;
 }
 
@@ -982,7 +982,7 @@
   justify-content: flex-start;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(185, 28, 28, 0.08);
+  border: 1px solid rgba(179, 2, 39, 0.08);
   animation: fadeInUp 0.6s ease-out;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
@@ -994,7 +994,7 @@
 .reniec-horizontal-card:hover {
   background: rgba(255, 255, 255, 0.95);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(185, 28, 28, 0.12);
+  box-shadow: 0 12px 40px rgba(179, 2, 39, 0.12);
 }
 
 /* Animaciones para iconos */
@@ -1042,7 +1042,7 @@
 }
 
 .reniec-dni-info-item:hover {
-  background: rgba(185, 28, 28, 0.04);
+  background: rgba(179, 2, 39, 0.04);
   transform: translateX(4px);
 }
 
@@ -1092,7 +1092,7 @@
   gap: 6px;
   padding: 16px 20px;
   margin: 8px 0;
-  background: rgba(185, 28, 28, 0.04);
+  background: rgba(179, 2, 39, 0.04);
   border-radius: 14px;
   border: none;
   transition: all 0.3s ease;
@@ -1101,8 +1101,8 @@
 
 .reniec-mesa-info-item:hover {
   transform: translateX(4px);
-  background: rgba(185, 28, 28, 0.08);
-  box-shadow: 0 6px 20px rgba(185, 28, 28, 0.1);
+  background: rgba(179, 2, 39, 0.08);
+  box-shadow: 0 6px 20px rgba(179, 2, 39, 0.1);
 }
 
 .reniec-mesa-label {
@@ -1115,7 +1115,7 @@
 
 .reniec-mesa-value {
   font-size: 1.3em;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-weight: 700;
 }
 
@@ -1132,7 +1132,7 @@
   align-items: flex-start;
   gap: 16px;
   padding: 18px 20px;
-  background: rgba(185, 28, 28, 0.03);
+  background: rgba(179, 2, 39, 0.03);
   border-radius: 16px;
   border: none;
   transition: all 0.3s ease;
@@ -1144,13 +1144,13 @@
 
 .reniec-location-item:hover {
   transform: translateX(4px);
-  background: rgba(185, 28, 28, 0.06);
-  box-shadow: 0 8px 24px rgba(185, 28, 28, 0.12);
+  background: rgba(179, 2, 39, 0.06);
+  box-shadow: 0 8px 24px rgba(179, 2, 39, 0.12);
 }
 
 .reniec-location-item strong {
   display: block;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   margin-bottom: 4px;
   font-size: 0.95em;
 }
@@ -1170,7 +1170,7 @@
 
 .reniec-map-container:hover iframe {
   transform: scale(1.01);
-  box-shadow: 0 12px 40px rgba(185, 28, 28, 0.2) !important;
+  box-shadow: 0 12px 40px rgba(179, 2, 39, 0.2) !important;
 }
 
 /* Grid de tarjetas de información */
@@ -1189,7 +1189,7 @@
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(185, 28, 28, 0.15);
+  border: 1px solid rgba(179, 2, 39, 0.15);
 }
 
 .reniec-bottom-card-header {
@@ -1197,7 +1197,7 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
 }
 
 .reniec-bottom-card-header svg {
@@ -1231,7 +1231,7 @@
 }
 
 .reniec-bullet {
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-weight: bold;
   font-size: 1.25rem;
   line-height: 1;
@@ -1247,7 +1247,7 @@
 .reniec-legal-content h4 {
   margin: 0;
   font-size: 0.95rem;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-weight: 600;
 }
 
@@ -1260,7 +1260,7 @@
 
 .reniec-legal-link {
   display: inline-block;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
@@ -1269,7 +1269,7 @@
 }
 
 .reniec-legal-link:hover {
-  border-bottom-color: #b91c1c;
+  border-bottom-color: rgb(179, 2, 39);
 }
 
 /* Tarjetas de información */
@@ -1279,7 +1279,7 @@
   border-radius: 24px;
   padding: 2.5rem;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(185, 28, 28, 0.08);
+  border: 1px solid rgba(179, 2, 39, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   animation: fadeInUp 0.6s ease-out;
 }
@@ -1289,7 +1289,7 @@
 
 .reniec-info-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(185, 28, 28, 0.12);
+  box-shadow: 0 20px 60px rgba(179, 2, 39, 0.12);
   background: rgba(255, 255, 255, 0.95);
 }
 
@@ -1300,24 +1300,24 @@
   gap: 1.5rem;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid rgba(185, 28, 28, 0.1);
+  border-bottom: 2px solid rgba(179, 2, 39, 0.1);
 }
 
 .reniec-info-icon-wrapper {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #b91c1c, #dc2626);
+  background: linear-gradient(135deg, rgb(179, 2, 39), #dc2626);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(185, 28, 28, 0.3);
+  box-shadow: 0 8px 24px rgba(179, 2, 39, 0.3);
   transition: all 0.3s ease;
 }
 
 .reniec-info-card:hover .reniec-info-icon-wrapper {
   transform: scale(1.1) rotate(-5deg);
-  box-shadow: 0 12px 32px rgba(185, 28, 28, 0.4);
+  box-shadow: 0 12px 32px rgba(179, 2, 39, 0.4);
 }
 
 .reniec-info-icon-wrapper svg {
@@ -1346,7 +1346,7 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem 1.2rem;
-  background: rgba(185, 28, 28, 0.03);
+  background: rgba(179, 2, 39, 0.03);
   border-radius: 12px;
   transition: all 0.3s ease;
   animation: fadeInUp 0.4s ease-out backwards;
@@ -1361,9 +1361,9 @@
 .reniec-info-item:nth-child(7) { animation-delay: 0.4s; }
 
 .reniec-info-item:hover {
-  background: rgba(185, 28, 28, 0.06);
+  background: rgba(179, 2, 39, 0.06);
   transform: translateX(8px);
-  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.08);
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.08);
 }
 
 .reniec-check-icon,
@@ -1371,7 +1371,7 @@
   flex-shrink: 0;
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, #b91c1c, #dc2626);
+  background: linear-gradient(135deg, rgb(179, 2, 39), #dc2626);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -1379,7 +1379,7 @@
   justify-content: center;
   font-weight: 700;
   font-size: 1rem;
-  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3);
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.3);
 }
 
 .reniec-info-item span:last-child {
@@ -1390,7 +1390,7 @@
 }
 
 .reniec-title-red {
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -1435,22 +1435,22 @@
 }
 
 .reniec-paso-card:hover {
-  border-color: #b91c1c;
+  border-color: rgb(179, 2, 39);
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(185, 28, 28, 0.1);
+  box-shadow: 0 8px 16px rgba(179, 2, 39, 0.1);
 }
 
 .reniec-paso-icon-circle {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, #b91c1c, #dc2626);
+  background: linear-gradient(135deg, rgb(179, 2, 39), #dc2626);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3);
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.3);
 }
 
 .reniec-paso-icon-circle svg {
@@ -1464,7 +1464,7 @@
   right: -10px;
   width: 32px;
   height: 32px;
-  background: #b91c1c;
+  background: rgb(179, 2, 39);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -1472,12 +1472,12 @@
   justify-content: center;
   font-weight: bold;
   font-size: 0.875rem;
-  box-shadow: 0 2px 8px rgba(185, 28, 28, 0.4);
+  box-shadow: 0 2px 8px rgba(179, 2, 39, 0.4);
 }
 
 .reniec-paso-title {
   font-size: 1rem;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   margin: 0 0 0.5rem 0;
   font-weight: 700;
 }
@@ -1493,10 +1493,10 @@
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
   margin-bottom: 3rem;
   animation: fadeInUp 0.6s ease-out;
-  text-shadow: 0 2px 10px rgba(185, 28, 28, 0.1);
+  text-shadow: 0 2px 10px rgba(179, 2, 39, 0.1);
 }
 
 /* Contenedor de escalera */
@@ -1518,8 +1518,8 @@
   border-radius: 20px;
   padding: 2rem;
   margin-bottom: 1rem;
-  box-shadow: 0 8px 32px rgba(185, 28, 28, 0.1);
-  border: 1px solid rgba(185, 28, 28, 0.1);
+  box-shadow: 0 8px 32px rgba(179, 2, 39, 0.1);
+  border: 1px solid rgba(179, 2, 39, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   animation: slideInStair 0.6s ease-out backwards;
   position: relative;
@@ -1533,7 +1533,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(185, 28, 28, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(179, 2, 39, 0.05), transparent);
   transition: left 0.6s ease;
 }
 
@@ -1543,9 +1543,9 @@
 
 .reniec-stair-step:hover {
   transform: translateX(10px) translateY(-4px);
-  box-shadow: 0 16px 48px rgba(185, 28, 28, 0.15);
+  box-shadow: 0 16px 48px rgba(179, 2, 39, 0.15);
   background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(185, 28, 28, 0.2);
+  border-color: rgba(179, 2, 39, 0.2);
 }
 
 @keyframes slideInStair {
@@ -1564,7 +1564,7 @@
   flex-shrink: 0;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+  background: linear-gradient(135deg, rgb(179, 2, 39) 0%, #dc2626 50%, #ef4444 100%);
   color: white;
   border-radius: 16px;
   display: flex;
@@ -1572,13 +1572,13 @@
   justify-content: center;
   font-size: 1.8rem;
   font-weight: 700;
-  box-shadow: 0 8px 24px rgba(185, 28, 28, 0.4);
+  box-shadow: 0 8px 24px rgba(179, 2, 39, 0.4);
   transition: all 0.3s ease;
 }
 
 .reniec-stair-step:hover .reniec-stair-number {
   transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 12px 32px rgba(185, 28, 28, 0.5);
+  box-shadow: 0 12px 32px rgba(179, 2, 39, 0.5);
 }
 
 /* Contenido del escalón */
@@ -1595,7 +1595,7 @@
 }
 
 .reniec-stair-step:hover .reniec-stair-title {
-  color: #b91c1c;
+  color: rgb(179, 2, 39);
 }
 
 .reniec-stair-desc {

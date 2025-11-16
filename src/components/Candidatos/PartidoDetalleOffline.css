@@ -1,0 +1,80 @@
+.partidos-offline-container {
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+  padding: 24px 12px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  text-align: center;
+}
+
+.partidos-offline-desc {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 28px;
+}
+
+.partidos-offline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.partido-offline-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 18px 16px;
+  width: 240px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partido-offline-card:hover {
+  box-shadow: 0 6px 18px rgba(179,2,39,0.10);
+}
+
+.partido-offline-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+
+.partido-offline-nombre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #003d7a;
+  margin-bottom: 4px;
+}
+
+.partido-offline-siglas {
+  color: #b30227;
+  font-weight: 600;
+  font-size: 0.98rem;
+  margin-bottom: 6px;
+}
+
+.partido-offline-desc {
+  color: #666;
+  font-size: 0.97rem;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 600px) {
+  .partidos-offline-list {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .partido-offline-card {
+    width: 95%;
+    max-width: 320px;
+  }
+}
