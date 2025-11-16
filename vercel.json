@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/pdf/:file*", "destination": "/pdf/:file*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
