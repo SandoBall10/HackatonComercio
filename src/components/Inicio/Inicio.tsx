@@ -257,7 +257,7 @@ export const Inicio: React.FC = () => {
   const months2026 = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL'];
   const months = activeYear === '2025' ? months2025 : months2026;
 
-  // Autoplay del carrusel cada 5 segundos
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % news.length);
@@ -265,7 +265,7 @@ export const Inicio: React.FC = () => {
     return () => clearInterval(interval);
   }, [news.length]);
 
-  // Calcular countdown
+
   useEffect(() => {
     const targetDate = new Date('2026-04-12T00:00:00').getTime();
     const timer = setInterval(() => {
@@ -283,14 +283,13 @@ export const Inicio: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Cambiar mes cuando cambia el año
+
   React.useEffect(() => {
     if (!months.includes(activeMonth)) {
       setActiveMonth(months[0]);
     }
   }, [activeYear]);
 
-  // Cambiar mes cuando cambia el filtro, si el mes actual no tiene eventos con ese filtro
   React.useEffect(() => {
     const visibleMonthsForFilter = activeFilter === 'todos' 
       ? months 

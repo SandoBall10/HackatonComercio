@@ -9,7 +9,7 @@ const Tutorial: React.FC = () => {
   // Reemplaza este link con el ID de tu video de YouTube
   // Ejemplo: si tu link es https://www.youtube.com/watch?v=dQw4w9WgXcQ
   // entonces videoId = "dQw4w9WgXcQ"
-  const videoId = "dQw4w9WgXcQ"; // REEMPLAZAR CON TU VIDEO ID
+  const videoId = "FMcA7kRdJ6E"; // REEMPLAZAR CON TU VIDEO ID
 
   const handleVideoError = () => {
     setVideoError(true);

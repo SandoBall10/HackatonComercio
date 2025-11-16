@@ -33,8 +33,33 @@
 .header { background: rgb(179, 2, 39); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 .navbar { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; gap: 24px; align-items: center; height: 56px; }
 .nav-links-container { display: flex; gap: 0; align-items: center; flex: 1; justify-content: center; margin-left: 80px; }
-.nav-link { color: #fff; text-decoration: none; padding: 16px 20px; font-weight: 600; font-size: 15px; border-bottom: 3px solid transparent; transition: all 0.3s; display: flex; align-items: center; }
-.nav-link:hover { background: rgba(255,255,255,0.1); border-bottom-color: #fff; }
+.nav-link { color: #fff; text-decoration: none; padding: 16px 20px; font-weight: 600; font-size: 15px; border-bottom: 3px solid transparent; transition: all 0.3s; display: flex; align-items: center; position: relative; }
+.nav-link:hover { background: transparent; border-bottom-color: rgba(255,255,255,0.3); }
+.nav-link.active { background: transparent; border-bottom-color: #333; font-weight: 700; }
+
+/* Desktop/Mobile selector visibility */
+.desktop-language-selector { display: block; }
+.desktop-theme-selector { display: block; }
+
+/* Hamburger button - hidden by default */
+.hamburger-btn { display: none; background: transparent; border: none; cursor: pointer; flex-direction: column; gap: 6px; padding: 8px; margin: 0 auto; }
+.hamburger-btn span { width: 25px; height: 3px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+
+/* Mobile menu styles */
+.mobile-menu-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 999; }
+.mobile-menu-modal { display: none; position: fixed; top: 200px; right: 0; background: rgb(179, 2, 39); width: 80%; max-width: 300px; max-height: calc(100vh - 200px); z-index: 1000; box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2); overflow-y: auto; flex-direction: column; }
+.mobile-menu-modal.open { display: flex; }
+.close-btn { display: none; background: transparent; border: none; color: #fff; font-size: 24px; padding: 16px; cursor: pointer; text-align: right; align-self: flex-end; }
+.close-btn.visible { display: block; }
+.mobile-nav-links { display: flex; flex-direction: column; padding: 0; flex: 0; }
+.mobile-nav-link { color: #fff; text-decoration: none; padding: 16px 20px; font-weight: 600; font-size: 14px; border-left: 4px solid transparent; transition: all 0.3s; display: block; }
+.mobile-nav-link:hover { background: rgba(255, 255, 255, 0.1); border-left-color: #fff; }
+.mobile-nav-link.active { background: rgba(255, 255, 255, 0.15); border-left-color: #000; font-weight: 700; }
+
+/* Mobile selectors container */
+.mobile-selectors { display: none; flex-direction: column; gap: 12px; padding: 16px 20px; border-top: 1px solid rgba(255, 255, 255, 0.2); flex: 0; }
+.mobile-selector-item { display: flex; justify-content: center; }
+.mobile-selector-item > div { width: 100%; }
 
 .nav-link-highlight { 
   background: #0a66b3; 
@@ -62,7 +87,7 @@
   .top-header-content { flex-direction: column; gap: 16px; }
 
   .top-logo {
-    height: 60px;   /* ✔ bajamos */
+    height: 60px;
   }
 
   .countdown-items { flex-wrap: wrap; }
@@ -70,13 +95,24 @@
 
 /* Mobile → logo 50px */
 @media (max-width: 768px) {
-
   .top-logo {
-    height: 50px;   /* ✔ aún más pequeño */
+    height: 50px;
   }
 
-  .nav-links-container { flex-wrap: wrap; gap: 0; height: auto; }
-  .nav-link { padding: 12px 16px; font-size: 13px; }
+  /* Hide desktop elements, show only hamburger */
+  .hamburger-btn { display: flex; }
+  .nav-links-container { display: none !important; }
+  .desktop-language-selector { display: none !important; }
+  .desktop-theme-selector { display: none !important; }
+
+  /* Show mobile menu when open */
+  .mobile-menu-overlay { display: block; }
+  .mobile-menu-modal { display: flex; }
+  .close-btn { display: block; }
+  .mobile-selectors { display: flex; }
+
+  /* Navbar centering with only hamburger */
+  .navbar { justify-content: center; }
 }
 
 /* Very small mobile → logo 45px */
@@ -84,9 +120,11 @@
   .top-header-content { padding: 0 16px; }
 
   .top-logo {
-    height: 45px;   /* ✔ para pantallas muy chicas */
+    height: 45px;
   }
 
   .countdown-items { gap: 6px; }
   .countdown-item { padding: 6px 10px; min-width: 50px; }
+
+  .mobile-menu-modal { width: 100%; max-width: none; top: 170px; max-height: calc(100vh - 170px); }
 }
