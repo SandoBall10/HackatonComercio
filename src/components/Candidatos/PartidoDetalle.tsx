@@ -641,11 +641,18 @@ const PartidoDetalle: React.FC = () => {
                 </span>
               </button>
               {candidatosReales[0]?.pdfUrl && (
-                <a 
-                  href={candidatosReales[0].pdfUrl}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const link = document.createElement('a');
+                    link.href = candidatosReales[0].pdfUrl;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
                   className="btn text-white fw-semibold py-3 position-relative"
                   style={{
                     background: `linear-gradient(135deg, ${colorSecundario} 0%, ${colorTerciario} 100%)`,
@@ -687,7 +694,7 @@ const PartidoDetalle: React.FC = () => {
                     </svg>
                     Plan PDF
                   </span>
-                </a>
+                </button>
               )}
             </div>
           </div>
