@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'robots.txt'],
+      includeAssets: ['favicon.svg', 'robots.txt', 'pdf/**/*.pdf'],
       manifest: {
         name: 'Hackaton Comercio',
         short_name: 'Comercio',
@@ -24,4 +24,18 @@ export default defineConfig({
       }
     })
   ],
+  publicDir: 'public',
+  build: {
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith('.pdf')) {
+            return 'pdf/[name][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        }
+      }
+    }
+  }
 })

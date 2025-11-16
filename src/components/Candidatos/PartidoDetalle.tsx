@@ -643,10 +643,13 @@ const PartidoDetalle: React.FC = () => {
               {candidatosReales[0]?.pdfUrl && (
                 <a 
                   href={candidatosReales[0].pdfUrl}
-                  download
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn text-white fw-semibold py-3 position-relative"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(candidatosReales[0].pdfUrl, '_blank');
+                  }}
                   style={{
                     background: `linear-gradient(135deg, ${colorSecundario} 0%, ${colorTerciario} 100%)`,
                     border: 'none',
