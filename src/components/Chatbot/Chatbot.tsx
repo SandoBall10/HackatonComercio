@@ -151,7 +151,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-<<<<<<< HEAD
     if (msg === 'aimara 🌄') {
       return {
         text: '¡Walikiwa! Aruxa Aimararu mayjt\'tawa 🌄',
@@ -162,9 +161,6 @@ const Chatbot: React.FC = () => {
     // ==================== CANDIDATOS ====================
     if (msg.includes('candidato') || msg.includes('ver candidatos') || msg.includes('akllasqa') || msg.includes('ajllita') ||
         msg.includes('presidente') || msg.includes('umalliq') || msg.includes('apukaki') || msg.includes('postulante')) {
-=======
-    if (msg.includes('candidato') || msg.includes('ver candidatos') || msg.includes('akllasqa')) {
->>>>>>> 89f75d6e3e8d18a933725bb490b5aa45d42cdf0a
       return {
         text: t('chatbot.respuestas.candidatos'),
         action: () => setTimeout(() => navigate('/candidatos'), 1000)
@@ -178,7 +174,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-<<<<<<< HEAD
     // ==================== MIEMBROS DE MESA ====================
     if (msg.includes('miembro') || msg.includes('mesa') || msg.includes('miembru') || 
         msg.includes('sorteo') || msg.includes('designado') || msg.includes('seleccionado') ||
@@ -197,16 +192,12 @@ const Chatbot: React.FC = () => {
     if (msg.includes('reniec') || msg.includes('consultar') || msg.includes('dni') || 
         msg.includes('tapukuy') || msg.includes('jiskt\'a') || msg.includes('verificar') || msg.includes('documento') ||
         msg.includes('identidad') || msg.includes('buscar')) {
-=======
-    if (msg.includes('reniec') || msg.includes('consultar') || msg.includes('dni') || msg.includes('tapukuy')) {
->>>>>>> 89f75d6e3e8d18a933725bb490b5aa45d42cdf0a
       return {
         text: t('chatbot.respuestas.reniec'),
         action: () => setTimeout(() => navigate('/reniec'), 1000)
       };
     }
 
-<<<<<<< HEAD
     // ==================== TUTORIAL / CAPACITACIÓN ====================
     if (msg.includes('tutorial') || msg.includes('video') || msg.includes('aprend') || 
         msg.includes('capacit') || msg.includes('instruccion') || msg.includes('como funciona') ||
@@ -227,16 +218,12 @@ const Chatbot: React.FC = () => {
         msg.includes('cuando') || msg.includes('pachakamay') || msg.includes('pacha') || msg.includes('dia') ||
         msg.includes('elecciones') || msg.includes('akllana') || msg.includes('ajlliri') || msg.includes('abril') ||
         msg.includes('timeline') || msg.includes('tiempo')) {
-=======
-    if (msg.includes('cronograma') || msg.includes('fecha') || msg.includes('calendario') || msg.includes('cuando') || msg.includes('pachakamay')) {
->>>>>>> 89f75d6e3e8d18a933725bb490b5aa45d42cdf0a
       return {
         text: t('chatbot.respuestas.cronogramaRespuesta'),
         action: () => setTimeout(() => navigate('/'), 1000)
       };
     }
 
-<<<<<<< HEAD
     // ==================== VOTO / VOTACIÓN ====================
     if (msg.includes('vot') || msg.includes('sufrag') || msg.includes('akll') || msg.includes('ajll') ||
         msg.includes('elegir') || msg.includes('como votar') || msg.includes('donde votar') ||
@@ -367,9 +354,6 @@ const Chatbot: React.FC = () => {
     // ==================== INICIO / PÁGINA PRINCIPAL ====================
     if (msg.includes('inicio') || msg.includes('home') || msg.includes('principal') || 
         msg.includes('qallariy') || msg.includes('qalltawi') || msg.includes('menu') || msg.includes('portada')) {
-=======
-    if (msg.includes('inicio') || msg.includes('home') || msg.includes('principal') || msg.includes('qallariy')) {
->>>>>>> 89f75d6e3e8d18a933725bb490b5aa45d42cdf0a
       return {
         text: t('chatbot.respuestas.inicio'),
         action: () => setTimeout(() => navigate('/'), 1000)
