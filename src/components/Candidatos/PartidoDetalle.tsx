@@ -571,14 +571,14 @@ const PartidoDetalle: React.FC = () => {
           <div className="card-body p-4">
             <div className="d-flex align-items-center gap-4 mb-4">
               <div
-                className="rounded bg-white"
+                className="rounded partido-logo-detalle"
                 style={{
                   width: 96,
                   height: 96,
-                  backgroundSize: "cover",
+                  backgroundSize: "contain",
                   backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
                   backgroundImage: `url('${partido.logo || `/logos/${partido.id}.svg`}')`,
-                  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
                   transition: 'transform 0.3s ease',
                   cursor: 'pointer'
                 }}

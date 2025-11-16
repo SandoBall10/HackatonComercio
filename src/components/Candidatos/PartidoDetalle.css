@@ -334,22 +334,14 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* CRÍTICO: Logo con backgroundImage en dark mode */
-[data-theme="dark"] .card-body .rounded.bg-white,
-[data-theme="dark"] .rounded.bg-white {
-  background-color: #ffffff !important;
-  border: 2px solid var(--border-color, #3a3b3c) !important;
-  padding: 12px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+/* Logo del partido en modo oscuro - sin fondo blanco */
+.partido-logo-detalle {
+  padding: 0 !important;
 }
 
-/* NO sobrescribir el background-image, solo el background-color */
-[data-theme="dark"] .card-body > div.rounded[style*="backgroundImage"],
-[data-theme="dark"] div.rounded[style*="backgroundImage"] {
-  background-color: #ffffff !important;
-  border: 2px solid var(--border-color, #3a3b3c) !important;
-  padding: 12px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+[data-theme="dark"] .partido-logo-detalle {
+  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.2)) !important;
+  background-color: transparent !important;
 }
 
 /* Fotos de candidatos mantienen el fondo oscuro */
