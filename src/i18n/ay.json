@@ -1,0 +1,357 @@
+{
+  "translation": {
+    "nav": {
+      "inicio": "Qalltawi",
+      "partidos": "Partidu Pulitikuxa",
+      "reniec": "Ajayu Chiqapa Jiskt'añataki"
+    },
+    "inicio": {
+      "titulo": "Taqpach Ajllirinaka",
+      "fecha": "12 abril 2026",
+      "faltan": "Qhipxtasiwa:",
+      "meses": "Phaxsinaka",
+      "dias": "Urunaxa",
+      "horas": "Huraxa",
+      "minutos": "Minutunaxa",
+      "partidosPoliticos": "Partidu Pulitikuxa",
+      "laOrganizacion": "Kamachi",
+      "acercaProceso": "Lurawinxa",
+      "loNuevo": "Machaq",
+      "votoDigital": "Digital Ajlliri",
+      "verificaMiembro": "Uñjma mesa miembru ukhamaskta",
+      "infoGeneral": "Taqpach yatiyawi",
+      "enlacesRelacionados": "Mayacht'asinaka",
+      "timelineTitle": "Aka ajlliri lurawimpi pacha qhiparu:"
+    },
+    "chatbot": {
+      "titulo": "Virtual Yanapa",
+      "subtitulo": "Sapa kutixa yanapt'añataki",
+      "mensajeBienvenida": "¡Kusisitaw juttama! Nayaxa virtual yanapiriwa Perú 2026 ajlliñataki. ¿Kunjamsa yanapt'añama?",
+      "placeholder": "Qillqantma yatiyanima...",
+      "verCandidatos": "Ajllitanakaru uñjasiña",
+      "verPartidos": "Partidu pulitikuxaru uñjasiña",
+      "consultarReniec": "RENIEC jiskt'aña",
+      "cronograma": "Ajlliri pacha",
+      "notificaciones": {
+        "ayuda": "¿Yanapat munaskta?",
+        "disponible": "Akankwa yanapt'añataki 😊",
+        "pregunta": "¿Ajllirinakata jiskt'awimaxa utji?",
+        "guiar": "Irpt'asma plataformaru",
+        "candidatos": "¿Ajllitanakampi yatiyawi thaqhaskta?",
+        "cronograma": "Nayampi ajlliri pacha uñjasma"
+      },
+      "respuestas": {
+        "candidatos": "¡Walikiwa! Irpt'asma ajllitanaka lurañaru kawkhitix taqi yatiyawi uñjañaxa.",
+        "partidos": "Uñacht'ayasma partidu pulitikuxa listaxa Ajlliri 2026taki qillqatanaka.",
+        "reniec": "Irpt'asma RENIEC jiskt'awi moduloru kawkhitix jaqinakampi yatiyawi uñjañaxa.",
+        "cronogramaRespuesta": "Taqi ajlliri pachaxa qalltawi laphinxa utji. Ajllirinakax utjaniwa 12 abril 2026na.",
+        "inicio": "Irpt'asma qalltawi laphiru.",
+        "ayuda": "Akanakana yanapt'asma:",
+        "saludo": "¡Kusisitaw juttama! ¿Kunjamsa yanapt'añama?",
+        "gracias": "¡Janïwa kuna! ¿Yaqha kunarusa yanapt'añama?",
+        "default": "Yanapt'asma plataformana sarañataki. ¿Kunsa lurañ munaskta?",
+        "noGracias": "Janiwa, yuspajaraki",
+        "verCronograma": "Pacha uñjasma"
+      }
+    },
+    "reniec": {
+      "titulo": "Kawki ajllirinipxa jiskt'aña",
+      "descripcion": "Uñjma jaqinakampi yatiyawi RENIEC qillqatanxa",
+      "placeholderDni": "Qillqantma DNI (8 jakhunaka)",
+      "btnConsultar": "Jiskt'aña",
+      "consultando": "Jiskt'añana...",
+      "errorDni": "DNIxa 8 jakhuniwa kanakapa",
+      "resultadoTitulo": "Jiskt'awimpi Kutichañapa",
+      "dni": "DNI",
+      "nombres": "Sutinakapa",
+      "apellidoPaterno": "Awkimpi Sutipa",
+      "apellidoMaterno": "Taykampi Sutipa",
+      "fechaNacimiento": "Yuriña Uru"
+    },
+    "partidos": {
+      "titulo": "Partidu Pulitikuxa",
+      "descripcion": "Taqpach Ajlliri 2026",
+      "volver": "← Kutt'añani listaru",
+      "informacion": "Partidumpi Yatiyawi",
+      "nombreCompleto": "Phuqhat Sutipa",
+      "siglas": "Jisk'a Sutipa",
+      "filtros": {
+        "ideologia": "Yuyapa",
+        "tamano": "Jach'a",
+        "fundacion": "Yurisqa",
+        "todas": "Taqpacha",
+        "izquierda": "Ch'iqa",
+        "centroIzquierda": "Taypi-Ch'iqa",
+        "centro": "Taypi",
+        "centroDerecha": "Taypi-Kupi",
+        "derecha": "Kupi",
+        "todos": "Taqpacha",
+        "grande": "Jach'a",
+        "mediano": "Taypi",
+        "pequeno": "Jisk'a",
+        "historico": "Nayra",
+        "moderno": "Jichha",
+        "nuevo": "Machaq",
+        "limpiar": "✕ Pichsuña filtrunaka"
+      },
+      "buscador": {
+        "placeholder": "Thaqhaña partiduxa sutipampi jan ukax siglasninampikiwa...",
+        "noResultados": "Janiwa partiduxa jikxatapunixa thaqhawimampixa"
+      },
+      "nombres": {
+        "accion-popular": "Luräwi Ayllu",
+        "fuerza-popular": "Ch'ama Ayllu",
+        "pte-peru": "Irnaqirinakampi Partidu PTE–Perú",
+        "ahora-nacion": "Jichha Nación",
+        "juntos-por-el-peru": "Taqpacha Perútaki",
+        "partido-buen-gobierno": "Suma Kamachi Partidu",
+        "alianza-para-el-progreso": "Nayraru Sarañataki Mayacht'awi",
+        "libertad-popular": "Qhispiña Ayllu",
+        "partido-democrata-unido": "Maya Demócrata Partidu Perú",
+        "avanza-pais": "Nayraru Suyu",
+        "nuevo-peru": "Machaq Perú Suma Jakawipataki",
+        "partido-democrata-verde": "Ch'uxña Demócrata Partidu",
+        "batalla-peru": "Ch'axwañani Perú",
+        "partido-aprista": "Aprista Partidu Peruano",
+        "partido-democratico-federal": "Federal Demócrata Partidu",
+        "fe-en-el-peru": "Inïñawi Perúna",
+        "partido-ciudadanos": "Jaqinaka Partidu Perútaki",
+        "somos-peru": "Nanakawa Perú Demócrata Partidu",
+        "frepap": "Yapucha Ayllu Nayrïri FIA Perúmanta",
+        "partido-civico-obras": "Cívicu Lurawinaka Partidu",
+        "frente-esperanza": "Suyt'añani Nayrïri 2021",
+        "partido-morado": "K'isa Partidu",
+        "peru-accion": "Perú Luraña Pulitiku Partidu",
+        "peru-moderno": "Machaq Perú",
+        "pais-para-todos": "Suyu Taqpacharutaki Partidu",
+        "peru-primero": "Perú Nayrïri Partidu",
+        "podemos-peru": "Yatiqtanwa Perú",
+        "partido-patriotico": "Patrióticu Partidu Perúmanta",
+        "peruanos-unidos": "Peruanunaka Tantachata Qhispiñanakawa",
+        "primero-la-gente": "Nayrïri Jaqinaka",
+        "cooperacion-popular": "Yanapt'asiña Ayllu",
+        "voces-del-pueblo": "Ayllumpi Arunaxa",
+        "progresemos": "Nayraru Sarnaqañani",
+        "fuerza-moderna": "Ch'ama Machaq",
+        "prin": "PRIN",
+        "renovacion-popular": "Machaqaña Ayllu",
+        "integridad-democratica": "Phuqhata Kawi Demócrata",
+        "partido-popular-cristiano": "Cristianu Ayllu Partidu",
+        "salvemos-al-peru": "Qhispiyapxañani Perúru",
+        "peru-libre": "Perú Qhispiña",
+        "partido-si-creo": "Jisa Inïtwa Partidu",
+        "un-camino-diferente": "Maya Thakhi Mayjt'ita",
+        "unidad-y-paz": "Mayacht'ata Jan Ch'axwañampi"
+      }
+    },
+    "candidatos": {
+      "titulo": "Apukakiru Ajllita",
+      "cargo": "Apukakiru Ajllita akanxa",
+      "redesSociales": "Lika Mayacht'asinaka",
+      "noEncontrado": "Janiwa jikxatakiti ajllitampi yatiyawi",
+      "tabs": {
+        "hojaVida": "Jakawi Laphipa",
+        "planGobierno": "Kamachi Yuyapa",
+        "trayectoria": "Thakhi Sarta"
+      },
+      "hojaVida": {
+        "titulo": "Jakawi Laphipa",
+        "datosPersonales": "Kikin Yatiyawinakapa",
+        "nombreCompleto": "Phuqhat Sutipa",
+        "dni": "DNI",
+        "fechaNacimiento": "Yuriña Uru",
+        "lugarNacimiento": "Yuriña Chiqapa",
+        "estadoCivil": "Chacha Warmi Kawi",
+        "profesion": "Irnaqäwi",
+        "formacionAcademica": "Yatiqa Uta",
+        "experienciaLaboral": "Irnaqäwi Lurañani",
+        "idiomas": "Arunakapa",
+        "logros": "Atiptawinaka Yupaychasiwinakampi",
+        "declaracionesJuradas": "Jurasita Yatiyawinaka",
+        "sentenciasJudiciales": "Juzgadumpi Yatiyawi",
+        "noDisponible": "Janiwa utjakiti",
+        "noInformacion": "Janiwa yatiyawi utjakiti"
+      },
+      "planGobierno": {
+        "titulo": "Kamachi Yuyapa",
+        "ejesTematicos": "Jach'a Imanakasa",
+        "propuestas": "Jach'a Yuyarinakapa"
+      },
+      "trayectoria": {
+        "titulo": "Pulitika Thakhi",
+        "cargosPublicos": "Ayllu Irnaqäwinaka Lurañani",
+        "partidosPrevios": "Nayrïri Partiduxa"
+      }
+    },
+    "miembrosMesa": {
+      "titulo": "Mesa Miembrunaka",
+      "subtitulo": "Taqi yatiyawi munasma ayllu irnaqawimaxa phuqhañataki 12 abril 2026na",
+      "tabs": {
+        "cronograma": "Urumpi Pacha",
+        "instrucciones": "Yatichäwi",
+        "derechos": "Derechunaxa Lurawinakampi",
+        "capacitacion": "Yatiqäwi"
+      },
+      "cronograma": {
+        "titulo": "Lurawinakampi Pacha - Ajlliri Uru",
+        "descripcion": "12 abril 2026 - Aka yatichäwimpi qatiqma mesa miembru ukhamaraki suma irnaqañataki",
+        "actividades": {
+          "llegada": "Ajlliri utamaru puriña",
+          "instalacion": "Ajlliri mesampi churawi",
+          "verificacion": "Ajlliri materialespa uñjaña",
+          "inicio": "Ajlliri lurawinmpi qalltawi",
+          "desarrollo": "Ajlliri urumpi luraña",
+          "cierre": "Mesampi jist'araña jakhunakampisa ajllirinakaxa",
+          "actas": "Actanakampi luraña apanipampisa"
+        },
+        "importante": "Wakiskiri",
+        "mensajeImportante": "Amtasma 1 hura nayraru puriña jani ch'amampi lurañataki. Mesampi churawixa 7:00 AM nisqapina kanapawa."
+      },
+      "instrucciones": {
+        "titulo": "Yatichäwi Sapa Luraña",
+        "descripcion": "Aka yatichäwinakaru qatiqma sapa etapa ajlliri lurawinxa",
+        "instalacion": {
+          "titulo": "Mesampi Churawi",
+          "paso1": "Uñjma taqpach miembrunaka utjapxi",
+          "paso2": "Uñjma ánfora ajlliri materialesnampisa",
+          "paso3": "Uñjma mesamana padrón electorala",
+          "paso4": "Churma cartel mesa jakhunipampi uñjañataki"
+        },
+        "sufragio": {
+          "titulo": "Ajlliri Pachana",
+          "paso1": "Mayitma DNIxa ajllirinmanta",
+          "paso2": "Uñjma kikinnipa padrónna",
+          "paso3": "Chuma cédula ajlliri",
+          "paso4": "Churma tinta jani chhaqtayañataki índice ampara",
+          "paso5": "Churma firmaxa acta ajllirina"
+        },
+        "conteo": {
+          "titulo": "Ajllirinakampi Jakhuthapiña",
+          "paso1": "Jist'arma ánforaru personeros nayraqatanxa",
+          "paso2": "Jakhuñma ajllirinaka jach'a arumatampi",
+          "paso3": "T'aqama ajllirinaka: suma, janq'u jani jakhuñata",
+          "paso4": "Phuqhachma acta electorala",
+          "paso5": "Chuma resultadoxa coordinador localaru"
+        },
+        "consejos": {
+          "titulo": "Suma Yatichäwi",
+          "consejo1": "Jan ch'amampi kasiña sapa pacha chiqampi irnaqasa",
+          "consejo2": "Ukhamaxa jani yatisksti, jiskt'ma coordinador localampi",
+          "consejo3": "Yupaycha 100 metruxa karunaka propaganda electoraltaki",
+          "consejo4": "Ama saqiychu celularnaxa mantañataki cámara imanxa"
+        }
+      },
+      "derechos": {
+        "titulo": "Derechunakama",
+        "descripcion": "Mesa miembru ukhamaraki, aka derechunakama garantizasawa utji:",
+        "derecho1": "Yatiqañataki ONPEmpisa ajlliri uru nayraqata",
+        "derecho2": "Katuqaña manq'awi almuerzo ajlliri uruna",
+        "derecho3": "Mayitaña yanapäwi polisïamanta",
+        "derecho4": "Katuqaña qullqi yanapäwi irnaqawimatampi",
+        "derecho5": "Jikxataña constancia irnaqawimata mesa miembru ukhamaraki"
+      },
+      "deberes": {
+        "titulo": "Lurawinakama",
+        "descripcion": "Lurawinaka phuqhañama kanawa:",
+        "deber1": "Puriña suma pachana ajlliri uruna",
+        "deber2": "Churma ajlliri mesaxa 7:00 AM nisqapina",
+        "deber3": "Imaña imanxata ajlliri",
+        "deber4": "Churma suma kasiña mesa electoralna",
+        "deber5": "Phuqhachma firmay actanakaxa electorales"
+      },
+      "compensacion": {
+        "titulo": "Qullqi Yanapäwi",
+        "mensaje": "Mesa miembru ukhamaraki katuqañamawa yanapäwi",
+        "monto": "S/ 120.00 qullqinaxa",
+        "detalle": "irnaqawimatampi. Akax katuqasipuniniwa ajlliri lurawinmpi qhipana."
+      },
+      "capacitacion": {
+        "titulo": "Yatiqäwi Mesa Miembrunakaru",
+        "descripcion": "ONPExa churiwa jani qullqimpi yatiqäwi taqi mesa miembrunakaru",
+        "presencial": {
+          "titulo": "Yatiqäwi Akana",
+          "descripcion": "Sarma yatiqäwi urunakaru distritoykina. Kanipxaniwa marzo 2026na.",
+          "item1": "Nayrïri uru: 29 marzo",
+          "item2": "Payïri uru: 5 abril",
+          "item3": "Jaya pacha: 2-3 huraxa"
+        },
+        "virtual": {
+          "titulo": "Yatiqäwi Virtual",
+          "descripcion": "Mantañani cursonakaru internetampi utamatamanta.",
+          "item1": "Plataforma virtual ONPE",
+          "item2": "Uñjaña yatichäwinaka",
+          "item3": "Material apaqañataki",
+          "item4": "Simuladores sarañani"
+        },
+        "app": {
+          "titulo": "App Móvil",
+          "descripcion": "Apaqma ONPE nisqa app mesa miembrunakaru.",
+          "item1": "Yatichäwi sapa luraña",
+          "item2": "Jach'a yatiyanakaxa",
+          "item3": "Uñjma ajlliri utama",
+          "item4": "Material yanapäwi jani internetampi"
+        },
+        "recursos": {
+          "titulo": "Materialnaka Utji",
+          "manual": "Manual Mesa Miembrumpa",
+          "manualDesc": "Phuqhat yatichäwi PDF nisqana - Ñit'ma apaqañataki",
+          "videos": "Uñjaña Yatichäwi",
+          "videosDesc": "Video yatichäwi mesa miembrunakaru",
+          "preguntas": "Jiskt'awinaka Sapa Kuti",
+          "preguntasDesc": "Kutichäwinaka jiskt'awinakaru - Ñit'ma apaqañataki"
+        }
+      },
+      "cta": {
+        "titulo": "¿Mesa miembrupcha ajllitätama ukhaxa?",
+        "descripcion": "Uñjma churasma local ajlliri kawkirus sarañama",
+        "boton": "Uñjaña Mesa Electoralja"
+      }
+    },
+    "tutorial": {
+      "titulo": "Yatichäwi: Kunjamsa Plataforma Llamk'achañaxa",
+      "descripcion": "Yatiqa sarañataki taqi rurawinakampi electoral plataformana jani ch'ama ukhamaraki jank'aki",
+      "tituloVideo": "Phuqhat Yatichäwi: Ajlliri Perú 2026",
+      "descripcionVideo": "Video yatichäwi sapa luraña plataformaxa llamk'achañataki ukhamaraki taqi yatiqañataki proceso electoralmanta",
+      "errorVideo": "Video janiwa utjakiti. Ama ukhama kasina, uñjma mayacht'awimaxa.",
+      "seccion1": {
+        "titulo": "Jach'a Sarañani",
+        "descripcion": "Yatiqa taqi secciones plataformamanta",
+        "paso1": "Thaqhma menu patana sapa secciónaru puriñampataki",
+        "paso2": "Llamk'achma thaqhiri partidunakamanta jank'aki jikxatañataki",
+        "paso3": "Mayjt'ma aruxa Español Quechua Aimara kunjamsa munasmana"
+      },
+      "seccion2": {
+        "titulo": "Jiskt'aña Ajllitanaka",
+        "descripcion": "Thaqhma ajllitanakamanta partidunakamantasa",
+        "paso1": "Sarma Partidu Pulitikuxa secciónaru",
+        "paso2": "Ñit'ma kuna partidunsa detalles uñjañataki",
+        "paso3": "Uñjma kamachi yuyaninakampi ukhamaraki yuyarinakampi"
+      },
+      "seccion3": {
+        "titulo": "Mesa Miembrunaka",
+        "descripcion": "Ukhamaxa churasitätama ukhasti, akaniwa yatiyanima",
+        "paso1": "Uñjma pacha lurawinakampi uruna",
+        "paso2": "Ulljma yatichäwi sapa luraña",
+        "paso3": "Apaqma manuala ukhamaraki yatiqäwi yanapäwinaka"
+      },
+      "seccion4": {
+        "titulo": "Jiskt'awinaka RENIEC",
+        "descripcion": "Uñjma yatiyanima electoral",
+        "paso1": "Mantayma jakhunima DNI nisqamanta (8 jakhu)",
+        "paso2": "Uñjma local mesamampisa ajllirinimampi",
+        "paso3": "Uñjma datunakama suma kasipxi"
+      },
+      "faq": {
+        "titulo": "Jiskt'awinaka Sapa Kuti",
+        "pregunta1": "¿Kunjamsa thaqhana maya partiduxa específicota?",
+        "respuesta1": "Llamk'achma thaqhiri Partidu Pulitikuxa secciónna. Thaqhawaqma phuqhat sutipampi jan ukax siglasninampikiwa partidumampi.",
+        "pregunta2": "¿Yatiqttha aruxa mayjt'añaxa?",
+        "respuesta2": "Jisa, llamk'achma ajlliri aruxa patana mayjt'añataki Español Quechua Aimara nisqanakana.",
+        "pregunta3": "¿Kunsa lurtana ukhamaxa mesa miembrupcha churasitätama ukhaxa?",
+        "respuesta3": "Sarma 'Mesa Miembrunaka' secciónaru kawkhitixa jikxatañama taqi yatiyawi, pacha, yanapäwi munasma ukanakatsa.",
+        "pregunta4": "¿Kunjamsa jiskt'ana local ajllirinija?",
+        "respuesta4": "'Jiskt'aña RENIEC' secciónna mantayma DNIma uñjañamataki local mesamasa churasma."
+      }
+    }
+  }
+}
