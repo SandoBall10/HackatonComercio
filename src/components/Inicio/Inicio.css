@@ -360,15 +360,14 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 .entry-wrapper.right .entry { margin-left: 0; }
 
 /* Header de la tarjeta - parte superior con gradiente animado */
+
 .entry::before {
   content: '';
   display: block;
   height: 100px;
-  background: rgba(179, 2, 39, 0.7);
+  background: rgb(179, 2, 39);
   width: 100%;
   position: relative;
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
 }
 
 @keyframes gradientShift {
