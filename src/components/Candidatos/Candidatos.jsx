@@ -262,7 +262,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
     'partido-democratico-somos-peru': { primario: '#1E40AF', secundario: '#E31B23', terciario: '#1565C0', rgb: '30, 64, 175' }, // Azul y Rojo
     'frente-popular-agricola-fia': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde FREPAP
     'partido-civico-obras': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
-    'frente-de-la-esperanza-2021': { primario: '#00A859', secundario: '#008647', terciario: '#006435', rgb: '0, 168, 89' }, // Verde
+    'frente-de-la-esperanza-2021': { primario: '#00A859', secundario: '#00C76F', terciario: '#00964F', rgb: '0, 168, 89' }, // Verde
     'partido-morado': { primario: '#7B1FA2', secundario: '#6A1B9A', terciario: '#4A148C', rgb: '123, 31, 162' }, // Morado
     'partido-politico-peru-accion': { primario: '#E31B23', secundario: '#1E40AF', terciario: '#00A859', rgb: '227, 27, 35' }, // Rojo, Azul y Verde
     'peru-moderno': { primario: '#FFC107', secundario: '#E91E63', terciario: '#1a1a1a', rgb: '255, 193, 7' }, // Amarillo, Rosado y Negro
@@ -325,9 +325,9 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 {/* Left Section - Profile */}
                 <div className="col-lg-8">
                   <div className="profile-content-wrapper p-4 p-lg-5 py-lg-5">
-                    <div className="d-flex align-items-start gap-4 gap-lg-5 flex-wrap mb-4">
+                    <div className="d-flex align-items-center gap-4 gap-lg-5 flex-wrap">
                       {/* Avatar with advanced styling */}
-                      <div className="position-relative animate-zoom-in">
+                      <div className="position-relative animate-zoom-in flex-shrink-0">
                         <div className="profile-avatar-advanced">
                           <div className="avatar-ring"></div>
                           <div className="avatar-inner">
@@ -350,45 +350,111 @@ const Candidatos = ({ candidato: candidatoProp }) => {
 
                       {/* Profile Info */}
                       <div className="profile-details flex-grow-1 animate-slide-right">
-                        <h1 className="profile-name-advanced mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : undefined }}>
+                        <h1 className="profile-name-advanced mb-2" style={{ color: '#1a1a1a', fontSize: '2rem', fontWeight: '700' }}>
                           {candidato.nombre || candidato.partido || 'Candidato Sin Nombre'}
                         </h1>
                         
                         <div className="profile-meta mb-3">
-                          <div className="d-flex align-items-center gap-2 mb-2">
+                          <div className="d-flex align-items-center gap-2">
                             <div className="meta-icon" style={{ 
                               background: colorPrimario,
-                              boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.25)`
+                              boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.25)`,
+                              width: '36px',
+                              height: '36px'
                             }}>
-                              <i className="bi bi-briefcase-fill" style={{ color: 'white' }}></i>
+                              <i className="bi bi-briefcase-fill" style={{ color: 'white', fontSize: '0.9rem' }}></i>
                             </div>
-                            <span className="meta-text">{t('candidatos.cargo')} {candidato.partido}</span>
+                            <span className="meta-text" style={{ fontSize: '0.95rem' }}>{t('candidatos.cargo')} {candidato.partido}</span>
                           </div>
                         </div>
 
-                        {/* Party Badge with Logo */}
-                        <div className="party-badge-container">
-                          {candidato.logoPartido && (
-                            <div className="party-logo-wrapper">
-                              <img 
-                                className="party-logo-advanced" 
-                                src={candidato.logoPartido} 
-                                alt="Logo del partido"
-                                onError={(e) => {
-                                  console.log('Error cargando logo del partido');
-                                  e.currentTarget.style.display = 'none';
-                                }}
-                                onLoad={() => console.log('Logo del partido cargado')}
-                              />
-                            </div>
-                          )}
-                          <div className="party-badge-advanced" style={{ 
-                            background: colorPrimario,
-                            boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`
-                          }}>
-                            <i className="bi bi-flag-fill me-2"></i>
-                            {candidato.partido}
+                        {/* Botones de acción */}
+                        <div className="d-flex gap-2 align-items-center flex-wrap">
+                          {/* Party Badge with Logo */}
+                          <div className="d-flex align-items-center gap-2">
+                            {candidato.logoPartido && (
+                              <div className="party-logo-wrapper" style={{ 
+                                width: '48px', 
+                                height: '48px',
+                                border: '2px solid #e5e7eb',
+                                borderRadius: '10px',
+                                padding: '6px',
+                                background: 'white',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexShrink: 0
+                              }}>
+                                <img 
+                                  className="party-logo-advanced" 
+                                  src={candidato.logoPartido} 
+                                  alt="Logo del partido"
+                                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                                  onError={(e) => {
+                                    console.log('Error cargando logo del partido');
+                                    e.currentTarget.style.display = 'none';
+                                  }}
+                                  onLoad={() => console.log('Logo del partido cargado')}
+                                />
+                              </div>
+                            )}
+                            <button 
+                              className="btn text-white fw-semibold d-flex align-items-center gap-2"
+                              style={{ 
+                                background: colorPrimario,
+                                boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`,
+                                border: 'none',
+                                borderRadius: '10px',
+                                padding: '12px 20px',
+                                fontSize: '0.9rem',
+                                transition: 'all 0.3s ease',
+                                whiteSpace: 'nowrap'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = `0 6px 16px rgba(${colorPrimarioRgb}, 0.4)`;
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`;
+                              }}
+                            >
+                              <i className="bi bi-flag-fill" style={{ fontSize: '0.9rem' }}></i>
+                              <span>{candidato.partido}</span>
+                            </button>
                           </div>
+
+                          {/* Botón Descargar PDF */}
+                          <button 
+                            className="btn text-white fw-semibold d-flex align-items-center gap-2"
+                            onClick={handleDownloadPDF}
+                            disabled={!pdfPath}
+                            style={{
+                              backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545',
+                              border: 'none',
+                              borderRadius: '10px',
+                              opacity: pdfPath ? 1 : 0.6,
+                              cursor: pdfPath ? 'pointer' : 'not-allowed',
+                              transition: 'all 0.3s ease',
+                              fontSize: '0.9rem',
+                              padding: '12px 20px',
+                              boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`,
+                              whiteSpace: 'nowrap'
+                            }}
+                            onMouseEnter={(e) => {
+                              if (pdfPath) {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = `0 6px 16px rgba(${colorPrimarioRgb}, 0.4)`;
+                              }
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = 'translateY(0)';
+                              e.currentTarget.style.boxShadow = `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`;
+                            }}
+                          >
+                            <i className="bi bi-download" style={{ fontSize: '0.9rem' }}></i>
+                            <span>{pdfPath ? 'Descargar Plan de Gobierno' : 'Plan No Disponible'}</span>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -450,44 +516,60 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   </div>
                 </div>
 
-                {/* Right Section - CTA */}
+                {/* Right Section - Resumen de Bancada */}
                 <div className="col-lg-4">
-                  <div className="cta-section h-100 d-flex flex-column justify-content-center align-items-center p-5 p-lg-5">
-                    <div className="cta-content text-center">
-                      <div className="cta-icon mb-4" style={{
-                        background: (esRenovacionPopular || esFuerzaPopular) ? 'white' : 'rgba(255, 255, 255, 0.2)'
-                      }}>
-                        <i className="bi bi-file-earmark-text" style={{
-                          color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : 'white'
-                        }}></i>
+                  <div className="card border-0 shadow-sm h-100" style={{
+                    background: `linear-gradient(135deg, ${colorPrimario} 0%, ${colorSecundario} 100%)`
+                  }}>
+                    <div className="card-body p-4 text-white">
+                      <div className="d-flex align-items-center mb-3">
+                        <div 
+                          className="rounded-circle bg-white d-flex align-items-center justify-content-center me-3"
+                          style={{ width: '50px', height: '50px' }}
+                        >
+                          <i className="bi bi-people-fill" style={{ fontSize: '1.5rem', color: colorPrimario }}></i>
+                        </div>
+                        <h5 className="mb-0 fw-bold">Resumen de Bancada</h5>
                       </div>
-                      <h5 className="cta-title mb-3">Plan de Gobierno</h5>
-                      <p className="cta-description mb-4">
-                        Descarga el plan completo de propuestas y conoce nuestras iniciativas
-                      </p>
-                      <button 
-                        className="btn-download-advanced"
-                        onClick={handleDownloadPDF}
-                        disabled={!pdfPath}
-                        style={{
-                          opacity: pdfPath ? 1 : 0.6,
-                          cursor: pdfPath ? 'pointer' : 'not-allowed',
-                          background: !pdfPath 
-                            ? colorPrimario
-                            : 'white',
-                          color: !pdfPath
-                            ? 'white'
-                            : colorPrimario
-                        }}
-                      >
-                        <span className="btn-icon">
-                          <i className="bi bi-download"></i>
-                        </span>
-                        <span className="btn-text">
-                          {pdfPath ? 'Descargar PDF' : 'No Disponible'}
-                        </span>
-                        <span className="btn-shine"></span>
-                      </button>
+                      
+                      <div className="mb-3">
+                        <h6 className="fw-bold mb-2">
+                          <i className="bi bi-building me-2"></i>
+                          Partido Político
+                        </h6>
+                        <p className="mb-0 opacity-90">{candidato.partido}</p>
+                      </div>
+
+                      <div className="mb-3">
+                        <h6 className="fw-bold mb-2">
+                          <i className="bi bi-person-badge me-2"></i>
+                          Cargo
+                        </h6>
+                        <p className="mb-0 opacity-90">{candidato.cargo || 'Candidato a la Presidencia'}</p>
+                      </div>
+
+                      <div className="mb-3">
+                        <h6 className="fw-bold mb-2">
+                          <i className="bi bi-calendar-event me-2"></i>
+                          Elecciones 2026
+                        </h6>
+                        <p className="mb-0 opacity-90">12 de abril de 2026</p>
+                      </div>
+
+                      <div className="border-top border-white border-opacity-25 pt-3 mt-3">
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <span className="small"><i className="bi bi-clipboard-check me-2"></i>Propuestas</span>
+                          <span className="fw-bold">{candidato.planGobierno?.propuestas?.length || 0}</span>
+                        </div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <span className="small"><i className="bi bi-newspaper me-2"></i>Noticias</span>
+                          <span className="fw-bold">{candidato.noticias?.length || 0}</span>
+                        </div>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <span className="small"><i className="bi bi-calendar-event me-2"></i>Actividades</span>
+                          <span className="fw-bold">{candidato.actividades?.length || 0}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -651,6 +733,288 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   </div>
                 </div>
               )}
+
+              {activeTab === 'propuestas' && (
+                <div className="animate-fade-in">
+                  {/* Plan de Gobierno */}
+                  <div className="card border-0 shadow-sm mb-4">
+                    <div className="card-body p-4">
+                      <h4 className="mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                        <i className="bi bi-lightbulb-fill me-2"></i>
+                        {t('candidatos.planGobierno.titulo')}
+                      </h4>
+                      
+                      {candidato.planGobierno ? (
+                        <>
+                          {/* Ejes Temáticos */}
+                          {candidato.planGobierno.ejesTematicos && candidato.planGobierno.ejesTematicos.length > 0 && (
+                            <div className="mb-4">
+                              <h5 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                                <i className="bi bi-diagram-3 me-2"></i>
+                                {t('candidatos.planGobierno.ejesTematicos')}
+                              </h5>
+                              <div className="d-flex flex-wrap gap-2">
+                                {candidato.planGobierno.ejesTematicos.map((eje, index) => (
+                                  <span 
+                                    key={index}
+                                    className="badge bg-light text-dark border px-3 py-2"
+                                    style={{ fontSize: '0.9rem' }}
+                                  >
+                                    <i className="bi bi-check-circle-fill me-2" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}></i>
+                                    {eje}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Propuestas Principales */}
+                          {candidato.planGobierno.propuestas && candidato.planGobierno.propuestas.length > 0 && (
+                            <div>
+                              <h5 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                                <i className="bi bi-list-check me-2"></i>
+                                {t('candidatos.planGobierno.propuestas')}
+                              </h5>
+                              <div className="list-group list-group-flush">
+                                {candidato.planGobierno.propuestas.map((propuesta, index) => (
+                                  <div 
+                                    key={index}
+                                    className="list-group-item border-0 px-0 py-3 animate-slide-up"
+                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                  >
+                                    <div className="d-flex gap-3">
+                                      <div 
+                                        className="flex-shrink-0 rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
+                                        style={{ 
+                                          width: '32px', 
+                                          height: '32px',
+                                          backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545',
+                                          fontSize: '0.85rem'
+                                        }}
+                                      >
+                                        {index + 1}
+                                      </div>
+                                      <div className="flex-grow-1">
+                                        <p className="mb-0 text-dark">{propuesta}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="text-center py-5">
+                          <i className="bi bi-file-text text-muted" style={{ fontSize: '3rem' }}></i>
+                          <p className="text-muted mt-3">{t('candidatos.hojaVida.noInformacion')}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'noticias' && (
+                <div className="animate-fade-in">
+                  <div className="row g-4">
+                    {/* Noticias Destacadas - 3 grandes */}
+                    {candidato.noticias && candidato.noticias.filter(n => n.destacada).length > 0 && (
+                      <>
+                        <div className="col-12">
+                          <h4 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                            <i className="bi bi-newspaper me-2"></i>
+                            Noticias Destacadas
+                          </h4>
+                        </div>
+                        {candidato.noticias.filter(n => n.destacada).slice(0, 3).map((noticia, index) => (
+                          <div className="col-12 col-md-6 col-lg-4" key={index}>
+                            <div className="card border-0 shadow-sm h-100 animate-hover-lift" style={{ animationDelay: `${index * 0.1}s` }}>
+                              <div className="position-relative overflow-hidden" style={{ height: '250px' }}>
+                                <img 
+                                  src={noticia.imagen} 
+                                  alt={noticia.titulo}
+                                  className="w-100 h-100"
+                                  style={{ objectFit: 'cover' }}
+                                />
+                                <div 
+                                  className="position-absolute top-0 start-0 px-3 py-1 text-white fw-bold"
+                                  style={{ 
+                                    backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545',
+                                    fontSize: '0.75rem'
+                                  }}
+                                >
+                                  DESTACADA
+                                </div>
+                              </div>
+                              <div className="card-body">
+                                <h5 className="card-title fw-bold mb-3" style={{ fontSize: '1.1rem' }}>
+                                  {noticia.titulo}
+                                </h5>
+                                <div className="d-flex justify-content-between align-items-center">
+                                  <span className="text-muted small">
+                                    <i className="bi bi-newspaper me-1"></i>
+                                    {noticia.fuente}
+                                  </span>
+                                  <span className="text-muted small">
+                                    <i className="bi bi-clock me-1"></i>
+                                    {noticia.fecha}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )}
+
+                    {/* Otras Noticias - 4 pequeñas */}
+                    {candidato.noticias && candidato.noticias.filter(n => !n.destacada).length > 0 && (
+                      <>
+                        <div className="col-12 mt-4">
+                          <h5 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                            <i className="bi bi-list-ul me-2"></i>
+                            Más Noticias
+                          </h5>
+                        </div>
+                        {candidato.noticias.filter(n => !n.destacada).slice(0, 4).map((noticia, index) => (
+                          <div className="col-12 col-md-6" key={index}>
+                            <div className="card border-0 shadow-sm animate-hover-lift" style={{ animationDelay: `${(index + 3) * 0.1}s` }}>
+                              <div className="row g-0">
+                                <div className="col-4">
+                                  <div 
+                                    className="h-100 position-relative overflow-hidden"
+                                    style={{ minHeight: '120px' }}
+                                  >
+                                    <img 
+                                      src={noticia.imagen} 
+                                      alt={noticia.titulo}
+                                      className="w-100 h-100"
+                                      style={{ objectFit: 'cover' }}
+                                    />
+                                  </div>
+                                </div>
+                                <div className="col-8">
+                                  <div className="card-body">
+                                    <h6 className="card-title fw-bold mb-2" style={{ fontSize: '0.95rem', lineHeight: '1.3' }}>
+                                      {noticia.titulo}
+                                    </h6>
+                                    <p className="text-muted small mb-1">
+                                      <i className="bi bi-newspaper me-1"></i>
+                                      {noticia.fuente}
+                                    </p>
+                                    <p className="text-muted small mb-0">
+                                      <i className="bi bi-clock me-1"></i>
+                                      {noticia.fecha}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )}
+
+                    {/* Mensaje si no hay noticias */}
+                    {(!candidato.noticias || candidato.noticias.length === 0) && (
+                      <div className="col-12">
+                        <div className="card border-0 shadow-sm">
+                          <div className="card-body text-center py-5">
+                            <i className="bi bi-newspaper text-muted" style={{ fontSize: '3rem' }}></i>
+                            <p className="text-muted mt-3 mb-0">No hay noticias disponibles en este momento.</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'actividades' && (
+                <div className="animate-fade-in">
+                  <div className="row g-4">
+                    <div className="col-12">
+                      <h4 className="mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                        <i className="bi bi-calendar-event me-2"></i>
+                        Agenda de Actividades Públicas
+                      </h4>
+                    </div>
+
+                    {candidato.actividades && candidato.actividades.length > 0 ? (
+                      candidato.actividades.map((actividad, index) => (
+                        <div className="col-12 col-md-6 col-lg-4" key={index}>
+                          <div className="card border-0 shadow-sm h-100 animate-hover-lift" style={{ animationDelay: `${index * 0.1}s` }}>
+                            <div className="card-body p-0">
+                              {/* Fecha Header */}
+                              <div 
+                                className="text-center text-white p-4"
+                                style={{ 
+                                  backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545'
+                                }}
+                              >
+                                <div className="fw-bold mb-1" style={{ fontSize: '3rem', lineHeight: '1' }}>
+                                  {actividad.dia}
+                                </div>
+                                <div className="text-uppercase" style={{ fontSize: '0.9rem', letterSpacing: '2px' }}>
+                                  {actividad.mes}
+                                </div>
+                              </div>
+                              
+                              {/* Contenido */}
+                              <div className="p-4">
+                                <h5 className="card-title fw-bold mb-3" style={{ fontSize: '1.05rem', lineHeight: '1.4', minHeight: '50px' }}>
+                                  {actividad.titulo}
+                                </h5>
+                                <div className="mb-2 d-flex align-items-start">
+                                  <i className="bi bi-geo-alt-fill me-2 mt-1" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545', fontSize: '1.1rem' }}></i>
+                                  <span className="text-muted" style={{ fontSize: '0.95rem' }}>{actividad.lugar}</span>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                  <i className="bi bi-clock-fill me-2" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545', fontSize: '1.1rem' }}></i>
+                                  <span className="text-muted" style={{ fontSize: '0.95rem' }}>{actividad.hora}</span>
+                                </div>
+                              </div>
+                              
+                              {/* Botón */}
+                              <div className="px-4 pb-4">
+                                <button 
+                                  className="btn btn-sm w-100 text-white fw-semibold py-2"
+                                  style={{ 
+                                    backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545',
+                                    border: 'none',
+                                    transition: 'all 0.3s ease'
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = 'none';
+                                  }}
+                                >
+                                  <i className="bi bi-calendar-plus me-2"></i>
+                                  Agregar al Calendario
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="col-12">
+                        <div className="card border-0 shadow-sm">
+                          <div className="card-body text-center py-5">
+                            <i className="bi bi-calendar-x text-muted" style={{ fontSize: '3rem' }}></i>
+                            <p className="text-muted mt-3 mb-0">No hay actividades programadas en este momento.</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -664,7 +1028,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   </h5>
                   <div className="d-flex flex-column gap-3">
                     {candidato.noticias && candidato.noticias.length > 0 ? (
-                      candidato.noticias.map((noticia, index) => (
+                      candidato.noticias.slice(0, 3).map((noticia, index) => (
                         <div className="news-card-bootstrap p-3 border rounded animate-hover-lift" key={index}>
                           <div className="d-flex gap-3">
                             <img 
@@ -701,7 +1065,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   </h5>
                   <div className="d-flex flex-column gap-3">
                     {candidato.actividades && candidato.actividades.length > 0 ? (
-                      candidato.actividades.map((actividad, index) => (
+                      candidato.actividades.slice(0, 3).map((actividad, index) => (
                         <div className="activity-card-bootstrap p-3 border rounded animate-hover-lift" key={index}>
                           <div className="d-flex gap-3 align-items-start">
                             <div className="activity-date-badge bg-gradient text-white text-center rounded p-2" style={{ 
