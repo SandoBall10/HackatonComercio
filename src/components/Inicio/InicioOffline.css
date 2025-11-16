@@ -1,0 +1,40 @@
+.inicio-offline-container {
+  max-width: 500px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 40px 24px;
+  text-align: center;
+}
+.inicio-offline-container h1 {
+  color: #b30227;
+  margin-bottom: 18px;
+}
+.inicio-offline-container h2 {
+  color: #003d7a;
+  margin: 30px 0 12px;
+}
+.inicio-offline-container ul {
+  list-style: none;
+  padding: 0;
+}
+.inicio-offline-container li {
+  margin: 12px 0;
+  font-size: 16px;
+}
+.offline-link-btn {
+  background: #b30227;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  transition: background 0.2s;
+}
+.offline-link-btn:hover {
+  background: #003d7a;
+}

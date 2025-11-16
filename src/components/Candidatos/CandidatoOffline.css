@@ -1,0 +1,82 @@
+.candidatos-offline-container {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  padding: 24px 12px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  text-align: center;
+}
+
+.candidatos-offline-container h1 {
+  color: #b30227;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.candidatos-offline-desc {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 28px;
+}
+
+.candidatos-offline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.candidato-offline-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 18px 16px;
+  width: 210px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.candidato-offline-card:hover {
+  box-shadow: 0 6px 18px rgba(179,2,39,0.10);
+}
+
+.candidato-offline-foto {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  background: #e0e0e0;
+}
+
+.candidato-offline-nombre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #003d7a;
+  margin-bottom: 4px;
+}
+
+.candidato-offline-cargo {
+  color: #666;
+  font-size: 0.97rem;
+  margin-bottom: 2px;
+}
+
+.candidato-offline-partido {
+  color: #b30227;
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 600px) {
+  .candidatos-offline-list {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .candidato-offline-card {
+    width: 95%;
+    max-width: 320px;
+  }
+}

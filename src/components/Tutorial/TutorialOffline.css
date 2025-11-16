@@ -1,0 +1,24 @@
+.tutorial-offline-container {
+  background: #ffffff;
+}
+
+.tutorial-offline-titulo {
+  font-weight: 700;
+}
+
+.tutorial-offline-intro {
+  font-size: 1.1rem;
+}
+
+.tutorial-offline-lista {
+  padding-left: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.tutorial-offline-lista li {
+  margin-bottom: 0.6rem;
+}
+
+.tutorial-offline-aviso {
+  font-size: 0.95rem;
+}

@@ -31,7 +31,6 @@
   gap: 3rem;
 }
 
-/* Video Section */
 .video-wrapper {
   background: white;
   border-radius: 16px;
@@ -157,7 +156,6 @@
   font-size: 1.1rem;
 }
 
-/* FAQ Section */
 .faq-section {
   padding: 3rem;
   margin-top: 2rem;
@@ -207,7 +205,6 @@
   margin: 0;
 }
 
-/* Cédula de Sufragio Section */
 .cedula-section {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 3rem;
