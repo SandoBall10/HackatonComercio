@@ -12,7 +12,6 @@ const LanguageSelector: React.FC = () => {
     setIsOpen(false);
   };
 
-  // Cerrar dropdown al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {

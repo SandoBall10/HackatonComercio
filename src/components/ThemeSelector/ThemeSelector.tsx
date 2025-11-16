@@ -9,7 +9,6 @@ const ThemeSelector: React.FC = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Cargar tema guardado
     const savedTheme = localStorage.getItem('theme') as Theme;
     if (savedTheme) {
       setCurrentTheme(savedTheme);

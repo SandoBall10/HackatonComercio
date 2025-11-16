@@ -4,7 +4,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { PARTIDOS, Partido, DetalleCandidato } from "../../data/partidos";
 import { candidatos } from "../../data/candidatos";
 
-// Componente para imágenes con fallback
 const ImageWithFallback: React.FC<{
   src: string;
   alt: string;
@@ -36,14 +35,12 @@ const ImageWithFallback: React.FC<{
           strokeLinejoin="round"
         >
           {sexo === 'F' ? (
-            // Icono femenino (Venus ♀)
             <>
               <circle cx="12" cy="8" r="5"/>
               <path d="M12 13v8"/>
               <path d="M9 18h6"/>
             </>
           ) : (
-            // Icono masculino (Marte ♂)
             <>
               <circle cx="10" cy="14" r="5"/>
               <path d="M14.5 4.5l5 5"/>
@@ -82,7 +79,6 @@ const PartidoDetalle: React.FC = () => {
 
   if (!partido) return <div className="container py-5">{t('partidos.noEncontrado')}</div>;
 
-  // Mapeo de colores por partido (por ID numérico)
   const coloresPorPartido: Record<string, { primario: string; secundario: string; terciario: string; rgb: string }> = {
     '1': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Acción Popular
     '2': { primario: '#FF6B00', secundario: '#FF8C00', terciario: '#CC5500', rgb: '255, 107, 0' }, // Fuerza Popular
@@ -130,10 +126,8 @@ const PartidoDetalle: React.FC = () => {
     '44': { primario: '#1E40AF', secundario: '#1E3A8A', terciario: '#1565C0', rgb: '30, 64, 175' } // Partido adicional
   };
 
-  // Usar directamente el ID del partido como string
   const partidoIdNormalizado = String(partido.id);
   
-  // Obtener colores del partido o usar colores por defecto
   const coloresPartido = coloresPorPartido[partidoIdNormalizado] || {
     primario: '#dc3545',
     secundario: '#c82333',
@@ -146,7 +140,6 @@ const PartidoDetalle: React.FC = () => {
   const colorTerciario = coloresPartido.terciario;
   const colorPrimarioRgb = coloresPartido.rgb;
 
-  // Buscar candidatos del partido desde candidatos.js
   const candidatosReales = candidatos.filter(c => {
     const partidoNormalizado = c.partido.toLowerCase().replace(/[^a-z0-9]/g, '');
     const nombrePartidoNormalizado = partido.nombre.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -154,7 +147,6 @@ const PartidoDetalle: React.FC = () => {
            nombrePartidoNormalizado.includes(partidoNormalizado.substring(0, 10));
   });
 
-  // Crear plancha presidencial completa
   const planchaPresidencial: DetalleCandidato[] = [
     candidatosReales.length > 0 && candidatosReales[0]
       ? {
@@ -189,7 +181,6 @@ const PartidoDetalle: React.FC = () => {
         }
   ];
 
-  // Obtener datos del partido
   const diputados = partido.diputados || [];
   const senadores = partido.senadores || [];
   const parlamentoAndino = partido.parlamentariosAndinos || [];
@@ -542,7 +533,6 @@ const PartidoDetalle: React.FC = () => {
       `}</style>
 
       <div className="container py-4">
-        {/* Header */}
         <header className="d-flex align-items-center justify-content-between mb-4" style={{ animation: 'slideIn 0.6s ease-out' }}>
           <div className="d-flex align-items-center gap-3">
             <div 
@@ -563,7 +553,6 @@ const PartidoDetalle: React.FC = () => {
           </div>
         </header>
 
-        {/* Card del Partido */}
         <div className="card mb-4 border-0" style={{ 
           animation: 'scaleIn 0.5s ease-out',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
@@ -601,48 +590,103 @@ const PartidoDetalle: React.FC = () => {
                 </div>
               </div>
             </div>
-            <button 
-              className="btn w-100 text-white fw-semibold py-3 position-relative"
-              onClick={() => navigate(`/candidatos/${partido.siglas?.toLowerCase() || partido.id}`)}
-              style={{
-                background: `linear-gradient(135deg, ${colorPrimario} 0%, ${colorSecundario} 100%)`,
-                border: 'none',
-                borderRadius: '12px',
-                fontSize: '1rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px',
-                boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.4)`,
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = `0 10px 30px rgba(${colorPrimarioRgb}, 0.5)`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = `0 6px 20px rgba(${colorPrimarioRgb}, 0.4)`;
-              }}
-            >
-              <span style={{ 
-                position: 'relative', 
-                zIndex: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px'
-              }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-                {t('partidos.verCandidatoPresidencial')}
-              </span>
-            </button>
+            <div className="d-flex gap-3">
+              <button 
+                className="btn flex-grow-1 text-white fw-semibold py-3 position-relative"
+                onClick={() => navigate(`/candidatos/${partido.siglas?.toLowerCase() || partido.id}`)}
+                style={{
+                  background: `linear-gradient(135deg, ${colorPrimario} 0%, ${colorSecundario} 100%)`,
+                  border: 'none',
+                  borderRadius: '12px',
+                  fontSize: '1rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.4)`,
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                  e.currentTarget.style.boxShadow = `0 10px 30px rgba(${colorPrimarioRgb}, 0.5)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = `0 6px 20px rgba(${colorPrimarioRgb}, 0.4)`;
+                }}
+              >
+                <span style={{ 
+                  position: 'relative', 
+                  zIndex: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px'
+                }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                  {t('partidos.verCandidatoPresidencial')}
+                </span>
+              </button>
+              {candidatosReales[0]?.pdfUrl && (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    // Crear URL absoluta para evitar que React Router la intercepte
+                    const pdfUrl = candidatosReales[0].pdfUrl.startsWith('http') 
+                      ? candidatosReales[0].pdfUrl 
+                      : `${window.location.origin}${candidatosReales[0].pdfUrl}`;
+                    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+                  }}
+                  className="btn text-white fw-semibold py-3 position-relative"
+                  style={{
+                    background: `linear-gradient(135deg, ${colorSecundario} 0%, ${colorTerciario} 100%)`,
+                    border: 'none',
+                    borderRadius: '12px',
+                    fontSize: '1rem',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px',
+                    boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`,
+                    overflow: 'hidden',
+                    transition: 'all 0.3s ease',
+                    minWidth: '180px',
+                    textDecoration: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.boxShadow = `0 10px 30px rgba(${colorPrimarioRgb}, 0.4)`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`;
+                  }}
+                >
+                  <span style={{ 
+                    position: 'relative', 
+                    zIndex: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px'
+                  }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                      <polyline points="7 10 12 15 17 10"/>
+                      <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Plan PDF
+                  </span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
-        {/* Navegación con Tabs estilo moderno */}
         <div className="mb-4" style={{ animation: 'fadeIn 0.6s ease-out 0.2s backwards' }}>
           <div className="bg-white rounded-4 p-3 shadow-sm">
             <div className="d-flex flex-wrap justify-content-center gap-3">
@@ -694,9 +738,7 @@ const PartidoDetalle: React.FC = () => {
           </div>
         </div>
 
-        {/* Contenido de Tabs */}
         <div className="tab-content">
-          {/* Tab: Plancha Presidencial */}
           {activeTab === 'presidencial' && (
             <div>
               <div className="alert border-0 mb-4" style={{ 
@@ -758,7 +800,6 @@ const PartidoDetalle: React.FC = () => {
             </div>
           )}
 
-          {/* Tab: Diputados */}
           {activeTab === 'diputados' && (
             <div>
               <div className="alert border-0 mb-4" style={{ 
@@ -831,7 +872,6 @@ const PartidoDetalle: React.FC = () => {
             </div>
           )}
 
-          {/* Tab: Senadores */}
           {activeTab === 'senadores' && (
             <div>
               <div className="alert border-0 mb-4" style={{ 
@@ -904,7 +944,6 @@ const PartidoDetalle: React.FC = () => {
             </div>
           )}
 
-          {/* Tab: Parlamento Andino */}
           {activeTab === 'parlamento' && (
             <div>
               <div className="alert border-0 mb-4" style={{ background: 'linear-gradient(to right, #e7f3ff, #fff5f5)' }}>
@@ -1021,7 +1060,6 @@ const PartidoDetalle: React.FC = () => {
           )}
         </div>
 
-        {/* Footer */}
         <footer className="text-center text-muted py-4 mt-5">
           <small>{t('footer.datosJNE')}</small>
         </footer>

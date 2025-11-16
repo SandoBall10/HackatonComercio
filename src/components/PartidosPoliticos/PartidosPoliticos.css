@@ -19,7 +19,6 @@
   margin-bottom: 2rem;
 }
 
-/* Buscador */
 .buscador-container {
   max-width: 600px;
   margin: 2rem auto 1.5rem;
@@ -57,7 +56,7 @@
 }
 
 .buscador-input:focus {
-  border-color: #B30227;
+  border-color: rgb(179, 2, 39);
   background-color: white;
   box-shadow: 0 0 0 3px rgba(179, 2, 39, 0.1);
 }
@@ -83,7 +82,6 @@
   color: #333;
 }
 
-/* Filtros */
 .filtros-container {
   max-width: 800px;
   margin: 2rem auto 2.5rem;
@@ -112,7 +110,7 @@
 }
 
 .filtro-label svg {
-  color: #B30227;
+  color: rgb(179, 2, 39);
   filter: drop-shadow(0 2px 4px rgba(179, 2, 39, 0.2));
 }
 
@@ -138,13 +136,13 @@
 }
 
 .filtro-select:hover {
-  border-color: #B30227;
+  border-color: rgb(179, 2, 39);
   box-shadow: 0 4px 16px rgba(179, 2, 39, 0.15);
   transform: translateY(-2px);
 }
 
 .filtro-select:focus {
-  border-color: #B30227;
+  border-color: rgb(179, 2, 39);
   box-shadow: 0 0 0 4px rgba(179, 2, 39, 0.15), 0 4px 16px rgba(179, 2, 39, 0.2);
   transform: translateY(-2px);
 }
@@ -152,7 +150,7 @@
 .filtro-reset {
   margin-top: 1rem;
   padding: 0.9rem 2rem;
-  background: linear-gradient(135deg, #B30227 0%, #8B0000 100%);
+  background: linear-gradient(135deg, rgb(179, 2, 39) 0%, #8B0000 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -266,7 +264,6 @@
   font-weight: 500;
 }
 
-/* Estilos para el detalle del partido */
 .partido-detalle {
   animation: fadeIn 0.3s ease;
 }
@@ -362,7 +359,6 @@
   line-height: 1.6;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .partidos-container {
     padding: 1rem;
@@ -435,10 +431,6 @@
   }
 }
 
-/* ========================================
-   DARK MODE STYLES - PARTIDOS POLITICOS
-   ======================================== */
-
 [data-theme="dark"] .partidos-container {
   background: var(--bg-primary);
 }
@@ -451,7 +443,6 @@
   color: var(--text-secondary);
 }
 
-/* Buscador en Dark Mode */
 [data-theme="dark"] .buscador-input {
   background-color: var(--bg-tertiary);
   color: var(--text-primary);
@@ -481,7 +472,6 @@
   color: var(--text-primary);
 }
 
-/* Filtros en Dark Mode */
 [data-theme="dark"] .filtro-label {
   color: var(--text-primary);
 }
@@ -517,7 +507,6 @@
   box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
 }
 
-/* Resultados vacíos */
 [data-theme="dark"] .no-resultados {
   color: var(--text-secondary);
 }
@@ -528,7 +517,6 @@
   color: var(--text-secondary);
 }
 
-/* Cards de Partidos en Dark Mode */
 [data-theme="dark"] .partido-card {
   background: var(--card-bg);
   border-color: var(--border-color);
@@ -540,7 +528,6 @@
   border-color: var(--accent-color);
 }
 
-/* LOGO EN DARK MODE - Fondo blanco para visibilidad */
 [data-theme="dark"] .partido-logo {
   background: #ffffff !important;
   border: 2px solid var(--border-color);
@@ -561,7 +548,6 @@
   color: var(--text-secondary);
 }
 
-/* Detalle del Partido */
 [data-theme="dark"] .btn-volver {
   background: var(--accent-color);
 }
@@ -579,7 +565,6 @@
   border-bottom-color: var(--border-color);
 }
 
-/* LOGO DEL DETALLE EN DARK MODE */
 [data-theme="dark"] .detalle-logo {
   background: #ffffff !important;
   border: 2px solid var(--border-color);

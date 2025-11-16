@@ -1,6 +1,4 @@
-﻿// Datos de candidatos para las elecciones Perú 2026
-
-export const candidatos = [
+﻿export const candidatos = [
   {
     id: "accion-popular",
     nombre: "Víctor Andrés Belaúnde",

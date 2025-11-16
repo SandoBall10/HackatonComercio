@@ -23,7 +23,6 @@ const Tutorial: React.FC = () => {
       </div>
 
       <div className="tutorial-content">
-        {/* Video Principal */}
         <div className="video-wrapper">
           <div className="video-container">
             {!videoError ? (
@@ -51,7 +50,6 @@ const Tutorial: React.FC = () => {
           </div>
         </div>
 
-        {/* Secciones de ayuda */}
         <div className="ayuda-grid">
           <div className="ayuda-card">
             <div className="ayuda-icon">📍</div>
@@ -98,7 +96,6 @@ const Tutorial: React.FC = () => {
           </div>
         </div>
 
-        {/* Sección Cédula de Sufragio */}
         <div className="cedula-section">
           <h2 className="cedula-titulo">{t('tutorial.cedula.titulo')}</h2>
           <p className="cedula-descripcion">
@@ -119,7 +116,6 @@ const Tutorial: React.FC = () => {
           </div>
         </div>
 
-        {/* Preguntas frecuentes */}
         <div className="faq-section">
           <h2 className="faq-titulo">{t('tutorial.faq.titulo')}</h2>
           <div className="faq-grid">

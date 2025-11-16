@@ -12,7 +12,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
   const [activeTab, setActiveTab] = useState('hoja-vida');
   const [_countdown, setCountdown] = useState({ meses: 0, dias: 0, horas: 0, minutos: 0 });
 
-  // Función para traducir textos comunes
   const translateCommonText = (text) => {
     if (!text) return text;
     const translations = {
@@ -23,7 +22,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
     return translations[text] || text;
   };
 
-  // Mapeo de IDs de partidos a IDs de candidatos
   const mapeoPartidos = {
     '1': 'accion-popular',
     'ap': 'accion-popular',
@@ -115,24 +113,20 @@ const Candidatos = ({ candidato: candidatoProp }) => {
     'pnpl': 'peru-libre'
   };
 
-  // Buscar candidato por partido si viene el parámetro
   const candidato = partidoId 
     ? candidatos.find(c => {
         const partidoIdLower = partidoId.toLowerCase();
         
-        // Primero buscar en el mapeo (PRIORITARIO)
         const idMapeado = mapeoPartidos[partidoIdLower];
         if (idMapeado) {
           return c.id === idMapeado;
         }
         
-        // Si no está en el mapeo, buscar por coincidencias exactas primero
         const idNormalizado = c.id.toLowerCase();
         if (idNormalizado === partidoIdLower) {
           return true;
         }
         
-        // Solo como último recurso, buscar coincidencias parciales (evitar "id" corto)
         if (partidoIdLower.length > 3) {
           const partidoNormalizado = c.partido.toLowerCase().replace(/[^a-z0-9]/g, '-');
           return partidoNormalizado.includes(partidoIdLower) ||
@@ -143,8 +137,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
       }) || candidatoProp
     : candidatoProp;
 
-  // Obtener el PDF del partido
-    // Construir una lista de partidos a partir de los candidatos para asegurar que 'partidos' esté definido
     const partidos = candidatos.reduce((acc, c) => {
       const nombre = (c.partido || '').toString();
       const siglas = (c.siglas || '').toString();
@@ -161,13 +153,11 @@ const Candidatos = ({ candidato: candidatoProp }) => {
       console.log('Candidato:', candidato);
       console.log('pdfUrl directo:', candidato.pdfUrl);
       
-      // Primero intentar usar el pdfUrl directo del candidato
       if (candidato.pdfUrl) {
         console.log('Usando pdfUrl directo del candidato');
         return candidato.pdfUrl;
       }
       
-      // Si no existe, buscar en el array de partidos (como fallback)
       console.log('Candidato partido:', candidato.partido);
       console.log('Todos los partidos:', partidos);
 
@@ -210,7 +200,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
     }
   };
 
-  // Calcular countdown
   useEffect(() => {
     const targetDate = new Date('2026-04-12T00:00:00').getTime();
     const timer = setInterval(() => {
@@ -243,7 +232,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
   console.log('Foto URL:', candidato.foto);
   console.log('Logo URL:', candidato.logoPartido);
   
-  // Detectar partido
   const esRenovacionPopular = candidato.partido?.toLowerCase().includes('renovacion popular') || 
                                candidato.partido?.toLowerCase().includes('renovación popular') ||
                                candidato.id === 'renovacion-popular';
@@ -251,7 +239,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
   const esFuerzaPopular = candidato.partido?.toLowerCase().includes('fuerza popular') ||
                           candidato.id === 'fuerza-popular';
   
-  // Mapeo de colores por partido basado en sus logos reales
   const coloresPorPartido = {
     'accion-popular': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' }, // Rojo
     'fuerza-popular': { primario: '#FF6B00', secundario: '#FF8C00', terciario: '#CC5500', rgb: '255, 107, 0' }, // Naranja
@@ -298,7 +285,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
     'unidad-y-paz': { primario: '#E31B23', secundario: '#C21820', terciario: '#A01419', rgb: '227, 27, 35' } // Rojo
   };
 
-  // Obtener colores del partido o usar colores por defecto
   const coloresPartido = coloresPorPartido[candidato.id] || {
     primario: '#dc3545',
     secundario: '#c82333',
@@ -321,23 +307,18 @@ const Candidatos = ({ candidato: candidatoProp }) => {
      
 
     
-      {/* Main Content */}
       <main className="main-content bg-light py-5">
         <div className="container-fluid px-4 px-lg-5">
           <div className="row justify-content-center">
             <div className="col-12 col-xxl-11">
-              {/* ProfileHeader */}
               <div className="profile-hero-card position-relative overflow-hidden mb-5 animate-slide-up">
-            {/* Background Pattern */}
             <div className="hero-background"></div>
             
             <div className="card-body p-0">
               <div className="row g-0">
-                {/* Left Section - Profile */}
                 <div className="col-lg-8">
                   <div className="profile-content-wrapper p-4 p-lg-5 py-lg-5">
                     <div className="d-flex align-items-center gap-4 gap-lg-5 flex-wrap">
-                      {/* Avatar with advanced styling */}
                       <div className="position-relative animate-zoom-in flex-shrink-0">
                         <div className="profile-avatar-advanced">
                           <div className="avatar-ring"></div>
@@ -359,7 +340,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         </div>
                       </div>
 
-                      {/* Profile Info */}
                       <div className="profile-details flex-grow-1 animate-slide-right">
                         <h1 className="profile-name-advanced mb-2" style={{ color: '#1a1a1a', fontSize: '2rem', fontWeight: '700' }}>
                           {candidato.nombre || candidato.partido || t('candidatos.candidatoSinNombre')}
@@ -379,9 +359,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                           </div>
                         </div>
 
-                        {/* Botones de acción */}
                         <div className="d-flex gap-2 align-items-center flex-wrap">
-                          {/* Party Badge with Logo */}
                           <div className="d-flex align-items-center gap-2">
                             {candidato.logoPartido && (
                               <div className="party-logo-wrapper" style={{ 
@@ -435,7 +413,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                             </button>
                           </div>
 
-                          {/* Botón Descargar PDF */}
                           <button 
                             className="btn text-white fw-semibold d-flex align-items-center gap-2"
                             onClick={handleDownloadPDF}
@@ -470,7 +447,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       </div>
                     </div>
 
-                    {/* Social Links - Redesigned */}
                     <div className="social-section mt-5 pt-4 border-top">
                       <div className="d-flex align-items-center justify-content-between mb-3">
                         <h6 className="social-title mb-0">
@@ -527,7 +503,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   </div>
                 </div>
 
-                {/* Right Section - Resumen de Bancada */}
                 <div className="col-lg-4">
                   <div className="card border-0 shadow-sm h-100" style={{
                     background: `linear-gradient(135deg, ${colorPrimario} 0%, ${colorSecundario} 100%)`
@@ -588,7 +563,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
             </div>
           </div>
 
-          {/* Tabs Navigation - Modern Month Style */}
           <div className="modern-tabs-container mb-4 animate-slide-down">
             <div className="modern-tabs-wrapper">
               <button 
@@ -638,13 +612,10 @@ const Candidatos = ({ candidato: candidatoProp }) => {
             </div>
           </div>
 
-          {/* Content Area */}
           <div className="row g-4 g-lg-5">
-            {/* Main Column */}
             <div className="col-lg-8">
               {activeTab === 'hoja-vida' && (
                 <div className="animate-fade-in">
-                  {/* Info Cards */}
                   <div className="row g-4 mb-4">
                     <div className="col-md-6">
                       <div className="card h-100 border-0 shadow-sm animate-slide-up">
@@ -716,7 +687,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                     </div>
                   </div>
 
-                  {/* Timeline */}
                   <div className="card border-0 shadow-sm animate-slide-up" style={{animationDelay: '0.4s'}}>
                     <div className="card-body p-4">
                       <h4 className="mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
@@ -747,7 +717,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
 
               {activeTab === 'propuestas' && (
                 <div className="animate-fade-in">
-                  {/* Plan de Gobierno */}
                   <div className="card border-0 shadow-sm mb-4">
                     <div className="card-body p-4">
                       <h4 className="mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
@@ -757,7 +726,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       
                       {candidato.planGobierno ? (
                         <>
-                          {/* Ejes Temáticos */}
                           {candidato.planGobierno.ejesTematicos && candidato.planGobierno.ejesTematicos.length > 0 && (
                             <div className="mb-4">
                               <h5 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
@@ -779,7 +747,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                             </div>
                           )}
 
-                          {/* Propuestas Principales */}
                           {candidato.planGobierno.propuestas && candidato.planGobierno.propuestas.length > 0 && (
                             <div>
                               <h5 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
@@ -829,7 +796,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
               {activeTab === 'noticias' && (
                 <div className="animate-fade-in">
                   <div className="row g-4">
-                    {/* Noticias Destacadas - 3 grandes */}
                     {candidato.noticias && candidato.noticias.filter(n => n.destacada).length > 0 && (
                       <>
                         <div className="col-12">
@@ -879,7 +845,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       </>
                     )}
 
-                    {/* Otras Noticias - 4 pequeñas */}
                     {candidato.noticias && candidato.noticias.filter(n => !n.destacada).length > 0 && (
                       <>
                         <div className="col-12 mt-4">
@@ -927,7 +892,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                       </>
                     )}
 
-                    {/* Mensaje si no hay noticias */}
                     {(!candidato.noticias || candidato.noticias.length === 0) && (
                       <div className="col-12">
                         <div className="card border-0 shadow-sm">
@@ -957,7 +921,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                         <div className="col-12 col-md-6 col-lg-4" key={index}>
                           <div className="card border-0 shadow-sm h-100 animate-hover-lift" style={{ animationDelay: `${index * 0.1}s` }}>
                             <div className="card-body p-0">
-                              {/* Fecha Header */}
                               <div 
                                 className="text-center text-white p-4"
                                 style={{ 
@@ -972,7 +935,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                                 </div>
                               </div>
                               
-                              {/* Contenido */}
                               <div className="p-4">
                                 <h5 className="card-title fw-bold mb-3" style={{ fontSize: '1.05rem', lineHeight: '1.4', minHeight: '50px' }}>
                                   {actividad.titulo}
@@ -987,7 +949,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                                 </div>
                               </div>
                               
-                              {/* Botón */}
                               <div className="px-4 pb-4">
                                 <button 
                                   className="btn btn-sm w-100 text-white fw-semibold py-2"
@@ -1028,9 +989,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
               )}
             </div>
 
-            {/* Sidebar */}
             <div className="col-lg-4">
-              {/* News Section */}
               <div className="card border-0 shadow-sm mb-4 animate-slide-right">
                 <div className="card-body">
                   <h5 className="card-title mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
@@ -1067,7 +1026,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                 </div>
               </div>
 
-              {/* Activities Section */}
               <div className="card border-0 shadow-sm animate-slide-right" style={{animationDelay: '0.2s'}}>
                 <div className="card-body">
                   <h5 className="card-title mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
@@ -1115,7 +1073,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-white border-top py-5 mt-5">
         <div className="container">
           <div className="row g-4">

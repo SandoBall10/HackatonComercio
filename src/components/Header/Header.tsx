@@ -36,11 +36,10 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* TOP HEADER CON COUNTDOWN */}
       <div className="top-header">
         <div className="top-header-content">
           <div className="logo-section">
-            <img src="public/Imagenes-Pagina/Logo-Oficial.png" alt="ONPE" className="top-logo" />
+            <img src="/Imagenes-Pagina/Logo-Oficial.png" alt="ONPE" className="top-logo" />
             <div className="election-info">
               <h2>{t('inicio.titulo')}</h2>
               <p>{t('inicio.fecha')}</p>
@@ -70,7 +69,6 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* NAVBAR */}
       <header className="header">
         <nav className="navbar">
           {/* Hamburger button - only visible on mobile */}

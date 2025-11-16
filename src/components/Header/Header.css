@@ -1,10 +1,8 @@
-/* TOP HEADER CON COUNTDOWN */
 .top-header { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 16px 0; }
 .top-header-content { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; }
 
-/* ========== LOGO (MODIFICADO) ========== */
 .logo-section {  
-  height: auto;              /* ❗Antes era 80px → LIMITABA el logo */
+  height: auto;
   display: flex; 
   align-items: center; 
   gap: 16px;
@@ -17,11 +15,9 @@
   border-radius: 15px; 
 }
 
-/* INFO */
 .election-info h2 { color: #003d7a; font-size: 20px; font-weight: 800; margin: 0; }
 .election-info p { color: #666; font-size: 13px; margin: 2px 0 0; }
 
-/* COUNTDOWN */
 .countdown { display: flex; align-items: center; gap: 12px; }
 .countdown-label { color: #666; font-weight: 600; font-size: 13px; }
 .countdown-items { display: flex; gap: 8px; }
@@ -29,7 +25,6 @@
 .countdown-value { color: #0a66b3; font-size: 18px; font-weight: 800; line-height: 1; transition: all 0.4s ease-in-out; }
 .countdown-label-small { color: #666; font-size: 11px; margin-top: 4px; }
 
-/* NAVBAR */
 .header { background: rgb(179, 2, 39); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 .navbar { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; gap: 24px; align-items: center; height: 56px; }
 .nav-links-container { display: flex; gap: 0; align-items: center; flex: 1; justify-content: center; margin-left: 80px; }
@@ -74,15 +69,11 @@
   transform: scale(1.05);
 }
 
-/* SUBTABS */
 .subtabs { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; gap: 32px; align-items: center; height: 48px; border-bottom: 1px solid #e0e0e0; position: relative; }
 .subtab-btn { background: transparent; border: none; color: #666; font-weight: 600; font-size: 14px; cursor: pointer; padding: 0; transition: color 0.3s; }
 .subtab-btn.active { color: #003d7a; }
 .subtab-underline { position: absolute; bottom: -1px; left: 32px; width: 140px; height: 3px; background: #0a66b3; border-radius: 2px 2px 0 0; }
 
-/* ========== RESPONSIVE ========== */
-
-/* Tablet → logo 60px */
 @media (max-width: 1024px) {
   .top-header-content { flex-direction: column; gap: 16px; }
 
@@ -93,7 +84,6 @@
   .countdown-items { flex-wrap: wrap; }
 }
 
-/* Mobile → logo 50px */
 @media (max-width: 768px) {
   .top-logo {
     height: 50px;
@@ -115,7 +105,6 @@
   .navbar { justify-content: center; }
 }
 
-/* Very small mobile → logo 45px */
 @media (max-width: 480px) {
   .top-header-content { padding: 0 16px; }
 
@@ -128,3 +117,4 @@
 
   .mobile-menu-modal { width: 100%; max-width: none; top: 170px; max-height: calc(100vh - 170px); }
 }
+
