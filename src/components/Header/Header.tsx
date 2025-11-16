@@ -75,11 +75,6 @@ export const Header: React.FC = () => {
       </header>
 
       {/* SUBTABS */}
-      <div className="subtabs">
-        <button className="subtab-btn active">Información general</button>
-        <button className="subtab-btn">Enlaces relacionados</button>
-        <div className="subtab-underline"></div>
-      </div>
     </>
   );
 };
