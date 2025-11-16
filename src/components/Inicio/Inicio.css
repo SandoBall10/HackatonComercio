@@ -271,17 +271,17 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 .month-btn:hover {
-  border-color: rgba(179, 2, 39, 0.7);
+  border-color: rgb(179, 2, 39);
   color: #fff;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(179, 2, 39, 0.4);
-  background: rgba(179, 2, 39, 0.7);
+  background: rgb(179, 2, 39);
 }
 
 .month-btn.active { 
-  background: rgba(179, 2, 39, 0.7);
+  background: rgb(179, 2, 39);
   color: #fff; 
-  border-color: rgba(179, 2, 39, 0.7);
+  border-color: rgb(179, 2, 39);
   box-shadow: 0 8px 25px rgba(179, 2, 39, 0.5);
   transform: scale(1.08);
 }
@@ -702,7 +702,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
   position: absolute;
   top: 12px;
   right: 12px;
-  background: #b30227;
+  background: rgb(179, 2, 39);
   color: white;
   padding: 6px 12px;
   border-radius: 20px;
@@ -850,7 +850,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 
 /* FOOTER */
 .site-footer {
-  background: linear-gradient(135deg, #b30227 0%, #8b0000 50%, #b30227 100%);
+  background: linear-gradient(135deg, rgb(179, 2, 39) 0%, #8b0000 50%, rgb(179, 2, 39) 100%);
   background-size: 200% 200%;
   animation: footerGradient 8s ease infinite;
   color: #fff;
@@ -866,7 +866,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #ffffff, #b30227, #ffffff);
+  background: linear-gradient(90deg, #ffffff, rgb(179, 2, 39), #ffffff);
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
 }
@@ -1213,15 +1213,15 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .month-btn:hover {
-  border-color: rgba(179, 2, 39, 0.8);
-  background: rgba(179, 2, 39, 0.8);
+  border-color: rgb(179, 2, 39);
+  background: rgb(179, 2, 39);
   color: #fff;
   box-shadow: 0 6px 20px rgba(179, 2, 39, 0.5);
 }
 
 [data-theme="dark"] .month-btn.active {
-  background: rgba(179, 2, 39, 0.8);
-  border-color: rgba(179, 2, 39, 0.8);
+  background: rgb(179, 2, 39);
+  border-color: rgb(179, 2, 39);
   box-shadow: 0 8px 25px rgba(179, 2, 39, 0.6);
 }
 
