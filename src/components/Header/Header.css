@@ -30,7 +30,7 @@
 .countdown-label-small { color: #666; font-size: 11px; margin-top: 4px; }
 
 /* NAVBAR */
-.header { background: #003d7a; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.header { background: rgb(179, 2, 39); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 .navbar { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; gap: 24px; align-items: center; height: 56px; }
 .nav-links-container { display: flex; gap: 0; align-items: center; flex: 1; justify-content: center; margin-left: 80px; }
 .nav-link { color: #fff; text-decoration: none; padding: 16px 20px; font-weight: 600; font-size: 15px; border-bottom: 3px solid transparent; transition: all 0.3s; display: flex; align-items: center; }
