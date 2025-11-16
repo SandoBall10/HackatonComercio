@@ -360,7 +360,7 @@ const PartidoDetalle: React.FC = () => {
 
         .btn:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4) !important;
+          box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4) !important;
         }
 
         .alert {

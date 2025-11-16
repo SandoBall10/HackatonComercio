@@ -651,6 +651,288 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   </div>
                 </div>
               )}
+
+              {activeTab === 'propuestas' && (
+                <div className="animate-fade-in">
+                  {/* Plan de Gobierno */}
+                  <div className="card border-0 shadow-sm mb-4">
+                    <div className="card-body p-4">
+                      <h4 className="mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                        <i className="bi bi-lightbulb-fill me-2"></i>
+                        {t('candidatos.planGobierno.titulo')}
+                      </h4>
+                      
+                      {candidato.planGobierno ? (
+                        <>
+                          {/* Ejes Temáticos */}
+                          {candidato.planGobierno.ejesTematicos && candidato.planGobierno.ejesTematicos.length > 0 && (
+                            <div className="mb-4">
+                              <h5 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                                <i className="bi bi-diagram-3 me-2"></i>
+                                {t('candidatos.planGobierno.ejesTematicos')}
+                              </h5>
+                              <div className="d-flex flex-wrap gap-2">
+                                {candidato.planGobierno.ejesTematicos.map((eje, index) => (
+                                  <span 
+                                    key={index}
+                                    className="badge bg-light text-dark border px-3 py-2"
+                                    style={{ fontSize: '0.9rem' }}
+                                  >
+                                    <i className="bi bi-check-circle-fill me-2" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}></i>
+                                    {eje}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Propuestas Principales */}
+                          {candidato.planGobierno.propuestas && candidato.planGobierno.propuestas.length > 0 && (
+                            <div>
+                              <h5 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                                <i className="bi bi-list-check me-2"></i>
+                                {t('candidatos.planGobierno.propuestas')}
+                              </h5>
+                              <div className="list-group list-group-flush">
+                                {candidato.planGobierno.propuestas.map((propuesta, index) => (
+                                  <div 
+                                    key={index}
+                                    className="list-group-item border-0 px-0 py-3 animate-slide-up"
+                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                  >
+                                    <div className="d-flex gap-3">
+                                      <div 
+                                        className="flex-shrink-0 rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
+                                        style={{ 
+                                          width: '32px', 
+                                          height: '32px',
+                                          backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545',
+                                          fontSize: '0.85rem'
+                                        }}
+                                      >
+                                        {index + 1}
+                                      </div>
+                                      <div className="flex-grow-1">
+                                        <p className="mb-0 text-dark">{propuesta}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="text-center py-5">
+                          <i className="bi bi-file-text text-muted" style={{ fontSize: '3rem' }}></i>
+                          <p className="text-muted mt-3">{t('candidatos.hojaVida.noInformacion')}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'noticias' && (
+                <div className="animate-fade-in">
+                  <div className="row g-4">
+                    {/* Noticias Destacadas - 3 grandes */}
+                    {candidato.noticias && candidato.noticias.filter(n => n.destacada).length > 0 && (
+                      <>
+                        <div className="col-12">
+                          <h4 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                            <i className="bi bi-newspaper me-2"></i>
+                            Noticias Destacadas
+                          </h4>
+                        </div>
+                        {candidato.noticias.filter(n => n.destacada).slice(0, 3).map((noticia, index) => (
+                          <div className="col-12 col-md-6 col-lg-4" key={index}>
+                            <div className="card border-0 shadow-sm h-100 animate-hover-lift" style={{ animationDelay: `${index * 0.1}s` }}>
+                              <div className="position-relative overflow-hidden" style={{ height: '250px' }}>
+                                <img 
+                                  src={noticia.imagen} 
+                                  alt={noticia.titulo}
+                                  className="w-100 h-100"
+                                  style={{ objectFit: 'cover' }}
+                                />
+                                <div 
+                                  className="position-absolute top-0 start-0 px-3 py-1 text-white fw-bold"
+                                  style={{ 
+                                    backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545',
+                                    fontSize: '0.75rem'
+                                  }}
+                                >
+                                  DESTACADA
+                                </div>
+                              </div>
+                              <div className="card-body">
+                                <h5 className="card-title fw-bold mb-3" style={{ fontSize: '1.1rem' }}>
+                                  {noticia.titulo}
+                                </h5>
+                                <div className="d-flex justify-content-between align-items-center">
+                                  <span className="text-muted small">
+                                    <i className="bi bi-newspaper me-1"></i>
+                                    {noticia.fuente}
+                                  </span>
+                                  <span className="text-muted small">
+                                    <i className="bi bi-clock me-1"></i>
+                                    {noticia.fecha}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )}
+
+                    {/* Otras Noticias - 4 pequeñas */}
+                    {candidato.noticias && candidato.noticias.filter(n => !n.destacada).length > 0 && (
+                      <>
+                        <div className="col-12 mt-4">
+                          <h5 className="mb-3" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                            <i className="bi bi-list-ul me-2"></i>
+                            Más Noticias
+                          </h5>
+                        </div>
+                        {candidato.noticias.filter(n => !n.destacada).slice(0, 4).map((noticia, index) => (
+                          <div className="col-12 col-md-6" key={index}>
+                            <div className="card border-0 shadow-sm animate-hover-lift" style={{ animationDelay: `${(index + 3) * 0.1}s` }}>
+                              <div className="row g-0">
+                                <div className="col-4">
+                                  <div 
+                                    className="h-100 position-relative overflow-hidden"
+                                    style={{ minHeight: '120px' }}
+                                  >
+                                    <img 
+                                      src={noticia.imagen} 
+                                      alt={noticia.titulo}
+                                      className="w-100 h-100"
+                                      style={{ objectFit: 'cover' }}
+                                    />
+                                  </div>
+                                </div>
+                                <div className="col-8">
+                                  <div className="card-body">
+                                    <h6 className="card-title fw-bold mb-2" style={{ fontSize: '0.95rem', lineHeight: '1.3' }}>
+                                      {noticia.titulo}
+                                    </h6>
+                                    <p className="text-muted small mb-1">
+                                      <i className="bi bi-newspaper me-1"></i>
+                                      {noticia.fuente}
+                                    </p>
+                                    <p className="text-muted small mb-0">
+                                      <i className="bi bi-clock me-1"></i>
+                                      {noticia.fecha}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )}
+
+                    {/* Mensaje si no hay noticias */}
+                    {(!candidato.noticias || candidato.noticias.length === 0) && (
+                      <div className="col-12">
+                        <div className="card border-0 shadow-sm">
+                          <div className="card-body text-center py-5">
+                            <i className="bi bi-newspaper text-muted" style={{ fontSize: '3rem' }}></i>
+                            <p className="text-muted mt-3 mb-0">No hay noticias disponibles en este momento.</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'actividades' && (
+                <div className="animate-fade-in">
+                  <div className="row g-4">
+                    <div className="col-12">
+                      <h4 className="mb-4" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545' }}>
+                        <i className="bi bi-calendar-event me-2"></i>
+                        Agenda de Actividades Públicas
+                      </h4>
+                    </div>
+
+                    {candidato.actividades && candidato.actividades.length > 0 ? (
+                      candidato.actividades.map((actividad, index) => (
+                        <div className="col-12 col-md-6 col-lg-4" key={index}>
+                          <div className="card border-0 shadow-sm h-100 animate-hover-lift" style={{ animationDelay: `${index * 0.1}s` }}>
+                            <div className="card-body p-0">
+                              {/* Fecha Header */}
+                              <div 
+                                className="text-center text-white p-4"
+                                style={{ 
+                                  backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545'
+                                }}
+                              >
+                                <div className="fw-bold mb-1" style={{ fontSize: '3rem', lineHeight: '1' }}>
+                                  {actividad.dia}
+                                </div>
+                                <div className="text-uppercase" style={{ fontSize: '0.9rem', letterSpacing: '2px' }}>
+                                  {actividad.mes}
+                                </div>
+                              </div>
+                              
+                              {/* Contenido */}
+                              <div className="p-4">
+                                <h5 className="card-title fw-bold mb-3" style={{ fontSize: '1.05rem', lineHeight: '1.4', minHeight: '50px' }}>
+                                  {actividad.titulo}
+                                </h5>
+                                <div className="mb-2 d-flex align-items-start">
+                                  <i className="bi bi-geo-alt-fill me-2 mt-1" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545', fontSize: '1.1rem' }}></i>
+                                  <span className="text-muted" style={{ fontSize: '0.95rem' }}>{actividad.lugar}</span>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                  <i className="bi bi-clock-fill me-2" style={{ color: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545', fontSize: '1.1rem' }}></i>
+                                  <span className="text-muted" style={{ fontSize: '0.95rem' }}>{actividad.hora}</span>
+                                </div>
+                              </div>
+                              
+                              {/* Botón */}
+                              <div className="px-4 pb-4">
+                                <button 
+                                  className="btn btn-sm w-100 text-white fw-semibold py-2"
+                                  style={{ 
+                                    backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545',
+                                    border: 'none',
+                                    transition: 'all 0.3s ease'
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = 'none';
+                                  }}
+                                >
+                                  <i className="bi bi-calendar-plus me-2"></i>
+                                  Agregar al Calendario
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="col-12">
+                        <div className="card border-0 shadow-sm">
+                          <div className="card-body text-center py-5">
+                            <i className="bi bi-calendar-x text-muted" style={{ fontSize: '3rem' }}></i>
+                            <p className="text-muted mt-3 mb-0">No hay actividades programadas en este momento.</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -664,7 +946,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   </h5>
                   <div className="d-flex flex-column gap-3">
                     {candidato.noticias && candidato.noticias.length > 0 ? (
-                      candidato.noticias.map((noticia, index) => (
+                      candidato.noticias.slice(0, 3).map((noticia, index) => (
                         <div className="news-card-bootstrap p-3 border rounded animate-hover-lift" key={index}>
                           <div className="d-flex gap-3">
                             <img 
@@ -701,7 +983,7 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                   </h5>
                   <div className="d-flex flex-column gap-3">
                     {candidato.actividades && candidato.actividades.length > 0 ? (
-                      candidato.actividades.map((actividad, index) => (
+                      candidato.actividades.slice(0, 3).map((actividad, index) => (
                         <div className="activity-card-bootstrap p-3 border rounded animate-hover-lift" key={index}>
                           <div className="d-flex gap-3 align-items-start">
                             <div className="activity-date-badge bg-gradient text-white text-center rounded p-2" style={{ 
