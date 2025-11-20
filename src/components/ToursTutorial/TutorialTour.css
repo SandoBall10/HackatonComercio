@@ -1,0 +1,92 @@
+.tutorial-tour-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tutorial-tour-content {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.tutorial-yachay-img {
+  max-width: 260px;
+  min-width: 180px;
+  height: auto;
+  display: block;
+  animation: yachay-bounce 1.2s infinite alternate;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.18));
+}
+
+@keyframes yachay-bounce {
+  0% { transform: scale(1) translateY(0); }
+  60% { transform: scale(1.04) translateY(-10px); }
+  100% { transform: scale(1.08) translateY(-18px); }
+}
+
+.tutorial-tour-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 2.5rem 2.8rem;
+  max-width: 420px;
+  min-width: 320px;
+  text-align: center;
+  animation: box-fade-in 0.7s cubic-bezier(.4,1.6,.6,1) both;
+}
+
+@keyframes box-fade-in {
+  0% { opacity: 0; transform: scale(0.85) translateY(40px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.tutorial-tour-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 2rem 2.5rem;
+  max-width: 350px;
+  text-align: center;
+}
+.tutorial-tour-box-small {
+  padding: 1rem 1.2rem;
+  max-width: 250px;
+}
+.tutorial-tour-box h3 {
+  margin-top: 0;
+  color: #d32f2f;
+}
+.tutorial-tour-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.tutorial-tour-actions button {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tutorial-tour-actions button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.tutorial-highlight-persistent {
+  box-shadow: 0 0 0 6px #ffe082, 0 4px 24px rgba(0,0,0,0.18);
+  background: rgba(255, 236, 179, 0.25) !important;
+  transition: box-shadow 0.3s, background 0.3s;
+  z-index: 1002 !important;
+  position: relative;
+  border-radius: 8px;
+}
