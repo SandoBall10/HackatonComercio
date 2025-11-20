@@ -196,20 +196,18 @@
 }
 
 .actividad-icono {
-  font-size: 0.85rem;
+  font-size: 1.8rem;
   font-weight: 700;
   background: rgb(179, 2, 39);
   color: white;
-  width: 35px;
-  height: 35px;
-  border-radius: 6px;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 6px rgba(179, 2, 39, 0.3);
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  margin-bottom: 0.8rem;
 }
 
 .actividad-hora {
@@ -322,9 +320,12 @@
 
 .derechos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-bottom: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .derechos-column {
@@ -362,17 +363,17 @@
 }
 
 .item-icono {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: white;
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgb(179, 2, 39);
-  border-radius: 50%;
+  border-radius: 12px;
   box-shadow: 0 2px 6px rgba(179, 2, 39, 0.3);
 }
 
@@ -388,15 +389,17 @@
 
 .capacitacion-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .capacitacion-card {
   background: white;
   border-radius: 15px;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -424,17 +427,25 @@
   box-shadow: 0 2px 8px rgba(179, 2, 39, 0.3);
 }
 
+.capacitacion-icono-emoji {
+  font-size: 2.2rem;
+  margin: 0 auto 0.8rem;
+  display: block;
+  height: auto;
+}
+
 .capacitacion-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #2c2c2c;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .capacitacion-card p {
   color: #666;
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  font-size: 0.95rem;
 }
 
 .capacitacion-card ul {
@@ -444,10 +455,11 @@
 }
 
 .capacitacion-card ul li {
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
   color: #555;
   position: relative;
   padding-left: 1.5rem;
+  font-size: 0.9rem;
 }
 
 .capacitacion-card ul li::before {
@@ -520,20 +532,24 @@
 }
 
 .recursos-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+  width: 100%;
 }
 
 .recurso-link {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  text-align: center;
+  gap: 0.8rem;
+  padding: 1.2rem;
   background: white;
   border: 1px solid #e8e8e8;
-  border-left: 3px solid rgb(179, 2, 39);
-  border-radius: 10px;
+  border-top: 3px solid rgb(179, 2, 39);
+  border-radius: 12px;
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
@@ -541,19 +557,19 @@
 
 .recurso-link:hover {
   background: #f8f8f8;
-  transform: translateX(8px);
-  border-left-width: 4px;
+  transform: translateY(-3px);
+  border-top-width: 4px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .recurso-link > span,
 .recurso-numero {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: white;
   background: rgb(179, 2, 39);
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -565,11 +581,13 @@
 .recurso-link strong {
   display: block;
   color: #2c2c2c;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
 }
 
 .recurso-link small {
   color: #666;
+  font-size: 0.85rem;
 }
 
 .cta-section {

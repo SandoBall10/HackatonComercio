@@ -16,6 +16,7 @@ import Tutorial from './components/Tutorial/tutorial';
 import TutorialOffline from './components/Tutorial/TutorialOffline';
 import Chatbot from './components/Chatbot/Chatbot';
 import { getCandidatoById } from './data/candidatos.js';
+import Personeros from './components/Personeros/Personeros';
 
 const App = () => {
   const candidatoEjemplo = getCandidatoById('fuerza-popular');
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/partido/:id" element={<PartidoDetalle />} />
         <Route path="/reniec" element={<ReniecConsultas />} />
         <Route path="/miembros-mesa" element={<MiembrosMesa />} />
+        <Route path="/personeros" element={<Personeros />} />
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/tutorial-offline" element={<TutorialOffline />} />
         <Route path="/offline" element={<InicioOffline />} />

@@ -124,13 +124,16 @@ const MiembrosMesa: React.FC = () => {
             </p>
             
             <div className="actividades-grid">
-              {actividadesDia.map((actividad, index) => (
-                <div key={index} className="actividad-card">
-                  <div className="actividad-icono">{actividad.icono}</div>
-                  <div className="actividad-hora">{actividad.hora}</div>
-                  <div className="actividad-descripcion">{actividad.actividad}</div>
-                </div>
-              ))}
+              {actividadesDia.map((actividad, index) => {
+                const iconos = ['🕖', '🪑', '✅', '🗳️', '📋', '🔒', '📄'];
+                return (
+                  <div key={index} className="actividad-card">
+                    <div className="actividad-icono">{iconos[index] || actividad.icono}</div>
+                    <div className="actividad-hora">{actividad.hora}</div>
+                    <div className="actividad-descripcion">{actividad.actividad}</div>
+                  </div>
+                );
+              })}
             </div>
 
             <div className="importante-box">
@@ -184,7 +187,7 @@ const MiembrosMesa: React.FC = () => {
                 <div className="lista-items">
                   {derechos.map((derecho, index) => (
                     <div key={index} className="item-card">
-                      <span className="item-icono">{derecho.icono}</span>
+                      <div className="item-imagen">✓</div>
                       <p>{derecho.texto}</p>
                     </div>
                   ))}
@@ -197,7 +200,7 @@ const MiembrosMesa: React.FC = () => {
                 <div className="lista-items">
                   {deberes.map((deber, index) => (
                     <div key={index} className="item-card">
-                      <span className="item-icono">{deber.icono}</span>
+                      <div className="item-imagen">📋</div>
                       <p>{deber.texto}</p>
                     </div>
                   ))}
@@ -221,7 +224,7 @@ const MiembrosMesa: React.FC = () => {
 
             <div className="capacitacion-grid">
               <div className="capacitacion-card">
-                <div className="capacitacion-icono">1</div>
+                <div className="capacitacion-icono-emoji">🏫</div>
                 <h3>{t('miembrosMesa.capacitacion.presencial.titulo')}</h3>
                 <p>{t('miembrosMesa.capacitacion.presencial.descripcion')}</p>
                 <ul>
@@ -232,7 +235,7 @@ const MiembrosMesa: React.FC = () => {
               </div>
 
               <div className="capacitacion-card">
-                <div className="capacitacion-icono">2</div>
+                <div className="capacitacion-icono-emoji">💻</div>
                 <h3>{t('miembrosMesa.capacitacion.virtual.titulo')}</h3>
                 <p>{t('miembrosMesa.capacitacion.virtual.descripcion')}</p>
                 <ul>
@@ -244,7 +247,7 @@ const MiembrosMesa: React.FC = () => {
               </div>
 
               <div className="capacitacion-card">
-                <div className="capacitacion-icono">3</div>
+                <div className="capacitacion-icono-emoji">📱</div>
                 <h3>{t('miembrosMesa.capacitacion.app.titulo')}</h3>
                 <p>{t('miembrosMesa.capacitacion.app.descripcion')}</p>
                 <ul>

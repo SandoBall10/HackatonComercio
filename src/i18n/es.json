@@ -587,6 +587,66 @@
       "onpe": "Oficina Nacional de Procesos Electorales",
       "hechoEnPeru": "Hecho en Perú",
       "descripcion": "Portal de información electoral oficial. Conoce a los candidatos y haz tu voto informado."
+    },
+    "personeros": {
+      "titulo": "Personeros electorales",
+      "subtitulo": "Información esencial para personeros en el proceso electoral.",
+      "tabs": {
+        "cronograma": "Cronograma",
+        "instrucciones": "Instrucciones",
+        "derechos": "Derechos y deberes",
+        "capacitacion": "Capacitación"
+      },
+      "cronograma": {
+        "titulo": "Cronograma del día electoral",
+        "llegada": "Llegada al local de votación y acreditación",
+        "inicioVotacion": "Inicio de la votación",
+        "supervision": "Supervisión del proceso y defensa de votos",
+        "cierreMesa": "Cierre de mesa y conteo de votos",
+        "recuentoVotos": "Recuento y verificación de votos",
+        "firmaActas": "Firma de actas y entrega de documentos"
+      },
+      "instrucciones": {
+        "titulo": "Instrucciones para personeros",
+        "acreditacion": {
+          "titulo": "Acreditación",
+          "paso1": "Presentar credencial oficial de personero ante el presidente de mesa.",
+          "paso2": "Registrar asistencia en el acta de instalación.",
+          "paso3": "Ubicarse en el área designada para personeros."
+        },
+        "supervision": {
+          "titulo": "Supervisión y defensa de votos",
+          "paso1": "Observar el desarrollo de la votación sin intervenir.",
+          "paso2": "Reportar irregularidades al coordinador de personeros o autoridades.",
+          "paso3": "Verificar que los votos sean correctamente contabilizados.",
+          "paso4": "Solicitar anotación de observaciones en el acta si corresponde."
+        },
+        "actas": {
+          "titulo": "Firma de actas",
+          "paso1": "Revisar el acta de escrutinio antes de firmar.",
+          "paso2": "Firmar el acta si está conforme con el conteo de votos.",
+          "paso3": "Solicitar copia del acta para el partido representado."
+        }
+      },
+      "derechos": {
+        "titulo": "Derechos de los personeros",
+        "derecho1": "Ingresar y permanecer en el local de votación durante todo el proceso.",
+        "derecho2": "Solicitar información sobre el desarrollo de la votación.",
+        "derecho3": "Presentar observaciones y solicitar que se consignen en el acta.",
+        "derecho4": "Recibir copia de las actas de votación."
+      },
+      "deberes": {
+        "titulo": "Deberes de los personeros",
+        "deber1": "Respetar la normativa electoral y las indicaciones de las autoridades.",
+        "deber2": "No intervenir directamente en el proceso de votación.",
+        "deber3": "Mantener conducta ética y respetuosa.",
+        "deber4": "Reportar irregularidades de manera formal."
+      },
+      "capacitacion": {
+        "titulo": "Capacitación para personeros",
+        "descripcion": "Accede a los materiales y cursos oficiales para personeros electorales.",
+        "enlace": "Ir a capacitación ONPE"
+      }
     }
   }
 }

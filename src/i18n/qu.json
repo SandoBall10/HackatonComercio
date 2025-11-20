@@ -599,6 +599,66 @@
       "onpe": "Akllana Ruwaykunapa Llaqta Wasin",
       "hechoEnPeru": "Perúpi Rurasqa",
       "descripcion": "Oficial akllana willakuy portal. Akllasqakunata riqsiy allin akllanaykipaq."
+    },
+    "personeros": {
+      "titulo": "Personeroqkuna electorales",
+      "subtitulo": "Willakuy ancha allin personeroqkunapaq akllana ruwaypi.",
+      "tabs": {
+        "cronograma": "Pachakamay",
+        "instrucciones": "Yachachikuna",
+        "derechos": "Derechokuna, deberkuna",
+        "capacitacion": "Yachachikuy"
+      },
+      "cronograma": {
+        "titulo": "Akllana p'unchawpa pachakamaynin",
+        "llegada": "Akllana wasiman chayamuy, personeroqkuna qhaway",
+        "inicioVotacion": "Akllana qallariy",
+        "supervision": "Ruwaypa qhaway, votokuna waqaychay",
+        "cierreMesa": "Mesa tukuy, votokuna yupay",
+        "recuentoVotos": "Votokuna yupay, qhaway",
+        "firmaActas": "Actakunata firmay, qillqaykuna quway"
+      },
+      "instrucciones": {
+        "titulo": "Personeroqkunapaq yachachikuna",
+        "acreditacion": {
+          "titulo": "Qhawaykuy",
+          "paso1": "Personeroqkuna credencialniyta mesapa umalliqman qhaway.",
+          "paso2": "Acta instalacionpi chayamuyta qillqay.",
+          "paso3": "Personeroqkunapaq designasqapi tiyakuy."
+        },
+        "supervision": {
+          "titulo": "Ruwaypa qhaway, votokuna waqaychay",
+          "paso1": "Akllana ruwayta qhaway, manam ruraychu.",
+          "paso2": "Mana allin kaynin qhawaqman utaq kamachiqman willay.",
+          "paso3": "Votokuna allin yupayninta qhaway.",
+          "paso4": "Actapi willakuyta qillqayta munaspa willay."
+        },
+        "actas": {
+          "titulo": "Actakunata firmay",
+          "paso1": "Acta yupayninta qhaway firmaytaqa.",
+          "paso2": "Votokuna allin yupaynintaqa firmay.",
+          "paso3": "Acta qillqaykuna partidu representasqapaq quwayta munay."
+        }
+      },
+      "derechos": {
+        "titulo": "Personeroqkunapaq derechokuna",
+        "derecho1": "Akllana wasipi tiyakuy, tukuy p'unchawpi.",
+        "derecho2": "Akllana ruwaypa willakuyta maskhayta atinki.",
+        "derecho3": "Willakuyta actapi qillqayta munay.",
+        "derecho4": "Actakunapaq quwayta atinki."
+      },
+      "deberes": {
+        "titulo": "Personeroqkunapaq deberkuna",
+        "deber1": "Kamachikuy leyta, kamachiqpa rimayninta qhaway.",
+        "deber2": "Manam akllana ruwayta ruraychu.",
+        "deber3": "Allin kawsay, sumaq yuyay waqaychay.",
+        "deber4": "Mana allin kayninpa willay formalta ruray."
+      },
+      "capacitacion": {
+        "titulo": "Personeroqkunapaq yachachikuy",
+        "descripcion": "Personeroqkunapaq yachachikuykuna, materialkuna, kursokuna.",
+        "enlace": "ONPE yachachikuyman riy"
+      }
     }
   }
 }
