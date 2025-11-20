@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getDniData } from '../api/sunat';
 import { getSimulatedVotingData } from '../../simulation/dni_mesa';
@@ -21,8 +21,6 @@ import {
 } from './Icons';
 import './ReniecConsultas.css';
 
-const FOTO_URL = 'https://randomuser.me/api/portraits/men/75.jpg';
-
 const ReniecConsultas: React.FC = () => {
   const { t } = useTranslation();
   const [dni, setDni] = useState('');
@@ -30,12 +28,108 @@ const ReniecConsultas: React.FC = () => {
   const [simulado, setSimulado] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [userLocation, setUserLocation] = useState<{ lat: number; lon: number } | null>(null);
+  const [geoError, setGeoError] = useState('');
+  
+  const [captchaTexto, setCaptchaTexto] = useState('');
+  const [captchaRespuesta, setCaptchaRespuesta] = useState('');
+  const [captchaResuelto, setCaptchaResuelto] = useState(false);
+  const [captchaError, setCaptchaError] = useState('');
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    generarNuevoCaptcha();
+  }, []);
+
+  const generarNuevoCaptcha = () => {
+    const caracteres = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let texto = '';
+    for (let i = 0; i < 6; i++) {
+      texto += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+    setCaptchaTexto(texto);
+    setCaptchaRespuesta('');
+    setCaptchaResuelto(false);
+    setCaptchaError('');
+    
+    setTimeout(() => dibujarCaptcha(texto), 100);
+  };
+
+  const dibujarCaptcha = (texto: string) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = '#f8f9fa';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    for (let i = 0; i < 5; i++) {
+      ctx.strokeStyle = `rgba(${Math.random() * 100}, ${Math.random() * 100}, ${Math.random() * 100}, 0.3)`;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.stroke();
+    }
+    
+    ctx.font = 'bold 32px Arial';
+    ctx.textBaseline = 'middle';
+    
+    let x = 20;
+    for (let i = 0; i < texto.length; i++) {
+      const char = texto[i];
+      const angle = (Math.random() - 0.5) * 0.4;
+      const y = 35 + (Math.random() - 0.5) * 10;
+      
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+    
+      const gradient = ctx.createLinearGradient(0, -20, 0, 20);
+      gradient.addColorStop(0, `rgb(${179 + Math.random() * 30}, ${2 + Math.random() * 30}, ${39 + Math.random() * 30})`);
+      gradient.addColorStop(1, `rgb(${100 + Math.random() * 50}, ${0}, ${20 + Math.random() * 20})`);
+      ctx.fillStyle = gradient;
+      
+      ctx.fillText(char, 0, 0);
+      ctx.restore();
+      
+      x += 28 + Math.random() * 8;
+    }
+    
+    for (let i = 0; i < 50; i++) {
+      ctx.fillStyle = `rgba(${Math.random() * 100}, ${Math.random() * 100}, ${Math.random() * 100}, 0.3)`;
+      ctx.fillRect(Math.random() * canvas.width, Math.random() * canvas.height, 2, 2);
+    }
+  };
+
+  const verificarCaptcha = () => {
+    if (captchaRespuesta.toUpperCase() === captchaTexto) {
+      setCaptchaResuelto(true);
+      setCaptchaError('');
+      return true;
+    } else {
+      setCaptchaError(t('reniec.captchaIncorrecto', 'Código incorrecto. Intenta de nuevo.'));
+      generarNuevoCaptcha();
+      return false;
+    }
+  };
 
   const handleConsulta = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (dni.length !== 8) {
       setError('El DNI debe tener 8 dígitos');
       return;
+    }
+
+    if (!captchaResuelto) {
+      if (!verificarCaptcha()) {
+        return;
+      }
     }
 
     setLoading(true);
@@ -52,12 +146,39 @@ const ReniecConsultas: React.FC = () => {
         apellidoMaterno: data.second_last_name,
       });
       setSimulado(getSimulatedVotingData(dni));
+
+      generarNuevoCaptcha();
     } catch {
       setError('No se pudo obtener la información. Verifica el DNI o intenta más tarde.');
+      generarNuevoCaptcha();
     } finally {
       setLoading(false);
     }
   };
+
+  const handleActivarAyuda = () => {
+    if (!navigator.geolocation) {
+      setGeoError('Tu navegador no soporta geolocalización');
+      return;
+    }
+
+    setGeoError('');
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setUserLocation({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude
+        });
+      },
+      (error) => {
+        setGeoError('No se pudo obtener tu ubicación. Verifica los permisos.');
+        console.error(error);
+      }
+    );
+  };
+
+  const FOTO_PERFIL_NEUTRA = 'https://ui-avatars.com/api/?name=Usuario&background=b30227&color=fff&size=200&bold=true';
+  const fotoURL = resultado ? FOTO_PERFIL_NEUTRA : '';
 
   return (
     <div className="reniec-main-container reniec-theme-red">
@@ -95,6 +216,60 @@ const ReniecConsultas: React.FC = () => {
                 className="reniec-input-modern"
               />
             </div>
+
+            <div className="reniec-captcha-container">
+              <label className="reniec-label">
+                {t('reniec.captcha', 'Verifica que no eres un robot')}
+              </label>
+              <div className="reniec-captcha-box-image">
+                <canvas 
+                  ref={canvasRef} 
+                  width="220" 
+                  height="70"
+                  style={{
+                    border: '2px solid #e0e0e0',
+                    borderRadius: '8px',
+                    background: '#fff',
+                    cursor: 'pointer'
+                  }}
+                  onClick={generarNuevoCaptcha}
+                  title={t('reniec.clickRefresh', 'Click para generar nuevo código')}
+                />
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginTop: '0.5rem' }}>
+                  <input
+                    type="text"
+                    value={captchaRespuesta}
+                    onChange={(e) => setCaptchaRespuesta(e.target.value.toUpperCase())}
+                    className="reniec-captcha-input"
+                    placeholder="Ingresa el código"
+                    disabled={captchaResuelto}
+                    maxLength={6}
+                    style={{ flex: 1 }}
+                  />
+                  <button
+                    type="button"
+                    onClick={generarNuevoCaptcha}
+                    className="reniec-captcha-refresh"
+                    title={t('reniec.regenerarCaptcha', 'Regenerar CAPTCHA')}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              {captchaResuelto && (
+                <div className="reniec-captcha-success">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9 12l2 2 4-4"/>
+                  </svg>
+                  <span>{t('reniec.captchaResuelto', '¡Verificado correctamente!')}</span>
+                </div>
+              )}
+              {captchaError && <p className="reniec-captcha-error">{captchaError}</p>}
+            </div>
+
             <button
               type="submit"
               disabled={dni.length !== 8 || loading}
@@ -160,7 +335,7 @@ const ReniecConsultas: React.FC = () => {
                   <h4>{t('reniec.resultadoTitulo')}</h4>
                 </div>
                 <div className="reniec-foto-section-inline">
-                  <img src={FOTO_URL} alt="Foto" className="reniec-foto-circular-small" />
+                  <img src={fotoURL} alt="Foto" className="reniec-foto-circular-small" />
                 </div>
                 <div className="reniec-dni-data">
                   <p><strong>{t('reniec.dni')}:</strong> {resultado.dni}</p>
@@ -232,17 +407,92 @@ const ReniecConsultas: React.FC = () => {
                         <strong>{t('reniec.direccion')}:</strong> {simulado.ubicacion.direccion}
                       </div>
                     </div>
+                    {userLocation && (
+                      <div className="reniec-location-item" style={{ background: 'rgba(34, 197, 94, 0.1)', borderRadius: 8, padding: '0.75rem' }}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2">
+                          <circle cx="12" cy="12" r="10"/>
+                          <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                        <div>
+                          <strong style={{ color: '#22c55e' }}>{t('reniec.ubicacionActivada', 'Ubicación activada')}</strong>
+                          <div style={{ fontSize: '0.9rem', color: '#666' }}>
+                            {t('reniec.calculandoRuta', 'Mostrando ruta desde tu ubicación')}
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="reniec-map-container-inline">
-                    <iframe
-                      title="Mapa"
-                      width="100%"
-                      height="300"
-                      style={{ border: 0, borderRadius: '12px' }}
-                      loading="lazy"
-                      allowFullScreen
-                      src={`https://www.openstreetmap.org/export/embed.html?bbox=${simulado.ubicacion.lon - 0.001},${simulado.ubicacion.lat - 0.001},${simulado.ubicacion.lon + 0.001},${simulado.ubicacion.lat + 0.001}&layer=mapnik&marker=${simulado.ubicacion.lat},${simulado.ubicacion.lon}`}
-                    ></iframe>
+                    {!userLocation ? (
+                      <iframe
+                        title="Mapa"
+                        width="100%"
+                        height="300"
+                        style={{ border: 0, borderRadius: '12px' }}
+                        loading="lazy"
+                        allowFullScreen
+                        src={`https://www.openstreetmap.org/export/embed.html?bbox=${simulado.ubicacion.lon - 0.001},${simulado.ubicacion.lat - 0.001},${simulado.ubicacion.lon + 0.001},${simulado.ubicacion.lat + 0.001}&layer=mapnik&marker=${simulado.ubicacion.lat},${simulado.ubicacion.lon}`}
+                      ></iframe>
+                    ) : (
+                      <iframe
+                        title="Mapa con ruta"
+                        width="100%"
+                        height="400"
+                        style={{ border: 0, borderRadius: '12px' }}
+                        loading="lazy"
+                        allowFullScreen
+                        src={`https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${userLocation.lat}%2C${userLocation.lon}%3B${simulado.ubicacion.lat}%2C${simulado.ubicacion.lon}#map=14/${simulado.ubicacion.lat}/${simulado.ubicacion.lon}`}
+                      ></iframe>
+                    )}
+                  </div>
+
+                  <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+                    {!userLocation ? (
+                      <button
+                        onClick={handleActivarAyuda}
+                        style={{
+                          background: 'linear-gradient(135deg, rgb(179, 2, 39), #dc2626)',
+                          color: '#fff',
+                          border: 'none',
+                          borderRadius: 12,
+                          padding: '1rem 2rem',
+                          fontSize: '1.1rem',
+                          fontWeight: 700,
+                          cursor: 'pointer',
+                          boxShadow: '0 4px 12px rgba(179, 2, 39, 0.3)',
+                          transition: 'all 0.3s ease',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.5rem'
+                        }}
+                      >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                          <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        {t('reniec.activarAyuda', 'Activar Ayuda por Geolocalización')}
+                      </button>
+                    ) : (
+                      <a
+                        href={`https://www.google.com/maps/dir/?api=1&origin=${userLocation.lat},${userLocation.lon}&destination=${simulado.ubicacion.lat},${simulado.ubicacion.lon}&travelmode=driving`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'inline-block',
+                          background: '#22c55e',
+                          color: '#fff',
+                          padding: '0.75rem 1.5rem',
+                          borderRadius: 8,
+                          textDecoration: 'none',
+                          fontWeight: 600,
+                          boxShadow: '0 2px 8px rgba(34, 197, 94, 0.3)',
+                          transition: 'all 0.3s ease'
+                        }}
+                      >
+                        {t('reniec.abrirEnGoogleMaps', 'Abrir en Google Maps')}
+                      </a>
+                    )}
+                    {geoError && <p style={{ color: '#ef4444', marginTop: '0.5rem' }}>{geoError}</p>}
                   </div>
                 </div>
               </div>
@@ -259,7 +509,7 @@ const ReniecConsultas: React.FC = () => {
             </div>
             <div className="reniec-foto-barcode-section">
               <img
-                src={FOTO_URL}
+                src={fotoURL}
                 alt="Foto simulada"
                 className="reniec-foto-circular"
               />
