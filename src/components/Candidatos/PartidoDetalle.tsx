@@ -630,58 +630,46 @@ const PartidoDetalle: React.FC = () => {
                 </span>
               </button>
               {candidatosReales[0]?.pdfUrl && (
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    // Crear URL absoluta para evitar que React Router la intercepte
-                    const pdfUrl = candidatosReales[0].pdfUrl.startsWith('http') 
-                      ? candidatosReales[0].pdfUrl 
-                      : `${window.location.origin}${candidatosReales[0].pdfUrl}`;
-                    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-                  }}
-                  className="btn text-white fw-semibold py-3 position-relative"
-                  style={{
-                    background: `linear-gradient(135deg, ${colorSecundario} 0%, ${colorTerciario} 100%)`,
-                    border: 'none',
-                    borderRadius: '12px',
-                    fontSize: '1rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
-                    boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`,
-                    overflow: 'hidden',
-                    transition: 'all 0.3s ease',
-                    minWidth: '180px',
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-3px)';
-                    e.currentTarget.style.boxShadow = `0 10px 30px rgba(${colorPrimarioRgb}, 0.4)`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`;
-                  }}
-                >
-                  <span style={{ 
-                    position: 'relative', 
-                    zIndex: 1,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px'
-                  }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                      <polyline points="7 10 12 15 17 10"/>
-                      <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Plan PDF
-                  </span>
-                </button>
+                <>
+                  <a
+                    href={candidatosReales[0].pdfUrl.startsWith('http')
+                      ? candidatosReales[0].pdfUrl
+                      : `${window.location.origin}${candidatosReales[0].pdfUrl}`}
+                    download
+                    className="btn text-white fw-semibold py-3 position-relative"
+                    style={{
+                      background: `linear-gradient(135deg, ${colorSecundario} 0%, ${colorTerciario} 100%)`,
+                      border: 'none',
+                      borderRadius: '12px',
+                      fontSize: '1rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`,
+                      minWidth: '180px',
+                      textDecoration: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginLeft: '8px'
+                    }}
+                  >
+                    <span style={{
+                      position: 'relative',
+                      zIndex: 1,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '8px'
+                    }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                      </svg>
+                      Descargar Plan PDF
+                    </span>
+                  </a>
+                </>
               )}
             </div>
           </div>

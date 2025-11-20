@@ -124,6 +124,13 @@ export const Header: React.FC = () => {
                   >
                     {t('nav.tutorial')}
                   </a>
+                    <a 
+                      href="/personeros" 
+                      className={`mobile-nav-link ${location.pathname === '/personeros' ? 'active' : ''}`}
+                      onClick={(e) => { e.preventDefault(); handleNavClick('/personeros'); }}
+                    >
+                      {t('nav.personeros')}
+                    </a>
                 </div>
                 {/* Mobile Selectors */}
                 <div className="mobile-selectors">
@@ -144,7 +151,8 @@ export const Header: React.FC = () => {
               <a href="/partidos" className={`nav-link ${location.pathname === '/partidos' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('nav.partidos')}</a>
               <a href="/reniec" className={`nav-link ${location.pathname === '/reniec' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigate('/reniec'); }}>{t('nav.reniec')}</a>
               <a href="/miembros-mesa" className={`nav-link ${location.pathname === '/miembros-mesa' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigate('/miembros-mesa'); }}>{t('nav.miembrosMesa')}</a>
-              <a href="/tutorial" className={`nav-link ${location.pathname === '/tutorial' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigate('/tutorial'); }}>{t('nav.tutorial')}</a>
+                <a href="/personeros" className={`nav-link ${location.pathname === '/personeros' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigate('/personeros'); }}>{t('nav.personeros')}</a>
+                <a href="/tutorial" className={`nav-link ${location.pathname === '/tutorial' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigate('/tutorial'); }}>{t('nav.tutorial')}</a>
           </div>
           
           {/* Desktop Theme Selector */}

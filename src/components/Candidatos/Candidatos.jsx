@@ -194,9 +194,9 @@ const Candidatos = ({ candidato: candidatoProp }) => {
 
   const handleDownloadPDF = () => {
     if (pdfPath) {
-      window.open(pdfPath, '_blank');
+      window.open(`${window.location.origin}${pdfPath}`, '_blank');
     } else {
-      alert(t('candidatos.planNoDisponibleAlerta'));
+      alert('No disponible');
     }
   };
 
@@ -440,8 +440,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                               e.currentTarget.style.boxShadow = `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`;
                             }}
                           >
-                            <i className="bi bi-download" style={{ fontSize: '0.9rem' }}></i>
-                            <span>{pdfPath ? t('candidatos.descargarPlan') : t('candidatos.planNoDisponible')}</span>
                           </button>
                         </div>
                       </div>

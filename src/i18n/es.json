@@ -5,6 +5,7 @@
       "partidos": "Partidos Políticos",
       "reniec": "Consultar tu lugar de votación",
       "miembrosMesa": "Miembros de Mesa",
+      "personeros": "Personeros",
       "tutorial": "Tutorial"
     },
     "inicio": {
@@ -337,7 +338,6 @@
       "propuestas": "Propuestas",
       "noticias": "Noticias",
       "actividades": "Actividades",
-      "descargarPlan": "Descargar Plan de Gobierno",
       "planNoDisponible": "Plan no disponible",
       "noticiasDestacadas": "Noticias Destacadas",
       "masNoticias": "Más Noticias",
