@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TutorialTour.css';
-import yachayImg from '/PROYECTO/HackatonComercio/public/avatar/avatar-Tutorial.png';
+import yachayImg from '../../../public/avatar/avatar-Tutorial.png';
 
 // Define los pasos y la ruta a navegar (si aplica)
 const steps = [
