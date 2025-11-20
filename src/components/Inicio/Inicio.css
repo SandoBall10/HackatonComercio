@@ -1544,3 +1544,345 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
   background: #242526;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* Event Modal Styles */
+.event-modal-container {
+  pointer-events: auto;
+}
+
+.event-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.event-modal {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.event-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-modal-close:hover {
+  background: white;
+  transform: rotate(90deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-modal-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: #f0f0f0;
+  position: relative;
+}
+
+.event-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.event-modal-category-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgb(179, 2, 39);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.4);
+}
+
+.event-modal-content {
+  padding: 36px;
+}
+
+.event-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.event-modal-date {
+  color: rgb(179, 2, 39);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.event-modal-year {
+  color: #0a66b3;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  background: rgba(10, 102, 179, 0.1);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.event-modal-title {
+  color: #1a1a1a;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+}
+
+.event-modal-info {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.event-modal-info p {
+  color: #495057;
+  font-size: 14px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-modal-info strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.info-icon {
+  font-size: 16px;
+}
+
+.event-modal-month,
+.event-modal-category-text {
+  margin: 10px 0;
+}
+
+.event-modal-description {
+  background: rgba(179, 2, 39, 0.05);
+  padding: 18px;
+  border-radius: 12px;
+  margin: 20px 0;
+  border-left: 4px solid rgb(179, 2, 39);
+}
+
+.description-title {
+  color: rgb(179, 2, 39);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px 0;
+}
+
+.description-text {
+  color: #495057;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+  text-align: justify;
+}
+
+.bullets-title {
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 20px 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgb(179, 2, 39);
+}
+
+.event-modal-bullets {
+  margin-top: 16px;
+}
+
+.event-modal-bullets p {
+  color: #495057;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 12px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bullet-icon {
+  color: rgb(179, 2, 39);
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.event-modal-close-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: rgb(179, 2, 39);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-modal-close-btn:hover {
+  background: #8b0000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(179, 2, 39, 0.3);
+}
+
+/* Dark Mode Modal */
+[data-theme="dark"] .event-modal {
+  background: #242526;
+}
+
+[data-theme="dark"] .event-modal-close {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .event-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .event-modal-title {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .event-modal-bullets p {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .event-modal-info {
+  background: #3a3b3c;
+}
+
+[data-theme="dark"] .event-modal-info p {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .event-modal-info strong {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .bullets-title {
+  color: #e4e6eb;
+  border-bottom-color: rgb(179, 2, 39);
+}
+
+[data-theme="dark"] .event-modal-close-btn {
+  background: rgb(179, 2, 39);
+}
+
+[data-theme="dark"] .event-modal-close-btn:hover {
+  background: #8b0000;
+}
+
+[data-theme="dark"] .event-modal-description {
+  background: rgba(179, 2, 39, 0.15);
+  border-left-color: rgb(179, 2, 39);
+}
+
+[data-theme="dark"] .description-title {
+  color: rgb(179, 2, 39);
+}
+
+[data-theme="dark"] .description-text {
+  color: #b0b3b8;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .event-modal {
+    max-width: 95%;
+  }
+
+  .event-modal-content {
+    padding: 24px;
+  }
+
+  .event-modal-image {
+    height: 220px;
+  }
+
+  .event-modal-title {
+    font-size: 18px;
+  }
+
+  .event-modal-info p {
+    font-size: 13px;
+  }
+}
+
