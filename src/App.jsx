@@ -15,6 +15,7 @@ import MiembrosMesa from './components/MiembrosMesa/MiembrosMesa';
 import Tutorial from './components/Tutorial/tutorial';
 import TutorialOffline from './components/Tutorial/TutorialOffline';
 import Chatbot from './components/Chatbot/Chatbot';
+import TutorialTour from './components/ToursTutorial/TutorialTour';
 import { getCandidatoById } from './data/candidatos.js';
 import Personeros from './components/Personeros/Personeros';
 
@@ -53,7 +54,10 @@ const App = () => {
         <Route path="/offline" element={<InicioOffline />} />
       </Routes>
 
-      {!isOfflineRoute && <Chatbot />}
+      {!isOfflineRoute && <>
+        <Chatbot />
+        <TutorialTour />
+      </>}
     </div>
   );
 };
