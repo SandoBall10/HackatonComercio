@@ -1,3 +1,74 @@
+.chatbot-voice-select {
+  margin-left: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 2px 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  color: #222;
+  outline: none;
+  transition: border 0.2s;
+  height: 32px;
+  max-width: 180px;
+  cursor: pointer;
+}
+.chatbot-voice-select:focus {
+  border: 1.5px solid #2196f3;
+}
+/* Botón de voz en el header del chat */
+.chatbot-header-voice-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 12px;
+  height: 100%;
+}
+
+.chatbot-voice-toggle-btn-icon {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.chatbot-voice-toggle-btn-icon:active {
+  transform: scale(0.92);
+}
+.chatbot-voice-toggle-btn-icon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  transition: filter 0.2s, transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.chatbot-voice-toggle-btn-icon.enabled svg {
+  animation: voice-pulse 1.2s infinite alternate;
+  filter: drop-shadow(0 0 4px #2196f3aa);
+}
+.chatbot-voice-toggle-btn-icon.disabled svg {
+  filter: grayscale(0.7) opacity(0.7);
+}
+@keyframes voice-pulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 4px #2196f3aa); }
+  100% { transform: scale(1.13); filter: drop-shadow(0 0 10px #2196f3cc); }
+}
+.chatbot-voice-toggle-btn-icon.enabled:hover {
+  background: #e3f2fd;
+}
+.chatbot-voice-toggle-btn-icon.disabled:hover {
+  background: #f3f3f3;
+}
+.chatbot-voice-toggle-btn-icon svg {
+  display: block;
+}
 .chatbot-button {
   position: fixed;
   bottom: 30px;
