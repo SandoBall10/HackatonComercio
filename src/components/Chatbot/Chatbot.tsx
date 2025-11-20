@@ -462,6 +462,16 @@ const Chatbot: React.FC = () => {
   const handleSendMessage = () => {
     if (inputValue.trim() === '') return;
 
+    // Detectar idioma automáticamente
+    const msg = inputValue.toLowerCase().trim();
+    if (msg.includes('quechua') || msg.includes('runasimi') || msg === 'qu') {
+      i18n.changeLanguage('qu');
+    } else if (msg.includes('aimara') || msg.includes('aymara') || msg.includes('jaqiaru') || msg === 'ay') {
+      i18n.changeLanguage('ay');
+    } else if (msg.includes('español') || msg.includes('castellano') || msg === 'es' || msg.includes('spanish')) {
+      i18n.changeLanguage('es');
+    }
+
     addMessage(inputValue, true);
     setInputValue('');
 
