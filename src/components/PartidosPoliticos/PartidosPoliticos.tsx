@@ -14,13 +14,14 @@ interface Partido {
   ideologia?: 'izquierda' | 'centro-izquierda' | 'centro' | 'centro-derecha' | 'derecha';
   tamano?: 'grande' | 'mediano' | 'pequeño';
   fundacion?: 'tradicional' | 'moderno' | 'nuevo';
+  propuestas?: string[];
 }
 
 const PartidosPoliticos: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
-  const [filtroIdeologia, setFiltroIdeologia] = useState<string>('todos');
+  const [filtroPropuestas, setFiltroPropuestas] = useState<string>('todos');
 
   const getPartidoKey = (nombre: string): string => {
     const keyMap: { [key: string]: string } = {
@@ -73,48 +74,48 @@ const PartidosPoliticos: React.FC = () => {
   };
 
   const partidos: Partido[] = [
-    { "id": 36, "nombre": "Renovación Popular", "siglas": "RP", "logo": "/logos/renovacion-popular.png", "ideologia": "derecha", "tamano": "grande", "fundacion": "nuevo" },
-    { "id": 2, "nombre": "Fuerza Popular", "siglas": "FPu", "logo": "/logos/fuerza-popular.png", "ideologia": "derecha", "tamano": "grande", "fundacion": "moderno" },
-    { "id": 7, "nombre": "Alianza para el Progreso", "siglas": "APP", "logo": "/logos/alianza-para-el-progreso.png", "ideologia": "centro-derecha", "tamano": "grande", "fundacion": "moderno" },
-    { "id": 1, "nombre": "Acción Popular", "siglas": "AP", "logo": "/logos/accion-popular.png", "ideologia": "centro", "tamano": "grande", "fundacion": "tradicional" },
-    { "id": 14, "nombre": "Partido Aprista Peruano", "siglas": "APRA", "logo": "/logos/partido-aprista-peruano.png", "ideologia": "centro-izquierda", "tamano": "grande", "fundacion": "tradicional" },
-    { "id": 40, "nombre": "Perú Libre", "siglas": "PL", "logo": "/logos/peru-libre.png", "ideologia": "izquierda", "tamano": "grande", "fundacion": "nuevo" },
-    { "id": 27, "nombre": "Podemos Perú", "siglas": "PP", "logo": "/logos/podemos-peru.png", "ideologia": "centro-derecha", "tamano": "mediano", "fundacion": "nuevo" },
-    { "id": 18, "nombre": "Partido Democrático Somos Perú", "siglas": "DSP", "logo": "/logos/somos-peru.png", "ideologia": "centro", "tamano": "mediano", "fundacion": "tradicional" },
-    { "id": 10, "nombre": "Avanza País – Partido de Integración Social", "siglas": "APIS", "logo": "/logos/avanza-pais.png", "ideologia": "centro-derecha", "tamano": "mediano", "fundacion": "nuevo" },
-    { "id": 22, "nombre": "Partido Morado", "siglas": "PM", "logo": "/logos/partido-morado.png", "ideologia": "centro", "tamano": "mediano", "fundacion": "nuevo" },
-    { "id": 21, "nombre": "Frente de la Esperanza 2021", "siglas": "F21", "logo": "/logos/frente-esperanza-2021.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 11, "nombre": "Nuevo Perú por el Buen Vivir", "siglas": "NPBV", "logo": "/logos/nuevo-peru-por-el-buen-vivir.png", "ideologia": "izquierda", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 5, "nombre": "Juntos por el Perú", "siglas": "JPP", "logo": "/logos/juntos-por-el-peru.png", "ideologia": "izquierda", "tamano": "mediano", "fundacion": "moderno" },
-    { "id": 16, "nombre": "Fe en el Perú", "siglas": "FEP", "logo": "/logos/fe-en-el-peru.png", "ideologia": "derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 25, "nombre": "Partido País para Todos", "siglas": "PPT", "logo": "/logos/pais-para-todos.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 4, "nombre": "Ahora Nación", "siglas": "AN", "logo": "/logos/ahora-nacion.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 12, "nombre": "Partido Demócrata Verde", "siglas": "PDV", "logo": "/logos/partido-democrata-verde.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 9, "nombre": "Partido Demócrata Unido Perú", "siglas": "PDU", "logo": "/logos/partido-democrata-unido.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 6, "nombre": "Partido del Buen Gobierno", "siglas": "PBG", "logo": "/logos/partido-buen-gobierno.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 8, "nombre": "Libertad Popular", "siglas": "LP", "logo": "/logos/libertad-popular.png", "ideologia": "derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 20, "nombre": "Partido Cívico Obras", "siglas": "PCO", "logo": "/logos/partido-civico-obras.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 13, "nombre": "Batalla Perú", "siglas": "BP", "logo": "/logos/batalla-peru.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 17, "nombre": "Partido Ciudadanos por el Perú", "siglas": "CPP", "logo": "/logos/ciudadanos-por-el-peru.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 30, "nombre": "Primero la Gente", "siglas": "PLC", "logo": "/logos/primero-la-gente.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 29, "nombre": "Peruanos Unidos – Somos Libres", "siglas": "PUSL", "logo": "/logos/peruanos-unidos.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 31, "nombre": "Cooperación Popular", "siglas": "CP", "logo": "/logos/cooperacion-popular.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "tradicional" },
-    { "id": 23, "nombre": "Partido Político Perú Acción", "siglas": "PA", "logo": "/logos/peru-accion.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 24, "nombre": "Perú Moderno", "siglas": "PMo", "logo": "/logos/peru-moderno.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 26, "nombre": "Partido Político Perú Primero", "siglas": "PP1", "logo": "/logos/peru-primero.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 28, "nombre": "Partido Patriótico del Perú", "siglas": "PPP", "logo": "/logos/partido-patriotico-del-peru.png", "ideologia": "derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 32, "nombre": "Voces del Pueblo", "siglas": "VP", "logo": "/logos/voces-del-pueblo.png", "ideologia": "izquierda", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 33, "nombre": "Progresemos", "siglas": "PRG", "logo": "/logos/progresemos.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 34, "nombre": "Fuerza Moderna", "siglas": "FM", "logo": "/logos/fuerza-moderna.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 35, "nombre": "PRIN", "siglas": "PRIN", "logo": "/logos/prin.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "moderno" },
-    { "id": 37, "nombre": "Integridad Democrática", "siglas": "ID", "logo": "/logos/integridad-democratica.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 38, "nombre": "Partido Popular Cristiano", "siglas": "PPC", "logo": "/logos/partido-popular-cristiano.png", "ideologia": "centro-derecha", "tamano": "mediano", "fundacion": "tradicional" },
-    { "id": 39, "nombre": "Salvemos al Perú", "siglas": "SP", "logo": "/logos/salvemos-al-peru.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 41, "nombre": "Partido Sí Creo", "siglas": "SC", "logo": "/logos/si-creo.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 42, "nombre": "Un Camino Diferente", "siglas": "UCD", "logo": "/logos/un-camino-diferente.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 43, "nombre": "Partido Unidad y Paz", "siglas": "UyP", "logo": "/logos/unidad-y-paz.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo" },
-    { "id": 3, "nombre": "Partido de los Trabajadores PTE–Perú", "siglas": "PTE", "logo": "/logos/pte-peru.png", "ideologia": "izquierda", "tamano": "pequeño", "fundacion": "tradicional" },
-    { "id": 15, "nombre": "Partido Democrático Federal", "siglas": "PDF", "logo": "/logos/partido-democratico-federal.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo" }
+    { "id": 36, "nombre": "Renovación Popular", "siglas": "RP", "logo": "/logos/renovacion-popular.png", "ideologia": "derecha", "tamano": "grande", "fundacion": "nuevo", "propuestas": ["Economía", "Seguridad"] },
+    { "id": 2, "nombre": "Fuerza Popular", "siglas": "FPu", "logo": "/logos/fuerza-popular.png", "ideologia": "derecha", "tamano": "grande", "fundacion": "moderno", "propuestas": ["Economía", "Infraestructura"] },
+    { "id": 7, "nombre": "Alianza para el Progreso", "siglas": "APP", "logo": "/logos/alianza-para-el-progreso.png", "ideologia": "centro-derecha", "tamano": "grande", "fundacion": "moderno", "propuestas": ["Infraestructura", "Economía"] },
+    { "id": 1, "nombre": "Acción Popular", "siglas": "AP", "logo": "/logos/accion-popular.png", "ideologia": "centro", "tamano": "grande", "fundacion": "tradicional", "propuestas": ["Salud", "Educación"] },
+    { "id": 14, "nombre": "Partido Aprista Peruano", "siglas": "APRA", "logo": "/logos/partido-aprista-peruano.png", "ideologia": "centro-izquierda", "tamano": "grande", "fundacion": "tradicional", "propuestas": ["Economía", "Política"] },
+    { "id": 40, "nombre": "Perú Libre", "siglas": "PL", "logo": "/logos/peru-libre.png", "ideologia": "izquierda", "tamano": "grande", "fundacion": "nuevo", "propuestas": ["Salud", "Economía"] },
+    { "id": 27, "nombre": "Podemos Perú", "siglas": "PP", "logo": "/logos/podemos-peru.png", "ideologia": "centro-derecha", "tamano": "mediano", "fundacion": "nuevo", "propuestas": ["Seguridad", "Infraestructura"] },
+    { "id": 18, "nombre": "Partido Democrático Somos Perú", "siglas": "DSP", "logo": "/logos/somos-peru.png", "ideologia": "centro", "tamano": "mediano", "fundacion": "tradicional", "propuestas": ["Salud", "Política"] },
+    { "id": 10, "nombre": "Avanza País – Partido de Integración Social", "siglas": "APIS", "logo": "/logos/avanza-pais.png", "ideologia": "centro-derecha", "tamano": "mediano", "fundacion": "nuevo", "propuestas": ["Economía", "Seguridad"] },
+    { "id": 22, "nombre": "Partido Morado", "siglas": "PM", "logo": "/logos/partido-morado.png", "ideologia": "centro", "tamano": "mediano", "fundacion": "nuevo", "propuestas": ["Política", "Salud"] },
+    { "id": 21, "nombre": "Frente de la Esperanza 2021", "siglas": "F21", "logo": "/logos/frente-esperanza-2021.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Infraestructura", "Seguridad"] },
+    { "id": 11, "nombre": "Nuevo Perú por el Buen Vivir", "siglas": "NPBV", "logo": "/logos/nuevo-peru-por-el-buen-vivir.png", "ideologia": "izquierda", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Salud", "Economía"] },
+    { "id": 5, "nombre": "Juntos por el Perú", "siglas": "JPP", "logo": "/logos/juntos-por-el-peru.png", "ideologia": "izquierda", "tamano": "mediano", "fundacion": "moderno", "propuestas": ["Política", "Infraestructura"] },
+    { "id": 16, "nombre": "Fe en el Perú", "siglas": "FEP", "logo": "/logos/fe-en-el-peru.png", "ideologia": "derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Salud", "Seguridad"] },
+    { "id": 25, "nombre": "Partido País para Todos", "siglas": "PPT", "logo": "/logos/pais-para-todos.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Economía", "Política"] },
+    { "id": 4, "nombre": "Ahora Nación", "siglas": "AN", "logo": "/logos/ahora-nacion.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Infraestructura", "Seguridad"] },
+    { "id": 12, "nombre": "Partido Demócrata Verde", "siglas": "PDV", "logo": "/logos/partido-democrata-verde.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Salud", "Economía"] },
+    { "id": 9, "nombre": "Partido Demócrata Unido Perú", "siglas": "PDU", "logo": "/logos/partido-democrata-unido.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Política", "Seguridad"] },
+    { "id": 6, "nombre": "Partido del Buen Gobierno", "siglas": "PBG", "logo": "/logos/partido-buen-gobierno.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Economía", "Infraestructura"] },
+    { "id": 8, "nombre": "Libertad Popular", "siglas": "LP", "logo": "/logos/libertad-popular.png", "ideologia": "derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Seguridad", "Economía"] },
+    { "id": 20, "nombre": "Partido Cívico Obras", "siglas": "PCO", "logo": "/logos/partido-civico-obras.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Infraestructura", "Política"] },
+    { "id": 13, "nombre": "Batalla Perú", "siglas": "BP", "logo": "/logos/batalla-peru.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Seguridad", "Salud"] },
+    { "id": 17, "nombre": "Partido Ciudadanos por el Perú", "siglas": "CPP", "logo": "/logos/ciudadanos-por-el-peru.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Economía", "Política"] },
+    { "id": 30, "nombre": "Primero la Gente", "siglas": "PLC", "logo": "/logos/primero-la-gente.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Salud", "Infraestructura"] },
+    { "id": 29, "nombre": "Peruanos Unidos – Somos Libres", "siglas": "PUSL", "logo": "/logos/peruanos-unidos.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Política", "Economía"] },
+    { "id": 31, "nombre": "Cooperación Popular", "siglas": "CP", "logo": "/logos/cooperacion-popular.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "tradicional", "propuestas": ["Infraestructura", "Salud"] },
+    { "id": 23, "nombre": "Partido Político Perú Acción", "siglas": "PA", "logo": "/logos/peru-accion.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Seguridad", "Economía"] },
+    { "id": 24, "nombre": "Perú Moderno", "siglas": "PMo", "logo": "/logos/peru-moderno.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Economía", "Política"] },
+    { "id": 26, "nombre": "Partido Político Perú Primero", "siglas": "PP1", "logo": "/logos/peru-primero.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Infraestructura", "Seguridad"] },
+    { "id": 28, "nombre": "Partido Patriótico del Perú", "siglas": "PPP", "logo": "/logos/partido-patriotico-del-peru.png", "ideologia": "derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Seguridad", "Política"] },
+    { "id": 32, "nombre": "Voces del Pueblo", "siglas": "VP", "logo": "/logos/voces-del-pueblo.png", "ideologia": "izquierda", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Salud", "Economía"] },
+    { "id": 33, "nombre": "Progresemos", "siglas": "PRG", "logo": "/logos/progresemos.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Política", "Infraestructura"] },
+    { "id": 34, "nombre": "Fuerza Moderna", "siglas": "FM", "logo": "/logos/fuerza-moderna.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Economía", "Seguridad"] },
+    { "id": 35, "nombre": "PRIN", "siglas": "PRIN", "logo": "/logos/prin.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "moderno", "propuestas": ["Infraestructura", "Salud"] },
+    { "id": 37, "nombre": "Integridad Democrática", "siglas": "ID", "logo": "/logos/integridad-democratica.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Política", "Seguridad"] },
+    { "id": 38, "nombre": "Partido Popular Cristiano", "siglas": "PPC", "logo": "/logos/partido-popular-cristiano.png", "ideologia": "centro-derecha", "tamano": "mediano", "fundacion": "tradicional", "propuestas": ["Salud", "Política"] },
+    { "id": 39, "nombre": "Salvemos al Perú", "siglas": "SP", "logo": "/logos/salvemos-al-peru.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Economía", "Infraestructura"] },
+    { "id": 41, "nombre": "Partido Sí Creo", "siglas": "SC", "logo": "/logos/si-creo.png", "ideologia": "centro-derecha", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Seguridad", "Salud"] },
+    { "id": 42, "nombre": "Un Camino Diferente", "siglas": "UCD", "logo": "/logos/un-camino-diferente.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Política", "Economía"] },
+    { "id": 43, "nombre": "Partido Unidad y Paz", "siglas": "UyP", "logo": "/logos/unidad-y-paz.png", "ideologia": "centro", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Infraestructura", "Seguridad"] },
+    { "id": 3, "nombre": "Partido de los Trabajadores PTE–Perú", "siglas": "PTE", "logo": "/logos/pte-peru.png", "ideologia": "izquierda", "tamano": "pequeño", "fundacion": "tradicional", "propuestas": ["Salud", "Economía"] },
+    { "id": 15, "nombre": "Partido Democrático Federal", "siglas": "PDF", "logo": "/logos/partido-democratico-federal.png", "ideologia": "centro-izquierda", "tamano": "pequeño", "fundacion": "nuevo", "propuestas": ["Política", "Infraestructura"] }
   ];
 
   const handlePartidoClick = (partidoId: number) => {
@@ -131,9 +132,9 @@ const PartidosPoliticos: React.FC = () => {
       partido.nombre.toLowerCase().includes(searchLower)
     );
 
-    const cumpleIdeologia = filtroIdeologia === 'todos' || partido.ideologia === filtroIdeologia;
+    const cumplePropuestas = filtroPropuestas === 'todos' || (partido.propuestas && partido.propuestas.includes(filtroPropuestas));
 
-    return cumpleBusqueda && cumpleIdeologia;
+    return cumpleBusqueda && cumplePropuestas;
   });
 
   return (
@@ -171,33 +172,33 @@ const PartidosPoliticos: React.FC = () => {
 
       <div className="filtros-container">
         <div className="filtro-group">
-          <label htmlFor="filtro-ideologia" className="filtro-label">
+          <label htmlFor="filtro-propuestas" className="filtro-label">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="8" x2="12" y2="12"></line>
               <line x1="12" y1="16" x2="12.01" y2="16"></line>
             </svg>
-            {t('Partidos Filtros Ideologia')}
+            {t('Partidos Filtros Propuestas')}
           </label>
           <select
-            id="filtro-ideologia"
+            id="filtro-propuestas"
             className="filtro-select"
-            value={filtroIdeologia}
-            onChange={(e) => setFiltroIdeologia(e.target.value)}
+            value={filtroPropuestas}
+            onChange={(e) => setFiltroPropuestas(e.target.value)}
           >
             <option value="todos">{t('partidos.filtros.todas')}</option>
-            <option value="izquierda">{t('partidos.filtros.izquierda')}</option>
-            <option value="centro-izquierda">{t('partidos.filtros.centroIzquierda')}</option>
-            <option value="centro">{t('partidos.filtros.centro')}</option>
-            <option value="centro-derecha">{t('partidos.filtros.centroDerecha')}</option>
-            <option value="derecha">{t('partidos.filtros.derecha')}</option>
+            <option value="Salud">Salud</option>
+            <option value="Infraestructura">Infraestructura</option>
+            <option value="Economía">Economía</option>
+            <option value="Seguridad">Seguridad</option>
+            <option value="Política">Política</option>
           </select>
         </div>
 
-        {filtroIdeologia !== 'todos' && (
+        {filtroPropuestas !== 'todos' && (
           <button
             className="filtro-reset"
-            onClick={() => setFiltroIdeologia('todos')}
+            onClick={() => setFiltroPropuestas('todos')}
           >
             {t('partidos.filtros.limpiar')}
           </button>
