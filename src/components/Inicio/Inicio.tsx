@@ -517,25 +517,6 @@ export const Inicio: React.FC = () => {
           <h1 className="timeline-title">{t('inicio.timelineTitle')}</h1>
 
           <div className="timeline-header">
-            <div className="tabs-link">
-              <button
-                role="tab"
-                aria-selected={activeYear === '2025'}
-                className={`tab-link ${activeYear === '2025' ? 'active' : ''}`}
-                onClick={() => setActiveYear('2025')}
-              >
-                2025
-              </button>
-              <button
-                role="tab"
-                aria-selected={activeYear === '2026'}
-                className={`tab-link ${activeYear === '2026' ? 'active' : ''}`}
-                onClick={() => setActiveYear('2026')}
-              >
-                2026
-              </button>
-            </div>
-
             <div className="timeline-filter-dropdown">
               <button
                 className="filter-toggle-btn"
@@ -588,42 +569,69 @@ export const Inicio: React.FC = () => {
             </div>
           </div>
 
-          <div className="tab-buttons" role="tablist" aria-label={`Contenido de pestaña ${activeYear}`}>
-            {visibleMonths.map((m) => (
-              <button
-                key={m}
-                role="tab"
-                aria-selected={activeMonth === m}
-                className={`month-btn ${activeMonth === m ? 'active' : ''}`}
-                onClick={() => setActiveMonth(m)}
-              >
-                {t(`inicio.meses.${m}`)}
-              </button>
-            ))}
-          </div>
+          <div className="timeline-content-wrapper">
+            <div className="timeline-area-left">
+              <div className="timeline-area">
+                <div className="timeline-line-vertical"></div>
+                <div className="entries">
+                  {filteredEvents.length === 0 && <div className="no-events">{t('inicio.noEventos')}</div>}
 
-          <div className="timeline-area">
-            <div className="timeline-line-vertical"></div>
-            <div className="entries">
-              {filteredEvents.length === 0 && <div className="no-events">{t('inicio.noEventos')}</div>}
-
-              {filteredEvents.map((ev, idx) => (
-                <div key={idx} className={`entry-wrapper ${idx % 2 === 0 ? 'left' : 'right'}`}>
-                  <div className="timeline-marker"></div>
-                  <div className="entry">
-                    {ev.icon && <img src={`src/assets/img/${ev.icon}`} alt="icon" className="entry-icon" />}
-                    <p className="title">{ev.date}</p>
-                    <p className="description">{ev.title}</p>
-                    {ev.bullets && (
-                      <div className="bullets">
-                        {ev.bullets.map((b, i) => (
-                          <p key={i}>■ {b}</p>
-                        ))}
+                  {filteredEvents.map((ev, idx) => (
+                    <div key={idx} className={`entry-wrapper ${idx % 2 === 0 ? 'left' : 'right'}`}>
+                      <div className="timeline-marker"></div>
+                      <div className="entry">
+                        {ev.icon && <img src={`src/assets/img/${ev.icon}`} alt="icon" className="entry-icon" />}
+                        <p className="title">{ev.date}</p>
+                        <p className="description">{ev.title}</p>
+                        {ev.bullets && (
+                          <div className="bullets">
+                            {ev.bullets.map((b, i) => (
+                              <p key={i}>■ {b}</p>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+
+            <div className="timeline-area-right">
+              <div className="timeline-sidebar">
+                <div className="tabs-link">
+                  <button
+                    role="tab"
+                    aria-selected={activeYear === '2025'}
+                    className={`tab-link ${activeYear === '2025' ? 'active' : ''}`}
+                    onClick={() => setActiveYear('2025')}
+                  >
+                    2025
+                  </button>
+                  <button
+                    role="tab"
+                    aria-selected={activeYear === '2026'}
+                    className={`tab-link ${activeYear === '2026' ? 'active' : ''}`}
+                    onClick={() => setActiveYear('2026')}
+                  >
+                    2026
+                  </button>
+                </div>
+
+                <div className="tab-buttons" role="tablist" aria-label={`Contenido de pestaña ${activeYear}`}>
+                  {visibleMonths.map((m) => (
+                    <button
+                      key={m}
+                      role="tab"
+                      aria-selected={activeMonth === m}
+                      className={`month-btn ${activeMonth === m ? 'active' : ''}`}
+                      onClick={() => setActiveMonth(m)}
+                    >
+                      {t(`inicio.meses.${m}`)}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
