@@ -51,19 +51,22 @@ const getEventDescription = (title: string, date: string, category: string): str
 };
 
 const getEventImage = (title: string, category: string): string => {
-  const images: Record<string, string> = {
-    'Convocatoria a Elecciones Generales 2026': 'https://images.unsplash.com/photo-1516542152519-ba2c7d16e6b0?w=800&h=400&fit=crop',
-    'Publicación de cronograma electoral en el Diario Oficial': 'https://images.unsplash.com/photo-1554224311-beee415c201f?w=800&h=400&fit=crop',
-    'Inicio de campañas informativas sobre el proceso electoral': 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop',
-    'Elecciones primarias (Afiliados)': 'https://images.unsplash.com/photo-1505228395891-9a51e7e86e81?w=800&h=400&fit=crop',
-    'Elecciones Generales 2026': 'https://images.unsplash.com/photo-1516542152519-ba2c7d16e6b0?w=800&h=400&fit=crop',
-    'default-electoral': 'https://images.unsplash.com/photo-1505228395891-9a51e7e86e81?w=800&h=400&fit=crop',
-    'default-plan': 'https://images.unsplash.com/photo-1553531889-e6cf91d9b0d4?w=800&h=400&fit=crop',
-    'default-mesa': 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop',
-    'default-administrativo': 'https://images.unsplash.com/photo-1554224311-beee415c201f?w=800&h=400&fit=crop',
-  };
+  const images = [
+    'https://images.unsplash.com/photo-1516542152519-ba2c7d16e6b0?w=800&h=400&fit=crop', // Imagen 1: Votación
+    'https://images.unsplash.com/photo-1505228395891-9a51e7e86e81?w=800&h=400&fit=crop', // Imagen 2: Candidatos
+    'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop', // Imagen 3: Día de elecciones
+  ];
   
-  return images[title] || images[`default-${category}`] || 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop';
+  // Usar hash del título para consistencia
+  let hash = 0;
+  for (let i = 0; i < title.length; i++) {
+    const char = title.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  
+  const imageIndex = Math.abs(hash) % images.length;
+  return images[imageIndex];
 };
 
 const FALLBACK_TIMELINE: Record<string, Record<string, EventItem[]>> = {
