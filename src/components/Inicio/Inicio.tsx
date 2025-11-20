@@ -52,9 +52,9 @@ const getEventDescription = (title: string, date: string, category: string): str
 
 const getEventImage = (title: string, category: string): string => {
   const images = [
-    'https://images.unsplash.com/photo-1516542152519-ba2c7d16e6b0?w=800&h=400&fit=crop', // Imagen 1: Votación
-    'https://images.unsplash.com/photo-1505228395891-9a51e7e86e81?w=800&h=400&fit=crop', // Imagen 2: Candidatos
-    'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop', // Imagen 3: Día de elecciones
+    'public/Imagenes-Pagina/Fondo-Inicio.png', // Imagen 1: Votación
+    'public/Imagenes-Pagina/Imagen-Modal2.png', // Imagen 2: Candidatos
+    'public/Imagenes-Pagina/Imagen-Modal3.png', // Imagen 3: Día de elecciones
   ];
   
   // Usar hash del título para consistencia
