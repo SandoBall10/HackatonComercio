@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { speakText } from './speak';
 import { useTranslation } from 'react-i18next';
 import './Chatbot.css';
 
@@ -10,6 +11,7 @@ interface Message {
   options?: string[];
 }
 
+
 const Chatbot: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +20,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [voiceEnabled, setVoiceEnabled] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -445,17 +448,41 @@ const Chatbot: React.FC = () => {
     };
   };
 
+  // Detener voz si se desactiva
+  const handleVoiceToggle = () => {
+    setVoiceEnabled(v => {
+      const newValue = !v;
+      if (!newValue && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      return newValue;
+    });
+  };
+
   const handleSendMessage = () => {
     if (inputValue.trim() === '') return;
+
+    // Detectar idioma automáticamente
+    const msg = inputValue.toLowerCase().trim();
+    if (msg.includes('quechua') || msg.includes('runasimi') || msg === 'qu') {
+      i18n.changeLanguage('qu');
+    } else if (msg.includes('aimara') || msg.includes('aymara') || msg.includes('jaqiaru') || msg === 'ay') {
+      i18n.changeLanguage('ay');
+    } else if (msg.includes('español') || msg.includes('castellano') || msg === 'es' || msg.includes('spanish')) {
+      i18n.changeLanguage('es');
+    }
 
     addMessage(inputValue, true);
     setInputValue('');
 
     setIsTyping(true);
     setTimeout(() => {
-      setIsTyping(false);
       const response = getBotResponse(inputValue);
+      setIsTyping(false);
       addMessage(response.text, false, response.options);
+      if (voiceEnabled) {
+        speakText(response.text, i18n.language === 'qu' ? 'qu-PE' : i18n.language === 'ay' ? 'ay-BO' : 'es-ES');
+      }
       if (response.action) {
         response.action();
       }
@@ -477,6 +504,9 @@ const Chatbot: React.FC = () => {
             : '🎥 ¡Walikiwa! Tutorial lurañaru irpt\'asma.\n\nAkaniwa jikxatañama:\n\n✓ Yatichäwi videokuna ajlliri lurawimpi\n✓ Yatichäwi sapa luraña ajlliritaki\n✓ Jiskt\'awinaka sapa kuti\n✓ Guiaxa interactivonaka\n✓ Sufragio cédulana yatichäwi\n✓ Ajlliri simuladoranaka\n\nWalikiwa 2026 ajllirinakata taqi yatiqañataki.'
         };
         addMessage(tutorialResponse.text, false);
+        if (voiceEnabled) {
+          speakText(tutorialResponse.text, i18n.language === 'qu' ? 'qu-PE' : i18n.language === 'ay' ? 'ay-BO' : 'es-ES');
+        }
         setTimeout(() => navigate('/tutorial'), 1000);
       }, 800);
       return;
@@ -487,6 +517,9 @@ const Chatbot: React.FC = () => {
       setIsTyping(false);
       const response = getBotResponse(option);
       addMessage(response.text, false, response.options);
+      if (voiceEnabled) {
+        speakText(response.text, i18n.language === 'qu' ? 'qu-PE' : i18n.language === 'ay' ? 'ay-BO' : 'es-ES');
+      }
       if (response.action) {
         response.action();
       }
@@ -545,6 +578,33 @@ const Chatbot: React.FC = () => {
             <div className="chatbot-header-info">
               <h3>Yachay</h3>
               <p>{t('chatbot.subtitulo')}</p>
+            </div>
+            <div className="chatbot-header-voice-toggle">
+              <button
+                className={"chatbot-voice-toggle-btn-icon" + (voiceEnabled ? " enabled" : " disabled")}
+                onClick={handleVoiceToggle}
+                title={voiceEnabled ? "Desactivar voz" : "Activar voz"}
+                aria-label={voiceEnabled ? "Desactivar voz" : "Activar voz"}
+              >
+                {voiceEnabled ? (
+                  // Bocina ON
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="11" fill="#fff"/>
+                    <path d="M5 15V9h4l5-4v14l-5-4H5z" fill="#2196f3"/>
+                    <path d="M17.5 8.5a5 5 0 010 7" stroke="#2196f3" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                    <path d="M19.5 6a8 8 0 010 12" stroke="#2196f3" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                  </svg>
+                ) : (
+                  // Bocina OFF (tachada)
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="11" fill="#fff"/>
+                    <path d="M5 15V9h4l5-4v14l-5-4H5z" fill="#888"/>
+                    <path d="M17.5 8.5a5 5 0 010 7" stroke="#888" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                    <path d="M19.5 6a8 8 0 010 12" stroke="#888" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                    <line x1="7" y1="7" x2="17" y2="17" stroke="#d32f2f" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                )}
+              </button>
             </div>
             <button 
               className="chatbot-close"

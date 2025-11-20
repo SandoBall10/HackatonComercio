@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './Inicio.css';
 import InicioOffline from './InicioOffline';
 
-type EventItem = { date: string; title: string; bullets?: string[]; icon?: string; category?: 'electoral' | 'plan' | 'mesa' | 'administrativo' };
+type EventItem = { date: string; title: string; bullets?: string[]; icon?: string; category?: 'electoral' | 'plan' | 'mesa' | 'administrativo'; description?: string; image?: string };
 type NewsItem = { id: number; image: string; title: string; category: string; url: string; alt: string };
 
 const getTimelineFromTranslation = (t: any): Record<string, Record<string, EventItem[]>> => {
@@ -33,6 +33,40 @@ const getTimelineFromTranslation = (t: any): Record<string, Record<string, Event
   });
   
   return timeline;
+};
+
+const getEventDescription = (title: string, date: string, category: string): string => {
+  const descriptions: Record<string, string> = {
+    'Convocatoria a Elecciones Generales 2026': 'La ONPE realiza la convocatoria oficial para las Elecciones Generales 2026, iniciando formalmente el proceso electoral. Este es un hito fundamental que marca el comienzo del cronograma electoral y establece las bases legales para todas las actividades posteriores.',
+    'Publicación de cronograma electoral en el Diario Oficial': 'Se publica oficialmente en el Diario Oficial el cronograma completo del proceso electoral 2026. Este documento establece todas las fechas importantes, hitos clave y actividades que se realizarán durante el proceso electoral.',
+    'Inicio de campañas informativas sobre el proceso electoral': 'La ONPE inicia sus campañas informativas para educar a la ciudadanía sobre el proceso electoral, sus derechos, deberes y procedimientos. Se busca incrementar la conciencia electoral y participación ciudadana.',
+    'Fecha límite para la inscripción de partidos políticos en el ROP': 'Cierre de la convocatoria para que los partidos políticos se registren en el Registro de Organizaciones Políticas. Después de esta fecha no se aceptarán nuevas inscripciones de organizaciones políticas.',
+    'Capacitación inicial de personal electoral': 'Comienza el proceso de capacitación de los funcionarios electorales que participarán en el proceso. Se prepara al personal técnico y administrativo de la ONPE.',
+    'Elecciones primarias (Afiliados)': 'Realización de las elecciones primarias donde los afiliados de cada organización política eligen a sus candidatos para las elecciones generales de 2026. Este proceso es fundamental para la democracia interna de los partidos.',
+    'Elecciones Generales 2026': 'Día principal de las Elecciones Generales 2026. Los ciudadanos acuden a sus locales de votación para elegir sus representantes. Evento cívico fundamental que define la dirección política del país por los próximos años.',
+    'default': 'Evento importante del cronograma electoral 2026. Este hito forma parte del proceso electoral integral que culminará en las Elecciones Generales del 12 de abril de 2026.',
+  };
+  
+  return descriptions[title] || descriptions['default'];
+};
+
+const getEventImage = (title: string, category: string): string => {
+  const images = [
+    'public/Imagenes-Pagina/Fondo-Inicio.png', // Imagen 1: Votación
+    'public/Imagenes-Pagina/Imagen-Modal2.png', // Imagen 2: Candidatos
+    'public/Imagenes-Pagina/Imagen-Modal3.png', // Imagen 3: Día de elecciones
+  ];
+  
+  // Usar hash del título para consistencia
+  let hash = 0;
+  for (let i = 0; i < title.length; i++) {
+    const char = title.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  
+  const imageIndex = Math.abs(hash) % images.length;
+  return images[imageIndex];
 };
 
 const FALLBACK_TIMELINE: Record<string, Record<string, EventItem[]>> = {
@@ -145,6 +179,8 @@ export const Inicio: React.FC = () => {
   const [offlineMode, setOfflineMode] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [showOfflineAlert, setShowOfflineAlert] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+  const [selectedEventElement, setSelectedEventElement] = useState<HTMLElement | null>(null);
 
   const TIMELINE = getTimelineFromTranslation(t);
 
@@ -517,25 +553,6 @@ export const Inicio: React.FC = () => {
           <h1 className="timeline-title">{t('inicio.timelineTitle')}</h1>
 
           <div className="timeline-header">
-            <div className="tabs-link">
-              <button
-                role="tab"
-                aria-selected={activeYear === '2025'}
-                className={`tab-link ${activeYear === '2025' ? 'active' : ''}`}
-                onClick={() => setActiveYear('2025')}
-              >
-                2025
-              </button>
-              <button
-                role="tab"
-                aria-selected={activeYear === '2026'}
-                className={`tab-link ${activeYear === '2026' ? 'active' : ''}`}
-                onClick={() => setActiveYear('2026')}
-              >
-                2026
-              </button>
-            </div>
-
             <div className="timeline-filter-dropdown">
               <button
                 className="filter-toggle-btn"
@@ -588,45 +605,162 @@ export const Inicio: React.FC = () => {
             </div>
           </div>
 
-          <div className="tab-buttons" role="tablist" aria-label={`Contenido de pestaña ${activeYear}`}>
-            {visibleMonths.map((m) => (
-              <button
-                key={m}
-                role="tab"
-                aria-selected={activeMonth === m}
-                className={`month-btn ${activeMonth === m ? 'active' : ''}`}
-                onClick={() => setActiveMonth(m)}
-              >
-                {t(`inicio.meses.${m}`)}
-              </button>
-            ))}
-          </div>
+          <div className="timeline-content-wrapper">
+            <div className="timeline-area-left">
+              <div className="timeline-area">
+                <div className="timeline-line-vertical"></div>
+                <div className="entries">
+                  {filteredEvents.length === 0 && <div className="no-events">{t('inicio.noEventos')}</div>}
 
-          <div className="timeline-area">
-            <div className="timeline-line-vertical"></div>
-            <div className="entries">
-              {filteredEvents.length === 0 && <div className="no-events">{t('inicio.noEventos')}</div>}
-
-              {filteredEvents.map((ev, idx) => (
-                <div key={idx} className={`entry-wrapper ${idx % 2 === 0 ? 'left' : 'right'}`}>
-                  <div className="timeline-marker"></div>
-                  <div className="entry">
-                    {ev.icon && <img src={`src/assets/img/${ev.icon}`} alt="icon" className="entry-icon" />}
-                    <p className="title">{ev.date}</p>
-                    <p className="description">{ev.title}</p>
-                    {ev.bullets && (
-                      <div className="bullets">
-                        {ev.bullets.map((b, i) => (
-                          <p key={i}>■ {b}</p>
-                        ))}
+                  {filteredEvents.map((ev, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`entry-wrapper ${idx % 2 === 0 ? 'left' : 'right'}`}
+                      onClick={(e) => {
+                        setSelectedEvent(ev);
+                        setSelectedEventElement(e.currentTarget as HTMLElement);
+                      }}
+                    >
+                      <div className="timeline-marker"></div>
+                      <div className="entry" style={{ cursor: 'pointer' }}>
+                        {ev.icon && <img src={`src/assets/img/${ev.icon}`} alt="icon" className="entry-icon" />}
+                        <p className="title">{ev.date}</p>
+                        <p className="description">{ev.title}</p>
+                        {ev.bullets && (
+                          <div className="bullets">
+                            {ev.bullets.map((b, i) => (
+                              <p key={i}>■ {b}</p>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+
+            <div className="timeline-area-right">
+              <div className="timeline-sidebar">
+                <div className="tabs-link">
+                  <button
+                    role="tab"
+                    aria-selected={activeYear === '2025'}
+                    className={`tab-link ${activeYear === '2025' ? 'active' : ''}`}
+                    onClick={() => setActiveYear('2025')}
+                  >
+                    2025
+                  </button>
+                  <button
+                    role="tab"
+                    aria-selected={activeYear === '2026'}
+                    className={`tab-link ${activeYear === '2026' ? 'active' : ''}`}
+                    onClick={() => setActiveYear('2026')}
+                  >
+                    2026
+                  </button>
+                </div>
+
+                <div className="tab-buttons" role="tablist" aria-label={`Contenido de pestaña ${activeYear}`}>
+                  {visibleMonths.map((m) => (
+                    <button
+                      key={m}
+                      role="tab"
+                      aria-selected={activeMonth === m}
+                      className={`month-btn ${activeMonth === m ? 'active' : ''}`}
+                      onClick={() => setActiveMonth(m)}
+                    >
+                      {t(`inicio.meses.${m}`)}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+        {selectedEvent && (
+          <div 
+            className="event-modal-overlay" 
+            onClick={() => setSelectedEvent(null)}
+          >
+            <div className="event-modal" onClick={(e) => e.stopPropagation()}>
+              <button 
+                className="event-modal-close"
+                onClick={() => setSelectedEvent(null)}
+                aria-label="Cerrar modal"
+              >
+                ✕
+              </button>
+              
+              <div className="event-modal-image">
+                <img 
+                  src={getEventImage(selectedEvent.title, getEventCategory(selectedEvent))}
+                  alt={selectedEvent.title}
+                  onError={(e) => {
+                    e.currentTarget.src = '/Imagenes-Pagina/Fondo-Inicio.jpg';
+                  }}
+                />
+                <div className="event-modal-category-badge">
+                  {getEventCategory(selectedEvent) === 'electoral' && '🗳️ Electoral'}
+                  {getEventCategory(selectedEvent) === 'plan' && '📋 Planificación'}
+                  {getEventCategory(selectedEvent) === 'mesa' && '👥 Miembros de Mesa'}
+                  {getEventCategory(selectedEvent) === 'administrativo' && '⚙️ Administrativo'}
+                </div>
+              </div>
+
+              <div className="event-modal-content">
+                <div className="event-modal-header">
+                  <p className="event-modal-date">{selectedEvent.date}</p>
+                  <p className="event-modal-year">{activeYear}</p>
+                </div>
+
+                <h2 className="event-modal-title">{selectedEvent.title}</h2>
+                
+                <div className="event-modal-info">
+                  <p className="event-modal-month">
+                    <span className="info-icon">📅</span>
+                    Mes: <strong>{t(`inicio.meses.${activeMonth}`)}</strong>
+                  </p>
+                  <p className="event-modal-category-text">
+                    <span className="info-icon">🏷️</span>
+                    Categoría: <strong>
+                      {getEventCategory(selectedEvent) === 'electoral' && 'Evento Electoral'}
+                      {getEventCategory(selectedEvent) === 'plan' && 'Planificación'}
+                      {getEventCategory(selectedEvent) === 'mesa' && 'Miembros de Mesa'}
+                      {getEventCategory(selectedEvent) === 'administrativo' && 'Administrativo'}
+                    </strong>
+                  </p>
+                </div>
+                
+                <div className="event-modal-description">
+                  <h3 className="description-title">Descripción</h3>
+                  <p className="description-text">
+                    {getEventDescription(selectedEvent.title, selectedEvent.date, getEventCategory(selectedEvent))}
+                  </p>
+                </div>
+                {selectedEvent.bullets && selectedEvent.bullets.length > 0 && (
+                  <div className="event-modal-bullets">
+                    <h3 className="bullets-title">Detalles adicionales:</h3>
+                    {selectedEvent.bullets.map((bullet, idx) => (
+                      <p key={idx}>
+                        <span className="bullet-icon">✓</span>
+                        {bullet}
+                      </p>
+                    ))}
+                  </div>
+                )}
+
+                <button 
+                  className="event-modal-close-btn"
+                  onClick={() => setSelectedEvent(null)}
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
           <footer className="site-footer">
