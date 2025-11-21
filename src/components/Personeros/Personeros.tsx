@@ -281,43 +281,44 @@ const Personeros: React.FC = () => {
             </div>
 
             <div className="derechos-deberes-modern">
-              <div className="derechos-tarjeta">
-                <h2 className="dd-title dd-title-rojo">Derechos de los personeros</h2>
-                <ul className="dd-list">
-                  {derechos.map((d, idx) => (
-                    <li key={idx} className="dd-item">
-                      <span className="dd-icon dd-icon-check">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="16" cy="16" r="15" fill="#fff" stroke="#b30227" strokeWidth="2" />
-                          <path d="M10 17l4 4 8-8" stroke="#b30227" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </span>
-                      <span className="dd-text">{d.texto}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', alignItems: 'center', margin: '32px 0'}}>
+                {/* Fila 1: Imagen izquierda, tarjeta derecha */}
+                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 32, gridColumn: '1 / span 2'}}>
+                  <img src="/Imagenes-Pagina/Derechos.png" alt="Ilustración capacitación" style={{maxWidth: 340, width: '100%'}} />
+                  <div style={{background: '#fff', borderRadius: 18, boxShadow: '0 2px 12px 0 #e3eaff', padding: '24px 32px', border: '2px solid #b30227', minWidth: 260, flex: 1}}>
+                    <h2 style={{color: '#b30227', fontWeight: 900, fontSize: '1.3rem', marginBottom: 18}}>Derechos de los personeros</h2>
+                    <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
+                      {derechos.map((d, idx) => (
+                        <li key={idx} style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12}}>
+                          <span style={{display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', border: '2px solid #b30227', borderRadius: '50%', width: 36, height: 36}}>
+                            <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" fill="#fff" stroke="#b30227" strokeWidth="2" /><path d="M10 17l4 4 8-8" stroke="#b30227" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                          </span>
+                          <span style={{color: '#23272b', fontWeight: 500, fontSize: 16}}>{d.texto}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                {/* Fila 2: Tarjeta izquierda, imagen derecha */}
+                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 32, gridColumn: '1 / span 2', marginTop: 32}}>
+                  <div style={{background: '#fff', borderRadius: 18, boxShadow: '0 2px 12px 0 #ffe6ec', padding: '24px 32px', border: '2px solid #b30227', minWidth: 260, flex: 1}}>
+                    <h2 style={{color: '#b30227', fontWeight: 900, fontSize: '1.3rem', marginBottom: 18}}>Deberes de los personeros</h2>
+                    <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
+                      {deberes.map((d, idx) => (
+                        <li key={idx} style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12}}>
+                          <span style={{display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', border: '2px solid #b30227', borderRadius: '50%', width: 36, height: 36}}>
+                            <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect x="6" y="4" width="20" height="24" rx="4" fill="#fff" stroke="#b30227" strokeWidth="2" /><rect x="10" y="10" width="12" height="2.5" rx="1.2" fill="#b30227" /><rect x="10" y="16" width="12" height="2.5" rx="1.2" fill="#b30227" /><rect x="10" y="22" width="8" height="2.5" rx="1.2" fill="#b30227" /></svg>
+                          </span>
+                          <span style={{color: '#23272b', fontWeight: 500, fontSize: 16}}>{d.texto}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <img src="/Imagenes-Pagina/image2.png" alt="Ilustración deberes" style={{maxWidth: 340, width: '100%'}} />
+                </div>
               </div>
-              <div className="deberes-tarjeta">
-                <h2 className="dd-title dd-title-rojo">Deberes de los personeros</h2>
-                <ul className="dd-list">
-                  {deberes.map((d, idx) => (
-                    <li key={idx} className="dd-item">
-                      <span className="dd-icon dd-icon-doc">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect x="6" y="4" width="20" height="24" rx="4" fill="#fff" stroke="#b30227" strokeWidth="2" />
-                          <rect x="10" y="10" width="12" height="2.5" rx="1.2" fill="#b30227" />
-                          <rect x="10" y="16" width="12" height="2.5" rx="1.2" fill="#b30227" />
-                          <rect x="10" y="22" width="8" height="2.5" rx="1.2" fill="#b30227" />
-                        </svg>
-                      </span>
-                      <span className="dd-text">{d.texto}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               {/* Recursos Disponibles para Personeros */}
-              <div className="recursos-disponibles-box">
+              <div className="recursos-disponibles-box" style={{marginTop: 40}}>
                 <h2 className="recursos-disponibles-title">Recursos Disponibles</h2>
                 <div className="recursos-disponibles-list">
                   <div className="recurso-disponible-item">
