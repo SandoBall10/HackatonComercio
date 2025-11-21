@@ -6,6 +6,9 @@ export interface GeminiResponse {
   error?: string;
 }
 
+/**
+ * Consulta directa al backend que usa la API de Gemini
+ */
 export const consultarGemini = async (prompt: string): Promise<string> => {
   try {
     const response = await fetch(`${BACKEND_URL}/api/gemini`, {
@@ -27,15 +30,20 @@ export const consultarGemini = async (prompt: string): Promise<string> => {
     }
 
     return data.output;
+
   } catch (error) {
     console.error('Error en consultarGemini:', error);
     throw error;
   }
 };
 
-// Función mejorada para consultas específicas del contexto electoral
+
+/**
+ * Función especializada para consultas sobre el proceso electoral 2026
+ */
 export const consultarElectoralGemini = async (pregunta: string): Promise<string> => {
-  const promptContexto = `Eres un asistente electoral especializado exclusivamente en las Elecciones Generales de Perú 2026.
+  const promptContexto = `
+Eres un asistente electoral especializado exclusivamente en las Elecciones Generales de Perú 2026.
 
 REGLAS ESTRICTAS:
 1. SOLO puedes responder sobre:
@@ -43,30 +51,32 @@ REGLAS ESTRICTAS:
    - Partidos políticos participantes en las Elecciones 2026
    - Proceso electoral peruano (cómo votar, fechas, requisitos, miembros de mesa)
    - Derechos y deberes ciudadanos en el proceso electoral
-   - Historia política de Perú y presidentes históricos
-   - Comparaciones entre presidentes o gobiernos peruanos
+   - Historia política del Perú y presidentes históricos
+   - Comparaciones entre gobiernos
    - Análisis de propuestas de gobierno de candidatos 2026
-   - Procedimientos de la ONPE, JNE y RENIEC
+   - Procedimientos de ONPE, JNE y RENIEC
 
 2. NO puedes responder sobre:
-   - Temas no relacionados con política o elecciones
-   - Entretenimiento, deportes, tecnología (excepto si es sobre voto electrónico)
-   - Matemáticas, ciencias, programación (excepto si es sobre sistemas electorales)
-   - Cualquier otro tema fuera del contexto electoral peruano
+   - Temas no relacionados con elecciones o política peruana
+   - Deportes, entretenimiento, programación, matemáticas
+   - Ciencia, salud, marketing, vida personal
+   - Ningún tema ajeno al contexto electoral
 
-3. Si la pregunta NO está relacionada con estos temas, responde EXACTAMENTE:
+3. Si la pregunta NO está relacionada, responde EXACTAMENTE:
    "Lo siento, solo puedo ayudarte con consultas sobre las Elecciones Generales 2026, candidatos presidenciales, proceso electoral peruano, historia política de Perú o presidentes históricos. ¿Tienes alguna pregunta sobre estos temas?"
 
 4. Tus respuestas deben ser:
-   - Claras y concisas (máximo 200 palabras)
+   - Claras
+   - Concisas (máximo 200 palabras)
    - Objetivas e imparciales
-   - Basadas en hechos verificables
-   - En español claro y accesible
+   - Basadas en información verificable
+   - Escritas en español sencillo
 
 PREGUNTA DEL USUARIO:
 ${pregunta}
 
-RESPUESTA:`;
-  
+RESPUESTA:
+`;
+
   return await consultarGemini(promptContexto);
 };

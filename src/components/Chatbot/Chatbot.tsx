@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { speakText } from './speak';
 import { useTranslation } from 'react-i18next';
-import { consultarElectoralGemini } from '../api/sunat';
+import { consultarElectoralGemini } from '../api/sunat';   // ✅ YA ACTUALIZADO
 import './Chatbot.css';
 
 interface Message {
@@ -90,10 +90,14 @@ const Chatbot: React.FC = () => {
     setMessages(prev => [...prev, newMessage]);
   };
 
-  const getBotResponse = async (userMessage: string): Promise<{ text: string; options?: string[]; action?: () => void }> => {
+  const getBotResponse = async (userMessage: string): 
+    Promise<{ text: string; options?: string[]; action?: () => void }> => {
+
     const msg = userMessage.toLowerCase().trim();
 
-    // Cambio de idioma
+    // -------------------
+    // CAMBIO DE IDIOMA
+    // -------------------
     if (msg.includes('español') || msg.includes('castellano') || msg === 'es' || msg.includes('spanish')) {
       return {
         text: '¡Perfecto! He cambiado el idioma a Español 🇵🇪',
@@ -126,46 +130,53 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // Navegación rápida
-    if (msg.includes('candidato') || msg.includes('ver candidatos') || msg.includes('akllasqa')) {
+    // -------------------
+    // NAVEGACIÓN RÁPIDA
+    // -------------------
+
+    if (msg.includes('candidato') || msg.includes('ver candidatos')) {
       return {
-        text: t('chatbot.respuestas.candidatos') || '¡Perfecto! Te llevaré a ver los candidatos presidenciales para las Elecciones 2026.',
+        text: t('chatbot.respuestas.candidatos'),
         action: () => setTimeout(() => navigate('/candidatos'), 1000)
       };
     }
 
-    if (msg.includes('partido') || msg.includes('partidos políticos') || msg.includes('partidu') || msg.includes('ver partidos')) {
+    if (msg.includes('partido') || msg.includes('ver partidos')) {
       return {
-        text: t('chatbot.respuestas.partidos') || '¡Excelente! Te mostraré todos los partidos políticos participantes en las Elecciones 2026.',
+        text: t('chatbot.respuestas.partidos'),
         action: () => setTimeout(() => navigate('/partidos'), 1000)
       };
     }
 
-    if (msg.includes('reniec') || msg.includes('consultar') || msg.includes('dni') || msg.includes('donde voto')) {
+    if (msg.includes('reniec') || msg.includes('dni') || msg.includes('consultar')) {
       return {
-        text: (t('chatbot.respuestas.reniec') || 'Te llevaré a la sección RENIEC donde puedes consultar tu información electoral.') + '\n\n💡 Puedes consultar:\n✓ Tu local de votación\n✓ Tu número de mesa\n✓ Dirección exacta\n✓ Mapa de ubicación',
+        text: t('chatbot.respuestas.reniec'),
         action: () => setTimeout(() => navigate('/reniec'), 1000)
       };
     }
 
-    if (msg.includes('tutorial') || msg.includes('video') || msg.includes('aprend') || msg.includes('como funciona') || msg.includes('tutorial de la página')) {
+    if (msg.includes('tutorial') || msg.includes('video')) {
       return {
-        text: '🎥 ¡Perfecto! Te llevaré a la sección de Tutorial.\n\nAhí encontrarás:\n\n✓ Videos educativos sobre el proceso electoral\n✓ Instrucciones paso a paso para votar\n✓ Preguntas frecuentes (FAQ)\n✓ Guías interactivas\n\nPerfecto para aprender todo sobre las elecciones 2026.',
+        text: '🎥 ¡Perfecto! Te llevo al Tutorial.',
         action: () => setTimeout(() => navigate('/tutorial'), 1000)
       };
     }
 
-    if (msg.includes('miembro') || msg.includes('mesa') || msg.includes('sorteo') || msg.includes('cronograma')) {
+    if (msg.includes('miembro') || msg.includes('mesa') || msg.includes('cronograma')) {
       return {
-        text: '¡Te llevaré a la sección de Miembros de Mesa! 📋\n\nAhí encontrarás:\n\n✓ Cronograma del día electoral\n✓ Instrucciones paso a paso\n✓ Tus derechos y deberes\n✓ Capacitación disponible\n✓ Compensación económica S/ 120\n✓ Excusas válidas\n✓ Consecuencias por inasistencia',
+        text: '📋 Te mostraré la sección de Miembros de Mesa.',
         action: () => setTimeout(() => navigate('/miembros-mesa'), 1000)
       };
     }
 
-    // Consultas complejas con Gemini
+    // -------------------
+    // CONSULTA A GEMINI
+    // -------------------
     try {
       setIsTyping(true);
+
       const respuestaGemini = await consultarElectoralGemini(userMessage);
+
       return {
         text: respuestaGemini,
         options: [
@@ -177,14 +188,14 @@ const Chatbot: React.FC = () => {
       };
     } catch (error) {
       console.error('Error consultando Gemini:', error);
+
       return {
-        text: '❌ Lo siento, tuve un problema al procesar tu pregunta. ¿Podrías reformularla o elegir una opción del menú?',
+        text: '❌ Lo siento, ocurrió un problema al procesar tu solicitud.',
         options: [
           'Tutorial de la página',
           'Ver Partidos',
           'Ver Candidatos',
-          'Consultar RENIEC',
-          'Ver Miembros de Mesa'
+          'Consultar RENIEC'
         ]
       };
     }
@@ -222,11 +233,7 @@ const Chatbot: React.FC = () => {
       }
     } catch (error) {
       setIsTyping(false);
-      addMessage(
-        '❌ Lo siento, ocurrió un error. Por favor intenta de nuevo.',
-        false,
-        ['Tutorial de la página', 'Ver Partidos', 'Ver Candidatos']
-      );
+      addMessage('❌ Ocurrió un error, intenta nuevamente.', false);
     }
   };
 
@@ -246,19 +253,14 @@ const Chatbot: React.FC = () => {
       if (response.action) {
         response.action();
       }
-    } catch (error) {
+    } catch {
       setIsTyping(false);
-      addMessage(
-        '❌ Lo siento, ocurrió un error. Por favor intenta de nuevo.',
-        false
-      );
+      addMessage('❌ Error inesperado.', false);
     }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleSendMessage();
-    }
+    if (e.key === 'Enter') handleSendMessage();
   };
 
   const handleNotificationClick = () => {
@@ -266,8 +268,13 @@ const Chatbot: React.FC = () => {
     setIsOpen(true);
   };
 
+  // ---------------------
+  // INTERFAZ DEL CHATBOT
+  // ---------------------
+  
   return (
     <>
+      {/* NOTIFICACIÓN */}
       {showNotification && !isOpen && (
         <div className="chatbot-notification" onClick={handleNotificationClick}>
           <div className="chatbot-notification-avatar">
@@ -283,21 +290,21 @@ const Chatbot: React.FC = () => {
               e.stopPropagation();
               setShowNotification(false);
             }}
-            aria-label="Cerrar notificación"
           >
             ×
           </button>
         </div>
       )}
 
+      {/* BOTÓN FLOTANTE */}
       <button 
         className="chatbot-button"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Conversa con Yachay"
       >
         <img src={avatarUrl} alt="Yachay" />
       </button>
 
+      {/* VENTANA DEL CHAT */}
       {isOpen && (
         <div className="chatbot-window">
           <div className="chatbot-header">
@@ -308,40 +315,26 @@ const Chatbot: React.FC = () => {
               <h3>Yachay</h3>
               <p>{t('chatbot.subtitulo')}</p>
             </div>
+
+            {/* BOTÓN DE VOZ */}
             <div className="chatbot-header-voice-toggle">
               <button
                 className={"chatbot-voice-toggle-btn-icon" + (voiceEnabled ? " enabled" : " disabled")}
                 onClick={handleVoiceToggle}
-                title={voiceEnabled ? "Desactivar voz" : "Activar voz"}
-                aria-label={voiceEnabled ? "Desactivar voz" : "Activar voz"}
               >
-                {voiceEnabled ? (
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="11" fill="#fff"/>
-                    <path d="M5 15V9h4l5-4v14l-5-4H5z" fill="#2196f3"/>
-                    <path d="M17.5 8.5a5 5 0 010 7" stroke="#2196f3" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                    <path d="M19.5 6a8 8 0 010 12" stroke="#2196f3" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                  </svg>
-                ) : (
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="11" fill="#fff"/>
-                    <path d="M5 15V9h4l5-4v14l-5-4H5z" fill="#888"/>
-                    <path d="M17.5 8.5a5 5 0 010 7" stroke="#888" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                    <path d="M19.5 6a8 8 0 010 12" stroke="#888" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                    <line x1="7" y1="7" x2="17" y2="17" stroke="#d32f2f" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                )}
+                {voiceEnabled ? '🔊' : '🔇'}
               </button>
             </div>
+
             <button 
               className="chatbot-close"
               onClick={() => setIsOpen(false)}
-              aria-label="Cerrar chat"
             >
               ×
             </button>
           </div>
 
+          {/* MENSAJES */}
           <div className="chatbot-messages">
             {messages.map(message => (
               <div key={message.id} className={`chatbot-message ${message.isUser ? 'user' : ''}`}>
@@ -351,14 +344,13 @@ const Chatbot: React.FC = () => {
                   </div>
                 )}
                 <div className="chatbot-message-content">
-                  <div className="chatbot-message-bubble">
-                    {message.text}
-                  </div>
+                  <div className="chatbot-message-bubble">{message.text}</div>
+
                   {message.options && (
                     <div className="chatbot-quick-options">
-                      {message.options.map((option, index) => (
-                        <button
-                          key={index}
+                      {message.options.map((option, idx) => (
+                        <button 
+                          key={idx}
                           className="chatbot-quick-option"
                           onClick={() => handleQuickOption(option)}
                         >
@@ -370,34 +362,31 @@ const Chatbot: React.FC = () => {
                 </div>
               </div>
             ))}
-            
+
             {isTyping && (
               <div className="chatbot-message">
                 <div className="chatbot-message-avatar">
                   <img src={avatarUrl} alt="Bot" />
                 </div>
-                <div className="chatbot-message-content">
-                  <div className="chatbot-message-bubble">
-                    <div className="chatbot-typing">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
+                <div className="chatbot-message-bubble">
+                  <div className="chatbot-typing">
+                    <span></span><span></span><span></span>
                   </div>
                 </div>
               </div>
             )}
-            
+
             <div ref={messagesEndRef} />
           </div>
 
+          {/* INPUT */}
           <div className="chatbot-input-area">
             <input
               type="text"
               className="chatbot-input"
               placeholder={t('chatbot.placeholder')}
               value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              onChange={e => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
             />
             <button 
@@ -408,6 +397,7 @@ const Chatbot: React.FC = () => {
               ➤
             </button>
           </div>
+
         </div>
       )}
     </>
