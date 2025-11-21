@@ -70,27 +70,27 @@ const Personeros: React.FC = () => {
     <div className="personeros-container">
       <section className="hero-personeros">
         <div className="hero-content">
-          <h1 className="hero-title">{t('personeros.titulo')}</h1>
-          <p className="hero-subtitle">{t('personeros.subtitulo')}</p>
+          <h1 className="personeros-hero-title">{t('personeros.titulo')}</h1>
+          <p className="personeros-hero-subtitle">{t('personeros.subtitulo')}</p>
         </div>
       </section>
 
-      <div className="tabs-navigation">
-        <button className={`tab-btn ${activeTab === 'cronograma' ? 'active' : ''}`} onClick={() => setActiveTab('cronograma')}>
+      <div className="personeros-tabs-navigation">
+        <button className={`personeros-tab-btn ${activeTab === 'cronograma' ? 'active' : ''}`} onClick={() => setActiveTab('cronograma')}>
           {t('personeros.tabs.cronograma')}
         </button>
-        <button className={`tab-btn ${activeTab === 'instrucciones' ? 'active' : ''}`} onClick={() => setActiveTab('instrucciones')}>
+        <button className={`personeros-tab-btn ${activeTab === 'instrucciones' ? 'active' : ''}`} onClick={() => setActiveTab('instrucciones')}>
           {t('personeros.tabs.instrucciones')}
         </button>
-        <button className={`tab-btn ${activeTab === 'derechos' ? 'active' : ''}`} onClick={() => setActiveTab('derechos')}>
+        <button className={`personeros-tab-btn ${activeTab === 'derechos' ? 'active' : ''}`} onClick={() => setActiveTab('derechos')}>
           {t('personeros.tabs.derechos')}
         </button>
-        <button className={`tab-btn ${activeTab === 'capacitacion' ? 'active' : ''}`} onClick={() => setActiveTab('capacitacion')}>
+        <button className={`personeros-tab-btn ${activeTab === 'capacitacion' ? 'active' : ''}`} onClick={() => setActiveTab('capacitacion')}>
           {t('personeros.tabs.capacitacion')}
         </button>
       </div>
 
-      <div className="tab-content">
+      <div className="personeros-tab-content">
         {activeTab === 'cronograma' && (
           <div className="cronograma-section">
             <h2>{t('personeros.cronograma.titulo')}</h2>

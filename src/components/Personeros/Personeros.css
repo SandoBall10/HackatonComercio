@@ -1,10 +1,3 @@
-body, html {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-}
-
 .personeros-container {
   min-height: 100vh;
   background: #f5f5f5;
@@ -37,7 +30,7 @@ body, html {
   align-items: center;
 }
 
-.hero-title {
+.personeros-hero-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -47,14 +40,14 @@ body, html {
   display: inline-block;
 }
 
-.hero-subtitle {
+.personeros-hero-subtitle {
   font-size: 1.1rem;
   color: #666;
   margin-bottom: 0.5rem;
   text-align: center;
 }
 
-.tabs-navigation {
+.personeros-tabs-navigation {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -65,7 +58,7 @@ body, html {
   max-width: 100vw;
 }
 
-.tab-btn {
+.personeros-tab-btn {
   background: #fff;
   border: none;
   border-bottom: 3px solid transparent;
@@ -79,13 +72,13 @@ body, html {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   text-align: center;
 }
-.tab-btn.active, .tab-btn:hover {
+.personeros-tab-btn.active, .personeros-tab-btn:hover {
   border-bottom: 3px solid #b80022;
   color: #b80022;
   background: #fff;
 }
 
-.tab-content {
+.personeros-tab-content {
   margin: 0 auto;
   padding: 0 0 2rem 0;
   box-sizing: border-box;
@@ -95,7 +88,7 @@ body, html {
   align-items: center;
 }
 
-.section-title {
+.personeros-section-title {
   font-size: 2rem;
   font-weight: 700;
   color: #222;
@@ -104,7 +97,7 @@ body, html {
   width: 100%;
 }
 
-.section-description {
+.personeros-section-description {
   font-size: 1.1rem;
   color: #666;
   margin-bottom: 2rem;

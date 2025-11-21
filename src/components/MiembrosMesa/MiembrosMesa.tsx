@@ -77,6 +77,7 @@ const MiembrosMesa: React.FC = () => {
 
   return (
     <div className="miembros-mesa-container">
+      {/* Hero Section */}
       <section className="hero-miembros">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -88,6 +89,7 @@ const MiembrosMesa: React.FC = () => {
         </div>
       </section>
 
+      {/* Tabs Navigation */}
       <div className="tabs-navigation">
         <button 
           className={`tab-btn ${activeTab === 'calendario' ? 'active' : ''}`}
@@ -115,6 +117,7 @@ const MiembrosMesa: React.FC = () => {
         </button>
       </div>
 
+      {/* Contenido según tab activo */}
       <div className="tab-content">
         {activeTab === 'calendario' && (
           <div className="calendario-section">
@@ -124,16 +127,13 @@ const MiembrosMesa: React.FC = () => {
             </p>
             
             <div className="actividades-grid">
-              {actividadesDia.map((actividad, index) => {
-                const iconos = ['🕖', '🪑', '✅', '🗳️', '📋', '🔒', '📄'];
-                return (
-                  <div key={index} className="actividad-card">
-                    <div className="actividad-icono">{iconos[index] || actividad.icono}</div>
-                    <div className="actividad-hora">{actividad.hora}</div>
-                    <div className="actividad-descripcion">{actividad.actividad}</div>
-                  </div>
-                );
-              })}
+              {actividadesDia.map((actividad, index) => (
+                <div key={index} className="actividad-card">
+                  <div className="actividad-icono">{actividad.icono}</div>
+                  <div className="actividad-hora">{actividad.hora}</div>
+                  <div className="actividad-descripcion">{actividad.actividad}</div>
+                </div>
+              ))}
             </div>
 
             <div className="importante-box">
@@ -187,7 +187,7 @@ const MiembrosMesa: React.FC = () => {
                 <div className="lista-items">
                   {derechos.map((derecho, index) => (
                     <div key={index} className="item-card">
-                      <div className="item-imagen">✓</div>
+                      <span className="item-icono">{derecho.icono}</span>
                       <p>{derecho.texto}</p>
                     </div>
                   ))}
@@ -200,7 +200,7 @@ const MiembrosMesa: React.FC = () => {
                 <div className="lista-items">
                   {deberes.map((deber, index) => (
                     <div key={index} className="item-card">
-                      <div className="item-imagen">📋</div>
+                      <span className="item-icono">{deber.icono}</span>
                       <p>{deber.texto}</p>
                     </div>
                   ))}
@@ -224,7 +224,7 @@ const MiembrosMesa: React.FC = () => {
 
             <div className="capacitacion-grid">
               <div className="capacitacion-card">
-                <div className="capacitacion-icono-emoji">🏫</div>
+                <div className="capacitacion-icono">1</div>
                 <h3>{t('miembrosMesa.capacitacion.presencial.titulo')}</h3>
                 <p>{t('miembrosMesa.capacitacion.presencial.descripcion')}</p>
                 <ul>
@@ -235,7 +235,7 @@ const MiembrosMesa: React.FC = () => {
               </div>
 
               <div className="capacitacion-card">
-                <div className="capacitacion-icono-emoji">💻</div>
+                <div className="capacitacion-icono">2</div>
                 <h3>{t('miembrosMesa.capacitacion.virtual.titulo')}</h3>
                 <p>{t('miembrosMesa.capacitacion.virtual.descripcion')}</p>
                 <ul>
@@ -247,7 +247,7 @@ const MiembrosMesa: React.FC = () => {
               </div>
 
               <div className="capacitacion-card">
-                <div className="capacitacion-icono-emoji">📱</div>
+                <div className="capacitacion-icono">3</div>
                 <h3>{t('miembrosMesa.capacitacion.app.titulo')}</h3>
                 <p>{t('miembrosMesa.capacitacion.app.descripcion')}</p>
                 <ul>
@@ -289,6 +289,7 @@ const MiembrosMesa: React.FC = () => {
         )}
       </div>
 
+      {/* CTA Section */}
       <section className="cta-section">
         <h2>{t('miembrosMesa.cta.titulo')}</h2>
         <p>{t('miembrosMesa.cta.descripcion')}</p>
