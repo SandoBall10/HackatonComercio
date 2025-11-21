@@ -84,9 +84,6 @@
   position: relative;
 }
 
-.hero-content {
-}
-
 .hero-miembros::before {
   content: '';
 
@@ -407,12 +404,7 @@
 }
 
 .instruccion-card {
-  /* Eliminado: sin card visual */
   align-items: center;
-}
-
-.instruccion-card:hover {
-/* Eliminado: sin hover visual */
 }
 
 .instruccion-header {
@@ -441,6 +433,9 @@
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(179, 2, 39, 0.3);
 }
+
+
+
 
 /* Instrucciones Imagen */
 .instrucciones-imagen {
