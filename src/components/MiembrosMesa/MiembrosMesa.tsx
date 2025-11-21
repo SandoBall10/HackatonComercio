@@ -84,7 +84,7 @@ const MiembrosMesa: React.FC = () => {
             {t('miembrosMesa.titulo')}
           </h1>
           <p className="hero-subtitle">
-            {t('miembrosMesa.subtitulo')}
+            Como miembro de mesa, tienes estos derechos y deberes:
           </p>
         </div>
       </section>
@@ -230,41 +230,42 @@ const MiembrosMesa: React.FC = () => {
 
         {activeTab === 'derechos' && (
           <div className="derechos-deberes-section">
-            <h2 className="section-title">{t('miembrosMesa.derechos.titulo')}</h2>
+            <h2 className="section-title">Tus Derechos y Deberes</h2>
             <p className="section-description">{t('miembrosMesa.derechos.descripcion')}</p>
 
-            {/* Grid 2x2: imagen top-left, derechos top-right, deberes bottom-left, imagen bottom-right */}
-            <div className="derechos-grid">
-              <div className="derechos-img img-top">
-                <img src="/Imagenes-Pagina/Instalacion.png" alt="Ilustración" />
+            {/* Bloque: Qué es un miembro de mesa (sin imagen) */}
+            <div className="miembro-info">
+              <div className="personero-box">
+                <h3>¿Qué es un Miembro de Mesa?</h3>
+                <p>
+                  Un miembro de mesa es la persona designada por la autoridad electoral para integrar y
+                  responsabilizarse del correcto desarrollo del proceso de votación en un local electoral.
+                  Debe garantizar el cumplimiento de la normativa, colaborar en la instalación y cierre
+                  de la mesa y custodiar la transparencia del proceso.
+                </p>
               </div>
+            </div>
 
-              <div className="derechos-card">
-                <h3>{t('miembrosMesa.derechos.subtitulo')}</h3>
+            <div className="derechos-deberes-container">
+              <div className="derechos-list">
+                <h3>Tus Derechos</h3>
                 <ul>
                   {derechos.map((item, idx) => (
                     <li key={idx} className="derecho-item">
-                      <span className="derecho-icono">{item.icono}</span>
-                      <span className="derecho-text">{item.texto}</span>
+                      <span className="derecho-icono">{item.icono}</span> {item.texto}
                     </li>
                   ))}
                 </ul>
               </div>
-
-              <div className="deberes-card">
-                <h3>{t('miembrosMesa.deberes.subtitulo')}</h3>
+              <div className="deberes-list">
+                <h3>Tus Deberes</h3>
                 <ul>
                   {deberes.map((item, idx) => (
                     <li key={idx} className="deber-item">
-                      <span className="deber-icono">{item.icono}</span>
-                      <span className="deber-text">{item.texto}</span>
+                      <span className="deber-icono">{item.icono}</span> {item.texto}
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="derechos-img img-bottom">
-                <img src="/Imagenes-Pagina/Conteo.png" alt="Ilustración" />
               </div>
             </div>
           </div>

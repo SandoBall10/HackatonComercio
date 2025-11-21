@@ -878,76 +878,12 @@
   .personero-box { order: 1; }
 }
 
-/* New grid layout to match example: images in corners + two cards */
-.derechos-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 2rem;
-  align-items: center;
-  max-width: 1100px;
-  margin: 1.6rem auto 0 auto;
-  padding: 0 1rem;
-}
-.derechos-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.derechos-img img {
-  width: 100%;
-  max-width: 260px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-}
-.img-top { grid-column: 1 / 2; grid-row: 1 / 2; }
-.img-bottom { grid-column: 2 / 3; grid-row: 2 / 3; justify-self: end; }
-
-.derechos-card, .deberes-card {
-  background: #fff;
-  padding: 1.6rem 1.4rem;
-  border-radius: 14px;
-  border: 2px solid rgba(179,2,39,0.12);
-  box-shadow: 0 10px 30px rgba(15,15,15,0.04);
-}
-.derechos-card { grid-column: 2 / 3; grid-row: 1 / 2; }
-.deberes-card { grid-column: 1 / 2; grid-row: 2 / 3; }
-.derechos-card h3, .deberes-card h3 {
-  font-size: 1.15rem;
-  color: #b30227;
-  margin-bottom: 0.8rem;
-}
-.derechos-card ul, .deberes-card ul { list-style: none; padding: 0; margin: 0; }
-.derecho-item, .deber-item {
-  display: flex;
-  gap: 0.9rem;
-  align-items: flex-start;
-  margin-bottom: 0.9rem;
-}
-.derecho-icono, .deber-icono {
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: #b30227;
-  font-weight: 800;
-  border: 2px solid #b30227;
-  background: rgba(179,2,39,0.03);
-  flex-shrink: 0;
-}
-.derecho-text, .deber-text { color: #333; line-height: 1.5; }
-
-/* hover subtle */
-.derechos-card li:hover, .deberes-card li:hover { background: #fff7f8; border-radius: 6px; }
-
-@media (max-width: 900px) {
-  .derechos-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
-  .img-top, .img-bottom { justify-self: center; }
-  .derechos-card, .deberes-card { grid-column: 1 / -1; }
-  .img-bottom { order: 4; }
+/* Si la imagen se ha eliminado, hacer que la caja descriptiva ocupe todo el ancho
+   para mostrarse en una fila horizontal y centrada (evita columna estrecha vacía) */
+.miembro-info > .personero-box {
+  grid-column: 1 / -1;
+  max-width: 880px;
+  margin: 0 auto;
 }
 
 
