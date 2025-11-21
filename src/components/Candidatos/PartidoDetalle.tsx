@@ -629,28 +629,76 @@ const PartidoDetalle: React.FC = () => {
                   {t('partidos.verCandidatoPresidencial')}
                 </span>
               </button>
-              {candidatosReales[0]?.pdfUrl && (
-                <>
-                  <a
-                    href={candidatosReales[0].pdfUrl.startsWith('http')
-                      ? candidatosReales[0].pdfUrl
-                      : `${window.location.origin}${candidatosReales[0].pdfUrl}`}
-                    download
+
+              {/* reemplazo: mostrar link de descarga o botón "NO DISPONIBLE" */}
+              {(() => {
+                const pdf = candidatosReales[0]?.pdfUrl;
+                const disponible = pdf && pdf !== 'NO DISPONIBLE';
+                return null; // placeholder para eliminar IIFE si quieres usar la versión abajo
+              })()}
+              
+              {/* Versión recomendada */}
+              {(() => {
+                // evita errores si candidatosReales está vacío
+                const pdf = (candidatosReales && candidatosReales.length > 0) ? candidatosReales[0].pdfUrl : undefined;
+                const disponible = !!pdf && pdf !== 'NO DISPONIBLE';
+                if (disponible) {
+                  const href = pdf!.startsWith('http') ? pdf! : `${window.location.origin}${pdf!}`;
+                  return (
+                    <a
+                      href={href}
+                      download
+                      className="btn text-white fw-semibold py-3 position-relative"
+                      style={{
+                        background: `linear-gradient(135deg, ${colorSecundario} 0%, ${colorTerciario} 100%)`,
+                        border: 'none',
+                        borderRadius: '12px',
+                        fontSize: '1rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`,
+                        minWidth: '180px',
+                        textDecoration: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginLeft: '8px'
+                      }}
+                    >
+                      <span style={{
+                        position: 'relative',
+                        zIndex: 1,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px'
+                      }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                          <polyline points="7 10 12 15 17 10"/>
+                          <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Descargar Plan PDF
+                      </span>
+                    </a>
+                  );
+                }
+                return (
+                  <button
                     className="btn text-white fw-semibold py-3 position-relative"
+                    disabled
                     style={{
-                      background: `linear-gradient(135deg, ${colorSecundario} 0%, ${colorTerciario} 100%)`,
+                      background: '#9CA3AF',
                       border: 'none',
                       borderRadius: '12px',
                       fontSize: '1rem',
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
-                      boxShadow: `0 6px 20px rgba(${colorPrimarioRgb}, 0.3)`,
+                      boxShadow: 'none',
                       minWidth: '180px',
-                      textDecoration: 'none',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginLeft: '8px'
+                      marginLeft: '8px',
+                      opacity: 0.7,
+                      cursor: 'not-allowed'
                     }}
                   >
                     <span style={{
@@ -666,11 +714,11 @@ const PartidoDetalle: React.FC = () => {
                         <polyline points="7 10 12 15 17 10"/>
                         <line x1="12" y1="15" x2="12" y2="3"/>
                       </svg>
-                      Descargar Plan PDF
+                      NO DISPONIBLE
                     </span>
-                  </a>
-                </>
-              )}
+                  </button>
+                );
+              })()}
             </div>
           </div>
         </div>

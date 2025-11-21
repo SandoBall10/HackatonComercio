@@ -1,27 +1,49 @@
 .tutorial-tour-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.35);
   z-index: 9999;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  background: none;
 }
+
+.tutorial-spotlight-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 9998;
+  pointer-events: none;
+  transition: clip-path 0.3s, -webkit-clip-path 0.3s;
+}
+.tutorial-tour-overlay.center,
+.tutorial-tour-overlay.right {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 4vh 4vw;
+}
+
 
 .tutorial-tour-content {
   display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  justify-content: center;
+  align-items: flex-end;
+  gap: 1.2rem;
 }
+.tutorial-tour-content.center,
+.tutorial-tour-content.right {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 
 .tutorial-yachay-img {
   max-width: 260px;
   min-width: 180px;
   height: auto;
   display: block;
-  animation: yachay-bounce 1.2s infinite alternate;
   filter: drop-shadow(0 4px 16px rgba(0,0,0,0.18));
+}
+
+.animated-img {
+  animation: yachay-bounce 1.2s infinite alternate;
 }
 
 @keyframes yachay-bounce {
@@ -38,6 +60,9 @@
   max-width: 420px;
   min-width: 320px;
   text-align: center;
+}
+
+.animated-box {
   animation: box-fade-in 0.7s cubic-bezier(.4,1.6,.6,1) both;
 }
 

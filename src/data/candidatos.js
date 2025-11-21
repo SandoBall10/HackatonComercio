@@ -118,6 +118,7 @@
     partido: "PTE-Perú",
     foto: "/FotosCandidatos/partido-trabajadores-pte-peru.jpg",
     logoPartido: "/logos/pte-peru.png",
+    pdfUrl: "/pdf/partido-trabajadores-pte-peru-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -255,6 +256,7 @@
     partido: "Partido del buen gobierno",
     foto: "/FotosCandidatos/partido-buen-gobierno.jpg",
     logoPartido: "/logos/partido-buen-gobierno.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -367,6 +369,7 @@
     partido: "Libertad popular",
     foto: "/FotosCandidatos/libertad-popular.jpg",
     logoPartido: "/logos/libertad-popular.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -421,6 +424,7 @@
     partido: "Partido Democrata Unido Perú",
     foto: "/FotosCandidatos/partido-democrata-unido-peru.jpg",
     logoPartido: "/logos/partido-democrata-unido.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -586,7 +590,7 @@
     partido: "Partido Democrata Verde",
     foto: "/FotosCandidatos/partido-democrata-verde.jpg",
     logoPartido: "/logos/partido-democrata-verde.png",
-    pdfUrl: "/pdf/Partido_democrata_verde Plan de gobierno.pdf",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -752,6 +756,7 @@
     partido: "Partido democratico f.",
     foto: "/FotosCandidatos/partido-democratico-federal.jpg",
     logoPartido: "/logos/partido-democratico-federal.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -806,6 +811,7 @@
     partido: "Fe en el Perú",
     foto: "/FotosCandidatos/fe-en-el-peru.jpg",
     logoPartido: "/logos/fe-en-el-peru.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -860,6 +866,7 @@
     partido: "Partido ciudadanos por el P.",
     foto: "/FotosCandidatos/partido-ciudadanos-por-el-peru.jpg",
     logoPartido: "/logos/ciudadanos-por-el-peru.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -970,6 +977,7 @@
     partido: "Partido Civico obras",
     foto: "/FotosCandidatos/partido-civico-obras.jpg",
     logoPartido: "/logos/partido-civico-obras.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1024,6 +1032,7 @@
     partido: "Partido frente de la E.",
     foto: "/FotosCandidatos/frente-de-la-esperanza-2021.jpg",
     logoPartido: "/logos/frente-esperanza-2021.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1134,6 +1143,7 @@
     partido: "Partido Politico Perú Accion",
     foto: "/FotosCandidatos/peru-accion.png",
     logoPartido: "/logos/peru-accion.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1188,6 +1198,7 @@
     partido: "Perú moderno",
     foto: "/FotosCandidatos/peru-moderno.jpg",
     logoPartido: "/logos/peru-moderno.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1242,6 +1253,7 @@
     partido: "Partido Pais para todos",
     foto: "/FotosCandidatos/pais-para-todos.jpg",
     logoPartido: "/logos/pais-para-todos.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1296,6 +1308,7 @@
     partido: "Partido politico Perú p.",
     foto: "/FotosCandidatos/peru-primero.jpg",
     logoPartido: "/logos/peru-primero.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1406,6 +1419,7 @@
     partido: "Partido patriotico del Perú",
     foto: "/FotosCandidatos/partido-patriotico-del-peru.png",
     logoPartido: "/logos/partido-patriotico-del-peru.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
 
     redesSociales: {},
@@ -1461,6 +1475,7 @@
     partido: "Partido politico peruanos u.",
     foto: "/FotosCandidatos/peruanos-unidos.jpg",
     logoPartido: "/logos/peruanos-unidos.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1515,6 +1530,7 @@
     partido: "Primero la gente",
     foto: "/FotosCandidatos/primero-la-gente.jpg",
     logoPartido: "/logos/primero-la-gente.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1569,6 +1585,7 @@
     partido: "Partido P. Cooperacion Popular",
     foto: "/FotosCandidatos/cooperacion-popular.jpg",
     logoPartido: "/logos/cooperacion-popular.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1623,6 +1640,7 @@
     partido: "Partido P. P. V. del pueblo",
     foto: "/FotosCandidatos/voces-del-pueblo.jpg",
     logoPartido: "/logos/voces-del-pueblo.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1677,6 +1695,7 @@
     partido: "Progresemos",
     foto: "/FotosCandidatos/progresemos.jpg",
     logoPartido: "/logos/progresemos.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1732,6 +1751,7 @@
     partido: "Partido politico fuerza moderna",
     foto: "/logos/fuerza-moderna.png",
     logoPartido: "/logos/fuerza-moderna.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1756,6 +1776,7 @@
     partido: "Partido politico PRIN",
     foto: "/FotosCandidatos/prin.jpg",
     logoPartido: "/logos/prin.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1810,7 +1831,7 @@
     partido: "Renovacion popular",
     foto: "/FotosCandidatos/renovacion-popular.jpg",
     logoPartido: "/logos/renovacion-popular.png",
-    pdfUrl: "/pdf/Renovacion_popular plan de gobierno.pdf",
+    pdfUrl: "/pdf/renovacion-popular-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: { facebook: "#", twitter: "#", instagram: "#" },
     hojaDeVida: { 
@@ -1867,6 +1888,7 @@
     partido: "Integridad Democrática",
     foto: "/FotosCandidatos/integridad-democratica.jpg",
     logoPartido: "/logos/integridad-democratica.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidato a la Presidencia",
     redesSociales: { facebook: "#", twitter: "#", instagram: "#", tiktok: "#" },
     hojaDeVida: { 
@@ -1923,6 +1945,7 @@
     partido: "Partido popular c. PPC",
     foto: "/FotosCandidatos/partido-popular-cristiano.jpg",
     logoPartido: "/logos/partido-popular-cristiano.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -1978,6 +2001,7 @@
     partido: "Salvemos al Perú",
     foto: "/FotosCandidatos/salvemos-al-peru.jpg",
     logoPartido: "/logos/salvemos-al-peru.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -2032,6 +2056,7 @@
     partido: "Partido politico nacional Perú libre",
     foto: "/FotosCandidatos/peru-libre.jpg",
     logoPartido: "/logos/peru-libre.png",
+    pdfUrl: "/pdf/peru-libre-plan-gobierno.pdf",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -2087,6 +2112,7 @@
     partido: "Partido Si creo",
     foto: "/FotosCandidatos/si-creo.jpg",
     logoPartido: "/logos/si-creo.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -2141,6 +2167,7 @@
     partido: "Un camino diferente",
     foto: "/FotosCandidatos/un-camino-diferente.jpg",
     logoPartido: "/logos/un-camino-diferente.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
@@ -2195,6 +2222,7 @@
     partido: "Partido Unidad y Paz",
     foto: "/FotosCandidatos/unidad-y-paz.jpg",
     logoPartido: "/logos/unidad-y-paz.png",
+    pdfUrl: "NO DISPONIBLE",
     cargo: "Candidatura",
     redesSociales: {},
     hojaDeVida: { 
