@@ -1,18 +1,43 @@
+.tutorial-spotlight-overlay.spotlight-rect {
+  background: rgba(0,0,0,0.75);
+  /* Spotlight rectangular, ajusta los valores según la posición y tamaño de la noticia */
+  clip-path: inset(200px 900px 200px 200px round 24px);
+  -webkit-clip-path: inset(200px 900px 200px 200px round 24px);
+  transition: clip-path 0.3s, background 0.3s;
+}
+.tutorial-spotlight-overlay.no-dark {
+  background: transparent !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  transition: background 0.3s;
+}
+.tutorial-spotlight-overlay.spotlight-news {
+  background: rgba(0,0,0,0.75);
+  /* Ajusta el rect según la posición y tamaño de la noticia */
+  clip-path: ellipse(340px 180px at 50% 350px); /* Ejemplo: elipse centrada en la noticia */
+  -webkit-clip-path: ellipse(340px 180px at 50% 350px);
+  transition: clip-path 0.3s, background 0.3s;
+}
 .tutorial-tour-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 9999;
   display: flex;
-  background: none;
+  background: rgba(0,0,0,0.55); /* Fondo oscuro semitransparente */
+  transition: background 0.3s;
 }
 
 .tutorial-spotlight-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: transparent;
+  background: rgba(0,0,0,0.55); /* Fondo oscuro por defecto */
   z-index: 9998;
   pointer-events: none;
-  transition: clip-path 0.3s, -webkit-clip-path 0.3s;
+  transition: clip-path 0.3s, -webkit-clip-path 0.3s, background 0.3s;
+  /* El spotlight se puede manipular con clip-path desde JS para mostrar solo el área de interés */
+}
+.tutorial-spotlight-overlay.active {
+  background: rgba(0,0,0,0.75); /* Más oscuro cuando se enfoca un área */
 }
 .tutorial-tour-overlay.center,
 .tutorial-tour-overlay.right {
