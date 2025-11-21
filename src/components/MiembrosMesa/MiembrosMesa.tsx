@@ -345,13 +345,16 @@ const MiembrosMesa: React.FC = () => {
         )}
       </div>
 
-      {/* CTA Section */}
-      <section className="cta-section">
-        <h2>{t('miembrosMesa.cta.titulo')}</h2>
-        <p>{t('miembrosMesa.cta.descripcion')}</p>
-        <button className="cta-button" onClick={() => navigate('/reniec')}>
-          {t('miembrosMesa.cta.boton')}
-        </button>
+      {/* CTA Section (prepared for background image) */}
+      <section className="cta-section cta-hero" aria-label="Consultas Miembros de Mesa">
+        <div className="cta-bg-overlay" aria-hidden="true"></div>
+        <div className="cta-inner">
+          <h2>{t('miembrosMesa.cta.titulo')}</h2>
+          <p>{t('miembrosMesa.cta.descripcion')}</p>
+          <button className="cta-button" onClick={() => navigate('/reniec')}>
+            {t('miembrosMesa.cta.boton')}
+          </button>
+        </div>
       </section>
     </div>
   );
