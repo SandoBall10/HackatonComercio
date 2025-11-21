@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TutorialTour.css';
 import yachayImg from '../../../public/avatar/avatar-Tutorial.png';
