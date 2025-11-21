@@ -1,3 +1,90 @@
+.personero-info-box {
+  /* ...existing styles... */
+  animation: fadeInUpBox 0.9s cubic-bezier(.68,-0.55,.27,1.55);
+  transition: box-shadow 0.35s cubic-bezier(.4,1.5,.5,1), transform 0.35s cubic-bezier(.4,1.5,.5,1);
+}
+.personero-info-box:hover {
+  box-shadow: 0 8px 32px rgba(179,2,39,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  transform: translateY(-6px) scale(1.02);
+}
+@keyframes fadeInUpBox {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  80% {
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Bloque informativo institucional para Personero Electoral */
+.personero-info-box {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  background: #fafbfc;
+  border-radius: 18px;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(44,62,80,0.07);
+  padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+  margin: 2.5rem auto 2.5rem auto;
+  max-width: 1100px;
+  min-width: 340px;
+  width: 100%;
+  color: #23272b;
+  position: relative;
+  animation: fadeInUp 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.personero-info-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.13);
+  border-radius: 16px;
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 2px 12px rgba(179,2,39,0.10);
+}
+.personero-info-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  margin-bottom: 1.1rem;
+  color: #23272b;
+  letter-spacing: -1px;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+.personero-info-desc {
+  font-size: 0.93rem;
+  color: #23272b;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+.personero-info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 800px) {
+  .personero-info-icon {
+    display: none;
+  }
+  }
+  .personero-info-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -64,21 +151,20 @@
   flex: 1 1 350px;
   max-width: 420px;
   border-radius: 14px;
-}
-.recurso-disponible-item {
   display: flex;
   align-items: flex-start;
   background: #fff;
   border: 2px solid #b30227;
-  border-radius: 14px;
   padding: 1.2rem 1.5rem;
   gap: 1.5rem;
   box-shadow: 0 2px 8px rgba(179,2,39,0.04);
-  transition: box-shadow 0.18s, border 0.18s;
+  transition: box-shadow 0.28s cubic-bezier(.4,1.5,.5,1), border 0.18s, transform 0.28s cubic-bezier(.4,1.5,.5,1);
+  animation: fadeInUpBox 0.9s cubic-bezier(.68,-0.55,.27,1.55);
 }
 .recurso-disponible-item:hover {
-  box-shadow: 0 6px 24px rgba(179,2,39,0.13);
-  border: 2px solid #23272b;
+  box-shadow: 0 8px 32px rgba(179,2,39,0.13), 0 2px 8px rgba(0,0,0,0.10);
+  border: 2px solid #b30227;
+  transform: translateY(-6px) scale(1.02);
 }
 .recurso-disponible-num {
   min-width: 2.3rem;
@@ -93,6 +179,11 @@
   justify-content: center;
   margin-top: 0.2rem;
   box-shadow: 0 2px 8px #b3022733;
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s;
+}
+.recurso-disponible-item:hover .recurso-disponible-num {
+  transform: scale(1.15) rotate(-8deg);
+  box-shadow: 0 4px 16px #b3022777;
 }
 .recurso-disponible-body {
   flex: 1;
@@ -268,6 +359,12 @@
   flex-direction: column;
   align-items: flex-start;
   min-height: 100%;
+  animation: fadeInUpBox 0.9s cubic-bezier(.68,-0.55,.27,1.55);
+  transition: box-shadow 0.35s cubic-bezier(.4,1.5,.5,1), transform 0.35s cubic-bezier(.4,1.5,.5,1);
+}
+.derechos-tarjeta:hover, .deberes-tarjeta:hover {
+  box-shadow: 0 8px 32px rgba(179,2,39,0.13), 0 2px 8px rgba(0,0,0,0.10);
+  transform: translateY(-6px) scale(1.02);
 }
 .dd-title {
   font-size: 2rem;
@@ -300,11 +397,15 @@
   justify-content: center;
   margin-top: 0.1rem;
 }
-.dd-icon-check svg {
-  display: block;
-}
+.dd-icon-check svg,
 .dd-icon-doc svg {
   display: block;
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.dd-item:hover .dd-icon-check svg,
+.dd-item:hover .dd-icon-doc svg {
+  transform: scale(1.18) rotate(-8deg);
+  filter: drop-shadow(0 2px 6px #b3022733);
 }
 .dd-text {
   flex: 1;

@@ -262,78 +262,97 @@ const Personeros: React.FC = () => {
           </>
         )}
         {activeTab === 'derechos' && (
-          <div className="derechos-deberes-modern">
-            <div className="derechos-tarjeta">
-              <h2 className="dd-title dd-title-rojo">Derechos de los personeros</h2>
-              <ul className="dd-list">
-                {derechos.map((d, idx) => (
-                  <li key={idx} className="dd-item">
-                    <span className="dd-icon dd-icon-check">
-                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="16" cy="16" r="15" fill="#fff" stroke="#b30227" strokeWidth="2" />
-                        <path d="M10 17l4 4 8-8" stroke="#b30227" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                    <span className="dd-text">{d.texto}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="deberes-tarjeta">
-              <h2 className="dd-title dd-title-rojo">Deberes de los personeros</h2>
-              <ul className="dd-list">
-                {deberes.map((d, idx) => (
-                  <li key={idx} className="dd-item">
-                    <span className="dd-icon dd-icon-doc">
-                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="6" y="4" width="20" height="24" rx="4" fill="#fff" stroke="#b30227" strokeWidth="2" />
-                        <rect x="10" y="10" width="12" height="2.5" rx="1.2" fill="#b30227" />
-                        <rect x="10" y="16" width="12" height="2.5" rx="1.2" fill="#b30227" />
-                        <rect x="10" y="22" width="8" height="2.5" rx="1.2" fill="#b30227" />
-                      </svg>
-                    </span>
-                    <span className="dd-text">{d.texto}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Recursos Disponibles para Personeros */}
-            <div className="recursos-disponibles-box">
-              <h2 className="recursos-disponibles-title">Recursos Disponibles</h2>
-              <div className="recursos-disponibles-list">
-                <div className="recurso-disponible-item">
-                  <div className="recurso-disponible-num">1</div>
-                  <div className="recurso-disponible-body">
-                      <div className="recurso-disponible-titulo">Rol del Personero</div>
-                      <a
-                        href="/documentos/Personero.pdf"
-                        download
-                        className="recurso-disponible-desc recurso-disponible-link"
-                        style={{ textDecoration: 'none', color: 'inherit' }}
-                      >
-                        Guía completa en PDF - Haz clic para descargar
-                      </a>
-                  </div>
-                </div>
-                <div className="recurso-disponible-item">
-                  <div className="recurso-disponible-num">2</div>
-                  <div className="recurso-disponible-body">
-                      <div className="recurso-disponible-titulo">Cartilla del Personero</div>
-                      <a
-                        href="/documentos/cartilla-personero-ve.pdf"
-                        download
-                        className="recurso-disponible-desc recurso-disponible-link"
-                        style={{ textDecoration: 'none', color: 'inherit' }}
-                      >
-                        Guía completa en PDF - Haz clic para descargar
-                      </a>
-                  </div>
-                </div>
+          <>
+            {/* Bloque informativo institucional */}
+            <div className="personero-info-box">
+              <div className="personero-info-icon">
+                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="56" height="56" rx="16" fill="#b30227"/>
+                  <path d="M28 18a6 6 0 1 1 0 12a6 6 0 0 1 0-12zm0 16c-6.075 0-11 3.134-11 7v2a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2v-2c0-3.866-4.925-7-11-7z" fill="#fff"/>
+                </svg>
+              </div>
+              <div className="personero-info-content">
+                <h2 className="personero-info-title">¿Qué es un Personero Electoral?</h2>
+                <p className="personero-info-desc">
+                  Un personero es un ciudadano designado por una organización política para representarla durante el proceso electoral.<br/>
+                  Actúa como observador y garante de la transparencia en las mesas de votación, asegurando que el proceso se lleve a cabo conforme a la ley electoral.
+                </p>
               </div>
             </div>
 
-          </div>
+            <div className="derechos-deberes-modern">
+              <div className="derechos-tarjeta">
+                <h2 className="dd-title dd-title-rojo">Derechos de los personeros</h2>
+                <ul className="dd-list">
+                  {derechos.map((d, idx) => (
+                    <li key={idx} className="dd-item">
+                      <span className="dd-icon dd-icon-check">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="16" cy="16" r="15" fill="#fff" stroke="#b30227" strokeWidth="2" />
+                          <path d="M10 17l4 4 8-8" stroke="#b30227" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                      <span className="dd-text">{d.texto}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="deberes-tarjeta">
+                <h2 className="dd-title dd-title-rojo">Deberes de los personeros</h2>
+                <ul className="dd-list">
+                  {deberes.map((d, idx) => (
+                    <li key={idx} className="dd-item">
+                      <span className="dd-icon dd-icon-doc">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="6" y="4" width="20" height="24" rx="4" fill="#fff" stroke="#b30227" strokeWidth="2" />
+                          <rect x="10" y="10" width="12" height="2.5" rx="1.2" fill="#b30227" />
+                          <rect x="10" y="16" width="12" height="2.5" rx="1.2" fill="#b30227" />
+                          <rect x="10" y="22" width="8" height="2.5" rx="1.2" fill="#b30227" />
+                        </svg>
+                      </span>
+                      <span className="dd-text">{d.texto}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Recursos Disponibles para Personeros */}
+              <div className="recursos-disponibles-box">
+                <h2 className="recursos-disponibles-title">Recursos Disponibles</h2>
+                <div className="recursos-disponibles-list">
+                  <div className="recurso-disponible-item">
+                    <div className="recurso-disponible-num">1</div>
+                    <div className="recurso-disponible-body">
+                        <div className="recurso-disponible-titulo">Rol del Personero</div>
+                        <a
+                          href="/documentos/Personero.pdf"
+                          download
+                          className="recurso-disponible-desc recurso-disponible-link"
+                          style={{ textDecoration: 'none', color: 'inherit' }}
+                        >
+                          Guía completa en PDF - Haz clic para descargar
+                        </a>
+                    </div>
+                  </div>
+                  <div className="recurso-disponible-item">
+                    <div className="recurso-disponible-num">2</div>
+                    <div className="recurso-disponible-body">
+                        <div className="recurso-disponible-titulo">Cartilla del Personero</div>
+                        <a
+                          href="/documentos/cartilla-personero-ve.pdf"
+                          download
+                          className="recurso-disponible-desc recurso-disponible-link"
+                          style={{ textDecoration: 'none', color: 'inherit' }}
+                        >
+                          Guía completa en PDF - Haz clic para descargar
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </>
         )}
         {activeTab === 'capacitacion' && (
           <div className="capacitacion-section">
