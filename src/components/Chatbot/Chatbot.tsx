@@ -95,9 +95,6 @@ const Chatbot: React.FC = () => {
 
     const msg = userMessage.toLowerCase().trim();
 
-    // -------------------
-    // CAMBIO DE IDIOMA
-    // -------------------
     if (msg.includes('español') || msg.includes('castellano') || msg === 'es' || msg.includes('spanish')) {
       return {
         text: '¡Perfecto! He cambiado el idioma a Español 🇵🇪',
@@ -129,10 +126,6 @@ const Chatbot: React.FC = () => {
         options: ['Español 🇵🇪', 'Quechua 🏔️', 'Aimara 🌄']
       };
     }
-
-    // -------------------
-    // NAVEGACIÓN RÁPIDA
-    // -------------------
 
     if (msg.includes('candidato') || msg.includes('ver candidatos')) {
       return {
@@ -169,9 +162,6 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // -------------------
-    // CONSULTA A GEMINI
-    // -------------------
     try {
       setIsTyping(true);
 
@@ -268,13 +258,8 @@ const Chatbot: React.FC = () => {
     setIsOpen(true);
   };
 
-  // ---------------------
-  // INTERFAZ DEL CHATBOT
-  // ---------------------
-  
   return (
     <>
-      {/* NOTIFICACIÓN */}
       {showNotification && !isOpen && (
         <div className="chatbot-notification" onClick={handleNotificationClick}>
           <div className="chatbot-notification-avatar">
@@ -296,7 +281,6 @@ const Chatbot: React.FC = () => {
         </div>
       )}
 
-      {/* BOTÓN FLOTANTE */}
       <button 
         className="chatbot-button"
         onClick={() => setIsOpen(!isOpen)}
@@ -304,7 +288,6 @@ const Chatbot: React.FC = () => {
         <img src={avatarUrl} alt="Yachay" />
       </button>
 
-      {/* VENTANA DEL CHAT */}
       {isOpen && (
         <div className="chatbot-window">
           <div className="chatbot-header">
@@ -316,7 +299,6 @@ const Chatbot: React.FC = () => {
               <p>{t('chatbot.subtitulo')}</p>
             </div>
 
-            {/* BOTÓN DE VOZ */}
             <div className="chatbot-header-voice-toggle">
               <button
                 className={"chatbot-voice-toggle-btn-icon" + (voiceEnabled ? " enabled" : " disabled")}
@@ -334,7 +316,6 @@ const Chatbot: React.FC = () => {
             </button>
           </div>
 
-          {/* MENSAJES */}
           <div className="chatbot-messages">
             {messages.map(message => (
               <div key={message.id} className={`chatbot-message ${message.isUser ? 'user' : ''}`}>
@@ -379,7 +360,6 @@ const Chatbot: React.FC = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* INPUT */}
           <div className="chatbot-input-area">
             <input
               type="text"

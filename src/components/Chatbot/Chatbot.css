@@ -15,7 +15,7 @@
 .chatbot-voice-select:focus {
   border: 1.5px solid #2196f3;
 }
-/* Botón de voz en el header del chat */
+
 .chatbot-header-voice-toggle {
   display: flex;
   align-items: center;

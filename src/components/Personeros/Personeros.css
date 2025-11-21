@@ -1,5 +1,4 @@
 .personero-info-box {
-  /* ...existing styles... */
   animation: fadeInUpBox 0.9s cubic-bezier(.68,-0.55,.27,1.55);
   transition: box-shadow 0.35s cubic-bezier(.4,1.5,.5,1), transform 0.35s cubic-bezier(.4,1.5,.5,1);
 }
@@ -24,7 +23,6 @@
     transform: translateY(0);
   }
 }
-/* Bloque informativo institucional para Personero Electoral */
 .personero-info-box {
   display: flex;
   align-items: center;
@@ -79,11 +77,12 @@
   .personero-info-icon {
     display: none;
   }
-  }
   .personero-info-icon {
     width: 60px;
     height: 60px;
   }
+
+}
 
 @keyframes fadeInUp {
   0% {
@@ -117,7 +116,6 @@
   color: #b30227;
   text-decoration: underline;
 }
-/* Recursos Disponibles Personeros */
 .recursos-disponibles-box {
   background: #fff;
   border-radius: 20px;
@@ -259,7 +257,6 @@
 .recurso-personero-list li {
   margin-bottom: 0.5rem;
 }
-/* Recursos Disponibles Personeros */
 .recursos-personeros-box {
   background: #fff;
   border-radius: 20px;
@@ -338,21 +335,20 @@
 .recurso-personero-link:hover {
   color: #23272b;
 }
-/* Derechos y deberes modernos */
 .derechos-deberes-modern {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 1rem;
   justify-content: center;
   align-items: stretch;
-  margin: 2.5rem 0 2.5rem 0;
+  margin: 1.2rem 0 1.2rem 0;
 }
 .derechos-tarjeta, .deberes-tarjeta {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 18px rgba(44,62,80,0.07), 0 2px 8px rgba(0,0,0,0.06);
-  padding: 2.5rem 2.2rem 2.2rem 2.2rem;
-  min-width: 340px;
+  padding: 1.2rem 1.2rem 1.1rem 1.2rem;
+  margin: 0;
   max-width: 480px;
   flex: 1 1 400px;
   display: flex;
@@ -367,9 +363,9 @@
   transform: translateY(-6px) scale(1.02);
 }
 .dd-title {
-  font-size: 2rem;
+  font-size: 1.45rem;
   font-weight: 800;
-  margin-bottom: 1.7rem;
+  margin-bottom: 1.2rem;
   text-align: left;
 }
 .dd-title-rojo {
@@ -385,8 +381,8 @@
   display: flex;
   align-items: flex-start;
   gap: 1.2rem;
-  margin-bottom: 1.3rem;
-  font-size: 1.13rem;
+  margin-bottom: 1.1rem;
+  font-size: 0.98rem;
   color: #23272b;
 }
 .dd-icon {
@@ -409,10 +405,9 @@
 }
 .dd-text {
   flex: 1;
-  font-size: 1.13rem;
+  font-size: 0.98rem;
   color: #23272b;
 }
-/* FAQ Personeros */
 .faq-personeros-section {
   margin: 3.5rem 0 2.5rem 0;
   width: 100%;
@@ -464,7 +459,6 @@
   color: #444;
   line-height: 1.5;
 }
-/* Recuadro informativo de funciones de personeros */
 .cedula-sufragio-box {
   background: #fff;
   border-radius: 8px;
@@ -631,7 +625,6 @@
   height: 2.8rem;
   display: block;
 }
-/* Dato importante para personeros */
 .dato-importante-personeros {
   background: #fff;
   border-radius: 20px;
@@ -654,7 +647,6 @@
   font-size: 1rem;
   margin: 0;
 }
-/* Centrado y estilo para el título del cronograma */
 .cronograma-title {
   text-align: center;
   width: 100%;
@@ -688,6 +680,11 @@
   width: 100%;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', 'Arial', 'Helvetica Neue', Helvetica, sans-serif !important;
+}
+/* Forzar Montserrat en todos los elementos hijos de personeros-container */
+.personeros-container, .personeros-container * {
+  font-family: 'Montserrat', 'Arial', 'Helvetica Neue', Helvetica, sans-serif !important;
 }
 
 .personeros-main {
@@ -772,7 +769,6 @@
   margin-top: 2.5rem;
 }
 
-/* Centrar el título del cronograma */
 .cronograma-title {
   text-align: center;
   width: 100%;
@@ -1054,35 +1050,42 @@
 .derechos-deberes-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  max-width: 1200px;
-  margin-left: auto;
+  gap: 0.7rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 1.2rem 0 1.2rem 0;
   margin-right: auto;
 }
-
-.derechos-column {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
+.derechos-deberes-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.2rem 2rem 2rem 2rem;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100%;
+  animation: fadeInUpBox 0.9s cubic-bezier(.68,-0.55,.27,1.55);
+  transition: box-shadow 0.35s cubic-bezier(.4,1.5,.5,1), transform 0.35s cubic-bezier(.4,1.5,.5,1);
   border: 1px solid #e8e8e8;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.derechos-section, .deberes-section {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  border: 1px solid #e8e8e8;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.derechos-section h2, .deberes-section h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2c2c2c;
-  margin-bottom: 1rem;
   text-align: center;
+}
+
+.derechos-deberes-modern {
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.derechos-tarjeta, .deberes-tarjeta {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.recurso-personero-item-col {
+  max-width: 100%;
 }
 
 .lista-items {
@@ -1321,11 +1324,11 @@
   color: #fff;
 }
 
-[data-theme="dark"] .capacitacion-link:hover {
-  background: #8a0018;
-}
 
-[data-theme="dark"] .derechos-list li,
-[data-theme="dark"] .deberes-list li {
-  color: #b0b3b8;
+@media (max-width: 900px) {
+  .recursos-videos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .recursos-card, .videos-card { max-width: 100%; }
 }
