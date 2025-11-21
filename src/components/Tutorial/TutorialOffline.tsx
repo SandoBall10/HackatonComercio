@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TutorialOffline.css';
 
 const TutorialOffline: React.FC = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const handleOnline = () => {
+      navigate('/');
+    };
+
+    if (navigator.onLine) {
+      navigate('/');
+    }
+
+    window.addEventListener('online', handleOnline);
+    
+    return () => {
+      window.removeEventListener('online', handleOnline);
+    };
+  }, [navigate]);
+
   return (
     <div className="tutorial-offline-container container mt-4 p-4 shadow-sm rounded">
       

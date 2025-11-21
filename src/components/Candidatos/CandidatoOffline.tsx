@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CandidatoOffline.css';
 import { candidatos } from '../../data/candidatos.js';
 
 const CandidatoOffline: React.FC = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const handleOnline = () => {
+      navigate('/');
+    };
+
+    if (navigator.onLine) {
+      navigate('/');
+    }
+
+    window.addEventListener('online', handleOnline);
+    
+    return () => {
+      window.removeEventListener('online', handleOnline);
+    };
+  }, [navigate]);
+
   return (
     <div className="candidatos-offline-container">
       <h1>Candidatos (Modo Offline)</h1>

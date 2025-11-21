@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PartidoDetalleOffline.css';
 import PARTIDOS from '../../data/partidos';
 
 const PartidoDetalleOffline: React.FC = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const handleOnline = () => {
+      navigate('/');
+    };
+
+    if (navigator.onLine) {
+      navigate('/');
+    }
+
+    window.addEventListener('online', handleOnline);
+    
+    return () => {
+      window.removeEventListener('online', handleOnline);
+    };
+  }, [navigate]);
+
   return (
     <div className="partidos-offline-container">
       <h1 style={{ color: '#b30227', margin: '32px 0 18px' }}>Partidos Políticos (Modo Offline)</h1>
