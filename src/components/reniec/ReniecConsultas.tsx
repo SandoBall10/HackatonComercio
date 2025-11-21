@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getDniData } from '../api/sunat';
 import { getSimulatedVotingData } from '../../simulation/dni_mesa';
+import { generarPDFConsulta } from '../../services/DatosConsulta';
 import {
   pasosVotante,
   pasosMiembroMesa,
@@ -177,6 +178,26 @@ const ReniecConsultas: React.FC = () => {
     );
   };
 
+  const handleDescargarPDF = () => {
+    if (!resultado || !simulado) return;
+
+    generarPDFConsulta({
+      dni: resultado.dni,
+      nombres: resultado.nombres,
+      apellidoPaterno: resultado.apellidoPaterno,
+      apellidoMaterno: resultado.apellidoMaterno,
+      rol: simulado.rol,
+      fecha: simulado.fecha,
+      mesa: simulado.mesa,
+      piso: simulado.piso,
+      salon: simulado.salon,
+      ubicacion: {
+        nombre: simulado.ubicacion.nombre,
+        direccion: simulado.ubicacion.direccion
+      }
+    });
+  };
+
   const FOTO_PERFIL_NEUTRA = 'https://ui-avatars.com/api/?name=Usuario&background=b30227&color=fff&size=200&bold=true';
   const fotoURL = resultado ? FOTO_PERFIL_NEUTRA : '';
 
@@ -323,182 +344,222 @@ const ReniecConsultas: React.FC = () => {
             <h4 className="reniec-info-subtitle">{t('reniec.multaTitulo', '¿Multa por no votar?')}</h4>
             <p className="reniec-multa-text">{t('reniec.multaTexto', 'Entre S/. 23.00 y S/. 92.00 según tu nivel de pobreza')}</p>
           </div>
+
+          {/* Botón de descarga PDF - Movido aquí */}
+          {resultado && simulado && (
+              <button
+                onClick={handleDescargarPDF}
+                style={{
+                  width: '100%',
+                  background: 'linear-gradient(135deg, #ef4444, #dc2626)',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '12px',
+                  padding: '14px 20px',
+                  fontSize: '16px',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '10px',
+                  boxShadow: '0 6px 20px rgba(239, 68, 68, 0.4)',
+                  transition: 'all 0.3s ease',
+                  transform: 'scale(1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(239, 68, 68, 0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(239, 68, 68, 0.4)';
+                }}
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Descargar información en PDF
+              </button>
+          )}
         </div>
       </div>
 
-        {resultado && simulado && (
-          <div className="reniec-results-below-search">
-            <div className="reniec-inline-cards">
-              <div className="reniec-card-inline reniec-dni-inline">
-                <div className="reniec-dni-header-inline">
-                  <IconUser />
-                  <h4>{t('reniec.resultadoTitulo')}</h4>
-                </div>
-                <div className="reniec-foto-section-inline">
-                  <img src={fotoURL} alt="Foto" className="reniec-foto-circular-small" />
-                </div>
-                <div className="reniec-dni-data">
-                  <p><strong>{t('reniec.dni')}:</strong> {resultado.dni}</p>
-                  <p><strong>{t('reniec.nombres')}:</strong> {resultado.nombres}</p>
-                  <p><strong>{t('reniec.apellidoPaterno')}:</strong> {resultado.apellidoPaterno}</p>
-                  <p><strong>{t('reniec.apellidoMaterno')}:</strong> {resultado.apellidoMaterno}</p>
-                </div>
+      {resultado && simulado && (
+        <div className="reniec-results-below-search">
+          <div className="reniec-inline-cards">
+            <div className="reniec-card-inline reniec-dni-inline">
+              <div className="reniec-dni-header-inline">
+                <IconUser />
+                <h4>{t('reniec.resultadoTitulo')}</h4>
               </div>
-
-              <div className="reniec-card-inline">
-                <div className="reniec-dni-header-inline">
-                  <IconUser />
-                  <h4>{t('reniec.rolYFecha')}</h4>
-                </div>
-                <div className="reniec-inline-content">
-                  <div className="reniec-badge-inline">
-                    <IconDoc />
-                    <span className="reniec-rol-badge-small">{t(`reniec.${simulado.rol === 'Miembro de mesa' ? 'miembroMesa' : 'votante'}`)}</span>
-                  </div>
-                  <div className="reniec-fecha-inline">
-                    <IconCalendar />
-                    <div>
-                      <strong>{t('reniec.fechaVotacion')}:</strong>
-                      <div className="reniec-fecha-value">{simulado.fecha}</div>
-                    </div>
-                  </div>
-                </div>
+              <div className="reniec-foto-section-inline">
+                <img src={fotoURL} alt="Foto" className="reniec-foto-circular-small" />
               </div>
+              <div className="reniec-dni-data">
+                <p><strong>{t('reniec.dni')}:</strong> {resultado.dni}</p>
+                <p><strong>{t('reniec.nombres')}:</strong> {resultado.nombres}</p>
+                <p><strong>{t('reniec.apellidoPaterno')}:</strong> {resultado.apellidoPaterno}</p>
+                <p><strong>{t('reniec.apellidoMaterno')}:</strong> {resultado.apellidoMaterno}</p>
+              </div>
+            </div>
 
-              <div className="reniec-card-inline">
-                <div className="reniec-dni-header-inline">
-                  <IconVoteBox />
-                  <h4>{t('reniec.mesaVotacion')}</h4>
+            <div className="reniec-card-inline">
+              <div className="reniec-dni-header-inline">
+                <IconUser />
+                <h4>{t('reniec.rolYFecha')}</h4>
+              </div>
+              <div className="reniec-inline-content">
+                <div className="reniec-badge-inline">
+                  <IconDoc />
+                  <span className="reniec-rol-badge-small">{t(`reniec.${simulado.rol === 'Miembro de mesa' ? 'miembroMesa' : 'votante'}`)}</span>
                 </div>
-                <div className="reniec-mesa-data-inline">
-                  <div className="reniec-mesa-item-inline">
-                    <span>{t('reniec.mesa')}:</span>
-                    <strong>{simulado.mesa}</strong>
-                  </div>
-                  <div className="reniec-mesa-item-inline">
-                    <span>{t('reniec.piso')}:</span>
-                    <strong>{simulado.piso}</strong>
-                  </div>
-                  <div className="reniec-mesa-item-inline">
-                    <span>{t('reniec.salon')}:</span>
-                    <strong>{simulado.salon}</strong>
+                <div className="reniec-fecha-inline">
+                  <IconCalendar />
+                  <div>
+                    <strong>{t('reniec.fechaVotacion')}:</strong>
+                    <div className="reniec-fecha-value">{simulado.fecha}</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="reniec-map-section">
-              <div className="reniec-card-full-width">
-                <div className="reniec-dni-header-inline">
-                  <IconMapPin />
-                  <h4>{t('reniec.localizacion')}</h4>
+            <div className="reniec-card-inline">
+              <div className="reniec-dni-header-inline">
+                <IconVoteBox />
+                <h4>{t('reniec.mesaVotacion')}</h4>
+              </div>
+              <div className="reniec-mesa-data-inline">
+                <div className="reniec-mesa-item-inline">
+                  <span>{t('reniec.mesa')}:</span>
+                  <strong>{simulado.mesa}</strong>
                 </div>
-                <div className="reniec-location-data">
-                  <div className="reniec-location-text">
-                    <div className="reniec-location-item">
-                      <IconVoteBox />
-                      <div>
-                        <strong>{t('reniec.colegio')}:</strong> {simulado.ubicacion.nombre}
-                      </div>
-                    </div>
-                    <div className="reniec-location-item">
-                      <IconMapPin />
-                      <div>
-                        <strong>{t('reniec.direccion')}:</strong> {simulado.ubicacion.direccion}
-                      </div>
-                    </div>
-                    {userLocation && (
-                      <div className="reniec-location-item" style={{ background: 'rgba(34, 197, 94, 0.1)', borderRadius: 8, padding: '0.75rem' }}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2">
-                          <circle cx="12" cy="12" r="10"/>
-                          <path d="M9 12l2 2 4-4"/>
-                        </svg>
-                        <div>
-                          <strong style={{ color: '#22c55e' }}>{t('reniec.ubicacionActivada', 'Ubicación activada')}</strong>
-                          <div style={{ fontSize: '0.9rem', color: '#666' }}>
-                            {t('reniec.calculandoRuta', 'Mostrando ruta desde tu ubicación')}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                  <div className="reniec-map-container-inline">
-                    {!userLocation ? (
-                      <iframe
-                        title="Mapa"
-                        width="100%"
-                        height="300"
-                        style={{ border: 0, borderRadius: '12px' }}
-                        loading="lazy"
-                        allowFullScreen
-                        src={`https://www.openstreetmap.org/export/embed.html?bbox=${simulado.ubicacion.lon - 0.001},${simulado.ubicacion.lat - 0.001},${simulado.ubicacion.lon + 0.001},${simulado.ubicacion.lat + 0.001}&layer=mapnik&marker=${simulado.ubicacion.lat},${simulado.ubicacion.lon}`}
-                      ></iframe>
-                    ) : (
-                      <iframe
-                        title="Mapa con ruta"
-                        width="100%"
-                        height="400"
-                        style={{ border: 0, borderRadius: '12px' }}
-                        loading="lazy"
-                        allowFullScreen
-                        src={`https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${userLocation.lat}%2C${userLocation.lon}%3B${simulado.ubicacion.lat}%2C${simulado.ubicacion.lon}#map=14/${simulado.ubicacion.lat}/${simulado.ubicacion.lon}`}
-                      ></iframe>
-                    )}
-                  </div>
-
-                  <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-                    {!userLocation ? (
-                      <button
-                        onClick={handleActivarAyuda}
-                        style={{
-                          background: 'linear-gradient(135deg, rgb(179, 2, 39), #dc2626)',
-                          color: '#fff',
-                          border: 'none',
-                          borderRadius: 12,
-                          padding: '1rem 2rem',
-                          fontSize: '1.1rem',
-                          fontWeight: 700,
-                          cursor: 'pointer',
-                          boxShadow: '0 4px 12px rgba(179, 2, 39, 0.3)',
-                          transition: 'all 0.3s ease',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '0.5rem'
-                        }}
-                      >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                          <circle cx="12" cy="10" r="3"/>
-                        </svg>
-                        {t('reniec.activarAyuda', 'Activar Ayuda por Geolocalización')}
-                      </button>
-                    ) : (
-                      <a
-                        href={`https://www.google.com/maps/dir/?api=1&origin=${userLocation.lat},${userLocation.lon}&destination=${simulado.ubicacion.lat},${simulado.ubicacion.lon}&travelmode=driving`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          display: 'inline-block',
-                          background: '#22c55e',
-                          color: '#fff',
-                          padding: '0.75rem 1.5rem',
-                          borderRadius: 8,
-                          textDecoration: 'none',
-                          fontWeight: 600,
-                          boxShadow: '0 2px 8px rgba(34, 197, 94, 0.3)',
-                          transition: 'all 0.3s ease'
-                        }}
-                      >
-                        {t('reniec.abrirEnGoogleMaps', 'Abrir en Google Maps')}
-                      </a>
-                    )}
-                    {geoError && <p style={{ color: '#ef4444', marginTop: '0.5rem' }}>{geoError}</p>}
-                  </div>
+                <div className="reniec-mesa-item-inline">
+                  <span>{t('reniec.piso')}:</span>
+                  <strong>{simulado.piso}</strong>
+                </div>
+                <div className="reniec-mesa-item-inline">
+                  <span>{t('reniec.salon')}:</span>
+                  <strong>{simulado.salon}</strong>
                 </div>
               </div>
             </div>
           </div>
-        )}
+
+          <div className="reniec-map-section">
+            <div className="reniec-card-full-width">
+              <div className="reniec-dni-header-inline">
+                <IconMapPin />
+                <h4>{t('reniec.localizacion')}</h4>
+              </div>
+              <div className="reniec-location-data">
+                <div className="reniec-location-text">
+                  <div className="reniec-location-item">
+                    <IconVoteBox />
+                    <div>
+                      <strong>{t('reniec.colegio')}:</strong> {simulado.ubicacion.nombre}
+                    </div>
+                  </div>
+                  <div className="reniec-location-item">
+                    <IconMapPin />
+                    <div>
+                      <strong>{t('reniec.direccion')}:</strong> {simulado.ubicacion.direccion}
+                    </div>
+                  </div>
+                  {userLocation && (
+                    <div className="reniec-location-item" style={{ background: 'rgba(34, 197, 94, 0.1)', borderRadius: 8, padding: '0.75rem' }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9 12l2 2 4-4"/>
+                      </svg>
+                      <div>
+                        <strong style={{ color: '#22c55e' }}>{t('reniec.ubicacionActivada', 'Ubicación activada')}</strong>
+                        <div style={{ fontSize: '0.9rem', color: '#666' }}>
+                          {t('reniec.calculandoRuta', 'Mostrando ruta desde tu ubicación')}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="reniec-map-container-inline">
+                  {!userLocation ? (
+                    <iframe
+                      title="Mapa"
+                      width="100%"
+                      height="300"
+                      style={{ border: 0, borderRadius: '12px' }}
+                      loading="lazy"
+                      allowFullScreen
+                      src={`https://www.openstreetmap.org/export/embed.html?bbox=${simulado.ubicacion.lon - 0.001},${simulado.ubicacion.lat - 0.001},${simulado.ubicacion.lon + 0.001},${simulado.ubicacion.lat + 0.001}&layer=mapnik&marker=${simulado.ubicacion.lat},${simulado.ubicacion.lon}`}
+                    ></iframe>
+                  ) : (
+                    <iframe
+                      title="Mapa con ruta"
+                      width="100%"
+                      height="400"
+                      style={{ border: 0, borderRadius: '12px' }}
+                      loading="lazy"
+                      allowFullScreen
+                      src={`https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${userLocation.lat}%2C${userLocation.lon}%3B${simulado.ubicacion.lat}%2C${simulado.ubicacion.lon}#map=14/${simulado.ubicacion.lat}/${simulado.ubicacion.lon}`}
+                    ></iframe>
+                  )}
+                </div>
+
+                <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+                  {!userLocation ? (
+                    <button
+                      onClick={handleActivarAyuda}
+                      style={{
+                        background: 'linear-gradient(135deg, rgb(179, 2, 39), #dc2626)',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: 12,
+                        padding: '1rem 2rem',
+                        fontSize: '1.1rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        boxShadow: '0 4px 12px rgba(179, 2, 39, 0.3)',
+                        transition: 'all 0.3s ease',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.5rem'
+                      }}
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                      </svg>
+                      {t('reniec.activarAyuda', 'Activar Ayuda por Geolocalización')}
+                    </button>
+                  ) : (
+                    <a
+                      href={`https://www.google.com/maps/dir/?api=1&origin=${userLocation.lat},${userLocation.lon}&destination=${simulado.ubicacion.lat},${simulado.ubicacion.lon}&travelmode=driving`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-block',
+                        background: '#22c55e',
+                        color: '#fff',
+                        padding: '0.75rem 1.5rem',
+                        borderRadius: 8,
+                        textDecoration: 'none',
+                        fontWeight: 600,
+                        boxShadow: '0 2px 8px rgba(34, 197, 94, 0.3)',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      {t('reniec.abrirEnGoogleMaps', 'Abrir en Google Maps')}
+                    </a>
+                  )}
+                  {geoError && <p style={{ color: '#ef4444', marginTop: '0.5rem' }}>{geoError}</p>}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {false && resultado && simulado && (
         <div className="reniec-results-grid reniec-results-grid-custom" style={{ display: 'none' }}>

@@ -22,3 +22,23 @@
 .tutorial-offline-aviso {
   font-size: 0.95rem;
 }
+
+.btn-volver {
+  margin-top: 32px;
+  background: #b30227;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-volver:hover {
+  background: #8a0220;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(179,2,39,0.3);
+}

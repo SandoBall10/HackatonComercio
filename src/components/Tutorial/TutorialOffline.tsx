@@ -46,6 +46,13 @@ const TutorialOffline: React.FC = () => {
       <div className="tutorial-offline-aviso alert alert-warning mt-4 text-center">
         Estás viendo una versión limitada. Conéctate a internet para acceder a información completa y actualizada.
       </div>
+
+      <button 
+        className="btn-volver"
+        onClick={() => navigate('/inicio-offline')}
+      >
+        ← Volver al inicio offline
+      </button>
     </div>
   );
 };

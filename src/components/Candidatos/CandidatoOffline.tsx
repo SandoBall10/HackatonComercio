@@ -42,6 +42,13 @@ const CandidatoOffline: React.FC = () => {
           </div>
         ))}
       </div>
+
+      <button 
+        className="btn-volver"
+        onClick={() => navigate('/inicio-offline')}
+      >
+        ← Volver al inicio offline
+      </button>
     </div>
   );
 };
