@@ -18,14 +18,17 @@ import Chatbot from './components/Chatbot/Chatbot';
 import TutorialTour from './components/ToursTutorial/TutorialTour';
 import { getCandidatoById } from './data/candidatos.js';
 import Personeros from './components/Personeros/Personeros';
+import PersonerosOffline from './components/Personeros/PersonerosOffline';
 
 const App = () => {
   const candidatoEjemplo = getCandidatoById('fuerza-popular');
   const offlineRoutes = [
     '/offline',
+    '/inicio-offline',
     '/candidatos-offline',
     '/partidos-offline',
-    '/tutorial-offline'
+    '/tutorial-offline',
+    '/personeros-offline'
   ];
   const isNoConnectionAlert = (() => {
     const main = document.querySelector('.inicio-container');
@@ -49,9 +52,11 @@ const App = () => {
         <Route path="/reniec" element={<ReniecConsultas />} />
         <Route path="/miembros-mesa" element={<MiembrosMesa />} />
         <Route path="/personeros" element={<Personeros />} />
+        <Route path="/personeros-offline" element={<PersonerosOffline />} />
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/tutorial-offline" element={<TutorialOffline />} />
         <Route path="/offline" element={<InicioOffline />} />
+        <Route path="/inicio-offline" element={<InicioOffline />} />
       </Routes>
 
       {!isOfflineRoute && <>

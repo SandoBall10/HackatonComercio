@@ -71,19 +71,16 @@ export const Header: React.FC = () => {
 
       <header className="header">
         <nav className="navbar">
-          {/* Desktop Language Selector - Left side */}
           <div className="desktop-language-selector">
             <LanguageSelector />
           </div>
 
-          {/* Hamburger button - only visible on mobile */}
           <button className="hamburger-btn" onClick={() => setMenuOpen(!menuOpen)}>
             <span></span>
             <span></span>
             <span></span>
           </button>
 
-          {/* Mobile menu modal */}
           {menuOpen && (
             <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}>
               <div className="mobile-menu-modal" onClick={(e) => e.stopPropagation()}>
@@ -132,7 +129,6 @@ export const Header: React.FC = () => {
                       {t('nav.personeros')}
                     </a>
                 </div>
-                {/* Mobile Selectors */}
                 <div className="mobile-selectors">
                   <div className="mobile-selector-item">
                     <LanguageSelector />
@@ -145,7 +141,6 @@ export const Header: React.FC = () => {
             </div>
           )}
 
-          {/* Desktop nav links */}
           <div className="nav-links-container">
               <a href="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigate('/'); }}>{t('nav.inicio')}</a>
               <a href="/partidos" className={`nav-link ${location.pathname === '/partidos' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigate('/partidos'); }}>{t('nav.partidos')}</a>
@@ -155,7 +150,6 @@ export const Header: React.FC = () => {
                 <a href="/tutorial" className={`nav-link ${location.pathname === '/tutorial' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigate('/tutorial'); }}>{t('nav.tutorial')}</a>
           </div>
           
-          {/* Desktop Theme Selector */}
           <div className="desktop-theme-selector">
             <ThemeSelector />
           </div>
