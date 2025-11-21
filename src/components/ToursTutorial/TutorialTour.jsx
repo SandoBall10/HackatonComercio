@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './TutorialTour.css';
 import yachayImg from '../../../public/avatar/avatar-Tutorial.png';
 
-// Define los pasos y la ruta a navegar (si aplica)
 const steps = [
   {
     title: 'Bienvenido a la Plataforma',
@@ -62,10 +61,9 @@ const TutorialTour = () => {
   const handleNext = () => {
     if (step < steps.length - 1) {
       const nextStep = step + 1;
-      // Navegar si la ruta cambia
       if (steps[nextStep].route && window.location.pathname !== steps[nextStep].route) {
         navigate(steps[nextStep].route);
-        setTimeout(() => setStep(nextStep), 350); // Espera a que cargue la página
+        setTimeout(() => setStep(nextStep), 350); 
       } else {
         setStep(nextStep);
       }
@@ -83,7 +81,6 @@ const TutorialTour = () => {
     }
   };
   const handleClose = () => {
-    // Quitar cualquier highlight al cerrar
     document.querySelectorAll('.tutorial-highlight-persistent').forEach(el => {
       el.classList.remove('tutorial-highlight-persistent');
     });
@@ -94,18 +91,15 @@ const TutorialTour = () => {
   const [spotlight, setSpotlight] = useState(null);
   const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
 
-  // Actualiza tamaño de ventana para recalcular spotlight
   useEffect(() => {
     const onResize = () => setWindowSize({ width: window.innerWidth, height: window.innerHeight });
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  // Calcula el área del spotlight según el selector
   useEffect(() => {
     let rafId;
     if (!selector) {
-      // Defer clearing spotlight to avoid synchronous setState in the effect
       rafId = requestAnimationFrame(() => setSpotlight(null));
       return () => {
         if (rafId) cancelAnimationFrame(rafId);
@@ -114,7 +108,6 @@ const TutorialTour = () => {
     const el = document.querySelector(selector);
     if (el) {
       const rect = el.getBoundingClientRect();
-      // Defer setting spotlight to the next animation frame to avoid cascading renders
       rafId = requestAnimationFrame(() => {
         setSpotlight({
           top: rect.top + window.scrollY,
@@ -133,17 +126,14 @@ const TutorialTour = () => {
 
   useEffect(() => {
     if (step === -1) return;
-    // Quitar highlight anterior
     document.querySelectorAll('.tutorial-highlight-persistent').forEach(el => {
       el.classList.remove('tutorial-highlight-persistent');
     });
-    // Agregar highlight al actual
     const target = document.querySelector(selector);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'center' });
       target.classList.add('tutorial-highlight-persistent');
     }
-    // Limpiar highlight al desmontar
     return () => {
       if (target) target.classList.remove('tutorial-highlight-persistent');
     };
@@ -151,10 +141,9 @@ const TutorialTour = () => {
 
   if (step === -1) return null;
 
-  // Spotlight CSS
   let spotlightStyle = {};
   if (spotlight) {
-    const pad = 8; // padding extra para el área visible
+    const pad = 8; 
     const t = spotlight.top - pad;
     const l = spotlight.left - pad;
     const w = spotlight.width + pad * 2;
