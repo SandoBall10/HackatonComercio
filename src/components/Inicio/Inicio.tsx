@@ -606,40 +606,6 @@ export const Inicio: React.FC = () => {
           </div>
 
           <div className="timeline-content-wrapper">
-            <div className="timeline-area-left">
-              <div className="timeline-area">
-                <div className="timeline-line-vertical"></div>
-                <div className="entries">
-                  {filteredEvents.length === 0 && <div className="no-events">{t('inicio.noEventos')}</div>}
-
-                  {filteredEvents.map((ev, idx) => (
-                    <div 
-                      key={idx} 
-                      className={`entry-wrapper ${idx % 2 === 0 ? 'left' : 'right'}`}
-                      onClick={(e) => {
-                        setSelectedEvent(ev);
-                        setSelectedEventElement(e.currentTarget as HTMLElement);
-                      }}
-                    >
-                      <div className="timeline-marker"></div>
-                      <div className="entry" style={{ cursor: 'pointer' }}>
-                        {ev.icon && <img src={`src/assets/img/${ev.icon}`} alt="icon" className="entry-icon" />}
-                        <p className="title">{ev.date}</p>
-                        <p className="description">{ev.title}</p>
-                        {ev.bullets && (
-                          <div className="bullets">
-                            {ev.bullets.map((b, i) => (
-                              <p key={i}>■ {b}</p>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
             <div className="timeline-area-right">
               <div className="timeline-sidebar">
                 <div className="tabs-link">
@@ -672,6 +638,40 @@ export const Inicio: React.FC = () => {
                     >
                       {t(`inicio.meses.${m}`)}
                     </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-area-left">
+              <div className="timeline-area">
+                <div className="timeline-line-vertical"></div>
+                <div className="entries">
+                  {filteredEvents.length === 0 && <div className="no-events">{t('inicio.noEventos')}</div>}
+
+                  {filteredEvents.map((ev, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`entry-wrapper ${idx % 2 === 0 ? 'left' : 'right'}`}
+                      onClick={(e) => {
+                        setSelectedEvent(ev);
+                        setSelectedEventElement(e.currentTarget as HTMLElement);
+                      }}
+                    >
+                      <div className="timeline-marker"></div>
+                      <div className="entry" style={{ cursor: 'pointer' }}>
+                        {ev.icon && <img src={`src/assets/img/${ev.icon}`} alt="icon" className="entry-icon" />}
+                        <p className="title">{ev.date}</p>
+                        <p className="description">{ev.title}</p>
+                        {ev.bullets && (
+                          <div className="bullets">
+                            {ev.bullets.map((b, i) => (
+                              <p key={i}>■ {b}</p>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
