@@ -1324,6 +1324,266 @@
   color: #fff;
 }
 
+/* =============== ESTILOS SECCIÓN CAPACITACIÓN - RECURSOS Y TUTORIALES =============== */
+
+.capacitacion-section {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.capacitacion-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.capacitacion-section p {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+.recursos-videos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+}
+
+.recursos-column, .videos-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recursos-titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #b30227;
+}
+
+.recursos-card, .videos-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border: 1px solid #e0e0e0;
+}
+
+.recurso-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  border-left: 3px solid #b30227;
+  transition: all 0.3s ease;
+}
+
+.recurso-item:hover {
+  background: #fafbfc;
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.1);
+}
+
+.recurso-num {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  background: #b30227;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+.recurso-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.recurso-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.recurso-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.recurso-action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recurso-btn {
+  padding: 0.5rem 1rem;
+  background: #b30227;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.recurso-btn:hover {
+  background: #8B0000;
+  transform: translateY(-2px);
+}
+
+.recurso-btn.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.tutorial-item-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  border-left: 3px solid #b30227;
+  transition: all 0.3s ease;
+}
+
+.tutorial-item-compact:hover {
+  background: #fafbfc;
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.1);
+}
+
+.tutorial-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.tutorial-text strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.tutorial-sub {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.tutorial-btn {
+  padding: 0.5rem 1rem;
+  background: #b30227;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.tutorial-btn:hover {
+  background: #8B0000;
+  transform: translateY(-2px);
+}
+
+.capacitacion-link {
+  padding: 0.8rem 1.8rem;
+  background: #b30227;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.capacitacion-link:hover {
+  background: #8B0000;
+  transform: translateY(-2px);
+}
+
+/* Dark Mode - Capacitación */
+[data-theme="dark"] .capacitacion-section {
+  background: #141414;
+  border: 1px solid #1F1F1F;
+}
+
+[data-theme="dark"] .capacitacion-section h2 {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .capacitacion-section p {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .recursos-titulo {
+  color: #e4e6eb;
+  border-bottom-color: #b30227;
+}
+
+[data-theme="dark"] .recursos-card, [data-theme="dark"] .videos-card {
+  background: #1F1F1F;
+  border-color: #2A2A2A;
+}
+
+[data-theme="dark"] .recurso-item, [data-theme="dark"] .tutorial-item-compact {
+  background: #242526;
+  border-left-color: #b30227;
+}
+
+[data-theme="dark"] .recurso-item:hover, [data-theme="dark"] .tutorial-item-compact:hover {
+  background: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(179, 2, 39, 0.3);
+}
+
+[data-theme="dark"] .recurso-titulo, [data-theme="dark"] .tutorial-text strong {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .recurso-desc, [data-theme="dark"] .tutorial-sub {
+  color: #b0b3b8;
+}
 
 @media (max-width: 900px) {
   .recursos-videos-grid {
