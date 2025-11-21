@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Inicio.css';
-import InicioOffline from './InicioOffline';
 
 type EventItem = { date: string; title: string; bullets?: string[]; icon?: string; category?: 'electoral' | 'plan' | 'mesa' | 'administrativo'; description?: string; image?: string };
 type NewsItem = { id: number; image: string; title: string; category: string; url: string; alt: string };
@@ -52,12 +51,11 @@ const getEventDescription = (title: string, date: string, category: string): str
 
 const getEventImage = (title: string, category: string): string => {
   const images = [
-    'public/Imagenes-Pagina/Fondo-Inicio.png', // Imagen 1: Votación
-    'public/Imagenes-Pagina/Imagen-Modal2.png', // Imagen 2: Candidatos
-    'public/Imagenes-Pagina/Imagen-Modal3.png', // Imagen 3: Día de elecciones
+    'public/Imagenes-Pagina/Fondo-Inicio.png',
+    'public/Imagenes-Pagina/Imagen-Modal2.png',
+    'public/Imagenes-Pagina/Imagen-Modal3.png',
   ];
   
-  // Usar hash del título para consistencia
   let hash = 0;
   for (let i = 0; i < title.length; i++) {
     const char = title.charCodeAt(i);
