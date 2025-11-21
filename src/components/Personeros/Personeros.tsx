@@ -78,26 +78,31 @@ const Personeros: React.FC = () => {
 
   return (
     <div className="personeros-container">
-      <section className="hero-personeros">
+      <section className="hero-miembros">
         <div className="hero-content">
-          <h1 className="personeros-hero-title">{t('personeros.titulo')}</h1>
-          <p className="personeros-hero-subtitle">{t('personeros.subtitulo')}</p>
+          <h1 className="hero-title">{t('personeros.titulo') || 'Personeros electorales'}</h1>
+          <p className="hero-subtitle">{t('personeros.subtitulo') || 'Información esencial para personeros en el proceso electoral.'}</p>
         </div>
       </section>
 
-      <div className="personeros-tabs-navigation">
-        <button className={`personeros-tab-btn ${activeTab === 'cronograma' ? 'active' : ''}`} onClick={() => setActiveTab('cronograma')}>
-          {t('personeros.tabs.cronograma')}
-        </button>
-        <button className={`personeros-tab-btn ${activeTab === 'instrucciones' ? 'active' : ''}`} onClick={() => setActiveTab('instrucciones')}>
-          {t('personeros.tabs.instrucciones')}
-        </button>
-        <button className={`personeros-tab-btn ${activeTab === 'derechos' ? 'active' : ''}`} onClick={() => setActiveTab('derechos')}>
-          {t('personeros.tabs.derechos')}
-        </button>
-        <button className={`personeros-tab-btn ${activeTab === 'capacitacion' ? 'active' : ''}`} onClick={() => setActiveTab('capacitacion')}>
-          {t('personeros.tabs.capacitacion')}
-        </button>
+      <div className="tabs-navigation">
+        <div className="tabs-wrapper">
+          <button className={`tab-btn ${activeTab === 'cronograma' ? 'active' : ''}`} onClick={() => setActiveTab('cronograma')}>
+            {t('personeros.tabs.cronograma') || 'Cronograma del Día'}
+          </button>
+
+          <button className={`tab-btn ${activeTab === 'instrucciones' ? 'active' : ''}`} onClick={() => setActiveTab('instrucciones')}>
+            {t('personeros.tabs.instrucciones') || 'Instrucciones'}
+          </button>
+
+          <button className={`tab-btn ${activeTab === 'derechos' ? 'active' : ''}`} onClick={() => setActiveTab('derechos')}>
+            {t('personeros.tabs.derechos') || 'Derechos y Deberes'}
+          </button>
+
+          <button className={`tab-btn ${activeTab === 'capacitacion' ? 'active' : ''}`} onClick={() => setActiveTab('capacitacion')}>
+            {t('personeros.tabs.capacitacion') || 'Capacitación'}
+          </button>
+        </div>
       </div>
 
       <div className="personeros-tab-content">
@@ -172,48 +177,51 @@ const Personeros: React.FC = () => {
               {t('personeros.capacitacion.enlace')}
             </a>
 
-            <div className="personeros-recursos" style={{ marginTop: 20 }}>
-              <h3 className="recursos-titulo">Recursos Disponibles</h3>
-              <div className="recursos-card">
-                {recursos.map((r, i) => (
-                  <div key={r.id} className="recurso-item">
-                    <div className="recurso-num">{i + 1}</div>
-                    <div className="recurso-body">
-                      <div className="recurso-titulo">{r.titulo}</div>
-                      <div className="recurso-desc">{r.descripcion}</div>
+            {/* --- nueva estructura: dos columnas iguales --- */}
+            <div className="recursos-videos-grid" style={{ marginTop: 24 }}>
+              <div className="recursos-column">
+                <h3 className="recursos-titulo">Recursos</h3>
+                <div className="recursos-card">
+                  {recursos.map((r, i) => (
+                    <div key={r.id} className="recurso-item">
+                      <div className="recurso-num">{i + 1}</div>
+                      <div className="recurso-body">
+                        <div className="recurso-titulo">{r.titulo}</div>
+                        <div className="recurso-desc">{r.descripcion}</div>
+                      </div>
+                      <div className="recurso-action">
+                        {r.url ? (
+                          <a
+                            href={r.url.startsWith('http') ? r.url : `${window.location.origin}${r.url}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            download
+                            className="recurso-btn"
+                          >
+                            Descargar
+                          </a>
+                        ) : (
+                          <button className="recurso-btn disabled" disabled>NO DISPONIBLE</button>
+                        )}
+                      </div>
                     </div>
-                    <div className="recurso-action">
-                      {r.url ? (
-                        <a
-                          href={r.url.startsWith('http') ? r.url : `${window.location.origin}${r.url}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          download
-                          className="recurso-btn"
-                        >
-                          Descargar
-                        </a>
-                      ) : (
-                        <button className="recurso-btn disabled" disabled>NO DISPONIBLE</button>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
-              <h3 style={{ margin: '18px 0 12px' }}>Tutoriales</h3>
-              <div className="tutoriales-list" style={{ display: 'grid', gap: 10 }}>
-                {tutoriales.map(v => (
-                  <div key={v.id} className="item-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 12, borderRadius: 10 }}>
-                    <div>
-                      <strong>{v.titulo}</strong>
-                      <div style={{ fontSize: 13, color: '#666' }}>Video tutorial</div>
+              <div className="videos-column">
+                <h3 className="recursos-titulo">Tutoriales</h3>
+                <div className="videos-card">
+                  {tutoriales.map(v => (
+                    <div key={v.id} className="tutorial-item-compact">
+                      <div className="tutorial-text">
+                        <strong>{v.titulo}</strong>
+                        <div className="tutorial-sub">Video tutorial</div>
+                      </div>
+                      <a href={v.url} target="_blank" rel="noopener noreferrer" className="tutorial-btn">Ver</a>
                     </div>
-                    <a href={v.url} target="_blank" rel="noopener noreferrer" className="download-btn" style={{ background: '#2563eb', color: '#fff', padding: '8px 12px', borderRadius: 8, textDecoration: 'none', fontWeight: 700 }}>
-                      Ver
-                    </a>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
