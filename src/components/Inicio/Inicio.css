@@ -1197,11 +1197,11 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .inicio-container {
-  background: #18191a;
+  background: #0D0D0D;
 }
 
 [data-theme="dark"] .timeline-wrapper {
-  background: #18191a;
+  background: #0D0D0D;
 }
 
 [data-theme="dark"] .timeline-title {
@@ -1216,13 +1216,14 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .tab-link {
-  background: #242526;
+  background: #141414;
   color: #b0b3b8;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 
 [data-theme="dark"] .tab-link:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  background: #1F1F1F;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
 }
 
 [data-theme="dark"] .tab-link.active {
@@ -1241,14 +1242,14 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .filter-menu {
-  background: #242526;
-  border: 2px solid #3a3b3c;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  background: #141414;
+  border: 2px solid #1F1F1F;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
 }
 
 [data-theme="dark"] .filter-menu-header {
-  background: #3a3b3c;
-  border-bottom: 2px solid #4e4f50;
+  background: #1F1F1F;
+  border-bottom: 2px solid #2A2A2A;
 }
 
 [data-theme="dark"] .filter-menu-title {
@@ -1264,12 +1265,12 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .filter-option {
-  background: #242526;
+  background: #141414;
   color: #b0b3b8;
 }
 
 [data-theme="dark"] .filter-option:hover {
-  background: #3a3b3c;
+  background: #1F1F1F;
   color: #5ba3d8;
   border-left-color: #5ba3d8;
 }
@@ -1281,10 +1282,10 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .month-btn {
-  background: #242526;
-  border: 3px solid #3a3b3c;
+  background: #141414;
+  border: 3px solid #1F1F1F;
   color: #b0b3b8;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 [data-theme="dark"] .month-btn:hover {
@@ -1301,19 +1302,19 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .timeline-area {
-  background: #242526;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  background: #141414;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
 }
 
 [data-theme="dark"] .no-events {
-  background: #242526;
+  background: #141414;
   color: #8a8d91;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
 }
 
 [data-theme="dark"] .top-header {
-  background: #242526;
-  border-bottom: 1px solid #3a3b3c;
+  background: #141414;
+  border-bottom: 1px solid #1F1F1F;
 }
 
 [data-theme="dark"] .election-info h2 {
@@ -1329,7 +1330,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .countdown-item {
-  background: #3a3b3c;
+  background: #1F1F1F;
   border: 2px solid #0a66b3;
 }
 
@@ -1342,7 +1343,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .subtabs {
-  border-bottom: 1px solid #3a3b3c;
+  border-bottom: 1px solid #1F1F1F;
 }
 
 [data-theme="dark"] .subtab-btn {
@@ -1354,12 +1355,12 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .entry {
-  background: #242526;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  background: #141414;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
 }
 
 [data-theme="dark"] .entry:hover {
-  box-shadow: 0 20px 50px rgba(10, 102, 179, 0.4);
+  box-shadow: 0 20px 50px rgba(10, 102, 179, 0.5);
 }
 
 [data-theme="dark"] .entry::before {
@@ -1367,22 +1368,22 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .month-btn {
-  background: #242526;
+  background: #141414;
   color: #e4e6eb;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 [data-theme="dark"] .month-btn:hover {
   color: #fff;
   background: rgba(179, 2, 39, 0.85);
-  box-shadow: 0 8px 20px rgba(179, 2, 39, 0.4);
+  box-shadow: 0 8px 20px rgba(179, 2, 39, 0.5);
   transform: translateY(-3px);
 }
 
 [data-theme="dark"] .month-btn.active {
   background: rgb(179, 2, 39);
   color: #fff;
-  box-shadow: 0 8px 22px rgba(179, 2, 39, 0.5);
+  box-shadow: 0 8px 22px rgba(179, 2, 39, 0.6);
   transform: translateY(-3px) scale(1.02);
 }
 
@@ -1392,12 +1393,12 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 
 [data-theme="dark"] .description {
   color: #b0b3b8;
-  background: linear-gradient(to bottom, rgba(36, 37, 38, 0) 0%, rgba(36, 37, 38, 1) 100%);
+  background: linear-gradient(to bottom, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 1) 100%);
 }
 
 [data-theme="dark"] .bullets {
-  background: #242526;
-  border-top: 2px dashed #3a3b3c;
+  background: #141414;
+  border-top: 2px dashed #1F1F1F;
 }
 
 [data-theme="dark"] .bullets p {
@@ -1409,7 +1410,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .news-cards-section {
-  background: #18191a;
+  background: #0D0D0D;
 }
 
 [data-theme="dark"] .news-cards-title {
@@ -1417,16 +1418,16 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .news-card {
-  background: #242526;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  background: #141414;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
 }
 
 [data-theme="dark"] .news-card:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9);
 }
 
 [data-theme="dark"] .news-card-image {
-  background: #3a3b3c;
+  background: #1F1F1F;
 }
 
 [data-theme="dark"] .news-card-category {
@@ -1434,7 +1435,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .news-card-content {
-  background: #242526;
+  background: #141414;
 }
 
 [data-theme="dark"] .news-card-title {
@@ -1442,18 +1443,18 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .carousel-section {
-  background: #18191a;
+  background: #0D0D0D;
 }
 
 [data-theme="dark"] .carousel-inner-wrapper {
-  background: #242526;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  background: #141414;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
 }
 
 [data-theme="dark"] .chatbot-notification {
-  background: #242526;
+  background: #141414;
   border-left: 4px solid #dc2626;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
 
 [data-theme="dark"] .chatbot-notification-title {
@@ -1469,23 +1470,23 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .chatbot-notification-close:hover {
-  background: #3a3b3c;
+  background: #1F1F1F;
   color: #e4e6eb;
 }
 
 [data-theme="dark"] .chatbot-window {
-  background: #242526;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  background: #141414;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
 }
 
 [data-theme="dark"] .chatbot-messages {
-  background: #18191a;
+  background: #0D0D0D;
 }
 
 [data-theme="dark"] .chatbot-message-bubble {
-  background: #3a3b3c;
+  background: #1F1F1F;
   color: #e4e6eb;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="dark"] .chatbot-message.user .chatbot-message-bubble {
@@ -1494,7 +1495,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .chatbot-quick-option {
-  background: #3a3b3c;
+  background: #1F1F1F;
   border: 2px solid #dc2626;
   color: #e4e6eb;
 }
@@ -1505,13 +1506,13 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .chatbot-input-area {
-  background: #242526;
-  border-top: 1px solid #3a3b3c;
+  background: #141414;
+  border-top: 1px solid #1F1F1F;
 }
 
 [data-theme="dark"] .chatbot-input {
-  background: #3a3b3c;
-  border: 1px solid #3a3b3c;
+  background: #1F1F1F;
+  border: 1px solid #1F1F1F;
   color: #e4e6eb;
 }
 
@@ -1524,9 +1525,9 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .tab-link {
-  background: #242526;
+  background: #141414;
   color: #e4e6eb;
-  border-color: #3a3b3c;
+  border-color: #1F1F1F;
 }
 
 [data-theme="dark"] .tab-link:hover {
@@ -1538,12 +1539,12 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
   background: rgb(179, 2, 39);
   color: white;
   border-color: rgb(179, 2, 39);
-  box-shadow: 0 6px 20px rgba(179, 2, 39, 0.4);
+  box-shadow: 0 6px 20px rgba(179, 2, 39, 0.5);
 }
 
 [data-theme="dark"] .timeline-sidebar {
-  background: #242526;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: #141414;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
 }
 
 /* Event Modal Styles */
@@ -1806,7 +1807,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 
 /* Dark Mode Modal */
 [data-theme="dark"] .event-modal {
-  background: #242526;
+  background: #141414;
 }
 
 [data-theme="dark"] .event-modal-close {
@@ -1827,7 +1828,7 @@ html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 [data-theme="dark"] .event-modal-info {
-  background: #3a3b3c;
+  background: #1F1F1F;
 }
 
 [data-theme="dark"] .event-modal-info p {

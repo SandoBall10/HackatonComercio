@@ -404,3 +404,172 @@
     gap: 1.5rem;
   }
 }
+
+/* Dark Mode Styles */
+[data-theme="dark"] .personeros-container {
+  background: #0D0D0D;
+}
+
+[data-theme="dark"] .hero-personeros {
+  background: #141414;
+  color: #e4e6eb;
+  border-top: 4px solid #b80022;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .personeros-hero-title {
+  color: #e4e6eb;
+  border-bottom: 2px solid #b80022;
+}
+
+[data-theme="dark"] .personeros-hero-subtitle {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .personeros-tabs-navigation {
+  background: transparent;
+}
+
+[data-theme="dark"] .personeros-tab-btn {
+  background: #141414;
+  color: #b0b3b8;
+  border-bottom: 3px solid transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .personeros-tab-btn.active,
+[data-theme="dark"] .personeros-tab-btn:hover {
+  background: #141414;
+  color: #b80022;
+  border-bottom: 3px solid #b80022;
+}
+
+[data-theme="dark"] .personeros-section-title {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .personeros-section-description {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .instruccion-card {
+  background: #141414;
+  border: 1px solid #1F1F1F;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .instruccion-header h3 {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .instruccion-header p {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .instruccion-lista {
+  background: #1F1F1F;
+}
+
+[data-theme="dark"] .instruccion-lista li {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .cronograma-item {
+  background: #141414;
+  border: 1px solid #1F1F1F;
+  border-left: 3px solid #b80022;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .cronograma-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9);
+  border-left-width: 4px;
+}
+
+[data-theme="dark"] .cronograma-icono {
+  color: #b80022;
+}
+
+[data-theme="dark"] .derechos-column,
+[data-theme="dark"] .derechos-section,
+[data-theme="dark"] .deberes-section {
+  background: #141414;
+  border: 1px solid #1F1F1F;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .derechos-section h2,
+[data-theme="dark"] .deberes-section h2 {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .lista-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+[data-theme="dark"] .item-card {
+  background: #141414;
+  border: 1px solid #1F1F1F;
+  border-left: 3px solid #b80022;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .item-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .item-card p {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .item-icono {
+  background: #b80022;
+  box-shadow: 0 2px 6px rgba(184, 0, 34, 0.4);
+}
+
+[data-theme="dark"] .instrucciones-section h2,
+[data-theme="dark"] .derechos-section h2,
+[data-theme="dark"] .capacitacion-section h2,
+[data-theme="dark"] .cronograma-section h2 {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .instrucciones-section,
+[data-theme="dark"] .capacitacion-section {
+  background: #0D0D0D;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cronograma-hora,
+[data-theme="dark"] .cronograma-actividad {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .instruccion-header h3 {
+  color: #e4e6eb;
+}
+
+[data-theme="dark"] .instruccion-header p {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .instruccion-lista li {
+  color: #b0b3b8;
+}
+
+[data-theme="dark"] .capacitacion-link {
+  background: #b80022;
+  color: #fff;
+}
+
+[data-theme="dark"] .capacitacion-link:hover {
+  background: #8a0018;
+}
+
+[data-theme="dark"] .derechos-list li,
+[data-theme="dark"] .deberes-list li {
+  color: #b0b3b8;
+}
