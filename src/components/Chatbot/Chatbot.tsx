@@ -308,41 +308,21 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // Default: Gemini o fallback
-    try {
-      setIsTyping(true);
-      const respuestaGemini = await consultarElectoralGemini(userMessage);
-      return {
-        text: respuestaGemini +
-          (i18n.language === 'es'
-            ? ' ¿Te gustaría saber algo más?'
-            : i18n.language === 'qu'
-            ? ' Huk tapukuyta munankichu?'
-            : ' Yaqha jisktʼañ munta?'),
-        options: [
-          i18n.language === 'es' ? 'Quiero ver candidatos' : i18n.language === 'qu' ? 'Akllasqakunata rikusha munani' : 'Ajllitanakaru uñjañ munta',
-          i18n.language === 'es' ? 'Muéstrame los partidos' : i18n.language === 'qu' ? 'Partidokunata qhawachiy' : 'Partidunakaru uñachtʼayita',
-          i18n.language === 'es' ? '¿Dónde consulto mi RENIEC?' : i18n.language === 'qu' ? 'RENIECpi maypitaq tapukuni?' : 'RENIEC jisktʼañataki kawkinkiti?',
-          i18n.language === 'es' ? '¿Me enseñas la página?' : i18n.language === 'qu' ? '¿Yachachiwanki plataformata?' : '¿Yatichäwimawa uka página?',
-        ]
-      };
-    } catch (error) {
-      console.error('Error consultando Gemini:', error);
-      return {
-        text:
-          i18n.language === 'es'
-            ? '❌ Uy, algo salió mal. ¿Quieres intentarlo de nuevo o preguntarme otra cosa?'
-            : i18n.language === 'qu'
-            ? '❌ Mana atikurqani. ¿Huk kutita yachayta munankichu?'
-            : '❌ Janiwa atipkiti. Mayampi jisktʼañ munta?',
-        options: [
-          i18n.language === 'es' ? '¿Me enseñas la página?' : i18n.language === 'qu' ? '¿Yachachiwanki plataformata?' : '¿Yatichäwimawa uka página?',
-          i18n.language === 'es' ? 'Muéstrame los partidos' : i18n.language === 'qu' ? 'Partidokunata qhawachiy' : 'Partidunakaru uñachtʼayita',
-          i18n.language === 'es' ? 'Quiero ver candidatos' : i18n.language === 'qu' ? 'Akllasqakunata rikusha munani' : 'Ajllitanakaru uñjañ munta',
-          i18n.language === 'es' ? '¿Dónde consulto mi RENIEC?' : i18n.language === 'qu' ? 'RENIECpi maypitaq tapukuni?' : 'RENIEC jisktʼañataki kawkinkiti?',
-        ]
-      };
-    }
+    // Default: solo responde sobre la página
+    return {
+      text:
+        i18n.language === 'es'
+          ? 'No puedo responderte en este momento, solo puedo responderte sobre la página.'
+          : i18n.language === 'qu'
+          ? 'Kunanqa manam kutichiyta atiniychu, kay plataforma mantaqa kutichiyta atini.'
+          : 'Jichhax janiwa mayampi kutichkiti, aka página ukataw kutichkistani.',
+      options: [
+        i18n.language === 'es' ? '¿Me enseñas la página?' : i18n.language === 'qu' ? '¿Yachachiwanki plataformata?' : '¿Yatichäwimawa uka página?',
+        i18n.language === 'es' ? 'Muéstrame los partidos' : i18n.language === 'qu' ? 'Partidokunata qhawachiy' : 'Partidunakaru uñachtʼayita',
+        i18n.language === 'es' ? 'Quiero ver candidatos' : i18n.language === 'qu' ? 'Akllasqakunata rikusha munani' : 'Ajllitanakaru uñjañ munta',
+        i18n.language === 'es' ? '¿Dónde consulto mi RENIEC?' : i18n.language === 'qu' ? 'RENIECpi maypitaq tapukuni?' : 'RENIEC jisktʼañataki kawkinkiti?',
+      ]
+    };
   };
 
   const handleVoiceToggle = () => {
