@@ -404,3 +404,142 @@
     gap: 1.5rem;
   }
 }
+
+/* Añadir al final: estilos para bloque Recursos (similar a tu imagen) */
+
+.recursos-titulo {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.recursos-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  max-width: 680px;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.recurso-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 12px;
+  border: 1px solid rgba(184,0,34,0.06);
+}
+
+.recurso-num {
+  min-width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #b80022;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 18px rgba(184,0,34,0.14);
+}
+
+.recurso-body {
+  flex: 1;
+}
+
+.recurso-titulo {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.recurso-desc {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.recurso-action { flex-shrink: 0; }
+
+.recurso-btn {
+  background: #b80022;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+.recurso-btn.disabled,
+.recurso-btn[disabled] {
+  background: #9CA3AF;
+  cursor: not-allowed;
+}
+
+/* --- grid dos columnas iguales para Recursos y Tutoriales --- */
+.recursos-videos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* columnas iguales */
+  gap: 24px;
+  align-items: start;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 24px auto 0;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.recursos-column,
+.videos-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra el contenido dentro de cada columna */
+}
+
+/* tarjetas internas ocupan todo el ancho de la columna y se centran */
+.recursos-card,
+.videos-card {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* items dentro de videos usan mismo estilo compacto */
+.tutorial-item-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.tutorial-btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* móviles: apilar columnas */
+@media (max-width: 900px) {
+  .recursos-videos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .recursos-card, .videos-card { max-width: 100%; }
+}

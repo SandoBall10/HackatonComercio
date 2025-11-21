@@ -811,7 +811,6 @@ export const PARTIDOS: Partido[] = [
     siglas: "RP",
     logo: "/logos/renovacion-popular.png",
     descripcion: "Partido político de derecha conservadora.",
-    planGobierno: "/pdf/plangobierno-rp.pdf", // Agregar esta línea
     candidatos: [
       { id: "rp1", nombre: "RAFAEL BERNANDO LOPEZ ALIAGA", cargo: "Presidente", foto: "/FotosCandidatos/renovacion-popular.jpg" },
       { id: "rp2", nombre: "NORMA MARTINA YARROW LUMBRERAS", cargo: "Primera Vicepresidenta", foto: "/FotosCandidatos/norma-yarrow.jpg" },
