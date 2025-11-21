@@ -126,14 +126,24 @@ const MiembrosMesa: React.FC = () => {
               {t('miembrosMesa.cronograma.descripcion')}
             </p>
             
-            <div className="actividades-grid">
-              {actividadesDia.map((actividad, index) => (
-                <div key={index} className="actividad-card">
-                  <div className="actividad-icono">{actividad.icono}</div>
-                  <div className="actividad-hora">{actividad.hora}</div>
-                  <div className="actividad-descripcion">{actividad.actividad}</div>
+            <div className="cronograma-container">
+              {/* Cronograma en layout serpiente */}
+              <div className="cronograma-serpiente">
+                <div className="actividades-serpiente">
+                  {actividadesDia.map((actividad, index) => (
+                    <div key={index} className="actividad-card">
+                      <div className="actividad-icono">{actividad.icono}</div>
+                      <div className="actividad-hora">{actividad.hora}</div>
+                      <div className="actividad-descripcion">{actividad.actividad}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Imagen al lado */}
+              <div className="cronograma-imagen">
+                <img src="/Imagenes-Pagina/Imagen-MiembrosMesa.png" alt="Cronograma" />
+              </div>
             </div>
 
             <div className="importante-box">
