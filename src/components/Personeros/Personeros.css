@@ -1,3 +1,16 @@
+.tabs-wrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+.tab-btn {
+  margin-right: 0;
+}
+.personeros-tab-btn {
+  margin-right: 10rem;
+}
+.personeros-tab-btn:last-child {
+  margin-right: 0;
+}
 .personeros-container {
   min-height: 100vh;
   background: #f5f5f5;
@@ -49,7 +62,7 @@
 
 .personeros-tabs-navigation {
   display: flex;
-  gap: 1rem;
+  gap: 100%;
   justify-content: center;
   background: transparent;
   margin: 0 auto 2rem auto;
