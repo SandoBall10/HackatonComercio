@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TutorialTour.css';
 import yachayImg from '../../../public/avatar/avatar-Tutorial.png';
@@ -103,19 +103,32 @@ const TutorialTour = () => {
 
   // Calcula el área del spotlight según el selector
   useEffect(() => {
-    if (!selector) return;
+    let rafId;
+    if (!selector) {
+      // Defer clearing spotlight to avoid synchronous setState in the effect
+      rafId = requestAnimationFrame(() => setSpotlight(null));
+      return () => {
+        if (rafId) cancelAnimationFrame(rafId);
+      };
+    }
     const el = document.querySelector(selector);
     if (el) {
       const rect = el.getBoundingClientRect();
-      setSpotlight({
-        top: rect.top + window.scrollY,
-        left: rect.left + window.scrollX,
-        width: rect.width,
-        height: rect.height
+      // Defer setting spotlight to the next animation frame to avoid cascading renders
+      rafId = requestAnimationFrame(() => {
+        setSpotlight({
+          top: rect.top + window.scrollY,
+          left: rect.left + window.scrollX,
+          width: rect.width,
+          height: rect.height
+        });
       });
     } else {
-      setSpotlight(null);
+      rafId = requestAnimationFrame(() => setSpotlight(null));
     }
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [selector, step, windowSize]);
 
   useEffect(() => {
