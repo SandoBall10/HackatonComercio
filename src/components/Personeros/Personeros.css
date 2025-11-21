@@ -84,7 +84,7 @@
     width: 60px;
     height: 60px;
   }
-}
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -1320,7 +1320,6 @@
   background: #b80022;
   color: #fff;
 }
-<<<<<<< HEAD
 
 [data-theme="dark"] .capacitacion-link:hover {
   background: #8a0018;
@@ -1330,13 +1329,3 @@
 [data-theme="dark"] .deberes-list li {
   color: #b0b3b8;
 }
-=======
-/* móviles: apilar columnas */
-@media (max-width: 900px) {
-  .recursos-videos-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .recursos-card, .videos-card { max-width: 100%; }
-}
->>>>>>> 43a54f87f5c40b0b55f68a72bf1c80d95162ea8a
