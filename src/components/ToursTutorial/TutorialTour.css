@@ -1,6 +1,5 @@
 .tutorial-spotlight-overlay.spotlight-rect {
   background: rgba(0,0,0,0.75);
-  /* Spotlight rectangular, ajusta los valores según la posición y tamaño de la noticia */
   clip-path: inset(200px 900px 200px 200px round 24px);
   -webkit-clip-path: inset(200px 900px 200px 200px round 24px);
   transition: clip-path 0.3s, background 0.3s;
@@ -13,8 +12,7 @@
 }
 .tutorial-spotlight-overlay.spotlight-news {
   background: rgba(0,0,0,0.75);
-  /* Ajusta el rect según la posición y tamaño de la noticia */
-  clip-path: ellipse(340px 180px at 50% 350px); /* Ejemplo: elipse centrada en la noticia */
+  clip-path: ellipse(340px 180px at 50% 350px); 
   -webkit-clip-path: ellipse(340px 180px at 50% 350px);
   transition: clip-path 0.3s, background 0.3s;
 }
@@ -23,21 +21,20 @@
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 9999;
   display: flex;
-  background: rgba(0,0,0,0.55); /* Fondo oscuro semitransparente */
+  background: rgba(0,0,0,0.55);
   transition: background 0.3s;
 }
 
 .tutorial-spotlight-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.55); /* Fondo oscuro por defecto */
+  background: rgba(0,0,0,0.55);
   z-index: 9998;
   pointer-events: none;
   transition: clip-path 0.3s, -webkit-clip-path 0.3s, background 0.3s;
-  /* El spotlight se puede manipular con clip-path desde JS para mostrar solo el área de interés */
 }
 .tutorial-spotlight-overlay.active {
-  background: rgba(0,0,0,0.75); /* Más oscuro cuando se enfoca un área */
+  background: rgba(0,0,0,0.75); 
 }
 .tutorial-tour-overlay.center,
 .tutorial-tour-overlay.right {
@@ -57,7 +54,11 @@
   flex-direction: row;
   justify-content: flex-start;
 }
-
+.tutorial-tour-content {
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
 
 .tutorial-yachay-img {
   max-width: 260px;
@@ -82,7 +83,6 @@
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 24px 80px 24px rgba(0,0,0,0.75), 0 8px 32px rgba(0,0,0,0.38);
-  /* Sombra MUY fuerte y notoria */
   padding: 2.5rem 2.8rem;
   max-width: 420px;
   min-width: 320px;
@@ -161,4 +161,90 @@
   z-index: 1002 !important;
   position: relative;
   border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+  .tutorial-yachay-img {
+    max-width: 160px !important;
+    min-width: 120px !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .tutorial-tour-box,
+  .tutorial-tour-box-small {
+    padding: 0.5rem 0.6rem !important;
+    max-width: 180px !important;
+    font-size: 0.8rem !important;
+  }
+  .tutorial-tour-box h3 {
+    font-size: 0.95rem !important;
+  }
+  .tutorial-tour-box p {
+    font-size: 0.8rem !important;
+  }
+
+  .tutorial-tour-actions button {
+    padding: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    font-size: 0 !important;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tutorial-tour-actions button::after {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    pointer-events: none;
+  }
+  .tutorial-tour-actions button:nth-child(1)::after {
+    content: '⟵';
+  }
+  .tutorial-tour-actions button:nth-child(2)::after {
+    content: '⟶';
+  }
+  .tutorial-tour-actions button:nth-child(3)::after {
+    content: '✕';
+    color: #fff;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutorial-tour-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+}
+
+@media (min-width: 481px) {
+  .tutorial-tour-content {
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    gap: 1.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutorial-tour-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+  .tutorial-tour-box,
+  .tutorial-tour-box-small {
+    max-width: 90vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
 }
