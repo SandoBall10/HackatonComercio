@@ -228,6 +228,48 @@ const MiembrosMesa: React.FC = () => {
           </>
         )}
 
+        {activeTab === 'derechos' && (
+          <div className="derechos-deberes-section">
+            <h2 className="section-title">{t('miembrosMesa.derechos.titulo')}</h2>
+            <p className="section-description">{t('miembrosMesa.derechos.descripcion')}</p>
+
+            {/* Grid 2x2: imagen top-left, derechos top-right, deberes bottom-left, imagen bottom-right */}
+            <div className="derechos-grid">
+              <div className="derechos-img img-top">
+                <img src="/Imagenes-Pagina/Instalacion.png" alt="Ilustración" />
+              </div>
+
+              <div className="derechos-card">
+                <h3>{t('miembrosMesa.derechos.subtitulo')}</h3>
+                <ul>
+                  {derechos.map((item, idx) => (
+                    <li key={idx} className="derecho-item">
+                      <span className="derecho-icono">{item.icono}</span>
+                      <span className="derecho-text">{item.texto}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="deberes-card">
+                <h3>{t('miembrosMesa.deberes.subtitulo')}</h3>
+                <ul>
+                  {deberes.map((item, idx) => (
+                    <li key={idx} className="deber-item">
+                      <span className="deber-icono">{item.icono}</span>
+                      <span className="deber-text">{item.texto}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="derechos-img img-bottom">
+                <img src="/Imagenes-Pagina/Conteo.png" alt="Ilustración" />
+              </div>
+            </div>
+          </div>
+        )}
+
         {activeTab === 'capacitacion' && (
           <div className="capacitacion-section">
             <h2 className="section-title">{t('miembrosMesa.capacitacion.titulo')}</h2>
