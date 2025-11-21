@@ -66,6 +66,16 @@ const Personeros: React.FC = () => {
     { texto: t('personeros.deberes.deber4'), icono: '•' }
   ];
 
+  const recursos = [
+    { id: 1, titulo: 'Rol del Personero', descripcion: 'Guía del rol y responsabilidades (PDF)', url: '/documentos/rol-personero.pdf' },
+    { id: 2, titulo: 'Cartilla del Personero', descripcion: 'Cartilla completa para personeros (PDF)', url: '/documentos/cartilla-personero.pdf' }
+  ];
+
+  const tutoriales = [
+    { id: 1, titulo: 'Curso virtual para personeros y personeras de mesa', url: 'https://youtu.be/Rtv50xlfZoo?si=2dn6syMhRlF4X8EY' },
+    { id: 2, titulo: 'Funciones', url: 'https://www.youtube.com/watch?v=efgh5678' }
+  ];
+
   return (
     <div className="personeros-container">
       <section className="hero-personeros">
@@ -161,6 +171,52 @@ const Personeros: React.FC = () => {
             <a href="https://www.onpe.gob.pe/capacitacion-personeros/" target="_blank" rel="noopener noreferrer" className="capacitacion-link">
               {t('personeros.capacitacion.enlace')}
             </a>
+
+            <div className="personeros-recursos" style={{ marginTop: 20 }}>
+              <h3 className="recursos-titulo">Recursos Disponibles</h3>
+              <div className="recursos-card">
+                {recursos.map((r, i) => (
+                  <div key={r.id} className="recurso-item">
+                    <div className="recurso-num">{i + 1}</div>
+                    <div className="recurso-body">
+                      <div className="recurso-titulo">{r.titulo}</div>
+                      <div className="recurso-desc">{r.descripcion}</div>
+                    </div>
+                    <div className="recurso-action">
+                      {r.url ? (
+                        <a
+                          href={r.url.startsWith('http') ? r.url : `${window.location.origin}${r.url}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          download
+                          className="recurso-btn"
+                        >
+                          Descargar
+                        </a>
+                      ) : (
+                        <button className="recurso-btn disabled" disabled>NO DISPONIBLE</button>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <h3 style={{ margin: '18px 0 12px' }}>Tutoriales</h3>
+              <div className="tutoriales-list" style={{ display: 'grid', gap: 10 }}>
+                {tutoriales.map(v => (
+                  <div key={v.id} className="item-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 12, borderRadius: 10 }}>
+                    <div>
+                      <strong>{v.titulo}</strong>
+                      <div style={{ fontSize: 13, color: '#666' }}>Video tutorial</div>
+                    </div>
+                    <a href={v.url} target="_blank" rel="noopener noreferrer" className="download-btn" style={{ background: '#2563eb', color: '#fff', padding: '8px 12px', borderRadius: 8, textDecoration: 'none', fontWeight: 700 }}>
+                      Ver
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         )}
       </div>
