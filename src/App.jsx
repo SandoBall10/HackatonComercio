@@ -19,6 +19,7 @@ import TutorialTour from './components/ToursTutorial/TutorialTour';
 import { getCandidatoById } from './data/candidatos.js';
 import Personeros from './components/Personeros/Personeros';
 import PersonerosOffline from './components/Personeros/PersonerosOffline';
+import ConnectionMonitor from './components/ConnectionMonitor/ConnectionMonitor';
 
 const App = () => {
   const candidatoEjemplo = getCandidatoById('fuerza-popular');
@@ -41,8 +42,8 @@ const App = () => {
 
   return (
     <div className="App">
+      <ConnectionMonitor />
       {!isOfflineRoute && <Header />}
-
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/candidatos" element={<Candidatos candidato={candidatoEjemplo} />} />

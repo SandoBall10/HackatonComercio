@@ -375,21 +375,6 @@ export const Inicio: React.FC = () => {
     setShowFilterMenu(false);
   };
 
-  useEffect(() => {
-    const handleOffline = () => {
-      navigate('/inicio-offline');
-    };
-
-    if (!navigator.onLine) {
-      navigate('/inicio-offline');
-    }
-
-    window.addEventListener('offline', handleOffline);
-    return () => {
-      window.removeEventListener('offline', handleOffline);
-    };
-  }, [navigate]);
-
   return (
     <div className="inicio-container">
       <main>

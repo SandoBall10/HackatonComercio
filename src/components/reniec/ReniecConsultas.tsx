@@ -345,7 +345,6 @@ const ReniecConsultas: React.FC = () => {
             <p className="reniec-multa-text">{t('reniec.multaTexto', 'Entre S/. 23.00 y S/. 92.00 según tu nivel de pobreza')}</p>
           </div>
 
-          {/* Botón de descarga PDF - Movido aquí */}
           {resultado && simulado && (
               <button
                 onClick={handleDescargarPDF}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './InicioOffline.css';
 
@@ -9,22 +9,6 @@ const eventosOffline = [
 
 export default function InicioOffline() {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleOnline = () => {
-      navigate('/');
-    };
-
-    if (navigator.onLine) {
-      navigate('/');
-    }
-
-    window.addEventListener('online', handleOnline);
-    
-    return () => {
-      window.removeEventListener('online', handleOnline);
-    };
-  }, [navigate]);
 
   return (
     <div className="inicio-offline-wrapper">
