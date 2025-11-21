@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import { Header } from './components/Header/Header';
 import { Inicio } from './components/Inicio/Inicio';
@@ -22,6 +22,9 @@ import PersonerosOffline from './components/Personeros/PersonerosOffline';
 
 const App = () => {
   const candidatoEjemplo = getCandidatoById('fuerza-popular');
+  const location = useLocation();
+  const [isOfflineRoute, setIsOfflineRoute] = useState(false);
+
   const offlineRoutes = [
     '/offline',
     '/inicio-offline',
@@ -30,12 +33,11 @@ const App = () => {
     '/tutorial-offline',
     '/personeros-offline'
   ];
-  const isNoConnectionAlert = (() => {
-    const main = document.querySelector('.inicio-container');
-    if (!main) return false;
-    return !!main.querySelector('h2') && main.textContent?.includes('No hay conexión a internet');
-  })();
-  const isOfflineRoute = offlineRoutes.includes(window.location.pathname) || isNoConnectionAlert;
+
+  useEffect(() => {
+    const isOffline = offlineRoutes.includes(location.pathname);
+    setIsOfflineRoute(isOffline);
+  }, [location.pathname]);
 
   return (
     <div className="App">
