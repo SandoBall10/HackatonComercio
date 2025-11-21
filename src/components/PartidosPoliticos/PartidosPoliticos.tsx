@@ -346,7 +346,7 @@ const PartidosPoliticos: React.FC = () => {
             <path d="M8 6v12"></path>
             <path d="M16 6v12"></path>
           </svg>
-          Comparar candidatos
+          Comparar propuestas
         </button>
       </div>
 
