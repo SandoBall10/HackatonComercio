@@ -5,4 +5,10 @@ interface ReniecResponse {
     document_number: string;
 }
 
-export type { ReniecResponse };
+interface GeminiResponse {
+  success: boolean;
+  output?: string;
+  error?: string;
+}
+
+export type { ReniecResponse, GeminiResponse };
