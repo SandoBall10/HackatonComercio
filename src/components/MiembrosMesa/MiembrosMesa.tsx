@@ -154,26 +154,66 @@ const MiembrosMesa: React.FC = () => {
         )}
 
         {activeTab === 'instrucciones' && (
-          <div className="instrucciones-section">
+          <>
             <h2 className="section-title">{t('miembrosMesa.instrucciones.titulo')}</h2>
             <p className="section-description">
               {t('miembrosMesa.instrucciones.descripcion')}
             </p>
 
-            <div className="instrucciones-grid">
-              {instrucciones.map((seccion, index) => (
-                <div key={index} className="instruccion-card">
+            <div className="instrucciones-main-container">
+              {/* Paso A: texto izquierda, imagen derecha */}
+              <div className="instruccion-row">
+                <div className="instruccion-col-text">
                   <div className="instruccion-header">
-                    <span className="instruccion-icono">{seccion.icono}</span>
-                    <h3>{seccion.titulo}</h3>
+                    <span className="instruccion-icono">A</span>
+                    <h3>{t('miembrosMesa.instrucciones.instalacion.titulo')}</h3>
                   </div>
                   <ol className="instruccion-lista">
-                    {seccion.pasos.map((paso, pIndex) => (
+                    {instrucciones[0].pasos.map((paso, pIndex) => (
                       <li key={pIndex}>{paso}</li>
                     ))}
                   </ol>
                 </div>
-              ))}
+                <div className="instruccion-col-img">
+                  <img className="instruccion-img" src="/Imagenes-Pagina/Instalacion.png" alt="Instalación de Mesa" />
+                </div>
+              </div>
+
+              {/* Paso B: imagen izquierda, texto derecha */}
+              <div className="instruccion-row instruccion-row-reverse">
+                <div className="instruccion-col-img">
+                  <img className="instruccion-img" src="/Imagenes-Pagina/Sufragio.png" alt="Durante el Sufragio" />
+                </div>
+                <div className="instruccion-col-text">
+                  <div className="instruccion-header">
+                    <span className="instruccion-icono">B</span>
+                    <h3>{t('miembrosMesa.instrucciones.sufragio.titulo')}</h3>
+                  </div>
+                  <ol className="instruccion-lista">
+                    {instrucciones[1].pasos.map((paso, pIndex) => (
+                      <li key={pIndex}>{paso}</li>
+                    ))}
+                  </ol>
+                </div>
+              </div>
+
+              {/* Paso C: texto izquierda, imagen derecha */}
+              <div className="instruccion-row">
+                <div className="instruccion-col-text">
+                  <div className="instruccion-header">
+                    <span className="instruccion-icono">C</span>
+                    <h3>{t('miembrosMesa.instrucciones.conteo.titulo')}</h3>
+                  </div>
+                  <ol className="instruccion-lista">
+                    {instrucciones[2].pasos.map((paso, pIndex) => (
+                      <li key={pIndex}>{paso}</li>
+                    ))}
+                  </ol>
+                </div>
+                <div className="instruccion-col-img">
+                  <img className="instruccion-img" src="/Imagenes-Pagina/Conteo.png" alt="Conteo de Votos" />
+                </div>
+              </div>
             </div>
 
             <div className="tips-box">
@@ -185,44 +225,7 @@ const MiembrosMesa: React.FC = () => {
                 <li>{t('miembrosMesa.instrucciones.consejos.consejo4')}</li>
               </ul>
             </div>
-          </div>
-        )}
-
-        {activeTab === 'derechos' && (
-          <div className="derechos-section">
-            <div className="derechos-grid">
-              <div className="derechos-column">
-                <h2 className="section-title">{t('miembrosMesa.derechos.titulo')}</h2>
-                <p className="section-description">{t('miembrosMesa.derechos.descripcion')}</p>
-                <div className="lista-items">
-                  {derechos.map((derecho, index) => (
-                    <div key={index} className="item-card">
-                      <span className="item-icono">{derecho.icono}</span>
-                      <p>{derecho.texto}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="derechos-column">
-                <h2 className="section-title">{t('miembrosMesa.deberes.titulo')}</h2>
-                <p className="section-description">{t('miembrosMesa.deberes.descripcion')}</p>
-                <div className="lista-items">
-                  {deberes.map((deber, index) => (
-                    <div key={index} className="item-card">
-                      <span className="item-icono">{deber.icono}</span>
-                      <p>{deber.texto}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="compensacion-box">
-              <h3>{t('miembrosMesa.compensacion.titulo')}</h3>
-              <p>{t('miembrosMesa.compensacion.mensaje')} <strong>{t('miembrosMesa.compensacion.monto')}</strong> {t('miembrosMesa.compensacion.detalle')}</p>
-            </div>
-          </div>
+          </>
         )}
 
         {activeTab === 'capacitacion' && (
