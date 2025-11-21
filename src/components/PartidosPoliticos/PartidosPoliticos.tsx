@@ -465,39 +465,25 @@ const PartidosPoliticos: React.FC = () => {
                       );
                     })}
                   </div>
-
-                  <div className="comparador-rubros">
-                    {rubros.map((rubro) => (
-                      <div key={rubro} className="comparador-rubro-card">
-                        <h4 className="rubro-titulo">{rubro}</h4>
-                        <div className="comparador-puntuaciones-flex">
-                          {partidosSeleccionados.map((partido) => {
-                            const puntuacion = obtenerPuntuacion(partido.nombre, rubro);
-                            const nivel = puntuacion <= 3 ? 'bajo' : puntuacion <= 6 ? 'moderado' : 'alto';
-                            const nivelTexto = puntuacion <= 3 ? 'BAJO' : puntuacion <= 6 ? 'MODERADO' : 'ALTO';
-                            return (
-                              <div key={partido.id} className="comparador-puntuacion-item">
-                                <span className="puntuacion-etiqueta">{t(`partidos.nombres.${getPartidoKey(partido.nombre)}`)}</span>
-                                <div className="puntuacion-display">
-                                  <div className="puntuacion-numero-grande">{puntuacion}</div>
-                                  <div className="puntuacion-barra-vertical">
-                                    <div className={`barra-relleno ${nivel}`} style={{ height: `${puntuacion * 10}%` }}></div>
-                                  </div>
-                                  <div className={`nivel-badge ${nivel}`}>{nivelTexto}</div>
-                                </div>
-                              </div>
-                            );
-                          })}
+                  <div className="comparador-propuestas-flex" style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '2rem'}}>
+                    {partidosSeleccionados.map((partido) => {
+                      const candidato = obtenerCandidato(partido.nombre);
+                      const propuestas = candidato?.planGobierno?.propuestas || [];
+                      return (
+                        <div key={partido.id} className="comparador-propuesta-item" style={{background: '#f8f9fa', border: '2px solid #e0e0e0', borderRadius: '12px', padding: '1.5rem'}}>
+                          <span className="propuesta-etiqueta" style={{fontWeight: '600', color: '#0a66b3', fontSize: '1.1rem', marginBottom: '1rem', display: 'block'}}>{candidato?.nombre || partido.nombre}</span>
+                          <ul className="propuestas-lista" style={{paddingLeft: '1.2rem'}}>
+                            {propuestas.length > 0 ? (
+                              propuestas.map((prop, idx) => (
+                                <li key={idx} style={{marginBottom: '0.7rem', color: '#333', fontSize: '1rem'}}>{prop}</li>
+                              ))
+                            ) : (
+                              <li style={{color: '#999'}}>No hay propuestas registradas.</li>
+                            )}
+                          </ul>
                         </div>
-                        <p className="rubro-descripcion">
-                          {rubro === 'Salud' && 'Propuestas relacionadas con sistema de salud y bienestar'}
-                          {rubro === 'Infraestructura' && 'Inversión en carreteras, puentes y obras públicas'}
-                          {rubro === 'Economía' && 'Políticas económicas y desarrollo empresarial'}
-                          {rubro === 'Seguridad' && 'Seguridad pública y orden interno'}
-                          {rubro === 'Política' && 'Gobernanza y reformas institucionales'}
-                        </p>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}
