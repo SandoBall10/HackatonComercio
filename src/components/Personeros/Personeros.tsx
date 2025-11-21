@@ -120,9 +120,7 @@ const Personeros: React.FC = () => {
                 <h2 className="cronograma-title">{t('personeros.cronograma.titulo')}</h2>
                 <ul className="cronograma-list">
                   {actividades.map((act, idx) => {
-                    // Iconos SVG mejorados, rojo y blanco, animados
                     const iconosSVG = [
-                      // Calendario (llegada)
                       <svg key="calendar" className="cronograma-svg-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="5" y="8" width="28" height="22" rx="5" fill="#fff" stroke="#B30227" strokeWidth="3" />
                         <rect x="5" y="14" width="28" height="4" fill="#B30227" />
@@ -130,7 +128,6 @@ const Personeros: React.FC = () => {
                         <rect x="24" y="5" width="3" height="6" rx="1.5" fill="#B30227" />
                         <circle cx="19" cy="22" r="2.5" fill="#B30227" />
                       </svg>,
-                      // Urna con voto (inicio votación)
                       <svg key="urna" className="cronograma-svg-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="8" y="14" width="22" height="16" rx="3" fill="#fff" stroke="#B30227" strokeWidth="3" />
                         <rect x="14" y="8" width="10" height="8" rx="2" fill="#B30227" />
@@ -138,25 +135,21 @@ const Personeros: React.FC = () => {
                         <rect x="18.5" y="17" width="1" height="7" rx="0.5" fill="#B30227" />
                         <rect x="17" y="23" width="4" height="3" rx="1.5" fill="#B30227" />
                       </svg>,
-                      // Lupa (supervisión)
                       <svg key="lupa" className="cronograma-svg-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="17" cy="17" r="8" fill="#fff" stroke="#B30227" strokeWidth="3" />
                         <rect x="23.5" y="23.5" width="8" height="3" rx="1.5" transform="rotate(45 23.5 23.5)" fill="#B30227" />
                         <circle cx="17" cy="17" r="3" fill="#B30227" />
                       </svg>,
-                      // Candado abierto (cierre mesa)
                       <svg key="lock" className="cronograma-svg-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="10" y="18" width="18" height="12" rx="4" fill="#fff" stroke="#B30227" strokeWidth="3" />
                         <rect x="16" y="24" width="6" height="6" rx="3" fill="#B30227" />
                         <path d="M13 18v-4a6 6 0 0 1 12 0v4" stroke="#B30227" strokeWidth="2" fill="none" />
                       </svg>,
-                      // Gráfica de barras (recuento)
                       <svg key="chart" className="cronograma-svg-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="9" y="22" width="4" height="8" rx="2" fill="#B30227" />
                         <rect x="17" y="16" width="4" height="14" rx="2" fill="#fff" stroke="#B30227" strokeWidth="2" />
                         <rect x="25" y="12" width="4" height="18" rx="2" fill="#B30227" />
                       </svg>,
-                      // Pluma y papel (firma)
                       <svg key="firma" className="cronograma-svg-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="8" y="28" width="22" height="4" rx="2" fill="#B30227" />
                         <rect x="20" y="10" width="8" height="10" rx="2" fill="#fff" stroke="#B30227" strokeWidth="2" />
@@ -175,7 +168,6 @@ const Personeros: React.FC = () => {
                 </ul>
               </div>
             </div>
-            {/* Dato importante para personeros debajo de los recuadros */}
             <div className="dato-importante-personeros">
               <h3>Importante</h3>
               <p>El personero debe identificarse y acreditarse antes del inicio de la votación. Recuerda portar tu credencial y DNI durante toda la jornada electoral.</p>
@@ -223,7 +215,6 @@ const Personeros: React.FC = () => {
                 ))}
               </div>
             </div>
-            {/* Recuadro informativo con video de funciones de personeros */}
             <div className="cedula-sufragio-box">
               <h2 className="cedula-sufragio-title">Funciones de los personeros</h2>
               <p className="cedula-sufragio-desc">
@@ -236,8 +227,6 @@ const Personeros: React.FC = () => {
                 <iframe width="800" height="450" src="https://www.youtube.com/embed/e97mHCJSDTI" title="Funciones de los personeros" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
             </div>
-
-            {/* Preguntas Frecuentes para Personeros */}
             <div className="faq-personeros-section">
               <h2 className="faq-personeros-title">Preguntas Frecuentes para Personeros</h2>
               <div className="faq-personeros-grid">
@@ -263,7 +252,6 @@ const Personeros: React.FC = () => {
         )}
         {activeTab === 'derechos' && (
           <>
-            {/* Bloque informativo institucional */}
             <div className="personero-info-box">
               <div className="personero-info-icon">
                 <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -280,12 +268,11 @@ const Personeros: React.FC = () => {
               </div>
             </div>
 
-            <div className="derechos-deberes-modern">
-              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', alignItems: 'center', margin: '32px 0'}}>
-                {/* Fila 1: Imagen izquierda, tarjeta derecha */}
-                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 32, gridColumn: '1 / span 2'}}>
+            <div className="derechos-deberes-modern" style={{margin: '0.2rem 0 0.2rem 0'}}>
+              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', alignItems: 'center', margin: '2px 0'}}>
+                  <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 18, gridColumn: '1 / span 2'}}>
                   <img src="/Imagenes-Pagina/Derechos.png" alt="Ilustración capacitación" style={{maxWidth: 340, width: '100%'}} />
-                  <div style={{background: '#fff', borderRadius: 18, boxShadow: '0 2px 12px 0 #e3eaff', padding: '24px 32px', border: '2px solid #b30227', minWidth: 260, flex: 1}}>
+                    <div style={{background: '#fff', borderRadius: 18, boxShadow: '0 2px 12px 0 #e3eaff', padding: '16px 20px', border: '2px solid #b30227', minWidth: 220, flex: 1}}>
                     <h2 style={{color: '#b30227', fontWeight: 900, fontSize: '1.3rem', marginBottom: 18}}>Derechos de los personeros</h2>
                     <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
                       {derechos.map((d, idx) => (
@@ -299,8 +286,7 @@ const Personeros: React.FC = () => {
                     </ul>
                   </div>
                 </div>
-                {/* Fila 2: Tarjeta izquierda, imagen derecha */}
-                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 32, gridColumn: '1 / span 2', marginTop: 32}}>
+                  <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8, gridColumn: '1 / span 2', marginTop: 2}}>
                   <div style={{background: '#fff', borderRadius: 18, boxShadow: '0 2px 12px 0 #ffe6ec', padding: '24px 32px', border: '2px solid #b30227', minWidth: 260, flex: 1}}>
                     <h2 style={{color: '#b30227', fontWeight: 900, fontSize: '1.3rem', marginBottom: 18}}>Deberes de los personeros</h2>
                     <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
@@ -317,7 +303,6 @@ const Personeros: React.FC = () => {
                   <img src="/Imagenes-Pagina/image2.png" alt="Ilustración deberes" style={{maxWidth: 340, width: '100%'}} />
                 </div>
               </div>
-              {/* Recursos Disponibles para Personeros */}
               <div className="recursos-disponibles-box" style={{marginTop: 40}}>
                 <h2 className="recursos-disponibles-title">Recursos Disponibles</h2>
                 <div className="recursos-disponibles-list">
