@@ -72,8 +72,8 @@ const Personeros: React.FC = () => {
   ];
 
   const tutoriales = [
-    { id: 1, titulo: 'Curso virtual para personeros y personeras de mesa', url: 'https://youtu.be/Rtv50xlfZoo?si=2dn6syMhRlF4X8EY' },
-    { id: 2, titulo: 'Funciones', url: 'https://www.youtube.com/watch?v=efgh5678' }
+    { id: 1, titulo: 'Curso virtual para personeros y personeras de mesa', url: 'https://youtu.be/Rtv50xlfZoo?si=KU2aLwfO0SmoIcgQ' },
+    { id: 2, titulo: 'Funciones como personero', url: 'https://youtu.be/e97mHCJSDTI?si=kCSygnk-vDTu-jlY' }
   ];
 
   return (
