@@ -1,18 +1,43 @@
+.tutorial-spotlight-overlay.spotlight-rect {
+  background: rgba(0,0,0,0.75);
+  /* Spotlight rectangular, ajusta los valores según la posición y tamaño de la noticia */
+  clip-path: inset(200px 900px 200px 200px round 24px);
+  -webkit-clip-path: inset(200px 900px 200px 200px round 24px);
+  transition: clip-path 0.3s, background 0.3s;
+}
+.tutorial-spotlight-overlay.no-dark {
+  background: transparent !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  transition: background 0.3s;
+}
+.tutorial-spotlight-overlay.spotlight-news {
+  background: rgba(0,0,0,0.75);
+  /* Ajusta el rect según la posición y tamaño de la noticia */
+  clip-path: ellipse(340px 180px at 50% 350px); /* Ejemplo: elipse centrada en la noticia */
+  -webkit-clip-path: ellipse(340px 180px at 50% 350px);
+  transition: clip-path 0.3s, background 0.3s;
+}
 .tutorial-tour-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 9999;
   display: flex;
-  background: none;
+  background: rgba(0,0,0,0.55); /* Fondo oscuro semitransparente */
+  transition: background 0.3s;
 }
 
 .tutorial-spotlight-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: transparent;
+  background: rgba(0,0,0,0.55); /* Fondo oscuro por defecto */
   z-index: 9998;
   pointer-events: none;
-  transition: clip-path 0.3s, -webkit-clip-path 0.3s;
+  transition: clip-path 0.3s, -webkit-clip-path 0.3s, background 0.3s;
+  /* El spotlight se puede manipular con clip-path desde JS para mostrar solo el área de interés */
+}
+.tutorial-spotlight-overlay.active {
+  background: rgba(0,0,0,0.75); /* Más oscuro cuando se enfoca un área */
 }
 .tutorial-tour-overlay.center,
 .tutorial-tour-overlay.right {
@@ -52,14 +77,36 @@
   100% { transform: scale(1.08) translateY(-18px); }
 }
 
+
 .tutorial-tour-box {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 24px 80px 24px rgba(0,0,0,0.75), 0 8px 32px rgba(0,0,0,0.38);
+  /* Sombra MUY fuerte y notoria */
   padding: 2.5rem 2.8rem;
   max-width: 420px;
   min-width: 320px;
   text-align: center;
+  position: relative;
+  z-index: 1001;
+  animation: box-shadow-fade-in 0.8s cubic-bezier(.4,1.6,.6,1) both;
+}
+
+@keyframes box-shadow-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(40px);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  }
+  60% {
+    opacity: 0.7;
+    box-shadow: 0 12px 40px 12px rgba(0,0,0,0.35);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    box-shadow: 0 24px 80px 24px rgba(0,0,0,0.75), 0 8px 32px rgba(0,0,0,0.38);
+  }
 }
 
 .animated-box {

@@ -147,14 +147,69 @@
   }
 }
 
-.actividades-grid {
+/* Cronograma Container con Timeline e Imagen */
+.cronograma-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1fr 450px;
+  gap: 3rem;
   margin-bottom: 3rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  align-items: start;
+  padding: 0 1rem;
+}
+
+.cronograma-serpiente {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.actividades-serpiente {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, rgb(179, 2, 39) 0%, rgba(179, 2, 39, 0.3) 100%);
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  margin-left: 80px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid rgb(179, 2, 39);
+  border-radius: 50%;
+  left: -58px;
+  top: 25px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  width: 24px;
+  height: 24px;
+  left: -62px;
+  top: 21px;
+  box-shadow: 0 0 15px rgba(179, 2, 39, 0.4);
 }
 
 .actividad-card {
@@ -229,6 +284,28 @@
   color: #555;
   line-height: 1.5;
   font-weight: 500;
+}
+
+/* Cronograma Imagen */
+.cronograma-imagen {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cronograma-imagen img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.cronograma-imagen img:hover {
+  transform: translateY(-8px);
 }
 
 /* Instrucciones */
@@ -328,9 +405,12 @@
 
 .derechos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-bottom: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .derechos-column {
@@ -395,15 +475,18 @@
 
 .capacitacion-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .capacitacion-card {
   background: white;
   border-radius: 15px;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -417,12 +500,12 @@
 }
 
 .capacitacion-icono {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: white;
   background: rgb(179, 2, 39);
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -432,16 +515,17 @@
 }
 
 .capacitacion-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #2c2c2c;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .capacitacion-card p {
   color: #666;
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  font-size: 0.95rem;
 }
 
 .capacitacion-card ul {
@@ -451,10 +535,11 @@
 }
 
 .capacitacion-card ul li {
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
   color: #555;
   position: relative;
   padding-left: 1.5rem;
+  font-size: 0.9rem;
 }
 
 .capacitacion-card ul li::before {
@@ -861,6 +946,19 @@
 
   .actividades-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cronograma-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .actividades-serpiente {
+    grid-template-columns: 1fr;
+  }
+
+  .cronograma-imagen {
+    position: static;
   }
 
   .instrucciones-grid,
