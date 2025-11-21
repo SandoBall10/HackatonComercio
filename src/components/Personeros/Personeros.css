@@ -1,3 +1,89 @@
+.personero-info-box {
+  /* ...existing styles... */
+  animation: fadeInUpBox 0.9s cubic-bezier(.68,-0.55,.27,1.55);
+  transition: box-shadow 0.35s cubic-bezier(.4,1.5,.5,1), transform 0.35s cubic-bezier(.4,1.5,.5,1);
+}
+.personero-info-box:hover {
+  box-shadow: 0 8px 32px rgba(179,2,39,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  transform: translateY(-6px) scale(1.02);
+}
+@keyframes fadeInUpBox {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  80% {
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Bloque informativo institucional para Personero Electoral */
+.personero-info-box {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  background: #fafbfc;
+  border-radius: 18px;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(44,62,80,0.07);
+  padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+  margin: 2.5rem auto 2.5rem auto;
+  max-width: 1100px;
+  min-width: 340px;
+  width: 100%;
+  color: #23272b;
+  position: relative;
+  animation: fadeInUp 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.personero-info-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.13);
+  border-radius: 16px;
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 2px 12px rgba(179,2,39,0.10);
+}
+.personero-info-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  margin-bottom: 1.1rem;
+  color: #23272b;
+  letter-spacing: -1px;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+.personero-info-desc {
+  font-size: 0.93rem;
+  color: #23272b;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+.personero-info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 800px) {
+  .personero-info-icon {
+    display: none;
+  }
+  .personero-info-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -64,21 +150,20 @@
   flex: 1 1 350px;
   max-width: 420px;
   border-radius: 14px;
-}
-.recurso-disponible-item {
   display: flex;
   align-items: flex-start;
   background: #fff;
   border: 2px solid #b30227;
-  border-radius: 14px;
   padding: 1.2rem 1.5rem;
   gap: 1.5rem;
   box-shadow: 0 2px 8px rgba(179,2,39,0.04);
-  transition: box-shadow 0.18s, border 0.18s;
+  transition: box-shadow 0.28s cubic-bezier(.4,1.5,.5,1), border 0.18s, transform 0.28s cubic-bezier(.4,1.5,.5,1);
+  animation: fadeInUpBox 0.9s cubic-bezier(.68,-0.55,.27,1.55);
 }
 .recurso-disponible-item:hover {
-  box-shadow: 0 6px 24px rgba(179,2,39,0.13);
-  border: 2px solid #23272b;
+  box-shadow: 0 8px 32px rgba(179,2,39,0.13), 0 2px 8px rgba(0,0,0,0.10);
+  border: 2px solid #b30227;
+  transform: translateY(-6px) scale(1.02);
 }
 .recurso-disponible-num {
   min-width: 2.3rem;
@@ -93,6 +178,11 @@
   justify-content: center;
   margin-top: 0.2rem;
   box-shadow: 0 2px 8px #b3022733;
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s;
+}
+.recurso-disponible-item:hover .recurso-disponible-num {
+  transform: scale(1.15) rotate(-8deg);
+  box-shadow: 0 4px 16px #b3022777;
 }
 .recurso-disponible-body {
   flex: 1;
@@ -251,28 +341,34 @@
 .derechos-deberes-modern {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 1rem;
   justify-content: center;
   align-items: stretch;
-  margin: 2.5rem 0 2.5rem 0;
+  margin: 1.2rem 0 1.2rem 0;
 }
 .derechos-tarjeta, .deberes-tarjeta {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 18px rgba(44,62,80,0.07), 0 2px 8px rgba(0,0,0,0.06);
-  padding: 2.5rem 2.2rem 2.2rem 2.2rem;
-  min-width: 340px;
+  padding: 1.2rem 1.2rem 1.1rem 1.2rem;
+  margin: 0;
   max-width: 480px;
   flex: 1 1 400px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-height: 100%;
+  animation: fadeInUpBox 0.9s cubic-bezier(.68,-0.55,.27,1.55);
+  transition: box-shadow 0.35s cubic-bezier(.4,1.5,.5,1), transform 0.35s cubic-bezier(.4,1.5,.5,1);
+}
+.derechos-tarjeta:hover, .deberes-tarjeta:hover {
+  box-shadow: 0 8px 32px rgba(179,2,39,0.13), 0 2px 8px rgba(0,0,0,0.10);
+  transform: translateY(-6px) scale(1.02);
 }
 .dd-title {
-  font-size: 2rem;
+  font-size: 1.45rem;
   font-weight: 800;
-  margin-bottom: 1.7rem;
+  margin-bottom: 1.2rem;
   text-align: left;
 }
 .dd-title-rojo {
@@ -288,8 +384,8 @@
   display: flex;
   align-items: flex-start;
   gap: 1.2rem;
-  margin-bottom: 1.3rem;
-  font-size: 1.13rem;
+  margin-bottom: 1.1rem;
+  font-size: 0.98rem;
   color: #23272b;
 }
 .dd-icon {
@@ -300,15 +396,19 @@
   justify-content: center;
   margin-top: 0.1rem;
 }
-.dd-icon-check svg {
-  display: block;
-}
+.dd-icon-check svg,
 .dd-icon-doc svg {
   display: block;
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.dd-item:hover .dd-icon-check svg,
+.dd-item:hover .dd-icon-doc svg {
+  transform: scale(1.18) rotate(-8deg);
+  filter: drop-shadow(0 2px 6px #b3022733);
 }
 .dd-text {
   flex: 1;
-  font-size: 1.13rem;
+  font-size: 0.98rem;
   color: #23272b;
 }
 /* FAQ Personeros */
@@ -587,6 +687,11 @@
   width: 100%;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', 'Arial', 'Helvetica Neue', Helvetica, sans-serif !important;
+}
+/* Forzar Montserrat en todos los elementos hijos de personeros-container */
+.personeros-container, .personeros-container * {
+  font-family: 'Montserrat', 'Arial', 'Helvetica Neue', Helvetica, sans-serif !important;
 }
 
 .personeros-main {
@@ -953,35 +1058,42 @@
 .derechos-deberes-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  max-width: 1200px;
-  margin-left: auto;
+  gap: 0.7rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 1.2rem 0 1.2rem 0;
   margin-right: auto;
 }
-
-.derechos-column {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
+.derechos-deberes-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.2rem 2rem 2rem 2rem;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100%;
+  animation: fadeInUpBox 0.9s cubic-bezier(.68,-0.55,.27,1.55);
+  transition: box-shadow 0.35s cubic-bezier(.4,1.5,.5,1), transform 0.35s cubic-bezier(.4,1.5,.5,1);
   border: 1px solid #e8e8e8;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.derechos-section, .deberes-section {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  border: 1px solid #e8e8e8;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.derechos-section h2, .deberes-section h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2c2c2c;
-  margin-bottom: 1rem;
   text-align: center;
+}
+
+.derechos-deberes-modern {
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.derechos-tarjeta, .deberes-tarjeta {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.recurso-personero-item-col {
+  max-width: 100%;
 }
 
 .lista-items {
