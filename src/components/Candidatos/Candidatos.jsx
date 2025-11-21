@@ -146,60 +146,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
       return acc;
     }, []);
   
-    const getPdfPath = () => {
-      if (!candidato) return null;
-      
-      console.log('=== DEBUG PDF ===');
-      console.log('Candidato:', candidato);
-      console.log('pdfUrl directo:', candidato.pdfUrl);
-      
-      if (candidato.pdfUrl) {
-        console.log('Usando pdfUrl directo del candidato');
-        return candidato.pdfUrl;
-      }
-      
-      console.log('Candidato partido:', candidato.partido);
-      console.log('Todos los partidos:', partidos);
-
-      const partido = partidos.find(p => {
-        const nombrePartido = candidato.partido.toLowerCase().trim();
-        const nombrePartidoData = p.nombre.toLowerCase().trim();
-        const siglasPartido = p.siglas?.toLowerCase().trim() || '';
-        
-        console.log('Comparando:', {
-          candidatoPartido: nombrePartido,
-          partidoNombre: nombrePartidoData,
-          partidoSiglas: siglasPartido,
-          match: nombrePartidoData.includes(nombrePartido) || 
-                 nombrePartido.includes(nombrePartidoData) ||
-                 siglasPartido === nombrePartido
-        });
-        
-        return nombrePartidoData.includes(nombrePartido) || 
-               nombrePartido.includes(nombrePartidoData) ||
-               siglasPartido === nombrePartido;
-      });
-      
-      console.log('Partido encontrado:', partido);
-      console.log('PDF Path:', partido?.planGobierno);
-      
-      return partido?.planGobierno || null;
-    };
-
-  const pdfPath = getPdfPath();
-  
-  console.log('=== PDF FINAL ===');
-  console.log('pdfPath:', pdfPath);
-  console.log('Botón habilitado:', !!pdfPath);
-
-  const handleDownloadPDF = () => {
-    if (pdfPath) {
-      window.open(`${window.location.origin}${pdfPath}`, '_blank');
-    } else {
-      alert('No disponible');
-    }
-  };
-
   useEffect(() => {
     const targetDate = new Date('2026-04-12T00:00:00').getTime();
     const timer = setInterval(() => {
@@ -412,35 +358,6 @@ const Candidatos = ({ candidato: candidatoProp }) => {
                               <span>{candidato.partido}</span>
                             </button>
                           </div>
-
-                          <button 
-                            className="btn text-white fw-semibold d-flex align-items-center gap-2"
-                            onClick={handleDownloadPDF}
-                            disabled={!pdfPath}
-                            style={{
-                              backgroundColor: (esRenovacionPopular || esFuerzaPopular) ? colorPrimario : '#dc3545',
-                              border: 'none',
-                              borderRadius: '10px',
-                              opacity: pdfPath ? 1 : 0.6,
-                              cursor: pdfPath ? 'pointer' : 'not-allowed',
-                              transition: 'all 0.3s ease',
-                              fontSize: '0.9rem',
-                              padding: '12px 20px',
-                              boxShadow: `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`,
-                              whiteSpace: 'nowrap'
-                            }}
-                            onMouseEnter={(e) => {
-                              if (pdfPath) {
-                                e.currentTarget.style.transform = 'translateY(-2px)';
-                                e.currentTarget.style.boxShadow = `0 6px 16px rgba(${colorPrimarioRgb}, 0.4)`;
-                              }
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.transform = 'translateY(0)';
-                              e.currentTarget.style.boxShadow = `0 4px 12px rgba(${colorPrimarioRgb}, 0.3)`;
-                            }}
-                          >
-                          </button>
                         </div>
                       </div>
                     </div>
