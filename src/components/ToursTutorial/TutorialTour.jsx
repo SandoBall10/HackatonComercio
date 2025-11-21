@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TutorialTour.css';
 import yachayImg from '../../../public/avatar/avatar-Tutorial.png';
@@ -19,7 +19,7 @@ const steps = [
   },
   {
     title: 'Navegación Principal',
-    content: 'Utiliza el menú superior para acceder a las secciones principales: Inicio, Partidos, RENIEC, Miembros de Mesa, Tutorial.',
+    content: 'Utiliza el menú superior para acceder a las secciones principales: Inicio, Partidos, RENIEC, Miembros de Mesa, Personeros, Tutorial.',
     selector: 'nav',
     route: '/',
   },
@@ -40,6 +40,12 @@ const steps = [
     content: 'Si fuiste seleccionado, aquí encontrarás toda la información y capacitación necesaria.',
     selector: '.miembros-mesa-section',
     route: '/miembros-mesa',
+  },
+  {
+    title: 'Personeros',
+    content: 'En la sección Personeros puedes informarte sobre el rol y responsabilidades de los personeros en el proceso electoral.',
+    selector: '.personeros-section',
+    route: '/personeros',
   },
   {
     title: '¡Listo!',
@@ -85,6 +91,32 @@ const TutorialTour = () => {
   };
 
   const { title, content, selector } = steps[step] || {};
+  const [spotlight, setSpotlight] = useState(null);
+  const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+
+  // Actualiza tamaño de ventana para recalcular spotlight
+  useEffect(() => {
+    const onResize = () => setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  // Calcula el área del spotlight según el selector
+  useEffect(() => {
+    if (!selector) return;
+    const el = document.querySelector(selector);
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      setSpotlight({
+        top: rect.top + window.scrollY,
+        left: rect.left + window.scrollX,
+        width: rect.width,
+        height: rect.height
+      });
+    } else {
+      setSpotlight(null);
+    }
+  }, [selector, step, windowSize]);
 
   useEffect(() => {
     if (step === -1) return;
@@ -106,21 +138,44 @@ const TutorialTour = () => {
 
   if (step === -1) return null;
 
+  // Spotlight CSS
+  let spotlightStyle = {};
+  if (spotlight) {
+    const pad = 8; // padding extra para el área visible
+    const t = spotlight.top - pad;
+    const l = spotlight.left - pad;
+    const w = spotlight.width + pad * 2;
+    const h = spotlight.height + pad * 2;
+    spotlightStyle = {
+      WebkitClipPath: `polygon(0 0, 0 100%, 100% 100%, 100% 0, 0 0, 0 0, 0 0, 0 0, 0 0),
+        inset(${t}px ${window.innerWidth - (l + w)}px ${window.innerHeight - (t + h)}px ${l}px round 12px)` ,
+      clipPath: `polygon(0 0, 0 100%, 100% 100%, 100% 0, 0 0, 0 0, 0 0, 0 0, 0 0),
+        inset(${t}px ${window.innerWidth - (l + w)}px ${window.innerHeight - (t + h)}px ${l}px round 12px)` ,
+      pointerEvents: 'none',
+      transition: 'clip-path 0.3s, -webkit-clip-path 0.3s',
+    };
+  }
+
+  const overlayClass = step === 0 ? 'tutorial-tour-overlay center' : 'tutorial-tour-overlay right';
+  const contentClass = step === 0 ? 'tutorial-tour-content center' : 'tutorial-tour-content right row-normal';
   return (
-    <div className="tutorial-tour-overlay">
-      <div className="tutorial-tour-content">
-        <img src={yachayImg} alt="Yachay guía" className="tutorial-yachay-img" />
-        <div className="tutorial-tour-box tutorial-tour-box-small">
-          <h3>{title}</h3>
-          <p>{content}</p>
-          <div className="tutorial-tour-actions">
-            <button onClick={handlePrev} disabled={step === 0}>Anterior</button>
-            <button onClick={handleNext} disabled={step === steps.length - 1}>Siguiente</button>
-            <button onClick={handleClose}>Cerrar</button>
+    <>
+      <div className="tutorial-spotlight-overlay" style={spotlight ? spotlightStyle : {}}></div>
+      <div className={overlayClass}>
+        <div className={contentClass}>
+          <img src={yachayImg} alt="Yachay guía" className="tutorial-yachay-img animated-img" />
+          <div className="tutorial-tour-box tutorial-tour-box-small animated-box">
+            <h3>{title}</h3>
+            <p>{content}</p>
+            <div className="tutorial-tour-actions">
+              <button onClick={handlePrev} disabled={step === 0}>Anterior</button>
+              <button onClick={handleNext} disabled={step === steps.length - 1}>Siguiente</button>
+              <button onClick={handleClose}>Cerrar</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
