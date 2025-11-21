@@ -344,11 +344,146 @@ const Personeros: React.FC = () => {
           <div className="capacitacion-section">
             <h2>{t('personeros.capacitacion.titulo')}</h2>
             <p>{t('personeros.capacitacion.descripcion')}</p>
-            <a href="https://www.onpe.gob.pe/capacitacion-personeros/" target="_blank" rel="noopener noreferrer" className="capacitacion-link">
-              {t('personeros.capacitacion.enlace')}
-            </a>
-
-            {/* --- nueva estructura: dos columnas iguales --- */}
+            <div style={{display: 'flex', justifyContent: 'center', margin: '18px 0 32px 0'}}>
+              <a
+                href="https://www.onpe.gob.pe/capacitacion-personeros/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 16,
+                  background: '#b30227',
+                  color: '#fff',
+                  fontWeight: 900,
+                  fontSize: '1.25rem',
+                  borderRadius: 40,
+                  padding: '0.7rem 2.2rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 2px 12px #b3022733',
+                  border: '2.5px solid #b30227',
+                  transition: 'box-shadow 0.2s',
+                  letterSpacing: '-1px',
+                  position: 'relative'
+                }}
+                className="capacitacion-link"
+              >
+                {/* Icono izquierda: birrete */}
+                <span style={{display: 'flex', alignItems: 'center'}}>
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="28" height="28" rx="8" fill="#fff"/>
+                    <path d="M6 12.5L14 8L22 12.5L14 17L6 12.5Z" fill="#b30227" stroke="#b30227" strokeWidth="1.5"/>
+                    <rect x="11" y="14" width="6" height="2.5" rx="1.2" fill="#b30227" />
+                  </svg>
+                </span>
+                <span style={{flex: 1}}>{t('personeros.capacitacion.enlace')}</span>
+                {/* Icono derecha: flecha */}
+                <span style={{display: 'flex', alignItems: 'center'}}>
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="13" cy="13" r="12" fill="#fff" stroke="#b30227" strokeWidth="2"/>
+                    <path d="M9 13h8m-3-3 3 3-3 3" stroke="#b30227" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            {/* Tipos de Personeros - horizontal layout, below ONPE link */}
+            <div style={{
+              background: '#fff',
+              borderRadius: 16,
+              padding: '1.1rem 2.2rem 1.2rem 2.2rem',
+              margin: '24px 0 10px 0',
+              boxShadow: '0 2px 12px 0 #e3eaff',
+              textAlign: 'center',
+              border: '2px solid #b30227',
+              animation: 'fadeInUpBox 0.8s cubic-bezier(.68,-0.55,.27,1.55)',
+              maxWidth: '1200px',
+              width: '100%',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              <h2 style={{color: '#b30227', fontWeight: 800, fontSize: '1.45rem', marginBottom: 2, letterSpacing: '-1px'}}>Tipos de Personeros</h2>
+              <div style={{color: '#23272b', fontSize: '0.98rem', marginBottom: 16}}>Diferentes roles en el proceso electoral</div>
+              <div style={{display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap'}}>
+                {/* Personero Legal - Gavel icon */}
+                <div style={{
+                  background: '#fff',
+                  borderRadius: 14,
+                  boxShadow: '0 2px 6px #b3022712',
+                  padding: '0.8rem 0.7rem 0.7rem 0.7rem',
+                  minWidth: 160,
+                  maxWidth: 220,
+                  flex: '1 1 160px',
+                  margin: '0',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center',
+                  border: '1.5px solid #b30227',
+                  animation: 'personeroCardAnim 0.7s cubic-bezier(.68,-0.55,.27,1.55)'
+                }}>
+                  <div style={{background: '#b30227', borderRadius: 12, width: 38, height: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 8, boxShadow: '0 0 8px #b3022733', animation: 'iconBounce 1.2s infinite alternate'}}>
+                    {/* Gavel icon animated */}
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="6" fill="#b30227"/><g><rect x="6.5" y="8.5" width="9" height="2.5" rx="1.25" fill="#fff"/><rect x="9" y="6" width="4" height="2" rx="1" fill="#fff"/><rect x="9" y="13.5" width="4" height="2" rx="1" fill="#fff"/><rect x="5.5" y="16" width="11" height="1.5" rx="0.75" fill="#fff"/></g></svg>
+                  </div>
+                  <div style={{fontWeight: 700, fontSize: '1.01rem', color: '#23272b', marginBottom: 4}}>Personero Legal</div>
+                  <div style={{color: '#23272b', fontSize: '0.92rem'}}>Representa a la organización política ante el JNE y autoridades electorales durante todo el proceso</div>
+                </div>
+                {/* Personero Técnico - Tools icon */}
+                <div style={{
+                  background: '#fff',
+                  borderRadius: 14,
+                  boxShadow: '0 2px 6px #b3022712',
+                  padding: '0.8rem 0.7rem 0.7rem 0.7rem',
+                  minWidth: 160,
+                  maxWidth: 220,
+                  flex: '1 1 160px',
+                  margin: '0',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center',
+                  border: '1.5px solid #b30227',
+                  animation: 'personeroCardAnim 0.9s cubic-bezier(.68,-0.55,.27,1.55)'
+                }}>
+                  <div style={{background: '#23272b', borderRadius: 12, width: 38, height: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 8, boxShadow: '0 0 8px #23272b33', animation: 'iconBounce 1.2s infinite alternate'}}>
+                    {/* Tools icon animated */}
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="6" fill="#23272b"/><g><path d="M7.5 14.5l4-4m-2.5 2.5l-2 2a1 1 0 0 0 1.4 1.4l2-2m2.5-2.5l2-2a1 1 0 0 0-1.4-1.4l-2 2" stroke="#fff" strokeWidth="1.7" strokeLinecap="round"/><rect x="10.5" y="7.5" width="4" height="1.5" rx="0.75" fill="#fff"/></g></svg>
+                  </div>
+                  <div style={{fontWeight: 700, fontSize: '1.01rem', color: '#23272b', marginBottom: 4}}>Personero Técnico</div>
+                  <div style={{color: '#23272b', fontSize: '0.92rem'}}>Coordina aspectos técnicos del proceso electoral y apoya la labor de los personeros de mesa</div>
+                </div>
+                {/* Personero de Mesa - Clipboard icon */}
+                <div style={{
+                  background: '#fff',
+                  borderRadius: 14,
+                  boxShadow: '0 2px 6px #b3022712',
+                  padding: '0.8rem 0.7rem 0.7rem 0.7rem',
+                  minWidth: 160,
+                  maxWidth: 220,
+                  flex: '1 1 160px',
+                  margin: '0',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center',
+                  border: '1.5px solid #b30227',
+                  animation: 'personeroCardAnim 1.1s cubic-bezier(.68,-0.55,.27,1.55)'
+                }}>
+                  <div style={{background: '#b30227', borderRadius: 12, width: 38, height: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 8, boxShadow: '0 0 8px #b3022733', animation: 'iconBounce 1.2s infinite alternate'}}>
+                    {/* Clipboard icon animated */}
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="6" fill="#b30227"/><g><rect x="7" y="8" width="8" height="7" rx="2" fill="#fff"/><rect x="9" y="6" width="4" height="2" rx="1" fill="#fff"/><rect x="10" y="10" width="4" height="1.2" rx="0.6" fill="#b30227"/><rect x="10" y="12.5" width="4" height="1.2" rx="0.6" fill="#b30227"/></g></svg>
+                  </div>
+                  <div style={{fontWeight: 700, fontSize: '1.01rem', color: '#23272b', marginBottom: 4}}>Personero de Mesa</div>
+                  <div style={{color: '#23272b', fontSize: '0.92rem'}}>Observa el desarrollo de la votación en una mesa específica el día de las elecciones</div>
+                </div>
+              </div>
+              {/* Animaciones CSS */}
+              <style>{`
+                @keyframes fadeInUpBox {
+                  0% { opacity: 0; transform: translateY(30px); }
+                  100% { opacity: 1; transform: translateY(0); }
+                }
+                @keyframes personeroCardAnim {
+                  0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+                  100% { opacity: 1; transform: scale(1) translateY(0); }
+                }
+                @keyframes iconBounce {
+                  0% { transform: translateY(0); }
+                  100% { transform: translateY(-8px); }
+                }
+              `}</style>
+            </div>
             <div className="recursos-videos-grid" style={{ marginTop: 24 }}>
               <div className="recursos-column">
                 <h3 className="recursos-titulo">Recursos</h3>
@@ -382,7 +517,7 @@ const Personeros: React.FC = () => {
 
               <div className="videos-column">
                 <h3 className="recursos-titulo">Tutoriales</h3>
-                <div className="videos-card">
+                <div className="videos-card" style={{marginTop: 24}}>
                   {tutoriales.map(v => (
                     <div key={v.id} className="tutorial-item-compact">
                       <div className="tutorial-text">
